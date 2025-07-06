@@ -1,0 +1,18 @@
+#This Apache config file was created by Duplicator Installer on 2022-05-16 04:21:54.
+#The original can be found in archived file with the name .htaccess__[HASH]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^.*/Products-(\d+)/.*.shtml$ cyr2latq/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^(.*)/\d{2}.shtml$ cyr2latq/index\.php?cat=$1&%{QUERY_STRING} [L]
+
+
+
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

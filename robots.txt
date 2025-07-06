@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /readme.html
+Disallow: /license.txt
+Disallow: /?s=*
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-admin/images/*
+
+#WP Import Export Rule
+User-agent: *
+Disallow: /wp-content/uploads/wp-import-export-lite/

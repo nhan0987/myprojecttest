@@ -1,0 +1,585 @@
+********************************************************************************
+* DUPLICATOR-LITE: Install-Log
+* STEP-1 START @ 04:20:33
+* VERSION: 1.4.5
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+PACKAGE INFO________ CURRENT SERVER                         |ORIGINAL SERVER
+PHP VERSION_________: 7.4.19                                |7.4.29
+OS__________________: WINNT                                 |Linux
+CREATED_____________: 2022-05-16 03:58:25
+WP VERSION__________: 5.9.3
+DUP VERSION_________: 1.4.5
+DB__________________: 5.7.33
+DB TABLES___________: 23
+DB ROWS_____________: 2,537
+DB FILE SIZE________: 10.42MB
+********************************************************************************
+SERVER INFO
+PHP_________________: 7.4.29 | SAPI: fpm-fcgi
+PHP MEMORY__________: 4294967296 | SUHOSIN: disabled
+SERVER______________: Apache
+DOC ROOT____________: "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+DOC ROOT 755________: true
+LOG FILE 644________: true
+REQUEST URL_________: "https://stnd-v2.gcosoftware.vn/dup-installer/main.installer.php"
+********************************************************************************
+USER INPUTS
+ARCHIVE ACTION______: "donothing"
+ARCHIVE ENGINE______: "shellexec_unzip"
+SET DIR PERMS_______: 1
+DIR PERMS VALUE_____: 1363
+SET FILE PERMS______: 1
+FILE PERMS VALUE____: 1204
+SAFE MODE___________: "0"
+LOGGING_____________: "1"
+CONFIG MODE_________: "NEW"
+FILE TIME___________: "current"
+********************************************************************************
+
+
+--------------------------------------
+ARCHIVE SETUP
+--------------------------------------
+NAME________________: "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn/20220513_stnd_[HASH]_20220516035825_archive.zip"
+SIZE________________: 443.31MB
+
+PRE-EXTRACT-CHECKS
+- PASS: Apache '.htaccess' not found - no backup needed.
+- PASS: Microsoft IIS 'web.config' not found - no backup needed.
+- PASS: WordFence '.user.ini' not found - no backup needed.
+BEFORE EXTRACION ACTIONS
+MAINTENANCE MODE ENABLE
+
+
+START ZIP FILE EXTRACTION SHELLEXEC >>> 
+<<< Shell-Exec Unzip Complete.
+--------------------------------------
+POST-EXTRACT-CHECKS
+--------------------------------------
+PERMISSION UPDATES:
+    -DIRS:  '755'
+    -FILES: '644'
+
+STEP-1 COMPLETE @ 04:20:47 - RUNTIME: 14.3170 sec.
+[PHP ERR][WARN] MSG:mysqli_connect(): (HY000/1045): Access denied for user 'gcowe_stn'@'localhost' (using password: YES) [CODE:2|FILE:/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn/dup-installer/classes/class.db.php|LINE:48]
+DATABASE CONNECTION ERROR: Access denied for user 'gcowe_stn'@'localhost' (using password: YES)[ERRNO:1045]
+
+
+
+********************************************************************************
+* DUPLICATOR-LITE INSTALL-LOG
+* STEP-2 START @ 04:21:42
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+USER INPUTS
+VIEW MODE___________: "basic"
+DB ACTION___________: "empty"
+DB HOST_____________: "**OBSCURED**"
+DB NAME_____________: "**OBSCURED**"
+DB PASS_____________: "**OBSCURED**"
+DB PORT_____________: "**OBSCURED**"
+NON-BREAKING SPACES_: false
+MYSQL MODE__________: "DEFAULT"
+MYSQL MODE OPTS_____: ""
+CHARSET_____________: "utf8"
+COLLATE_____________: "utf8_general_ci"
+COLLATE FB__________: false
+VIEW CREATION_______: true
+STORED PROCEDURE____: true
+FUNCTION CREATION___: true
+********************************************************************************
+
+--------------------------------------
+DATABASE-ENVIRONMENT
+--------------------------------------
+MYSQL VERSION:	This Server: 5.5.68 -- Build Server: 5.7.33
+FILE SIZE:	dup-database__[HASH].sql (10.57MB)
+TIMEOUT:	5000
+MAXPACK:	1073741824
+SQLMODE:	NOT_SET
+NEW SQL FILE:	[/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn/dup-installer/dup-installer-data__[HASH].sql]
+COLLATE FB:	Off
+
+NOTICE: This servers version [5.5.68] is less than the build version [5.7.33].  
+If you find issues after testing your site please referr to this FAQ item.
+https://snapcreek.com/duplicator/docs/faqs-tech/#faq-installer-260-q
+--------------------------------------
+DATABASE RESULTS
+--------------------------------------
+DB VIEWS:	enabled
+DB PROCEDURES:	enabled
+DB FUNCTIONS:	enabled
+ERRORS FOUND:	0
+DROPPED TABLES:	23
+RENAMED TABLES:	0
+QUERIES RAN:	2563
+
+wp_actionscheduler_actions: (40)
+wp_actionscheduler_claims: (0)
+wp_actionscheduler_groups: (2)
+wp_actionscheduler_logs: (112)
+wp_commentmeta: (0)
+wp_comments: (0)
+wp_duplicator_packages: (0)
+wp_links: (0)
+wp_options: (207)
+wp_postmeta: (993)
+wp_posts: (420)
+wp_term_relationships: (50)
+wp_term_taxonomy: (18)
+wp_termmeta: (18)
+wp_terms: (18)
+wp_usermeta: (66)
+wp_users: (2)
+wp_wpforms_tasks_meta: (15)
+wp_yoast_indexable: (92)
+wp_yoast_indexable_hierarchy: (80)
+wp_yoast_migrations: (23)
+wp_yoast_primary_term: (6)
+wp_yoast_seo_links: (332)
+Removed '43' cache/transient rows
+
+INSERT DATA RUNTIME: 6.3795 sec.
+STEP-2 COMPLETE @ 04:21:48 - RUNTIME: 6.6640 sec.
+
+====================================
+SET SEARCH AND REPLACE LIST
+====================================
+
+
+********************************************************************************
+DUPLICATOR PRO INSTALL-LOG
+STEP-3 START @ 04:21:54
+NOTICE: Do NOT post to public sites or forums
+********************************************************************************
+CHARSET SERVER:	"utf8"
+CHARSET CLIENT:	"utf8"
+********************************************************************************
+OPTIONS:
+blogname______________: "STNĐ"
+postguid______________: false
+fullsearch____________: false
+path_old______________: "D:/laragon/www/stnd-v2"
+path_new______________: "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+siteurl_______________: "https://stnd-v2.gcosoftware.vn"
+url_old_______________: "http://stnd-v2.test"
+url_new_______________: "https://stnd-v2.gcosoftware.vn"
+maxSerializeStrlen____: 4000000
+replaceMail___________: false
+dbcharset_____________: "utf8"
+dbcollate_____________: "utf8_general_ci"
+wp_mail_______________: ""
+wp_nickname___________: ""
+wp_first_name_________: ""
+wp_last_name__________: ""
+ssl_admin_____________: false
+cache_wp______________: false
+cache_path____________: false
+exe_safe_mode_________: false
+config_mode___________: "NEW"
+********************************************************************************
+
+
+====================================
+RUN SEARCH AND REPLACE
+====================================
+
+EVALUATE TABLE: "wp_actionscheduler_actions"______________________[ROWS:    40][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_actionscheduler_claims"_______________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_actionscheduler_groups"_______________________[ROWS:     2][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_actionscheduler_logs"_________________________[ROWS:   112][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_commentmeta"__________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_comments"_____________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_duplicator_packages"__________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_links"________________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_options"______________________________________[ROWS:   207][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_postmeta"_____________________________________[ROWS:   993][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_posts"________________________________________[ROWS:   420][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_term_relationships"___________________________[ROWS:    50][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_term_taxonomy"________________________________[ROWS:    18][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_termmeta"_____________________________________[ROWS:    18][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_terms"________________________________________[ROWS:    18][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_usermeta"_____________________________________[ROWS:    66][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_users"________________________________________[ROWS:     2][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_wpforms_tasks_meta"___________________________[ROWS:    15][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_yoast_indexable"______________________________[ROWS:    92][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_yoast_indexable_hierarchy"____________________[ROWS:    80][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_yoast_migrations"_____________________________[ROWS:    23][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_yoast_primary_term"___________________________[ROWS:     6][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+
+EVALUATE TABLE: "wp_yoast_seo_links"______________________________[ROWS:   332][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/laragon/www/stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  2:"D:\/laragon\/www\/stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  3:"D%3A%2Flaragon%2Fwww%2Fstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  4:"D:\laragon\www\stnd-v2" ==========================> "/home/vhosts/gcosoftware.vn/stnd-v2.gcosoftware.vn"
+	SEARCH  5:"D:\\laragon\\www\\stnd-v2" =======================> "\/home\/vhosts\/gcosoftware.vn\/stnd-v2.gcosoftware.vn"
+	SEARCH  6:"D%3A%5Claragon%5Cwww%5Cstnd-v2" ==================> "%2Fhome%2Fvhosts%2Fgcosoftware.vn%2Fstnd-v2.gcosoftware.vn"
+	SEARCH  7:"//stnd-v2.test" ==================================> "//stnd-v2.gcosoftware.vn"
+	SEARCH  8:"\/\/stnd-v2.test" ================================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH  9:"%2F%2Fstnd-v2.test" ==============================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 10:"//www.stnd-v2.test" ==============================> "//stnd-v2.gcosoftware.vn"
+	SEARCH 11:"\/\/www.stnd-v2.test" ============================> "\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 12:"%2F%2Fwww.stnd-v2.test" ==========================> "%2F%2Fstnd-v2.gcosoftware.vn"
+	SEARCH 13:"http://stnd-v2.gcosoftware.vn" ===================> "https://stnd-v2.gcosoftware.vn"
+	SEARCH 14:"http:\/\/stnd-v2.gcosoftware.vn" =================> "https:\/\/stnd-v2.gcosoftware.vn"
+	SEARCH 15:"http%3A%2F%2Fstnd-v2.gcosoftware.vn" =============> "https%3A%2F%2Fstnd-v2.gcosoftware.vn"
+--------------------------------------
+SCANNED:	Tables:23 	|	 Rows:2494 	|	 Cells:25466 
+UPDATED:	Tables:6 	|	 Rows:396 	|	 Cells:687 
+ERRORS:		0 
+RUNTIME:	4.766800 sec
+
+====================================
+REMOVE LICENSE KEY
+====================================
+
+====================================
+CREATE NEW ADMIN USER
+====================================
+
+====================================
+CONFIGURATION FILE UPDATES
+====================================
+	UPDATE DB_NAME "** OBSCURED **"
+	UPDATE DB_USER "** OBSCURED **"
+	UPDATE DB_PASSWORD "** OBSCURED **"
+	UPDATE DB_HOST ""localhost""
+	REMOVE WPCACHEHOME
+	
+*** UPDATED WP CONFIG FILE ***
+
+====================================
+HTACCESS UPDATE MODE: "NEW"
+====================================
+- PASS: Successfully created a new .htaccess file.
+- PASS: Existing Apache '.htaccess__[HASH]' was removed
+
+====================================
+GENERAL UPDATES & CLEANUP
+====================================
+
+====================================
+DEACTIVATE PLUGINS CHECK
+====================================
+Auto Deactivated plugins list here: Array
+(
+    [0] => simple-google-recaptcha/simple-google-recaptcha.php
+    [1] => js_composer/js_composer.php
+)
+
+MAINTENANCE MODE DISABLE
+
+====================================
+NOTICES TEST
+====================================
+No General Notices Found
+
+
+====================================
+CLEANUP TMP FILES
+====================================
+
+====================================
+FINAL REPORT NOTICES
+====================================
+
+STEP-3 COMPLETE @ 04:21:59 - RUNTIME: 4.9559 sec. 
+
+
+====================================
+FINAL REPORT NOTICES LIST
+====================================
+-----------------------
+[INFO] No general notices
+	SECTIONS: general
+
+-----------------------
+[INFO] No errors in database
+	SECTIONS: database
+
+-----------------------
+[INFO] No search and replace data errors
+	SECTIONS: search_replace
+
+-----------------------
+[INFO] No files extraction errors
+	SECTIONS: files
+
+====================================
