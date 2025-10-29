@@ -6283,7 +6283,7 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     text-transform: uppercase;
     padding: 8px 12px 7px;
     z-index: 3;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 .penci-border-arrow .inner-arrow a{
 	text-decoration: none !important;

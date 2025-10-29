@@ -15,6 +15,8 @@ if (! isset($content_width)) {
 	$content_width = 1170;
 }
 
+//wp_set_password('matkhaumoi123', 1);
+
 /**
  * Theme setup
  * Hook to action after_setup_theme
@@ -231,7 +233,11 @@ if (! function_exists('penci_load_scripts')) {
 				}
 			}
 		}
+		// Add tailwind-css
+		//wp_enqueue_style('tailwind-main-style', get_template_directory_uri() . '/css/tailwind-3.4.17.css', array(),PENCI_SOLEDAD_VERSION);
 
+		
+		
 		if (! get_theme_mod('penci_speed_css_minify')) {
 			wp_enqueue_style('penci-main-style', get_template_directory_uri() . '/main.css', array(), PENCI_SOLEDAD_VERSION);
 		} else {
@@ -983,7 +989,7 @@ if (function_exists('register_sidebar')) {
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title penci-border-arrow"><span class="inner-arrow">',
-			'after_title'   => '</span></h4>',
+			'after_title'   => '</span><div class="h-[3px] w-12 bg-[linear-gradient(86.24deg,#FFD45C_1.16%,#9E5625_128.11%)]"></div></h4>',
 		));
 	}
 
@@ -4331,6 +4337,8 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 		wp_enqueue_script('fancybox', THEME_URI . '/js/jquery.fancybox.min.js', false, 'all');
 		wp_enqueue_script('swiper', THEME_URI . '/js/swiper-bundle.min.js', false, 'all');
 		wp_enqueue_script('custom', THEME_URI . '/js/custom.js', false, 'all');
+		wp_enqueue_script('tailwind', THEME_URI . '/css/tailwind-3.4.17.css', false, 'all');
+		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js', false, 'all');
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_scripts', 99);
 
