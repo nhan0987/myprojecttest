@@ -3,8 +3,8 @@
         <div class="content-header">
             <?php if (has_post_thumbnail()) { ?>
                 <div class="content-image">
-                    <a href="<?php the_permalink(); ?>" title="" class="image">
-                        <img src="<?php echo lth_custom_img('full', 580, 372); ?>" width="580" height="372" alt="<?php the_title(); ?>">
+                    <a href="<?php the_permalink(); ?>" title="" class="image test">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>"  alt="<?php the_title(); ?>">
                     </a>
                 </div>
             <?php } else {
@@ -27,7 +27,7 @@
                 </h3>
 
                 <p class="content-days">
-                    <?php the_time('d '); ?><?php echo __('Tháng '); ?><?php the_time('m, Y'); ?>
+                    <?php the_time('d/m/Y '); ?>
                 </p>
 
                 <div class="content-excerpt">

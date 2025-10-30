@@ -48,43 +48,48 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                 </div>
             <?php endif; ?>
 
-            <div class="title-tab">
-                <ul>
+            
+                <ul class="nav nav-pills title-tab" id="myTab" role="tablist">
                     <?php $i; foreach( $attributes['items'] as $inner ): $i++; ?>
-                        <li>
-                            <div>
-                                <a href="#" data_tab="tab-<?php echo $i; ?>" class="title <?php if ($i == 1) { ?>active<?php } ?>">
-                                    <?php if ($inner['item_image']) { ?>
-                                        <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon">
-                                    <?php } ?>
-                                    <?php echo $inner['item']; ?>
-                                </a>
-                            </div>
+                    <?php
+                    
+                        // var_dump($inner);
+                        // var_dump($inner['item']);
+                        // var_dump($attributes['post_number']);
+
+                        $category_id = $inner['item'];
+                        $term_object = get_term( $category_id, 'category' );
+                        $category_name = $term_object->name;
+
+                    ?>
+                        <li class="nav-item" role="presentation">
+                             <button class="nav-link <?php if ($i == 1) { ?>active<?php } ?>" id="home-tab" data-bs-toggle="pill" data-bs-target="#tab-<?php echo $i; ?>" type="button" role="tab" aria-controls="tab-<?php echo $i; ?>" aria-selected="<?php if ($i == 1) { ?>true<?php } else {?>false<?php }?>"><?php echo $category_name ?></button>
                         </li>
                     <?php endforeach; ?> 
                 </ul>
-            </div>
+            
 
-            <div class="module_content">
+            
                 <div class="tab-content">
                     <?php $j; foreach( $attributes['items'] as $inner ): $j++; ?>
-                        <div class="tab-panel tab-<?php echo $j; ?> <?php if ($j == 1) { ?>active<?php } ?>">
+                        <div class="tab-pane fade  <?php if ($j == 1) { ?>active show<?php } ?>" role="tabpanel" id="tab-<?php echo $j; ?>" >
                             <?php
                                 $args = [
                                     'post_type' => 'post',
                                     'post_status' => 'publish',
-                                    'category_name' => $inner['item'],
+                                    'category__in' => $inner['item'],
                                     'posts_per_page' => $attributes['post_number'],
                                     'orderby' => $attributes['orderby'],
                                     'order' => $attributes['order'],
                                 ];
+                                
                                 $wp_query = new WP_Query($args);
                                 if ($wp_query->have_posts()) { ?>
 
-                                    <div class="row">
+                                    <div class="flex flex-wrap">
                                         <?php while ($wp_query->have_posts()) {
                                             $wp_query-> the_post(); ?>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="basis-full lg:flex-1">
                                                 <?php //load file tương ứng với post format
                                                     get_template_part('template-parts/post/content', '');
                                                 ?>
@@ -100,7 +105,7 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                         </div>
                     <?php endforeach; ?> 
                 </div>
-            </div>
+            
         </div>
     </div>
 </section>

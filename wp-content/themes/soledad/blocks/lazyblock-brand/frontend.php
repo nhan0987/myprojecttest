@@ -18,7 +18,7 @@ if (!function_exists('lth_brand_output_fe')) :
     function lth_brand_output_fe($output, $attributes) {
         ob_start();
 ?>  
-<section class="lth-brands">
+<section class="lth-brands max-w-7xl mx-auto">
     <!-- <div class="container">         -->
         <div class="module module_brands">
             <?php if ($attributes['title'] || $attributes['description']) : ?>

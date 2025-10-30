@@ -8,8 +8,11 @@
 
 $penci_hide_footer = '';
 $hide_fwidget = get_theme_mod( 'penci_footer_widget_area' );
-$footer_layout = get_theme_mod( 'penci_footer_widget_area_layout' ) ? get_theme_mod( 'penci_footer_widget_area_layout' ) : 'style-1';
+$footer_layout = 'style-4';
+// $footer_layout = get_theme_mod( 'penci_footer_widget_area_layout' ) ? get_theme_mod( 'penci_footer_widget_area_layout' ) : 'style-1';
 $penci_footer_width = get_theme_mod( 'penci_footer_width' );
+
+
 
 if ( is_page() ) {
 	$penci_hide_footer = get_post_meta( get_the_ID(), 'penci_page_hide_footer', true );
@@ -38,7 +41,11 @@ $footer_logo_url = esc_url( home_url('/') );
 if( get_theme_mod('penci_custom_url_logo_footer') ) {
 	$footer_logo_url = get_theme_mod('penci_custom_url_logo_footer');
 }
+
+$footer_layout = 'style-4';
 ?>
+
+
 
 <?php
 if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product_category') && is_product_category() ) || ( function_exists('is_product_tag') && is_product_tag() ) || ( function_exists('is_product') && is_product() ) ) {
@@ -96,6 +103,7 @@ if( ! empty( $footerreorder_array ) ) {
 				</div>
 			</div>
 		<?php endif; ?>
+		
 		<?php
 		endif;
 		if ( $ftsec == 'instagram' && is_active_sidebar( 'footer-instagram' ) ) :

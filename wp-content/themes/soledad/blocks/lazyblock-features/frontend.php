@@ -18,7 +18,7 @@ if (!function_exists('lth_features_output_fe')) :
     function lth_features_output_fe($output, $attributes) {
         ob_start();
 ?>  
-<section class="lth-features">            
+<section class="lth-features max-w-7xl mx-auto">            
     <div class="module module_features">
         <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
             <div class="module_header title-box">
@@ -47,9 +47,9 @@ if (!function_exists('lth_features_output_fe')) :
         <?php endif; ?>
         
         <div class="module_content">
-            <div class="row">
+            <div class="flex flex-wrap stnd-featured-1 justify-between">
                 <?php foreach( $attributes['items'] as $inner ): ?>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="basis-full lg:flex-1">
                         <div class="item">
                             <div class="content">
                                 <div class="content-image">

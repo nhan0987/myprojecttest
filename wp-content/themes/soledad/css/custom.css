@@ -1,3 +1,29 @@
+
+
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('fonts/snellroundhand_black.otf') format('otf');   
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@media (min-width: 1824px) {
+    .wp-block-lazyblock-lth-slider {
+        max-width: 1824px;
+    }
+}
+.wp-block-lazyblock-lth-slider{
+	padding: 0 20px 0 42px;
+}
+
+@media (min-width: 1824px) {
+    .navigation-container {
+        max-width: 1824px;
+    }
+}
+
+
 a {
 	text-decoration: none;
 }
@@ -21,7 +47,7 @@ p:last-child {
 }
 .wrapper-boxed .container-default-page {
 	padding: 0;
-	max-width: 100%;
+	margin-top: 21px;
 }
 .container-fluid {
 	padding: 0;
@@ -35,6 +61,8 @@ p:last-child {
 .swiper {
 	position: relative;
 	overflow: hidden;
+	border-radius: 16px;
+	/* height: 640px; */
 }
 .swiper .swiper-arrow:after {
 	display: none;
@@ -69,6 +97,7 @@ p:last-child {
 }
 .lth-slider .container-fluid {
 	overflow: hidden;
+	width: 1824px;
 }
 .module_slider {
 	margin-top:0px;
@@ -156,18 +185,33 @@ p:last-child {
 	z-index: 6;
 }
 .title-box {
-	background: #F8F8F8;
+	/* background: #F8F8F8; */
 	margin-bottom: 16px;
+}
+.title-box .infor{
+	text-transform: capitalize;
+	font-weight: 700;
+	line-height: 48px;
+}
+.title-box .infor p {
+	font-size: 1.5rem;
 }
 .title-box .title {
 	display: inline-block;
-	background-image: url(../images/06.png);
+	/* background-image: url(../images/06.png);
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	color: #fff;
-	padding: 6px 40px 6px 18px;
+	background-size: 100% 100%; */
+	/* color: #fff; */
+	padding: 6px 40px 6px 0px;
 	margin-bottom: 0;
 	position: relative;
+
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	-webkit-background-clip: text;
+	background-clip: text;
+  	color: transparent;
+  	-webkit-text-fill-color: transparent;
+	text-transform: uppercase;
 }
 .title-box .title p {
 	display: flex;
@@ -178,12 +222,17 @@ p:last-child {
 	margin-bottom: 0;
 }
 .title-box .title p:before {
-	content: '';
-	display: inline-block;
-	background-image: url(../images/07.png);
-	width: 21px;
-	height: 32px;
-	margin-right: 13px;
+	
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	
+
+	content: ''; 
+	display: block;
+	width: 24px; 
+	height: 2px; 
+	/* background-color: #FF5733;  */
+	margin-right: 10px;
+
 }
 .tit-border-right-page .title-box .title{
 	background: #232d39;
@@ -329,18 +378,26 @@ p:last-child {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-position: left center;
+	display: none;
 }
 .penci-topbar-social .inner-header-social a {
 	color: #FEC769;
 }
-#navigation {
-	background: #232D39;
+
+#navigation .container {
+    width:1824px;
+}
+
+#navigation .container {
+    background: #232D39;
+    border-radius: 16px;
+	height: 70px;
 }
 #navigation ul {
 	margin-bottom: 0;
 }
 #navigation ul.menu > li {
-	margin-right: 64px;
+	margin-right: 46px;
 }
 #navigation .menu li a {
 	color: #fff;
@@ -350,10 +407,15 @@ p:last-child {
 #navigation .menu li.current-menu-item > a,
 #navigation .menu > li.current_page_item > a,
 #navigation .menu li a:hover {
-	color: #FEC769;
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+	border-bottom: 1px solid #FEC769;
 }
 #navigation ul.menu > li > a:before {
-	background-color: #FEC769;
+	background-color: transparent;
 }
 #navigation .menu li.icon-home a {
 	font-size: 0;
@@ -383,10 +445,7 @@ p:last-child {
 #navigation .button-menu-mobile {
 	color: #fff;
 }
-.footer-widget-wrapper .widget .widget-title span {
-	border-bottom: none !important;
-	font-size: 24px;
-}
+
 .widget_nav_menu .menu li {
 	border-bottom: none;
 	position: relative;
@@ -496,7 +555,7 @@ p:last-child {
     top: 95px;
 }
 .module_features .content-image {
-	text-align: center;
+	/* text-align: center; */
 	margin-bottom: 35px;
 }
 .module_features .content-image .image {
@@ -724,11 +783,7 @@ p:last-child {
     transition: all .2s ease-in-out;
     text-align: center;
 }
-.footer-widget-wrapper .penci_social_widget .widget-social a i,
-.penci-topbar-social .inner-header-social a {
-    color: #fec769;
-    border-color: #fec769;
-}
+
 .footer-widget-wrapper.footer-widget-style-7:first-child {
     width: 15%;
 }
@@ -905,3 +960,255 @@ p:last-child {
     width: 100%;
     object-fit: cover;
 }
+
+
+.module_features .content {
+	border-bottom: 0px dotted #000;
+}
+
+.stnd-featured-1 .content-image .image > img {
+	/* width: 405px;
+	height: 270px; */
+}
+.stnd-featured-2 .content-image .image > img {
+	width: 624px;
+	height: 270px;
+}
+.stnd-block-features .content-image .image > img {
+	width: 256px;
+	height: 146px;
+}
+.wp-block-lazyblock-lth-categories .content{
+	border-bottom: 0px dotted #000;
+}
+
+.bg-section-1{
+    --tw-bg-opacity: 1;
+    background-color: #F7F6F2;
+}
+
+.banner .lth-section {
+	height: 100%;
+}
+.bottom-logo img{
+	width: 60px;
+	height: 78px;
+}
+.footer-widget-wrapper{
+	padding-top: 32px;
+}
+
+.footer-widget-wrapper .widget .widget-title span {
+	border-bottom: none !important;
+
+}
+
+.widget-title {
+	color: #FFFFFF;
+	font-size: 1rem;
+	font-weight: 500; /* 700 = bold */
+	text-transform: uppercase; /* IN HOA */
+	line-height: 24px;
+	position: relative;
+	/* padding-bottom: 12px; */
+}
+
+.polygon-icon {
+  display: inline-block;
+  width: 20px;  /* Set kích thước Oniichan muốn */
+  height: 20px;
+  
+  /* --- GỌI HỒN EM NÓ VÀO ĐÂY --- */
+  background-image: url('/wp-content/themes/soledad/icons/Polygon-2.svg'); 
+  /* ------------------------------- */
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.footer-widget-wrapper .menu-item a::before {
+  content: ''; 
+  display: inline-block;
+  width: 16px; 
+  height: 16px;
+  margin-right: 8px; /* Nếu không dùng flex, phải dùng margin */
+  
+  /* Dùng làm hình nền */
+  background-image: url('/wp-content/themes/soledad/icons/Polygon-2.svg');
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* Dùng cách này để căn icon với chữ (nếu không dùng flex) */
+  vertical-align: middle; 
+}
+
+.widget ul li a {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.75;
+}
+/* #widget-area {
+  
+  background-color: #F5F5F5 !important; 
+} 
+*/
+
+.email-icons {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+
+  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+  -webkit-mask-image: url('/wp-content/themes/soledad/icons/email.svg');
+  mask-image: url('/wp-content/themes/soledad/icons/email.svg');
+  /* ---------------------------------- */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* --- TÔ MÀU VÀO KHUÔN --- */
+  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
+  transition: background-color 0.2s;
+}
+
+.location-icons {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+
+  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+  -webkit-mask-image: url('/wp-content/themes/soledad/icons/location.svg');
+  mask-image: url('/wp-content/themes/soledad/icons/location.svg');
+  /* ---------------------------------- */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* --- TÔ MÀU VÀO KHUÔN --- */
+  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
+  transition: background-color 0.2s;
+}
+
+.telephone-icons {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+
+  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+  -webkit-mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
+  mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
+  /* ---------------------------------- */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* --- TÔ MÀU VÀO KHUÔN --- */
+  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
+  transition: background-color 0.2s;
+}
+.header-logo{
+	float: left;
+    width: 41px;
+    height: 54px;
+    margin-right: 130px;
+    padding-top: 8px;
+}
+
+.penci-mainlogo{
+	float: left;
+    width: 41px;
+    height: 54px;
+    margin-right: 130px;
+    padding-top: 8px;
+    margin-left: 50px;
+}
+.module_blogs .content-image{
+	width: 230px;
+	height: 150px;
+}
+.module_blogs .content-image img{
+	border-radius: 16px;
+}
+
+.module_blogs .content-box{
+	padding-top: 10px;
+	padding-right: 32px;
+}
+
+.module_blogs .nav-pills .nav-link.active{
+	color: #fff;
+    background-color: #232D39;
+}
+.module_blogs .nav-pills .nav-link {
+	border: 1px solid #E1E1E1;
+    border-radius: 10px;
+}
+.module_blogs .nav-link{
+	color: #232D39;
+}
+.module_blogs .nav-link:focus, .nav-link:hover {
+    color: #232D39;
+}
+.module_blogs .nav-item{
+	margin-right:10px
+}
+.module_blogs .tab-content{
+	padding-top: 10px;
+}
+
+.thu-ngo{
+	/* border: 2px solid;
+	border-image-source: linear-gradient(73.08deg, #FFD45C 0%, rgba(250, 210, 76, 0) 44.66%, #FFD45C 100%); */
+	border: 2px solid #FFD45C;
+	border-radius: 12px;
+	padding: 32px;
+	
+}
+.thu-ngo-bg{
+	/* opacity: 0.4; */
+}
+.vision-block{
+	padding-top: 5rem;
+}
+.vision-block .image>img{
+	width: 237px;
+    height: 201px;
+}
+.title-thungo{
+	
+	font-family: 'Snell Roundhand',sans-serif;
+	font-weight: 700;
+	font-style: Bold;
+	font-size: 30px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-align: center;
+	/*text linear-gradient*/
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	-webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+.home-page-slider img{
+	width: 1824px;
+	height: 640px;
+}
+
+
