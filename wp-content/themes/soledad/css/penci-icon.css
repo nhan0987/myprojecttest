@@ -1,1 +1,59 @@
-@font-face {font-family: "penciicon";font-display: swap;src: url("../fonts/penciicon.ttf") format("truetype"), url("../fonts/penciicon.woff") format("woff"), url("../fonts/penciicon.woff2") format("woff2"), url("../fonts/penciicon.eot#iefix") format("embedded-opentype"), url("../fonts/penciicon.svg#penciicon") format("svg");}i[class^="penciicon-"], i[class*=" penciicon-"] {display: inline-block;vertical-align: middle;font-family: penciicon !important;font-style: normal;font-weight: normal !important;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}.penciicon-left-quote:before {content: "\f101";}.penciicon-messenger:before {content: "\f102";}.penciicon-goodreads:before {content: "\f103";}.penciicon-viber:before {content: "\f104";}.penciicon-discord:before {content: "\f105";}.penciicon-tik-tok:before {content: "\f106";}.penciicon-line:before {content: "\f107";}.penciicon-douban-logo:before {content: "\f108";}.penciicon-qq-social-logo-of-a-penguin:before {content: "\f109";}
+@font-face {
+    font-family: "penciicon";
+    font-display: swap;
+    src: url("../fonts/penciicon.ttf") format("truetype"), 
+    url("../fonts/penciicon.woff") format("woff"), 
+    url("../fonts/penciicon.woff2") format("woff2"), 
+    url("../fonts/penciicon.eot#iefix") format("embedded-opentype"), 
+    url("../fonts/penciicon.svg#penciicon") format("svg");
+}
+
+i[class^="penciicon-"],
+i[class*=" penciicon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: penciicon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.penciicon-left-quote:before {
+    content: "\f101";
+}
+
+.penciicon-messenger:before {
+    content: "\f102";
+}
+
+.penciicon-goodreads:before {
+    content: "\f103";
+}
+
+.penciicon-viber:before {
+    content: "\f104";
+}
+
+.penciicon-discord:before {
+    content: "\f105";
+}
+
+.penciicon-tik-tok:before {
+    content: "\f106";
+}
+
+.penciicon-line:before {
+    content: "\f107";
+}
+
+.penciicon-douban-logo:before {
+    content: "\f108";
+}
+
+.penciicon-qq-social-logo-of-a-penguin:before {
+    content: "\f109";
+}

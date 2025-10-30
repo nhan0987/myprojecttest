@@ -1,5 +1,13 @@
 
 
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('fonts/snellroundhand_black.otf') format('otf');   
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+
 @media (min-width: 1824px) {
     .wp-block-lazyblock-lth-slider {
         max-width: 1824px;
@@ -959,8 +967,8 @@ p:last-child {
 }
 
 .stnd-featured-1 .content-image .image > img {
-	width: 405px;
-	height: 270px;
+	/* width: 405px;
+	height: 270px; */
 }
 .stnd-featured-2 .content-image .image > img {
 	width: 624px;
@@ -1129,15 +1137,15 @@ p:last-child {
     padding-top: 8px;
     margin-left: 50px;
 }
-.content-image{
+.module_blogs .content-image{
 	width: 230px;
 	height: 150px;
 }
-.content-image img{
+.module_blogs .content-image img{
 	border-radius: 16px;
 }
 
-.content-box{
+.module_blogs .content-box{
 	padding-top: 10px;
 	padding-right: 32px;
 }
@@ -1162,6 +1170,40 @@ p:last-child {
 .module_blogs .tab-content{
 	padding-top: 10px;
 }
-.module_blogs .item{
-	/* padding-right: 32px; */
+
+.thu-ngo{
+	/* border: 2px solid;
+	border-image-source: linear-gradient(73.08deg, #FFD45C 0%, rgba(250, 210, 76, 0) 44.66%, #FFD45C 100%); */
+	border: 2px solid #FFD45C;
+	border-radius: 12px;
+	padding: 32px;
+	
 }
+.thu-ngo-bg{
+	/* opacity: 0.4; */
+}
+.vision-block{
+	padding-top: 5rem;
+}
+.vision-block .image>img{
+	width: 237px;
+    height: 201px;
+}
+.title-thungo{
+	
+	font-family: 'Snell Roundhand',sans-serif;
+	font-weight: 700;
+	font-style: Bold;
+	font-size: 30px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-align: center;
+	/*text linear-gradient*/
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	-webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+

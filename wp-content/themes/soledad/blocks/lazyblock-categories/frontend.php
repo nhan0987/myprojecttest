@@ -45,7 +45,7 @@ if (!function_exists('lth_categories_output_fe')) :
 
             <div class="module_content">
                 <div>
-                    <div class="flex flex-wrap stnd-featured-1 justify-between">
+                    <div class="flex flex-wrap justify-between">
                         <?php foreach( $attributes['items'] as $inner ) { ?>
                             <div class="basis-full lg:flex-1 ">
                                 <div class="item">
