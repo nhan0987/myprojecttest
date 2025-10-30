@@ -1206,4 +1206,9 @@ p:last-child {
     -webkit-text-fill-color: transparent;
 
 }
+.home-page-slider img{
+	width: 1824px;
+	height: 640px;
+}
+
 
