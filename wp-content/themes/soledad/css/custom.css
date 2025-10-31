@@ -273,7 +273,7 @@ p:last-child {
 	margin-bottom: 0;
 }
 .module_blogs .content_list .item {
-	padding: 12px 0;
+	padding: 8px 0;
 	border-bottom: 1px solid #E5E5E5;;
 }
 .module_blogs .content_list .row > *:first-child .item {
@@ -288,11 +288,11 @@ p:last-child {
 	flex-wrap: wrap;
 }
 .module_blogs .content_list .content-image {
-	width: 120px;
+	/* width: 120px; */
 }
 .module_blogs .content_list .content-box {
-	width: calc(100% - 120px);
-	padding-left: 10px;
+	/* width: calc(100% - 120px); */
+	/* padding-left: 10px; */
 }
 .module_blogs .content_list.style_02 .row > * .item {
 	border-bottom: 1px solid #E5E5E5;
@@ -306,17 +306,17 @@ p:last-child {
 	border-bottom: none;
 }
 .module_blogs .content_list.style_02 .content-image {
-	width: 227px;
+	/* width: 227px; */
 }
 /*.module_blogs .content_list.style_02 .content-image img {
 	height: 100%;
 	object-fit: cover;
 }*/
 .module_blogs .content_list.style_02 .content-box {
-	width: calc(100% - 227px);
+	/* width: calc(100% - 227px); */
 	position: relative;
 	top: -5px;
-	padding-left: 16px;
+	/* padding-left: 16px; */
 }
 .module_blogs .content_list.style_02 .content-name {
 	line-height: 20px;
@@ -1138,16 +1138,16 @@ p:last-child {
     margin-left: 50px;
 }
 .module_blogs .content-image{
-	width: 230px;
-	height: 150px;
+	/* width: 230px; */
+	/* height: 150px; */
 }
 .module_blogs .content-image img{
 	border-radius: 16px;
 }
 
 .module_blogs .content-box{
-	padding-top: 10px;
-	padding-right: 32px;
+	/* padding-top: 10px;
+	padding-right: 32px; */
 }
 
 .module_blogs .nav-pills .nav-link.active{
@@ -1210,5 +1210,124 @@ p:last-child {
 	width: 1824px;
 	height: 640px;
 }
+.penci-page-header-background{
+	padding-top:6px;
+}
+.wp-block-lazyblock-lth-blogs-tab .content-image {
+	/* width: 230px !important; */
+    height: 150px !important;
+	background: #232D3952;
+	
+}
+.wp-block-lazyblock-lth-blogs-tab img {
+	
+    height: 100% !important;
+}
 
+.style-01 .module_blogs .item{
+	border: 1px solid #E1E1E1;
+	border-radius: 16px;
+	/* padding:12px; */
+	/* margin-bottom: 38px; */
+	padding: 12px 12px 12px 12px;
+}
+.style-01 .module_blogs img{
+	/* height: 100% !important; */
+}
 
+.style-01 .module_blogs .content-image {
+	/* width: 296px !important; */
+    /* height: 208px !important; */
+}
+
+.style-01 .module_blogs .content-name p:after {
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+}
+.style-02 .module_blogs .content-image{
+	/* width: 140px !important; */
+    /* height: 96px !important; */
+}
+.style-02 .module_blogs .title-box .title p{
+	display: block;
+}
+.style-02 .module_blogs .title-box .title p:before{
+	display: none !important;
+}
+.style-02 .module_blogs .title-box .title p::after{
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+}
+
+.style-02 .content_list .item {
+    
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.style-02 .module_blogs .title-box .title{
+	text-transform: capitalize;
+	/* background: linear-gradient(86.24deg, #d34e4e 1.16%, #9E5625 128.11%); */
+	background: linear-gradient(86.24deg, #060606  1.16%, #9E5625 128.11%);
+
+	display: inline-block;
+    /* color: #fff; */
+    padding: 6px 40px 6px 0px;
+    margin-bottom: 0;
+    position: relative;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.penci-page-header{
+	position: relative;
+	z-index: 1;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-position-y: 12%;
+	height: 283px;
+	max-width: 1824px;
+	border-radius: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;;
+	background-color: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%), lightgray 0px -141.295px / 100% 508.834%;
+	
+}
+.penci-page-header::before{
+	content: '';
+    position: absolute;
+	z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%);
+	border-radius: 16px;
+}
+
+.theiaStickySidebar .penci-page-header h1{
+
+	z-index: 3;
+	position: relative;
+
+	font-size: 48px;
+    color: #fdfdfd;
+    text-transform: uppercase;
+    /* padding-top: 6%; */
+    line-height: 56px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Roboto',sans-serif;
+}
