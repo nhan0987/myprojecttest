@@ -25,7 +25,7 @@ if( $pagetitle == 'yes' ){
 	<?php if( ! $show_page_title ): ?>
 	<?php if( get_the_title() && $flag_ptitle ): ?>
 	<div class="penci-page-header mx-4 md:mx-0" style="background-image: url(<?php echo penci_get_featured_image_size( get_the_ID(), 'penci-full-thumb' ); ?>);">
-		<h1 class="entry-title pt-24"><?php the_title(); ?></h1>
+		<h1 class="entry-title pt-[50%] md:pt-[11%] lg:pt[13%]"><?php the_title(); ?></h1>
 	</div>
 	<?php endif; ?>
 	<?php endif; ?>

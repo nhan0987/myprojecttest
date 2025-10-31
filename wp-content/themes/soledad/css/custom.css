@@ -39,7 +39,7 @@ p:last-child {
 .penci-page-header,
 .container {
 	max-width: 1210px;
-	padding: 0 15px;
+	/* padding: 0 15px; */
 }
 .penci-page-header {
 	margin: 0 auto;
@@ -1296,8 +1296,8 @@ p:last-child {
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    background-position-y: 12%;
-	height: 283px;
+    background-position-y: 16%;
+	height: 425px;
 	max-width: 1824px;
 	border-radius: 16px;
 	background-size: cover;
