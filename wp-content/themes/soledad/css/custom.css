@@ -10,11 +10,11 @@
 
 @media (min-width: 1824px) {
     .wp-block-lazyblock-lth-slider {
-        max-width: 1824px;
+        /* max-width: 1824px; */
     }
 }
 .wp-block-lazyblock-lth-slider{
-	padding: 0 20px 0 42px;
+	/* padding: 0 20px 0 42px; */
 }
 
 @media (min-width: 1824px) {
@@ -38,7 +38,7 @@ p:last-child {
 }
 .penci-page-header,
 .container {
-	max-width: 1210px;
+	/* max-width: 1210px; */
 	/* padding: 0 15px; */
 }
 .penci-page-header {
@@ -97,7 +97,7 @@ p:last-child {
 }
 .lth-slider .container-fluid {
 	overflow: hidden;
-	width: 1824px;
+	/* width: 1824px; */
 }
 .module_slider {
 	margin-top:0px;
@@ -124,6 +124,7 @@ p:last-child {
 	background-color: rgba(17, 17, 17, 0.8);
 	padding: 32px 47px 44px 24px;
 	max-width: 552px;
+	display: none;
 }
 .module_slider .group-box p {
 	color: #fff;
@@ -385,19 +386,21 @@ p:last-child {
 }
 
 #navigation .container {
-    width:1824px;
+    max-width:1824px;
 }
 
 #navigation .container {
     background: #232D39;
     border-radius: 16px;
-	height: 70px;
+	/* height: 70px; */
 }
 #navigation ul {
 	margin-bottom: 0;
 }
-#navigation ul.menu > li {
-	margin-right: 46px;
+#navigation ul.menu .current-menu-item {
+	/* margin-right: 46px; */
+	/* padding: 0 10px 0 10px; */
+	border-bottom: 1px solid #FEC769;
 }
 #navigation .menu li a {
 	color: #fff;
@@ -412,7 +415,10 @@ p:last-child {
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-	border-bottom: 1px solid #FEC769;
+}
+
+#navigation ul.menu > li > a {
+	padding: 24px 8px 24px 8px;;
 }
 #navigation ul.menu > li > a:before {
 	background-color: transparent;
@@ -556,7 +562,7 @@ p:last-child {
 }
 .module_features .content-image {
 	/* text-align: center; */
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 }
 .module_features .content-image .image {
 	display: inline-block;
@@ -633,7 +639,7 @@ p:last-child {
 }
 .module_features .content {
 	padding-bottom: 10px;
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 	border-bottom: 1px dotted #000;
 }
 .module_button {
@@ -987,7 +993,25 @@ p:last-child {
     background-color: #F7F6F2;
 }
 
+@media (min-width: 320px) {
+	.banner .lth-section {
+		background-position-x: 31% !important;
+	}
+}
+
+@media (min-width: 640px) {
+	.banner .lth-section {
+		background-position-x: 31% !important;
+	}
+}
+@media (min-width: 768px) {
+	.banner .lth-section {
+		background-position-x: 28% !important;
+	}
+}
 .banner .lth-section {
+	background-size: cover !important;
+	background-position-y: 16% !important;
 	height: 100%;
 }
 .bottom-logo img{
@@ -1130,12 +1154,12 @@ p:last-child {
 }
 
 .penci-mainlogo{
-	float: left;
+	/* float: left; */
     width: 41px;
-    height: 54px;
+    /* height: 54px;
     margin-right: 130px;
     padding-top: 8px;
-    margin-left: 50px;
+    margin-left: 50px; */
 }
 .module_blogs .content-image{
 	/* width: 230px; */
@@ -1179,11 +1203,57 @@ p:last-child {
 	padding: 32px;
 	
 }
+
+@media (min-width: 640px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 1815px;
+		height: 1200px;
+    }
+}
+@media (min-width: 768px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 968px;
+    }
+}
+@media (min-width: 1024px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 800px;
+    }
+}
+@media (min-width: 1280px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 848px;
+		height: 848px;
+    }
+}
+
+.thu-ngo-bg .lth-section{
+
+    background-size: cover !important;
+    background-position-y: 0% !important;
+	z-index: 1;
+	margin-bottom: 0px !important;
+}
+
+.thu-ngo-bg .lth-section::after{
+	content: '';
+    position: absolute;
+	z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	/* background: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%); */
+	border-radius: 16px;
+}
 .thu-ngo-bg{
-	/* opacity: 0.4; */
+	 /* opacity: 0.4; */
 }
 .vision-block{
 	padding-top: 5rem;
+}
+.vision-block .item{
+	padding: 0 0.5rem 0 0.5rem;
 }
 .vision-block .image>img{
 	width: 237px;
@@ -1215,8 +1285,8 @@ p:last-child {
 }
 .wp-block-lazyblock-lth-blogs-tab .content-image {
 	/* width: 230px !important; */
-    height: 150px !important;
-	background: #232D3952;
+    /* height: 150px !important; */
+	/* background: #232D3952; */
 	
 }
 .wp-block-lazyblock-lth-blogs-tab img {
@@ -1302,7 +1372,7 @@ p:last-child {
 	border-radius: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;;
-	background-color: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%), lightgray 0px -141.295px / 100% 508.834%;
+	background-color: linear-gradient(0deg, rgba(25, 30, 34, 0.6) 0%, rgba(30, 41, 49, 0.60) 100%), lightgray 0px -141.295px / 100% 508.834%;
 	
 }
 .penci-page-header::before{
@@ -1330,4 +1400,18 @@ p:last-child {
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto',sans-serif;
+}
+.penci-mobile-logo{
+	/* padding: 0 0 0 58px; */
+}
+
+@media (min-width: 640px) {
+	#widget-area{ margin-top: 82px; }
+}
+@media (min-width: 768px) {	
+	#widget-area{ margin-top: 36px;}
+}
+
+@media (min-width: 1024px) {	
+	#widget-area{ margin-top: 34px;}
 }

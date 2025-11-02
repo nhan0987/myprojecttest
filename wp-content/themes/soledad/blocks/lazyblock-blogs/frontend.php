@@ -81,8 +81,9 @@ if (!function_exists('lth_blogs_output_fe')) :
                                                 $wp_query->the_post();
                                                 $j++; 
                                             ?>
+                                            <div class="item">
                                                 <?php  get_template_part('template-parts/post/content', '');?>
-                                                
+                                            </div>  
                                             <?php }
                                             wp_reset_postdata(); ?>
   
@@ -91,7 +92,9 @@ if (!function_exists('lth_blogs_output_fe')) :
                                                 $wp_query->the_post();
                                                 $j++; 
                                             ?>
-                                                <?php  get_template_part('template-parts/post/content', '2');?>
+                                                <div class="item">
+                                                    <?php  get_template_part('template-parts/post/content', '2');?>
+                                                </div>
                                                 
                                             <?php }
                                             wp_reset_postdata(); ?>

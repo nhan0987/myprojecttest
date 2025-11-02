@@ -86,12 +86,12 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                                 $wp_query = new WP_Query($args);
                                 if ($wp_query->have_posts()) { ?>
 
-                                    <div class="flex flex-wrap">
+                                    <div class="flex flex-wrap md:justify-between justify-center">
                                         <?php while ($wp_query->have_posts()) {
                                             $wp_query-> the_post(); ?>
-                                            <div class="basis-full lg:flex-1">
+                                            <div class="item md:w-[230px]">
                                                 <?php //load file tương ứng với post format
-                                                    get_template_part('template-parts/post/content', '');
+                                                    get_template_part('template-parts/post/content', 'tab');
                                                 ?>
                                             </div>
                                         <?php } ?>

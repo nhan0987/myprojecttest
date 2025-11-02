@@ -54,7 +54,16 @@ if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product
 ?>
 
 <?php if( ! $penci_hide_footer ): ?>
-<div class="clear-footer"></div>
+<div class="clear-footer">
+	<div class="relative">
+				<div class="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-6xl p-3  shadow-lg text-white  text-md flex  flex-col  md:flex-row justify-between gap-2 md:gap-0 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,_#FFD45C_0%,_#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
+				
+				<div class="flex items-center gap-2"><i class="location-icons"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
+				<div class="flex items-center gap-2"><i class="email-icons"></i>Email: contact@stnd.vn</div>
+				<div class="flex items-center gap-2"><i class="telephone-icons"></i>Hotline: 0989 666 888</div>
+				</div>
+			</div>
+</div>
 
 <?php if ( get_theme_mod( 'penci_footer_adsense' ) ): echo '<div class="container penci-google-adsense penci-google-adsense-footer">'. do_shortcode( get_theme_mod( 'penci_footer_adsense' ) ) .'</div>'; endif; ?>
 
@@ -67,8 +76,14 @@ if( ! empty( $footerreorder_array ) ) {
 		if ( $ftsec == 'widgets' && ! $hide_fwidget ) :
 		?>
 		<?php if( ( in_array( $footer_layout, array( 'style-2', 'style-3', 'style-8', 'style-9', 'style-10' ) ) && ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) ) ) || ( in_array( $footer_layout, array( 'style-1', 'style-5', 'style-6', 'style-7' ) ) && ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) ) ) || ( $footer_layout == 'style-4' && ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) ) ): ?>
-			<div id="widget-area"<?php if( get_theme_mod( 'penci_footer_widget_bg_image' ) ): echo ' class="penci-lazy" data-src="'. get_theme_mod( 'penci_footer_widget_bg_image' ) .'"'; endif; ?>>
-				<div class="container<?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
+
+			
+
+			<div id="widget-area" class="rounded-t-[2rem]" <?php if( get_theme_mod( 'penci_footer_widget_bg_image' ) ): echo ' class="penci-lazy" data-src="'. get_theme_mod( 'penci_footer_widget_bg_image' ) .'"'; endif; ?>>
+
+				
+
+				<div class="max-w-7xl mx-auto<?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?> grid grid-cols-2 lg:grid-cols-4 pt-4 pb-4">
 					<?php if( in_array( $footer_layout, array( 'style-1', 'style-5', 'style-6', 'style-7' ) ) ){ ?>
 						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
 							<?php dynamic_sidebar( 'footer-1' ); ?>
@@ -87,16 +102,16 @@ if( ! empty( $footerreorder_array ) ) {
 							<?php dynamic_sidebar( 'footer-2' ); ?>
 						</div>
 					<?php } elseif( $footer_layout == 'style-4' ) { ?>
-						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
+						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?> col-span-2 lg:col-span-1 flex flex-col items-center ">
 							<?php dynamic_sidebar( 'footer-1' ); ?>
 						</div>
-						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
+						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?> flex flex-col items-center ">
 							<?php dynamic_sidebar( 'footer-2' ); ?>
 						</div>
-						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
+						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?> flex flex-col items-center ">
 							<?php dynamic_sidebar( 'footer-3' ); ?>
 						</div>
-						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?> last">
+						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?> last col-span-2 lg:col-span-1 flex flex-col items-center">
 							<?php dynamic_sidebar( 'footer-4' ); ?>
 						</div>
 					<?php } ?>

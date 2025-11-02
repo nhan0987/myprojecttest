@@ -1,4 +1,4 @@
-<div class="item col-span-1">
+
     <div class="grid grid-cols-10 md:grid-cols-12 gap-4">
         
             <?php if (has_post_thumbnail()) { ?>
@@ -36,4 +36,3 @@
             </div>
         
     </div>
-</div>
