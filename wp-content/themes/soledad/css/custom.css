@@ -10,11 +10,11 @@
 
 @media (min-width: 1824px) {
     .wp-block-lazyblock-lth-slider {
-        max-width: 1824px;
+        /* max-width: 1824px; */
     }
 }
 .wp-block-lazyblock-lth-slider{
-	padding: 0 20px 0 42px;
+	/* padding: 0 20px 0 42px; */
 }
 
 @media (min-width: 1824px) {
@@ -38,8 +38,8 @@ p:last-child {
 }
 .penci-page-header,
 .container {
-	max-width: 1210px;
-	padding: 0 15px;
+	/* max-width: 1210px; */
+	/* padding: 0 15px; */
 }
 .penci-page-header {
 	margin: 0 auto;
@@ -97,7 +97,7 @@ p:last-child {
 }
 .lth-slider .container-fluid {
 	overflow: hidden;
-	width: 1824px;
+	/* width: 1824px; */
 }
 .module_slider {
 	margin-top:0px;
@@ -124,6 +124,7 @@ p:last-child {
 	background-color: rgba(17, 17, 17, 0.8);
 	padding: 32px 47px 44px 24px;
 	max-width: 552px;
+	display: none;
 }
 .module_slider .group-box p {
 	color: #fff;
@@ -273,7 +274,7 @@ p:last-child {
 	margin-bottom: 0;
 }
 .module_blogs .content_list .item {
-	padding: 12px 0;
+	padding: 8px 0;
 	border-bottom: 1px solid #E5E5E5;;
 }
 .module_blogs .content_list .row > *:first-child .item {
@@ -288,11 +289,11 @@ p:last-child {
 	flex-wrap: wrap;
 }
 .module_blogs .content_list .content-image {
-	width: 120px;
+	/* width: 120px; */
 }
 .module_blogs .content_list .content-box {
-	width: calc(100% - 120px);
-	padding-left: 10px;
+	/* width: calc(100% - 120px); */
+	/* padding-left: 10px; */
 }
 .module_blogs .content_list.style_02 .row > * .item {
 	border-bottom: 1px solid #E5E5E5;
@@ -306,17 +307,17 @@ p:last-child {
 	border-bottom: none;
 }
 .module_blogs .content_list.style_02 .content-image {
-	width: 227px;
+	/* width: 227px; */
 }
 /*.module_blogs .content_list.style_02 .content-image img {
 	height: 100%;
 	object-fit: cover;
 }*/
 .module_blogs .content_list.style_02 .content-box {
-	width: calc(100% - 227px);
+	/* width: calc(100% - 227px); */
 	position: relative;
 	top: -5px;
-	padding-left: 16px;
+	/* padding-left: 16px; */
 }
 .module_blogs .content_list.style_02 .content-name {
 	line-height: 20px;
@@ -385,19 +386,21 @@ p:last-child {
 }
 
 #navigation .container {
-    width:1824px;
+    max-width:1824px;
 }
 
 #navigation .container {
     background: #232D39;
     border-radius: 16px;
-	height: 70px;
+	/* height: 70px; */
 }
 #navigation ul {
 	margin-bottom: 0;
 }
-#navigation ul.menu > li {
-	margin-right: 46px;
+#navigation ul.menu .current-menu-item {
+	/* margin-right: 46px; */
+	/* padding: 0 10px 0 10px; */
+	border-bottom: 1px solid #FEC769;
 }
 #navigation .menu li a {
 	color: #fff;
@@ -412,7 +415,10 @@ p:last-child {
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-	border-bottom: 1px solid #FEC769;
+}
+
+#navigation ul.menu > li > a {
+	padding: 24px 8px 24px 8px;;
 }
 #navigation ul.menu > li > a:before {
 	background-color: transparent;
@@ -556,7 +562,7 @@ p:last-child {
 }
 .module_features .content-image {
 	/* text-align: center; */
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 }
 .module_features .content-image .image {
 	display: inline-block;
@@ -633,7 +639,7 @@ p:last-child {
 }
 .module_features .content {
 	padding-bottom: 10px;
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 	border-bottom: 1px dotted #000;
 }
 .module_button {
@@ -987,7 +993,25 @@ p:last-child {
     background-color: #F7F6F2;
 }
 
+@media (min-width: 320px) {
+	.banner .lth-section {
+		background-position-x: 31% !important;
+	}
+}
+
+@media (min-width: 640px) {
+	.banner .lth-section {
+		background-position-x: 31% !important;
+	}
+}
+@media (min-width: 768px) {
+	.banner .lth-section {
+		background-position-x: 28% !important;
+	}
+}
 .banner .lth-section {
+	background-size: cover !important;
+	background-position-y: 16% !important;
 	height: 100%;
 }
 .bottom-logo img{
@@ -1130,24 +1154,24 @@ p:last-child {
 }
 
 .penci-mainlogo{
-	float: left;
+	/* float: left; */
     width: 41px;
-    height: 54px;
+    /* height: 54px;
     margin-right: 130px;
     padding-top: 8px;
-    margin-left: 50px;
+    margin-left: 50px; */
 }
 .module_blogs .content-image{
-	width: 230px;
-	height: 150px;
+	/* width: 230px; */
+	/* height: 150px; */
 }
 .module_blogs .content-image img{
 	border-radius: 16px;
 }
 
 .module_blogs .content-box{
-	padding-top: 10px;
-	padding-right: 32px;
+	/* padding-top: 10px;
+	padding-right: 32px; */
 }
 
 .module_blogs .nav-pills .nav-link.active{
@@ -1179,11 +1203,57 @@ p:last-child {
 	padding: 32px;
 	
 }
+
+@media (min-width: 640px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 1815px;
+		height: 1200px;
+    }
+}
+@media (min-width: 768px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 968px;
+    }
+}
+@media (min-width: 1024px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 800px;
+    }
+}
+@media (min-width: 1280px) {
+    .thu-ngo-bg .lth-section {
+        max-height: 848px;
+		height: 848px;
+    }
+}
+
+.thu-ngo-bg .lth-section{
+
+    background-size: cover !important;
+    background-position-y: 0% !important;
+	z-index: 1;
+	margin-bottom: 0px !important;
+}
+
+.thu-ngo-bg .lth-section::after{
+	content: '';
+    position: absolute;
+	z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	/* background: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%); */
+	border-radius: 16px;
+}
 .thu-ngo-bg{
-	/* opacity: 0.4; */
+	 /* opacity: 0.4; */
 }
 .vision-block{
 	padding-top: 5rem;
+}
+.vision-block .item{
+	padding: 0 0.5rem 0 0.5rem;
 }
 .vision-block .image>img{
 	width: 237px;
@@ -1210,5 +1280,138 @@ p:last-child {
 	width: 1824px;
 	height: 640px;
 }
+.penci-page-header-background{
+	padding-top:6px;
+}
+.wp-block-lazyblock-lth-blogs-tab .content-image {
+	/* width: 230px !important; */
+    /* height: 150px !important; */
+	/* background: #232D3952; */
+	
+}
+.wp-block-lazyblock-lth-blogs-tab img {
+	
+    height: 100% !important;
+}
 
+.style-01 .module_blogs .item{
+	border: 1px solid #E1E1E1;
+	border-radius: 16px;
+	/* padding:12px; */
+	/* margin-bottom: 38px; */
+	padding: 12px 12px 12px 12px;
+}
+.style-01 .module_blogs img{
+	/* height: 100% !important; */
+}
 
+.style-01 .module_blogs .content-image {
+	/* width: 296px !important; */
+    /* height: 208px !important; */
+}
+
+.style-01 .module_blogs .content-name p:after {
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+}
+.style-02 .module_blogs .content-image{
+	/* width: 140px !important; */
+    /* height: 96px !important; */
+}
+.style-02 .module_blogs .title-box .title p{
+	display: block;
+}
+.style-02 .module_blogs .title-box .title p:before{
+	display: none !important;
+}
+.style-02 .module_blogs .title-box .title p::after{
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+}
+
+.style-02 .content_list .item {
+    
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.style-02 .module_blogs .title-box .title{
+	text-transform: capitalize;
+	/* background: linear-gradient(86.24deg, #d34e4e 1.16%, #9E5625 128.11%); */
+	background: linear-gradient(86.24deg, #060606  1.16%, #9E5625 128.11%);
+
+	display: inline-block;
+    /* color: #fff; */
+    padding: 6px 40px 6px 0px;
+    margin-bottom: 0;
+    position: relative;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.penci-page-header{
+	position: relative;
+	z-index: 1;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-position-y: 16%;
+	height: 425px;
+	max-width: 1824px;
+	border-radius: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;;
+	background-color: linear-gradient(0deg, rgba(25, 30, 34, 0.6) 0%, rgba(30, 41, 49, 0.60) 100%), lightgray 0px -141.295px / 100% 508.834%;
+	
+}
+.penci-page-header::before{
+	content: '';
+    position: absolute;
+	z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background: linear-gradient(0deg, rgba(30, 41, 49, 0.60) 0%, rgba(30, 41, 49, 0.60) 100%);
+	border-radius: 16px;
+}
+
+.theiaStickySidebar .penci-page-header h1{
+
+	z-index: 3;
+	position: relative;
+
+	font-size: 48px;
+    color: #fdfdfd;
+    text-transform: uppercase;
+    /* padding-top: 6%; */
+    line-height: 56px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Roboto',sans-serif;
+}
+.penci-mobile-logo{
+	/* padding: 0 0 0 58px; */
+}
+
+@media (min-width: 640px) {
+	#widget-area{ margin-top: 82px; }
+}
+@media (min-width: 768px) {	
+	#widget-area{ margin-top: 36px;}
+}
+
+@media (min-width: 1024px) {	
+	#widget-area{ margin-top: 34px;}
+}

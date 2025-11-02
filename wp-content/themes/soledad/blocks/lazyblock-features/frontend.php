@@ -47,10 +47,10 @@ if (!function_exists('lth_features_output_fe')) :
         <?php endif; ?>
         
         <div class="module_content">
-            <div class="flex flex-wrap stnd-featured-1 justify-between">
+            <div class="flex flex-wrap justify-center">
                 <?php foreach( $attributes['items'] as $inner ): ?>
-                    <div class="basis-full lg:flex-1">
-                        <div class="item">
+                    <div class="item">
+                        
                             <div class="content">
                                 <div class="content-image">
                                     <div class="image">
@@ -67,7 +67,7 @@ if (!function_exists('lth_features_output_fe')) :
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                 <?php endforeach; ?>
             </div>

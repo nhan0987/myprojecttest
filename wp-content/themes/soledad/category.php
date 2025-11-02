@@ -58,13 +58,13 @@ if (!$add_page) {
 			<?php
 			$yoast_breadcrumb = '';
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
-				$yoast_breadcrumb = yoast_breadcrumb( '<div class="container penci-breadcrumb'. $two_sidebar_class .'">', '</div>', false );
+				$yoast_breadcrumb = yoast_breadcrumb( '<div class="max-w-7xl mx-auto penci-breadcrumb'. $two_sidebar_class .'">', '</div>', false );
 			}
 
 			if( $yoast_breadcrumb ){
 				echo $yoast_breadcrumb;
 			}else{ ?>
-			<div class="container penci-breadcrumb<?php echo $two_sidebar_class; ?>">
+			<div class="max-w-7xl mx-auto penci-breadcrumb<?php echo $two_sidebar_class; ?>">
 				<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 				<?php
 				$parent_ID = penci_get_category_parent_id( $fea_cat_id );
@@ -77,15 +77,16 @@ if (!$add_page) {
 			<?php } ?>
 		<?php endif; ?>
 
-		<div class="container<?php echo esc_attr( $class_layout ); if ( $show_sidebar ) : ?> penci_sidebar <?php echo esc_attr( $sidebar_position ); ?><?php endif; ?>">
+		<div class="max-w-7xl mx-auto<?php echo esc_attr( $class_layout ); if ( $show_sidebar ) : ?> penci_sidebar <?php echo esc_attr( $sidebar_position ); ?><?php endif; ?>">
 			<div id="main" class="penci-layout-<?php echo esc_attr( $layout_this ); ?><?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> penci-main-sticky-sidebar<?php endif; ?>">
 				<div class="theiaStickySidebar">
-					<!-- <div class="archive-box"> -->
+					
+					<div class="penci-page-header-background">
 						<div class="title-bar penci-page-header">
-							<!-- <?php //if( ! get_theme_mod( 'penci_remove_cat_words' ) ): ?><span><?php //echo penci_get_setting( 'penci_trans_category' ); ?></span> <?php //endif; ?> -->
+							
 							<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
 						</div>
-					<!-- </div> -->
+					</div>	
 
 					<?php if ( category_description() ) : // Show an optional category description ?>
 						<div class="post-entry penci-category-description"><?php echo do_shortcode( category_description() ); ?></div>

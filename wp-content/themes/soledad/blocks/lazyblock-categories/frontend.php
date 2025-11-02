@@ -19,7 +19,7 @@ if (!function_exists('lth_categories_output_fe')) :
     function lth_categories_output_fe($output, $attributes) {
         ob_start();
 ?>
-    <section class="lth-categories max-w-7xl mx-auto">
+    <section class="lth-categories max-w-7xl mx-auto container">
         <div class="module module_categories">
             <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
                 <div class="module_header title-box">
@@ -45,10 +45,10 @@ if (!function_exists('lth_categories_output_fe')) :
 
             <div class="module_content">
                 <div>
-                    <div class="flex flex-wrap justify-between">
+                    <div class="flex flex-wrap justify-center">
                         <?php foreach( $attributes['items'] as $inner ) { ?>
-                            <div class="basis-full lg:flex-1 ">
-                                <div class="item">
+                            
+                                <div class="item p-2">
                                     <div class="content">
                                         <div class="content-header">
                                             <div class="content-image">
@@ -69,7 +69,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            
                         <?php } ?>
                     </div>
                 </div>

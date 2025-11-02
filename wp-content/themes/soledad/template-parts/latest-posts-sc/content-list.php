@@ -6,6 +6,7 @@ if ( ! isset ( $n ) ) { $n = 1; } else { $n = $n; }
 $penci_featimg_size = isset( $penci_featimg_size ) ? $penci_featimg_size : '';
 $thumb_size = isset( $thumb_size ) ? $thumb_size : '';
 ?>
+<?php var_dump('2323434')?>
 <li class="list-post penci-item-listp">
 	<article id="post-<?php the_ID(); ?>" class="item hentry">
 		<?php if ( penci_get_post_format( 'gallery' ) ) : ?>
