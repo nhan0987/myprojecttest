@@ -11,7 +11,7 @@ wp_nav_menu( array(
 	'menu'            => $menu_id,
 	'container'      => false,
 	'theme_location' => 'main-menu',
-	'menu_class'     => 'menu',
+	'menu_class'     => 'menu flex ',
 	'fallback_cb'    => 'penci_menu_fallback',
 	'walker'         => new penci_menu_walker_nav_menu()
 ) );

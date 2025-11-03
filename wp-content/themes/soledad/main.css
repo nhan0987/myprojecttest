@@ -14083,7 +14083,7 @@ form#commentform p.comment-subscription-form label{
 .penci-login-register input[type="password"],
 .penci-login-register input[type="number"],
 #respond input,
-.wpcf7 input,
+.wpcf7 input,.wpcf7 select,
 .widget_wysija input {
     padding: 12px 20px;
     max-width: 100%;

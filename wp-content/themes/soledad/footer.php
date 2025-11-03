@@ -56,7 +56,7 @@ if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product
 <?php if( ! $penci_hide_footer ): ?>
 <div class="clear-footer">
 	<div class="relative">
-				<div class="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-6xl p-3  shadow-lg text-white  text-md flex  flex-col  md:flex-row justify-between gap-2 md:gap-0 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,_#FFD45C_0%,_#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
+				<div class="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-6xl p-3  shadow-lg text-white  text-md flex  flex-col  lg:flex-row justify-between gap-2 md:gap-0 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,_#FFD45C_0%,_#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
 				
 				<div class="flex items-center gap-2"><i class="location-icons"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
 				<div class="flex items-center gap-2"><i class="email-icons"></i>Email: contact@stnd.vn</div>
