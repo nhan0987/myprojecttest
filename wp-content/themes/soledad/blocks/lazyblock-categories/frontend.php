@@ -53,7 +53,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                         <div class="content-header">
                                             <div class="content-image">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
-                                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo $inner['item_title']; ?>">
+                                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
                                                 </a>
                                             </div>
                                             <div class="content-box">
