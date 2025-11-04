@@ -581,6 +581,24 @@ p:last-child {
 .module_features .content-image .image {
 	display: inline-block;
 }
+
+.module_features .title-box .title:before{
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin-right: 10px;
+}
+.module_features .title-box .title {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FEC769;
+    margin-bottom: 0;
+}
+
 .box-brand-radius-style .row{
 	justify-content: center;
 }
@@ -1402,14 +1420,23 @@ p:last-child {
 }
 
 .theiaStickySidebar .penci-page-header h1{
-
 	z-index: 3;
 	position: relative;
-
 	font-size: 48px;
     color: #fdfdfd;
     text-transform: uppercase;
-    /* padding-top: 6%; */
+    line-height: 56px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Roboto',sans-serif;
+}
+
+.penci-page-header-category h1{
+	z-index: 3;
+	position: relative;
+	font-size: 48px;
+    color: #fdfdfd;
+    text-transform: uppercase;
     line-height: 56px;
     font-weight: 700;
     font-style: normal;
@@ -1450,9 +1477,34 @@ p:last-child {
 	font-size: 24px !important;
 	font-weight: 600;
 }
+
+.lien-he-voi-chung-toi .title-box .title:before{
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin-right: 10px;
+}
+.lien-he-voi-chung-toi .title-box .title {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.dat-lich-center .title-box .title {
+    justify-content: center;
+}
+.dat-lich-center .title-box  {
+    text-align: center ;
+}
+
 .lien-he-voi-chung-toi .lth-section{
 	border-radius: 12px;
 	padding: 24px;
+	background-color: #232d39;
 }
 .lien-he-voi-chung-toi .infor p{
 	color: white;
@@ -1640,4 +1692,32 @@ li.nav-item::marker {
 	.dich-vu-ky-gui-nha-dat-chuyen-nghiep .content-image{
 		width:388px;
 	}
+}
+
+.penci-page-header-category .entry-description {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 24px;
+	color: white;
+	z-index: 3;
+
+}
+.stnd-tieu-chuan-dich-vu .content-image .image > img{
+	width: 284px;
+    height: 128px;
+}
+
+@media ((min-width: 640px)) {
+.stnd-gioi-thieu-dich-vu .content-image .image > img{
+	width: 285px;
+    height: 280px;
+}
+}
+
+@media ((min-width: 1024px)) {
+.stnd-gioi-thieu-dich-vu .content-image .image > img{
+	width: 296px;
+    height: 310px;
+}
 }
