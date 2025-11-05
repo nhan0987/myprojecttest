@@ -19,4 +19,7 @@ if ( is_page() ) {
 	}
 }
 ?>
-<a href="<?php echo $logo_url; ?>"><img class="penci-mainlogo" src="<?php echo esc_url( $logo_src ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="<?php echo penci_get_image_data_basedurl( $logo_src, 'w' ); ?>" height="<?php echo penci_get_image_data_basedurl( $logo_src, 'h' ); ?>" /></a>
+<div class="2xl:w-[20%]"></div>
+<a href="<?php echo $logo_url; ?>">
+	<img class="penci-mainlogo" src="<?php echo esc_url( $logo_src ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="<?php echo penci_get_image_data_basedurl( $logo_src, 'w' ); ?>" height="<?php echo penci_get_image_data_basedurl( $logo_src, 'h' ); ?>" />
+</a>

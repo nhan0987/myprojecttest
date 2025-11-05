@@ -1010,10 +1010,10 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
     border-top: 1px solid transparent !important;
 }
 .is-sticky #navigation {
-    box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
+    /* box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
     -webkit-box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
     -moz-box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
-    border-color: transparent !important;
+    border-color: transparent !important; */
 }
 .wrapper-boxed.enable-boxed .is-sticky #navigation {
     margin: 0 auto;
