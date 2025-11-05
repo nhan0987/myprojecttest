@@ -54,6 +54,8 @@ if (!$add_page) {
 	if( 'two-sidebar' == $sidebar_position ): $two_sidebar_class = ' two-sidebar'; endif;
 	?>
 
+
+
 		<?php if( ! get_theme_mod( 'penci_disable_breadcrumb' ) ): ?>
 			<?php
 			$yoast_breadcrumb = '';
@@ -188,11 +190,16 @@ if (!$add_page) {
 		</div>
 		<?php } ?>
 	<?php endif; ?>
-
+	<?php 
+	
+	$description =  $term->description;
+	
+	?>
 	<!-- <div class="archive-box"> -->
-		<div class="title-bar penci-page-header">
+		<div class="penci-page-header penci-page-header-category mx-4 md:mx-0 flex justify-center items-center flex flex-col" style="background-image: url('/wp-content/uploads/2025/10/mau-nha-pho-1.jpg');">
 			<!-- <?php //if( ! get_theme_mod( 'penci_remove_cat_words' ) ): ?><span><?php //echo penci_get_setting( 'penci_trans_category' ); ?></span> <?php //endif; ?> -->
 			<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
+			<span class="entry-description"> <?php echo $description; ?></span>
 		</div>
 	<!-- </div> -->
 

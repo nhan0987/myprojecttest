@@ -47,7 +47,7 @@ if (!function_exists('lth_features_output_fe')) :
         <?php endif; ?>
         
         <div class="module_content">
-            <div class="flex flex-wrap justify-center">
+            <div class="flex flex-wrap justify-center gap-2 md:gap-0  md:justify-between">
                 <?php foreach( $attributes['items'] as $inner ): ?>
                     <div class="item">
                         

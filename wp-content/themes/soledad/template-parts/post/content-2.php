@@ -1,5 +1,5 @@
 
-<div class="item col-span-1">
+<div class="col-span-1">
     <div class="grid grid-cols-12 gap-2">
         
             <?php if (has_post_thumbnail()) { ?>
