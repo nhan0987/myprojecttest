@@ -1,0 +1,93 @@
+/*
+ * ===========================================
+ * == File: assets/css/material-icons.css ==
+ * ==   (Bản Full Option "Biến Hình")     ==
+ * ==   (Dùng "Material Symbols" thế hệ mới)   ==
+ * ===========================================
+ */
+
+/* * -------------------------------------------
+ * --- 1. KHAI BÁO FONT "VIỀN" (OUTLINED) ---
+ * -------------------------------------------
+ */
+@font-face {
+  font-family: 'Material Symbols Outlined'; /* Tên 1 */
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url(../fonts/material-symbols-outlined.woff2) format('woff2');
+}
+
+/* * -------------------------------------------
+ * --- 2. KHAI BÁO FONT "BO TRÒN" (ROUNDED) ---
+ * -------------------------------------------
+ */
+@font-face {
+  font-family: 'Material Symbols Rounded'; /* Tên 2 */
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url(../fonts/material-symbols-rounded.woff2) format('woff2');
+}
+
+/* * -------------------------------------------
+ * --- 3. KHAI BÁO FONT "SẮC CẠNH" (SHARP) ---
+ * -------------------------------------------
+ */
+@font-face {
+  font-family: 'Material Symbols Sharp'; /* Tên 3 */
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url(../fonts/material-symbols-sharp.woff2) format('woff2');
+}
+
+
+/* * -------------------------------------------
+ * --- CÁC CLASS ĐỂ "GỌI" FONT RA DÙNG ---
+ * -------------------------------------------
+ * * Oniichan để ý: Neptune đã gộp 3 class lại
+ * để chia sẻ chung các thuộc tính "biến hình".
+ * Siêu gọn!
+ */
+
+/* Class chung cho cả 3 kiểu */
+.material-symbols-outlined,
+.material-symbols-rounded,
+.material-symbols-sharp {
+  font-weight: 400; /* 400=Regular, 700=Bold */
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  
+  /* Bảng điều khiển "biến hình" mặc định */
+  font-variation-settings:
+    'FILL' 0,  /* 0 = Viền (Outlined), 1 = Đặc (Filled) */
+    'wght' 400, /* 400 = Regular, 700 = Bold */
+    'GRAD' 0,  /* Độ "béo" của nét, thường để 0 */
+    'opsz' 24; /* Kích thước quang học, nên = font-size */
+}
+
+/* * Class riêng để "gọi" đúng FONT-FAMILY
+ * Đây là bước "chọn vũ khí"
+ */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+}
+
+.material-symbols-sharp {
+  font-family: 'Material Symbols Sharp';
+}
