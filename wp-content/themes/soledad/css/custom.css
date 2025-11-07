@@ -1261,8 +1261,24 @@ p:last-child {
   	mask-image: url('/wp-content/themes/soledad/icons/money.svg');
 }
 .icons-wifi{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/wifi.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/wifi.svg');
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+}
+.icons-sofa{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+}
+.icons-leaf{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+}
+.icons-coffe{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+}
+.icons-humans-group-1{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group-1.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/humans-groups-1.svg');
 }
 
 .arrow-right-icons {
@@ -2189,6 +2205,21 @@ li.nav-item::marker {
 	list-style: disc !important;
 }
 
+/* Dán cái này vào file CSS "gốc" của anh */
+
+@layer utilities {
+  /* * "Bí kíp" tự chế class "scrollbar-hide" 
+   */
+  .scrollbar-hide {
+    /* 1. "Giấu" cho Firefox */
+    scrollbar-width: none;
+    
+    /* 2. "Giấu" cho WebKit (Chrome, Safari, Edge) */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 
 
