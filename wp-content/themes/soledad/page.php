@@ -123,13 +123,13 @@ endif;
 	<?php
 	$yoast_breadcrumb = '';
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
-		$yoast_breadcrumb = yoast_breadcrumb( '<div class="container container-single-page penci-breadcrumb ' . $class_small_width . '">', '</div>', false );
+		$yoast_breadcrumb = yoast_breadcrumb( '<div class="max-w-7xl mx-auto px-4 lg:px-0! container-single-page penci-breadcrumb ' . $class_small_width . '">', '</div>', false );
 	}
 
 	if( $yoast_breadcrumb ){
 		echo $yoast_breadcrumb;
 	}else{ ?>
-	<div class="container container-single-page penci-breadcrumb<?php echo $class_small_width; ?>">
+	<div class="max-w-7xl mx-auto px-4 lg:px-0! container-single-page penci-breadcrumb<?php echo $class_small_width; ?>">
 		<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 		<?php
 		$page_parent = get_post_ancestors( get_the_ID() );
@@ -146,7 +146,7 @@ endif;
 <?php endif; ?>
 <?php endif; ?>
 
-<div class="container container-single-page container-default-page<?php echo $class_small_width; if( in_array( $sidebar_default, array( 'left-sidebar','right-sidebar','two-sidebar' ) ) ){ echo ' penci_sidebar '. $sidebar_default; } else { echo ' penci_is_nosidebar'; } ?>">
+<div class="container-single-page container-default-page<?php echo $class_small_width; if( in_array( $sidebar_default, array( 'left-sidebar','right-sidebar','two-sidebar' ) ) ){ echo ' penci_sidebar '. $sidebar_default; } else { echo ' penci_is_nosidebar'; } ?>">
 	<div id="main" class="penci-main-single-page-default <?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> penci-main-sticky-sidebar<?php endif; ?>">
 		<div class="theiaStickySidebar">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

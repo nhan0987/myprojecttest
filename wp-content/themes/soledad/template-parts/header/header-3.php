@@ -40,19 +40,26 @@
 		}
 		?>
 		<nav id="navigation" class="<?php echo $class_layout_bottom; ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
-			<div class="<?php penci_soledad_get_header_width(); ?>">
-				<div class="button-menu-mobile header-3"><?php penci_fawesome_icon('fas fa-bars'); ?></div>
-				<?php
+			
+			<div class="<?php penci_soledad_get_header_width(); ?> flex items-center px-[0.8rem]! py-[0.8rem]! lg:px-[0.1rem]! lg:py-[0.1rem]!">
+				<div class="button-menu-mobile header-3 "><?php penci_fawesome_icon('fas fa-bars'); ?></div>
+				
+				
+				<?php 
 				if ( get_theme_mod( 'penci_header_logo_mobile' ) ) {
-					echo '<div class="penci-mobile-hlogo">';
+					echo '<div class="w-full lg:w-2/12 penci-mobile-logo flex flex-row justify-center 2xl:justify-start">';
 					get_template_part( 'template-parts/header/logo' );
 					echo '</div>';
 				}
-
+				
+				echo '<div class="lg:w-9/12 flex lg:justify-start">';
 				get_template_part( 'template-parts/header/menu' );
+				echo '</div>';
 
 				if ( ! get_theme_mod( 'penci_topbar_search_check' ) ) {
+					echo '<div class="ld:w-1/12">';
 					get_template_part( 'template-parts/header/top-search' );
+					echo '</div>';
 				}
 				get_template_part( 'template-parts/menu-hamburger-icon' );
 

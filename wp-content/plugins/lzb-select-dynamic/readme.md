@@ -3,9 +3,9 @@
 * Contributors: janwidmer
 * Tags: lazy-blocks, lazy blocks, custom control, select dynamic
 * Requires at least: 5.8
-* Tested up to: 5.8.2
+* Tested up to: 6.7.2
 * Requires PHP: 7.2
-* Stable tag: 2.1.6
+* Stable tag: 2.9.1
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -13,7 +13,7 @@ lazy-blocks custom control to offer a dynamic select containing wordpress posts,
 
 ## Description
 
-This custom control enhances the great [Lazy Blocks Plugin](https://lazyblocks.com/) and can be used in blocks to offer 
+This custom control enhances the great [Lazy Blocks Plugin](https://lazyblocks.com/) and can be used in blocks to offer
 the Wordpress Author to choose either wordpress posts, pages or categories.
 
 ### Features
@@ -29,6 +29,12 @@ the Wordpress Author to choose either wordpress posts, pages or categories.
 
 ### Restrictions
 
+#### Select Multiple Restrictions
+
+* The option "Select Multiple" is only available for the entity type `Post` / `Pages` / `Taxonomy`
+
+#### Max Item Restriction
+
 The custom control is using the `getEntityRecords` method.
 
 * This method can load a maximum of 100 entities and render them as dropdown options
@@ -36,27 +42,29 @@ The custom control is using the `getEntityRecords` method.
   a while, as the whole page object get's loaded
 * To use a custom taxonomy type, make sure to activate the REST option in the `register_taxonomy` function by adding `'show_in_rest' => true,`
 * Parent Entity Restriction does only work for Pages / Categories / Custom Taxonomies, as other Entity Types (e.g. Posts / Tags) cannot be nested
+* For the `entityType` `post-type`, an ignore list excludes all wordpress related post types:
+  * `pages`, `media`, `blocks`, `menu-items`, `navigation`, `templates`, `template-parts`, `lazyblocks`, `lazyblocks_templates`
 
 ## Installation
 
-* Make sure you use WordPress 5.0.x. As alternative you need to install the 
+* Make sure you use WordPress 5.0.x. As alternative you need to install the
   [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/) to use Lazy Blocks.
 * Make sure, you have installed the [Lazy Blocks Plugin](https://lazyblocks.com/)
 
 ### Automatic installation
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to 
-leave your web browser. To do an automatic install of lzb-select-dynamic, log in to your WordPress dashboard, 
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to
+leave your web browser. To do an automatic install of lzb-select-dynamic, log in to your WordPress dashboard,
 navigate to the Plugins menu and click Add New.
 
-In the search field type lzb-select-dynamic and click Search Plugins. Once you’ve found our plugin you can view details 
-about it such as the point release, rating and description. Most importantly of course, you can install it by simply 
+In the search field type lzb-select-dynamic and click Search Plugins. Once you’ve found our plugin you can view details
+about it such as the point release, rating and description. Most importantly of course, you can install it by simply
 clicking “Install Now”.
 
 ### Manual installation
 
-The manual installation method involves downloading our lzb-select-dynamic plugin and uploading it to your webserver 
-via your favourite FTP application. The WordPress codex contains 
+The manual installation method involves downloading our lzb-select-dynamic plugin and uploading it to your webserver
+via your favourite FTP application. The WordPress codex contains
 [instructions on how to do this here](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
 ## Usage
@@ -64,6 +72,28 @@ via your favourite FTP application. The WordPress codex contains
 You can use the custom control exactly how you use normal controls for lazy blocks
 
 ## Changelog
+
+= 2.8.0 =
+
+* WP Compatibility up to 6.3.1
+
+= 2.6.0 =
+
+* Add option to conditionally select posts based on a second dynamic select where the author can choose post types first
+
+= 2.4.0 =
+
+* Add option to select multiple items for Entity Types `post` | `page` | `taxonomy`
+* changed compatibility to WP version to 6.1.0
+
+= 2.2.1 =
+
+* Fix problem with missing custom post types for entity type `post-type`
+
+= 2.2.0 =
+
+* Add more post types to ignore list, add docs about ignore list
+* changed compatibility to WP version to 5.9.0
 
 = 2.1.5 =
 
@@ -76,7 +106,7 @@ You can use the custom control exactly how you use normal controls for lazy bloc
 
 = 2.1.0 =
 
-* Enhancement to have Taxonomy Type as an option 
+* Enhancement to have Taxonomy Type as an option
 
 = 2.0.0 =
 

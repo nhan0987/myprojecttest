@@ -86,10 +86,10 @@ include_once(ABSPATH . WPINC . '/header.php');
 
 
 define('DISALLOW_FILE_EDIT', true);
-define('DISALLOW_FILE_MODS', true);
+define('DISALLOW_FILE_MODS', false);
 
-define('WP_HOME', 'http://stnd.vn');
-define('WP_SITEURL', 'http://stnd.vn');
+define('WP_HOME', 'http://mystnd.vn');
+define('WP_SITEURL', 'http://mystnd.vn');
 
 /* Add any custom values between this line and the "stop editing" line. */
 

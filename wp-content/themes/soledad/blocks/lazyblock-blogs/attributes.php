@@ -279,7 +279,7 @@ if (function_exists('lazyblocks')) :
          'control_select_lth_post_style' => array(
             'type' => 'select',
             'name' => 'post_style',
-            'default' => '',
+            'default' => 'list',
             'label' => 'Style',
             'help' => '',
             'child_of' => '',
@@ -305,7 +305,7 @@ if (function_exists('lazyblocks')) :
          'control_select_lth_post_style_2' => array(
             'type' => 'select',
             'name' => 'post_style_2',
-            'default' => '',
+            'default' => 'style_01',
             'label' => '',
             'help' => '',
             'child_of' => '',

@@ -19,7 +19,7 @@ if (!function_exists('lth_categories_output_fe')) :
     function lth_categories_output_fe($output, $attributes) {
         ob_start();
 ?>
-    <section class="lth-categories">
+    <section class="lth-categories max-w-7xl mx-auto container">
         <div class="module module_categories">
             <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
                 <div class="module_header title-box">
@@ -45,15 +45,15 @@ if (!function_exists('lth_categories_output_fe')) :
 
             <div class="module_content">
                 <div>
-                    <div class="row">
+                    <div class="flex flex-wrap justify-center">
                         <?php foreach( $attributes['items'] as $inner ) { ?>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="item">
+                            
+                                <div class="item p-2">
                                     <div class="content">
                                         <div class="content-header">
                                             <div class="content-image">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
-                                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo $inner['item_title']; ?>">
+                                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
                                                 </a>
                                             </div>
                                             <div class="content-box">
@@ -69,7 +69,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            
                         <?php } ?>
                     </div>
                 </div>
