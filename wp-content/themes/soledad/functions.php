@@ -4394,3 +4394,21 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 			return esc_url($fallback_url); // Trả về URL dự phòng nếu ảnh mặc định không tồn tại
 		}
 	}
+	add_action( 'wp_enqueue_scripts', 'enqueue_material_icons' );
+
+	/**
+	 * Hàm này dùng để đăng ký và "xếp hàng" file CSS 
+	 * chứa Material Icons của chúng ta.
+	 */
+	function enqueue_material_icons() {
+
+		//wp_enqueue_style('bootstrap', THEME_URI . '/css/bootstrap.min.css', false, 'all');
+
+		// Đăng ký file CSS
+		wp_enqueue_style(
+			'material-icons', // (string) Đặt một cái tên (handle) độc nhất
+			THEME_URI . '/css/material-icons.css', // (string) Đường dẫn tới file CSS
+			array(), // (array) Các file CSS phụ thuộc (ở đây không cần)
+			'1.0.0' // (string) Phiên bản (tốt cho việc xóa cache khi cập nhật)
+		);
+	}

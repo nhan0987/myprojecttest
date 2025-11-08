@@ -195,17 +195,16 @@ p:last-child {
 	line-height: 48px;
 }
 .title-box .infor p {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 .title-box .title {
-	display: inline-block;
-	/* background-image: url(../images/06.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%; */
-	/* color: #fff; */
+	display: flex;
+    align-items: center;
 	padding: 6px 40px 6px 0px;
 	margin-bottom: 0;
 	position: relative;
+	font-weight: 400;
+	font-size: 14px;
 
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	-webkit-background-clip: text;
@@ -213,6 +212,35 @@ p:last-child {
   	color: transparent;
   	-webkit-text-fill-color: transparent;
 	text-transform: uppercase;
+}
+
+.dash-01 .title-box .title:before {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin-right: 10px;
+}
+
+
+.underline-01 .title-box .title-underline {
+    display: block ;
+	text-transform: capitalize;
+	font-size: 24px ;
+	line-height: 40px;
+	color: black ;
+	font-weight: 600 ;
+}
+
+.underline-01 .title-box .title-underline:after {
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+
 }
 
 .tit-border-right-page .title-box .title{
@@ -1187,6 +1215,72 @@ p:last-child {
   transition: background-color 0.2s;
 }
 
+.stnd-icons {
+	display: inline-block;
+	width: 40px;
+  	height: 40px;
+
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	background-color: black; /* Icon sẽ auto có màu vàng */
+  	transition: background-color 0.2s;
+}
+.gold-color {
+	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
+}
+.icons-building{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/building.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/building.svg');
+}
+.icons-demand{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
+}
+.icons-home{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/home.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/home.svg');
+}
+.icons-humans-group{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
+}
+.icons-key{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/buikeylding.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/key.svg');
+}
+.icons-location-outlined{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
+}
+.icons-money{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/money.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/money.svg');
+}
+.icons-wifi{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+}
+.icons-sofa{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+}
+.icons-leaf{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+}
+.icons-coffe{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+}
+.icons-humans-group-1{
+	-webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group-1.svg');
+  	mask-image: url('/wp-content/themes/soledad/icons/humans-groups-1.svg');
+}
+
 .arrow-right-icons {
   display: inline-block;
   width: 7px;
@@ -1207,6 +1301,52 @@ p:last-child {
   /* --- TÔ MÀU VÀO KHUÔN --- */
   background-color: currentColor; /* Icon sẽ auto có màu vàng */
   transition: background-color 0.2s;
+}
+.grid-menu-icons {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+
+  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+  -webkit-mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
+  mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
+  /* ---------------------------------- */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* --- TÔ MÀU VÀO KHUÔN --- */
+  background-color: currentColor; /* Icon sẽ auto có màu vàng */
+  transition: background-color 0.2s;
+}
+.list-menu-icons {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+
+  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+  -webkit-mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
+  mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
+  /* ---------------------------------- */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* --- TÔ MÀU VÀO KHUÔN --- */
+  background-color: currentColor; /* Icon sẽ auto có màu vàng */
+  transition: background-color 0.2s;
+}
+
+.self-icons:before{
+	content: '\200B';
 }
 .header-logo{
 	float: left;
@@ -1443,7 +1583,7 @@ p:last-child {
     padding-bottom: 0 !important;
     background-position-y: 16%;
 	height: 425px;
-	max-width: 1824px;
+	max-width: 1865px;
 	border-radius: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;;
@@ -1649,15 +1789,10 @@ li.nav-item::marker {
 	text-transform: capitalize;
 	padding: 0.7rem 1.2rem;
 	font-weight: 600;
-	
 }
 
 .tieu-chuan-lua-chon-cong-ty-moi-gioi .accordion-button:not(.collapsed){
-	
     box-shadow: none;
-	
-	
-
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -1672,7 +1807,6 @@ li.nav-item::marker {
 }
 .tieu-chuan-lua-chon-cong-ty-moi-gioi .accordion-item{
 	
-    
 	background-color: transparent;
     border: 1px solid #E1E1E1;
     border-radius: 12px;
@@ -1835,3 +1969,257 @@ li.nav-item::marker {
     width: 50px; 
 
 }
+
+.tab-content-style-01 ul{
+	padding: 8px;
+    border: 1px solid #E1E1E1;
+    border-radius: 16px;
+	background-color: white;
+}
+.tab-content-style-01 ul li {
+    margin-bottom: 0px !important;
+}
+.tab-content-style-01 .accordion-button {
+    border: 1px solid transparent;
+    background-color: transparent;
+    text-transform: capitalize;
+    padding: 0.7rem 1.2rem;
+    font-weight: 600;
+}
+.tab-content-style-01 .accordion-item {
+    background-color: transparent;
+    border-radius: 12px;
+	margin-bottom: 0px;
+}
+.tab-content-style-01 .nav-link {
+    border: 0px solid black !important;
+}
+.tab-content-style-01 .accordion-header {
+    margin-bottom: 0px;
+}
+
+.tab-content-style-01 .accordion-button::after {
+    background-image: none;
+    content: '+';
+	font-size: 2rem;
+	font-weight: 300;
+	transform: none;
+  	transition: none;
+	line-height: 20px;
+}
+
+.tab-content-style-01 .accordion-button:not(.collapsed)::after {
+    content: '−';
+	transform: none;
+}
+.tab-content-style-01 .item{
+	position: relative;
+}
+.tab-content-style-01 .item::after {
+	background: linear-gradient(to bottom, transparent 0%,#EABF73 20%,#D59A45 80%,transparent 100%);
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+	right: 0;
+    top: 50%;
+	transform: translateY(-50%);
+	display: block;
+}
+.tab-content-style-01 .item::before {
+	content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    /* Vạch ngang mờ 2 đầu (đổi hướng gradient) */
+    background: linear-gradient(to right,transparent 0%, #EABF73 20%, #D59A45 80%, transparent 100%);
+    display: block;
+}
+/* --- DỌN DẸP CHO MOBILE (Grid 2x2) --- */
+/* (Mặc định là mobile) */
+
+/* 1. Ẩn vạch DỌC của cột bên phải (item 2, 4) */
+.tab-content-style-01 .item:nth-child(even):after {
+    display: none;
+}
+/* 2. Ẩn vạch NGANG của hàng bên dưới (item 3, 4) */
+.tab-content-style-01 .item:nth-child(3):before,
+.tab-content-style-01 .item:nth-child(4):before {
+    display: none;
+}
+
+
+/* --- DỌN DẸP CHO DESKTOP (lg:) --- */
+/* Dùng @media query (1024px là breakpoint "lg" của Tailwind) */
+@media (min-width: 1024px) {
+
+    /* 1. Ẩn TẤT CẢ vạch NGANG */
+    .tab-content-style-01 .item:before {
+        display: none;
+		width: 70%;
+    }
+    
+    /* 2. Hiện TẤT CẢ vạch DỌC (phòng trường hợp nó bị ẩn ở mobile) */
+    .tab-content-style-01 .item:nth-child(even):after {
+        display: block;
+		height: 70%;
+    }
+
+    /* 3. Ẩn vạch DỌC của item CUỐI CÙNG (như cũ) */
+    .tab-content-style-01 .item:last-child:after {
+        display: none;
+    }
+}
+/* .tab-content-style-01 .item:last-child:after {
+    display: none; 
+} */
+
+.tab-content-style-01 .accordion-button{
+	border: 1px solid transparent;
+    background-color: transparent;
+	text-transform: capitalize;
+	padding: 0.7rem 1.2rem;
+	font-weight: 500;
+}
+
+.tab-content-style-01 .accordion-button:not(.collapsed){
+    box-shadow: none;
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.tab-content-style-01 .collapse{
+	visibility:inherit !important;
+}
+.tab-content-style-01 .accordion-item:focus-visible {
+	border: 1px solid #FFD45C;
+}
+.tab-content-style-01 .accordion-item:hover {
+	border: 1px solid #FFD45C;
+}
+
+.tab-content-style-01 .accordion-button:focus{
+    box-shadow: none;
+	border-color: transparent;
+}
+.tab-content-style-01 button:focus:not(:focus-visible) {
+    outline: inherit;
+}
+.bg-thumbnail {
+	background-size: cover !important;
+    background-position-y: 16% !important;
+    height: 100%;
+	position: relative;
+}
+.bds-thumbnail-2{
+	width: 25.313rem;
+	height: 16.875rem;
+	--tw-translate-y: calc(calc(1 / 7 * 100%) * -1);
+    transform: translateY(var(--tw-translate-y));
+
+}
+.bds-content{
+	border: 1px solid #E1E1E1;
+    border-radius: 16px;
+}
+.module_real_estate .bds-content{
+	padding: 1rem 1rem 1rem 1rem;
+}
+.module_real_estate .category{
+	border: 1px solid #E1E1E1;
+    border-radius: 36px;
+	font-weight: 400;
+	padding:8px 16px;
+	color: #5C6267;
+}
+.module_real_estate .bds-title{
+    font-size: 20px;
+	font-weight: 600;
+}
+
+.module_real_estate .text_call_now{
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.gold-call-buton {
+	border-radius: 33px;
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	width: 40px;
+	height: 40px;
+	color: white;
+}
+
+.pennant-tag-green {
+	position: absolute;
+	top: 20px;  /* Cách mép trên 20px */
+	left: 0;
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%); */
+	font-size: 14px;
+	font-weight: 500;
+	color: white;
+	padding: 6px 23px 15px 15px;
+	transform: translate(-8px);
+
+	background-image: url('../images/pennant-tag-green.png');
+	background-size: cover;
+	background-position: center;
+}
+.pennant-tag-yellow {
+	position: absolute;
+	top: 20px;  /* Cách mép trên 20px */
+	left: 0;
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%); */
+	font-size: 14px;
+	font-weight: 500;
+	color: white;
+	padding: 6px 23px 15px 15px;
+	transform: translate(-8px);
+
+	background-image: url('../images/pennant-tag-yellow.png');
+	background-size: cover;
+	background-position: center;
+}
+.pennant-tag-red {
+	position: absolute;
+	top: 20px;  /* Cách mép trên 20px */
+	left: 0;
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%); */
+	font-size: 14px;
+	font-weight: 500;
+	color: white;
+	padding: 6px 23px 15px 15px;
+	transform: translate(-8px);
+
+	background-image: url('../images/pennant-tag-red.png');
+	background-size: cover;
+	background-position: center;
+}
+
+.list-disc ul,.list-disc li{
+	list-style: disc !important;
+}
+
+/* Dán cái này vào file CSS "gốc" của anh */
+
+@layer utilities {
+  /* * "Bí kíp" tự chế class "scrollbar-hide" 
+   */
+  .scrollbar-hide {
+    /* 1. "Giấu" cho Firefox */
+    scrollbar-width: none;
+    
+    /* 2. "Giấu" cho WebKit (Chrome, Safari, Edge) */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+
