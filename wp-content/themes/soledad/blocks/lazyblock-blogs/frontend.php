@@ -106,7 +106,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                 $wp_query->the_post(); // Lấy bài viết đầu tiên (Post 1)
                                 $k++;
                             ?>
-                                <div class="col-span-1 lg:col-span-2">
+                                <div class="col-span-3 lg:col-span-2">
                                     <div class="">
                                         <div class="relative pt-[60%] lg:pt-[50%]"> 
                                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="rounded-2xl w-full! h-full!">
