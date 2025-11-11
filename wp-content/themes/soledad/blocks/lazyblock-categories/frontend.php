@@ -44,18 +44,20 @@ if (!function_exists('lth_categories_output_fe')) :
             <?php endif; ?>
 
             <div class="module_content">
-                <div>
+                <?php if ($attributes['categories_style'] == 'grid-01') { ?>
                     <div class="flex flex-wrap justify-center">
                         <?php foreach( $attributes['items'] as $inner ) { ?>
                             
                                 <div class="item p-2">
                                     <div class="content">
                                         <div class="content-header">
+                                            <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
                                                     <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
                                                 </a>
                                             </div>
+                                            <?php } ?>
                                             <div class="content-box">
                                                 <div class="content-excerpt">
                                                     <?php echo wpautop($inner['item_text']); ?>
@@ -72,7 +74,17 @@ if (!function_exists('lth_categories_output_fe')) :
                             
                         <?php } ?>
                     </div>
-                </div>
+                <?php } ?>
+
+                <?php if ($attributes['categories_style'] == 'list-01'){ ?>
+
+                    <ul class="py-4 list-none">
+                        <?php foreach( $attributes['items'] as $inner ) { ?>
+                            <li class="list-none"><a href="<?php echo get_category_link($inner['item']); ?>" ><?php echo wpautop($inner['item_title']); ?></a></li>
+                        <?php }?>
+                    </ul>
+
+                <?php }  ?>
             </div>
         </div>
     </section>

@@ -378,6 +378,36 @@ p:last-child {
 .module_blogs .content_grid.style_02 .item {
 	width: calc(100% / 5);
 }
+
+.module_blogs .content-excerpt{
+	overflow-y: scroll;
+    height: 100px;
+}
+.list-01 .module_categories a {
+	font-size: 16px;
+	color: white;
+	font-weight: 500;
+	display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.list-01 .module_categories a::before {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+	rotate: -45deg;
+}
+.list-01 .module_categories ul li{
+	list-style-type: none !important;
+	margin-bottom: 14px;
+}
+.list-01 .module_categories ul{
+	padding-left: 24px;
+}
+
 .swiper-brands .swiper-pagination {
 	position: relative;
 	margin-top: 30px;
@@ -1512,8 +1542,9 @@ p:last-child {
 .style-01 .module_blogs .content-image {
 	/* width: 296px !important; */
     /* height: 208px !important; */
-	--tw-translate-y: calc(calc(1 / 7 * 100%) * -1);
-    transform: translateY(var(--tw-translate-y));
+	/* --tw-translate-y: calc(calc(1 / 7 * 100%) * -1);
+    transform: translateY(var(--tw-translate-y)); */
+	transform: translate(0px, -22px);
 }
 
 .style-01 .module_blogs .content-name p:after {
@@ -2220,6 +2251,18 @@ li.nav-item::marker {
     display: none;
   }
 }
+
+body, html {
+  /* 1. "CẤM" Bệnh 1 (Kéo Ngang / Bể Layout) */
+  overflow-x: hidden;
+  
+  /* 2. "CẤM" Bệnh 2 (Kéo Mép Trái/Phải) */
+  overscroll-behavior-x: contain;
+  
+  /* 3. "CẤM" Bệnh 2 (Kéo Nảy Dọc / Reload) */
+  overscroll-behavior-y: contain;
+}
+
 
 
 

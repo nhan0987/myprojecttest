@@ -98,6 +98,32 @@ if (function_exists('lazyblocks')) :
            'required' => 'false',
            'placeholder' => '',
            'characters_limit' => '',
+         )
+         ,'control_url_lth_categories_style' => array(
+           'type' => 'select',
+           'name' => 'categories_style',
+           'default' => '',
+           'label' => 'Style',
+           'help' => '',
+           'child_of' => '',
+           'placement' => 'inspector',
+           'width' => '100',
+           'hide_if_not_selected' => 'false',
+           'save_in_meta' => 'false',
+           'save_in_meta_name' => '',
+           'required' => 'false',
+           'placeholder' => '',
+           'characters_limit' => '',
+           'choices' => array(
+               array(
+                  'label' => 'List',
+                  'value' => 'list-01',
+               ),
+               array(
+                  'label' => 'Grid',
+                  'value' => 'grid-01',
+               )
+            )
          ),
          'control_repeater_lth_items' => array(
             'type' => 'repeater',
