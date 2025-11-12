@@ -1,0 +1,298 @@
+.stnd-icons {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    background-color: black;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+
+}
+
+.icons-building {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/building.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/building.svg');
+}
+
+.icons-demand {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
+}
+
+.icons-home {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/home.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/home.svg');
+}
+
+.icons-humans-group {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
+}
+
+.icons-key {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/buikeylding.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/key.svg');
+}
+
+.icons-location-outlined {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
+}
+
+.icons-money {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/money.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/money.svg');
+}
+
+.icons-wifi {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
+}
+
+.icons-sofa {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
+}
+
+.icons-leaf {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
+}
+
+.icons-coffe {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
+}
+
+.icons-humans-group-1 {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group-1.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/humans-groups-1.svg');
+}
+
+.arrow-right-icons {
+    display: inline-block;
+    width: 7px;
+    height: 13px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/stnd-arrow-right.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/stnd-arrow-right.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: currentColor;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.grid-menu-icons {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: currentColor;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.list-menu-icons {
+    display: inline-block;
+    width: 14px;
+    height: 10px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: currentColor;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.telephone-icons {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: #f5f4f0;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.email-icons {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/email.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/email.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: #f5f4f0;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.location-icons {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/location.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/location.svg');
+    /* ---------------------------------- */
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* --- TÔ MÀU VÀO KHUÔN --- */
+    background-color: #f5f4f0;
+    /* Icon sẽ auto có màu vàng */
+    transition: background-color 0.2s;
+}
+
+.polygon-icon {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/Polygon-2.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/Polygon-2.svg');
+
+}
+
+.employee_apply-icons {
+
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/employee_apply.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/employee_apply.svg');
+
+}
+
+.engaged_employees-icons {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/engaged_employees.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/engaged_employees.svg');
+
+}
+
+.hand-love-icons {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/hand-love.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/hand-love.svg');
+
+}
+
+.hands-shake-icons {
+
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/hands-shake.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/hands-shake.svg');
+
+}
+
+.happy-face-icons {
+
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/happy-face.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/happy-face.svg');
+
+}
+
+.leader-icons {
+
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/leader.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/leader.svg');
+
+}
+
+.organization-icons {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/organization.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/organization.svg');
+
+}
+
+.paper-airplanes-icons {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/paper_airplanes.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/paper_airplanes.svg');
+
+}
+
+.reputation-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/reputation.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/reputation.svg');
+}
+.reputation-outlined-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/reputation-outlined.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/reputation-outlined.svg');
+}
+
+.staff-icons {
+
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
+
+}

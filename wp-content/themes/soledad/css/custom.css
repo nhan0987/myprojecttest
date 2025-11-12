@@ -223,6 +223,32 @@ p:last-child {
     margin-right: 10px;
 }
 
+.dash-02 .title-box .title:before {
+	background-color: #333;
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin-right: 10px;
+}
+.dash-02 .title-box .title {
+	display: flex;
+    align-items: center;
+	padding: 6px 40px 6px 0px;
+	margin-bottom: 0;
+	position: relative;
+	font-weight: 400;
+	font-size: 14px;
+
+	background-color: #333;
+	-webkit-background-clip: text;
+	background-clip: text;
+  	color: transparent;
+  	-webkit-text-fill-color: black;
+	text-transform: uppercase;
+}
+
+
 
 .underline-01 .title-box .title-underline {
     display: block ;
@@ -1136,19 +1162,7 @@ p:last-child {
 	/* padding-bottom: 12px; */
 }
 
-.polygon-icon {
-  display: inline-block;
-  width: 20px;  /* Set kích thước Oniichan muốn */
-  height: 20px;
-  
-  /* --- GỌI HỒN EM NÓ VÀO ĐÂY --- */
-  background-image: url('/wp-content/themes/soledad/icons/Polygon-2.svg'); 
-  /* ------------------------------- */
-  
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
+
 
 .footer-widget-wrapper .menu-item a::before {
   content: ''; 
@@ -1179,201 +1193,14 @@ p:last-child {
 } 
 */
 
-.email-icons {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
 
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/email.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/email.svg');
-  /* ---------------------------------- */
 
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
 
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
 
-.location-icons {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/location.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/location.svg');
-  /* ---------------------------------- */
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
-
-.telephone-icons {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
-  /* ---------------------------------- */
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: #f5f4f0; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
-
-.stnd-icons {
-	display: inline-block;
-	width: 40px;
-  	height: 40px;
-
-	-webkit-mask-repeat: no-repeat;
-	mask-repeat: no-repeat;
-	-webkit-mask-position: center;
-	mask-position: center;
-	-webkit-mask-size: contain;
-	mask-size: contain;
-	background-color: black; /* Icon sẽ auto có màu vàng */
-  	transition: background-color 0.2s;
-}
 .gold-color {
 	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
 }
-.icons-building{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/building.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/building.svg');
-}
-.icons-demand{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/demand.svg');
-}
-.icons-home{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/home.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/home.svg');
-}
-.icons-humans-group{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/humans-group.svg');
-}
-.icons-key{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/buikeylding.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/key.svg');
-}
-.icons-location-outlined{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/location-outlined.svg');
-}
-.icons-money{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/money.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/money.svg');
-}
-.icons-wifi{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/wi-fi.svg');
-}
-.icons-sofa{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/sofa.svg');
-}
-.icons-leaf{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/leaf.svg');
-}
-.icons-coffe{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/coffe.svg');
-}
-.icons-humans-group-1{
-	-webkit-mask-image: url('/wp-content/themes/soledad/icons/humans-group-1.svg');
-  	mask-image: url('/wp-content/themes/soledad/icons/humans-groups-1.svg');
-}
 
-.arrow-right-icons {
-  display: inline-block;
-  width: 7px;
-  height: 13px;
-
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/stnd-arrow-right.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/stnd-arrow-right.svg');
-  /* ---------------------------------- */
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: currentColor; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
-.grid-menu-icons {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
-  /* ---------------------------------- */
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: currentColor; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
-.list-menu-icons {
-  display: inline-block;
-  width: 14px;
-  height: 10px;
-
-  /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
-  -webkit-mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
-  mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
-  /* ---------------------------------- */
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  /* --- TÔ MÀU VÀO KHUÔN --- */
-  background-color: currentColor; /* Icon sẽ auto có màu vàng */
-  transition: background-color 0.2s;
-}
 
 .self-icons:before{
 	content: '\200B';
@@ -2261,6 +2088,163 @@ body, html {
   
   /* 3. "CẤM" Bệnh 2 (Kéo Nảy Dọc / Reload) */
   overscroll-behavior-y: contain;
+}
+
+.tab-content-style-02 .accordion-item{
+	position: relative;
+	border: 1px solid #eaab39;
+	background-color: transparent;
+    border-radius: 12px;
+	margin-bottom: 0px;
+	overflow: visible;
+}
+.tab-content-style-02 .shield-box {
+	position: absolute;
+	top:0;
+	left: 0;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+	border-radius: 8px;
+	justify-content: center;
+	align-items: center;
+	rotate: 45deg;
+	display: flex;
+	z-index: 10;
+	width: 30px;
+	height: 30px;
+	background: radial-gradient(92.46% 138.54% at 49.35% 100%, #FFD45C 0%, #9E5625 100%);
+}
+.tab-content-style-02 .shield-box .number{
+	color: #fff;
+	rotate: -45deg;
+	font-size: 16px;
+	font-weight: 700;
+	font-family: Roboto;
+	font-style: Bold;
+
+}
+
+.tab-content-style-02 .accordion-button {
+    border: 1px solid transparent;
+    background-color: transparent;
+    text-transform: capitalize;
+    padding: 0.7rem 1.2rem;
+    font-weight: 500;
+}
+.tab-content-style-02 .accordion-item {
+    background-color: transparent;
+    border-radius: 12px;
+	margin-bottom: 0px;
+}
+.tab-content-style-02 .accordion-button::after {
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+    content: '';
+	display: block;
+	width: 24px;
+    height: 2px;
+
+	font-size: 2rem;
+	font-weight: 300;
+	transform: none;
+  	transition: none;
+	line-height: 20px;
+}
+
+.tab-content-style-02 .accordion-button:not(.collapsed)::after {
+    content: '';
+	transform: none;
+	display: none;
+}
+
+.tab-content-style-02 .accordion-button:not(.collapsed){
+    box-shadow: none;
+	background: linear-gradient(87.05deg, #FFD45C 1.1%, #9E5625 47.94%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.tab-content-style-02 .collapse{
+	visibility:inherit !important;
+}
+.tab-content-style-02 .accordion-item:focus-visible {
+	border: 1px solid #FFD45C;
+}
+.tab-content-style-02 .accordion-item:hover {
+	border: 1px solid #FFD45C;
+}
+
+.tab-content-style-02 .accordion-button:focus{
+    box-shadow: none;
+	border-color: transparent;
+}
+.tab-content-style-02 button:focus:not(:focus-visible) {
+    outline: inherit;
+}
+.tab-content-style-02 .accordion-header {
+    margin-bottom: 0px;
+}
+
+.accordion-item.bg-gray-900 .accordion-body{
+    color: #fff !important; 
+}
+
+.accordion-item.bg-gray-900 {
+   
+    background-color: #232D39 !important; 
+}
+
+.apply-form .btn-gold-submit-full {
+	width: -webkit-fill-available !important;
+}
+
+.just-email-form .wpcf7-submit{
+	background-image: url('/wp-content/themes/soledad/icons/paper_airplanes.svg') !important;
+	background-repeat: no-repeat !important;        
+	/* Căn chỉnh nền */
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: 24px 24px !important; /* Kích thước của icon bên trong */
+	
+	/* Xóa style mặc định của button */
+	background-color: transparent !important;
+	border: none !important;
+	
+	/* ĐỊNH VỊ CHO NÚT (Absolute) 
+		Đặt đè lên trên thẻ input
+	*/
+	position: absolute; 
+	top: 23%;
+	transform: translateY(-50%);
+	right: -17px; 
+	
+	/* ĐẶT KÍCH THƯỚC CHO VÙNG BẤM
+		(Phải lớn hơn background-size) 
+	*/
+	width: 40px; 
+	height: 40px;
+	
+	cursor: pointer !important;
+	transition: opacity 0.2s !important;
+}
+
+.just-email-form .wpcf7-submit:hover{
+	opacity: 0.8;
+}
+
+.just-email-form .wpcf7-validates-as-email{
+	width: 100%; 
+	border-radius: 9999px; 
+	background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+	/* QUAN TRỌNG: Phải chừa padding-right 
+		để có chỗ cho nút bấm (background)
+	*/
+	padding: 12px 60px 12px 24px; 
+	outline: none; 
+	font-size: 1rem;
+}
+.just-email-form .wpcf7-form{
+	position: relative;
 }
 
 

@@ -4323,6 +4323,7 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 		wp_enqueue_style('fancybox', THEME_URI . '/css/jquery.fancybox.min.css', false, 'all');
 		wp_enqueue_style('swiper', THEME_URI . '/css/swiper-bundle.min.css', false, 'all');
 		wp_enqueue_style('custom', THEME_URI . '/css/custom.css', false, 'all');
+		wp_enqueue_style('stnd', THEME_URI . '/css/stnd-icons.css', false, 'all');
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_styles');
 
@@ -4339,6 +4340,7 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 		wp_enqueue_script('custom', THEME_URI . '/js/custom.js', false, 'all');
 		wp_enqueue_script('tailwind', THEME_URI . '/css/tailwind-3.4.17.css', false, 'all');
 		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js', false, 'all');
+		
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_scripts', 99);
 
@@ -4412,3 +4414,13 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 			'1.0.0' // (string) Phiên bản (tốt cho việc xóa cache khi cập nhật)
 		);
 	}
+
+	function inject_footer_custom_js() {
+
+		if ( is_page('tuyen-dung') ) { 
+
+			wp_enqueue_script('tuyendung', THEME_URI . '/js/tuyendung.js', array('jquery'),'1.0.0', true);
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'inject_footer_custom_js' );
+
