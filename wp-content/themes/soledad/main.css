@@ -11266,7 +11266,9 @@ ul.footer-socials li svg,
 /* = Footer Logo & copyright
 -----------------------------------------------------*/
 #footer-copyright {
-	display: none;
+	padding-top: 18px;
+    border-top: 1px solid #FFFFFF33;
+    
 }
 .footer-logo-copyright {
     padding: 40px 0 73px;
@@ -14960,7 +14962,7 @@ a img.aligncenter {
 -----------------------------------------------------*/
 div.wpcf7 {
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 14px;
 }
 span.wpcf7-not-valid-tip {
     margin-top: -15px;
