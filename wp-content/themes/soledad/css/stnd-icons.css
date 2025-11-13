@@ -291,8 +291,35 @@
 }
 
 .staff-icons {
-
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
     mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
+}
 
+.event-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/event.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/event.svg');
+}
+.paper-airplanes-1-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/paper_airplanes_1.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/paper_airplanes_1.svg');
+}
+.research-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/research.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/research.svg');
+}
+.training-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/trainning.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/trainning.svg');
+}
+.training-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/trainning.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/trainning.svg');
+}
+.email-1-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/email-1.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/email-1.svg');
+}
+.checked-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/checked.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/checked.svg');
 }

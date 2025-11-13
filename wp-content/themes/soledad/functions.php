@@ -4417,7 +4417,7 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 
 	function inject_footer_custom_js() {
 
-		if ( is_page('tuyen-dung') ) { 
+		if ( is_page('tuyen-dung') || is_page('dao-tao')) { 
 
 			wp_enqueue_script('tuyendung', THEME_URI . '/js/tuyendung.js', array('jquery'),'1.0.0', true);
 		}
