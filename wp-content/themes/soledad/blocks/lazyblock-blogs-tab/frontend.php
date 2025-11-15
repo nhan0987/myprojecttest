@@ -20,7 +20,7 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
         ob_start();
 ?>
 <section class="lth-blogs">
-    <div class="container">        
+    <div class="">        
         <div class="module module_blogs">
             <?php if ($attributes['title'] || $attributes['description']) : ?>
                 <div class="module_header title-box">
@@ -89,7 +89,7 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                                     <div class="flex flex-wrap md:justify-between justify-center">
                                         <?php while ($wp_query->have_posts()) {
                                             $wp_query-> the_post(); ?>
-                                            <div class="item md:w-[230px]">
+                                            <div class="item xl:w-[230px]">
                                                 <?php //load file tương ứng với post format
                                                     get_template_part('template-parts/post/content', 'tab');
                                                 ?>

@@ -11,6 +11,10 @@ jQuery(document).ready(function($) {
         //     el: '.swiper-pagination',
         //     clickable: true,
         // },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
     });
 
     var swiper_slidershow = new Swiper('.swiper-brands', {

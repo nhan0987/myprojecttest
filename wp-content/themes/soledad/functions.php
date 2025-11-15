@@ -989,7 +989,7 @@ if (function_exists('register_sidebar')) {
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title penci-border-arrow"><span class="inner-arrow">',
-			'after_title'   => '</span><div class="h-[3px] w-12 bg-[linear-gradient(86.24deg,#FFD45C_1.16%,#9E5625_128.11%)]"></div></h4>',
+			'after_title'   => '</span><div class="h-[2px] w-12 bg-[linear-gradient(86.24deg,#FFD45C_1.16%,#9E5625_128.11%)]"></div></h4>',
 		));
 	}
 

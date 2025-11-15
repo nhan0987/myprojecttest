@@ -18,7 +18,7 @@ if (!function_exists('lth_features_output_fe')) :
     function lth_features_output_fe($output, $attributes) {
         ob_start();
 ?>  
-<section class="lth-features max-w-7xl mx-auto">            
+<section class="lth-features">            
     <div class="module module_features">
         <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
             <div class="module_header title-box">
@@ -47,26 +47,25 @@ if (!function_exists('lth_features_output_fe')) :
         <?php endif; ?>
         
         <div class="module_content">
-            <div class="flex flex-wrap justify-center gap-2 md:gap-0  md:justify-between">
+            <div class="grid grid-cols-2 lg:grid-cols-5 justify-center gap-2 md:gap-0 lg:justify-between">
                 <?php foreach( $attributes['items'] as $inner ): ?>
-                    <div class="item">
+                    <div class="item flex flex-col items-center justify-between">
                         
-                            <div class="content">
-                                <div class="content-image">
-                                    <div class="image">
-                                        <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon" width="100" height="100">
-                                    </div>
-                                </div>
-
-                                <div class="content-box">
-                                    <h3 class="content-name">
-                                        <?php echo wpautop($inner['item_title']); ?>
-                                    </h3>
-                                    <div class="content-excerpt">
-                                        <?php echo wpautop($inner['item_text']); ?>
-                                    </div>
-                                </div>
+                        <div class="content-image">
+                            <div class="image">
+                                <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon" width="100" height="100">
                             </div>
+                        </div>
+
+                        <div class="content-box">
+                            <h3 class="content-name">
+                                <?php echo wpautop($inner['item_title']); ?>
+                            </h3>
+                            <div class="content-excerpt">
+                                <?php echo wpautop($inner['item_text']); ?>
+                            </div>
+                        </div>
+                            
                         
                     </div>
                 <?php endforeach; ?>

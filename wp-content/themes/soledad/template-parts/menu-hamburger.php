@@ -132,9 +132,9 @@ if( get_theme_mod('penci_vertical_nav_show') ) {
 			?>
 			<?php if ( ! $hide_social ): ?>
 				<?php if ( get_theme_mod( 'penci_email_me' ) || get_theme_mod( 'penci_vk' ) || penci_get_setting( 'penci_facebook' ) || penci_get_setting( 'penci_twitter' ) || get_theme_mod( 'penci_google' ) || get_theme_mod( 'penci_instagram' ) || get_theme_mod( 'penci_pinterest' ) || get_theme_mod( 'penci_linkedin' ) || get_theme_mod( 'penci_flickr' ) || get_theme_mod( 'penci_behance' ) || get_theme_mod( 'penci_tumblr' ) || get_theme_mod( 'penci_youtube' ) || get_theme_mod( 'penci_rss' )|| get_theme_mod( 'penci_slack' ) ) : ?>
-					<div class="header-social sidebar-nav-social penci-hbg-social-<?php echo $social_style; ?>">
+					<!-- <div class="header-social sidebar-nav-social penci-hbg-social-<?php echo $social_style; ?>">
 						<?php get_template_part( 'inc/modules/socials' ); ?>
-					</div>
+					</div> -->
 				<?php endif; ?>
 			<?php endif; ?>
 

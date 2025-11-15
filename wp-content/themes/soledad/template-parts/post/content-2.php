@@ -14,7 +14,7 @@
             ?>
                 <div class="content-image col-span-4">
                     <a href="<?php the_permalink(); ?>" title="" class="image">
-                        <img src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?> - Ảnh mặc định">
+                        <img class="zoom-image" src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?> - Ảnh mặc định">
                     </a>
                 </div>
             <?php

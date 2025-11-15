@@ -323,3 +323,31 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/checked.svg');
     mask-image: url('/wp-content/themes/soledad/icons/checked.svg');
 }
+
+.stnd-images-icons {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+}
+
+.facebook-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icons-facebook.svg');
+}
+.messenger-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icons-messenger.svg');
+}
+.zalo-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icons-zalo.svg');
+}
+.youtube-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icon-youtube.svg');
+}
+.tiktok-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icon-tiktok.svg');
+}
+.linkedin-icons {
+    background-image: url('/wp-content/themes/soledad/icons/icon-linkedin.svg');
+}

@@ -11,9 +11,9 @@
 
                 $default_thumbnail_src = get_default_thumbnail_url('default-images.png');
             ?>
-                <div class="content-image col-span-3 md:col-span-4">
+                <div class="content-image image-zoom-container col-span-3 md:col-span-4">
                     <a href="<?php the_permalink(); ?>" title="" class="image">
-                        <img src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?> - Ảnh mặc định">
+                        <img class="zoom-image" src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?> - Ảnh mặc định">
                     </a>
                 </div>
             <?php

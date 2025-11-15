@@ -93,7 +93,11 @@ body:not(.penci-fawesome-ver5) .penci-faicon{
 body:not(.penci-fawesome-ver5) .penci-faicon.fa-vimeo:before {
     content: "\f27d";
 }
-textarea, input[type="text"], input[type="email"], input[type="search"], input[type="button"], input[type="submit"], button{ -webkit-appearance: none; border-radius: 0; -webkit-border-radius: 0; }
+textarea, input[type="text"],input[type="email"] ,input[type="search"], input[type="button"], input[type="submit"], button{ 
+    -webkit-appearance: none; 
+    border-radius: 0; 
+    -webkit-border-radius: 0; 
+}
 
 p:empty:before {
     content: none;
@@ -2056,7 +2060,7 @@ li.penci-mega-menu > ul.sub-menu {
     width: 270px;
     overflow-y: auto;
     padding: 30px 20px 20px;
-    background: #ffffff;
+    background: #232d39;
     left: 0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -2119,12 +2123,12 @@ li.penci-mega-menu > ul.sub-menu {
 
 #sidebar-nav-logo:before {
     content: "";
-    width: 60px;
+    width: 263px;
     height: 1px;
-    background: #6eb48c;
+    background: rgba(255, 255, 255, 0.12);
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 5%;
     margin-left: -30px;
 }
 .header-social.sidebar-nav-social {
@@ -2559,7 +2563,7 @@ li.penci-mega-menu > ul.sub-menu {
 .penci-menu-hbg .menu li,
 #sidebar-nav .menu li {
     display: block;
-    border-bottom: 1px solid #DEDEDE;
+    /* border-bottom: 1px solid #DEDEDE; */
     padding: 0;
     margin-bottom: 0;
 }
@@ -2583,18 +2587,18 @@ li.penci-mega-menu > ul.sub-menu {
 }
 .penci-menu-hbg .menu li a,
 #sidebar-nav .menu li a {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: #313131;
+    color: white;
     margin: 0;
     position: relative;
     padding: 13px 0 13px 0;
     display: block;
     line-height: 1.3em;
-    font-family: 'Raleway',sans-serif;
-    font-weight: bold;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
 }
 .penci-menu-hbg .menu li a {
     text-decoration: none;
@@ -2614,7 +2618,7 @@ li.penci-mega-menu > ul.sub-menu {
 }
 .penci-menu-hbg ul.sub-menu,
 #sidebar-nav ul.sub-menu {
-    border-top: 1px solid #DEDEDE;
+    border-top: 1px solid #FEC769;
     display: none;
     padding: 10px 0 10px 12px;
 }
@@ -2987,9 +2991,9 @@ li.penci-mega-menu > ul.sub-menu {
 }
 #top-search > a {
     height: 58px;
-    font-size: 14px;
+    font-size: 24px;
     line-height: 58px;
-    color: #313131;
+    color: white;
     cursor: pointer;
     background: none;
     display: block;
@@ -11439,7 +11443,7 @@ ul.footer-menu{
     line-height: 1.8;
 }
 #widget-area {
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
     padding: 40px 0;
     background: #ffffff;
@@ -13000,11 +13004,11 @@ form.pc-searchform #s:focus {
 /* = Footer box widget
 -----------------------------------------------------*/
 .footer-widget-wrapper .widget {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 .footer-widget-wrapper .widget .widget-title {
     color: #313131;
-    margin: 0 0 10px;
+    margin: 0 0 2px;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
@@ -13018,13 +13022,16 @@ form.pc-searchform #s:focus {
     border-top: none;
     border-left: none;
     border-right: none;
-    padding: 0 0 10px;
+    padding: 0 0 2px;
     background: none;
     border-bottom: 3px solid #e0e0e0;
 }
 .footer-widget-wrapper .widget .widget-title:before,
 .footer-widget-wrapper .widget .widget-title:after {
     content: none;
+}
+.footer-widget-wrapper .widget .penci-border-arrow{
+    margin-bottom:24px
 }
 
 /** MailChimp for Wordpress widget & shortcode **/
@@ -17902,7 +17909,7 @@ p.has-drop-cap:not(:focus):first-letter {
     }
     .footer-widget-wrapper.footer-widget-style-4 {
         width: 48%;
-        margin-right: 4%;
+        /* margin-right: 4%; */
     }
     .footer-widget-wrapper.footer-widget-style-4:nth-child(2) {
         margin-right: 0;
@@ -17912,7 +17919,7 @@ p.has-drop-cap:not(:focus):first-letter {
     }
     .footer-widget-wrapper.footer-widget-style-4:nth-child(1),
     .footer-widget-wrapper.footer-widget-style-4:nth-child(2) {
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }
     .footer-widget-wrapper.footer-widget-style-5,
     .footer-widget-wrapper.footer-widget-style-6,
@@ -18911,7 +18918,7 @@ p.has-drop-cap:not(:focus):first-letter {
     }
     .footer-widget-wrapper {
         width: 100% !important;
-        margin: 0 0 30px 0 !important;
+         margin: 0 0 0 0;
         float: none;
     }
     .footer-widget-wrapper.last {
