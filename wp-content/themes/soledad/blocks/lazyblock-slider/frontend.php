@@ -60,8 +60,8 @@ if (!function_exists('lth_slider_output_fe')) :
                             <div class="swiper-pagination"></div>
                             <div class="swiper-content absolute top-0 left-0 z-[2] translate-x-[24px] sm:translate-x-[24px] xl:translate-x-[241px]! translate-y-[191px]">
                                  <div class="flex flex-col gap-3">
-                                    <div class="text-left"><span class="font-normal text-[20px] text-white">- Bất động sản Hà Nội</span></div>
-                                    <div class="text-left"><span class="capitalize font-bold text-2xl xl:text-[40px] bg-[linear-gradient(86.24deg,_#FFD45C_1.16%,_#9E5625_128.11%)] bg-clip-text text-transparent leading-tight"><span class="text-transparent lg:text-white text-[20px] lgtext-[50px]">Siêu thị nhà đất</span> <br>Khác biệt tạo dấu ấn </span></div>
+                                    <div class="text-left"><span class="font-normal text-base lg:text-[20px] text-white">- Bất động sản Hà Nội</span></div>
+                                    <div class="text-left"><span class="capitalize font-bold text-2xl xl:text-[40px] bg-[linear-gradient(86.24deg,_#FFD45C_1.16%,_#9E5625_128.11%)] bg-clip-text text-transparent leading-tight"><span class="text-transparent lg:text-white text-[20px] lg:text-[50px]">Siêu thị nhà đất</span> <br>Khác biệt tạo dấu ấn </span></div>
                                     <div class="text-left"><span class="font-medium text-xs xl:text-base text-white my-[10px]">Chuyên mua bán, ký gửi Bất động sản thổ cư <br> Hà Nội (Nhà mặt phố, Biệt thự, Văn phòng)</span></div>
                                     <div class="btn-gold "><a href="#danh-muc-bds"><span class="text-white">Khám phá ngay</span></a></div>
                                 
