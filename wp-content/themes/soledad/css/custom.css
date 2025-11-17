@@ -1329,7 +1329,7 @@ p:last-child {
 	border-image-source: linear-gradient(73.08deg, #FFD45C 0%, rgba(250, 210, 76, 0) 44.66%, #FFD45C 100%); */
 	border: 2px solid #FFD45C;
 	border-radius: 12px;
-	padding: 32px;
+	
 	
 }
 
@@ -2653,7 +2653,7 @@ body, html {
 		flex-direction: column;
 		display: flex;
 		height: 164.5px;
-        width: 168px;
+        width: 166px;
 	}
 
 	.cut-the-top-left-corner-07-container:is(:hover, :active)  {
@@ -2668,6 +2668,9 @@ body, html {
 		height: 201px;
         width: 341px;
 		align-items: flex-start;
+		padding: 0px 24px 0 24px;
+        gap: 27px;
+		
 	}
 
 	.cut-the-top-left-corner-07-container:is(:hover, :active)::after{
@@ -2701,13 +2704,17 @@ body, html {
 	.cut-the-top-left-corner-07-container:is(:hover, :active) + .icons-top-left-container{
 		display: flex;
 	}
-	.cut-the-top-left-corner-07-container:is(:hover, :active) .icons-container .stnd-icons{
+	.cut-the-top-left-corner-07-container:is(:hover, :active) .icons-container {
 		display: none;
 	}
 }
 
 
 @media (min-width: 1280px) {
+	.cut-the-top-left-corner-07-container{
+        width: 237px;
+		height: 201px;
+	}
 	.cut-the-top-left-corner-07-container:is(:hover, :active)  {
 		aspect-ratio: 449 / 201 ;
 		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-07.svg");
@@ -2720,6 +2727,8 @@ body, html {
 		height: 201px;
         width: 449px;
 		transition: opacity 0.5s ease-out;
+		padding: 0px 24px 0px 24px;
+		gap: 32px;
 		
 	}
 	.cut-the-top-left-corner-07-container:is(:hover, :active)::after{
@@ -2738,6 +2747,7 @@ body, html {
 	.cut-the-top-left-corner-07-container:is(:hover, :active) .tlc-description {
 		display: block;
 		color: white;
+		font-size: 14px;
 	}
 	.cut-the-top-left-corner-07-container:is(:hover, :active) .tlc-title {
 		display: block;
@@ -2751,7 +2761,7 @@ body, html {
 	.cut-the-top-left-corner-07-container:is(:hover, :active) + .icons-top-left-container{
 		display: flex;
 	}
-	.cut-the-top-left-corner-07-container:is(:hover, :active) .icons-container .stnd-icons{
+	.cut-the-top-left-corner-07-container:is(:hover, :active) .icons-container {
 		display: none;
 	}
 

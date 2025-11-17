@@ -56,7 +56,7 @@ if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product
 <?php if( ! $penci_hide_footer ): ?>
 
 	<div class="relative">
-		<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 lg:-translate-y-1/2  max-w-sm w-[90%] sm:w-[100%] xl:max-w-7xl! px-3 xl:px-[30px]! py-3 shadow-lg text-white text-sm xl:text-lg flex flex-col xl:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
+		<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 lg:-translate-y-1/2  max-w-sm lg:max-w-4xl  w-[90%] 2xl:w-[100%] xl:max-w-7xl! px-3 xl:px-[30px]! py-3 shadow-lg text-white text-sm xl:text-base 2xl:text-lg flex flex-col lg:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
 				
 			<div class="flex items-center gap-2"><i class="location-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium  xl:text-lg xl:font-medium"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
 			<div class="flex items-center gap-2"><i class="email-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Email: contact@stnd.vn</div>
@@ -81,10 +81,7 @@ if( ! empty( $footerreorder_array ) ) {
 
 			<div id="widget-area" class="rounded-t-[2rem] relative" <?php if( get_theme_mod( 'penci_footer_widget_bg_image' ) ): echo ' class="penci-lazy" data-src="'. get_theme_mod( 'penci_footer_widget_bg_image' ) .'"'; endif; ?>>
 
-				
-				
-
-				<div class="xl:max-w-7xl max-w-sm mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr] relative z-2 <?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
+				<div class="xl:max-w-6xl max-w-sm 2xl:max-w-7xl mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr] relative z-2 <?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
 					<?php if( in_array( $footer_layout, array( 'style-1', 'style-5', 'style-6', 'style-7' ) ) ){ ?>
 						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
 							<?php dynamic_sidebar( 'footer-1' ); ?>
