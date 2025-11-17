@@ -1074,10 +1074,10 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
 }
 #navigation .menu li a {
     font-family: 'Raleway', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 1px;
-    color: #313131;
-    line-height: 22px;
+    color: hwb(0 19% 81%);
+    line-height: 1.375rem;
     text-transform: uppercase;
     display: inline-block;
     -o-transition: .3s;
@@ -1088,6 +1088,14 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
     font-weight: bold;
     text-decoration: none;
     font-weight: 700;
+}
+@media (min-width:1024px) {
+    #navigation .menu li a {
+   
+    font-size: 0.625rem;
+    
+}
+    
 }
 #navigation .menu li a i {
     font-size: 13px;
