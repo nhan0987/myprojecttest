@@ -54,16 +54,16 @@ if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product
 ?>
 
 <?php if( ! $penci_hide_footer ): ?>
-<!-- <div class="clear-footer">
+
 	<div class="relative">
-		<div class="absolute left-0 top-0 translate-x-[208px] translate-y-[-23px] xl:translate-x-[315px]! xl:translate-y-[-32px]!  w-[100%] max-w-[337px] xl:max-w-7xl px-3 xl:px-[30px]! py-3 shadow-lg text-white text-sm xl:text-lg flex flex-col xl:flex-row justify-center gap-2 xl:gap-5 bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
-		
+		<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 lg:-translate-y-1/2  max-w-sm w-[90%] sm:w-[100%] xl:max-w-7xl! px-3 xl:px-[30px]! py-3 shadow-lg text-white text-sm xl:text-lg flex flex-col xl:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
+				
 			<div class="flex items-center gap-2"><i class="location-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium  xl:text-lg xl:font-medium"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
 			<div class="flex items-center gap-2"><i class="email-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Email: contact@stnd.vn</div>
 			<div class="flex items-center gap-2"><i class="telephone-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Hotline: 0989 666 888</div>
 		</div>
 	</div>
-</div> -->
+
 
 <?php if ( get_theme_mod( 'penci_footer_adsense' ) ): echo '<div class="container penci-google-adsense penci-google-adsense-footer">'. do_shortcode( get_theme_mod( 'penci_footer_adsense' ) ) .'</div>'; endif; ?>
 
@@ -82,14 +82,9 @@ if( ! empty( $footerreorder_array ) ) {
 			<div id="widget-area" class="rounded-t-[2rem] relative" <?php if( get_theme_mod( 'penci_footer_widget_bg_image' ) ): echo ' class="penci-lazy" data-src="'. get_theme_mod( 'penci_footer_widget_bg_image' ) .'"'; endif; ?>>
 
 				
-				<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2  max-w-sm w-[90%] sm:w-[100%] xl:max-w-7xl! px-3 xl:px-[30px]! py-3 shadow-lg text-white text-sm xl:text-lg flex flex-col xl:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
 				
-					<div class="flex items-center gap-2"><i class="location-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium  xl:text-lg xl:font-medium"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
-					<div class="flex items-center gap-2"><i class="email-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Email: contact@stnd.vn</div>
-					<div class="flex items-center gap-2"><i class="telephone-icons w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Hotline: 0989 666 888</div>
-				</div>
 
-				<div class="xl:max-w-7xl max-w-sm mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr]<?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
+				<div class="xl:max-w-7xl max-w-sm mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr] relative z-2 <?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
 					<?php if( in_array( $footer_layout, array( 'style-1', 'style-5', 'style-6', 'style-7' ) ) ){ ?>
 						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
 							<?php dynamic_sidebar( 'footer-1' ); ?>

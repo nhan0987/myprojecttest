@@ -60,13 +60,13 @@ if (!$add_page) {
 			<?php
 			$yoast_breadcrumb = '';
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
-				$yoast_breadcrumb = yoast_breadcrumb( '<div class="max-w-7xl mx-auto penci-breadcrumb'. $two_sidebar_class .'">', '</div>', false );
+				$yoast_breadcrumb = yoast_breadcrumb( '<div class="max-w-sm xl:max-w-7xl mx-auto penci-breadcrumb'. $two_sidebar_class .'">', '</div>', false );
 			}
 
 			if( $yoast_breadcrumb ){
 				echo $yoast_breadcrumb;
 			}else{ ?>
-			<div class="max-w-7xl mx-auto penci-breadcrumb<?php echo $two_sidebar_class; ?>">
+			<div class="max-w-sm xl:max-w-7xl mx-auto penci-breadcrumb<?php echo $two_sidebar_class; ?>">
 				<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 				<?php
 				$parent_ID = penci_get_category_parent_id( $fea_cat_id );
