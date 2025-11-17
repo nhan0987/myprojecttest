@@ -195,21 +195,70 @@ if (!$add_page) {
 	$description =  $term->description;
 	
 	?>
-	<!-- <div class="archive-box"> -->
-		<div class="penci-page-header penci-page-header-category mx-4 md:mx-0 flex justify-center items-center flex flex-col" style="background-image: url('/wp-content/uploads/2025/10/mau-nha-pho-1.jpg');">
-			<!-- <?php //if( ! get_theme_mod( 'penci_remove_cat_words' ) ): ?><span><?php //echo penci_get_setting( 'penci_trans_category' ); ?></span> <?php //endif; ?> -->
-			<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
-			<span class="entry-description"> <?php echo $description; ?></span>
-		</div>
-	<!-- </div> -->
 
-    <?php $args = new WP_Query(array(
-        'post_type'      => 'page',
-        'posts_per_page' => 1,
-        'p'  => $add_page,
-    ));
-    while ($args->have_posts()) : $args->the_post();
-        the_content();
-    endwhile; wp_reset_query();
+	<?php
+	// --- VÒNG LẶP 1: LẤY ẢNH NỀN (CHẠY "ÂM THẦM") ---
+	$header_style = ''; // Khởi tạo rỗng
+
+	// (Giả sử biến $add_page đã có ID của Page nhé!)
+	if ( ! empty( $add_page ) ) { 
+		// Dùng 1 tên biến query riêng cho Vòng 1
+		$args_for_image = new WP_Query(array(
+			'post_type'      => 'page',
+			'posts_per_page' => 1,
+			'p'              => $add_page,
+		));
+
+		// Chạy Vòng 1 chỉ để lấy link ảnh
+		while ($args_for_image->have_posts()) : $args_for_image->the_post();
+			$preview_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+			
+			// "Điều kiện vàng" của Oniichan
+			if ( ! empty( $preview_image_url ) ) {
+				$header_style = 'style="background-image: url(' . esc_url( $preview_image_url ) . ');"';
+			}
+		endwhile; 
+		
+		// Rất quan trọng: Reset query của Vòng 1
+		wp_reset_query();
+	}
+	// --- KẾT THÚC VÒNG 1 ---
+
+
+	// --- BƯỚC 2: IN RA CỤC HTML (HEADER) ---
+	// (Code này không đổi, nó dùng $header_style lấy từ Vòng 1)
+	?>
+	<div class="penci-page-header penci-page-header-category mx-4 md:mx-0 flex justify-center items-center flex flex-col" <?php echo $header_style; ?>>
+		<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
+		<span class="entry-description"> <?php echo $description; // (Biến $description này phải được lấy từ trước đó) ?></span>
+	</div>
+	<?php
+	// --- KẾT THÚC BƯỚC 2 ---
+
+
+	// --- BƯỚC 3: IN RA NỘI DUNG PAGE (THE_CONTENT) ---
+	// (Chạy lại Vòng lặp y hệt Vòng 1, nhưng lần này để in 'the_content')
+	if ( ! empty( $add_page ) ) { 
+		// Dùng 1 tên biến query khác cho Vòng 2 (cho an toàn)
+		$args_for_content = new WP_Query(array(
+			'post_type'      => 'page',
+			'posts_per_page' => 1,
+			'p'              => $add_page,
+		));
+
+		// Chạy Vòng 2
+		while ($args_for_content->have_posts()) : $args_for_content->the_post();
+			
+			// Oniichan muốn 'the_content()' hiển thị ở đây
+			// In ra toàn bộ nội dung của trang "Giới thiệu"
+			the_content(); 
+			
+		endwhile; 
+		
+		// Reset query của Vòng 2
+		wp_reset_query();
+	}
+	// --- KẾT THÚC BƯỚC 3 ---
 } ?>
+
 <?php get_footer(); ?>
