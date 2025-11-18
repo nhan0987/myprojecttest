@@ -2793,10 +2793,12 @@ body, html {
 		gap:0.5rem;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		flex-direction: column;
 		display: flex;
 		height: 8rem;
 		position: relative;
+		
 	}
 	
 	.cut-the-top-left-corner-09-container.active{
@@ -2817,7 +2819,7 @@ body, html {
 		width: 21.3125rem;
 		height: 10.6rem;
 		padding: 1.5rem 1.5rem 0px 1.5rem;
-        gap: 0.875rem;
+        gap: 1.2rem;;
 		align-items: flex-start;
 		justify-content: flex-start;
 		flex-direction: column;
@@ -2907,7 +2909,8 @@ body, html {
 		padding: 1.5rem 1.5rem 0px 1.5rem;
 		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 2rem;
+		gap: 1.2rem;
+        text-align: left;
 		
 	}
 	.cut-the-top-left-corner-09-container:is(:hover, :active)::after{
@@ -2982,6 +2985,26 @@ body, html {
 		height: 16.6875rem;
 
 	}
+	.cut-the-bottom-left-corner-12-container{
+		aspect-ratio: 343 / 290 ;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12-mobile.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12-mobile.svg");
+		width: 21.4375rem;
+        height: 18.125rem;
+
+	}
+	.cut-the-bottom-left-corner-12-container .title {
+		bottom: 0px;
+		position: absolute;
+		left: 0;
+		background-color: #FCFCFA;
+		font-size: 14px;
+		font-weight: 500;
+		height: 28px;
+        width: 138px;
+        padding: 3px 0px;
+	
+	}
 }
 @media (min-width: 1280px) {
 	.cut-the-bottom-left-corner-10-container{
@@ -2999,6 +3022,21 @@ body, html {
 		width: 23.9375rem;
 		height: 20.0625rem;
 
+	}
+	.cut-the-bottom-left-corner-12-container{
+		aspect-ratio: 405 / 423 ;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12.svg");
+		width: 25.3125rem;
+		height: 26.4375rem;
+	}
+	.cut-the-bottom-left-corner-12-container .title {
+		font-size: 14px;
+		font-weight: 600;
+		height: 42px;
+		width: 138px;
+		padding: 10px 0px;
+	
 	}
 }
 
@@ -3112,6 +3150,30 @@ body, html {
         padding-left: 12px;
         padding-right: 12px;
     }
+}
+
+.is-dragging {
+	cursor: grabbing;
+	user-select: none; /* Ngăn chặn bôi đen văn bản khi kéo */
+}
+.dot {
+	width: 10px;
+	height: 10px;
+	background-color: #d1d5db; /* Màu xám nhạt */
+	border-radius: 9999px; /* Hình tròn */
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.dot.active {
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%) !important;
+	width: 40px;
+}
+.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Dành cho IE và Edge */
+	scrollbar-width: none; /* Dành cho Firefox */
 }
 
 

@@ -4,61 +4,205 @@
     <div>
         <span>Sở hữu tòa nhà văn phòng tại các quận trung tâm (Hoàn Kiếm, Ba Đình, Đống Đa, Hai Bà Trưng) là nắm giữ “cỗ máy” dòng tiền: nhu cầu thuê cao, giá thuê hấp dẫn và tăng đều, thanh khoản mạnh nhờ vị trí kim cương & tính khan hiếm.</span>
     </div>
-    <div class="w-full py-3">
+    <div class="slider-wrapper w-full py-3">
 
-        <ul class="flex flex-nowrap overflow-x-auto 
-                scroll-snap-type-x mandatory
-                lg:grid lg:grid-cols-3 gap-4 lg:overflow-visible scrollbar-hide">
+        <div id="neptuneSlider" class="flex flex-nowrap overflow-x-auto scroll-snap-type-x mandatory xl:grid xl:grid-cols-3 gap-4 scrollbar-hide cursor-grab xl:overflow-visible scrollbar-hide xl:cursor-default scroll-smooth">
             
-            <li class="w-full flex-shrink-0 scroll-snap-align-start
-                    lg:w-auto">
-                <img src="/wp-content/uploads/2025/11/van-phong-hang-a.png" alt="Văn phòng hạng A" 
-                    class="w-full h-auto object-cover ">
-            </li>
+            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden" >
+                <img src="/wp-content/uploads/2025/11/van-phong-hang-a.jpg" alt="Văn phòng hạng A" class="w-full! h-full! object-cover hover:scale-105">
+                <div class="title"><span >Văn phòng hạng A</span></div>
+            </div>
             
-            <li class="w-full flex-shrink-0 scroll-snap-align-start
-                    lg:w-auto">
-                <img src="/wp-content/uploads/2025/11/van-phong-hang-b.png" alt="Văn phòng hạng B" 
-                    class="w-full h-auto object-cover ">
-            </li>
-            <li class="w-full flex-shrink-0 scroll-snap-align-start
-                    lg:w-auto">
-                <img src="/wp-content/uploads/2025/11/van-phong-hang-c.png" alt="Văn phòng hạng B" 
-                    class="w-full h-auto object-cover ">
-            </li>
+            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
+                <img src="/wp-content/uploads/2025/11/toa-nha-hang-B.jpg" alt="Văn phòng hạng B" class="w-full! h-full! object-cover hover:scale-105">
+                <div class="title"><span >Văn phòng hạng B</span></div>
+            </div>
+            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
+                <img src="/wp-content/uploads/2025/11/ks-chdv.jpg" alt="Văn phòng hạng C" class="w-full! h-full! object-cover hover:scale-105">
+                <div class="title"><span >Văn phòng hạng C</span></div>
+            </div>
 
-        </ul>
+        </div>
+
+        <div id="dotsContainer" class="flex justify-center mt-3 gap-2 space-x-2 xl:hidden">
+                <!-- Các dots sẽ được tạo tự động bằng JavaScript -->
+        </div>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('neptuneSlider');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const items = slider.querySelectorAll('.flex-shrink-0'); // Lấy tất cả các item
+
+    // Kiểm tra an toàn: nếu không tìm thấy item nào thì dừng
+    if (items.length === 0) {
+        console.warn("Cảnh báo: Không tìm thấy item nào trong slider.");
+        return;
+    }
+
+    // Hàm kiểm tra chế độ Slider (chỉ khi width < 1280px)
+    const isSliderMode = () => window.innerWidth < 1280;
+
+
+    // --- PHẦN 1: TẠO VÀ XỬ LÝ DOTS (CHỈ CHẠY TRONG CHẾ ĐỘ SLIDER) ---
+    
+    // Hàm tạo các dot động
+    const createDots = () => {
+        // Chỉ chạy khi ở chế độ slider
+        if (!isSliderMode()) {
+            dotsContainer.innerHTML = ''; // Xóa dots nếu đang ở chế độ Grid
+            return;
+        }
+
+        dotsContainer.innerHTML = ''; // Xóa dots cũ
+        dotsContainer.style.display = 'flex'; // Đảm bảo dots hiển thị
+
+        items.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.dataset.index = index; // Lưu index của item tương ứng
+            
+            // Gắn sự kiện click để cuộn đến item tương ứng
+            dot.addEventListener('click', () => {
+                // Tính toán vị trí cuộn: index * (chiều rộng item + gap)
+                // Lấy chiều rộng item đầu tiên + 16px (Tailwind gap-4)
+                const itemWidth = items[0].offsetWidth; 
+                const scrollAmount = index * (itemWidth + 16); 
+                slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            dotsContainer.appendChild(dot);
+        });
+        updateDots(); // Cập nhật trạng thái active lần đầu
+    };
+
+    // Hàm cập nhật trạng thái dot active khi cuộn
+    const updateDots = () => {
+        // Chỉ chạy khi ở chế độ slider
+        if (!isSliderMode()) return;
+        
+        const dots = dotsContainer.querySelectorAll('.dot');
+        const scrollLeft = slider.scrollLeft; // Vị trí cuộn hiện tại
+        
+        // Chiều rộng item + gap-4 (16px)
+        const itemWidth = items[0].offsetWidth + 16; 
+
+        // Tính toán index của item đang hiển thị gần nhất
+        const activeIndex = Math.round(scrollLeft / itemWidth);
+
+        dots.forEach((dot, index) => {
+            if (index === activeIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    };
+    
+    // Gắn sự kiện cuộn để cập nhật dots theo thời gian thực (chỉ chạy khi ở chế độ slider)
+    slider.addEventListener('scroll', updateDots);
+    
+    // --- PHẦN 2: XỬ LÝ KÉO THẢ CHUỘT (CHỈ CHẠY TRONG CHẾ ĐỘ SLIDER) ---
+    // Logic kéo chuột
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+        if (!isSliderMode()) return; // Chỉ cho phép kéo khi ở chế độ slider
+        isDown = true;
+        slider.classList.add('is-dragging'); 
+        slider.classList.remove('scroll-smooth'); 
+        
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+        if (!isDown) return; 
+        isDown = false;
+        slider.classList.remove('is-dragging');
+        slider.classList.add('scroll-smooth'); 
+    };
+
+    const handleMouseUp = () => {
+        if (!isDown) return;
+        isDown = false;
+        slider.classList.remove('is-dragging');
+        slider.classList.add('scroll-smooth'); 
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDown || !isSliderMode()) return; // Dừng nếu không bấm hoặc không ở chế độ slider
+        e.preventDefault();  
+        
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Tăng tốc độ kéo
+        slider.scrollLeft = scrollLeft - walk;
+    };
+
+    // Gắn các sự kiện kéo thả
+    slider.addEventListener('mousedown', handleMouseDown);
+    slider.addEventListener('mouseleave', handleMouseLeave);
+    slider.addEventListener('mouseup', handleMouseUp);
+    slider.addEventListener('mousemove', handleMouseMove);
+    
+    // --- PHẦN 3: KHỞI TẠO VÀ XỬ LÝ RESIZE ---
+    // Gọi hàm tạo dots lần đầu khi DOM đã sẵn sàng
+    createDots();
+    
+    // Cần gọi lại createDots khi resize để kích thước item và trạng thái dots được cập nhật/ẩn hiện
+    window.addEventListener('resize', createDots);
+    // Cần gọi lại lần nữa khi tất cả tài nguyên (ảnh) đã tải xong, đảm bảo kích thước chính xác
+    window.addEventListener('load', createDots); 
+});
+</script>
 
 
 <div class="module module_blogs tab-content-style-01 ">
-    <ul id="myTab" class="nav nav-pills nav-fill title-tab grid! grid-cols-2! items-center" role="tablist">
-        <li class="nav-item col-span-1!" role="presentation"><button id="home-tab" class="nav-link active" role="tab" type="button"
-                data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true"> <span
-                    class="capitalize">Lợi ích nổi bật</span> </button></li>
-        <li class="nav-item col-span-1!" role="presentation"><button id="home-tab" class="nav-link " role="tab" type="button"
-                data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false"> <span
-                    class="capitalize">Nhận định và phân tích thị trường</span> </button></li>
+    <ul id="myTab" class="nav nav-pills nav-fill title-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button id="home-tab" class="nav-link active" role="tab" type="button"
+                data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true">
+                <span class="capitalize">Lợi ích nổi bật</span>
+            </button></li>
+        <li class="nav-item" role="presentation">
+            <button id="home-tab" class="nav-link " role="tab" type="button"
+                data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false">
+                <span class="capitalize">Nhận định và phân tích thị trường</span>
+            </button></li>
     </ul>
     <div class="tab-content">
         <div id="tab-1" class="tab-pane fade  active show" role="tabpanel">
+            <div class="cut-the-top-left-corner-09-featured-container mx-auto">
+                <div class="icons-container"><i class="stnd-icons">&nbsp;</i></div>
+                <div class="tlc-title"><span ></span></div>
+                <div class="tlc-description"><span> </span></div>
+            </div>
+            
             <div class="grid grid-cols-2 lg:flex lg:flex-wrap w-full pt-4">
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-location-outlined  gold-color"></i>
-                    <span class="font-medium text-base">Vị Trí Kim Cương & </span>
+
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-location-outlined">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Vị Trí Kim Cương</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-key gold-color"></i>
-                    <span class="font-medium text-base">Tính Khan Hiếm</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-key">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Tính Khan Hiếm</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-demand gold-color"></i>
-                    <span class="font-medium text-base">Nhu Cầu Thuê Cao</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-demand">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Nhu Cầu Thuê Cao</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-humans-group gold-color"></i>
-                    <span class="font-medium text-base">Giá thuê hấp dẫn</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-humans-group">&nbsp;</i></div>
+                    <div class="tlc-title"><span>Giá thuê hấp dẫn</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
                 
             </div>
@@ -131,3 +275,75 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Bọc mọi thứ trong 'DOMContentLoaded' để đảm bảo HTML đã tải xong
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- BƯỚC 1: LẤY TẤT CẢ CÁC KHU VỰC TAB (Wrappers) ---
+        // Thay vì chọn item toàn trang, ta sẽ xử lý từng Tab một để tránh nhầm lẫn
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        if (tabPanes.length === 0) {
+             console.warn("Cảnh báo: Không tìm thấy tab-pane nào ạ!");
+             return;
+        }
+
+        // --- BƯỚC 2: DUYỆT QUA TỪNG TAB VÀ GẮN SỰ KIỆN RIÊNG BIỆT ---
+        tabPanes.forEach((pane, index) => {
+            
+            // A. Tìm "Màn hình hiển thị" (Featured Container) TRONG TAB NÀY
+            const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
+            
+            // Nếu Tab này không có màn hình hiển thị thì bỏ qua
+            if (!featuredContainer) return;
+
+            // Tìm các thành phần con của màn hình hiển thị (Icon, Title, Desc)
+            const targetIcon = featuredContainer.querySelector('.icons-container');
+            const targetTitle = featuredContainer.querySelector('.tlc-title');
+            const targetDesc = featuredContainer.querySelector('.tlc-description');
+
+            // B. Tìm tất cả các ITEM (Nút bấm) TRONG TAB NÀY
+            const itemsInPane = pane.querySelectorAll('.item.cut-the-top-left-corner-09-container');
+
+            // C. Gắn sự kiện click cho từng Item trong Tab này
+            itemsInPane.forEach(item => {
+                item.addEventListener('click', () => {
+                    
+                    // --- ĐIỀU KIỆN MÀN HÌNH ---
+                    const viewportWidth = window.innerWidth;
+                    
+                    // Chỉ chạy logic khi màn hình từ 380px đến dưới 1280px
+                    if (viewportWidth >= 375 && viewportWidth < 1280) {
+                        
+                        // 1. Lấy dữ liệu nguồn từ Item được click
+                        const sourceIcon = item.querySelector('.icons-container');
+                        const sourceTitle = item.querySelector('.tlc-title');
+                        const sourceDesc = item.querySelector('.tlc-description');
+
+                        // Kiểm tra kỹ tính, nhỡ thiếu HTML thì thôi
+                        // if (sourceIcon && sourceTitle && sourceDesc) {
+                            
+                            // 2. Copy nội dung sang màn hình hiển thị CỦA TAB NÀY
+                            targetIcon.innerHTML = sourceIcon.innerHTML;
+                            targetTitle.innerHTML = sourceTitle.innerHTML;
+                            targetDesc.innerHTML = sourceDesc.innerHTML;
+
+                            // 3. Hiển thị màn hình lên (nếu đang ẩn)
+                            featuredContainer.style.display = 'flex';
+
+                            // 4. Xử lý class 'active'
+                            // Xóa active của các item CÙNG TAB thôi nhé (đừng xóa của Tab khác)
+                            itemsInPane.forEach(i => i.classList.remove('active'));
+                            
+                            // Active chính nó
+                            item.classList.add('active');
+                        // }
+                    }
+                });
+            });
+            
+            console.log(`Đã kích hoạt phép thuật cho Tab số ${index + 1} thành công!`);
+        });
+    }); 
+</script>

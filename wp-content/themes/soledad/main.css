@@ -1091,7 +1091,7 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
 }
 @media (min-width:1280px) {
     #navigation .menu li a {
-        font-size: 0.625rem; 
+        font-size: 0.6rem; 
     } 
 }
 @media (min-width:1600px) {
