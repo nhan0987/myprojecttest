@@ -3107,6 +3107,13 @@ body, html {
     transform: rotate(-53deg);
 }
 
+@media (min-width: 1280px) {
+    #navigation, .inner-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 
 
 

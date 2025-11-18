@@ -20085,8 +20085,8 @@ p.has-drop-cap:not(:focus):first-letter {
 	.penci-two-sidebar .container.penci-breadcrumb,
 	.penci-page-header-wrap .penci-page-header-inner.container,
 	​.penci-page-header-wrap{
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
     .wrapper-boxed > .container > .container,
 	.penci-single-smore .container .container {
@@ -20116,8 +20116,8 @@ p.has-drop-cap:not(:focus):first-letter {
         width: 100%;
     }
     #navigation, .inner-header {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
     .header-slogan .header-slogan-text {
         font-size: 12px;
