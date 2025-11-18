@@ -1089,12 +1089,12 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
     text-decoration: none;
     font-weight: 700;
 }
-@media (min-width:1024px) {
+@media (min-width:1280px) {
     #navigation .menu li a {
         font-size: 0.625rem; 
     } 
 }
-@media (min-width:1280px) {
+@media (min-width:1600px) {
     #navigation .menu li a {
         font-size: 0.75rem; 
     } 

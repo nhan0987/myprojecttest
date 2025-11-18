@@ -128,3 +128,84 @@
         </div>
     </div>
 </div>
+
+
+<!-- ======== JAVASCRIPT PHÉP THUẬT BẮT ĐẦU TỪ ĐÂY ======== -->
+    <script>
+
+        // Bọc mọi thứ trong 'DOMContentLoaded' để đảm bảo HTML đã tải xong
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- BƯỚC 1: CHỌN THẺ HIỂN THỊ MỤC TIÊU ---
+            const featuredContainer = document.querySelector('.cut-the-top-left-corner-09-featured-container');
+            
+            // Nếu không tìm thấy thẻ mục tiêu, báo lỗi và dừng lại
+            if (!featuredContainer) {
+                console.error("Báo lỗi: Không tìm thấy thẻ .cut-the-top-left-corner-09-featured-container ạ!");
+                return;
+            }
+
+            // Chọn các thẻ con bên trong thẻ mục tiêu
+            const targetIcon = featuredContainer.querySelector('.icons-container');
+            const targetTitle = featuredContainer.querySelector('.tlc-title');
+            const targetDesc = featuredContainer.querySelector('.tlc-description');
+
+            // --- BƯỚC 2: CHỌN TẤT CẢ CÁC THẺ KÍCH HOẠT ---
+            const allItems = document.querySelectorAll('.item.cut-the-top-left-corner-09-container');
+
+            // Nếu không tìm thấy thẻ nào, cũng dừng lại
+            if (allItems.length === 0) {
+                console.warn("Cảnh báo: Không tìm thấy thẻ .item nào để gắn sự kiện.");
+                return;
+            }
+
+            // --- BƯỚC 3: LẶP QUA TỪNG THẺ VÀ GẮN SỰ KIỆN CLICK ---
+            allItems.forEach(item => {
+                
+                // Tìm nội dung nguồn (icon, title, desc) bên trong item NÀY
+                const sourceIcon = item.querySelector('.icons-container');
+                const sourceTitle = item.querySelector('.tlc-title');
+                const sourceDesc = item.querySelector('.tlc-description');
+
+                // Kiểm tra xem item này có đủ cấu trúc không
+                if (!sourceIcon || !sourceTitle || !sourceDesc) {
+                    console.warn("Cảnh báo: Một .item bị thiếu cấu trúc .icons-container, .tlc-title, hoặc .tlc-description");
+                    return; // Bỏ qua item này và tiếp tục vòng lặp
+                }
+
+                // Gắn bùa 'click' vào item
+                item.addEventListener('click', () => {
+                    
+                    // --- ĐIỀU KIỆN QUAN TRỌNG: KIỂM TRA MÀN HÌNH ---
+                    const viewportWidth = window.innerWidth;
+                    
+                    // Chỉ thực thi logic nếu màn hình >= 380px VÀ < 1280px
+                    if (viewportWidth >= 380 && viewportWidth < 1280) {
+                        
+                        // 1. Copy nội dung HTML từ nguồn (item) sang mục tiêu (featured)
+                        // Chúng ta dùng .innerHTML để copy cả thẻ <i> và <span> bên trong
+                        targetIcon.innerHTML = sourceIcon.innerHTML;
+                        targetTitle.innerHTML = sourceTitle.innerHTML;
+                        targetDesc.innerHTML = sourceDesc.innerHTML;
+
+                        // 2. Kích hoạt thẻ mục tiêu
+                        // Thay đổi CSS từ 'display: none' thành 'display: flex'
+                        featuredContainer.style.display = 'flex';
+
+                        // 3. Xóa class 'active' khỏi TẤT CẢ các item
+                        //    (Để đảm bảo chỉ có 1 item được active tại 1 thời điểm)
+                        allItems.forEach(i => i.classList.remove('active'));
+                        
+                        // 4. Thêm class 'active' CHỈ cho item vừa được click
+                        item.classList.add('active');
+
+                    }
+                    // Nếu màn hình >= 1280px, không làm gì cả, để CSS :hover tự xử lý
+                    // Nếu màn hình < 380px, cũng không làm gì cả
+                });
+            });
+
+            console.log("Đã gắn sự kiện click cho mobile/tablet thành công ạ!");
+
+        }); // <-- Kết thúc DOMContentLoaded
+    </script>
