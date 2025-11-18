@@ -313,6 +313,14 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/telescope.svg');
     mask-image: url('/wp-content/themes/soledad/icons/telescope.svg');
 }
+.bank-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/bank.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/bank.svg');
+}
+.chart-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/chart.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/chart.svg');
+}
 
 .stnd-images-icons {
     width: 24px;
