@@ -229,6 +229,24 @@ p:last-child {
 }
 .title-box .infor p {
 	font-size: 2rem;
+	line-height: 1rem;
+	font-weight: 700;
+}
+@media (min-width: 375px) {
+
+	.title-box .infor p {
+		font-size: 1.25rem;
+		line-height: 1.2;
+		font-weight: 600;
+	}
+}
+@media (min-width: 1280px) {
+
+	.title-box .infor p {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+	
 }
 .title-box .title {
 	display: flex;
@@ -1508,13 +1526,18 @@ p:last-child {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background-position-y: 16%;
-	height: 425px;
+	height: 212px;
 	max-width: 1865px;
 	border-radius: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;;
 	background-color: linear-gradient(0deg, rgba(25, 30, 34, 0.6) 0%, rgba(30, 41, 49, 0.60) 100%), lightgray 0px -141.295px / 100% 508.834%;
 	
+}
+@media (min-width:1280px) {
+	.penci-page-header{
+		height: 425px;
+	}
 }
 .penci-page-header::before{
 	content: '';
@@ -1543,13 +1566,22 @@ p:last-child {
 .penci-page-header-category h1{
 	z-index: 3;
 	position: relative;
-	font-size: 48px;
+	font-size: 18px;
     color: #fdfdfd;
-    text-transform: uppercase;
-    line-height: 56px;
-    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 600;
     font-style: normal;
-    font-family: 'Roboto',sans-serif;
+    
+}
+@media (min-width:1280px) {
+	.penci-page-header-category h1{
+		font-size: 40px;
+		line-height: 100%;
+		font-weight: 700;
+		
+	}
+	
 }
 .penci-mobile-logo{
 	/* padding: 0 0 0 58px; */
@@ -1801,13 +1833,21 @@ li.nav-item::marker {
 
 .penci-page-header-category .entry-description {
 	font-weight: 400;
-	font-style: normal;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 12px;
+	line-height: 20px;
 	color: white;
 	z-index: 3;
-
 }
+
+@media ((min-width: 1280px)) {
+	.penci-page-header-category .entry-description {
+		font-style: normal;
+		font-size: 16px;
+		line-height: 24px;
+		
+	}
+}
+
 .stnd-tieu-chuan-dich-vu .content-image .image > img{
 	width: 284px;
     height: 128px;
@@ -3003,7 +3043,26 @@ body, html {
 		height: 28px;
         width: 138px;
         padding: 3px 0px;
-	
+	}
+	.cut-the-bottom-right-corner-13-container{
+		aspect-ratio: 343 / 290 ;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12-mobile.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-12-mobile.svg");
+		width: 21.4375rem;
+        height: 18.125rem;
+	}
+	.cut-the-bottom-right-corner-13-container .title {
+		bottom: 0px;
+		position: absolute;
+		left: 0;
+		right: auto;
+		background: linear-gradient(360deg, #F7F6F2 0%, #FFFFFF 100%);
+		font-size: 14px;
+		font-weight: 500;
+		height: 28px;
+        width: 138px;
+        padding: 3px 0px;
+		text-transform: capitalize;
 	}
 }
 @media (min-width: 1280px) {
@@ -3037,6 +3096,25 @@ body, html {
 		width: 138px;
 		padding: 10px 0px;
 	
+	}
+	.cut-the-bottom-right-corner-13-container{
+		aspect-ratio: 624 / 423 ;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-13.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-13.svg");
+		width: 39rem;
+		height: 26.4375rem;
+	}
+	.cut-the-bottom-right-corner-13-container .title {
+		right: 0;
+        left: auto;
+        font-size: 16px;
+        font-weight: 700;
+        height: 46px;
+        width: 217px;
+        padding: 10px 0px 10px 0px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+		text-align: end;
 	}
 }
 
@@ -3174,6 +3252,33 @@ body, html {
 .scrollbar-hide {
 	-ms-overflow-style: none; /* Dành cho IE và Edge */
 	scrollbar-width: none; /* Dành cho Firefox */
+}
+
+@media (min-width:375px) {
+	.tab-content-style-01 .nav{
+		flex-wrap: nowrap;
+	}
+	.tab-content-style-01 .nav-link{
+		padding: .5rem 0.5rem;
+	}
+	.tab-content-style-01 .nav-link span{
+		font-size: 12px;
+		font-weight: 500;
+	}
+
+}
+@media (min-width:1280px) {
+	.tab-content-style-01 .nav{
+		flex-wrap: wrap;
+	}
+	.tab-content-style-01 .nav-link{
+		padding: .5rem 1rem;
+	}
+	.tab-content-style-01 .nav-link span{
+		font-size: 14px;
+		font-weight: 500;
+	}
+	
 }
 
 

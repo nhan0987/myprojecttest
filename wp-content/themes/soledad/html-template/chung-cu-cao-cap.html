@@ -43,33 +43,49 @@
 </div>
 
 
-<div class="module module_blogs tab-content-style-01">
+<div class="module module_blogs tab-content-style-01 ">
     <ul id="myTab" class="nav nav-pills nav-fill title-tab" role="tablist">
-        <li class="nav-item" role="presentation"><button id="home-tab" class="nav-link active" role="tab" type="button"
-                data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true"> <span
-                    class="capitalize">Giá trị sống & đầu tư cốt lõi</span> </button></li>
-        <li class="nav-item" role="presentation"><button id="home-tab" class="nav-link " role="tab" type="button"
-                data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false"> <span
-                    class="capitalize">Góc nhìn môi giới chuyên nghiệp</span> </button></li>
+        <li class="nav-item" role="presentation">
+            <button id="home-tab" class="nav-link active" role="tab" type="button"
+                data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true">
+                <span class="capitalize">Giá trị đầu tư cốt lõi</span>
+            </button></li>
+        <li class="nav-item" role="presentation">
+            <button id="home-tab" class="nav-link " role="tab" type="button"
+                data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false">
+                <span class="capitalize">Nhận định & Phân tích</span>
+            </button></li>
     </ul>
     <div class="tab-content">
-        <div id="tab-1" class="tab-pane fade  active show" role="tabpanel">
+        <div id="tab-1" class="tab-pane fade active show" role="tabpanel">
+            <div class="cut-the-top-left-corner-09-featured-container mx-auto">
+                <div class="icons-container"><i class="stnd-icons">&nbsp;</i></div>
+                <div class="tlc-title"><span ></span></div>
+                <div class="tlc-description"><span> </span></div>
+            </div>
+            
             <div class="grid grid-cols-2 lg:flex lg:flex-wrap w-full pt-4">
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-location-outlined gold-color"></i>
-                    <span class="font-medium text-base">Đẳng cấp và vị thế</span>
+
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-building">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Đẳng cấp và vị thế</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-money gold-color"></i>
-                    <span class="font-medium text-base">Tầm nhìn triệu đô</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-money">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Tầm nhìn triệu đô</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-wifi gold-color"></i>
-                    <span class="font-medium text-base">Không gian riêng tư</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-wifi">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Không gian riêng tư</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-home gold-color"></i>
-                    <span class="font-medium text-base">Giá trị đầu tư bền vứng</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-home">&nbsp;</i></div>
+                    <div class="tlc-title"><span>Giá trị đầu tư bền vững</span></div>
+                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
                 </div>
                 
             </div>
@@ -141,3 +157,75 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Bọc mọi thứ trong 'DOMContentLoaded' để đảm bảo HTML đã tải xong
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- BƯỚC 1: LẤY TẤT CẢ CÁC KHU VỰC TAB (Wrappers) ---
+        // Thay vì chọn item toàn trang, ta sẽ xử lý từng Tab một để tránh nhầm lẫn
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        if (tabPanes.length === 0) {
+             console.warn("Cảnh báo: Không tìm thấy tab-pane nào ạ!");
+             return;
+        }
+
+        // --- BƯỚC 2: DUYỆT QUA TỪNG TAB VÀ GẮN SỰ KIỆN RIÊNG BIỆT ---
+        tabPanes.forEach((pane, index) => {
+            
+            // A. Tìm "Màn hình hiển thị" (Featured Container) TRONG TAB NÀY
+            const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
+            
+            // Nếu Tab này không có màn hình hiển thị thì bỏ qua
+            if (!featuredContainer) return;
+
+            // Tìm các thành phần con của màn hình hiển thị (Icon, Title, Desc)
+            const targetIcon = featuredContainer.querySelector('.icons-container');
+            const targetTitle = featuredContainer.querySelector('.tlc-title');
+            const targetDesc = featuredContainer.querySelector('.tlc-description');
+
+            // B. Tìm tất cả các ITEM (Nút bấm) TRONG TAB NÀY
+            const itemsInPane = pane.querySelectorAll('.item.cut-the-top-left-corner-09-container');
+
+            // C. Gắn sự kiện click cho từng Item trong Tab này
+            itemsInPane.forEach(item => {
+                item.addEventListener('click', () => {
+                    
+                    // --- ĐIỀU KIỆN MÀN HÌNH ---
+                    const viewportWidth = window.innerWidth;
+                    
+                    // Chỉ chạy logic khi màn hình từ 380px đến dưới 1280px
+                    if (viewportWidth >= 375 && viewportWidth < 1280) {
+                        
+                        // 1. Lấy dữ liệu nguồn từ Item được click
+                        const sourceIcon = item.querySelector('.icons-container');
+                        const sourceTitle = item.querySelector('.tlc-title');
+                        const sourceDesc = item.querySelector('.tlc-description');
+
+                        // Kiểm tra kỹ tính, nhỡ thiếu HTML thì thôi
+                        // if (sourceIcon && sourceTitle && sourceDesc) {
+                            
+                            // 2. Copy nội dung sang màn hình hiển thị CỦA TAB NÀY
+                            targetIcon.innerHTML = sourceIcon.innerHTML;
+                            targetTitle.innerHTML = sourceTitle.innerHTML;
+                            targetDesc.innerHTML = sourceDesc.innerHTML;
+
+                            // 3. Hiển thị màn hình lên (nếu đang ẩn)
+                            featuredContainer.style.display = 'flex';
+
+                            // 4. Xử lý class 'active'
+                            // Xóa active của các item CÙNG TAB thôi nhé (đừng xóa của Tab khác)
+                            itemsInPane.forEach(i => i.classList.remove('active'));
+                            
+                            // Active chính nó
+                            item.classList.add('active');
+                        // }
+                    }
+                });
+            });
+            
+            console.log(`Đã kích hoạt phép thuật cho Tab số ${index + 1} thành công!`);
+        });
+    }); 
+</script>

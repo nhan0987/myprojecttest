@@ -1,24 +1,22 @@
-
-
 <div>
     <div>
-        <span>Sở hữu tòa nhà văn phòng tại các quận trung tâm (Hoàn Kiếm, Ba Đình, Đống Đa, Hai Bà Trưng) là nắm giữ “cỗ máy” dòng tiền: nhu cầu thuê cao, giá thuê hấp dẫn và tăng đều, thanh khoản mạnh nhờ vị trí kim cương & tính khan hiếm.</span>
+        <span class="text-sm font-medium">Sở hữu tòa nhà văn phòng tại các quận trung tâm (Hoàn Kiếm, Ba Đình, Đống Đa, Hai Bà Trưng) là nắm giữ “cỗ máy” dòng tiền: nhu cầu thuê cao, giá thuê hấp dẫn và tăng đều, thanh khoản mạnh nhờ vị trí kim cương & tính khan hiếm.</span>
     </div>
-    <div class="slider-wrapper w-full py-3">
+    <div class="w-full py-3">
 
-        <div id="neptuneSlider" class="flex flex-nowrap overflow-x-auto scroll-snap-type-x mandatory xl:grid xl:grid-cols-3 gap-4 scrollbar-hide cursor-grab xl:overflow-visible scrollbar-hide xl:cursor-default scroll-smooth">
+        <div id="stnd-slider-wrapper" class="flex flex-nowrap overflow-x-auto scroll-snap-type-x mandatory xl:grid xl:grid-cols-3 gap-4 scrollbar-hide cursor-grab xl:overflow-visible scrollbar-hide xl:cursor-default scroll-smooth">
             
-            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden" >
-                <img src="/wp-content/uploads/2025/11/van-phong-hang-a.jpg" alt="Văn phòng hạng A" class="w-full! h-full! object-cover hover:scale-105">
+            <div class="slider-item flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden" >
+                <img src="/wp-content/uploads/2025/11/van-phong-hang-a.jpg" alt="Văn phòng hạng A" class="w-full! h-full! object-cover hover:scale-115 transition-all duration-400 ease-out">
                 <div class="title"><span >Văn phòng hạng A</span></div>
             </div>
             
-            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
-                <img src="/wp-content/uploads/2025/11/toa-nha-hang-B.jpg" alt="Văn phòng hạng B" class="w-full! h-full! object-cover hover:scale-105">
+            <div class="slider-item flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
+                <img src="/wp-content/uploads/2025/11/toa-nha-hang-B.jpg" alt="Văn phòng hạng B" class="w-full! h-full! object-cover hover:scale-115 transition-all duration-400 ease-out">
                 <div class="title"><span >Văn phòng hạng B</span></div>
             </div>
-            <div class="flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
-                <img src="/wp-content/uploads/2025/11/ks-chdv.jpg" alt="Văn phòng hạng C" class="w-full! h-full! object-cover hover:scale-105">
+            <div class="slider-item flex-shrink-0 scroll-snap-align-start cut-the-bottom-left-corner-12-container relative overflow-hidden">
+                <img src="/wp-content/uploads/2025/11/ks-chdv.jpg" alt="Văn phòng hạng C" class="w-full! h-full! object-cover hover:scale-115 transition-all duration-400 ease-out">
                 <div class="title"><span >Văn phòng hạng C</span></div>
             </div>
 
@@ -31,9 +29,22 @@
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('neptuneSlider');
+    
+    // =======================================================================
+    // === CẤU HÌNH AUTOPLAY CỦA SLIDER  ===
+    // =======================================================================
+    const initialAutoplayEnabled = true; // true: Tự động chạy khi tải trang; false: Tắt
+    const autoplayIntervalTime = 5000; // Tốc độ chuyển slide (tính bằng mili giây - tối thiểu 1000ms)
+    // =======================================================================
+
+    const slider = document.getElementById('stnd-slider-wrapper');
     const dotsContainer = document.getElementById('dotsContainer');
-    const items = slider.querySelectorAll('.flex-shrink-0'); // Lấy tất cả các item
+    const items = slider.querySelectorAll('.slider-item'); // Lấy tất cả các item
+    
+    // Global State
+    let autoplayIntervalId = null;
+    // Thời gian chờ trước khi tự động chạy lại sau khi người dùng tương tác
+    const AUTOPLAY_RESUME_DELAY = 5000; 
 
     // Kiểm tra an toàn: nếu không tìm thấy item nào thì dừng
     if (items.length === 0) {
@@ -45,13 +56,83 @@ document.addEventListener('DOMContentLoaded', () => {
     const isSliderMode = () => window.innerWidth < 1280;
 
 
-    // --- PHẦN 1: TẠO VÀ XỬ LÝ DOTS (CHỈ CHẠY TRONG CHẾ ĐỘ SLIDER) ---
+    // --- HÀM XỬ LÝ AUTOPLAY ---
+
+    // Chuyển đến slide tiếp theo
+    const nextSlide = () => {
+        // Đảm bảo chỉ chạy Autoplay khi ở chế độ slider
+        if (!isSliderMode()) {
+            stopAutoplay();
+            return;
+        }
+        
+        // Lấy vị trí cuộn hiện tại và kích thước item (item width + gap 16px)
+        const scrollLeft = slider.scrollLeft;
+        const itemWidth = items[0].offsetWidth + 16; 
+        
+        // Tính toán index của slide tiếp theo
+        let nextIndex = Math.round(scrollLeft / itemWidth) + 1;
+
+        // Nếu đã hết item, quay lại item đầu tiên (cuộn vòng lặp)
+        if (nextIndex >= items.length) {
+            nextIndex = 0;
+        }
+
+        // Tính toán vị trí cuộn mới và cuộn đến vị trí đó
+        const scrollAmount = nextIndex * itemWidth;
+        slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    };
+
+    // Dừng Autoplay
+    const stopAutoplay = () => {
+        if (autoplayIntervalId !== null) {
+            clearInterval(autoplayIntervalId);
+            autoplayIntervalId = null;
+            console.log("Autoplay stopped.");
+        }
+    };
+
+    // Bắt đầu Autoplay
+    const startAutoplay = () => {
+        // Chỉ chạy nếu được cấu hình bật VÀ đang ở chế độ slider
+        if (!isSliderMode() || !initialAutoplayEnabled) {
+            stopAutoplay();
+            return;
+        }
+        
+        stopAutoplay(); // Dừng interval cũ (nếu có)
+        
+        // Lấy thời gian từ cấu hình
+        const intervalTime = Math.max(autoplayIntervalTime, 1000); // Tối thiểu 1000ms
+        
+        // Bắt đầu interval mới
+        autoplayIntervalId = setInterval(nextSlide, intervalTime);
+        console.log(`Autoplay started with configured interval: ${intervalTime}ms.`);
+    };
+
+    // Tạm dừng và tự động chạy lại Autoplay sau khi người dùng tương tác
+    const pauseAndResumeAutoplay = () => {
+        // Chỉ xử lý nếu Autoplay được cấu hình bật ban đầu
+        if (!initialAutoplayEnabled) return;
+
+        stopAutoplay();
+        
+        // Xóa timeout cũ (tránh trường hợp người dùng tương tác liên tục)
+        clearTimeout(slider.resumeTimeout);
+
+        // Thiết lập timeout để resume autoplay sau AUTOPLAY_RESUME_DELAY
+        slider.resumeTimeout = setTimeout(startAutoplay, AUTOPLAY_RESUME_DELAY);
+    };
+
+
+    // --- PHẦN 1: TẠO VÀ XỬ LÝ DOTS ---
     
     // Hàm tạo các dot động
     const createDots = () => {
         // Chỉ chạy khi ở chế độ slider
         if (!isSliderMode()) {
             dotsContainer.innerHTML = ''; // Xóa dots nếu đang ở chế độ Grid
+            stopAutoplay(); // Dừng autoplay khi chuyển sang Grid mode
             return;
         }
 
@@ -61,31 +142,29 @@ document.addEventListener('DOMContentLoaded', () => {
         items.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
-            dot.dataset.index = index; // Lưu index của item tương ứng
+            dot.dataset.index = index; 
             
             // Gắn sự kiện click để cuộn đến item tương ứng
             dot.addEventListener('click', () => {
-                // Tính toán vị trí cuộn: index * (chiều rộng item + gap)
-                // Lấy chiều rộng item đầu tiên + 16px (Tailwind gap-4)
                 const itemWidth = items[0].offsetWidth; 
                 const scrollAmount = index * (itemWidth + 16); 
                 slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+                pauseAndResumeAutoplay(); // Tạm dừng/Chạy lại Autoplay khi click
             });
             
             dotsContainer.appendChild(dot);
         });
+        
         updateDots(); // Cập nhật trạng thái active lần đầu
+        startAutoplay(); // Bắt đầu Autoplay sau khi tạo dots (nếu cấu hình bật)
     };
 
     // Hàm cập nhật trạng thái dot active khi cuộn
     const updateDots = () => {
-        // Chỉ chạy khi ở chế độ slider
         if (!isSliderMode()) return;
         
         const dots = dotsContainer.querySelectorAll('.dot');
-        const scrollLeft = slider.scrollLeft; // Vị trí cuộn hiện tại
-        
-        // Chiều rộng item + gap-4 (16px)
+        const scrollLeft = slider.scrollLeft; 
         const itemWidth = items[0].offsetWidth + 16; 
 
         // Tính toán index của item đang hiển thị gần nhất
@@ -100,23 +179,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // Gắn sự kiện cuộn để cập nhật dots theo thời gian thực (chỉ chạy khi ở chế độ slider)
+    // Gắn sự kiện cuộn để cập nhật dots
     slider.addEventListener('scroll', updateDots);
     
-    // --- PHẦN 2: XỬ LÝ KÉO THẢ CHUỘT (CHỈ CHẠY TRONG CHẾ ĐỘ SLIDER) ---
-    // Logic kéo chuột
+    // --- PHẦN 2: XỬ LÝ KÉO THẢ CHUỘT ---
     let isDown = false;
     let startX;
     let scrollLeft;
 
     const handleMouseDown = (e) => {
-        if (!isSliderMode()) return; // Chỉ cho phép kéo khi ở chế độ slider
+        if (!isSliderMode()) return;
         isDown = true;
         slider.classList.add('is-dragging'); 
         slider.classList.remove('scroll-smooth'); 
         
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
+        pauseAndResumeAutoplay(); // Tạm dừng/Chạy lại Autoplay khi bấm chuột
     };
 
     const handleMouseLeave = () => {
@@ -134,11 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleMouseMove = (e) => {
-        if (!isDown || !isSliderMode()) return; // Dừng nếu không bấm hoặc không ở chế độ slider
+        if (!isDown || !isSliderMode()) return;
         e.preventDefault();  
         
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Tăng tốc độ kéo
+        const walk = (x - startX) * 2; 
         slider.scrollLeft = scrollLeft - walk;
     };
 
@@ -147,14 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('mouseleave', handleMouseLeave);
     slider.addEventListener('mouseup', handleMouseUp);
     slider.addEventListener('mousemove', handleMouseMove);
-    
+
     // --- PHẦN 3: KHỞI TẠO VÀ XỬ LÝ RESIZE ---
-    // Gọi hàm tạo dots lần đầu khi DOM đã sẵn sàng
+
+    // Khởi tạo các thành phần
     createDots();
     
-    // Cần gọi lại createDots khi resize để kích thước item và trạng thái dots được cập nhật/ẩn hiện
+    // Xử lý khi resize màn hình
     window.addEventListener('resize', createDots);
-    // Cần gọi lại lần nữa khi tất cả tài nguyên (ảnh) đã tải xong, đảm bảo kích thước chính xác
+    // Xử lý khi tất cả tài nguyên đã tải xong
     window.addEventListener('load', createDots); 
 });
 </script>
@@ -165,12 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <li class="nav-item" role="presentation">
             <button id="home-tab" class="nav-link active" role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true">
-                <span class="capitalize">Lợi ích nổi bật</span>
+                <span class="capitalize">Không gian sống </span>
             </button></li>
         <li class="nav-item" role="presentation">
             <button id="home-tab" class="nav-link " role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false">
-                <span class="capitalize">Nhận định và phân tích thị trường</span>
+                <span class="capitalize">Chất lượng</span>
             </button></li>
     </ul>
     <div class="tab-content">
