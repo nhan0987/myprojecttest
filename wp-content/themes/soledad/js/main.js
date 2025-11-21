@@ -1960,6 +1960,43 @@
 				}, 100 );
 			} );
 		}
+	},
+	PENCI.button_expand = function () {
+		var contentDiv = document.getElementById('myContent');
+        var btn = document.getElementById('btnToggle');
+        var btnText = document.getElementById('btnText');
+
+        btn.addEventListener('click', function() {
+            
+            // Kiểm tra xem đang có class expanded không
+            var isExpanded = contentDiv.classList.contains('expanded');
+
+            if (!isExpanded) {
+                // --- MỞ RA ---
+                
+                // 1. Đo chiều cao thật của nội dung bên trong (scrollHeight)
+                var realHeight = contentDiv.scrollHeight;
+                
+                // 2. Gán chiều cao đó vào style inline -> Kích hoạt transition
+                contentDiv.style.maxHeight = realHeight + "px";
+                
+                // 3. Thêm class để ẩn bóng mờ & xoay mũi tên
+                contentDiv.classList.add('expanded');
+                btn.classList.add('active');
+                btnText.textContent = "Thu gọn";
+
+            } else {
+                // --- ĐÓNG VÀO ---
+                
+                // 1. Gỡ bỏ style inline -> Nó sẽ quay về max-height: 80px trong CSS
+                contentDiv.style.maxHeight = null;
+                
+                // 2. Gỡ class
+                contentDiv.classList.remove('expanded');
+                btn.classList.remove('active');
+                btnText.textContent = "Xem thêm";
+            }
+        });
 	};
 
 
@@ -1987,6 +2024,7 @@
 		PENCI.VideosList.init();
 		PENCI.JumtoRecipe();
 		PENCI.Single_Loadmore();
+		PENCI.button_expand();
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
 	});
 })(jQuery);	// EOF

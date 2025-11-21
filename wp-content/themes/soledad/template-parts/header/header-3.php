@@ -47,17 +47,17 @@
 				
 				<?php 
 				if ( get_theme_mod( 'penci_header_logo_mobile' ) ) {
-					echo '<div class="w-full lg:w-2/12 penci-mobile-logo flex flex-row justify-center 2xl:justify-start">';
+					echo '<div class="w-full lg:w-[20%] penci-mobile-logo flex flex-row justify-center 2xl:justify-start">';
 					get_template_part( 'template-parts/header/logo' );
 					echo '</div>';
 				}
 				
-				echo '<div class="lg:w-9/12 flex lg:justify-start">';
+				echo '<div class="lg:w-[60%] flex lg:justify-start">';
 				get_template_part( 'template-parts/header/menu' );
 				echo '</div>';
 
 				if ( ! get_theme_mod( 'penci_topbar_search_check' ) ) {
-					echo '<div class="ld:w-1/12">';
+					echo '<div class="ld:w-[20%]">';
 					get_template_part( 'template-parts/header/top-search' );
 					echo '</div>';
 				}
