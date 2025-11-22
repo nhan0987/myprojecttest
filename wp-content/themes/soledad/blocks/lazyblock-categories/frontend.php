@@ -247,6 +247,56 @@ if (!function_exists('lth_categories_output_fe')) :
                     </div>
                 <?php } ?>
 
+                <?php if ($attributes['categories_style'] == 'grid-05') { ?>
+                    <div class="grid grid-cols-2 xl:grid-cols-4 gap-2 xl:gap-5! grid-05">
+                        <?php foreach( $attributes['items'] as $index => $inner ) {
+                            
+                            $item_classes = 'item';
+                            $image_zoom_container_classes = 'cut-the-bottom-right-corner-16-container relative';
+                            $btn_view_more_larger_classes = '';
+                            // if ( $index == 0 ) {
+                            //     $item_classes .= ' col-span-2 lg:col-span-1';
+                            //     $btn_view_more_larger_classes .= ' btn-view-more-larger';
+                            // }
+
+                        ?>
+                            
+                                <div class="<?php echo esc_attr( $item_classes ); ?>">
+                                    <div class="content">
+                                        <div class="content-header">
+                                            <?php if (!empty($inner['item_image']['url'])) {?>
+                                            <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?>">
+                                                <a href="<?php echo get_category_link($inner['item']); ?>">
+                                                    <img class="zoom-image" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
+                                                </a>
+                                                <div class="bg-view-more">
+                                                    <a class="btn-view-more <?php echo esc_attr( $btn_view_more_larger_classes ); ?>" href="<?php echo get_category_link($inner['item']); ?>">
+                                                        <span>Gửi yêu cầu</span><i class="arrow-right-icons"></i> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                            
+                                            <h3 class="content-name capitalize ">
+                                                <a href="<?php echo get_category_link($inner['item']); ?>">
+                                                    <?php echo wpautop($inner['item_title']); ?>
+                                                </a>
+                                                
+                                            </h3>
+                                            <div class="content-excerpt">
+                                                <?php echo wpautop($inner['item_text']); ?>
+                                            </div>
+                                            
+                                                
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+
                 <?php if ($attributes['categories_style'] == 'list-01'){ ?>
 
                     <ul class="py-4 list-none">

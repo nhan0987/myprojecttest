@@ -329,6 +329,10 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/idea.svg');
     mask-image: url('/wp-content/themes/soledad/icons/idea.svg');
 }
+.medal-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/medal.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/medal.svg');
+}
 
 .stnd-images-icons {
     width: 24px;

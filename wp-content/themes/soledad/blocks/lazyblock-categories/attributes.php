@@ -133,6 +133,9 @@ if (function_exists('lazyblocks')) :
                ),array(
                   'label' => 'Grid 04',
                   'value' => 'grid-04',
+               ),array(
+                  'label' => 'Grid 05',
+                  'value' => 'grid-05',
                )
             )
          ),
