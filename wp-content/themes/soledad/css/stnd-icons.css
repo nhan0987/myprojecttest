@@ -267,6 +267,10 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/reputation-outlined.svg');
     mask-image: url('/wp-content/themes/soledad/icons/reputation-outlined.svg');
 }
+.reputation-2-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/reputation-2.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/reputation-2.svg');
+}
 
 .staff-icons {
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
@@ -320,6 +324,10 @@
 .chart-icons {
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/chart.svg');
     mask-image: url('/wp-content/themes/soledad/icons/chart.svg');
+}
+.idea-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/idea.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/idea.svg');
 }
 
 .stnd-images-icons {
