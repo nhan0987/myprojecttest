@@ -4422,7 +4422,7 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 			wp_enqueue_script('tuyendung', THEME_URI . '/js/tuyendung.js', array('jquery'),'1.0.0', true);
 		}
 		if ( is_category('nha-mat-pho') || is_category('biet-thu-lien-ke')|| is_category('toa-nha-van-phong')|| is_category('khach-san-can-ho-dich-vu')
-			|| is_category('chung-cu-cao-cap') || is_category('dich-vu-ky-gui')|| is_category('dich-vu-moi-gioi')) { 
+			|| is_category('chung-cu-cao-cap') || is_category('dich-vu-ky-gui')|| is_category('dich-vu-moi-gioi')|| is_category('tu-van-dau-tu')) { 
 
 			wp_enqueue_script('danhmucbds', THEME_URI . '/js/danhmucbds.js', array('jquery'),'1.0.0', true);
 		}
