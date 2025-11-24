@@ -3317,8 +3317,8 @@ html {
 	-webkit-mask-repeat: no-repeat;
 	width: 21.3125rem;
 	height: 10.6rem;
-	padding: 1.5rem 1.5rem 0px 1.5rem;
-	gap: 1.2rem;
+	padding: 1.3rem 1.5rem 0px 1.5rem;
+	gap: 1.4rem;
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
@@ -3407,10 +3407,10 @@ html {
 		width: 20rem;
 		height: 11rem;
 		transition: opacity 0.5s ease-out;
-		padding: 1.5rem 1.5rem 0px 1.5rem;
+		padding: 1.3rem 1.5rem 0px 1.5rem;
 		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 1.2rem;
+		gap: 1.4rem;
 		text-align: left;
 
 	}
@@ -4116,4 +4116,95 @@ html {
 		
 		
 	}
+}
+.giai-phap-stnd:hover>div:nth-child(1),
+.giai-phap-stnd:hover>div:nth-child(3){
+	border:2px solid #eaab39 !important;
+}
+.giai-phap-stnd .left-container{
+	background-color: white;
+	padding: 1rem 0.5rem;
+	border-radius: 1rem;
+	width: 150px;
+	height: 184px;
+	border: 1px solid #E1E1E1;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+}
+.giai-phap-stnd .center-container{
+	justify-content: center;
+	align-items: center;
+	height: 184px;
+}
+.giai-phap-stnd .center-container .stnd-icons{
+	width: 18px;
+	height: 24px;
+	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
+}
+.giai-phap-stnd .left-container .stnd-icons,.giai-phap-stnd .right-container .stnd-icons{
+	width: 24.67px;
+	height: 26.68px;
+	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
+}
+.giai-phap-stnd .left-container .gps-title,.giai-phap-stnd .right-container .gps-title{
+	font-weight: 600;
+	font-size: 14px;
+}
+.giai-phap-stnd .left-container .gps-desc,.giai-phap-stnd .right-container .gps-desc{
+	font-weight: 500;
+	font-size: 12px;
+}
+
+.giai-phap-stnd .right-container .gps-title{
+	color: white;
+}
+.giai-phap-stnd .right-container .gps-desc{
+	color: oklch(87.2% 0.01 258.338);
+}
+
+.giai-phap-stnd .right-container{
+	background-color: #232D39;
+	padding: 1rem 0.5rem;
+	border-radius: 1rem;
+	width: 138px;
+	height: 184px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+}
+
+@media (min-width:1280px) {
+	.giai-phap-stnd .left-container{
+		
+		padding: 1rem 1rem;
+		height: 184px;
+		border: 1px solid white;
+	}
+	.giai-phap-stnd .center-container .stnd-icons{
+		width: 30px;
+		height: 40px;
+	}
+	.giai-phap-stnd .left-container .stnd-icons,.giai-phap-stnd .right-container .stnd-icons{
+		width: 30.84px;
+		height: 33.34px;
+		
+	}
+
+	.giai-phap-stnd .left-container .gps-title,.giai-phap-stnd .right-container .gps-title{
+		font-size: 16px;
+	}
+	.giai-phap-stnd .left-container .gps-desc,.giai-phap-stnd .right-container .gps-desc{
+		font-weight: 500;
+		font-size: 14px;
+	}
+
+	.giai-phap-stnd .right-container{
+		
+		padding: 1rem 1rem;
+		height: 184px;
+	}
+
 }

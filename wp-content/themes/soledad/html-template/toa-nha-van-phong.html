@@ -245,12 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <li class="nav-item" role="presentation">
             <button id="home-tab" class="nav-link active" role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true">
-                <span class="capitalize">Không gian sống </span>
+                <span class="capitalize xl:hidden">Tiềm năng</span>
+                <span class="capitalize hidden xl:block">Thị Trường Tiềm năng</span>
             </button></li>
         <li class="nav-item" role="presentation">
-            <button id="home-tab" class="nav-link " role="tab" type="button"
+            <button id="second-tab" class="nav-link " role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false">
-                <span class="capitalize">Chất lượng</span>
+                <span class="capitalize xl:hidden">Lý do</span>
+                <span class="capitalize hidden xl:block">Top 5 lý do phải đầu tư</span>
             </button></li>
     </ul>
     <div class="tab-content">
@@ -258,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="cut-the-top-left-corner-09-featured-container mx-auto">
                 <div class="icons-container"><i class="stnd-icons">&nbsp;</i></div>
                 <div class="tlc-title"><span ></span></div>
-                <div class="tlc-description"><span> </span></div>
+                <div class="tlc-description text-xs!"><span> </span></div>
             </div>
             
             <div class="grid grid-cols-2 lg:flex lg:flex-wrap w-full pt-4">
@@ -266,23 +268,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item cut-the-top-left-corner-09-container">
                     <div class="icons-container"><i class="stnd-icons icons-location-outlined">&nbsp;</i></div>
                     <div class="tlc-title"><span >Vị Trí Kim Cương</span></div>
-                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    <div class="tlc-description text-xs!"><span>Các quận trung tâm là trái tim của Hà Nội, nơi tập trung cơ quan đầu não, trụ sở chính các tập đoàn lớn, ngân hàng và tổ chức quốc tế. Vị trí này đảm bảo lượng khách thuê là doanh nghiệp uy tín, có khả năng chi trả cao. </span></div>
                     
                 </div>
                 <div class="item cut-the-top-left-corner-09-container">
                     <div class="icons-container"><i class="stnd-icons icons-key">&nbsp;</i></div>
                     <div class="tlc-title"><span >Tính Khan Hiếm</span></div>
-                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    <div class="tlc-description text-xs!"><span>Quỹ đất xây dựng văn phòng tại trung tâm cực kỳ khan hiếm do chính sách quy hoạch đô thị. Sự khan hiếm này biến các tòa nhà hiện hữu thành tài sản vô giá, có khả năng giữ và tăng giá trị vượt trội theo thời gian. </span></div>
                 </div>
                 <div class="item cut-the-top-left-corner-09-container">
                     <div class="icons-container"><i class="stnd-icons icons-demand">&nbsp;</i></div>
                     <div class="tlc-title"><span >Nhu Cầu Thuê Cao</span></div>
-                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    <div class="tlc-description text-xs!"><span>Các tập đoàn lớn, công ty đa quốc gia ưu tiên đặt văn phòng tại trung tâm để nâng tầm thương hiệu. Ngay cả khi kinh tế biến động, họ vẫn đảm bảo khả năng chi trả tiền thuê, mang lại dòng tiền ổn định và bền vững cho chủ đầu tư. </span></div>
                 </div>
                 <div class="item cut-the-top-left-corner-09-container">
                     <div class="icons-container"><i class="stnd-icons icons-humans-group">&nbsp;</i></div>
                     <div class="tlc-title"><span>Giá thuê hấp dẫn</span></div>
-                    <div class="tlc-description"><span>Mặt tiền đường lớn, dễ nhận diện thương hiệu, lưu lượng khách ổn định. </span></div>
+                    <div class="tlc-description text-xs!"><span>Giá thuê văn phòng tại trung tâm Hà Nội thuộc hàng cao nhất cả nước và có xu hướng tăng đều. Điều này phản ánh đúng giá trị vị trí, chất lượng dịch vụ, và mang lại lợi nhuận hấp dẫn vượt trội so với các kênh đầu tư khác. </span></div>
                 </div>
                 
             </div>
@@ -296,9 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             aria-controls="collapseOne"> Vị Trí Kim Cương & Tính Khan Hiếm </button></h2>
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận những thông tin sơ bộ về bất động sản chào bán như vị trí,
-                            thông số bất động sản, tình trạng bất động sản và giá chào bán từ chủ nhà. Thông tin tiếp
-                            nhận có thể qua điện thoại hoặc email.</div>
+                        <div class="accordion-body">
+                            <div><strong>Trung Tâm Kinh Tế - Chính Trị - Văn Hóa:</strong> Các quận trung tâm như Hoàn Kiếm, Ba Đình, Đống Đa, Hai Bà Trưng là trái tim của Hà Nội. Đây là nơi tập trung các cơ quan đầu não, trụ sở chính của các tập đoàn lớn, ngân hàng, tổ chức quốc tế và các địa điểm văn hóa, du lịch quan trọng. Vị trí này đảm bảo một lượng lớn khách thuê là các doanh nghiệp uy tín, có khả năng chi trả cao.</div>
+                            <br/>
+                            <div><strong>Quỹ Đất Hạn Chế:</strong> Đất ở các quận trung tâm là cực kỳ khan hiếm, đặc biệt là đất để xây dựng các tòa nhà văn phòng quy mô. Chính sách quy hoạch đô thị cũng hạn chế phát triển các dự án cao tầng mới để bảo tồn không gian đô thị và di sản. Sự khan hiếm này biến các tòa nhà văn phòng hiện hữu thành tài sản vô giá, có khả năng giữ và tăng giá trị vượt trội theo thời gian.</div>
+                            <br/>
+                            <div><strong>Hạ Tầng Đồng Bộ & Kết Nối Thuận Tiện:</strong> Khu vực trung tâm được đầu tư mạnh mẽ về hạ tầng giao thông (đường xá, cầu vượt, tương lai là hệ thống metro), điện, nước, viễn thông. Điều này giúp nhân viên dễ dàng di chuyển, đồng thời tạo điều kiện thuận lợi cho các hoạt động giao thương, gặp gỡ đối tác.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
@@ -308,9 +314,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             aria-controls="collapseTwo"> Nhu Cầu Thuê Cao & Dòng Tiền Ổn Định </button></h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận những thông tin sơ bộ về bất động sản chào bán như vị trí,
-                            thông số bất động sản, tình trạng bất động sản và giá chào bán từ chủ nhà. Thông tin tiếp
-                            nhận có thể qua điện thoại hoặc email.</div>
+                        <div class="accordion-body">
+                            <div><strong>Nhu Cầu Bền Vững từ Doanh Nghiệp Hạng A/B:</strong> Các công ty lớn, tập đoàn đa quốc gia luôn ưu tiên đặt văn phòng tại trung tâm để nâng tầm thương hiệu và tiện lợi cho giao dịch. Ngay cả khi kinh tế có biến động, những doanh nghiệp này thường có khả năng duy trì hoạt động và chi trả tiền thuê, đảm bảo dòng tiền ổn định và bền vững cho chủ đầu tư.</div>
+                            <br/>
+                            <div><strong>Tỷ Lệ Lấp Đầy Cao:</strong> Các tòa nhà văn phòng hạng A và B ở trung tâm Hà Nội thường có tỷ lệ lấp đầy rất cao, thậm chí gần như tuyệt đối. Điều này là do nhu cầu thuê vượt cung, giảm thiểu rủi ro trống phòng và tối ưu hóa doanh thu cho nhà đầu tư.</div>
+                            <br/>
+                            <div><strong>Giá Thuê Hấp Dẫn & Tiềm Năng Tăng Trưởng:</strong> Giá thuê văn phòng tại trung tâm Hà Nội thuộc hàng cao nhất cả nước và có xu hướng tăng đều theo thời gian, phản ánh đúng giá trị vị trí và chất lượng dịch vụ. Điều này mang lại lợi nhuận hấp dẫn so với các kênh đầu tư khác.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
@@ -321,9 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button></h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Lên kế hoạch truyền thông, tiếp thị bất động sản đến đối tượng khách
-                            hàng mục tiêu. Tư vấn thông tin tới khách hàng, dẫn khách xem thực tế bất động sản và tư vấn
-                            giao dịch.</div>
+                        <div class="accordion-body">
+                            <div><strong>Tiềm Năng Tăng Giá Vượt Trội:</strong> Do tính khan hiếm và vị trí chiến lược, giá trị của các tòa nhà văn phòng tại trung tâm không ngừng gia tăng. Việc đầu tư vào đây không chỉ mang lại dòng tiền mà còn là một tài sản tích lũy giá trị hiệu quả, đặc biệt trong dài hạn.</div>
+                            <br/>
+                            <div><strong>Tính Thanh Khoản Cao:</strong>  Khi cần thoái vốn, các tòa nhà văn phòng tại trung tâm rất dễ giao dịch. Luôn có một lượng lớn nhà đầu tư cá nhân, quỹ đầu tư, hoặc các tập đoàn có nhu cầu mua lại để khai thác hoặc làm trụ sở, đảm bảo khả năng chuyển nhượng nhanh chóng và có lợi.</div>
+                            <br/>
+                            <div><strong>Khẳng Định Đẳng Cấp & Vị Thế:</strong> Sở hữu một tòa nhà văn phòng tại trung tâm Hà Nội không chỉ là một khoản đầu tư sinh lời mà còn là biểu tượng của sự thành công và vị thế của nhà đầu tư.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
@@ -333,21 +347,27 @@ document.addEventListener('DOMContentLoaded', () => {
                             aria-controls="collapseFour"> Lời Khuyên Từ Nhà Môi Giới Chuyên Nghiệp </button></h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận đầy đủ thông tin bất động sản ký gửi và ký hợp đồng môi
-                            giới với chủ nhà. Đây là căn cứ pháp lý để chúng tôi chào bán, tiếp thị và triển khai tư
-                            vấn, tìm kiếm khách hàng.</div>
+                        <div class="accordion-body">
+                            <div><strong>Vốn Đầu Tư Lớn:</strong> Đây là cuộc chơi của những nhà đầu tư có tiềm lực tài chính dồi dào.</div>
+                            <br/>
+                            <div><strong>Thẩm Định Kỹ Lưỡng:</strong> Cần phân tích sâu về báo cáo tài chính của tòa nhà (nếu đã hoạt động), chất lượng xây dựng, hệ thống kỹ thuật, và đặc biệt là tính pháp lý.</div>
+                            <br/>
+                            <div><strong>Quản Lý Vận Hành Chuyên Nghiệp:</strong> Hiệu quả đầu tư phụ thuộc rất nhiều vào đơn vị quản lý tòa nhà. Lựa chọn một đơn vị có kinh nghiệm, uy tín là yếu tố then chốt để duy trì tỷ lệ lấp đầy, chất lượng dịch vụ và tối ưu chi phí.</div>
+                            <br/>
+                            <div><strong>Tầm Nhìn Dài Hạn:</strong> Giá trị của tòa nhà văn phòng được khẳng định trong dài hạn. Nhà đầu tư cần kiên nhẫn và sẵn sàng đối phó với những biến động kinh tế.</div>
+                        </div> 
                     </div>
                 </div>
                 <div class="accordion-item ">
                     <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number"></span></div>
-                    <h2 id="headingFour" class="accordion-header"><button class="accordion-button collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                    <h2 id="headingFive" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
                             aria-controls="collapseFour"> Kết luận </button></h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận đầy đủ thông tin bất động sản ký gửi và ký hợp đồng môi
-                            giới với chủ nhà. Đây là căn cứ pháp lý để chúng tôi chào bán, tiếp thị và triển khai tư
-                            vấn, tìm kiếm khách hàng.</div>
+                        <div class="accordion-body">
+                            <div> Đầu tư tòa nhà văn phòng tại các quận trung tâm Hà Nội là một lựa chọn lý tưởng cho những nhà đầu tư muốn tìm kiếm một <strong>tài sản an toàn, có khả năng tạo ra dòng tiền ổn định và tiềm năng tăng trưởng giá trị vượt trội.</strong> Với sự hỗ trợ của một môi giới chuyên nghiệp, phân tích kỹ lưỡng và chiến lược quản lý hiệu quả, đây chắc chắn là một bước đi thông minh để xây dựng danh mục đầu tư bất động sản vững chắc.</div>
+                        </div>
                     </div>
                 </div>
                 

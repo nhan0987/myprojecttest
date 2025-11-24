@@ -253,6 +253,10 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/organization.svg');
     mask-image: url('/wp-content/themes/soledad/icons/organization.svg');
 }
+.organization-1-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/organization-1.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/organization-1.svg');
+}
 
 .paper-airplanes-icons {
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/paper_airplanes.svg');
@@ -276,6 +280,11 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
     mask-image: url('/wp-content/themes/soledad/icons/staff.svg');
 }
+.staff-1-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/staff-1.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/staff-1.svg');
+}
+
 
 .event-icons {
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/event.svg');
@@ -333,6 +342,16 @@
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/medal.svg');
     mask-image: url('/wp-content/themes/soledad/icons/medal.svg');
 }
+.flag-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/flag.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/flag.svg');
+}
+
+.personal-icons {
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/personal.svg');
+    mask-image: url('/wp-content/themes/soledad/icons/personal.svg');
+}
+
 
 .stnd-images-icons {
     width: 24px;
