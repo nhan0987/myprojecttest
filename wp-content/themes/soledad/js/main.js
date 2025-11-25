@@ -1966,6 +1966,12 @@
         var btn = document.getElementById('btnToggle');
         var btnText = document.getElementById('btnText');
 
+		// Kiểm tra: Nếu thiếu contentDiv HOẶC thiếu btn HOẶC thiếu btnText
+		if (!contentDiv || !btn || !btnText) {
+			// Thì "quay xe" ngay lập tức, không chạy code bên dưới nữa
+			return;
+		}
+
         btn.addEventListener('click', function() {
             
             // Kiểm tra xem đang có class expanded không

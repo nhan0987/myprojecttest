@@ -328,6 +328,24 @@ p:last-child {
 	text-transform: uppercase;
 }
 
+.dash-03:before {
+	background: white;
+	content: '';
+	display: block;
+	width: 1.5rem;
+	height: 1px;
+	margin-right: 0.625rem;
+}
+.dash-03{
+	display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.875rem;
+    
+    margin-bottom: 0;
+}
+
+
 
 
 .underline-01 .title-box .title-underline {
@@ -1492,7 +1510,9 @@ p:last-child {
 .gold-color {
 	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
 }
-
+.white-color {
+	background: white !important;
+}
 
 .self-icons:before {
 	content: '\200B';
@@ -3466,9 +3486,213 @@ html {
 		width: 1.6875rem;
 		height: 1.6875rem;
 	}
+}
+
+.cut-the-top-left-corner-09-01-container {
+	cursor: pointer;
+}
+
+.cut-the-top-left-corner-09-01-container .icons-container .stnd-icons {
+	background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.cut-the-top-left-corner-09-01-container .tlc-description {
+	display: none;
+	font-weight: 400;
+	font-size: 0.875rem;
+}
+
+
+.cut-the-top-left-corner-09-01-container {
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	display: flex;
+	height: 8rem;
+	position: relative;
+
+}
+
+.cut-the-top-left-corner-09-01-container.active {
+	background-color: white;
+	border: 1px solid #eaab39;
+	border-radius: 0.75rem;
+}
+.cut-the-top-left-corner-09-01-container .tlc-title {
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+
+.cut-the-top-left-corner-09-01-featured-container {
+	aspect-ratio: 341 / 170;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09-mobile.svg");
+	background-color: white;
+	mask-size: 100% auto;
+	-webkit-mask-size: 100% auto;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	width: 21.3125rem;
+	height: 10.6rem;
+	padding: 1.3rem 1.5rem 0px 1.5rem;
+	gap: 1.4rem;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+	position: relative;
+
+}
+
+.cut-the-top-left-corner-09-01-featured-container {
+	display: none;
+}
+
+.cut-the-top-left-corner-09-01-featured-container::after {
+	/* content: ''; */
+	position: absolute;
+	width: 12.9375rem;
+	height: 15.625rem;
+	background-color: #485563;
+	right: -9.25rem;
+	bottom: -4.25rem;
+	transform: rotate(-53deg);
+	opacity: 0.5;
+	z-index: -1;
+}
+
+
+.cut-the-top-left-corner-09-01-featured-container .tlc-title {
+	display: block;
+	background: #02253D;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 1rem !important;
+	font-weight: 600 !important;
+	padding-left: 3.4375rem;
+}
+
+.cut-the-top-left-corner-09-01-featured-container .icons-container {
+	display: flex;
+	background-color: #02253D;
+	padding: 0px 0.625rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 0.75rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.cut-the-top-left-corner-09-01-featured-container .icons-container .stnd-icons {
+	
+	width: 1.6875rem;
+	height: 1.6875rem;
+}
+
+
+.cut-the-top-left-corner-09-01-featured-container .tlc-description {
+	font-weight: 400;
+	font-size: 0.875rem;
+	
+}
+
+
+
+@media (min-width: 1280px) {
+	.cut-the-top-left-corner-09-01-container {
+		flex: 1;
+	}
+
+	.cut-the-top-left-corner-09-01-featured-container {
+		display: none;
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active) {
+		aspect-ratio: 320 / 150;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09.svg");
+		background-color: #02253D;
+		mask-size: 100% auto;
+		-webkit-mask-size: 100% auto;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		width: 20rem;
+		height: 11rem;
+		transition: opacity 0.5s ease-out;
+		padding: 1.3rem 1.5rem 0px 1.5rem;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 1.4rem;
+		text-align: left;
+
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active)::after {
+		/* content: ''; */
+		position: absolute;
+		width: 12.9375rem;
+		height: 15.625rem;
+		background-color: #485563;
+		right: -9.25rem;
+		bottom: -4.25rem;
+		transform: rotate(-53deg);
+		opacity: 0.5;
+		z-index: -1;
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active) .tlc-description {
+		display: block;
+		
+		font-size: 0.875rem;
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active) .tlc-title {
+		display: block;
+		background: #232D39;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: 1rem !important;
+		font-weight: 600 !important;
+		padding-left: 3rem;
+
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active) .icons-container {
+		display: flex;
+		background: #232D39;
+		padding: 0px 0.625rem;
+		width: 3.35rem;
+		height: 3.35rem;
+		border-radius: 0.625rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+		justify-content: center;
+		align-items: center;
+		color: white;
+	}
+
+	.cut-the-top-left-corner-09-01-container:is(:hover, :active) .icons-container .stnd-icons {
+	
+		width: 1.6875rem;
+		height: 1.6875rem;
+	}
 
 
 }
+
+
 
 
 .cut-the-bottom-left-corner-10-container {
@@ -3825,13 +4049,15 @@ html {
 
 .btn-gold {
 	background: radial-gradient(92.46% 138.54% at 49.35% 100%, #FFD45C 0%, #9E5625 100%);
-	text-align: center;
-	display: inline-block;
-	max-width: 180px;
+	
+	max-width: 11.25rem;
 	border-radius: 4px;
 	color: white;
-	padding: 0.5rem;
-	width: 11.25rem;
+	padding: 0.5rem 0.75rem;
+	justify-content: center;
+    align-items: center;
+    display: flex;
+	
 }
 
 .btn-gold span {
@@ -3856,6 +4082,43 @@ html {
 	opacity: 1;
 	right: 0;
 }
+
+.btn-white-arrow {
+	background-color: white;
+	max-width: 11.25rem;
+	border-radius: 4px;
+	padding: 0.5rem 0.75rem;
+	justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn-white-arrow span {
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	color: black;
+}
+
+.btn-white-arrow span:after {
+	content: '\00bb';
+	
+	position: absolute;
+	opacity: 0;
+	right: -1.25rem;
+	transition: 0.5s;
+	color: #ffd700 !important;
+}
+
+.btn-white-arrow:hover span {
+	padding-right: 1.5625rem;
+}
+
+.btn-white-arrow:hover span>i {
+	opacity: 1;
+	right: 0;
+}
+
 
 #sidebar-nav::after {
 	content: '';
