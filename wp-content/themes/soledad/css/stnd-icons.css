@@ -146,72 +146,19 @@
 }
 
 .telephone-icons {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-
-    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
+ 
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
     mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');
-    /* ---------------------------------- */
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    /* --- TÔ MÀU VÀO KHUÔN --- */
-    background-color: #f5f4f0;
-    /* Icon sẽ auto có màu vàng */
-    transition: background-color 0.2s;
 }
 
 .email-icons {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-
-    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/email.svg');
     mask-image: url('/wp-content/themes/soledad/icons/email.svg');
-    /* ---------------------------------- */
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    /* --- TÔ MÀU VÀO KHUÔN --- */
-    background-color: #f5f4f0;
-    /* Icon sẽ auto có màu vàng */
-    transition: background-color 0.2s;
 }
 
 .location-icons {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-
-    /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/location.svg');
     mask-image: url('/wp-content/themes/soledad/icons/location.svg');
-    /* ---------------------------------- */
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    /* --- TÔ MÀU VÀO KHUÔN --- */
-    background-color: #f5f4f0;
-    /* Icon sẽ auto có màu vàng */
-    transition: background-color 0.2s;
 }
 
 .polygon-icon {
@@ -360,6 +307,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
+    display: inline-block;
 }
 
 .facebook-icons {
@@ -379,4 +327,20 @@
 }
 .linkedin-icons {
     background-image: url('/wp-content/themes/soledad/icons/icon-linkedin.svg');
+}
+
+.icons-dinh-gia {
+    background-image: url('/wp-content/themes/soledad/icons/icons-dinh-gia.svg');
+}
+.icons-phong-thuy {
+    background-image: url('/wp-content/themes/soledad/icons/icons-phong-thuy.svg');
+}
+.icons-quy-hoach {
+    background-image: url('/wp-content/themes/soledad/icons/icons-quy-hoach.svg');
+}
+.icons-tu-van-mua-nha {
+    background-image: url('/wp-content/themes/soledad/icons/icons-tu-van-mua-nha.svg');
+}
+.icons-tu-van-tai-chinh {
+    background-image: url('/wp-content/themes/soledad/icons/icons-tu-van-tai-chinh.svg');
 }

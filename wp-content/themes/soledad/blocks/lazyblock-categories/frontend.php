@@ -61,7 +61,7 @@ if (!function_exists('lth_categories_output_fe')) :
                             
                                 <div class="<?php echo esc_attr( $item_classes ); ?>">
                                     <div class="content">
-                                        <div class="content-header">
+                                        <div class="content-header flex flex-col-reverse">
                                             <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?>">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
@@ -75,16 +75,16 @@ if (!function_exists('lth_categories_output_fe')) :
                                             </div>
                                             <?php } ?>
                                             
-                                            <h3 class="content-name capitalize ">
+                                            
+                                            <div class="content-excerpt">
+                                                <?php echo wpautop($inner['item_text']); ?>
+                                            </div>
+                                            <h3 class="content-name ">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
                                                     <?php echo wpautop($inner['item_title']); ?>
                                                 </a>
                                                 
                                             </h3>
-                                            <div class="content-excerpt">
-                                                <?php echo wpautop($inner['item_text']); ?>
-                                            </div>
-                                            
                                                 
                                             
                                         </div>

@@ -29,13 +29,13 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                             <?php if ($attributes['url']) : ?> 
                                 <a href="<?php echo esc_url($attributes['url']); ?>" title="">
                             <?php else : ?>
-                                <span>
+                                
                             <?php endif; ?>
                                 <?php echo wpautop(esc_html($attributes['title'])); ?>
                             <?php if ($attributes['url']) : ?> 
                                 </a>
                             <?php else : ?>
-                                </span>
+                                
                             <?php endif; ?>
                         </h2>
                     <?php endif; ?>

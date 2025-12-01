@@ -2003,6 +2003,56 @@
                 btnText.textContent = "Xem thêm";
             }
         });
+	},
+	PENCI.draw_stroke = function () {
+
+		
+			// 1. Chọn đúng mục tiêu: Thẻ p nằm trong .infor, nằm trong .dash-05
+			const targets = document.querySelectorAll('.dash-05 .infor > p');
+
+			console.log("draw_stroke")
+
+			targets.forEach((el, index) => {
+				const text = el.innerText.trim();
+				if (!text) return; // Bỏ qua nếu thẻ rỗng
+
+				// Lấy size chữ hiện tại của thẻ p để SVG tự co giãn theo
+				const style = window.getComputedStyle(el);
+				const fontSize = style.fontSize || '50px';
+				const fontWeight = style.fontWeight || '900';
+				const fontFamily = style.fontFamily || 'sans-serif';
+
+				// Tạo ID duy nhất cho mỗi gradient (Tránh bị trùng lặp)
+				const gradientId = `vipGradient-${index}-${Math.floor(Math.random() * 1000)}`;
+
+				// Template SVG
+				const svgContent = `
+				<svg width="100%" height="1.5em" style="overflow: visible; display: block;">
+					<defs>
+						<linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(86)">
+							<stop offset="1.16%" style="stop-color:#FFD45C; stop-opacity:1" />
+							<stop offset="100%" style="stop-color:#9E5625; stop-opacity:1" />
+						</linearGradient>
+					</defs>
+					<text x="50%" y="55%" 
+						text-anchor="middle" 
+						dominant-baseline="middle"
+						font-family="${fontFamily}" 
+						font-weight="${fontWeight}" 
+						font-size="${fontSize}" 
+						fill="transparent" 
+						stroke="url(#${gradientId})" 
+						stroke-width="1.5px">
+						${text}
+					</text>
+				</svg>
+				`;
+
+				// Thay thế nội dung cũ bằng SVG xịn
+				el.innerHTML = svgContent;
+			});
+		
+		
 	};
 
 
@@ -2031,6 +2081,7 @@
 		PENCI.JumtoRecipe();
 		PENCI.Single_Loadmore();
 		PENCI.button_expand();
+		PENCI.draw_stroke();
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
 	});
 })(jQuery);	// EOF

@@ -1,9 +1,8 @@
 @font-face {
 	font-family: 'Snell Roundhand';
-	src: url('../fonts/snellroundhand_black.otf') format('otf');
+	src: url('../fonts/snellroundhand_black.otf') format('opentype');
 	font-weight: 100 700;
-	font-style: bold;
-	/* font-display: swap;  */
+	font-style: normal;
 }
 
 @font-face {
@@ -11,7 +10,13 @@
 	src: url('../fonts/MuseoModerno-Medium.ttf') format('ttf');
 	font-weight: 100 700;
 	font-style: normal;
-	font-display: block;
+}
+
+@font-face {
+  font-family: '1FTV-VIP-Madinah-Authentic'; /* Tên bạn đặt cho font */
+  src: url('../fonts/1FTV-VIP-Madinah-Authentic.otf') format('opentype'); /* Đường dẫn đến file font */
+  font-weight: 100 700;
+  font-style: normal;
 }
 
 
@@ -279,7 +284,7 @@ p:last-child {
 .title-box .title {
 	display: flex;
 	align-items: center;
-	padding: 0.375rem 2.5rem 0.375rem 0px;
+	padding: 0.375rem 2.5rem 0 0px;
 	margin-bottom: 0;
 	position: relative;
 	font-weight: 400;
@@ -302,31 +307,68 @@ p:last-child {
 	margin-right: 0.625rem;
 }
 
-.dash-02 .title-box .title:before {
+.dash-02 .title-box .infor{
+	display: flex;
+    align-items: center;
+    padding: 0 0rem 0 0px;
+    margin-bottom: 0;
+    position: relative;
+}
+.dash-02 .title-box .infor:before {
 	background-color: #333;
 	content: '';
 	display: block;
-	width: 1.5rem;
-	height: 1px;
+	width: 24px;
+    height: 2px;
+	border-radius: 16px;
 	margin-right: 0.625rem;
+}
+.dash-02 .title-box .infor>p{
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: 1.5px #000000;
+	
 }
 
 .dash-02 .title-box .title {
-	display: flex;
-	align-items: center;
-	padding: 0.375rem 2.5rem 0.375rem 0px;
+	padding: 0.375rem 2.5rem 0 0px;
 	margin-bottom: 0;
-	position: relative;
-	font-weight: 400;
-	font-size: 0.875rem;
-
 	background-color: #333;
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	-webkit-text-fill-color: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: black;
 	text-transform: uppercase;
 }
+.dash-02 .title-box .title>p {
+	font-weight: 700;
+	font-size: 18px;
+	color: black;
+}
+@media (min-width:1280px) {
+	.dash-02 .title-box .title>p {
+		font-weight: 700;
+		font-size: 32px;
+	}
+	.dash-02 .title-box .title {
+		font-weight: 700;
+		font-size: 32px;
+	}
+	.dash-02 .title-box .infor:before {
+		height: 3px;
+		width: 48px;
+	}
+	.dash-02 .title-box .infor>p{
+		font-weight: 700;
+		font-size: 32px;
+		
+		
+	}
+	
+}
+
 
 .dash-03:before {
 	background: white;
@@ -343,6 +385,136 @@ p:last-child {
     font-size: 0.875rem;
     
     margin-bottom: 0;
+}
+
+.dash-04 .title-box .title{
+    padding: 0.375rem 0 0 0px;
+	color: black;
+	-webkit-background-clip: inherit;
+    background-clip: inherit;
+	background: none;
+	-webkit-text-fill-color: inherit;
+}
+.dash-04 .title-box .title>p{
+	font-weight: 700;
+	font-size: 18px;
+}
+
+
+.dash-04 .title-box .infor:before{
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+	content: '';
+	display: block;
+	width: 24px;
+	height: 2px;
+	border-radius: 16px;
+}
+.dash-04 .title-box .infor{
+
+	display: flex;
+    align-items: center;
+    padding: 0 0 0 0px;
+    margin-bottom: 0;
+    position: relative;
+    transform: translateY(-22px);
+
+}
+.dash-04 .title-box .infor>p{
+	font-family: '1FTV-VIP-Madinah-Authentic',sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 74px;
+	text-transform: math-auto;
+
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+	width: 100%;
+	padding: 0px 0px 0px 4px;
+}
+@media (min-width:1280px) {
+	.dash-04 .title-box .title{
+		font-weight: 700;
+		font-size: 32px;
+		
+	}
+	.dash-04 .title-box .title>p{
+		font-weight: 700;
+		font-size: 32px;
+	}
+	.dash-04 .title-box .infor>p{
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 74px;
+		width: 40%;
+	}
+	.dash-04 .title-box .infor:before{
+		width: 48px;
+		height: 3px;	
+	}
+}
+
+.dash-05 .title-box .infor{
+	display: flex;
+    align-items: center;
+    padding: 0 0rem 0 0px;
+    margin-bottom: 0;
+    position: relative;
+}
+.dash-05 .title-box .infor:before {
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+	content: '';
+	display: block;
+	width: 24px;
+    height: 2px;
+	border-radius: 16px;
+	margin-right: 0.625rem;
+}
+.dash-05 .title-box .infor>p{
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: transparent;
+	/* -webkit-text-stroke: 1.5px #E19E46; */
+	
+}
+
+.dash-05 .title-box .title {
+	padding: 0.375rem 2.5rem 0 0px;
+	margin-bottom: 0;
+	background-color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: white;
+	text-transform: uppercase;
+}
+.dash-05 .title-box .title>p {
+	font-weight: 700;
+	font-size: 18px;
+	color: white;
+}
+@media (min-width:1280px) {
+	.dash-05 .title-box .title>p {
+		font-weight: 700;
+		font-size: 32px;
+	}
+	.dash-05 .title-box .title {
+		font-weight: 700;
+		font-size: 32px;
+	}
+	.dash-05 .title-box .infor:before {
+		height: 3px;
+		width: 48px;
+	}
+	.dash-05 .title-box .infor>p{
+		font-weight: 700;
+		font-size: 32px;
+	}
+	
 }
 
 
@@ -812,8 +984,8 @@ p:last-child {
 }
 
 .module_categories .content-excerpt p {
-	margin-top: 5px;
-	margin-bottom: 0.5rem;
+	/* margin-top: 5px; */
+	margin-bottom: 6px;
 	font-size: 0.875rem;
 	line-height: 1.375rem;
 	color: #5C6267;
@@ -848,21 +1020,37 @@ p:last-child {
 }
 
 .module_categories .title-box .title:before {
-	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	content: '';
 	display: block;
 	width: 1.5rem;
 	height: 1px;
-	margin-right: 0.625rem;
+	margin-right: 0.625rem; */
 }
 
 .module_categories .title-box .title {
-	display: flex;
+	/* display: flex;
 	align-items: center;
 	font-weight: 400;
 	font-size: 0.875rem;
 	color: #FEC769;
-	margin-bottom: 0;
+	margin-bottom: 0; */
+}
+
+.module_categories .grid-01 .content-excerpt>p{
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: capitalize;
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.module_categories .grid-01 .content-name p{
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: capitalize;
 }
 
 .wrapper-boxed {
@@ -1650,18 +1838,16 @@ p:last-child {
 
 .title-thungo {
 
-	font-family: 'Snell Roundhand', sans-serif;
+	font-family: '1FTV-VIP-Madinah-Authentic';
 	font-weight: 700;
-	font-size: 1.875rem;
-	line-height: 100%;
-	letter-spacing: 0%;
+	font-size: 30px;
 	text-align: center;
-	/*text linear-gradient*/
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 	-webkit-text-fill-color: transparent;
+	padding-top: 10px;
 
 }
 
@@ -1879,29 +2065,25 @@ p:last-child {
 	font-weight: 600;
 }
 
-.lien-he-voi-chung-toi .title-box .title:before {
-	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
-	content: '';
-	display: block;
-	width: 1.5rem;
-	height: 1px;
-	margin-right: 0.625rem;
+
+.lien-he-voi-chung-toi .title-box .title>p {
+	color: white;
+	
 }
 
-.lien-he-voi-chung-toi .title-box .title {
-	display: flex;
-	align-items: center;
-	font-weight: 400;
-	font-size: 0.875rem;
-	margin-bottom: 0;
-}
 
 .lien-he-voi-chung-toi .title-box .title {
-	justify-content: start;
+	justify-content: center;
+	transform: translateX(-44px);
 }
+.lien-he-voi-chung-toi .title-box .infor {
+	justify-content: center;
+	transform: translateY(-28px);
+}
+
 
 .lien-he-voi-chung-toi .title-box {
-	text-align: start;
+	text-align: center;
 }
 
 .lien-he-voi-chung-toi .lth-section {
@@ -1910,31 +2092,30 @@ p:last-child {
 	background-color: #232d39;
 }
 .lien-he-voi-chung-toi .infor p {
-	color: white;
-	font-size: 1.25rem;
-    line-height: 1.2;
-    font-weight: 600;
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%) !important;
+	-webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+	width: 52% !important;
 }
 @media (min-width:1280px) {
 	.lien-he-voi-chung-toi .infor p {
-		color: white;
-		font-weight: 700;
-		font-size: 2rem;
-		line-height: 3rem;
+		width: 40% !important;
 	}
 	.lien-he-voi-chung-toi .title-box {
 		text-align: center;
 	}
 	.lien-he-voi-chung-toi .title-box .title {
-		justify-content: start;
+		transform: translateX(-67px);
 	}	
 }
 
 
 .lien-he-voi-chung-toi .title p {
-	font-size: 0.875rem;
+	/* font-size: 0.875rem;
 	line-height: 1.375rem;
-	font-weight: 400;
+	font-weight: 400; */
 }
 
 .lien-he-voi-chung-toi input,
@@ -2109,21 +2290,21 @@ li.nav-item::marker {
 
 
 .module_blogs .title-box .title:before {
-	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	content: '';
 	display: block;
 	width: 1.5rem;
 	height: 1px;
-	margin-right: 0.625rem;
+	margin-right: 0.625rem; */
 }
 
 .module_blogs .title-box .title {
-	display: flex;
+	/* display: flex;
 	align-items: center;
 	font-weight: 400;
 	font-size: 0.875rem;
 	color: #FEC769;
-	margin-bottom: 0;
+	margin-bottom: 0; */
 }
 
 @media ((min-width: 640px)) {
@@ -2458,19 +2639,18 @@ li.nav-item::marker {
 
 .pennant-tag-green {
 	position: absolute;
-	top: 1.25rem;
-	/* Cách mép trên 1.25rem */
-	left: 0;
-	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%); */
+	top: -4px;
+    left: 16px;
 	font-size: 0.875rem;
 	font-weight: 500;
 	color: white;
-	padding: 0.375rem 1.4375rem 0.9375rem 0.9375rem;
+	padding: 1px 27px 13px 11px;
 	transform: translate(-0.5rem);
 
 	background-image: url('../images/pennant-tag-green.png');
 	background-size: cover;
 	background-position: center;
+	z-index:2;
 }
 
 .pennant-tag-yellow {
@@ -3927,7 +4107,7 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* padding: 0.5rem 0.75rem; */
+	
 }
 .cut-the-bottom-right-corner-14-container .btn-view-more .arrow-right-icons{
 	transform: rotate(0deg);
@@ -4044,6 +4224,199 @@ html {
 		width: 80em;
 		height: 39.375rem;
 	}
+}
+
+.cut-the-bottom-right-corner-18-container {
+	aspect-ratio: 150 / 130;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-18-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-18-mobile.svg");
+	width: 9.375em;
+    height: 8.125rem;
+
+	--tw-translate-y: calc(calc(1 / 10 * 100%) * -1);
+    transform: translateY(var(--tw-translate-y));
+
+	background-size: cover !important;
+	background-position-y: 16% !important;
+
+}
+.cut-the-bottom-right-corner-14-container .zoom-image {
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+
+.cut-the-bottom-right-corner-18-container:hover .zoom-image {
+	border: 2px solid #eaab39;
+    transform: scale(1.15);
+}
+.cut-the-bottom-right-corner-18-container:hover .btn-view-more {
+	color: white;
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+}
+.cut-the-bottom-right-corner-18-container .bg-view-more {
+	background-color: white;
+	right: 0;
+    bottom: 0;
+	position: absolute;
+
+	display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.cut-the-bottom-right-corner-18-container .btn-view-more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.cut-the-bottom-right-corner-18-container .btn-view-more .arrow-right-icons{
+	transform: rotate(0deg);
+}
+
+@media (min-width:1280px) {
+	.cut-the-bottom-right-corner-18-container {
+		aspect-ratio: 374 / 270;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-18.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-18.svg");
+		width: 23.375em;
+		height: 16.875rem;
+	}
+}
+
+
+/* --- Cấu trúc chung --- */
+/* Giả lập grid cha để col-span hoạt động đúng, nếu Oniichan đặt nó trong grid */
+.job-item-container {
+    gap: 1rem; 
+
+	/* px-3: Trái phải 12px */
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+
+	/* pb-3: Dưới 12px */
+	padding-bottom: 0.75rem;
+
+	/* rounded-xl: Bo góc 12px */
+	border-radius: 0.75rem;
+
+	/* border-1 border-solid border-slate-300: Gộp chung thành shorthand */
+	border: 1px solid #cbd5e1;
+	position: relative;
+}
+.job-item-container .btn-view-more {
+	width: 40px;
+	height: 40px;
+	color: white;
+}
+.job-item-container .text-view-more{
+	display: none;
+}
+@media (min-width:1280px) {
+	.job-item-container .text-view-more{
+		display: block;
+	}
+	.job-item-container .btn-view-more {
+	width: 128px;
+	height: 40px;
+	color: white;
+}
+}
+/* --- Phần 1: Thumbnail --- */
+.job-thumbnail {
+    /* col-span-1 */
+    grid-column: span 1;
+    /* rounded-xl */
+    border-radius: 0.75rem; 
+}
+
+/* Badge "Mới nhất" */
+.job-badge {
+    /* pennant-tag-green text-sm font-medium */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;    /* font-medium */
+    /* Màu sắc và hình dáng của badge (pennant-tag-green) cần định nghĩa thêm nếu class đó chưa có style */
+}
+
+/* --- Phần 2: Thông tin (Job Info) --- */
+.job-info {
+    /* flex flex-col mt-4 gap-2 */
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    gap: 0rem;
+    
+    /* col-span-1 */
+    grid-column: span 1;
+}
+
+/* Tag danh mục (Kinh doanh) */
+.job-category-tag {
+    /* rounded-2xl border-1 border-solid border-slate-100 p-2 text-sm */
+    border-radius: 1rem;
+    border: 1px solid #f1f5f9; /* slate-100 */
+    padding: 0px 6px;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+/* Tiêu đề */
+.job-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.job-date {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* --- Phần 3: Footer (Địa điểm/Lương) --- */
+.job-footer {
+    /* text-gray-500 col-span-2 text-sm */
+    color: #6b7280;
+    grid-column: span 2;
+    font-size: 0.875rem;
+}
+.job-thumbnail .zoom-image{
+    height: 100% !important;
+}
+.job-thumbnail:hover .btn-view-more{
+	color: white;
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+}
+
+
+@media (min-width: 1280px) {
+    
+    /* Thumbnail to hơn trên desktop */
+    .job-thumbnail {
+        /* lg:w-[370px]! lg:h-[270px]! */
+        width: 370px !important;
+        height: 270px !important;
+    }
+
+    /* Info section điều chỉnh khoảng cách */
+    .job-info {
+        /* lg:gap-4 lg:mt-0! */
+        gap: 0.5rem;
+        margin-top: 0 !important;
+    }
+
+    /* Font size lớn hơn trên desktop (lg:text-base) */
+    .job-category-tag,
+    .job-title,
+    .job-date,
+    .job-footer {
+        font-size: 1rem; /* text-base */
+    }
+
+    /* Footer chỉ chiếm 1 cột trên desktop */
+    .job-footer {
+        /* lg:col-span-1 */
+        grid-column: span 1;
+    }
 }
 
 
@@ -4470,4 +4843,59 @@ html {
 		height: 184px;
 	}
 
+}
+
+.vip-gradient-text {
+  font-family: '1FTV-VIP-Madinah-Authentic',sans-serif;
+  /* 1. Các thuộc tính cơ bản (capitalize, font-bold, text-xl, leading-tight) */
+  text-transform: math-auto;
+  font-weight: 400;
+  font-size: 20px; /* Tương đương text-xl */
+  align-content: center;
+text-align: start;
+padding-left: 4px;
+
+
+  /* 2. Tuyệt chiêu Gradient Text (bg-..., bg-clip-text, text-transparent) */
+  /* Tạo nền màu gradient */
+  background-image: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+  
+  /* Cắt nền theo hình dáng chữ */
+  -webkit-background-clip: text; /* Bắt buộc cho Chrome, Safari */
+  background-clip: text;         /* Chuẩn quốc tế */
+  
+  /* Làm chữ trong suốt để lộ nền gradient */
+  color: transparent;
+}
+
+/* 3. Responsive cho màn hình lớn (xl:text-[2.5rem]) */
+/* Tailwind mặc định xl là min-width: 1280px */
+@media (min-width: 1280px) {
+  .vip-gradient-text {
+    font-size: 64px;
+  }
+}
+
+.dich-vu-mien-phi .stnd-images-icons {
+	width: 96px !important;
+	height: 96px !important;
+}
+.dich-vu-mien-phi .text-1{
+	font-weight: 700;
+	font-size: 16px;
+	color: white;
+}
+.dich-vu-mien-phi .text-2{
+	font-weight: 700;
+	font-size: 16px;
+
+	background-image: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+.dich-vu-mien-phi .text-3{
+	font-weight: 400;
+	font-size: 14px;
+	color: white;
 }
