@@ -330,17 +330,22 @@
 }
 
 .icons-dinh-gia {
-    background-image: url('/wp-content/themes/soledad/icons/icons-dinh-gia.svg');
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/icons-dinh-gia.svg');
+    mask-image:url('/wp-content/themes/soledad/icons/icons-dinh-gia.svg');
 }
 .icons-phong-thuy {
-    background-image: url('/wp-content/themes/soledad/icons/icons-phong-thuy.svg');
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/icons-phong-thuy.svg');
+    mask-image:url('/wp-content/themes/soledad/icons/icons-phong-thuy.svg');
 }
 .icons-quy-hoach {
-    background-image: url('/wp-content/themes/soledad/icons/icons-quy-hoach.svg');
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/icons-quy-hoach.svg');
+    mask-image:url('/wp-content/themes/soledad/icons/icons-quy-hoach.svg');
 }
 .icons-tu-van-mua-nha {
-    background-image: url('/wp-content/themes/soledad/icons/icons-tu-van-mua-nha.svg');
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/icons-tu-van-mua-nha.svg');
+    mask-image:url('/wp-content/themes/soledad/icons/icons-tu-van-mua-nha.svg');
 }
 .icons-tu-van-tai-chinh {
-    background-image: url('/wp-content/themes/soledad/icons/icons-tu-van-tai-chinh.svg');
+    -webkit-mask-image: url('/wp-content/themes/soledad/icons/icons-tu-van-tai-chinh.svg');
+    mask-image:url('/wp-content/themes/soledad/icons/icons-tu-van-tai-chinh.svg');
 }

@@ -2004,13 +2004,66 @@
             }
         });
 	},
+	PENCI.setupExpandToggle = function (config) {
+
+		console.log("setupExpandToggle")
+		// 1. Lấy các tham số từ config (có giá trị mặc định cho text)
+		var contentId = config.contentId;
+		var btnId = config.btnId;
+		var textId = config.textId;
+		var textMore = config.textMore || "Xem thêm"; // Mặc định là Xem thêm
+		var textLess = config.textLess || "Thu gọn";  // Mặc định là Thu gọn
+
+		// 2. Lấy element
+		var contentDiv = document.getElementById(contentId);
+		var btn = document.getElementById(btnId);
+		var btnText = document.getElementById(textId);
+
+		// 3. Kiểm tra an toàn: Nếu thiếu 1 trong các thành phần thì dừng
+		if (!contentDiv || !btn) {
+			console.warn('Neptune báo: Không tìm thấy content hoặc button cho ID:', contentId, btnId);
+			return;
+		}
+
+		// 4. Gắn sự kiện Click
+		btn.addEventListener('click', function(e) {
+			e.preventDefault(); // Tránh thẻ a bị nhảy trang nếu có
+
+			// Kiểm tra trạng thái hiện tại
+			var isExpanded = contentDiv.classList.contains('expanded');
+
+			if (!isExpanded) {
+				// --- MỞ RA ---
+				var realHeight = contentDiv.scrollHeight;
+				contentDiv.style.maxHeight = realHeight + "px";
+				
+				contentDiv.classList.add('expanded');
+				btn.classList.add('active');
+
+				// btn.style.transform = 'translateY(0px)';
+				
+				// Chỉ đổi chữ nếu có element chứa chữ
+				if (btnText) btnText.textContent = textLess;
+
+			} else {
+				// --- ĐÓNG VÀO ---
+				contentDiv.style.maxHeight = null; // Về lại CSS mặc định (thường là height cố định)
+				
+				contentDiv.classList.remove('expanded');
+				btn.classList.remove('active');
+
+				// btn.style.transform = 'translateY(-36px)';
+				
+				// Chỉ đổi chữ nếu có element chứa chữ
+				if (btnText) btnText.textContent = textMore;
+			}
+		});
+	},
 	PENCI.draw_stroke = function () {
 
 		
 			// 1. Chọn đúng mục tiêu: Thẻ p nằm trong .infor, nằm trong .dash-05
 			const targets = document.querySelectorAll('.dash-05 .infor > p');
-
-			console.log("draw_stroke")
 
 			targets.forEach((el, index) => {
 				const text = el.innerText.trim();
@@ -2082,6 +2135,18 @@
 		PENCI.Single_Loadmore();
 		PENCI.button_expand();
 		PENCI.draw_stroke();
+		PENCI.setupExpandToggle({
+			contentId: 'left-content',
+			btnId: 'btn-toggle-left',
+			textId: 'btn-text-left',
+			
+		});
+		PENCI.setupExpandToggle({
+			contentId: 'right-content',
+			btnId: 'btn-toggle-right',
+			textId: 'btn-text-right',
+			
+		});
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
 	});
 })(jQuery);	// EOF

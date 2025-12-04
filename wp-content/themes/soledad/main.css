@@ -14980,6 +14980,8 @@ a img.aligncenter {
 div.wpcf7 {
     overflow: hidden;
     margin-top: 14px;
+    z-index: 2;
+    position: relative;
 }
 span.wpcf7-not-valid-tip {
     margin-top: -15px;

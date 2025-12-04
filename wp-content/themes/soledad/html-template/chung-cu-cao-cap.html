@@ -3,7 +3,8 @@
 <div class="module module_blogs tab-content-style-02 pt-3">
     <div class="grid grid-cols-3 underline-01 ">
         <div class="module_header title-box col-span-3 lg:col-span-2">
-            <h2 class="title-underline">So sánh loại hình</h2>
+            <h2 class="capitalize font-bold text-base xl:text-2xl">So sánh</h2>
+            <span class="text-gold capitalize font-bold text-sm! xl:text-xl!">Loại hình Bất động sản</span>
         </div>
         <ul id="myTab" class="nav nav-pills nav-fill title-tab col-span-3 lg:col-span-1 " role="tablist">
             <li class="nav-item" role="presentation"><button id="home-tab" class="nav-link active" role="tab"
@@ -216,74 +217,140 @@
     </div>
 </div>
 
-<script>
-    // Bọc mọi thứ trong 'DOMContentLoaded' để đảm bảo HTML đã tải xong
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // --- BƯỚC 1: LẤY TẤT CẢ CÁC KHU VỰC TAB (Wrappers) ---
-        // Thay vì chọn item toàn trang, ta sẽ xử lý từng Tab một để tránh nhầm lẫn
-        const tabPanes = document.querySelectorAll('.tab-pane');
-
-        if (tabPanes.length === 0) {
-             console.warn("Cảnh báo: Không tìm thấy tab-pane nào ạ!");
-             return;
-        }
-
-        // --- BƯỚC 2: DUYỆT QUA TỪNG TAB VÀ GẮN SỰ KIỆN RIÊNG BIỆT ---
-        tabPanes.forEach((pane, index) => {
+<div class="grid grid-col xl:grid-cols-2 tab-content-style-01 gap-2 items-center">
+    <div class="tab-pane grid grid-col gap-3 xl:gap-5">
+        <div>
+            <div><span class="uppercase font-bold text-[19px] xl:text-[32px]">Tại sao nên đầu tư</span></div>
+            <div class="dash"><span class="text-gold uppercase font-semibold! xl:font-bold! text-[18px]! xl:text-[32px]!">Chung cư cao cấp?</span></div>
+        </div>
+        <div>
+            <div><span class="capitalize font-bold text-base xl:text-2xl">Góc nhìn</span></div>
+            <div><span class="text-gold capitalize font-bold text-sm! xl:text-xl!">Môi giới chuyên nghiệp</span></div>
+        </div>
+        <div>
+            <div class="cut-the-top-left-corner-09-featured-container mx-auto">
+                <div class="icons-container"><i class="stnd-icons">&nbsp;</i></div>
+                <div class="tlc-title"><span ></span></div>
+                <div class="tlc-description text-xs!"><span> </span></div>
+            </div>
             
-            // A. Tìm "Màn hình hiển thị" (Featured Container) TRONG TAB NÀY
-            const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
-            
-            // Nếu Tab này không có màn hình hiển thị thì bỏ qua
-            if (!featuredContainer) return;
+            <div class="grid grid-cols-2 w-full pt-4">
 
-            // Tìm các thành phần con của màn hình hiển thị (Icon, Title, Desc)
-            const targetIcon = featuredContainer.querySelector('.icons-container');
-            const targetTitle = featuredContainer.querySelector('.tlc-title');
-            const targetDesc = featuredContainer.querySelector('.tlc-description');
-
-            // B. Tìm tất cả các ITEM (Nút bấm) TRONG TAB NÀY
-            const itemsInPane = pane.querySelectorAll('.item.cut-the-top-left-corner-09-container');
-
-            // C. Gắn sự kiện click cho từng Item trong Tab này
-            itemsInPane.forEach(item => {
-                item.addEventListener('click', () => {
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-building">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Đẳng cấp và vị thế</span></div>
+                    <div class="tlc-description text-xs!"><span>Đây không chỉ là tài sản, mà là biểu tượng của sự thành công và vị thế xã hội. Sở hữu những căn hộ này khẳng định đẳng cấp vượt trội, gu thẩm mỹ tinh tế của chủ nhân. Chúng là lựa chọn của giới doanh nhân thành đạt và chuyên gia quốc tế. </span></div>
                     
-                    // --- ĐIỀU KIỆN MÀN HÌNH ---
-                    const viewportWidth = window.innerWidth;
-                    
-                    // Chỉ chạy logic khi màn hình từ 380px đến dưới 1280px
-                    if (viewportWidth < 1280) {
-                        
-                        // 1. Lấy dữ liệu nguồn từ Item được click
-                        const sourceIcon = item.querySelector('.icons-container');
-                        const sourceTitle = item.querySelector('.tlc-title');
-                        const sourceDesc = item.querySelector('.tlc-description');
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-money">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Tầm nhìn triệu đô</span></div>
+                    <div class="tlc-description text-xs!"><span>Căn hộ nằm ở tầng cao nhất mang lại tầm nhìn không giới hạn. Từ đây, cư dân ngắm trọn toàn cảnh thành phố lung linh, sông Hồng thơ mộng. Giá trị của tầm nhìn là vô giá, mang lại cảm giác thư thái và nguồn cảm hứng bất tận. </span></div>
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-wifi">&nbsp;</i></div>
+                    <div class="tlc-title"><span >Không gian riêng tư</span></div>
+                    <div class="tlc-description text-xs!"><span>Các dự án có Penthouse, Sky Villas được quản lý chuyên nghiệp, đảm bảo an ninh tối đa với hệ thống giám sát 24/7. Điều này kiến tạo cộng đồng dân cư văn minh, đẳng cấp, có cùng lối sống, nâng cao chất lượng sống tinh thần. </span></div>
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-home">&nbsp;</i></div>
+                    <div class="tlc-title"><span>Giá trị đầu tư bền vững</span></div>
+                    <div class="tlc-description text-xs!"><span>Do tính khan hiếm, vị trí đắc địa và chất lượng vượt trội, căn hộ này có giá trị tài sản bền vững, tiềm năng tăng giá tốt trong dài hạn. Đây không chỉ là nơi ở mà còn là một khoản đầu tư thông minh, giữ và tăng giá trị theo thời gian.</span></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div id="accordionExample" class="accordion grid grid-col gap-5 p-4 xl:p-5 tab-pane bg-[#232D39] rounded-3xl">
+            <div>
+                <div><span class="font-bold text-2xl text-white capitalize">Giá trị sống</span></div>
+                <div><span class="text-gold capitalize">& Đầu tư cốt lõi</span></div>
+            </div>
+            <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">1</span></div>
+                    <h2 id="headingOne" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne"> Đẳng cấp & vị thế xã hội </button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Đây không chỉ là một tài sản, mà là <strong>biểu tượng của sự thành công và vị thế xã hội</strong>. Sở hữu những căn hộ này khẳng định đẳng cấp vượt trội, gu thẩm mỹ tinh tế và khả năng tài chính của chủ nhân. Chúng thường là lựa chọn của giới doanh nhân thành đạt, chuyên gia quốc tế và những người có ảnh hưởng trong xã hội.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">2</span></div>
+                    <h2 id="headingTwo" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">Trải Nghiệm Sống Độc Quyền & Cá Nhân Hóa</button></h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Khách hàng tìm đến những căn hộ này không chỉ vì diện tích lớn mà còn vì <strong>trải nghiệm sống độc quyền</strong>. Họ có thể tận hưởng không gian riêng tư tối đa, thiết kế nội thất theo phong cách riêng mà không bị giới hạn bởi không gian. Đặc biệt, với các tiện ích như hồ bơi riêng, sân vườn trên cao, hay lối đi riêng, cư dân được tận hưởng sự sang trọng và tiện nghi hoàn hảo như một khu nghỉ dưỡng tại gia.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">3</span></div>
+                    <h2 id="headingThree" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">Tầm Nhìn Triệu Đô & Giá Trị Cảnh Quan
+                        </button></h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Việc nằm ở các tầng cao nhất hoặc áp mái mang lại <strong>tầm nhìn không giới hạn</strong>. Từ đây, cư dân có thể ngắm nhìn toàn cảnh thành phố lung linh về đêm, sông Hồng thơ mộng hay những công viên xanh mát. Giá trị của tầm nhìn này là vô giá, mang lại cảm giác thư thái, khoáng đạt và nguồn cảm hứng bất tận.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">4</span></div>
+                    <h2 id="headingFour" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">Chất Lượng Không Khí & Sự Tĩnh Lặng</button></h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">Sống trên cao đồng nghĩa với việc ít chịu ảnh hưởng từ khói bụi và tiếng ồn đô thị. Không khí thường trong lành hơn, mang lại môi trường sống tốt cho sức khỏe. Sự yên tĩnh, biệt lập cũng giúp cư dân có thể nghỉ ngơi, thư giãn sau một ngày làm việc căng thẳng.</div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">5</span></div>
+                    <h2 id="headingFive" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                            aria-controls="collapsFive">Cộng Đồng Thượng Lưu & An Ninh Đảm Bảo</button></h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Các dự án có Penthouse, Duplex, Sky Villas thường là các tòa nhà căn hộ cao cấp, được quản lý và vận hành bởi các đơn vị chuyên nghiệp. Điều này đảm bảo một môi trường sống an ninh tối đa với hệ thống giám sát 24/7, và một cộng đồng dân cư văn minh, đẳng cấp, có cùng lối sống và sở thích.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">6</span></div>
+                    <h2 id="headingSix" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                            aria-controls="collapsSix">Giá Trị Đầu Tư Bền Vững & Tiềm Năng Tăng Trưởng</button></h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Do tính khan hiếm, vị trí đắc địa và chất lượng vượt trội, những căn hộ này có <strong>giá trị tài sản bền vững và tiềm năng tăng giá tốt</strong> trong dài hạn. Đây không chỉ là nơi để ở mà còn là một khoản đầu tư thông minh, có khả năng giữ và tăng giá trị theo thời gian.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">7</span></div>
+                    <h2 id="headingSeven" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                            aria-controls="collapsSix">Kết luận</button></h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Penthouse, Duplex và Sky Villas tại Hà Nội đại diện cho phân khúc đỉnh cao của thị trường căn hộ. Chúng không chỉ đáp ứng nhu cầu về một không gian sống rộng lớn, tiện nghi, mà còn là nơi thể hiện đẳng cấp, mang lại trải nghiệm sống độc quyền và giá trị tinh thần vượt trội cho giới thượng lưu. Đối với nhà môi giới, việc thấu hiểu những giá trị này là chìa khóa để kết nối đúng khách hàng với đúng loại hình bất động sản mơ ước của họ.</div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    
+</div>
 
-                        // Kiểm tra kỹ tính, nhỡ thiếu HTML thì thôi
-                        // if (sourceIcon && sourceTitle && sourceDesc) {
-                            
-                            // 2. Copy nội dung sang màn hình hiển thị CỦA TAB NÀY
-                            targetIcon.innerHTML = sourceIcon.innerHTML;
-                            targetTitle.innerHTML = sourceTitle.innerHTML;
-                            targetDesc.innerHTML = sourceDesc.innerHTML;
-
-                            // 3. Hiển thị màn hình lên (nếu đang ẩn)
-                            featuredContainer.style.display = 'flex';
-
-                            // 4. Xử lý class 'active'
-                            // Xóa active của các item CÙNG TAB thôi nhé (đừng xóa của Tab khác)
-                            itemsInPane.forEach(i => i.classList.remove('active'));
-                            
-                            // Active chính nó
-                            item.classList.add('active');
-                        // }
-                    }
-                });
-            });
-            
-            console.log(`Đã kích hoạt phép thuật cho Tab số ${index + 1} thành công!`);
-        });
-    }); 
-</script>

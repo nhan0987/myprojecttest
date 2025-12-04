@@ -124,7 +124,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
                                                     <img class="zoom-image" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
                                                 </a>
-                                                <span class="absolute font-medium text-sm rounded-2xl bg-[#232D3980] border border-solid border-[#FFF2C652] backdrop-blur-sm py-[2px]! px-[6px]! text-white top-0 left-0 translate-y-[18px] translate-x-[14px]"><?php echo esc_attr($items_count); ?></span>
+                                                <span class="items-count"><?php echo esc_attr($items_count); ?></span>
                                             </div>
                                             <?php } ?>
                                             <h3 class="content-name absolute translate-y-[-29px] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
@@ -173,7 +173,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
                                                     <img class="zoom-image" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
                                                 </a>
-                                                <span class="absolute font-medium text-sm rounded-2xl bg-[#232D3980] border border-solid border-[#FFF2C652] backdrop-blur-sm py-[2px]! px-[6px]! text-white top-0 left-0 translate-y-[18px] translate-x-[14px]"><?php echo esc_attr($items_count); ?></span>
+                                                <span class="items-count"><?php echo esc_attr($items_count); ?></span>
                                             </div>
                                             <?php } ?>
                                             <h3 class="content-name absolute translate-y-[-29px] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
@@ -216,7 +216,7 @@ if (!function_exists('lth_categories_output_fe')) :
                             
                                 <div class="<?php echo esc_attr( $item_classes ); ?>">
                                     <div class="content">
-                                        <div class="content-header">
+                                        <div class="content-header flex flex-col-reverse">
                                             <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?> relative">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>">
@@ -229,6 +229,9 @@ if (!function_exists('lth_categories_output_fe')) :
                                                 </div>
                                             </div>
                                             <?php } ?>
+                                            <div class="content-excerpt">
+                                                <?php echo wpautop($inner['item_text']); ?>
+                                            </div>
                                             <h3 class="content-name">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
                                                     <?php echo wpautop($inner['item_title']); ?>
