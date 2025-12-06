@@ -182,9 +182,10 @@ body:not(.penci-fawesome-ver5) .penci-faicon.fa-facebook:before {
 }
 .penci-single-style-10 .penci-single-s10-content,
 .container.penci_sidebar #main {
-    width: 70.94%;
-    padding-right: 50px;
-    float: left;
+    width: 100% !important;
+    /* padding-right: 50px;
+    float: left; */
+    padding:0 !important;
 }
 .penci-single-style-10.penci_sidebar.left-sidebar .penci-single-s10-content,
 .container.penci_sidebar.left-sidebar #main {
@@ -6461,7 +6462,7 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     height: auto;
 }
 .header-standard {
-    text-align: center;
+    text-align: start;
     padding-bottom: 17px;
     position: relative;
     margin: 0 0 19px 0;
@@ -6492,7 +6493,8 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     color: #313131;
     font-size: 24px;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: normal;
+    font-weight: 700;
 }
 .container-single-magazine .single-post-title {
     letter-spacing: 1px;
@@ -6504,7 +6506,7 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     color: #888;
 }
 .header-standard .author-post {
-    margin: 6px 0 0;
+    /* margin: 6px 0 0; */
     font-size: 14px;
 }
 .header-standard .author-post span,
@@ -6516,7 +6518,7 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     text-transform: capitalize;
 }
 .header-standard .author-post span a:hover {
-    color: #6eb48c;
+    color: #FEC769;
 }
 .standard-content {
     position: relative;
@@ -7135,9 +7137,9 @@ ul.penci-grid {
 -----------------------------------------------------*/
 .cat > a.penci-cat-name {
     font-size: 13px;
-    color: #6eb48c;
-    line-height: 1.2;
-    margin: 0 18px 0 0;
+    /* color: #6eb48c; */
+    line-height: 2;
+    /* margin: 0 18px 0 0; */
     padding-right: 10px;
     display: inline-block;
     vertical-align: top;
@@ -7146,7 +7148,7 @@ ul.penci-grid {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     font-weight: normal;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     position: relative;
     text-decoration: none;
 }
@@ -8877,7 +8879,7 @@ article.post, article.type-post, article.portfolio {
     }
     .penci-single-style-7:not( .penci-single-pheader-noimg ) #main article.post,
     .penci-single-style-3:not( .penci-single-pheader-noimg ) #main article.post{
-        margin-top: -80px;
+        /* margin-top: -80px; */
     }
     .penci-single-style-7.penci_is_nosidebar #main article.post,
     .penci-single-style-3.penci_is_nosidebar #main article.post {
@@ -9002,7 +9004,7 @@ article.post, article.type-post, article.portfolio {
 .penci-single-style-3 .single-breadcrumb,
 .penci-single-style-9 .single-breadcrumb,
 .penci-single-style-7 .single-breadcrumb{
-    text-align: center;
+    text-align: start;
 }
 .penci-single-pheader.container.two-sidebar,
 .penci-single-pheader .container.two-sidebar,
@@ -9132,8 +9134,8 @@ i.penci-post-countview-number{
 
 /*** Post Header ***/
 .post-box-meta-single {
-    text-align: center;
-    margin: 6px 0 0;
+    text-align: start;
+    /* margin: 6px 0 0; */
     font-size: 14px;
 }
 .post-box-meta-single span {
@@ -9142,7 +9144,7 @@ i.penci-post-countview-number{
 .header-standard .post-box-meta-single .author-post,
 .header-standard .post-box-meta-single .author-post span a,
 .header-standard .post-box-meta-single span{
-	font-size: inherit;
+	/* font-size: inherit; */
 }
 .post-box-meta-single span strong,
 .post-box-meta-single span time {
@@ -9154,17 +9156,37 @@ i.penci-post-countview-number{
     color: #313131;
 }
 .post-box-meta-single a:hover {
-    color: #6eb48c;
+    color: #FEC769;
 }
 .post-box-meta-single > span:before,
 .standard-top-meta > span:before{
-    content: "";
+    /* content: "";
     width: 0;
     height: 10px;
     margin: 0 15px;
     display: inline-block;
     background: none !important;
     border-right: 1px solid;
+    opacity: 0.7; */
+
+    content: "";
+    width: 4px; 
+    height: 4px; 
+    
+    /* 2. Bo tròn 4 góc để thành hình tròn */
+    border-radius: 50%; 
+    
+    /* 3. Tô màu cho chấm (quan trọng nha, vì code cũ đang để background: none) */
+    background-color: #767676; /* Hoặc anh dùng currentColor để theo màu chữ */
+    
+    display: inline-block;
+    margin: 0 10px; /* Căn lề trái phải */
+    
+    /* 4. Căn giữa theo chiều dọc của dòng chữ */
+    vertical-align: middle; 
+    
+    /* 5. Xóa bỏ cái gạch cũ đi */
+    border: none !important; 
     opacity: 0.7;
 }
 .post-box-meta-single > span:first-child:before,
@@ -9189,6 +9211,7 @@ i.penci-post-countview-number{
 }
 .container-single-fullwidth .post-image {
     margin-bottom: 40px;
+    border-radius: 24px;
 }
 .post-image img {
     max-width: 100%;
@@ -10049,13 +10072,13 @@ ul.penci_list_shortcode{
     vertical-align: bottom;
 }
 .container-single .post-entry .post-tags a {
-    text-transform: uppercase;
-    color: #888;
-    padding: 6px 12px 5px;
+    text-transform: none;
+    color: #1b1919;
+    padding: 8px 24px;
     margin-right: 8px;
     margin-bottom: 8px;
     display: inline-block;
-    font-size: 11px !important;
+    font-size: 14px !important;
     background: none;
     border: 1px solid #DEDEDE;
     transition: all 0.3s;
@@ -10064,12 +10087,18 @@ ul.penci_list_shortcode{
     outline: none;
     font-weight: normal;
     line-height: 1.2;
+    border-radius: 36px;
+}
+.container-single .post-entry .post-tags a::before {
+    content:"\0023";
 }
 .container-single .post-entry .post-tags a:hover {
-    background: #6eb48c;
+    /* background: #6eb48c; */
     color: #fff;
-    border-color: #6eb48c;
+    /* border-color: #6eb48c; */
     text-decoration: none;
+
+    background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 }
 .post-share {
     display: inline-block;
@@ -10409,7 +10438,7 @@ body.author .post-author{
 .post-related {
     overflow: hidden;
     margin: 0;
-    text-align: center;
+    text-align: start;
     padding: 36px 0 36px;
     border-top: 1px solid #DEDEDE;
 }

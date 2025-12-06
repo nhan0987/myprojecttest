@@ -4,7 +4,7 @@ $sidebar_position = penci_get_posts_sidebar_class();
 $sidebar_small_width = penci_single_smaller_content_enable();
 
 // Check layout magazine
-$single_magazine = 'container container-single penci-single-style-3 penci-single-smore container-single-fullwidth hentry';
+$single_magazine = 'container container-single penci-single-style-3 penci-single-smore container-single-fullwidth hentry px-0!';
 if( get_theme_mod( 'penci_home_layout' ) == 'magazine-1' || get_theme_mod( 'penci_home_layout' ) == 'magazine-2' ) {
 	$single_magazine .= ' container-single-magazine';
 }
@@ -83,6 +83,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 					<?php endwhile; endif; ?>
 				</div>
 			</div>
+			
 			<?php get_template_part( 'template-parts/single', 'sidebar' ); ?>
 		</div>
 		<?php do_action( 'penci_action_after_post_content' ); ?>

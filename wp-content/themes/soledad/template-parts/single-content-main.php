@@ -73,7 +73,15 @@ $single_style = penci_get_single_style();
 			<?php if ( ! get_theme_mod( 'penci_post_tags' ) && has_tag() ) : ?>
 				<?php if ( is_single() ) : ?>
 					<div class="post-tags">
-						<?php the_tags( wp_kses( __( '', 'soledad' ), penci_allow_html() ), "", "" ); ?>
+						
+						<?php the_tags( null,"", "" ); ?>
+					</div>
+					<div class="flex flex-wrap gap-2 items-center pt-2!">
+						<span class="font-normal font-base">Chia sẻ: </span> 
+						<i class="stnd-images-icons facebook-icons w-[32px]! h-[32px]!">&nbsp;</i> 
+						<i class="stnd-images-icons youtube-icons w-[32px]! h-[32px]!">&nbsp;</i> 
+						<i class="stnd-images-icons tiktok-black-icons w-[32px]! h-[32px]!">&nbsp;</i> 
+						<i class="stnd-images-icons linkedin-icons w-[32px]! h-[32px]!">&nbsp;</i>
 					</div>
 				<?php endif; ?>
 			<?php endif; ?>

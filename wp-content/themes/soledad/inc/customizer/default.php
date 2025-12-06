@@ -49,6 +49,7 @@ function penci_default_setting_customizer( $name ) {
 		'penci_trans_previous_post'      => esc_html__( 'previous post', 'soledad' ),
 		'penci_trans_next_post'          => esc_html__( 'next post', 'soledad' ),
 		'penci_post_related_text'        => esc_html__( 'You may also like', 'soledad' ),
+		'penci_post_related_infor'        => esc_html__( 'You may also like', 'soledad' ),
 		'penci_rltpopup_heading_text'    => esc_html__( 'Read also', 'soledad' ),
 		'penci_trans_name'               => esc_html__( 'Name*', 'soledad' ),
 		'penci_trans_email'              => esc_html__( 'Email*', 'soledad' ),

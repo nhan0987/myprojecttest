@@ -830,6 +830,16 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_relat
 	'settings' => 'penci_post_related_text',
 	'type'     => 'text',
 ) ) );
+$wp_customize->add_setting( 'penci_post_related_infor', array(
+	'default'           => 'You may also like',
+	'sanitize_callback' => 'sanitize_text_field'
+) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_related_infor', array(
+	'label'    => 'Related Posts Custom Infor',
+	'section'  => 'penci_section_spost_related_posts',
+	'settings' => 'penci_post_related_infor',
+	'type'     => 'text',
+) ) );
 
 $wp_customize->add_setting( 'penci_off_uppercase_post_title_related', array(
 	'default'           => false,
