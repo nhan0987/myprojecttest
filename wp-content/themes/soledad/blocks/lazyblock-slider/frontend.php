@@ -29,7 +29,7 @@ if (!function_exists('lth_slider_output_fe')) :
                                     <div class="swiper-slide item">
                                         <div class="module_image"> 
                                             <a href="<?php echo esc_url( $inner['button_url'] ); ?>">
-                                                <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Slide" width="1440" height="650">  
+                                                <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Slide">  
                                             </a>                                  
                                         </div>
                                         <div class="module_content">
@@ -58,7 +58,7 @@ if (!function_exists('lth_slider_output_fe')) :
                             <div class="swiper-button-prev swiper-arrow swiper-prev"></div>
 
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-content absolute top-0 left-0 z-[2] translate-x-[24px] sm:translate-x-[24px] xl:translate-x-[241px]! translate-y-[191px]">
+                            <div class="swiper-content absolute top-0 left-0 z-[2] translate-x-[24px] sm:translate-x-[24px] xl:translate-x-[241px]! translate-y-[22px] xl:translate-y-[191px]">
                                 <div class="flex flex-col gap-3">
                                     <!-- <div class="text-left"><span class="font-normal text-base lg:text-[20px] text-white">- Bất động sản Hà Nội</span></div> -->
                                      <div class="text-left">

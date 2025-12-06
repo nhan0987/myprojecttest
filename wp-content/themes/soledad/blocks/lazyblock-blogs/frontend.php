@@ -127,7 +127,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                             <?php the_time('d/m/Y'); ?>
                                         </span>
                                     </div>
-                                    <div class="xl:absolute line-clamp-2 bg-white bottom-[-498px] xl:w-[425px] h-[44px]">
+                                    <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-[-601px] xl:w-[425px] h-[44px]">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight">
                                                 <?php the_title(); ?>

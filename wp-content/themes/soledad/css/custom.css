@@ -603,7 +603,17 @@ p:last-child {
 }
 
 .module_blogs .content-name a:hover {
-	color: #FEC769;
+	/* color: #FEC769; */
+
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important;
+	display: inline-block !important;
+	
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 .module_blogs .content-days {
@@ -1865,7 +1875,13 @@ p:last-child {
 
 .home-page-slider img {
 	width: 114rem;
-	height: 40rem;
+	height: 360px;
+}
+@media (min-width:1280px) {
+	.home-page-slider img {
+		width: 114rem;
+		height: 40rem;
+	}
 }
 
 .penci-page-header-background {
@@ -1881,8 +1897,8 @@ p:last-child {
 	border: none;
 	border-radius: 0px;
 	padding: 16px 0px 16px 0px;
-
 	border-bottom: 1px solid #E5E5E5;
+	width: 100%;
 }
 
 .style-01 .module_blogs img {
@@ -3761,9 +3777,9 @@ html {
 	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container {
 		display: flex;
 		background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
-		padding: 0px 0.625rem;
-		width: 3.35rem;
-		height: 3.35rem;
+		/* padding: 0px 0.625rem; */
+		width: 48px;
+        height: 48px;
 		border-radius: 0.625rem;
 		position: absolute;
 		left: 0;
@@ -4111,7 +4127,7 @@ html {
 	aspect-ratio: 405 / 493;
 	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-15.svg");
 	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-15.svg");
-	width: 25.3125rem;
+	width: 21.3125rem;
 	height: 30.8125rem;
 	background-color: #232d39;
 	padding:0px!important;
@@ -4974,6 +4990,7 @@ html {
 
 #widget-area {
 	overflow: hidden;
+	width: 100%;
 }
 
 @media (min-width: 1280px) {
@@ -5463,4 +5480,60 @@ padding-left: 4px;
 	.dat-lich-center .infor p {
 	width: 60% !important;
 }
+}
+.penci-standard-cat .penci-cat-name{
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important;
+	display: inline-block !important;
+	
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+	
+}
+
+.archive-box h1{
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important;
+	display: inline-block !important;
+	
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+#top-search .search-click{
+	display: block;
+}
+@media (min-width:1280px) {
+	#top-search .search-click{
+		display: none;
+	}
+		.show-search {
+		position: relative;
+		background: transparent;
+		display: block;
+	}
+
+	.show-search form.pc-searchform input.search-input {
+		border: 1px solid #ADB5BC;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		position: relative;
+		padding: 12px 40px 12px 0px;
+		color: white;
+	}
+	.show-search form.pc-searchform input.search-input::placeholder {
+		color: #ADB5BC;
+	}
+
+	#top-search {
+		width: 100%;
+	}
 }

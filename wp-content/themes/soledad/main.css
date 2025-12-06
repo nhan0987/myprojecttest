@@ -3098,7 +3098,7 @@ body:not(.penci-fawesome-ver5) .shoping-cart-icon > a i.fas.fa-shopping-cart {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    background: none;
+    /* background: none; */
     font-weight: normal;
     letter-spacing: 1px;
     font-size: 13px;
@@ -6439,10 +6439,10 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     right: 100%;
 }
 .standard-post-image {
-    margin: 0 0 26px 0;
+    /* margin: 0 0 26px 0;
     text-align: center;
     display: block;
-    position: relative;
+    position: relative; */
 }
 .standard-post-image .audio-iframe,
 .standard-content-special {
@@ -6462,10 +6462,10 @@ ul.homepage-featured-boxes.boxes-4-columns li {
     height: auto;
 }
 .header-standard {
-    text-align: start;
+    /* text-align: start;
     padding-bottom: 17px;
     position: relative;
-    margin: 0 0 19px 0;
+    margin: 0 0 19px 0; */
 }
 .header-standard:after {
     content: "";
@@ -8788,7 +8788,7 @@ body .penci-slider.penci-single-mag-slider ol.penci-control-nav li {
 /* = Post & Single post
 -----------------------------------------------------*/
 article.post, article.type-post, article.portfolio {
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 .penci-layout-standard-grid article.post,
 .penci-layout-standard-list article.post,
@@ -8863,8 +8863,8 @@ article.post, article.type-post, article.portfolio {
 }
 .penci-single-style-7:not( .penci-single-pheader-noimg ).penci_sidebar #main article.post,
 .penci-single-style-3:not( .penci-single-pheader-noimg ).penci_sidebar #main article.post{
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
 }
 @media only screen and (min-width: 959px){
     .penci-single-style-7:not( .penci-single-pheader-noimg ).container.penci_sidebar #main,
@@ -12199,7 +12199,7 @@ ul.footer-menu{
 /*** Search widget ***/
 form.pc-searchform input.search-input {
     border: 1px solid #e9e9e9;
-    background: #fff url(images/searchsubmit.png) no-repeat 95% 11px;
+    background: #ffffff00 url(images/searchsubmit.png) no-repeat 95% 18px;
     padding: 12px 40px 12px 20px;
     color: #313131;
     letter-spacing: 1px;
@@ -14360,7 +14360,7 @@ form#commentform > .comment-form-cookies-consent{
     color: #313131;
     font-family: "Raleway", sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 24px;
     line-height: 1.2em;
     position: relative;

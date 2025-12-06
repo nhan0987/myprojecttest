@@ -232,7 +232,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                             <div class="content-excerpt">
                                                 <?php echo wpautop($inner['item_text']); ?>
                                             </div>
-                                            <h3 class="content-name">
+                                            <h3 class="content-name line-clamp-1">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
                                                     <?php echo wpautop($inner['item_title']); ?>
                                                 </a>

@@ -4378,22 +4378,31 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	 * @param string $fallback_url   URL dự phòng nếu ảnh mặc định không tồn tại.
 	 * @return string                URL của ảnh mặc định hoặc URL dự phòng.
 	 */
-	function get_default_thumbnail_url($image_filename = 'default-thumbnail.jpg', $fallback_url = 'https://via.placeholder.com/227x146?text=No+Image')
+	function get_default_thumbnail_url($image_filename = 'default-thumbnail.png', $fallback_url = 'https://via.placeholder.com/227x146?text=No+Image')
 	{
 		// Lấy thông tin về thư mục uploads
 		$upload_dir = wp_get_upload_dir();
 		$upload_baseurl = $upload_dir['baseurl']; // Đường dẫn URL
 		$upload_basedir = $upload_dir['basedir']; // Đường dẫn vật lý trên server
 
+		// var_dump($upload_baseurl);
+
 		// Đường dẫn đầy đủ tới file ảnh mặc định
 		$default_image_url = esc_url($upload_baseurl . '/' . $image_filename);
 		$default_image_filepath = $upload_basedir . '/' . $image_filename;
 
+		// var_dump($default_image_url);
+		// var_dump($default_image_filepath);
+		// var_dump($file_exists($default_image_filepath));
+
 		// Kiểm tra xem file ảnh có tồn tại trên server không
 		if (file_exists($default_image_filepath)) {
+
+			
 			return $default_image_url; // Trả về URL của ảnh mặc định
 		} else {
-			return esc_url($fallback_url); // Trả về URL dự phòng nếu ảnh mặc định không tồn tại
+			
+			return esc_url($default_image_url); // Trả về URL dự phòng nếu ảnh mặc định không tồn tại
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'enqueue_material_icons' );
