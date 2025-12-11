@@ -41,18 +41,18 @@
 		?>
 		<nav id="navigation" class="<?php echo $class_layout_bottom; ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 			
-			<div class="<?php penci_soledad_get_header_width(); ?> flex items-center justify-center px-[0.8rem]! py-[0.8rem]! lg:px-[0.1rem]! lg:py-[0.1rem]!">
+			<div class="<?php penci_soledad_get_header_width(); ?> flex items-center justify-around xl:justify-center px-[0.8rem]! py-[0.8rem]! lg:px-[0.1rem]! lg:py-[0.1rem]!">
 				<div class="button-menu-mobile header-3 "><?php penci_fawesome_icon('fas fa-bars'); ?></div>
 				
 				
 				<?php 
 				if ( get_theme_mod( 'penci_header_logo_mobile' ) ) {
-					echo '<div class="w-full xl:w-[10%] penci-mobile-logo flex flex-row justify-center xl:justify-start">';
+					echo '<div class=" xl:w-[10%] penci-mobile-logo xl:flex xl:flex-row xl:justify-start">';
 					get_template_part( 'template-parts/header/logo' );
 					echo '</div>';
 				}
 				
-				echo '<div class="xl:w-[70%] flex xl:justify-center">';
+				echo '<div class="xl:w-[70%] hidden xl:flex xl:justify-center">';
 				get_template_part( 'template-parts/header/menu' );
 				echo '</div>';
 

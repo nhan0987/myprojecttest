@@ -1,19 +1,22 @@
 @font-face {
-	font-family: 'Snell Roundhand';
+	/* font-family: 'Snell Roundhand';
+	font-display: swap;
 	src: url('../fonts/snellroundhand_black.otf') format('opentype');
 	font-weight: 100 700;
-	font-style: normal;
+	font-style: normal; */
 }
 
 @font-face {
-	font-family: 'MuseoModerno';
+	/* font-family: 'MuseoModerno';
+	font-display: swap;
 	src: url('../fonts/MuseoModerno-Medium.ttf') format('ttf');
 	font-weight: 100 700;
-	font-style: normal;
+	font-style: normal; */
 }
 
 @font-face {
   font-family: '1FTV-VIP-Madinah-Authentic'; /* Tên bạn đặt cho font */
+  font-display: swap;
   src: url('../fonts/1FTV-VIP-Madinah-Authentic.otf') format('opentype'); /* Đường dẫn đến file font */
   font-weight: 100 700;
   font-style: normal;
@@ -1502,15 +1505,15 @@ p:last-child {
 
 	.module_blogs .content_list.style_02 .content-box,
 	.module_blogs .content_list.style_02 .content-image {
-		width: 100%;
+		/* width: 100%; */
 	}
 
 	.module_blogs .content_list.style_02 .content-box {
-		padding: 0.75rem 0 0;
+		/* padding: 0.75rem 0 0; */
 	}
 
 	.module_blogs .content_grid.style_02 .item {
-		width: 100%;
+		/* width: 100%; */
 	}
 }
 
