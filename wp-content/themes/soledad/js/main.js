@@ -2006,7 +2006,6 @@
 	},
 	PENCI.setupExpandToggle = function (config) {
 
-		console.log("setupExpandToggle")
 		// 1. Lấy các tham số từ config (có giá trị mặc định cho text)
 		var contentId = config.contentId;
 		var btnId = config.btnId;
@@ -2021,7 +2020,7 @@
 
 		// 3. Kiểm tra an toàn: Nếu thiếu 1 trong các thành phần thì dừng
 		if (!contentDiv || !btn) {
-			console.warn('Neptune báo: Không tìm thấy content hoặc button cho ID:', contentId, btnId);
+			console.warn('Không tìm thấy content hoặc button cho ID:', contentId, btnId);
 			return;
 		}
 
@@ -2106,6 +2105,39 @@
 			});
 		
 		
+	},
+	PENCI.section_reveal = function (selector) {
+
+		// 1. Tạo "Người quan sát"
+		const observer = new IntersectionObserver((entries, observer) => {
+
+			entries.forEach(entry => {
+
+				// Nếu phần tử xuất hiện trong khung hình
+				if (entry.isIntersecting) {
+					// Thêm class 'active' để kích hoạt CSS transition
+					entry.target.classList.add('active');
+					
+					// Ngừng quan sát ngay lập tức (để hiệu ứng chỉ chạy 1 lần)
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			root: null,    // Quan sát so với khung nhìn trình duyệt
+			threshold: 0.15, // Phần tử hiện ra 15% thì mới bắt đầu hiệu ứng (tránh bị hiện quá sớm)
+			rootMargin: "0px 0px -50px 0px" // Dời vùng kích hoạt lên trên một chút để hiệu ứng xảy ra đúng tầm mắt
+		});
+
+		// 2. Gán người quan sát dựa trên selector được truyền vào
+            const hiddenElements = document.querySelectorAll(selector);
+            
+            if(hiddenElements.length === 0) {
+                console.warn("Cảnh báo: Không tìm thấy class " + selector + " nào cả!");
+            } else {
+                
+                hiddenElements.forEach((el) => observer.observe(el));
+            }
+        
 	};
 
 
@@ -2147,6 +2179,7 @@
 			textId: 'btn-text-right',
 			
 		});
+		PENCI.section_reveal('.section-reveal'); 
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
 	});
 })(jQuery);	// EOF

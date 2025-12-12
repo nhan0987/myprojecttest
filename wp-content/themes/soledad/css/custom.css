@@ -75,7 +75,7 @@ p:last-child {
 
 .wrapper-boxed .container-default-page {
 	padding: 0;
-	margin-top: 1.3125rem;
+	margin-top: 32px;
 }
 
 .container-fluid {
@@ -835,8 +835,6 @@ p:last-child {
 }
 
 #navigation ul.menu .current-menu-item {
-	/* margin-right: 2.875rem; */
-	/* padding: 0 0.625rem 0 0.625rem; */
 	border-bottom: 2px solid #FEC769;
 }
 
@@ -899,6 +897,13 @@ p:last-child {
 #navigation .button-menu-mobile {
 	color: #fff;
 	font-size: 1.875rem
+}
+
+#navigation.header-layout-bottom {
+	margin-top: 16px;
+}
+.is-sticky #navigation {
+	margin-top: 0px !important;
 }
 
 .widget_nav_menu .menu li {
@@ -4463,8 +4468,8 @@ html {
 
 .cut-the-top-left-corner-22-container {
 	aspect-ratio: 343 / 332;
-	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-22-mobile.svg");
-	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-22-mobile.svg");
+	/* -webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-22-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-22-mobile.svg"); */
 	width: 343px;
 	height: 332px;
 }
@@ -5539,4 +5544,23 @@ padding-left: 4px;
 	#top-search {
 		width: 100%;
 	}
+}
+
+
+/* --- CLASS QUAN TRỌNG CHO HIỆU ỨNG --- */
+.section-reveal {
+	opacity: 0;                  /* Ban đầu ẩn */
+	transform: translateY(100px); /* Đẩy xuống dưới 100px */
+	transition: all 1s cubic-bezier(0.5, 0, 0, 1); /* Hiệu ứng mượt mà (Ease-in-out) */
+	/* cubic-bezier giúp hiệu ứng giật nhẹ lúc đầu rồi lướt êm, rất đẹp */
+}
+
+/* Khi thêm class này vào thì sẽ hiện ra */
+.section-reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.accordion-collapse.show{
+	/* transition: opacity 5s ease-in-out; */
 }

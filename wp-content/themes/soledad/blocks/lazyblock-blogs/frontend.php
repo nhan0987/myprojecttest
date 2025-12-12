@@ -119,7 +119,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                 $wp_query->the_post(); // Lấy bài viết đầu tiên (Post 1)
                                 $k++;
                             ?>
-                                <div class="col-span-1 xl:col-span-2!">
+                                <div class="col-span-1 xl:col-span-2! relative">
                                     
                                     <div class="cut-the-top-left-corner-25-container"> 
                                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="zoom-image object-cover w-full! h-full!">
@@ -127,7 +127,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                             <?php the_time('d/m/Y'); ?>
                                         </span>
                                     </div>
-                                    <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-[-601px] xl:w-[425px] h-[44px]">
+                                    <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-0 xl:w-[425px] h-[44px]">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight">
                                                 <?php the_title(); ?>

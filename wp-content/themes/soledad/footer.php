@@ -81,7 +81,7 @@ if( ! empty( $footerreorder_array ) ) {
 
 			<div id="widget-area" class="rounded-t-[2rem] relative" <?php if( get_theme_mod( 'penci_footer_widget_bg_image' ) ): echo ' class="penci-lazy" data-src="'. get_theme_mod( 'penci_footer_widget_bg_image' ) .'"'; endif; ?>>
 
-				<div class="xl:max-w-6xl max-w-sm 2xl:max-w-7xl mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr] relative z-2 <?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?>">
+				<div class="xl:max-w-6xl max-w-sm 2xl:max-w-7xl mx-auto px-3 lg:px-0! pt-[70px]! xl:pt-[50px]! pb-0 lg:pb-4 grid grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1fr] relative z-2 <?php echo esc_attr( $penci_footer_width ? ' container-' . $penci_footer_width : '' ) ?> section-reveal">
 					<?php if( in_array( $footer_layout, array( 'style-1', 'style-5', 'style-6', 'style-7' ) ) ){ ?>
 						<div class="footer-widget-wrapper footer-widget-<?php echo $footer_layout; ?>">
 							<?php dynamic_sidebar( 'footer-1' ); ?>
