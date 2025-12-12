@@ -4327,6 +4327,17 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_styles');
 
+	function defer_specific_js( $tag, $handle ) {
+		// Danh sách các file muốn defer
+		$scripts_to_defer = array( 'bootstrap', 'penci-main-script', 'contact-form-7' );
+
+		if ( in_array( $handle, $scripts_to_defer ) ) {
+			return str_replace( ' src', ' defer src', $tag );
+		}
+		return $tag;
+	}
+	add_filter( 'script_loader_tag', 'defer_specific_js', 10, 2 );
+
 	/**
 	 * Add js
 	 * 
@@ -4335,11 +4346,13 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	 */
 	function lth_theme_scripts()
 	{
+		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js',array('jquery'),'1.0.0', true);
+		wp_enqueue_script('tailwind', THEME_URI . '/css/tailwind-3.4.17.css', false, 'all');
 		wp_enqueue_script('fancybox', THEME_URI . '/js/jquery.fancybox.min.js', array('jquery'),'1.0.0', true);
 		wp_enqueue_script('swiper', THEME_URI . '/js/swiper-bundle.min.js', array('jquery'),'1.0.0', true);
 		wp_enqueue_script('custom', THEME_URI . '/js/custom.js', array('jquery'),'1.0.0', true);
-		wp_enqueue_script('tailwind', THEME_URI . '/css/tailwind-3.4.17.css', false, 'all');
-		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js',array('jquery'),'1.0.0', true);
+		
+		
 		
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_scripts', 99);

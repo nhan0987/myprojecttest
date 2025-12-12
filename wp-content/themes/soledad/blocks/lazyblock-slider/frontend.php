@@ -29,7 +29,7 @@ if (!function_exists('lth_slider_output_fe')) :
                                     <div class="swiper-slide item">
                                         <div class="module_image"> 
                                             <a href="<?php echo esc_url( $inner['button_url'] ); ?>">
-                                                <img class="no-lazy" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Slide">  
+                                                <img class="no-lazy" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Slide" fetchpriority="high">  
                                             </a>                                  
                                         </div>
                                         <div class="module_content">
