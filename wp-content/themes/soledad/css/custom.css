@@ -3731,7 +3731,7 @@ html {
 		display: none;
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active) {
+	.cut-the-top-left-corner-09-container:is(:hover, :active),.cut-the-top-left-corner-09-container.is-hover {
 		aspect-ratio: 320 / 150;
 		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09.svg");
 		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-09.svg");
@@ -3751,7 +3751,7 @@ html {
 
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active)::after {
+	.cut-the-top-left-corner-09-container:is(:hover, :active)::after,.cut-the-top-left-corner-09-container.is-hover::after {
 		content: '';
 		position: absolute;
 		width: 12.9375rem;
@@ -3764,13 +3764,13 @@ html {
 		z-index: -1;
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active) .tlc-description {
+	.cut-the-top-left-corner-09-container:is(:hover, :active) .tlc-description,.cut-the-top-left-corner-09-container.is-hover .tlc-description {
 		display: block;
 		color: white;
 		font-size: 0.875rem;
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active) .tlc-title {
+	.cut-the-top-left-corner-09-container:is(:hover, :active) .tlc-title,.cut-the-top-left-corner-09-container.is-hover .tlc-title {
 		display: block;
 		background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 		-webkit-background-clip: text;
@@ -3782,7 +3782,7 @@ html {
 
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container {
+	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container,.cut-the-top-left-corner-09-container.is-hover .icons-container {
 		display: flex;
 		background: radial-gradient(59.94% 218.75% at 50.15% 132.35%, #FFD45C 0%, #9E5625 100%);
 		/* padding: 0px 0.625rem; */
@@ -3797,7 +3797,7 @@ html {
 		color: white;
 	}
 
-	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container .stnd-icons {
+	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container .stnd-icons,.cut-the-top-left-corner-09-container.is-hover .icons-container .stnd-icons {
 		background: white;
 		width: 1.6875rem;
 		height: 1.6875rem;

@@ -14,6 +14,7 @@ const NEPTUNE_UI = {
     init: function() {
         this.initTabs();
         this.initSlider();
+        this.initAutoHover();
     },
 
     /**
@@ -21,6 +22,8 @@ const NEPTUNE_UI = {
      */
     initTabs: function() {
         const tabPanes = document.querySelectorAll('.tab-pane');
+
+        console.log("initTabs")
         if (tabPanes.length === 0) return;
 
         tabPanes.forEach((pane) => {
@@ -60,6 +63,88 @@ const NEPTUNE_UI = {
                 });
             });
         });
+    },
+    /**
+     * Module: Tự động active/hover
+     */
+    initAutoHover: function() {
+        console.log("Neptune: Kích hoạt module Auto Hover/Active...");
+        
+        const targetClass = '.cut-the-top-left-corner-09-container';
+        const hoverClass = 'is-hover'; // Class cho Desktop
+        const activeClasses = ['active', 'border-blue-500', 'bg-blue-50']; // Classes cho Mobile
+        const intervalTime = 5000;
+
+        const elements = document.querySelectorAll(targetClass);
+        if (elements.length === 0) return;
+
+        let currentIndex = 0;
+
+        const activateHover = () => {
+            const currentItem = elements[currentIndex];
+            const isMobile = window.innerWidth < this.config.sliderBreakpoint;
+
+            // 1. DỌN DẸP: Xóa sạch cả 2 loại class ở TẤT CẢ phần tử
+            elements.forEach(el => {
+                el.classList.remove(hoverClass);
+                el.classList.remove(...activeClasses);
+            });
+
+            if (currentItem) {
+                if (isMobile) {
+                    // --- LOGIC MOBILE (< 1280px) ---
+                    // Áp dụng logic của initTabs: Add active class
+                    currentItem.classList.add(...activeClasses);
+                    console.log(`Mobile Logic: Active item ${currentIndex + 1}`);
+
+                    // Logic update Featured Container (Copy từ initTabs)
+                    // Tìm cha là .tab-pane gần nhất
+                    const pane = currentItem.closest('.tab-pane');
+                    if (pane) {
+                        const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
+                        if (featuredContainer) {
+                            const source = {
+                                icon: currentItem.querySelector('.icons-container'),
+                                title: currentItem.querySelector('.tlc-title'),
+                                desc: currentItem.querySelector('.tlc-description')
+                            };
+                            const target = {
+                                icon: featuredContainer.querySelector('.icons-container'),
+                                title: featuredContainer.querySelector('.tlc-title'),
+                                desc: featuredContainer.querySelector('.tlc-description')
+                            };
+
+                            // Copy dữ liệu an toàn (kiểm tra tồn tại)
+                            if (source.icon && target.icon) target.icon.innerHTML = source.icon.innerHTML;
+                            if (source.title && target.title) target.title.innerHTML = source.title.innerHTML;
+                            if (source.desc && target.desc) target.desc.innerHTML = source.desc.innerHTML;
+
+                            // Hiển thị box
+                            featuredContainer.style.display = 'flex';
+                            featuredContainer.classList.remove('hidden');
+                        }
+                    }
+
+                } else {
+                    // --- LOGIC DESKTOP (>= 1280px) ---
+                    // Logic cũ: Add is-hover class
+                    currentItem.classList.add(hoverClass);
+                    console.log(`Desktop Logic: Hover item ${currentIndex + 1}`);
+                }
+            }
+
+            // Tăng index
+            currentIndex++;
+            if (currentIndex >= elements.length) {
+                currentIndex = 0;
+            }
+        };
+
+        // Chạy ngay
+        activateHover();
+
+        // Lặp lại
+        setInterval(activateHover, intervalTime);
     },
     /**
      * Module: Xử lý Slider (Dots, Autoplay, Drag)
