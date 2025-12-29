@@ -97,3 +97,4 @@
 [2025-12-12 16:35:36 : INFO] - There were no WebP conversion tools found on your server. 
 [2025-12-12 16:35:36 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/12/z7321136791528_5e45f6913ee300dc75d7e0b4e19afd60.jpg.The file was compressed from 185.85 KB to 112.62 KB, saving 39.41 percent, using WP-Optimize 
 [2025-12-12 16:35:36 : INFO] - Completed processing task with ID : 8, and type 'smush' 
+[2025-12-13 06:33:57 : INFO] - Pruning the smush log file 
