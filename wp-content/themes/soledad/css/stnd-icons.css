@@ -1,7 +1,7 @@
 .stnd-icons {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.5rem;
 
     -webkit-mask-repeat: no-repeat;
@@ -78,8 +78,8 @@
 
 .arrow-right-icons {
     display: inline-block;
-    width: 7px;
-    height: 13px;
+    width: 0.4375rem;
+    height: 0.8125rem;
 
     /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/stnd-arrow-right.svg');
@@ -101,8 +101,8 @@
 
 .grid-menu-icons {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
 
     /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/grid-menu-icons.svg');
@@ -124,8 +124,8 @@
 
 .list-menu-icons {
     display: inline-block;
-    width: 14px;
-    height: 10px;
+    width: 0.875rem;
+    height: 0.625rem;
 
     /* --- GỌI HỒN EM NÓ LÀM "KHUÔN" --- */
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/list-menu-icons.svg');
@@ -301,8 +301,8 @@
 
 
 .stnd-images-icons {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

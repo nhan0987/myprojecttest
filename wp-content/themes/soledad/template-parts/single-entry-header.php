@@ -44,10 +44,10 @@ $move_title_bellow   = get_theme_mod('penci_move_title_bellow');
 		</div>
 		<div class="flex flex-wrap gap-2 items-center">
 			<span class="font-normal font-base">Chia sẻ: </span> 
-			<i class="stnd-images-icons facebook-icons w-[32px]! h-[32px]!">&nbsp;</i> 
-			<i class="stnd-images-icons youtube-icons w-[32px]! h-[32px]!">&nbsp;</i> 
-			<i class="stnd-images-icons tiktok-black-icons w-[32px]! h-[32px]!">&nbsp;</i> 
-			<i class="stnd-images-icons linkedin-icons w-[32px]! h-[32px]!">&nbsp;</i>
+			<i class="stnd-images-icons facebook-icons w-[2rem]! h-[2rem]!">&nbsp;</i> 
+			<i class="stnd-images-icons youtube-icons w-[2rem]! h-[2rem]!">&nbsp;</i> 
+			<i class="stnd-images-icons tiktok-black-icons w-[2rem]! h-[2rem]!">&nbsp;</i> 
+			<i class="stnd-images-icons linkedin-icons w-[2rem]! h-[2rem]!">&nbsp;</i>
 		</div>
 	<?php endif; ?>
 

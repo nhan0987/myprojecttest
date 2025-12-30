@@ -123,11 +123,11 @@ if (!function_exists('lth_blogs_output_fe')) :
                                     
                                     <div class="cut-the-top-left-corner-25-container"> 
                                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="zoom-image object-cover w-full! h-full!">
-                                        <span class="text-[13px] font-medium text-gray-500 absolute left-0 bottom-[0px] xl:bottom-[53px] w-[80px] xl:w-[76px] h-[27px] bg-white">
+                                        <span class="text-[0.8125rem] font-medium text-gray-500 absolute left-0 bottom-[0px] xl:bottom-[3.3125rem] w-[5rem] xl:w-[4.75rem] h-[1.6875rem] bg-white">
                                             <?php the_time('d/m/Y'); ?>
                                         </span>
                                     </div>
-                                    <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-0 xl:w-[425px] h-[44px]">
+                                    <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-0 xl:w-[26.5625rem] h-[2.75rem]">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight">
                                                 <?php the_title(); ?>
@@ -150,7 +150,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                                 <div class="cut-the-top-left-corner-26-container">
                                                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" 
                                                         class="zoom-image object-cover w-full! h-full!">
-                                                    <span class="text-xs font-medium text-gray-500 absolute left-0 bottom-[0px] w-[66px] xl:w-[72px] h-[20px] xl:h-[27px] bg-white">
+                                                    <span class="text-xs font-medium text-gray-500 absolute left-0 bottom-[0px] w-[4.125rem] xl:w-[4.5rem] h-[1.25rem] xl:h-[1.6875rem] bg-white">
                                                         <?php the_time('d/m/Y'); ?>
                                                     </span>
                                                 </div>

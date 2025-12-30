@@ -12,7 +12,7 @@
 
                 $default_thumbnail_src = get_default_thumbnail_url();
             ?>
-                <div class="content-image  col-span-4 lg:col-span-1 pr-2 md:pr-0 xl:h-[150px]">
+                <div class="content-image  col-span-4 lg:col-span-1 pr-2 md:pr-0 xl:h-[9.375rem]">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                         <img  src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?>">
                     </a>
@@ -21,7 +21,7 @@
             }
             ?>
             <div class="content-box col-span-6 xl:col-span-1">
-                <p class="content-days absolute translate-x-[-75px] translate-y-[83px] xl:translate-x-[0px]! xl:translate-y-[-21px]!">
+                <p class="content-days absolute translate-x-[-4.6875rem] translate-y-[5.1875rem] xl:translate-x-[0px]! xl:translate-y-[-1.3125rem]!">
                     <?php the_time('d/m/Y '); ?>
                 </p>
                 <h3 class="content-name line-clamp-2">

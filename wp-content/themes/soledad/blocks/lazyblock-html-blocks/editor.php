@@ -31,7 +31,7 @@ if (!function_exists('lth_html_blocks_output')) :
         ?>
 
         <?php while ($args->have_posts()) : $args->the_post(); ?>            
-            <p style="font-size: 12px; padding-top: 10px; padding-left: 35px; margin: 0;"><strong><?php the_title(); ?></strong></p>
+            <p style="font-size: 0.75rem; padding-top: 0.625rem; padding-left: 2.1875rem; margin: 0;"><strong><?php the_title(); ?></strong></p>
         <?php endwhile; wp_reset_query();
     } ?>
 <?php

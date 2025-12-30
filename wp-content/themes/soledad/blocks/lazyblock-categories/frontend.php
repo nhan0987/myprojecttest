@@ -127,7 +127,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                                 <span class="items-count"><?php echo esc_attr($items_count); ?></span>
                                             </div>
                                             <?php } ?>
-                                            <h3 class="content-name absolute translate-y-[-29px] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
+                                            <h3 class="content-name absolute translate-y-[-1.8125rem] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
                                                     <?php echo wpautop($inner['item_title']); ?>
                                                 </a>
@@ -176,7 +176,7 @@ if (!function_exists('lth_categories_output_fe')) :
                                                 <span class="items-count"><?php echo esc_attr($items_count); ?></span>
                                             </div>
                                             <?php } ?>
-                                            <h3 class="content-name absolute translate-y-[-29px] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
+                                            <h3 class="content-name absolute translate-y-[-1.8125rem] capitalize font-medium text-sm xl:font-semibold! xl:text-base!">
                                                 <a href="<?php echo get_category_link($inner['item']); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
                                                     <?php echo wpautop($inner['item_title']); ?>
                                                 </a>

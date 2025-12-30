@@ -58,16 +58,16 @@ if (!function_exists('lth_slider_output_fe')) :
                             <div class="swiper-button-prev swiper-arrow swiper-prev"></div>
 
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-content absolute top-0 left-0 z-[2] translate-x-[24px] sm:translate-x-[24px] xl:translate-x-[241px]! translate-y-[22px] xl:translate-y-[191px]">
+                            <div class="swiper-content absolute top-0 left-0 z-[2] translate-x-[1.5rem] sm:translate-x-[1.5rem] xl:translate-x-[15.0625rem]! translate-y-[1.375rem] xl:translate-y-[11.9375rem]">
                                 <div class="flex flex-col gap-3">
-                                    <!-- <div class="text-left"><span class="font-normal text-base lg:text-[20px] text-white">- Bất động sản Hà Nội</span></div> -->
+                                    <!-- <div class="text-left"><span class="font-normal text-base lg:text-[1.25rem] text-white">- Bất động sản Hà Nội</span></div> -->
                                      <div class="text-left">
-                                        <span class="uppercase text-white text-[16px] font-bold xl:text-[32px]">Siêu thị nhà đất </span>
+                                        <span class="uppercase text-white text-[1rem] font-bold xl:text-[2rem]">Siêu thị nhà đất </span>
                                      </div>
                                     <div class="text-left">
                                         <span class="vip-gradient-text">Khác biệt tạo dấu ấn </span>
                                     </div>
-                                    <div class="text-left"><span class="font-medium text-xs xl:text-base text-white my-[10px]">Chuyên mua bán, ký gửi Bất động sản thổ cư <br> Hà Nội (Nhà mặt phố, Biệt thự, Văn phòng)</span></div>
+                                    <div class="text-left"><span class="font-medium text-xs xl:text-base text-white my-[0.625rem]">Chuyên mua bán, ký gửi Bất động sản thổ cư <br> Hà Nội (Nhà mặt phố, Biệt thự, Văn phòng)</span></div>
                                     <div class="btn-gold "><a href="#danh-muc-bds"><span class="text-white">Khám phá ngay</span></a></div>
                                 
                                 </div>
