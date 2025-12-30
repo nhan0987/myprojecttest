@@ -1,5 +1,5 @@
 
-    <div class="grid grid-cols-10 xl:grid-cols-1 pt-2 pb-2 xl:p-2 gap-2 xl:gap-0!">
+    <div class="grid grid-cols-10 xl:grid-cols-1 pt-2 pb-2 xl:p-2 gap-2 xl:gap-[0.75rem]!">
             
             <?php if (has_post_thumbnail()) { ?>
                 <div class="content-image image-zoom-container col-span-4 xl:col-span-1 pr-2 xl:pr-0">

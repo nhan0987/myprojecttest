@@ -1086,9 +1086,8 @@ div.penci-topbar-menu > ul ul.sub-menu li:first-child > a {
     -moz-transition: .3s;
     -webkit-transition: .3s;
     position: relative;
-    font-weight: bold;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
 }
 @media (min-width:1280px) {
     #navigation .menu li a {
@@ -11484,7 +11483,7 @@ ul.footer-menu{
 #widget-area {
     /* overflow: hidden; */
     margin: 0;
-    padding: 40px 0;
+    padding: 80px 0 0 0;
     background: #ffffff;
     position: relative;
     border-top: 1px solid #ECECEC;

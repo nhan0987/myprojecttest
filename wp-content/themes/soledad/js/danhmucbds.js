@@ -14,7 +14,7 @@ const NEPTUNE_UI = {
     init: function() {
         this.initTabs();
         this.initSlider();
-        this.initAutoHover();
+        // this.initAutoHover();
     },
 
     /**
@@ -23,21 +23,61 @@ const NEPTUNE_UI = {
     initTabs: function() {
         const tabPanes = document.querySelectorAll('.tab-pane');
 
-        console.log("initTabs")
-        if (tabPanes.length === 0) return;
+        console.log("initTabs -> Running Neptune Logic 🔱");
+            if (tabPanes.length === 0) return;
 
         tabPanes.forEach((pane) => {
             const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
-            if (!featuredContainer) return;
+            // Lấy danh sách items (Neptune đã gom vào biến cho gọn)
+            const items = pane.querySelectorAll('.item.cut-the-top-left-corner-09-container');
 
-            const elements = {
-                icon: featuredContainer.querySelector('.icons-container'),
-                title: featuredContainer.querySelector('.tlc-title'),
-                desc: featuredContainer.querySelector('.tlc-description'),
-                items: pane.querySelectorAll('.item.cut-the-top-left-corner-09-container')
-            };
+            if (!featuredContainer || items.length === 0) return;
 
-            elements.items.forEach(item => {
+            // --- 1. SETUP MẶC ĐỊNH (Khi mới tải trang) ---
+            // Logic: Vào Desktop thì item đầu sáng kiểu Hover, vào Mobile thì item đầu sáng kiểu Active + hiện nội dung
+            if (window.innerWidth >= this.config.sliderBreakpoint) {
+                // DESKTOP: Add class giả hover
+                items[0].classList.add('is-hover');
+            } else {
+                // MOBILE: Add class active & Load nội dung ngay lập tức
+                items[0].classList.add('active', 'border-blue-500', 'bg-blue-50');
+
+                // Copy nội dung từ item đầu tiên sang container hiển thị
+                const source = {
+                    icon: items[0].querySelector('.icons-container'),
+                    title: items[0].querySelector('.tlc-title'),
+                    desc: items[0].querySelector('.tlc-description')
+                };
+                const elements = {
+                    icon: featuredContainer.querySelector('.icons-container'),
+                    title: featuredContainer.querySelector('.tlc-title'),
+                    desc: featuredContainer.querySelector('.tlc-description')
+                };
+
+                if (source.icon && elements.icon) elements.icon.innerHTML = source.icon.innerHTML;
+                if (source.title && elements.title) elements.title.innerHTML = source.title.innerHTML;
+                if (source.desc && elements.desc) elements.desc.innerHTML = source.desc.innerHTML;
+
+                featuredContainer.style.display = 'flex';
+                featuredContainer.classList.remove('hidden');
+            }
+
+            // --- 2. GẮN SỰ KIỆN (Event Listeners) ---
+            items.forEach(item => {
+                
+                // --- A. DESKTOP: FAKE HOVER ---
+                item.addEventListener('mouseenter', () => {
+                    if (window.innerWidth >= this.config.sliderBreakpoint) {
+                        // Xóa is-hover ở thằng cũ
+                        const currentHover = pane.querySelector('.item.cut-the-top-left-corner-09-container.is-hover');
+                        if (currentHover) currentHover.classList.remove('is-hover');
+                        
+                        // Thêm is-hover cho thằng mới
+                        item.classList.add('is-hover');
+                    }
+                });
+
+                // --- B. MOBILE: CLICK & ACTIVE ---
                 item.addEventListener('click', () => {
                     // Chỉ thực thi khi màn hình nhỏ hơn breakpoint (Mobile/Tablet)
                     if (window.innerWidth < this.config.sliderBreakpoint) {
@@ -46,18 +86,25 @@ const NEPTUNE_UI = {
                             title: item.querySelector('.tlc-title'),
                             desc: item.querySelector('.tlc-description')
                         };
+                        
+                        // Lấy lại elements đích (để đảm bảo scope)
+                        const elements = {
+                            icon: featuredContainer.querySelector('.icons-container'),
+                            title: featuredContainer.querySelector('.tlc-title'),
+                            desc: featuredContainer.querySelector('.tlc-description')
+                        };
 
                         // Copy nội dung
-                        if (source.icon) elements.icon.innerHTML = source.icon.innerHTML;
-                        if (source.title) elements.title.innerHTML = source.title.innerHTML;
-                        if (source.desc) elements.desc.innerHTML = source.desc.innerHTML;
+                        if (source.icon && elements.icon) elements.icon.innerHTML = source.icon.innerHTML;
+                        if (source.title && elements.title) elements.title.innerHTML = source.title.innerHTML;
+                        if (source.desc && elements.desc) elements.desc.innerHTML = source.desc.innerHTML;
 
                         // Hiển thị container
                         featuredContainer.style.display = 'flex';
                         featuredContainer.classList.remove('hidden');
 
-                        // Cập nhật trạng thái active
-                        elements.items.forEach(i => i.classList.remove('active', 'border-blue-500', 'bg-blue-50'));
+                        // Cập nhật trạng thái active (Reset hết rồi active thằng được click)
+                        items.forEach(i => i.classList.remove('active', 'border-blue-500', 'bg-blue-50'));
                         item.classList.add('active', 'border-blue-500', 'bg-blue-50');
                     }
                 });

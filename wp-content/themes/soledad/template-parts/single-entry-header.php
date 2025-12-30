@@ -50,6 +50,9 @@ $move_title_bellow   = get_theme_mod('penci_move_title_bellow');
 			<i class="stnd-images-icons linkedin-icons w-[32px]! h-[32px]!">&nbsp;</i>
 		</div>
 	<?php endif; ?>
+
+	<div class="font-bold"><?php echo the_excerpt() ?></div>
+	
 	<?php
 	$recipe_title  = get_post_meta(get_the_ID(), 'penci_recipe_title', true);
 	if (has_shortcode(get_the_content(), 'penci_recipe') || $recipe_title) {

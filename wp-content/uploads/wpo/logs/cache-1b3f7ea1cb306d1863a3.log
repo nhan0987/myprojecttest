@@ -239,3 +239,78 @@
 [2025-12-18 04:43:03 : INFO] - Cache for previous post (with URL: http://mystnd.vn/gia-can-ho-tang-manh-thi-truong-chung-cu-mini-len-ngoi/) adjacent to post with id: 2678 has been purged, triggered by action: save_post 
 [2025-12-18 04:43:03 : INFO] - Cache for all archives page associated with post_type: post and Title: "Cập nhật giá bất động sản Hà Nội 6 tháng đầu năm 2022" have been purged, triggered by action: save_post 
 [2025-12-18 04:43:03 : INFO] - Cache for author page URL: http://mystnd.vn/author/admin_stnd/ associated with post_type: post and Title: "Cập nhật giá bất động sản Hà Nội 6 tháng đầu năm 2022" has been purged, triggered by action: save_post 
+[2025-12-29 17:18:55 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-29 17:20:21 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:21 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:20:23 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:23 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:20:34 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:34 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:20:36 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:36 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:20:52 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:52 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:20:54 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:20:54 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:21:56 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:21:56 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 17:21:59 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 17:21:59 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 18:12:08 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:12:08 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:12:09 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:12:09 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:12:29 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:12:29 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:12:31 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:12:31 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:12:58 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:12:58 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:13:00 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:13:00 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:13:48 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:13:48 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:13:49 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:13:49 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:14:48 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:14:48 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:14:50 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:14:50 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:15:45 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:15:45 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:15:47 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:15:47 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:18:58 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:18:58 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:19:00 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:19:00 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:20:22 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:20:22 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:20:24 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:20:24 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:21:14 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:21:14 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 18:21:15 : INFO] - Cache for URL: http://mystnd.vn/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-12-29 18:21:15 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-12-29 20:14:01 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:14:01 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 20:14:04 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:14:04 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 20:14:47 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:14:47 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 20:14:50 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:14:50 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 20:23:38 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:23:38 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-29 20:23:41 : INFO] - Cache for URL: http://mystnd.vn/ has been purged, triggered by action: save_post 
+[2025-12-29 20:23:41 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-12-30 05:31:27 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2025-12-30 05:31:29 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2025-12-30 05:39:13 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2025-12-30 05:39:15 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2025-12-30 05:44:47 : INFO] - Cache for URL: http://mystnd.vn/toa-nha-van-phong/ has been purged, triggered by action: save_post 
+[2025-12-30 05:44:49 : INFO] - Cache for URL: http://mystnd.vn/toa-nha-van-phong/ has been purged, triggered by action: save_post 
+[2025-12-30 05:49:10 : INFO] - Cache for URL: http://mystnd.vn/khach-san-can-ho-dich-vu/ has been purged, triggered by action: save_post 
+[2025-12-30 05:49:12 : INFO] - Cache for URL: http://mystnd.vn/khach-san-can-ho-dich-vu/ has been purged, triggered by action: save_post 
+[2025-12-30 05:52:11 : INFO] - Cache for URL: http://mystnd.vn/chung-cu-cao-cap/ has been purged, triggered by action: save_post 
+[2025-12-30 05:52:12 : INFO] - Cache for URL: http://mystnd.vn/chung-cu-cao-cap/ has been purged, triggered by action: save_post 
