@@ -11,12 +11,12 @@ $move_title_bellow   = get_theme_mod('penci_move_title_bellow');
 	<?php penci_soledad_meta_schema(); ?>
 	<?php $hide_readtime = get_theme_mod('penci_single_hreadtime'); ?>
 	<?php if (! get_theme_mod('penci_single_meta_author') || ! get_theme_mod('penci_single_meta_date') || ! get_theme_mod('penci_single_meta_comment') || get_theme_mod('penci_single_show_cview') || penci_isshow_reading_time($hide_readtime)) : ?>
-		<div class="post-box-meta-single flex gap-1">
+		<div class="post-box-meta-single flex gap-2! xl:gap-1">
 			<?php if (! get_theme_mod('penci_single_meta_date')) : ?>
-				<div class="flex items-center gap-1"><span class="material-symbols-outlined">calendar_today</span><?php penci_soledad_time_link('single'); ?></div>
+				<div class="flex items-center gap-1!"><span class="material-symbols-outlined">calendar_today</span><?php penci_soledad_time_link('single'); ?></div>
 			<?php endif; ?>
 			<?php if (! get_theme_mod('penci_single_meta_author')) : ?>
-				<span class="author-post byline flex items-center gap-1">
+				<span class="author-post byline flex items-center gap-1!">
 					<span class="author vcard"><?php echo penci_get_setting('penci_trans_by'); ?> 
 					<!-- <a class="author-url url fn n" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> -->
 					<a class="author-url url fn n" href="#"><?php the_author(); ?></a>

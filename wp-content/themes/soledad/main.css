@@ -20618,7 +20618,7 @@ p.has-drop-cap:not(:focus):first-letter {
     }
     .post-box-meta-single span {
         display: block;
-        margin-top: 5px;
+        /* margin-top: 5px; */
     }
     .post-box-meta-single span:before {
         content: "";

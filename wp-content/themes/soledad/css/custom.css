@@ -75,7 +75,12 @@ p:last-child {
 
 .wrapper-boxed .container-default-page {
 	padding: 0;
-	margin-top: 2rem;
+	margin-top: 1rem;
+}
+@media (min-width:1536px) {
+	.wrapper-boxed .container-default-page {
+		margin-top: 2rem;
+	}
 }
 
 .container-fluid {
@@ -610,7 +615,7 @@ p:last-child {
 
 	/* background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important; */
 
-	background: #436677 !important;
+	background: #06c !important;
 	display: inline-block !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
@@ -626,6 +631,9 @@ p:last-child {
 
 .module_blogs .content-excerpt p {
 	margin-bottom: 0;
+}
+.module_blogs .content-excerpt a {
+	color: #1D2229;
 }
 
 .module_blogs .content_list .item {
@@ -860,9 +868,15 @@ p:last-child {
 }
 
 #navigation ul.menu>li>a {
-	padding: 1.5rem 0.5rem 1.5rem 0.5rem;
-	;
+	padding: 16px 6px 16px 6px;
 }
+
+@media (min-width:1536px) {
+	#navigation ul.menu>li>a {
+		padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+	}
+}
+	
 
 #navigation ul.menu>li>a:before {
 	background-color: transparent;
@@ -2771,7 +2785,7 @@ li.nav-item::marker {
 }
 
 .module_real_estate .bds-content {
-	padding: 1rem 1rem 1rem 1rem;
+	/* padding: 1rem 1rem 0 1rem; */
 }
 
 .module_real_estate .category {
@@ -2783,9 +2797,14 @@ li.nav-item::marker {
 }
 
 .module_real_estate .bds-title {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-weight: 600;
+	
 }
+.module_real_estate .bds-title a{
+	color: black;
+}
+
 
 .module_real_estate .text_call_now {
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
@@ -2808,7 +2827,7 @@ li.nav-item::marker {
 	font-size: 0.875rem;
 	font-weight: 500;
 	color: white;
-	padding: 1px 1.6875rem 0.8125rem 0.6875rem;
+	padding: 1px 27px 13px 11px;
 	transform: translate(-0.5rem);
 
 	background-image: url('../images/pennant-tag-green.png');
@@ -3040,7 +3059,7 @@ html {
 }
 
 .just-email-form.email-form-style-01 .wpcf7-submit {
-	top: 15% !important;
+	top: 17% !important;
 	right: -2.4375rem !important;
 }
 
@@ -4604,7 +4623,51 @@ html {
 	height: 7.5rem;
 	position: relative;
 }
+.cut-the-bottom-right-corner-27-container {
+	aspect-ratio: 343 / 220;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27-mobile.svg");
+	width: 343px;
+	height: 220px;
+	
+	--tw-translate-y: calc(calc(1 / 10 * 100%) * -1);
+    transform: translateY(var(--tw-translate-y));
+    background-size: cover !important;
+    background-position-y: 16% !important;
 
+}
+
+.cut-the-bottom-right-corner-27-container .btn-view-more {
+	width: 40px;
+	height: 40px;
+	color: white;
+}
+.cut-the-bottom-right-corner-27-container .text-view-more{
+	display: none;
+}
+.cut-the-bottom-right-corner-27-container:hover .btn-view-more {
+		color: white;
+		background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	}
+.cut-the-bottom-right-corner-27-container .bg-view-more {
+	background-color: white;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+.cut-the-bottom-right-corner-27-container .btn-view-more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.cut-the-bottom-right-corner-27-container .btn-view-more .arrow-right-icons {
+    transform: rotate(0deg);
+}
 @media (min-width:1280px) {
 	.cut-the-bottom-left-corner-19-container {
 		aspect-ratio: 623 / 359;
@@ -4672,12 +4735,31 @@ html {
 		height: 11.875rem;
 		position: relative;
 	}
+	.cut-the-bottom-right-corner-27-container {
+		aspect-ratio: 270 / 190;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27.svg");
+		width: 270px;
+		height: 190px;
+		
+	}
+
+	
+	.cut-the-bottom-right-corner-27-container .text-view-more{
+		display: block;
+	}
+	.cut-the-bottom-right-corner-27-container .btn-view-more {
+		width: 130px;
+		height: 40px;
+		color: white;
+	}
+	
 }
 
 
 
 /* --- Cấu trúc chung --- */
-/* Giả lập grid cha để col-span hoạt động đúng, nếu Oniichan đặt nó trong grid */
+/* Giả lập grid cha để col-span hoạt động đúng, nếu đặt nó trong grid */
 .job-item-container {
     gap: 1rem; 
 
@@ -5569,4 +5651,19 @@ padding-left: 4px;
 
 .accordion-collapse.show{
 	/* transition: opacity 5s ease-in-out; */
+}
+
+.dv-mien-phi-bg {
+	margin-top: 0 !important; 
+	margin-bottom: 0 !important; 
+	padding-top: 0 !important; 
+	padding-bottom: 0 !important; 
+	background: url(/wp-content/uploads/2025/12/z7381023743328_f036b72507acdd16b02dfbe37fb653fb.jpg) no-repeat center; 
+	background-size: cover;
+}
+@media (min-width:1280px) {
+	.dv-mien-phi-bg {
+		background: url(/wp-content/uploads/2025/12/z7380975248019_690662b2f944bdecffc28e2b8d4ead4c.jpg) no-repeat center;
+		background-size: cover; 
+	}
 }
