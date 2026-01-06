@@ -2166,7 +2166,7 @@
 		PENCI.JumtoRecipe();
 		PENCI.Single_Loadmore();
 		PENCI.button_expand();
-		PENCI.draw_stroke();
+		
 		PENCI.setupExpandToggle({
 			contentId: 'left-content',
 			btnId: 'btn-toggle-left',
