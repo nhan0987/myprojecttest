@@ -96,16 +96,23 @@ if (!function_exists('lth_categories_output_fe')) :
                 <?php } ?>
 
                 <?php if ($attributes['categories_style'] == 'grid-02') { ?>
-                    <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-5! underline-01">
+                    <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-8! underline-01">
                         <?php foreach( $attributes['items'] as $index => $inner ) {
                             
                             $item_classes = 'item';
                             $image_zoom_container_classes = 'image-zoom-container';
+                            $shape_classes = '';
                         
                             if ( $index == 0 ) {
                                 $item_classes .= ' col-span-2 lg:col-span-1';
-                                $image_zoom_container_classes .= ' image-zoom-container-full';                           
+                                $image_zoom_container_classes .= ' image-zoom-container-full';
+                                $shape_classes = 'cut-the-lower-left-corner-05-1';                      
+                            }elseif($index == 1){
+                                $shape_classes = 'cut-the-lower-left-corner-05-2';
+                            }elseif($index == 2){
+                                $shape_classes = 'cut-the-lower-left-corner-05-3';
                             }
+
                             $has_mobile_title = false;
                             if(!empty($inner['item_mobile_title'])){
                                 $has_mobile_title = true;
@@ -117,7 +124,7 @@ if (!function_exists('lth_categories_output_fe')) :
                         ?>
                             
                                 <div class="<?php echo esc_attr( $item_classes ); ?>">
-                                    <div class="content">
+                                    <div class="content <?php echo esc_attr( $shape_classes ); ?>">
                                         <div class="content-header">
                                             <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?> relative">
@@ -151,9 +158,12 @@ if (!function_exists('lth_categories_output_fe')) :
                             
                             $item_classes = 'item';
                             $image_zoom_container_classes = 'image-zoom-container';
+                            $shape_classes = 'cut-the-lower-left-corner-06';
                         
                             if ( $index == 0 ) {
                                 $item_classes .= ' col-span-1';
+                            }elseif($index == 1){
+                                $shape_classes = 'cut-the-lower-left-corner-06-1';
                             }
 
                             $has_mobile_title = false;
@@ -166,7 +176,7 @@ if (!function_exists('lth_categories_output_fe')) :
                         ?>
                             
                                 <div class="<?php echo esc_attr( $item_classes ); ?>">
-                                    <div class="content">
+                                    <div class="content <?php echo esc_attr( $shape_classes ); ?>">
                                         <div class="content-header">
                                             <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?> relative">
