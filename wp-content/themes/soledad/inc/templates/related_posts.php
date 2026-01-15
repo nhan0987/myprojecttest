@@ -55,7 +55,7 @@ if ( ! empty( $args ) ) {
 			<div class="flex flex-wrap md:justify-between justify-center cut-the-lower-left-corner">
 		<?php } ?>
 		<?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-				<div class="item xl:w-[230px]">
+				<div class="item xl:w-[14.375rem]">
 					<div class="grid grid-cols-10 xl:grid-cols-1 pt-2 pb-2 xl:p-2 gap-2 xl:gap-0!">
 						<?php if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) : ?>
 
@@ -87,7 +87,7 @@ if ( ! empty( $args ) ) {
 							</a>
 						<?php endif; ?>
 							<div class="content-box col-span-6 xl:col-span-1">
-								<p class="content-days absolute translate-x-[-75px] translate-y-[83px] xl:translate-x-[0px]! xl:translate-y-[-21px]! text-xs! text-gray-400">
+								<p class="content-days absolute translate-x-[-4.6875rem] translate-y-[5.1875rem] xl:translate-x-[0px]! xl:translate-y-[-1.3125rem]! text-xs! text-gray-400">
 									<?php penci_soledad_time_link(); ?>
 								</p>
 								<h3 class="content-name line-clamp-2">

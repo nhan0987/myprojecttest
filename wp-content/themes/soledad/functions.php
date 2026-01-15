@@ -1987,7 +1987,7 @@ function penci_social_media_array()
 		'telegram' => array(get_theme_mod('penci_telegram'), 'fab fa-telegram'),
 		'reddit' => array(get_theme_mod('penci_reddit'), 'fab fa-reddit-alien'),
 		'ok' => array(get_theme_mod('penci_ok'), 'fab fa-odnoklassniki'),
-		'500px' => array(get_theme_mod('penci_500px'), 'fab fa-500px'),
+		'31.25rem' => array(get_theme_mod('penci_31.25rem'), 'fab fa-31.25rem'),
 		'stumbleupon' => array(get_theme_mod('penci_stumbleupon'), 'fab fa-stumbleupon'),
 		'wechat' => array(get_theme_mod('penci_wechat'), 'fab fa-weixin'),
 		'weibo' => array(get_theme_mod('penci_weibo'), 'fab fa-weibo'),

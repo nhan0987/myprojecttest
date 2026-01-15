@@ -428,7 +428,7 @@ if ( defined( 'ELEMENTOR_VERSION' ) || defined( 'WPB_VC_VERSION' ) ) {
 			<?php if ( get_theme_mod( 'penci_sidebar_remove_border_outer' ) ): ?>
 				.penci-block-vc .penci-border-arrow:after { content: none; display: none; }
 				.penci-block-vc .widget-title{ margin-left: 0; margin-right: 0; margin-top: 0; }
-				.penci-block-vc .penci-border-arrow:before{ bottom: -6px; border-width: 6px; margin-left: -6px; }
+				.penci-block-vc .penci-border-arrow:before{ bottom: -0.375rem; border-width: 0.375rem; margin-left: -0.375rem; }
 			<?php endif; ?>
 			<?php if ( get_theme_mod( 'penci_sidebar_remove_arrow_down' ) ): ?>
 				.penci-block-vc .penci-border-arrow:before, .penci-block-vc .style-2.penci-border-arrow:after { content: none; display: none; }

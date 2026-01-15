@@ -1,7 +1,7 @@
 .rwmb-osm-canvas {
 	width: 100%;
-	height: 400px;
-	margin-bottom: 10px;
+	height: 25rem;
+	margin-bottom: 0.625rem;
 }
 
 /* Autocomplete style, copy from WordPress's common.css and forms.css */
@@ -23,7 +23,7 @@ input.ui-autocomplete-input.open {
 
 .ui-autocomplete li {
 	margin-bottom: 0;
-	padding: 4px 10px;
+	padding: 4px 0.625rem;
 	white-space: nowrap;
 	text-align: left;
 	cursor: pointer;

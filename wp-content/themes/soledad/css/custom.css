@@ -905,7 +905,7 @@ p:last-child {
 }
 
 #navigation ul.menu>li>a {
-	padding: 16px 6px 16px 6px;
+	padding: 1rem 0.375rem 1rem 0.375rem;
 }
 
 @media (min-width:1536px) {
@@ -1988,12 +1988,25 @@ p:last-child {
 	width: 114rem;
 	height: 22.5rem;
 }
+.sub-page-slider img {
+	width: 114rem;
+	height: 22.5rem;
+}
 @media (min-width:1280px) {
 	.home-page-slider img {
 		width: 114rem;
 		height: 40rem;
 	}
+	.sub-page-slider img {
+		width: 114rem;
+		height: 40rem;
+	}
 }
+
+.swiper-pagination {
+    z-index: 2 !important;
+}
+
 
 .penci-page-header-background {
 	padding-top: 0.375rem;
@@ -2606,6 +2619,29 @@ li.nav-item::marker {
 
 }
 
+ .shield-box-2 {
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+	border-radius: 8px;
+	justify-content: center;
+	align-items: center;
+	rotate: 45deg;
+	display: flex;
+	z-index: 10;
+	width: 2rem;
+	height: 2rem;
+	background: radial-gradient(92.46% 138.54% at 49.35% 100%, #FFD45C 0%, #9E5625 100%);
+}
+
+.shield-box-2 .number {
+	color: #fff;
+	rotate: -45deg;
+	font-size: 1rem;
+	font-weight: 700;
+	font-family: Roboto;
+	font-style: Bold;
+
+}
+
 .dich-vu-tu-van .content-image img {
 	/* width: 24.875rem; */
 }
@@ -2614,10 +2650,13 @@ li.nav-item::marker {
 .dash-06 .title {
 	position: relative;
 	display: inline-block;
-	padding-bottom: 0.625rem;
+	padding-bottom: 2.625rem;
 	font-weight: 700;
-	font-size: 1.5rem;
-	text-transform: uppercase;
+	font-size: 2rem;
+
+	color: black;
+	background: none;
+	-webkit-text-fill-color: inherit;
 }
 
 .dash-06 .infor::before {
@@ -2643,6 +2682,56 @@ li.nav-item::marker {
 	color:black;
 	font-size:2rem;
 	font-weight: 400;
+}
+
+.dash-07 .title-box .title{
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 2.5rem;
+	text-transform: uppercase;
+
+	background: linear-gradient(86.24deg, #000000 1.16%, #000000 128.11%);
+	background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.dash-07 .title-box .title>p{
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 2.5rem;
+	text-transform: uppercase;
+
+}
+
+
+.dash-07 .title-box .infor{
+	display: flex;
+    align-items: center;
+    padding: 0 0 0 0px;
+    margin-bottom: 0;
+    position: relative;
+}
+.dash-07 .title-box .infor>p{
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 2.5rem;
+	text-transform: uppercase;
+
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+	background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.dash-07 .title-box .infor:before {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	content: '';
+	display: block;
+	width: 3rem;
+	height: 3px;
+	margin-right: 0.375rem;
 }
 
 .tab-content-style-01 ul {
@@ -2864,7 +2953,7 @@ li.nav-item::marker {
 	font-size: 0.875rem;
 	font-weight: 500;
 	color: white;
-	padding: 1px 27px 13px 11px;
+	padding: 1px 1.6875rem 0.8125rem 0.6875rem;
 	transform: translate(-0.5rem);
 
 	background-image: url('../images/pennant-tag-green.png');
@@ -3804,10 +3893,10 @@ html {
 		width: 20rem;
 		height: 11rem;
 		transition: opacity 0.5s ease-out;
-		padding: 1.3rem 1.5rem 0px 1.5rem;
+		padding: 0.3rem 1.5rem 0px 1.5rem;
 		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 1.4rem;
+		gap: 0.9rem;
 		text-align: left;
 
 	}
@@ -4664,8 +4753,8 @@ html {
 	aspect-ratio: 343 / 220;
 	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27-mobile.svg");
 	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27-mobile.svg");
-	width: 343px;
-	height: 220px;
+	width: 21.4375rem;
+	height: 13.75rem;
 	
 	--tw-translate-y: calc(calc(1 / 10 * 100%) * -1);
     transform: translateY(var(--tw-translate-y));
@@ -4675,8 +4764,8 @@ html {
 }
 
 .cut-the-bottom-right-corner-27-container .btn-view-more {
-	width: 40px;
-	height: 40px;
+	width: 2.5rem;
+	height: 2.5rem;
 	color: white;
 }
 .cut-the-bottom-right-corner-27-container .text-view-more{
@@ -4776,8 +4865,8 @@ html {
 		aspect-ratio: 270 / 190;
 		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27.svg");
 		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-27.svg");
-		width: 270px;
-		height: 190px;
+		width: 16.875rem;
+		height: 11.875rem;
 		
 	}
 
@@ -4786,8 +4875,8 @@ html {
 		display: block;
 	}
 	.cut-the-bottom-right-corner-27-container .btn-view-more {
-		width: 130px;
-		height: 40px;
+		width: 8.125rem;
+		height: 2.5rem;
 		color: white;
 	}
 	
@@ -4939,6 +5028,7 @@ html {
 	justify-content: center;
     align-items: center;
     display: flex;
+	border:none;
 	
 }
 
@@ -5703,4 +5793,53 @@ padding-left: 4px;
 		background: url(/wp-content/uploads/2025/12/z7380975248019_690662b2f944bdecffc28e2b8d4ead4c.jpg) no-repeat center;
 		background-size: cover; 
 	}
+}
+
+.dang-ky-cccmg-form {
+	border-radius: 16px;
+	border-top: 5px solid  #FFD45C;
+	box-shadow: 0 4px 0.75rem 0 rgba(158, 86, 37, 0.08);
+	border-bottom: 1px solid #E1E1E1;
+	border-right: 1px solid #E1E1E1; ;
+	border-left: 1px solid #E1E1E1; ;
+}
+
+.dang-ky-cccmg-form input,.dang-ky-cccmg-form select ,.dang-ky-cccmg-form textarea  {
+	border-radius: 8px;
+}
+.dang-ky-cccmg-form label{
+	color: black;
+}
+.dang-ky-cccmg-form input[type="email"],
+.dang-ky-cccmg-form input[type="text"],
+.dang-ky-cccmg-form input[type="password"],
+.dang-ky-cccmg-form input[type="number"],
+.dang-ky-cccmg-form input[type="select"]{
+	margin-bottom: 4px;
+}
+
+form.wpcf7-form {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+}
+form.wpcf7-form>div{
+	margin: 0 !important;
+}
+
+.btn-gold-submit-full {
+    background: radial-gradient(92.46% 138.54% at 49.35% 100%, #FFD45C 0%, #9E5625 100%) !important;
+    border-radius: 8px !important;
+    color: white !important;
+	width: 100% !important;
+    padding: 0.5rem 1.25rem !important;
+}
+
+.btn-gold-submit-full:hover {
+    background: radial-gradient(92.46% 138.54% at 49.35% 100%, #ffffff 0%, #ffffff 100%) !important;
+    color: #F59E0B !important;
+}
+.penci-breadcrumb i{
+	color: #888;
+    font-size: 0.8125rem;
+    margin: 0 0.9375rem 0 1.1875rem;
 }

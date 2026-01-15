@@ -129,7 +129,7 @@ if( ! class_exists( 'penci_social_widget' ) ) {
 			$instance['telegram']      = $new_instance['telegram'];
 			$instance['reddit']        = $new_instance['reddit'];
 			$instance['ok']            = $new_instance['ok'];
-			$instance['500px']         = $new_instance['500px'];
+			$instance['31.25rem']         = $new_instance['31.25rem'];
 			$instance['stumbleupon']   = $new_instance['stumbleupon'];
 			$instance['wechat']        = $new_instance['wechat'];
 			$instance['weibo']         = $new_instance['weibo'];
@@ -188,7 +188,7 @@ if( ! class_exists( 'penci_social_widget' ) ) {
 				'telegram'      => '',
 				'reddit'        => '',
 				'ok'            => '',
-				'500px'         => '',
+				'31.25rem'         => '',
 				'wechat'        => '',
 				'weibo'         => '',
 				'stumbleupon'   => '',
@@ -247,7 +247,7 @@ if( ! class_exists( 'penci_social_widget' ) ) {
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'size_icon' ) ); ?>"><?php esc_html_e('Custom Font Size for Icons:', 'soledad'); ?></label>
-				<input  type="number" style="width: 50px;" id="<?php echo esc_attr( $this->get_field_id( 'size_icon' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size_icon' ) ); ?>" value="<?php echo esc_attr( $instance['size_icon'] ); ?>" size="3" />
+				<input  type="number" style="width: 3.125rem;" id="<?php echo esc_attr( $this->get_field_id( 'size_icon' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size_icon' ) ); ?>" value="<?php echo esc_attr( $instance['size_icon'] ); ?>" size="3" />
 			</p>
 
 			<p>
@@ -257,7 +257,7 @@ if( ! class_exists( 'penci_social_widget' ) ) {
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'size_text' ) ); ?>"><?php esc_html_e('Custom Font Size for Text on Right Icons:', 'soledad'); ?></label>
-				<input  type="number" style="width: 50px;" id="<?php echo esc_attr( $this->get_field_id( 'size_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size_text' ) ); ?>" value="<?php echo esc_attr( $instance['size_text'] ); ?>" size="3" />
+				<input  type="number" style="width: 3.125rem;" id="<?php echo esc_attr( $this->get_field_id( 'size_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size_text' ) ); ?>" value="<?php echo esc_attr( $instance['size_text'] ); ?>" size="3" />
 			</p>
 
 			<p class="description"><?php esc_html_e('Note: Setup your social links in the Appearance -> Customizer','soledad'); ?></p>
@@ -393,8 +393,8 @@ if( ! class_exists( 'penci_social_widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( '500px' ) ); ?>"><?php esc_html_e('Show 500px:','soledad'); ?></label>
-				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( '500px' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( '500px' ) ); ?>" <?php checked( (bool) $instance['500px'], true ); ?> />
+				<label for="<?php echo esc_attr( $this->get_field_id( '31.25rem' ) ); ?>"><?php esc_html_e('Show 31.25rem:','soledad'); ?></label>
+				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( '31.25rem' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( '31.25rem' ) ); ?>" <?php checked( (bool) $instance['31.25rem'], true ); ?> />
 			</p>
 			
 			<p>

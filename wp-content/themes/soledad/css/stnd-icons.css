@@ -145,6 +145,10 @@
     transition: background-color 0.2s;
 }
 
+.black-icons {
+    background: linear-gradient(86.24deg, #080808 1.16%, #0c0c0c 128.11%) !important;
+}
+
 .telephone-icons {
  
     -webkit-mask-image: url('/wp-content/themes/soledad/icons/telephone.svg');

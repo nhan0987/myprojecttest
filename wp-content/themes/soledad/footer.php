@@ -56,11 +56,11 @@ if( ( function_exists('is_shop') && is_shop() ) || ( function_exists('is_product
 <?php if( ! $penci_hide_footer ): ?>
 
 	<div class="relative">
-		<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 lg:-translate-y-1/2  max-w-sm lg:max-w-4xl  w-[90%] 2xl:w-[100%] xl:max-w-7xl! px-3! xl:px-[30px]! py-3! shadow-lg text-white text-sm xl:text-base 2xl:text-lg flex flex-col lg:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
+		<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 lg:-translate-y-1/2  max-w-sm lg:max-w-4xl  w-[90%] 2xl:w-[100%] xl:max-w-7xl! px-3! xl:px-[1.875rem]! py-3! shadow-lg text-white text-sm xl:text-base 2xl:text-lg flex flex-col lg:flex-row justify-center gap-3 xl:gap-[8rem]! bg-[radial-gradient(60.29%_710.16%_at_53.55%_99.55%,#FFD45C_0%,#9E5625_100%)] z-[100] rounded-[1rem] lg:rounded-[13.6rem]">
 				
-			<div class="flex items-center gap-2"><i class="stnd-icons location-icons white-color w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium  xl:text-lg xl:font-medium"></i>123 Beverly Hill, Long Biên, Hà Nội</div>
-			<div class="flex items-center gap-2"><i class="stnd-icons email-icons white-color w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Email: contact@stnd.vn</div>
-			<div class="flex items-center gap-2"><i class="stnd-icons telephone-icons white-color w-[24px]! h-[24px]! lg:w-[40px]! lg:h-[40px]! text-sm font-medium"></i>Hotline: 0989 666 888</div>
+			<div class="flex items-center gap-2"><i class="stnd-icons location-icons white-color w-[1.5rem]! h-[1.5rem]! lg:w-[2.5rem]! lg:h-[2.5rem]! text-sm font-medium  xl:text-lg xl:font-medium"></i>262 Tây Sơn, Đống Đa, Hà Nội</div>
+			<div class="flex items-center gap-2"><i class="stnd-icons email-icons white-color w-[1.5rem]! h-[1.5rem]! lg:w-[2.5rem]! lg:h-[2.5rem]! text-sm font-medium"></i>Email: info@stnd.vn</div>
+			<div class="flex items-center gap-2"><i class="stnd-icons telephone-icons white-color w-[1.5rem]! h-[1.5rem]! lg:w-[2.5rem]! lg:h-[2.5rem]! text-sm font-medium"></i>Hotline: 0972 991 551</div>
 		</div>
 	</div>
 

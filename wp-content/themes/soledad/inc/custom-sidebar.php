@@ -168,7 +168,7 @@ class Penci_Custom_Sidebar {
 		</div>
 		<style type="text/css" media="screen">
 			.soledad-remove-custom-sidebar .notice-dismiss {
-				right: 30px;
+				right: 1.875rem;
 				top: 3px;
 			}
 		</style>

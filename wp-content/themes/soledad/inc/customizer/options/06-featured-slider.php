@@ -60,7 +60,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'slider_bor
 	'label'       => 'Border Radius for Images on Featured Slider',
 	'section'     => 'penci_section_fslider_general',
 	'settings'    => 'penci_slider_border_radius',
-	'description' => 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>. If you want to disable border radius for slider. Fill 0',
+	'description' => 'You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>. If you want to disable border radius for slider. Fill 0',
 ) ) );
 
 $wp_customize->add_setting( 'penci_featured_slider_style', array(

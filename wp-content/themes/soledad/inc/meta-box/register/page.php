@@ -70,8 +70,8 @@ function penci_page_meta_box( $meta_boxes ) {
 			'type'    => 'select',
 			'options' => array(
 				''          => esc_html__( 'Default( follow Customize )', 'soledad' ),
-				'1170'      => esc_html__( 'Width: 1170px', 'soledad' ),
-				'1400'      => esc_html__( 'Width: 1400px', 'soledad' ),
+				'1170'      => esc_html__( 'Width: 73.125rem', 'soledad' ),
+				'1400'      => esc_html__( 'Width: 87.5rem', 'soledad' ),
 				'fullwidth' => esc_html__( 'FullWidth', 'soledad' ),
 			),
 			'tab'     => 'page_header',
@@ -80,7 +80,7 @@ function penci_page_meta_box( $meta_boxes ) {
 		array(
 			'id'    => 'penci_mainmenu_height',
 			'type'  => 'number',
-			'name'  => esc_html__( 'Custom Main Nav Height( min 30px )', 'soledad' ),
+			'name'  => esc_html__( 'Custom Main Nav Height( min 1.875rem )', 'soledad' ),
 			'min'   => '1',
 			'max'   => '500',
 			'tab'   => 'page_header',
@@ -88,7 +88,7 @@ function penci_page_meta_box( $meta_boxes ) {
 		array(
 			'id'    => 'penci_mainmenu_height_sticky',
 			'type'  => 'number',
-			'name'  => esc_html__( 'Custom Main Nav Height when Sticky Header( min 30px )', 'soledad' ),
+			'name'  => esc_html__( 'Custom Main Nav Height when Sticky Header( min 1.875rem )', 'soledad' ),
 			'min'   => '1',
 			'max'   => '500',
 			'tab'   => 'page_header',
@@ -127,7 +127,7 @@ function penci_page_meta_box( $meta_boxes ) {
 			'id'   => 'header_bgimg',
 			'name' => esc_html__( 'Header Background Image', 'soledad' ),
 			'type' => 'image',
-			'desc' => esc_html__( 'You can change header background image color with this option. You should use image with minimum width 1920px and minimum height 300px', 'soledad' ),
+			'desc' => esc_html__( 'You can change header background image color with this option. You should use image with minimum width 120rem and minimum height 18.75rem', 'soledad' ),
 			'tab'  => 'page_header',
 		),
 
@@ -247,8 +247,8 @@ function penci_page_meta_box( $meta_boxes ) {
 			'type'    => 'select',
 			'options' => array(
 				''          => esc_html__( 'Default( follow Customize )', 'soledad' ),
-				'1170'      => esc_html__( 'Width: 1170px', 'soledad' ),
-				'1400'      => esc_html__( 'Width: 1400px', 'soledad' ),
+				'1170'      => esc_html__( 'Width: 73.125rem', 'soledad' ),
+				'1400'      => esc_html__( 'Width: 87.5rem', 'soledad' ),
 				'fullwidth' => esc_html__( 'FullWidth', 'soledad' ),
 			),
 			'std'     => '',

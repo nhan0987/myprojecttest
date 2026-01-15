@@ -145,7 +145,7 @@ if( ! class_exists( 'Penci_Login_Register_Widget' ) ) {
 			?>
 
 			<!-- Widget Title: Text Input -->
-			<p class="description" style="padding: 0; margin: 20px 0 0;"><?php _e( 'Please note that when a user is logged in, the registration form will be hidden.<br>And if you select to show "Register" form, you need to go to Dashboard > Settings > General > on "Membership" select "Anyone can register" to make the Register form displays.', 'soledad' ); ?></p>
+			<p class="description" style="padding: 0; margin: 1.25rem 0 0;"><?php _e( 'Please note that when a user is logged in, the registration form will be hidden.<br>And if you select to show "Register" form, you need to go to Dashboard > Settings > General > on "Membership" select "Anyone can register" to make the Register form displays.', 'soledad' ); ?></p>
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo $instance_title; ?>" />

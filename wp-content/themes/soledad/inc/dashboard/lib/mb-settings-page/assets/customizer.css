@@ -12,12 +12,12 @@
 	background: none;
 }
 .rwmb-button.remove-clone {
-	right: -18px;
+	right: -1.125rem;
 }
 .rwmb-button.remove-clone .dashicons {
-	font-size: 14px;
-	width: 14px;
-	height: 14px;
+	font-size: 0.875rem;
+	width: 0.875rem;
+	height: 0.875rem;
 }
 
 /* Show color picker inline because of overflow: hidden on a parent element */

@@ -294,7 +294,7 @@ class PenciSocialMedia extends Base_Widget {
 			'Show telegram'    => 'telegram',
 			'Show reddit'      => 'reddit',
 			'Show ok'          => 'ok',
-			'Show 500px'       => '500px',
+			'Show 31.25rem'       => '31.25rem',
 			'Show stumbleupon' => 'stumbleupon',
 			'Show wechat'      => 'wechat',
 			'Show weibo'       => 'weibo',

@@ -293,14 +293,14 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ok', array
 	'type'     => 'text',
 ) ) );
 
-$wp_customize->add_setting( 'penci_500px', array(
+$wp_customize->add_setting( 'penci_31.25rem', array(
 	'default'           => '',
 	'sanitize_callback' => 'sanitize_text_field'
 ) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, '500px', array(
-	'label'    => '500px',
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, '31.25rem', array(
+	'label'    => '31.25rem',
 	'section'  => 'pencidesign_new_section_social',
-	'settings' => 'penci_500px',
+	'settings' => 'penci_31.25rem',
 	'type'     => 'text',
 ) ) );
 

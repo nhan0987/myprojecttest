@@ -407,10 +407,10 @@ if( ! class_exists( 'Soledad_VC_Shortcodes' ) ) {
 				<style>
 				<?php if( 'yes' == $standard_meta_overlay ): ?>
 					<?php echo $block_id_css; ?> .penci-wrapper-data .standard-post-image:not(.classic-post-image){ margin-bottom: 0; }
-					<?php echo $block_id_css; ?> .header-standard.standard-overlay-meta{ margin: -30px 30px 19px; background: #fff; padding-top: 25px; padding-left: 5px; padding-right: 5px; z-index: 10; position: relative; }
-					<?php echo $block_id_css; ?> .penci-wrapper-data .standard-post-image:not(.classic-post-image) .audio-iframe, .penci-wrapper-data .standard-post-image:not(.classic-post-image) .standard-content-special{ bottom: 50px; }
+					<?php echo $block_id_css; ?> .header-standard.standard-overlay-meta{ margin: -1.875rem 1.875rem 1.1875rem; background: #fff; padding-top: 1.5625rem; padding-left: 5px; padding-right: 5px; z-index: 10; position: relative; }
+					<?php echo $block_id_css; ?> .penci-wrapper-data .standard-post-image:not(.classic-post-image) .audio-iframe, .penci-wrapper-data .standard-post-image:not(.classic-post-image) .standard-content-special{ bottom: 3.125rem; }
 					@media only screen and (max-width: 479px){
-					<?php echo $block_id_css; ?> .header-standard.standard-overlay-meta{ margin-left: 10px; margin-right: 10px; }
+					<?php echo $block_id_css; ?> .header-standard.standard-overlay-meta{ margin-left: 0.625rem; margin-right: 0.625rem; }
 					}
 					<?php if( get_theme_mod( 'penci_bg_color_dark' ) ): ?>
 						<?php echo $block_id_css; ?> .header-standard.standard-overlay-meta{ background-color: <?php echo penci_get_setting( 'penci_bg_color_dark' ); ?>; }
@@ -430,8 +430,8 @@ if( ! class_exists( 'Soledad_VC_Shortcodes' ) ) {
 					<?php echo $block_id_css; ?> .header-standard { padding-bottom: 0; }
 				<?php endif; ?>
 				<?php if( 'yes' == $standard_effect_button ): ?>
-					<?php echo $block_id_css; ?> .penci-more-link a.more-link:hover:before { right: 100%; margin-right: 10px; width: 60px; }
-					<?php echo $block_id_css; ?> .penci-more-link a.more-link:hover:after{ left: 100%; margin-left: 10px; width: 60px; }
+					<?php echo $block_id_css; ?> .penci-more-link a.more-link:hover:before { right: 100%; margin-right: 0.625rem; width: 3.75rem; }
+					<?php echo $block_id_css; ?> .penci-more-link a.more-link:hover:after{ left: 100%; margin-left: 0.625rem; width: 3.75rem; }
 					<?php echo $block_id_css; ?> .standard-post-entry a.more-link:hover,
 					 <?php echo $block_id_css; ?> .standard-post-entry a.more-link:hover:before,
 					 <?php echo $block_id_css; ?> .standard-post-entry a.more-link:hover:after { opacity: 0.8; }

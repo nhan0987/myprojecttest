@@ -140,7 +140,7 @@ if( ! class_exists( 'Penci_Require_Active' ) ) {
 		function get_icon_penci() {
 			?>
 			<svg style="position: relative; top:4px;margin-right: 5px;" version="1.0" xmlns="http://www.w3.org/2000/svg"
-			     width="18px" height="18px" viewBox="0 0 26.000000 26.000000"
+			     width="1.125rem" height="1.125rem" viewBox="0 0 26.000000 26.000000"
 			     preserveAspectRatio="xMidYMid meet">
 				<g transform="translate(0.000000,26.000000) scale(0.100000,-0.100000)"
 				   fill="#ffffff" stroke="none">
@@ -201,10 +201,10 @@ if( ! class_exists( 'Penci_Require_Active' ) ) {
 							</div>
 						</form>
 						<div class="penci-activate-extra-notes">
-							<p class="penci-activate-desc" style="margin: 30px 0 10px;">
+							<p class="penci-activate-desc" style="margin: 1.875rem 0 0.625rem;">
 								<?php _e( 'To deliver you a better customer support service, access to features and to prevent piracy when the theme is activated the following data is sent to our servers:', 'soledad' ); ?>
 							</p>
-							<ul style="list-style: square; padding-left: 40px; font-size: 14px;">
+							<ul style="list-style: square; padding-left: 2.5rem; font-size: 0.875rem;">
 								<li><?php _e( 'The Envato username', 'soledad' ); ?></li>
 								<li><?php _e( 'The Envato purchase code for the item', 'soledad' ); ?></li>
 								<li><?php _e( 'The website URL you\'ve activated the theme', 'soledad' ); ?></li>
@@ -236,7 +236,7 @@ if( ! class_exists( 'Penci_Require_Active' ) ) {
 						if( ! empty( $license_data ) ){
 						?>
 						<h3><?php esc_html_e( 'License Detail', 'soledad' ); ?></h3>
-						<p class="penci-license-detail-desc" style="font-size: 15px;">
+						<p class="penci-license-detail-desc" style="font-size: 0.9375rem;">
 							<?php if( isset( $license_data['buyer'] ) && $license_data['buyer'] ){ 
 							$buyer = $license_data['buyer'];
 							$buyer_len = strlen( $buyer );
@@ -256,9 +256,9 @@ if( ! class_exists( 'Penci_Require_Active' ) ) {
 							<?php } ?>
 						</p>
 						<h3><?php esc_html_e( 'Revoke License', 'soledad' ); ?></h3>
-						<p class="penci-license-detail-desc" style="font-size: 15px;">
+						<p class="penci-license-detail-desc" style="font-size: 0.9375rem;">
 						<?php _e( 'Want to revoke the license for this website? Please click to button below:', 'soledad' ); ?><br>
-						<a href="<?php echo admin_url( 'admin.php?page=soledad_dashboard_welcome&penci_revoke_license=confirm&revoke_none=' ); echo wp_create_nonce( 'revoke_license' ); ?>" style="padding: 10px 20px; display: inline-block; line-height: 1; margin-top: 15px; background: #fd6f64; color: #fff;" onclick="return confirm('Are you sure?');"><?php esc_html_e( 'Revoke License', 'soledad' ); ?></a>
+						<a href="<?php echo admin_url( 'admin.php?page=soledad_dashboard_welcome&penci_revoke_license=confirm&revoke_none=' ); echo wp_create_nonce( 'revoke_license' ); ?>" style="padding: 0.625rem 1.25rem; display: inline-block; line-height: 1; margin-top: 0.9375rem; background: #fd6f64; color: #fff;" onclick="return confirm('Are you sure?');"><?php esc_html_e( 'Revoke License', 'soledad' ); ?></a>
 						</p>
 						<?php } ?>
 					</div>

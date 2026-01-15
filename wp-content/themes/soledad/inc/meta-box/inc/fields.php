@@ -140,7 +140,7 @@ if( ! class_exists( 'PENCI_FW_MetaBox_Fields' ) ):
 
 			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;min-width: 200px;">Revolution Slider Shortcode</h2>
 			<p class="description">If you select Revolution Slider above, please fill Revolution Slider Shortcode here. This option not apply for Page Template Full Width</p>
-			<textarea style="width: 100%; height: 50px;" name="penci_page_rev_shortcode"><?php if ( $rev_shortcode ): echo $rev_shortcode; endif; ?></textarea>
+			<textarea style="width: 100%; height: 3.125rem;" name="penci_page_rev_shortcode"><?php if ( $rev_shortcode ): echo $rev_shortcode; endif; ?></textarea>
 
 			<div class="penci-metabox-row penci-col-6">
 				<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;min-width: 200px;">Display Featured Boxes? </h2>

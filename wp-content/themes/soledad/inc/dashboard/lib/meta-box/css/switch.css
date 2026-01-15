@@ -7,7 +7,7 @@
 	padding: 2px;
 	border-radius: 3px;
 	min-width: 40px;
-	height: 22px;
+	height: 1.375rem;
 	box-sizing: border-box;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .rwmb-switch:checked + .rwmb-switch-status .rwmb-switch-slider:before {
-	left: calc(100% - 20px);
+	left: calc(100% - 1.25rem);
 }
 
 .rwmb-switch:checked + .rwmb-switch-status .rwmb-switch-off {
@@ -49,8 +49,8 @@
 .rwmb-switch-slider:before {
 	position: absolute;
 	content: attr(title-before) "";
-	height: 18px;
-	width: 18px;
+	height: 1.125rem;
+	width: 1.125rem;
 	left: 2px;
 	bottom: 2px;
 	z-index: 99;
@@ -80,17 +80,17 @@
 	margin: 0 4px;
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 0.6875rem;
 	position: relative;
 	z-index: 20;
 }
 
 .rwmb-switch-on {
-	padding-right: 20px;
+	padding-right: 1.25rem;
 }
 
 .rwmb-switch-off {
-	padding-left: 20px;
+	padding-left: 1.25rem;
 }
 
 /* Admin color schemes */

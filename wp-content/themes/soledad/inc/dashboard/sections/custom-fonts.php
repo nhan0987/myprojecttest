@@ -23,7 +23,7 @@
 		<table class="widefat penci-table-options" cellspacing="0">
 			<thead>
 			<tr><th colspan="4">
-					<h4 style="margin: 6px 0 15px 0; font-weight: bold; font-size: 20px;"><?php esc_html_e( 'Custom font files','soledad' ); ?></h4>
+					<h4 style="margin: 0.375rem 0 0.9375rem 0; font-weight: bold; font-size: 1.25rem;"><?php esc_html_e( 'Custom font files','soledad' ); ?></h4>
 					<p class="description">
 						<?php esc_html_e( 'You can generate your font file and format into .woff using','soledad' ); ?>
 						<a rel="nofollow" href="<?php echo esc_url( 'http://www.fontsquirrel.com/tools/webfont-generator' ); ?>"><?php esc_html_e( 'fontsquirrel','soledad' ); ?></a>

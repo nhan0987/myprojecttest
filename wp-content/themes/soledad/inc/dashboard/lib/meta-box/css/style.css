@@ -8,7 +8,7 @@
 	clear: both;
 }
 .rwmb-field:not(:last-of-type) {
-	margin: 0 0 12px;
+	margin: 0 0 0.75rem;
 }
 .rwmb-label,
 .rwmb-input {
@@ -48,15 +48,15 @@
 
 /* Clone */
 .rwmb-clone {
-	min-height: 24px;
-	margin-bottom: 12px;
+	min-height: 1.5rem;
+	margin-bottom: 0.75rem;
 	position: relative;
 	clear: both;
 	background: #fff;
 }
 .rwmb-clone > input[type='radio'],
 .rwmb-clone > input[type='checkbox'] {
-	margin: 6px 0 0 4px;
+	margin: 0.375rem 0 0 4px;
 }
 .rwmb-button.remove-clone {
 	text-decoration: none;
@@ -65,12 +65,12 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 20px;
-	height: 20px;
+	width: 1.25rem;
+	height: 1.25rem;
 	transition: color 200ms;
 }
 .rwmb-button.remove-clone .dashicons {
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 .rwmb-button.remove-clone:hover {
 	color: #dc3232;
@@ -85,8 +85,8 @@
 .rwmb-clone-icon {
 	cursor: move;
 	background: url(../img/drag_icon.gif) no-repeat;
-	height: 23px;
-	width: 15px;
+	height: 1.4375rem;
+	width: 0.9375rem;
 	vertical-align: top;
 	display: inline-block;
 	position: absolute;
@@ -94,7 +94,7 @@
 	top: 0;
 }
 .rwmb-sort-clone {
-	padding-left: 15px;
+	padding-left: 0.9375rem;
 }
 
 /* jQuery validation */

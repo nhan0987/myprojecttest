@@ -12,7 +12,7 @@
 }
 
 .about-wrap .nav-tab{
-	font-size: 15px;
+	font-size: 0.9375rem;
 }
 
 a {
@@ -47,7 +47,7 @@ a {
 .feature-section.three-col .col {
     flex: 1;
     align-self: flex-start;
-	padding: 0 10px;
+	padding: 0 0.625rem;
 }
 
 .feature-section.two-col h3:not(:first-child) {
@@ -55,7 +55,7 @@ a {
 }
 .feature-section img {
 	display: block;
-	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .1);
 }
 
 .nav-tab-active:focus {
@@ -68,11 +68,11 @@ a {
 
 .penci-upload-font-actions {
 	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 }
 
 .custom-fonts-name {
-	width: 250px;
+	width: 15.625rem;
 }
 
 .gt-is-active {
@@ -84,7 +84,7 @@ a {
 }
 
 .penci-dashboard-wapper .form-table th {
-	padding-left: 10px;
+	padding-left: 0.625rem;
 }
 
 .penci-dashboard-wapper .form-table th:not(:first-child),
@@ -98,9 +98,9 @@ a {
 }
 
 .penci-dashboard-wapper .form-table .dashicons {
-	font-size: 35px;
-	width: 35px;
-	height: 35px;
+	font-size: 2.1875rem;
+	width: 2.1875rem;
+	height: 2.1875rem;
 }
 
 .penci-dashboard-wapper .form-table .dashicons-yes {
@@ -112,40 +112,40 @@ a {
 }
 
 .penci-table-options {
-	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-top: 0.625rem;
+	margin-bottom: 1.25rem;
 }
 
 #system_status table{
-	margin-bottom: 35px;
+	margin-bottom: 2.1875rem;
 }
 
 #system_status table th {
-    padding: 10px 10px 10px 15px;
+    padding: 0.625rem 0.625rem 0.625rem 0.9375rem;
     font-weight: bold;
 }
 
 #system_status table td {
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 #system_status .system-status-name {
-    width: 200px;
-    padding-left: 15px !important;
+    width: 12.5rem;
+    padding-left: 0.9375rem !important;
 }
 
 #system_status .system-status-status {
-    width: 50px;
+    width: 3.125rem;
     text-align: center;
-    font-size: 11px !important;
+    font-size: 0.6875rem !important;
 }
 
 #system_status .penci-tooltip {
-    width: 12px;
-    height: 13px;
+    width: 0.75rem;
+    height: 0.8125rem;
     display: inline-block;
     text-align: center;
-    line-height: 13px;
+    line-height: 0.8125rem;
     cursor: pointer;
     position: relative;
     top: 2px;
@@ -154,7 +154,7 @@ a {
 #system_status .system-status-info {
     background-color: silver;
     color: white;
-    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 #system_status .system-status-green {
@@ -168,7 +168,7 @@ a {
 }
 
 .status-small-text {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #707070;
   font-style: italic;
   display: block;
@@ -188,7 +188,7 @@ a {
 
 .about-wrap #getting-started .feature-section .col,
 .about-wrap #support .feature-section .col {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
  
  .about-wrap #support .feature-section.three-col h3,  	
@@ -199,27 +199,27 @@ a {
 .penci-activate-wrap{
 	background-color: #fff;
 	max-width: 750px;
-	margin-top: 50px;
-	padding: 40px;
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+	margin-top: 3.125rem;
+	padding: 2.5rem;
+	box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.08);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 .penci-activate-wrap .penci-activate-code-title {
-	font-size: 28px;
-	margin-top: -11px;
-	margin-bottom: 12px;
-	line-height: 30px;
+	font-size: 1.75rem;
+	margin-top: -0.6875rem;
+	margin-bottom: 0.75rem;
+	line-height: 1.875rem;
 }
 
 .penci-activate-wrap .penci-activate-desc,
 .penci-activate-wrap .penci-activate-desc2 {
 	width: 100%;
-	font-size: 14px;
-	line-height: 24px;
-	margin-bottom: 36px;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+	margin-bottom: 2.25rem;
 }
 .penci-activate-desc2 strong,
 .penci-activate-desc strong {
@@ -227,32 +227,32 @@ a {
 }
 .penci-activate-wrap .penci-activate-inputs {
 	position: relative;
-	margin-bottom: 30px;
+	margin-bottom: 1.875rem;
 }
 
 .penci-activate-wrap .penci-form-control {
 	width: 100%;
-	height: 42px;
+	height: 2.625rem;
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
+	font-size: 1rem;
 	border: 0;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
-	-webkit-box-shadow: inset 0px -20px 0px -19px #dedede;
-	-moz-box-shadow: inset 0px -20px 0px -19px #dedede;
-	box-shadow: inset 0px -20px 0px -19px #dedede;
+	-webkit-box-shadow: inset 0px -1.25rem 0px -1.1875rem #dedede;
+	-moz-box-shadow: inset 0px -1.25rem 0px -1.1875rem #dedede;
+	box-shadow: inset 0px -1.25rem 0px -1.1875rem #dedede;
 }
 
 .penci-activate-wrap .penci-form-control::placeholder {
 	color: #b4b4b4;
 }
 .penci-activate-wrap .penci-form-control:focus {
-	-webkit-box-shadow: inset 0px -20px 0px -19px #6eb48c;
-	-moz-box-shadow: inset 0px -20px 0px -19px #6eb48c;
-	box-shadow: inset 0px -20px 0px -19px #6eb48c;
+	-webkit-box-shadow: inset 0px -1.25rem 0px -1.1875rem #6eb48c;
+	-moz-box-shadow: inset 0px -1.25rem 0px -1.1875rem #6eb48c;
+	box-shadow: inset 0px -1.25rem 0px -1.1875rem #6eb48c;
 }
 .penci-activate-wrap .penci-form-control:focus::placeholder {
 	visibility: hidden;
@@ -260,7 +260,7 @@ a {
 
 .penci-activate-wrap .penci-form-control-bar {
 	position: absolute;
-	top: 41px;
+	top: 2.5625rem;
 	left: 0;
 	-webkit-transition: width 0.3s ease;
 	-moz-transition: width 0.3s ease;
@@ -280,11 +280,11 @@ a {
 	border-radius: 0;
 	background: #000;
 	color: #fff;
-	line-height: 36px;
-	padding: 0 15px 0;
+	line-height: 2.25rem;
+	padding: 0 0.9375rem 0;
 	text-align: center;
 	transition: all 0.25s;
-	font-size: 14px;
+	font-size: 0.875rem;
 	text-transform: uppercase;
 	cursor: pointer;
 	letter-spacing: 1px;
@@ -298,13 +298,13 @@ a {
 
 .penci-activate-wrap .soledad-find-code{
 	display: inline-block;
-	padding-left: 20px;
-	font-size: 13px;
+	padding-left: 1.25rem;
+	font-size: 0.8125rem;
 }
 
 .penci-activate-wrap  .penci-activate-err {
 	color: red;
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin-top: 5px;
 }
 
