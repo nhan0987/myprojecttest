@@ -202,15 +202,15 @@ class Penci_Add_Custom_Metabox_Class {
 		// Display the form, using the current value.
 		?>
 			<p><?php esc_html_e( 'You can change the view count for this post by change values below.', 'soledad' ); ?></p>
-			<h2 style="font-weight: 600; font-size: 13px; padding-left: 0;"><?php esc_html_e( 'All Time Views', 'soledad' ); ?></h2>
+			<h2 style="font-weight: 600; font-size: 0.8125rem; padding-left: 0;"><?php esc_html_e( 'All Time Views', 'soledad' ); ?></h2>
 			<p><input id="<?php echo $count_key . '_id'; ?>" name="<?php echo $count_key; ?>" type="number"  value="<?php echo absint( $count ); ?>"></p>
 			
-			<h2 style="font-weight: 600; font-size: 13px; padding-left: 0;"><?php esc_html_e( 'This Week Views', 'soledad' ); ?></h2>
+			<h2 style="font-weight: 600; font-size: 0.8125rem; padding-left: 0;"><?php esc_html_e( 'This Week Views', 'soledad' ); ?></h2>
 			<p><input id="<?php echo $count_wkey . '_id'; ?>" name="<?php echo $count_wkey; ?>" type="number"  value="<?php echo absint( $count_w ); ?>"></p>
 			
-			<h2 style="font-weight: 600; font-size: 13px; padding-left: 0;"><?php esc_html_e( 'This Month Views', 'soledad' ); ?></h2>
+			<h2 style="font-weight: 600; font-size: 0.8125rem; padding-left: 0;"><?php esc_html_e( 'This Month Views', 'soledad' ); ?></h2>
 			<p><input id="<?php echo $count_mkey . '_id'; ?>" name="<?php echo $count_mkey; ?>" type="number"  value="<?php echo absint( $count_m ); ?>"></p>
-			<p style="font-size: 12px;"><?php _e( '<strong>Note that:</strong> If you don\'t see the weekly view count reset after installing the theme in some weeks, that means your hosting doesn\'t support <a href="https://developer.wordpress.org/reference/functions/wp_schedule_event/" target="_blank">wp_schedule_event</a> function from WordPress. So, if you want to get it to work, please contact your hosting provider and requirement them allows it.', 'soledad' ); ?></p>
+			<p style="font-size: 0.75rem;"><?php _e( '<strong>Note that:</strong> If you don\'t see the weekly view count reset after installing the theme in some weeks, that means your hosting doesn\'t support <a href="https://developer.wordpress.org/reference/functions/wp_schedule_event/" target="_blank">wp_schedule_event</a> function from WordPress. So, if you want to get it to work, please contact your hosting provider and requirement them allows it.', 'soledad' ); ?></p>
 		<?php
 	}
 
@@ -254,7 +254,7 @@ class Penci_Add_Custom_Metabox_Class {
 
 		<?php if ( 'page' == get_post_type( $post->ID ) ) { ?>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Select Featured Slider/Featured Video to Display on Top of This Page?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Select Featured Slider/Featured Video to Display on Top of This Page?</h2>
 			<p>
 				<select id="penci_page_slider_field" name="penci_page_slider_field">
 					<option value="">None</option>
@@ -300,11 +300,11 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Revolution Slider Shortcode</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Revolution Slider Shortcode</h2>
 			<p class="description">If you select Revolution Slider above, please fill Revolution Slider Shortcode here</p>
-			<textarea style="width: 100%; height: 50px;" name="penci_page_rev_shortcode"><?php if( $rev_shortcode ): echo $rev_shortcode; endif; ?></textarea>
+			<textarea style="width: 100%; height: 3.125rem;" name="penci_page_rev_shortcode"><?php if( $rev_shortcode ): echo $rev_shortcode; endif; ?></textarea>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Display Featured Boxes?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Display Featured Boxes?</h2>
 			<p>
 				<select id="penci_page_display_featured_boxes" name="penci_page_display_featured_boxes">
 					<option value="">No</option>
@@ -312,7 +312,7 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Display Page Title?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Display Page Title?</h2>
 			<p>
 				<select id="penci_page_display_title_field" name="penci_page_display_title_field">
 					<option value="">Default ( Follow Customize )</option>
@@ -321,7 +321,7 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Display Breadcrumb on This Page?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Display Breadcrumb on This Page?</h2>
 			<p>
 				<select id="penci_page_breadcrumb_field" name="penci_page_breadcrumb_field">
 					<option value="">Yes</option>
@@ -329,7 +329,7 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Display Share Box on This Page?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Display Share Box on This Page?</h2>
 			<p>
 				<select id="penci_page_sharebox_field" name="penci_page_sharebox_field">
 					<option value="">Yes</option>
@@ -338,7 +338,7 @@ class Penci_Add_Custom_Metabox_Class {
 			</p>
 
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Hide Header on This Page?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Hide Header on This Page?</h2>
 			<p>
 				<select id="penci_page_hide_header_field" name="penci_page_hide_header_field">
 					<option value="">No</option>
@@ -346,14 +346,14 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Hide Footer on This Page?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Hide Footer on This Page?</h2>
 			<p>
 				<select id="penci_page_hide_footer_field" name="penci_page_hide_footer_field">
 					<option value="">No</option>
 					<option value="yes" <?php selected( $hide_footer, 'yes' ); ?>>Yes</option>
 				</select>
 			</p>
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Select Sidebar Position for This Page</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Select Sidebar Position for This Page</h2>
 			<p class="description"><?php esc_html_e( 'This option just apply for Page Template "Page with Sidebar" and "Page VC Builder with Sidebar"', 'soledad' ); ?></p>
 			<p>
 				<select id="penci_sidebar_page_pos" name="penci_sidebar_page_pos">
@@ -366,7 +366,7 @@ class Penci_Add_Custom_Metabox_Class {
 		<?php } ?>
 
 		<?php if ( 'post' == get_post_type( $post->ID ) ) { ?>
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Hide Featured Image Auto Appears on This Post?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Hide Featured Image Auto Appears on This Post?</h2>
 			<p class="description">
 			<?php esc_html_e( 'This option just apply for Single Post Template Style 1 & 2.', 'soledad' ); ?><br>
 			<?php esc_html_e( 'If you want to hide Featured Images auto appears for all posts, check option for it via Customize > Single Posts > General > Hide Featured Image on Top', 'soledad' ); ?></p>
@@ -378,11 +378,11 @@ class Penci_Add_Custom_Metabox_Class {
 				</select>
 			</p>
 			
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Reading Time</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Reading Time</h2>
 			<p class="description">Fill the reading time for this post here. E.g: 3 mins<br>If you want to set a default reading time value for all posts, you can set it via <strong>Customize > General > General Settings > Set A Default Reading Time Value</strong></p>
 			<p><input id="penci_reading_time" name="penci_reading_time" type="text"  value="<?php echo esc_attr( $penci_reading_time ); ?>"></p>
 			
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Sidebar Layout for this post?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Sidebar Layout for this post?</h2>
 			<p>
 				<select id="penci_post_sidebar_display" name="penci_post_sidebar_display">
 					<option value="">Default Value ( on Customize )</option>
@@ -395,7 +395,7 @@ class Penci_Add_Custom_Metabox_Class {
 			</p>
 		<?php } ?>
 
-		<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Custom Sidebar for This Posts/Page</h2>
+		<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Custom Sidebar for This Posts/Page</h2>
 		<p class="description"><?php esc_html_e( 'Note: for page, you can choose display sidebar or no in Template "Page with Sidebar" and custom sidebar here, if sidebar you choice here is empty, will display sidebar you choice for page in customize', 'soledad' ); ?></p>
 		<p>
 			<select id="penci_custom_sidebar_page_field" name="penci_custom_sidebar_page_field">
@@ -415,7 +415,7 @@ class Penci_Add_Custom_Metabox_Class {
 				<?php Penci_Custom_Sidebar::get_list_sidebar( $value ); ?>
 			</select>
 		</p>
-		<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Custom Sidebar Left for This Posts/Page</h2>
+		<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Custom Sidebar Left for This Posts/Page</h2>
 		<p class="description"><?php esc_html_e( 'Note: for page, you can choose display sidebar or no in Template "Page with Sidebar" and custom sidebar here, if sidebar you choice here is empty, will display sidebar you choice for page in customize', 'soledad' ); ?></p>
 		<p>
 			<select id="penci_custom_sidebar_left_page_field" name="penci_custom_sidebar_left_page_field">
@@ -437,7 +437,7 @@ class Penci_Add_Custom_Metabox_Class {
 		</p>
 
 		<?php if ( 'post' == get_post_type( $post->ID ) ) { ?>
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Select Single Style for This Post?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Select Single Style for This Post?</h2>
 			<p>
 				<select id="penci_single_style" name="penci_single_style">
 					<option value=""><?php esc_html_e( "Default Style( on Customize )", "soledad" ); ?></option>
@@ -453,11 +453,11 @@ class Penci_Add_Custom_Metabox_Class {
 					<option value="style-10" <?php selected( $single_style, 'style-10' ); ?>><?php esc_html_e( "Style 10", "soledad" ); ?></option>
 				</select>
 			</p>
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Custom Aspect Ratio for Featured Image of This Post?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Custom Aspect Ratio for Featured Image of This Post?</h2>
 			<p class="description">The aspect ratio of an element describes the proportional relationship between its width and its height. E.g: 3:2. Default is 3:2.<br>This option does not apply when enable parallax images & Single Post Style 1 & 2</p>
 
 			<p><input id="_customize-input-penci_pfeatured_image_ratio" name="penci_pfeatured_image_ratio" type="text"  value="<?php echo esc_attr( $pfeatured_image_ratio ); ?>"></p>
-			<h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Enable Parallax Images for This Post?</h2>
+			<h2 style="font-weight: 600; font-size: 0.875rem; padding-left: 0;">Enable Parallax Images for This Post?</h2>
 			<p class="description"><?php esc_html_e( 'This feature does not apply for Single Style 1 & 2', 'soledad' ); ?></p>
 
 			<p>

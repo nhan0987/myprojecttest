@@ -1,5 +1,5 @@
 .compose-mode .vc_penci_container {
-	padding-top: 32px;
+	padding-top: 2rem;
 	margin-top: 0 !important;
 }
 
@@ -9,7 +9,7 @@
 	float: none;
 }
 .penci-pb-row .vc_empty-element {
-	min-height: 100px;
+	min-height: 6.25rem;
 }
 .compose-mode .vc_element.vc_hold-hover > .penci-vc-container >  .penci-vc-row >  .penci-vc-row > .vc_element:before,
 .compose-mode .vc_element.vc_hover > .penci-vc-container >  .penci-vc-row >  .penci-vc-row > .vc_element:before,

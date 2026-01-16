@@ -17,7 +17,7 @@ function pencidesign_customize_register( $wp_customize ) {
 				<?php if( $this->description ){ ?>
 				<p class="description pheading-description"><?php echo $this->description; ?></p>
 				<?php } ?>
-				<input type="number" name="quantity" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>" style="width:70px;">
+				<input type="number" name="quantity" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>" style="width:4.375rem;">
 			</label>
 		<?php
 		}
@@ -30,7 +30,7 @@ function pencidesign_customize_register( $wp_customize ) {
 			?>
 			<label>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<textarea style="width:100%; height:150px;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+				<textarea style="width:100%; height:9.375rem;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
 			</label>
 		<?php
 		}

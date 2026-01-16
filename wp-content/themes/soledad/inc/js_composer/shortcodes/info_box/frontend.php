@@ -179,7 +179,7 @@ if ( $atts['icon_hborder_color'] ) {
 	$css_custom .= $id_info_box . '.penci-view-stacked .penci-animation-custom-2:after,';
 	$css_custom .= $id_info_box . '.penci-view-stacked .penci-animation-custom-1:after{ box-shadow: 0 0 0 3px ' . esc_attr( $atts['icon_hborder_color'] ) . '; }';
 
-	$css_custom .= $id_info_box . '.penci-view-framed .penci-animation-custom-5:hover{ box-shadow: 0 0 0 6px ' . esc_attr( $atts['icon_hborder_color'] ) . '; }';
+	$css_custom .= $id_info_box . '.penci-view-framed .penci-animation-custom-5:hover{ box-shadow: 0 0 0 0.375rem ' . esc_attr( $atts['icon_hborder_color'] ) . '; }';
 
 	$css_custom .= $id_info_box . '.penci-view-stacked .penci-animation-custom-3:hover,';
 	$css_custom .= $id_info_box . '.penci-view-stacked .penci-animation-custom-4:hover,';

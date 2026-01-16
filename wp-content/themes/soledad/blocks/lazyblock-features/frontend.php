@@ -18,60 +18,101 @@ if (!function_exists('lth_features_output_fe')) :
     function lth_features_output_fe($output, $attributes) {
         ob_start();
 ?>  
-<section class="lth-features max-w-7xl mx-auto">            
+<section class="lth-features">            
     <div class="module module_features">
-        <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
-            <div class="module_header title-box">
-                <?php if (isset($attributes['title'])) : ?>
-                    <h2 class="title">
-                        <?php if ($attributes['url']) : ?> 
-                            <a href="<?php echo esc_url($attributes['url']); ?>" title="">
-                        <?php else : ?>
-                            <span>
-                        <?php endif; ?>
-                            <?php echo wpautop(esc_html($attributes['title'])); ?>
-                        <?php if ($attributes['url']) : ?> 
-                            </a>
-                        <?php else : ?>
-                            </span>
-                        <?php endif; ?>
-                    </h2>
-                <?php endif; ?>
 
-                <?php if ($attributes['description']) : ?>
-                    <div class="infor">
-                        <?php echo wpautop(esc_html($attributes['description'])); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-        
-        <div class="module_content">
-            <div class="flex flex-wrap justify-center gap-2 md:gap-0  md:justify-between">
-                <?php foreach( $attributes['items'] as $inner ): ?>
-                    <div class="item">
+        <?php if ($attributes['categories_style'] == 'grid-02') { ?>
+             
+                <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-5! justify-between">
+                    <?php foreach( $attributes['items'] as $index => $inner ){
                         
-                            <div class="content">
-                                <div class="content-image">
-                                    <div class="image">
-                                        <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon" width="100" height="100">
-                                    </div>
-                                </div>
-
-                                <div class="content-box">
-                                    <h3 class="content-name">
-                                        <?php echo wpautop($inner['item_title']); ?>
-                                    </h3>
-                                    <div class="content-excerpt">
-                                        <?php echo wpautop($inner['item_text']); ?>
-                                    </div>
+                        $item_classes = 'item';
+                        $image_zoom_container_classes = 'image-zoom-container';
+                        if ( $index == 0 ) {
+                                $item_classes .= ' col-span-2 lg:col-span-1';
+                                $image_zoom_container_classes .= ' image-zoom-container-full';
+                               
+                            }
+                        
+                        
+                    ?>
+                        <div class="item_classes flex flex-col items-center justify-between">
+                            
+                            <div class="content-image">
+                                <div class="image">
+                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon" width="100" height="100">
                                 </div>
                             </div>
-                        
-                    </div>
-                <?php endforeach; ?>
+
+                            <div class="content-box">
+                                <h3 class="content-name">
+                                    <?php echo wpautop($inner['item_title']); ?>
+                                </h3>
+                                <div class="content-excerpt">
+                                    <?php echo wpautop($inner['item_text']); ?>
+                                </div>
+                            </div>
+                                
+                            
+                        </div>
+                    <?php } ?>
+                </div>
+            
+
+        <?php } else {?>
+            
+            <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
+                <div class="module_header title-box">
+                    <?php if (isset($attributes['title'])) : ?>
+                        <h2 class="title">
+                            <?php if ($attributes['url']) : ?> 
+                                <a href="<?php echo esc_url($attributes['url']); ?>" title="">
+                            <?php else : ?>
+                                <span>
+                            <?php endif; ?>
+                                <?php echo wpautop(esc_html($attributes['title'])); ?>
+                            <?php if ($attributes['url']) : ?> 
+                                </a>
+                            <?php else : ?>
+                                </span>
+                            <?php endif; ?>
+                        </h2>
+                    <?php endif; ?>
+
+                    <?php if ($attributes['description']) : ?>
+                        <div class="infor">
+                            <?php echo wpautop(esc_html($attributes['description'])); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+            
+            <div class="module_content">
+                <div class="grid grid-cols-2 lg:grid-cols-5 justify-center gap-2 md:gap-0 lg:justify-between">
+                    <?php foreach( $attributes['items'] as $inner ): ?>
+                        <div class="item flex flex-col items-center justify-between">
+                            
+                            <div class="content-image">
+                                <div class="image">
+                                    <img src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Icon" width="100" height="100">
+                                </div>
+                            </div>
+
+                            <div class="content-box">
+                                <h3 class="content-name">
+                                    <?php echo wpautop($inner['item_title']); ?>
+                                </h3>
+                                <div class="content-excerpt">
+                                    <?php echo wpautop($inner['item_text']); ?>
+                                </div>
+                            </div>
+                                
+                            
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
+        <?php } ?>
     </div>
 </section>
 <?php

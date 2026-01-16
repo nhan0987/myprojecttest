@@ -1,9 +1,9 @@
 button[data-type="render_separate_css"]:before {
-	font: normal 20px/.5 dashicons;
+	font: normal 1.25rem/.5 dashicons;
     speak: none;
     display: inline-block;
     padding: 0;
-    top: 9px;
+    top: 0.5625rem;
     left: -4px;
     position: relative;
     vertical-align: top;

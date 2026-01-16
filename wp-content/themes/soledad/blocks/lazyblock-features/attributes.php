@@ -96,6 +96,32 @@ if ( function_exists( 'lazyblocks' ) ) :
            'placeholder' => '',
            'characters_limit' => '',
          ),
+         'control_select_lth_features_style' => array(
+            'type' => 'select',
+            'name' => 'features_style',
+            'default' => 'list',
+            'label' => 'Style',
+            'help' => '',
+            'child_of' => '',
+            'placement' => 'inspector',
+            'width' => '100',
+            'hide_if_not_selected' => 'false',
+            'save_in_meta' => 'false',
+            'save_in_meta_name' => '',
+            'required' => 'false',
+            'placeholder' => '',
+            'characters_limit' => '',
+            'choices' => array(
+               array(
+                  'label' => 'Style-01',
+                  'value' => 'style-01',
+               ),
+               array(
+                  'label' => 'Style-02',
+                  'value' => 'style-02',
+               )
+            ),
+         ),
          'control_repeater_lth_items' => array(
             'type' => 'repeater',
             'name' => 'items',

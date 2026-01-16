@@ -1,62 +1,82 @@
 
-
+<!-- block 1-->
 <div>
     <div>
-        <span>Tại Sao Nên Đầu Tư Khách Sạn Tại Hà Nội? Góc Nhìn Từ Chuyên Gia Môi Giới
+        <span class="text-sm font-medium">Tại Sao Nên Đầu Tư Khách Sạn Tại Hà Nội? Góc Nhìn Từ Chuyên Gia Môi Giới
 Là một nhà môi giới chuyên nghiệp, tôi có thể khẳng định rằng việc đầu tư khách sạn tại Hà Nội mang trong mình những tiềm năng vượt trội, nhưng cũng đòi hỏi sự đánh giá kỹ lưỡng và chiến lược bài bản. Hà Nội không chỉ là thủ đô mà còn là một thị trường khách sạn đầy hấp dẫn với những đặc thù riêng.</span>
+</span>
     </div>
     <div class="w-full py-3">
 
-        <ul class="flex flex-nowrap overflow-x-auto 
-                scroll-snap-type-x mandatory
-                lg:grid lg:grid-cols-2 gap-4 lg:overflow-visible scrollbar-hide">
+        <div id="stnd-slider-wrapper" class="flex flex-nowrap overflow-x-auto scroll-snap-type-x mandatory xl:grid xl:grid-cols-2 gap-4 scrollbar-hide cursor-grab xl:overflow-visible scrollbar-hide xl:cursor-default scroll-smooth">
             
-            <li class="w-full flex-shrink-0 scroll-snap-align-start
-                    lg:w-auto">
-                <img src="/wp-content/uploads/2025/11/ks-luxury.png" alt="Ảnh 1" 
-                    class="w-full h-auto object-cover ">
-            </li>
+            <div class="slider-item flex-shrink-0 scroll-snap-align-start cut-the-bottom-right-corner-13-container relative overflow-hidden" >
+                <img src="/wp-content/uploads/2025/11/capella-hanoi.jpg" alt="Khách sạn Luxury" class="w-full! h-full! object-cover hover:scale-115 transition-all duration-400 ease-out">
+                <div class="title"><span >Khách sạn Luxury</span></div>
+            </div>
             
-            <li class="w-full flex-shrink-0 scroll-snap-align-start
-                    lg:w-auto">
-                <img src="/wp-content/uploads/2025/11/can-ho-dich-vu.png" alt="Ảnh 2" 
-                    class="w-full h-auto object-cover ">
-            </li>
+            <div class="slider-item flex-shrink-0 scroll-snap-align-start cut-the-bottom-right-corner-13-container relative overflow-hidden">
+                <img src="/wp-content/uploads/2025/11/chung-cu.jpg" alt="Căn hộ dịch vụ" class="w-full! h-full! object-cover hover:scale-115 transition-all duration-400 ease-out">
+                <div class="title"><span >Căn hộ dịch vụ</span></div>
+            </div>
 
-        </ul>
+        </div>
+
+        <div id="dotsContainer" class="flex justify-center mt-3 gap-2 space-x-2 xl:hidden">
+                <!-- Các dots sẽ được tạo tự động bằng JavaScript -->
+        </div>
     </div>
 </div>
 
 
+<!-- block 2-->
 <div class="module module_blogs tab-content-style-01 ">
-    <ul id="myTab" class="nav nav-pills nav-fill title-tab grid! grid-cols-2! items-center" role="tablist">
-        <li class="nav-item col-span-1!" role="presentation"><button id="home-tab" class="nav-link active" role="tab" type="button"
+    <ul id="myTab" class="nav nav-pills nav-fill title-tab" role="tablist">
+        <li class="nav-item" role="presentation"><button id="home-tab" class="nav-link active" role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-1" aria-controls="tab-1" aria-selected="true"> <span
-                    class="capitalize">Giá trị Đầu tư cốt lõi</span> </button></li>
-        <li class="nav-item col-span-1!" role="presentation"><button id="home-tab" class="nav-link " role="tab" type="button"
+                    class="capitalize xl:hidden">Thị trường</span> <span class="capitalize hidden xl:block">Nền Tảng Thị
+                    Trường Vững Chắc và Tiềm Năng Tăng Trưởng Cao</span> </button></li>
+        <li class="nav-item" role="presentation"><button id="second-tab" class="nav-link " role="tab" type="button"
                 data-bs-toggle="pill" data-bs-target="#tab-2" aria-controls="tab-2" aria-selected="false"> <span
-                    class="capitalize">Nhận định và phân tích thị trường</span> </button></li>
+                    class="capitalize xl:hidden">Lợi thế</span> <span class="capitalize hidden xl:block">Lợi Thế Riêng
+                    Biệt Của Bất Động Sản Khách Sạn Tại Hà Nội</span> </button></li>
     </ul>
     <div class="tab-content">
-        <div id="tab-1" class="tab-pane fade  active show" role="tabpanel">
+        <div id="tab-1" class="tab-pane fade active show" role="tabpanel">
+            <div class="cut-the-top-left-corner-09-featured-container mx-auto">
+                <div class="icons-container"><i class="stnd-icons"> </i></div>
+                <div class="tlc-title"> </div>
+                <div class="tlc-description text-xs!"> </div>
+            </div>
             <div class="grid grid-cols-2 lg:flex lg:flex-wrap w-full pt-4">
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-demand gold-color"></i>
-                    <span class="font-medium text-base">Thị trường du lịch tăng trưởng</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-demand"> </i></div>
+                    <div class="tlc-title">Du lịch tăng trưởng</div>
+                    <div class="tlc-description text-xs!">Du lịch Hà Nội bùng nổ mạnh mẽ, liên tục lọt Top điểm đến hấp
+                        dẫn nhất thế giới. Sự đa dạng loại hình (văn hóa, ẩm thực, MICE) thu hút mọi phân khúc khách
+                        hàng, đảm bảo công suất khai thác lưu trú luôn cao. </div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-location-outlined gold-color"></i>
-                    <span class="font-medium text-base">Vị trí đắc địa & hạ tầng</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-location-outlined"> </i></div>
+                    <div class="tlc-title">Vị trí đắc địa &amp; hạ tầng</div>
+                    <div class="tlc-description text-xs!">Hà Nội là trung tâm chính trị, văn hóa, kinh tế hàng đầu, cửa
+                        ngõ chính đón du khách quốc tế đến miền Bắc và các di sản. Vị thế này đảm bảo lượng khách du
+                        lịch ổn định và tăng trưởng liên tục theo thời gian. </div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-building gold-color"></i>
-                    <span class="font-medium text-base">Đất vàng khan hiếm</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-building"> </i></div>
+                    <div class="tlc-title">Đất vàng khan hiếm</div>
+                    <div class="tlc-description text-xs!">Quỹ đất xây dựng khách sạn mới ở các khu vực trung tâm là cực
+                        kỳ khan hiếm. Điều này biến các khách sạn hiện hữu, đặc biệt là những vị trí đắc địa, trở thành
+                        tài sản vô cùng giá trị, có tiềm năng tăng giá bền vững. </div>
                 </div>
-                <div class="item lg:flex-1 flex flex-col lg:flex-row items-center justify-center gap-2 h-[128px]">
-                    <i class="stnd-icons icons-money gold-color"></i>
-                    <span class="font-medium text-base">Dòng tiền bền vững</span>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-money"> </i></div>
+                    <div class="tlc-title">Dòng tiền bền vững</div>
+                    <div class="tlc-description text-xs!">Với lượng khách ổn định, tỷ lệ lấp đầy (Occupancy Rate) của
+                        các khách sạn 3-5 sao tại Hà Nội thường duy trì ở mức tốt. Điều này đảm bảo nguồn doanh thu đều
+                        đặn và lợi nhuận hấp dẫn cho nhà đầu tư, đặc biệt khi có chiến lược vận hành hiệu quả. </div>
                 </div>
-                
             </div>
         </div>
         <div id="tab-2" class="tab-pane fade" role="tabpanel">
@@ -65,53 +85,310 @@ Là một nhà môi giới chuyên nghiệp, tôi có thể khẳng định rằ
                     <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">1</span></div>
                     <h2 id="headingOne" class="accordion-header"><button class="accordion-button collapsed"
                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne"> Nền Tảng Thị Trường Vững Chắc & Tiềm Năng Tăng Trưởng Cao </button></h2>
+                            aria-controls="collapseOne">Nền Tảng Thị Trường Vững Chắc &amp; Tiềm Năng Tăng Trưởng
+                            Cao</button></h2>
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận những thông tin sơ bộ về bất động sản chào bán như vị trí,
-                            thông số bất động sản, tình trạng bất động sản và giá chào bán từ chủ nhà. Thông tin tiếp
-                            nhận có thể qua điện thoại hoặc email.</div>
+                        <div class="accordion-body">
+                            <div><strong>Thủ Đô và Cửa Ngõ Du Lịch Lớn:</strong> Hà Nội là trung tâm chính trị, văn hóa,
+                                kinh tế hàng đầu của Việt Nam. Đây là cửa ngõ chính đón lượng lớn du khách quốc tế và
+                                nội địa đến miền Bắc, cũng như điểm xuất phát của nhiều hành trình khám phá di sản (Vịnh
+                                Hạ Long, Sapa, Tràng An). Vị thế này đảm bảo một <strong>lượng khách du lịch ổn định và
+                                    tăng trưởng liên tục</strong> theo thời gian.</div>
+                            <div> </div>
+                            <div><strong>Du Lịch Phát Triển Mạnh Mẽ:</strong> Ngành du lịch Hà Nội đang bùng nổ mạnh mẽ
+                                trong những năm gần đây. Thành phố liên tục nằm trong top các điểm đến hấp dẫn nhất thế
+                                giới (do TripAdvisor, Condé Nast Traveler bình chọn). Sự đa dạng về loại hình du lịch
+                                (văn hóa, lịch sử, ẩm thực, MICE - hội nghị, sự kiện) thu hút nhiều phân khúc khách
+                                hàng, từ khách du lịch ba lô đến khách công vụ, khách nghỉ dưỡng cao cấp.</div>
+                            <div> </div>
+                            <div><strong>Hạ Tầng Đồng Bộ và Ngày Càng Phát Triển:</strong> Hà Nội đang đầu tư mạnh mẽ
+                                vào hạ tầng giao thông (mở rộng sân bay Nội Bài, phát triển hệ thống metro, đường vành
+                                đai), cùng với các tiện ích đô thị hiện đại. Điều này không chỉ giúp việc di chuyển dễ
+                                dàng hơn mà còn nâng cao chất lượng dịch vụ du lịch và tăng giá trị cho các bất động sản
+                                khách sạn.</div>
+                            <div> </div>
+                            <div><strong>Sự Kiện Quốc Tế và Hoạt Động Thương Mại Sôi Động:</strong> Là thủ đô, Hà Nội
+                                thường xuyên là nơi tổ chức các sự kiện chính trị, ngoại giao, văn hóa và kinh tế tầm cỡ
+                                quốc tế. Điều này tạo ra một lượng lớn khách công vụ, chuyên gia, và doanh nhân, những
+                                đối tượng có khả năng chi trả cao và nhu cầu lưu trú dài ngày tại các khách sạn chất
+                                lượng.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
                     <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">2</span></div>
                     <h2 id="headingTwo" class="accordion-header"><button class="accordion-button collapsed"
                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo"> Lợi Thế Riêng Biệt Của BĐS Khách Sạn Tại Hà Nội </button></h2>
+                            aria-controls="collapseTwo">Lợi Thế Riêng Biệt Của BĐS Khách Sạn Tại Hà Nội </button></h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận những thông tin sơ bộ về bất động sản chào bán như vị trí,
-                            thông số bất động sản, tình trạng bất động sản và giá chào bán từ chủ nhà. Thông tin tiếp
-                            nhận có thể qua điện thoại hoặc email.</div>
+                        <div class="accordion-body">
+                            <div><strong>Tính Khan Hiếm của Đất Vàng:</strong> Đặc biệt ở các khu vực trung tâm như Hoàn
+                                Kiếm, Ba Đình, Đống Đa, quỹ đất để xây dựng khách sạn mới là cực kỳ khan hiếm. Điều này
+                                làm cho các khách sạn hiện hữu, đặc biệt là những khách sạn có vị trí đắc địa, trở thành
+                                <strong>tài sản vô cùng giá trị và có tiềm năng tăng giá bền vững.</strong></div>
+                            <div> </div>
+                            <div><strong>Giá Trị Văn Hóa và Lịch Sử:</strong> Nhiều khách sạn tại Hà Nội không chỉ là
+                                nơi lưu trú mà còn là một phần của di sản kiến trúc và lịch sử thành phố (ví dụ:
+                                Metropole, Hilton Opera). Những khách sạn này có giá trị thương hiệu và sự hấp dẫn đặc
+                                biệt đối với du khách muốn trải nghiệm văn hóa địa phương, cho phép áp dụng mức giá
+                                phòng cao hơn.</div>
+                            <div> </div>
+                            <div><strong>Dòng Tiền Ổn Định và Hấp Dẫn:</strong> Với lượng khách ổn định, tỷ lệ lấp đầy
+                                (occupancy rate) của các khách sạn tại Hà Nội, đặc biệt là phân khúc 3-5 sao, thường duy
+                                trì ở mức tốt. Điều này đảm bảo một <strong>nguồn doanh thu đều đặn và lợi nhuận hấp
+                                    dẫn</strong> cho nhà đầu tư, đặc biệt với những khách sạn có chiến lược vận hành
+                                hiệu quả.</div>
+                            <div><strong>Đa Dạng Loại Hình Đầu Tư</strong> Hà Nội có đủ tiềm năng cho nhiều loại hình
+                                khách sạn, từ:
+                                <ul>
+                                    <li><strong>Khách sạn mini/boutique:</strong> Tại các khu phố cổ, phục vụ khách du
+                                        lịch bụi, khách trải nghiệm văn hóa.</li>
+                                    <li><strong>Khách sạn 3-4 sao:</strong> Với mức giá cạnh tranh, tiện nghi hiện đại,
+                                        phục vụ phân khúc khách du lịch và công vụ tầm trung.</li>
+                                    <li><strong>Khách sạn 5 sao/resort nội đô</strong> Nằm ở vị trí đắc địa, cung cấp
+                                        dịch vụ cao cấp cho giới thượng lưu và doanh nhân.</li>
+                                    <li><strong>Hostel/Homestay:</strong> Phục vụ đối tượng khách trẻ, ưa thích trải
+                                        nghiệm bản địa.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
                     <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">3</span></div>
                     <h2 id="headingThree" class="accordion-header"><button class="accordion-button collapsed"
                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree"> Thách Thức & Lời Khuyên Từ Môi Giới Chuyên Nghiệp
-                        </button></h2>
+                            aria-expanded="false" aria-controls="collapseThree"> Thách Thức &amp; Lời Khuyên Từ Môi Giới
+                            Chuyên Nghiệp </button></h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Lên kế hoạch truyền thông, tiếp thị bất động sản đến đối tượng khách
-                            hàng mục tiêu. Tư vấn thông tin tới khách hàng, dẫn khách xem thực tế bất động sản và tư vấn
-                            giao dịch.</div>
+                        <div class="accordion-body">
+                            <div><strong>Vốn Đầu Tư Lớn:</strong> Việc mua lại hoặc xây mới khách sạn đòi hỏi nguồn vốn
+                                rất lớn.</div>
+                            <div> </div>
+                            <div><strong>Tính Chu Kỳ và Rủi Ro Thị Trường:</strong> Ngành du lịch chịu ảnh hưởng trực
+                                tiếp từ các yếu tố vĩ mô (dịch bệnh, suy thoái kinh tế, chính sách visa).</div>
+                            <div> </div>
+                            <div><strong>Cạnh Tranh Cao:</strong> Thị trường khách sạn tại Hà Nội ngày càng cạnh tranh
+                                với sự xuất hiện của nhiều thương hiệu quốc tế và khách sạn mới.</div>
+                            <div> </div>
+                            <div><strong>Yêu Cầu Vận Hành Chuyên Nghiệp:</strong> Khách sạn là một doanh nghiệp phức
+                                tạp. Hiệu quả đầu tư phụ thuộc rất nhiều vào năng lực quản lý, marketing, và chất lượng
+                                dịch vụ.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
                     <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">4</span></div>
                     <h2 id="headingFour" class="accordion-header"><button class="accordion-button collapsed"
                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-                            aria-controls="collapseFour"> Kết luận </button></h2>
+                            aria-controls="collapseFour">Lời khuyên từ chuyên gia môi giới</button></h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">Tiếp nhận đầy đủ thông tin bất động sản ký gửi và ký hợp đồng môi
-                            giới với chủ nhà. Đây là căn cứ pháp lý để chúng tôi chào bán, tiếp thị và triển khai tư
-                            vấn, tìm kiếm khách hàng.</div>
+                        <div class="accordion-body">
+                            <div><strong>Nghiên cứu thị trường ngách:</strong> Thay vì chạy theo phân khúc cao cấp đã
+                                bão hòa, hãy tìm kiếm các thị trường ngách chưa được khai thác đủ (ví dụ: khách sạn
+                                xanh, khách sạn trải nghiệm văn hóa sâu sắc, khách sạn công nghệ).</div>
+                            <div> </div>
+                            <div><strong>Phân tích kỹ tài chính và pháp lý:</strong> Luôn yêu cầu báo cáo tài chính chi
+                                tiết, kiểm tra kỹ lưỡng pháp lý của tài sản và giấy phép kinh doanh.</div>
+                            <div> </div>
+                            <div><strong>Hợp tác với đơn vị vận hành chuyên nghiệp:</strong> Nếu không có kinh nghiệm
+                                quản lý khách sạn, hãy tìm kiếm các tập đoàn quản lý khách sạn uy tín để tối ưu hóa hiệu
+                                quả kinh doanh.</div>
+                            <div> </div>
+                            <div><strong>Tầm nhìn dài hạn:</strong> Đầu tư khách sạn là một cuộc chơi đường dài. Hãy
+                                kiên nhẫn và sẵn sàng đối mặt với những biến động ngắn hạn.</div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 </div>
+
+<!-- block 2-2-->
+<div class="grid grid-col xl:grid-cols-2 tab-content-style-01 gap-2 items-center">
+    <div class="tab-pane grid grid-col gap-3 xl:gap-5">
+        <div>
+            <div><span class="uppercase font-bold text-[1.1875rem] xl:text-[2rem]">Tại sao nên đầu tư</span></div>
+            <div class="dash"><span class="text-gold uppercase font-semibold! xl:font-bold! text-[1.125rem]! xl:text-[2rem]!">Khách sạn và căn hộ dịch vụ?</span></div>
+        </div>
+        <div>
+            <div><span class="capitalize font-bold text-base xl:text-2xl">Giá trị</span></div>
+            <div><span class="text-gold capitalize font-bold text-sm! xl:text-xl!">Đầu tư cốt lõi</span></div>
+        </div>
+        <div>
+            <div class="cut-the-top-left-corner-09-featured-container mx-auto">
+                <div class="icons-container"><i class="stnd-icons"> </i></div>
+                <div class="tlc-title"> </div>
+                <div class="tlc-description text-xs!"> </div>
+            </div>
+            <div class="grid grid-cols-2 w-full pt-4">
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-demand"> </i></div>
+                    <div class="tlc-title">Du lịch tăng trưởng</div>
+                    <div class="tlc-description text-xs!">Du lịch Hà Nội bùng nổ mạnh mẽ, liên tục lọt Top điểm đến hấp
+                        dẫn nhất thế giới. Sự đa dạng loại hình (văn hóa, ẩm thực, MICE) thu hút mọi phân khúc khách
+                        hàng, đảm bảo công suất khai thác lưu trú luôn cao. </div>
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-location-outlined"> </i></div>
+                    <div class="tlc-title">Vị trí đắc địa &amp; hạ tầng</div>
+                    <div class="tlc-description text-xs!">Hà Nội là trung tâm chính trị, văn hóa, kinh tế hàng đầu, cửa
+                        ngõ chính đón du khách quốc tế đến miền Bắc và các di sản. Vị thế này đảm bảo lượng khách du
+                        lịch ổn định và tăng trưởng liên tục theo thời gian. </div>
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-building"> </i></div>
+                    <div class="tlc-title">Đất vàng khan hiếm</div>
+                    <div class="tlc-description text-xs!">Quỹ đất xây dựng khách sạn mới ở các khu vực trung tâm là cực
+                        kỳ khan hiếm. Điều này biến các khách sạn hiện hữu, đặc biệt là những vị trí đắc địa, trở thành
+                        tài sản vô cùng giá trị, có tiềm năng tăng giá bền vững. </div>
+                </div>
+                <div class="item cut-the-top-left-corner-09-container">
+                    <div class="icons-container"><i class="stnd-icons icons-money"> </i></div>
+                    <div class="tlc-title">Dòng tiền bền vững</div>
+                    <div class="tlc-description text-xs!">Với lượng khách ổn định, tỷ lệ lấp đầy (Occupancy Rate) của
+                        các khách sạn 3-5 sao tại Hà Nội thường duy trì ở mức tốt. Điều này đảm bảo nguồn doanh thu đều
+                        đặn và lợi nhuận hấp dẫn cho nhà đầu tư, đặc biệt khi có chiến lược vận hành hiệu quả. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="accordionExample" class="accordion grid grid-col gap-4 p-4 xl:px-8! xl:py-6! tab-pane bg-[#232D39] rounded-3xl">
+            <div>
+                <div><span class="font-bold text-2xl text-white capitalize">Nhận định</span></div>
+                <div><span class="text-gold capitalize">& Phân tích thị trường</span></div>
+            </div>
+            <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">1</span></div>
+                    <h2 id="headingOne" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">Nền Tảng Thị Trường Vững Chắc &amp; Tiềm Năng Tăng Trưởng
+                            Cao</button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div><strong>Thủ Đô và Cửa Ngõ Du Lịch Lớn:</strong> Hà Nội là trung tâm chính trị, văn hóa,
+                                kinh tế hàng đầu của Việt Nam. Đây là cửa ngõ chính đón lượng lớn du khách quốc tế và
+                                nội địa đến miền Bắc, cũng như điểm xuất phát của nhiều hành trình khám phá di sản (Vịnh
+                                Hạ Long, Sapa, Tràng An). Vị thế này đảm bảo một <strong>lượng khách du lịch ổn định và
+                                    tăng trưởng liên tục</strong> theo thời gian.</div>
+                            <div> </div>
+                            <div><strong>Du Lịch Phát Triển Mạnh Mẽ:</strong> Ngành du lịch Hà Nội đang bùng nổ mạnh mẽ
+                                trong những năm gần đây. Thành phố liên tục nằm trong top các điểm đến hấp dẫn nhất thế
+                                giới (do TripAdvisor, Condé Nast Traveler bình chọn). Sự đa dạng về loại hình du lịch
+                                (văn hóa, lịch sử, ẩm thực, MICE - hội nghị, sự kiện) thu hút nhiều phân khúc khách
+                                hàng, từ khách du lịch ba lô đến khách công vụ, khách nghỉ dưỡng cao cấp.</div>
+                            <div> </div>
+                            <div><strong>Hạ Tầng Đồng Bộ và Ngày Càng Phát Triển:</strong> Hà Nội đang đầu tư mạnh mẽ
+                                vào hạ tầng giao thông (mở rộng sân bay Nội Bài, phát triển hệ thống metro, đường vành
+                                đai), cùng với các tiện ích đô thị hiện đại. Điều này không chỉ giúp việc di chuyển dễ
+                                dàng hơn mà còn nâng cao chất lượng dịch vụ du lịch và tăng giá trị cho các bất động sản
+                                khách sạn.</div>
+                            <div> </div>
+                            <div><strong>Sự Kiện Quốc Tế và Hoạt Động Thương Mại Sôi Động:</strong> Là thủ đô, Hà Nội
+                                thường xuyên là nơi tổ chức các sự kiện chính trị, ngoại giao, văn hóa và kinh tế tầm cỡ
+                                quốc tế. Điều này tạo ra một lượng lớn khách công vụ, chuyên gia, và doanh nhân, những
+                                đối tượng có khả năng chi trả cao và nhu cầu lưu trú dài ngày tại các khách sạn chất
+                                lượng.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">2</span></div>
+                    <h2 id="headingTwo" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">Lợi Thế Riêng Biệt Của BĐS Khách Sạn Tại Hà Nội </button></h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div><strong>Tính Khan Hiếm của Đất Vàng:</strong> Đặc biệt ở các khu vực trung tâm như Hoàn
+                                Kiếm, Ba Đình, Đống Đa, quỹ đất để xây dựng khách sạn mới là cực kỳ khan hiếm. Điều này
+                                làm cho các khách sạn hiện hữu, đặc biệt là những khách sạn có vị trí đắc địa, trở thành
+                                <strong>tài sản vô cùng giá trị và có tiềm năng tăng giá bền vững.</strong></div>
+                            <div> </div>
+                            <div><strong>Giá Trị Văn Hóa và Lịch Sử:</strong> Nhiều khách sạn tại Hà Nội không chỉ là
+                                nơi lưu trú mà còn là một phần của di sản kiến trúc và lịch sử thành phố (ví dụ:
+                                Metropole, Hilton Opera). Những khách sạn này có giá trị thương hiệu và sự hấp dẫn đặc
+                                biệt đối với du khách muốn trải nghiệm văn hóa địa phương, cho phép áp dụng mức giá
+                                phòng cao hơn.</div>
+                            <div> </div>
+                            <div><strong>Dòng Tiền Ổn Định và Hấp Dẫn:</strong> Với lượng khách ổn định, tỷ lệ lấp đầy
+                                (occupancy rate) của các khách sạn tại Hà Nội, đặc biệt là phân khúc 3-5 sao, thường duy
+                                trì ở mức tốt. Điều này đảm bảo một <strong>nguồn doanh thu đều đặn và lợi nhuận hấp
+                                    dẫn</strong> cho nhà đầu tư, đặc biệt với những khách sạn có chiến lược vận hành
+                                hiệu quả.</div>
+                            <div><strong>Đa Dạng Loại Hình Đầu Tư</strong> Hà Nội có đủ tiềm năng cho nhiều loại hình
+                                khách sạn, từ:
+                                <ul>
+                                    <li><strong>Khách sạn mini/boutique:</strong> Tại các khu phố cổ, phục vụ khách du
+                                        lịch bụi, khách trải nghiệm văn hóa.</li>
+                                    <li><strong>Khách sạn 3-4 sao:</strong> Với mức giá cạnh tranh, tiện nghi hiện đại,
+                                        phục vụ phân khúc khách du lịch và công vụ tầm trung.</li>
+                                    <li><strong>Khách sạn 5 sao/resort nội đô</strong> Nằm ở vị trí đắc địa, cung cấp
+                                        dịch vụ cao cấp cho giới thượng lưu và doanh nhân.</li>
+                                    <li><strong>Hostel/Homestay:</strong> Phục vụ đối tượng khách trẻ, ưa thích trải
+                                        nghiệm bản địa.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">3</span></div>
+                    <h2 id="headingThree" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree"> Thách Thức &amp; Lời Khuyên Từ Môi Giới
+                            Chuyên Nghiệp </button></h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div><strong>Vốn Đầu Tư Lớn:</strong> Việc mua lại hoặc xây mới khách sạn đòi hỏi nguồn vốn
+                                rất lớn.</div>
+                            <div> </div>
+                            <div><strong>Tính Chu Kỳ và Rủi Ro Thị Trường:</strong> Ngành du lịch chịu ảnh hưởng trực
+                                tiếp từ các yếu tố vĩ mô (dịch bệnh, suy thoái kinh tế, chính sách visa).</div>
+                            <div> </div>
+                            <div><strong>Cạnh Tranh Cao:</strong> Thị trường khách sạn tại Hà Nội ngày càng cạnh tranh
+                                với sự xuất hiện của nhiều thương hiệu quốc tế và khách sạn mới.</div>
+                            <div> </div>
+                            <div><strong>Yêu Cầu Vận Hành Chuyên Nghiệp:</strong> Khách sạn là một doanh nghiệp phức
+                                tạp. Hiệu quả đầu tư phụ thuộc rất nhiều vào năng lực quản lý, marketing, và chất lượng
+                                dịch vụ.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <div class="shield-box -translate-x-1/2 -translate-y-1/2"><span class="number">4</span></div>
+                    <h2 id="headingFour" class="accordion-header"><button class="accordion-button collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">Lời khuyên từ chuyên gia môi giới</button></h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div><strong>Nghiên cứu thị trường ngách:</strong> Thay vì chạy theo phân khúc cao cấp đã
+                                bão hòa, hãy tìm kiếm các thị trường ngách chưa được khai thác đủ (ví dụ: khách sạn
+                                xanh, khách sạn trải nghiệm văn hóa sâu sắc, khách sạn công nghệ).</div>
+                            <div> </div>
+                            <div><strong>Phân tích kỹ tài chính và pháp lý:</strong> Luôn yêu cầu báo cáo tài chính chi
+                                tiết, kiểm tra kỹ lưỡng pháp lý của tài sản và giấy phép kinh doanh.</div>
+                            <div> </div>
+                            <div><strong>Hợp tác với đơn vị vận hành chuyên nghiệp:</strong> Nếu không có kinh nghiệm
+                                quản lý khách sạn, hãy tìm kiếm các tập đoàn quản lý khách sạn uy tín để tối ưu hóa hiệu
+                                quả kinh doanh.</div>
+                            <div> </div>
+                            <div><strong>Tầm nhìn dài hạn:</strong> Đầu tư khách sạn là một cuộc chơi đường dài. Hãy
+                                kiên nhẫn và sẵn sàng đối mặt với những biến động ngắn hạn.</div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    
+</div>
+

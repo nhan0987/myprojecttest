@@ -204,7 +204,7 @@ class PenciMap extends Base_Widget {
 		$css_class = 'penci-block-vc penci-google-map';
 
 		$width  = isset( $settings['map_width']['size'] ) && $settings['map_width']['size'] ? $settings['map_width']['size'] . $settings['map_width']['unit'] : '100%';
-		$height = intval( $settings['map_height'] ) ? $settings['map_height'] . 'px' : '500px';
+		$height = intval( $settings['map_height'] ) ? $settings['map_height'] . 'px' : '31.25rem';
 
 		$atts['map_zoom']   = intval( $settings['map_zoom'] ? $settings['map_zoom'] : 8 );
 		$atts['marker_img'] = $this->get_marker_img_el( $settings['marker_img'] );

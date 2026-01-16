@@ -27,6 +27,10 @@ $single_style = penci_get_single_style();
 		<?php
 		$post_format = get_post_format();
 		if( ! get_theme_mod( 'penci_move_title_bellow' ) && get_theme_mod( 'penci_post_thumb' ) && ! in_array( $post_format, array( 'link', 'quote','gallery','video' ) )  ) {
+
+			?>
+			
+			<?php
 			get_template_part( 'template-parts/single', 'entry-header' );
 		}else{
 			get_template_part( 'template-parts/single', 'post-format2' );
@@ -45,6 +49,12 @@ $single_style = penci_get_single_style();
 			get_template_part( 'template-parts/single', 'breadcrumb-inner' );
 		}
 
+		?>
+
+		
+		
+		<?php
+
 		get_template_part( 'template-parts/single', 'entry-header' );
 		?>
 
@@ -56,12 +66,16 @@ $single_style = penci_get_single_style();
 
 	<?php endif; /* End check if not move title bellow featured image */ ?>
 
+	
+
 	<?php
 	$single_poslcscount = penci_get_setting( 'penci_single_poslcscount' );
 	if( 'above-content' == $single_poslcscount || 'abovebelow-content' == $single_poslcscount ){
 		get_template_part( 'template-parts/single', 'meta-comment-top' );
 	}
 	?>
+
+
 
 	<div class="post-entry <?php echo 'blockquote-'. $block_style; ?>">
 		<div class="inner-post-entry entry-content" id="penci-post-entry-inner">
@@ -73,8 +87,10 @@ $single_style = penci_get_single_style();
 			<?php if ( ! get_theme_mod( 'penci_post_tags' ) && has_tag() ) : ?>
 				<?php if ( is_single() ) : ?>
 					<div class="post-tags">
-						<?php the_tags( wp_kses( __( '', 'soledad' ), penci_allow_html() ), "", "" ); ?>
+						
+						<?php the_tags( null,"", "" ); ?>
 					</div>
+					
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>

@@ -57,7 +57,7 @@ $wp_customize->add_setting( 'penci_top_bar_1400', array(
 	'sanitize_callback' => 'penci_sanitize_checkbox_field'
 ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'penci_top_bar_1400', array(
-	'label'    => 'Use Container 1400px for Top Bar',
+	'label'    => 'Use Container 87.5rem for Top Bar',
 	'section'  => 'pencidesign_new_section_topbar',
 	'settings' => 'penci_top_bar_1400',
 	'type'     => 'checkbox',

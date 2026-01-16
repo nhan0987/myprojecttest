@@ -210,8 +210,8 @@ class PenciInfoBox extends Base_Widget {
 				'selectors' => array(
 					'{{WRAPPER}} .penci-ibox-top-right .penci-ibox-icon'     => 'float:right;',
 					'{{WRAPPER}} .penci-ibox-top-center .penci-ibox-icon'   => 'margin-left: auto;margin-right: auto;',
-					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-left .penci-ibox-inner'  => 'padding-left: calc( {{SIZE}}px + 30px );',
-					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-right .penci-ibox-inner' => 'padding-right: calc( {{SIZE}}px + 30px );',
+					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-left .penci-ibox-inner'  => 'padding-left: calc( {{SIZE}}px + 1.875rem );',
+					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-right .penci-ibox-inner' => 'padding-right: calc( {{SIZE}}px + 1.875rem );',
 					'{{WRAPPER}} .penci-ibox-icon'                                         => 'width: {{SIZE}}px;height:{{SIZE}}px;display: flex; align-items: center; justify-content: center;',
 					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-left .penci-ibox-icon'   => 'max-width: {{SIZE}}px',
 					'{{WRAPPER}} .penci-icon-box.penci-ibox-float-right .penci-ibox-icon'  => 'max-width: {{SIZE}}px',
@@ -415,7 +415,7 @@ class PenciInfoBox extends Base_Widget {
 					'{{WRAPPER}} .penci-view-stacked .penci-animation-custom-5:hover' => 'box-shadow: inset 0 0 0 3px {{VALUE}}',
 					'{{WRAPPER}} .penci-view-framed .penci-animation-custom-2:hover:after' => 'border-color: {{VALUE}}',
 					'{{WRAPPER}} .penci-view-framed .penci-animation-custom-5:hover:after' => 'border-color: {{VALUE}}',
-					'{{WRAPPER}} .penci-view-framed .penci-animation-custom-5:hover' => 'box-shadow: 0 0 0 6px {{VALUE}}',
+					'{{WRAPPER}} .penci-view-framed .penci-animation-custom-5:hover' => 'box-shadow: 0 0 0 0.375rem {{VALUE}}',
 				),
 			)
 		);

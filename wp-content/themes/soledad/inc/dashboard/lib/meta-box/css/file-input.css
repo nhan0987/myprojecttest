@@ -4,10 +4,10 @@
 	align-items: flex-start;
 }
 .rwmb-file_input.rwmb-file_input {
-	line-height: 18px;
+	line-height: 1.125rem;
 	margin: 0 5px 0 0;
 	padding: 4px;
-	width: 300px;
+	width: 18.75rem;
 }
 @media (max-width: 767px) {
 	.rwmb-file_input.rwmb-file_input,

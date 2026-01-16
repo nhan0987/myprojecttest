@@ -21,7 +21,7 @@ if ( $is_child ) {
 	<?php
 	if ( $parent_version ) {
 		echo esc_html__('Welcome to Soledad Child Theme', 'soledad' ) . '<br>';
-		echo '<span style="display: block; font-size: 22px; font-weight: 500; margin-top: 10px;">' . esc_html__( sprintf( __( 'Inherit from %1$s Parent Theme - Version %2$s', 'soledad' ), 'Soledad', $parent_version ) ) . '</span>';
+		echo '<span style="display: block; font-size: 1.375rem; font-weight: 500; margin-top: 0.625rem;">' . esc_html__( sprintf( __( 'Inherit from %1$s Parent Theme - Version %2$s', 'soledad' ), 'Soledad', $parent_version ) ) . '</span>';
 	} else {
 		// Translators: %1$s - Theme name, %2$s - Theme version.
 		echo esc_html__( sprintf( __( 'Welcome to %1$s - Version %2$s', 'soledad' ), 'Soledad', $theme_data->version ) );

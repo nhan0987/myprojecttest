@@ -169,7 +169,7 @@ if( ! class_exists( 'penci_about_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>"><?php esc_html_e( 'About Image URL:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'image' ) ); ?>" value="<?php echo esc_url( $instance['image'] ); ?>" /><br />
-				<small><?php _e( 'Insert your image URL. To get good for load, let use image about 400px width.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.', 'soledad' ); ?></small>
+				<small><?php _e( 'Insert your image URL. To get good for load, let use image about 25rem width.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.', 'soledad' ); ?></small>
 			</p>
 
 			<!-- Circle image -->
@@ -200,7 +200,7 @@ if( ! class_exists( 'penci_about_widget' ) ) {
 			
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'imagemaxwidth' ) ); ?>"><?php esc_html_e('Custom Max Width for About Me Image:', 'soledad'); ?></label>
-				<input  type="number" style="width: 65px;" id="<?php echo esc_attr( $this->get_field_id( 'imagemaxwidth' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'imagemaxwidth' ) ); ?>" value="<?php echo esc_attr( $instance['imagemaxwidth'] ); ?>" size="3" /> px
+				<input  type="number" style="width: 4.0625rem;" id="<?php echo esc_attr( $this->get_field_id( 'imagemaxwidth' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'imagemaxwidth' ) ); ?>" value="<?php echo esc_attr( $instance['imagemaxwidth'] ); ?>" size="3" /> px
 			</p>
 
 			<!-- heading text -->

@@ -44,18 +44,18 @@ $css_custom   = '';
 
 // CSS
 if ( 'yes' == $atts['navs_buttons'] ) {
-	$css_custom .= $block_id_css . ' .penci-trending-nav a{ height: 24px; line-height: 24px; top: 4px; background: #313131; color: #fff; float: left; }';
+	$css_custom .= $block_id_css . ' .penci-trending-nav a{ height: 1.5rem; line-height: 1.5rem; top: 4px; background: #313131; color: #fff; float: left; }';
 	$css_custom .= $block_id_css . ' .penci-trending-nav a:first-child{ margin-right: 4px; }';
 }
 if ( 'yes' == $atts['move_navs'] ) {
 	$css_custom .= $block_id_css . '.penci-topbar-trending .penci-trending-nav{ float: right; }';
-	$css_custom .= $block_id_css . ' .headline-title{ margin-right: 10px; }';
-	$css_custom .= $block_id_css . ' .headline-title.nticker-style-2{ margin-right: 18px; }';
-	$css_custom .= $block_id_css . ' .headline-title.nticker-style-4{ margin-right: 19px; }';
+	$css_custom .= $block_id_css . ' .headline-title{ margin-right: 0.625rem; }';
+	$css_custom .= $block_id_css . ' .headline-title.nticker-style-2{ margin-right: 1.125rem; }';
+	$css_custom .= $block_id_css . ' .headline-title.nticker-style-4{ margin-right: 1.1875rem; }';
 	$css_custom .= 'body.rtl ' . $block_id_css . '.penci-topbar-trending .penci-trending-nav{ float: left; }';
-	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title{ margin-right: 0; margin-left: 10px; }';
-	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title.nticker-style-2{ margin-left: 18px; margin-right:0; }';
-	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title.nticker-style-4{ margin-left: 19px; margin-right:0; }';
+	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title{ margin-right: 0; margin-left: 0.625rem; }';
+	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title.nticker-style-2{ margin-left: 1.125rem; margin-right:0; }';
+	$css_custom .= 'body.rtl ' . $block_id_css . ' .headline-title.nticker-style-4{ margin-left: 1.1875rem; margin-right:0; }';
 }
 if ( 'yes' == $atts['headline_upper'] ) {
 	$css_custom .= $block_id_css . ' .headline-title{ text-transform: none; letter-spacing: 0; }';

@@ -80,7 +80,7 @@ $wp_customize->add_setting( 'penci_hbg_width', array(
 ) );
 $wp_customize->add_control( new Penci_Range_Slider_Control( $wp_customize, 'penci_hbg_width', array(
 	'description' => __( 'Custom Width for Vertical Nav & Menu Hamburger', 'soledad' ),
-	'sub_description' => __( 'Min is 250px, Max is 500px', 'soledad' ),
+	'sub_description' => __( 'Min is 15.625rem, Max is 31.25rem', 'soledad' ),
 	'section' => 'penci_menu_hbg',
 	'settings' => array(
 		'desktop' => 'penci_hbg_width',
@@ -102,7 +102,7 @@ $wp_customize->add_setting( 'penci_hbg_size_icon', array(
 ) );
 $wp_customize->add_control( new Penci_Range_Slider_Control( $wp_customize, 'penci_hbg_size_icon', array(
 	'description' => __( 'Custom Size for Hamburger Menu Icon', 'soledad' ),
-	'sub_description' => __( 'Min is 14px, Max is 30px', 'soledad' ),
+	'sub_description' => __( 'Min is 0.875rem, Max is 1.875rem', 'soledad' ),
 	'section' => 'penci_menu_hbg',
 	'settings' => array(
 		'desktop' => 'penci_hbg_size_icon',

@@ -45,7 +45,7 @@ class PenciLoginForm extends Base_Widget {
 		$this->add_control(
 			'app_id', array(
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => '<span style="color: #888;font-size: 12px;">Please note that when a user is logged in, the registration form will be hidden. And if you select to show "Register" form, you need to go to Dashboard > Settings > General > on "Membership" select "Anyone can register" to make the Register form displays.</span>',
+				'raw' => '<span style="color: #888;font-size: 0.75rem;">Please note that when a user is logged in, the registration form will be hidden. And if you select to show "Register" form, you need to go to Dashboard > Settings > General > on "Membership" select "Anyone can register" to make the Register form displays.</span>',
 				'content_classes' => 'elementor-descriptor',
 			)
 		);

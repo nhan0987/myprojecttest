@@ -29,13 +29,13 @@ if (!function_exists('lth_blogs_output_fe')) :
                                 <?php if ($attributes['url']) : ?>
                                     <a href="<?php echo esc_url($attributes['url']); ?>" title="">
                                     <?php else : ?>
-                                        <span>
+                                        
                                         <?php endif; ?>
                                         <?php echo wpautop(esc_html($attributes['title'])); ?>
                                         <?php if ($attributes['url']) : ?>
                                     </a>
                                 <?php else : ?>
-                                    </span>
+                                    
                                 <?php endif; ?>
                             </h2>
                         <?php endif; ?>
@@ -69,8 +69,11 @@ if (!function_exists('lth_blogs_output_fe')) :
 
                     if ($wp_query->have_posts()) {
                         if ($attributes['post_style'] == 'list') { ?>
-                            <div class="grid grid-cols-1 gap-4">
+                            <div class="">
                                 <?php if ($attributes['post_style_2'] == 'style_01') {
+                                ?>
+                                <div class="flex flex-wrap xl:gap-10!">
+                                <?php 
                                     while ($wp_query->have_posts()) {
                                         $wp_query->the_post();
                                 ?>
@@ -79,8 +82,15 @@ if (!function_exists('lth_blogs_output_fe')) :
                                         </div>
                                     <?php
                                     }
+                                ?>
+                                </div>
+                                <?php
                                     wp_reset_postdata();
                                 } else {
+
+                                ?>
+                                    <div class="flex flex-wrap gap-4!">
+                                    <?php
                                     while ($wp_query->have_posts()) {
                                         $wp_query->the_post();
                                     ?>
@@ -89,13 +99,16 @@ if (!function_exists('lth_blogs_output_fe')) :
                                         </div>
                                 <?php
                                     }
+                                ?>
+                                    </div>
+                                <?php
                                     wp_reset_postdata();
                                 } ?>
                             </div>
                         <?php } elseif ($attributes['post_style'] == 'mixed') { 
                             
                         ?>
-                            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="grid grid-cols-1 xl:grid-cols-3 gap-y-5 xl:gap-y-30! gap-x-18!">
 
                             <?php
                             $k = 0;
@@ -106,25 +119,28 @@ if (!function_exists('lth_blogs_output_fe')) :
                                 $wp_query->the_post(); // Lấy bài viết đầu tiên (Post 1)
                                 $k++;
                             ?>
-                                <div class="col-span-3 lg:col-span-2">
-                                    <div class="">
-                                        <div class="relative pt-[60%] lg:pt-[50%]"> 
-                                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="rounded-2xl w-full! h-full!">
-                                            <span class="text-sm medium text-gray-500">
-                                                <?php the_time('d/m/Y'); ?>
-                                            </span>
-                                        </div>
-                                        <div class="">
+                                <div class="col-span-1 xl:col-span-2! relative">
+                                    
+                                    <div class="cut-the-top-left-corner-25-container"> 
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="zoom-image object-cover w-full! h-full!">
+                                        </a>
+                                        <span class="text-[0.8125rem] font-medium text-gray-500 absolute left-0 bottom-[0px] xl:bottom-[3.3125rem] w-[5rem] xl:w-[4.75rem] h-[1.6875rem] bg-white">
+                                            <?php the_time('d/m/Y'); ?>
+                                        </span>
+                                        <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-0 xl:w-[26.5625rem] h-[2.75rem]">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <h2 class="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                                                <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight">
                                                     <?php the_title(); ?>
                                                 </h2>
                                             </a>
                                         </div>
                                     </div>
+                                    
+                                    
                                 </div>
                                 
-                                <div class="col-span-1 lg:col-span-1 grid grid-cols-2 lg:flex lg:flex-col gap-3">
+                                <div class="col-span-1 xl:col-span-1 grid grid-cols-2 xl:flex xl:flex-col gap-3">
                                     <?php
                                     // Tiếp tục vòng lặp để hiển thị các bài viết còn lại
                                     while ($wp_query->have_posts() && $k < 3) { // Chỉ lặp tối đa đến k=3 (Bài 3)
@@ -132,11 +148,14 @@ if (!function_exists('lth_blogs_output_fe')) :
                                         $k++;
                                         // Không cần if ($k <= 3) nữa vì điều kiện đã ở trong while
                                     ?>
-                                        <div class="col-span-1">
-                                            <div class="flex flex-wrap gap-2"> <div class="">
-                                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" 
-                                                        class="rounded-2xl">
-                                                    <span class="text-xs font-medium text-gray-500">
+                                        
+                                            <div class="flex flex-wrap justify-end gap-y-2"> 
+                                                <div class="cut-the-top-left-corner-26-container">
+                                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" 
+                                                            class="zoom-image object-cover w-full! h-full!">
+                                                    </a>
+                                                    <span class="text-xs font-medium text-gray-500 absolute left-0 bottom-[0px] w-[4.125rem] xl:w-[4.5rem] h-[1.25rem] xl:h-[1.6875rem] bg-white">
                                                         <?php the_time('d/m/Y'); ?>
                                                     </span>
                                                 </div>
@@ -149,12 +168,12 @@ if (!function_exists('lth_blogs_output_fe')) :
                                                     </a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        
                                     <?php
                                     } // Kết thúc while cho các bài phụ (k=2 và k=3)
                                     ?>
                                 </div>
-                                <div class="col-span-3 grid grid-cols-1 gap-4">
+                                <div class="col-span-1 xl:col-span-3 grid grid-cols-1 xl:gap-10!">
                                     <?php
                                     // Tiếp tục vòng lặp để hiển thị các bài viết còn lại
                                     while ($wp_query->have_posts()) { // Chỉ lặp tối đa đến k=3 (Bài 3)

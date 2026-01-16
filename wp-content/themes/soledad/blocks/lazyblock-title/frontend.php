@@ -39,7 +39,15 @@ if (!function_exists('lth_title_output_fe')) :
 
             <?php if ($attributes['description']) : ?>
                 <div class="infor">
-                    <?php echo wpautop(esc_html($attributes['description'])); ?>
+                    <!-- <?php echo wpautop(esc_html($attributes['description'])); ?>  -->
+                  
+                    <?php
+                        $desc = $attributes['description'];
+                    ?>
+
+                    <p class="" data-text="<?php echo esc_attr($desc); ?>">
+                        <?php echo nl2br(esc_html($desc)); ?>
+                    </p>
                 </div>
             <?php endif; ?>
         </div>

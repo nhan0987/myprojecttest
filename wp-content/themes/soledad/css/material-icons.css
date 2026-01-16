@@ -55,9 +55,9 @@
 .material-symbols-outlined,
 .material-symbols-rounded,
 .material-symbols-sharp {
-  font-weight: 400; /* 400=Regular, 700=Bold */
+  font-weight: 100; /* 400=Regular, 700=Bold */
   font-style: normal;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -72,7 +72,7 @@
   /* Bảng điều khiển "biến hình" mặc định */
   font-variation-settings:
     'FILL' 0,  /* 0 = Viền (Outlined), 1 = Đặc (Filled) */
-    'wght' 400, /* 400 = Regular, 700 = Bold */
+    'wght' 100, /* 400 = Regular, 700 = Bold */
     'GRAD' 0,  /* Độ "béo" của nét, thường để 0 */
     'opsz' 24; /* Kích thước quang học, nên = font-size */
 }

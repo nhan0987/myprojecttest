@@ -152,7 +152,7 @@ class RWMB_Update_Notification {
 			return;
 		}
 
-		echo '<br><span style="width: 26px; height: 20px; display: inline-block;">&nbsp;</span>' . wp_kses_post( sprintf( $messages[ $status ], $this->settings_page, 'https://metabox.io/pricing/', 'https://metabox.io/my-account/' ) );
+		echo '<br><span style="width: 1.625rem; height: 1.25rem; display: inline-block;">&nbsp;</span>' . wp_kses_post( sprintf( $messages[ $status ], $this->settings_page, 'https://metabox.io/pricing/', 'https://metabox.io/my-account/' ) );
 	}
 
 	/**

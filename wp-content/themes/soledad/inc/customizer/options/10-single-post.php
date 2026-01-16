@@ -209,7 +209,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_featu
 	'label'       => 'Custom Border Radius for Featured Image',
 	'section'     => 'penci_section_spost_general',
 	'settings'    => 'penci_post_featured_image_radius',
-	'description' => 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>. If you want to disable border radius - fill 0',
+	'description' => 'You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>. If you want to disable border radius - fill 0',
 ) ) );
 
 $wp_customize->add_setting( 'penci_post_featured_image_ratio', array(
@@ -828,6 +828,16 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_relat
 	'label'    => 'Related Posts Custom Text',
 	'section'  => 'penci_section_spost_related_posts',
 	'settings' => 'penci_post_related_text',
+	'type'     => 'text',
+) ) );
+$wp_customize->add_setting( 'penci_post_related_infor', array(
+	'default'           => 'You may also like',
+	'sanitize_callback' => 'sanitize_text_field'
+) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_related_infor', array(
+	'label'    => 'Related Posts Custom Infor',
+	'section'  => 'penci_section_spost_related_posts',
+	'settings' => 'penci_post_related_infor',
 	'type'     => 'text',
 ) ) );
 

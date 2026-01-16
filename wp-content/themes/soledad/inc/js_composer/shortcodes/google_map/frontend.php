@@ -24,7 +24,7 @@ $css_class = 'penci-block-vc penci-google-map';
 $css_class .= ' ' . apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
 $width  = intval( $map_width ) ? $map_width : '100%';
-$height = intval( $map_height ) ? $map_height : '500px';
+$height = intval( $map_height ) ? $map_height : '31.25rem';
 
 $atts['map_zoom']   = intval( $map_zoom ? $map_zoom : 8 );
 $atts['marker_img'] = wp_get_attachment_url( $marker_img );

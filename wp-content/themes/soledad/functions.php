@@ -989,7 +989,7 @@ if (function_exists('register_sidebar')) {
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title penci-border-arrow"><span class="inner-arrow">',
-			'after_title'   => '</span><div class="h-[3px] w-12 bg-[linear-gradient(86.24deg,#FFD45C_1.16%,#9E5625_128.11%)]"></div></h4>',
+			'after_title'   => '</span><div class="h-[2px] w-12 bg-[linear-gradient(86.24deg,#FFD45C_1.16%,#9E5625_128.11%)]"></div></h4>',
 		));
 	}
 
@@ -1987,7 +1987,7 @@ function penci_social_media_array()
 		'telegram' => array(get_theme_mod('penci_telegram'), 'fab fa-telegram'),
 		'reddit' => array(get_theme_mod('penci_reddit'), 'fab fa-reddit-alien'),
 		'ok' => array(get_theme_mod('penci_ok'), 'fab fa-odnoklassniki'),
-		'500px' => array(get_theme_mod('penci_500px'), 'fab fa-500px'),
+		'31.25rem' => array(get_theme_mod('penci_31.25rem'), 'fab fa-31.25rem'),
 		'stumbleupon' => array(get_theme_mod('penci_stumbleupon'), 'fab fa-stumbleupon'),
 		'wechat' => array(get_theme_mod('penci_wechat'), 'fab fa-weixin'),
 		'weibo' => array(get_theme_mod('penci_weibo'), 'fab fa-weibo'),
@@ -4327,6 +4327,17 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_styles');
 
+	function defer_specific_js( $tag, $handle ) {
+		// Danh sách các file muốn defer
+		$scripts_to_defer = array( 'bootstrap', 'penci-main-script', 'contact-form-7' );
+
+		if ( in_array( $handle, $scripts_to_defer ) ) {
+			return str_replace( ' src', ' defer src', $tag );
+		}
+		return $tag;
+	}
+	add_filter( 'script_loader_tag', 'defer_specific_js', 10, 2 );
+
 	/**
 	 * Add js
 	 * 
@@ -4335,11 +4346,13 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	 */
 	function lth_theme_scripts()
 	{
-		wp_enqueue_script('fancybox', THEME_URI . '/js/jquery.fancybox.min.js', false, 'all');
-		wp_enqueue_script('swiper', THEME_URI . '/js/swiper-bundle.min.js', false, 'all');
-		wp_enqueue_script('custom', THEME_URI . '/js/custom.js', false, 'all');
+		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js',array('jquery'),'1.0.0', true);
 		wp_enqueue_script('tailwind', THEME_URI . '/css/tailwind-3.4.17.css', false, 'all');
-		wp_enqueue_script('bootstrap', THEME_URI . '/js/bootstrap.min.js', false, 'all');
+		wp_enqueue_script('fancybox', THEME_URI . '/js/jquery.fancybox.min.js', array('jquery'),'1.0.0', true);
+		wp_enqueue_script('swiper', THEME_URI . '/js/swiper-bundle.min.js', array('jquery'),'1.0.0', true);
+		wp_enqueue_script('custom', THEME_URI . '/js/custom.js', array('jquery'),'1.0.0', true);
+		
+		
 		
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_scripts', 99);
@@ -4378,22 +4391,31 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	 * @param string $fallback_url   URL dự phòng nếu ảnh mặc định không tồn tại.
 	 * @return string                URL của ảnh mặc định hoặc URL dự phòng.
 	 */
-	function get_default_thumbnail_url($image_filename = 'default-thumbnail.jpg', $fallback_url = 'https://via.placeholder.com/227x146?text=No+Image')
+	function get_default_thumbnail_url($image_filename = 'default-thumbnail.png', $fallback_url = 'https://via.placeholder.com/227x146?text=No+Image')
 	{
 		// Lấy thông tin về thư mục uploads
 		$upload_dir = wp_get_upload_dir();
 		$upload_baseurl = $upload_dir['baseurl']; // Đường dẫn URL
 		$upload_basedir = $upload_dir['basedir']; // Đường dẫn vật lý trên server
 
+		// var_dump($upload_baseurl);
+
 		// Đường dẫn đầy đủ tới file ảnh mặc định
 		$default_image_url = esc_url($upload_baseurl . '/' . $image_filename);
 		$default_image_filepath = $upload_basedir . '/' . $image_filename;
 
+		// var_dump($default_image_url);
+		// var_dump($default_image_filepath);
+		// var_dump($file_exists($default_image_filepath));
+
 		// Kiểm tra xem file ảnh có tồn tại trên server không
 		if (file_exists($default_image_filepath)) {
+
+			
 			return $default_image_url; // Trả về URL của ảnh mặc định
 		} else {
-			return esc_url($fallback_url); // Trả về URL dự phòng nếu ảnh mặc định không tồn tại
+			
+			return esc_url($default_image_url); // Trả về URL dự phòng nếu ảnh mặc định không tồn tại
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'enqueue_material_icons' );
@@ -4421,6 +4443,16 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 
 			wp_enqueue_script('tuyendung', THEME_URI . '/js/tuyendung.js', array('jquery'),'1.0.0', true);
 		}
+		if ( is_category('nha-mat-pho') || is_category('biet-thu-lien-ke')|| is_category('toa-nha-van-phong')|| is_category('khach-san-can-ho-dich-vu')
+			|| is_category('chung-cu-cao-cap') || is_category('dich-vu-ky-gui')|| is_category('dich-vu-moi-gioi')|| is_category('tu-van-dau-tu')) { 
+
+			wp_enqueue_script('danhmucbds', THEME_URI . '/js/danhmucbds.js', array('jquery'),'1.0.0', true);
+		}
+		if ( is_category('gioi-thieu')) { 
+
+			wp_enqueue_script('gioithieu', THEME_URI . '/js/gioithieu.js', array('jquery'),'1.0.0', true);
+		}
+	
 	}
 	add_action( 'wp_enqueue_scripts', 'inject_footer_custom_js' );
 

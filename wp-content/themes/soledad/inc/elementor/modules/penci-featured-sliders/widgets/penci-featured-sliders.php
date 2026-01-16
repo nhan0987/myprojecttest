@@ -230,7 +230,7 @@ class PenciFeaturedSliders extends Base_Widget {
 		$this->add_control(
 			'img_border_radius', array(
 				'label'       => __( 'Border Radius', 'elementor' ),
-				'description' => 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>',
+				'description' => 'You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>',
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => array( '%', 'px' ),
 				'default'     => array( 'unit' => '%', 'size' => 0 ),

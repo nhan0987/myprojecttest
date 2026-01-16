@@ -6,7 +6,7 @@
  * @since 1.0
  */
 ?>
-<div class="penci-top-bar<?php if( get_theme_mod( 'penci_top_bar_hide_social' ) ): echo ' no-social'; endif; if( get_theme_mod( 'penci_top_bar_enable_menu' ) ): echo ' topbar-menu'; endif; if( get_theme_mod( 'penci_top_bar_1400' ) ): echo ' topbar-1400px'; endif; if( get_theme_mod( 'penci_top_bar_full_width' ) ): echo ' topbar-fullwidth'; endif; ?>">
+<div class="penci-top-bar<?php if( get_theme_mod( 'penci_top_bar_hide_social' ) ): echo ' no-social'; endif; if( get_theme_mod( 'penci_top_bar_enable_menu' ) ): echo ' topbar-menu'; endif; if( get_theme_mod( 'penci_top_bar_1400' ) ): echo ' topbar-87.5rem'; endif; if( get_theme_mod( 'penci_top_bar_full_width' ) ): echo ' topbar-fullwidth'; endif; ?>">
 	<div class="container<?php if( get_theme_mod( 'penci_top_bar_1400' ) ): echo ' container-1400'; endif; ?>">
 		<div class="penci-headline" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 			<?php 

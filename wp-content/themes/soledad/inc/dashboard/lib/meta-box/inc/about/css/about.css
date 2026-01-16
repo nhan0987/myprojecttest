@@ -1,5 +1,5 @@
 .about-wrap {
-	padding-right: 20px;
+	padding-right: 1.25rem;
 }
 .about-wrap.about-wrap .wp-badge {
 	background-image: url(../images/meta-box.svg);
@@ -17,14 +17,14 @@
 .about-buttons .dashicons {
 	position: relative;
 	top: 5px;
-	width: 16px;
-	height: 16px;
-	font-size: 16px;
+	width: 1rem;
+	height: 1rem;
+	font-size: 1rem;
 }
 
 #poststuff .nav-tab-wrapper {
 	padding: 0;
-	margin-top: 60px;
+	margin-top: 3.75rem;
 }
 
 .nav-tab-active:focus {
@@ -40,18 +40,18 @@
 }
 
 .two {
-	margin-top: 15px;
+	margin-top: 0.9375rem;
 	display: flex;
 }
 .two .col + .col {
-	margin-left: 40px;
+	margin-left: 2.5rem;
 }
 .two h3:not(:first-child) {
 	margin-top: 3em;
 }
 .two img {
 	display: block;
-	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .1);
 	border-radius: 4px;
 }
 .screenshot {
@@ -62,7 +62,7 @@
 	flex: 1;
 }
 .col ul {
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin: 2em 0;
 }
 .col li a {
@@ -71,24 +71,24 @@
 
 /* Extensions tab */
 .extensions {
-	margin-top: 40px;
+	margin-top: 2.5rem;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 .extension {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 1.25rem;
 }
 .extension-inner {
 	display: flex;
 	background: #fff;
-	padding: 25px 20px;
+	padding: 1.5625rem 1.25rem;
 }
 .extension-inner svg {
-	width: 36px;
-	height: 36px;
-	margin: 8px 15px 0 0;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin: 0.5rem 0.9375rem 0 0;
 	fill: #b4b9be;
 }
 .extension-info {
@@ -104,7 +104,7 @@
 .extension-action {
 	border-top: 1px solid #ddd;
 	text-align: center;
-	padding: 20px;
+	padding: 1.25rem;
 	background: #f7f7f7;
 }
 
@@ -124,8 +124,8 @@
 /* Right column */
 #post-body.columns-2 #postbox-container-1 {
 	position: fixed;
-	right: 320px;
-	top: 80px;
+	right: 20rem;
+	top: 5rem;
 }
 
 @media (max-width: 1279px) {
@@ -141,13 +141,13 @@
 .upgrade {
 	border: 3px dashed #82878c;
 	background: #fff;
-	padding: 15px;
+	padding: 0.9375rem;
 }
 .upgrade .dashicons {
 	color: #ef4836;
-	width: 26px;
-	height: 26px;
-	font-size: 30px;
+	width: 1.625rem;
+	height: 1.625rem;
+	font-size: 1.875rem;
 	position: relative;
 	top: -4px;
 	left: -5px;
@@ -156,7 +156,7 @@
 	margin: 0;
 }
 .upgrade li {
-	padding-left: 20px;
+	padding-left: 1.25rem;
 	position: relative;
 }
 .upgrade svg {

@@ -19,7 +19,7 @@ if (!function_exists('lth__video_output')) :
         ob_start();
 ?>
     <?php if (isset($attributes['title'])) : ?>
-        <p style="font-size: 12px; padding-top: 10px; padding-left: 35px; margin: 0;"><strong><?php echo esc_html($attributes['title']); ?></strong></p>
+        <p style="font-size: 0.75rem; padding-top: 0.625rem; padding-left: 2.1875rem; margin: 0;"><strong><?php echo esc_html($attributes['title']); ?></strong></p>
     <?php endif; ?>
 <?php
         return ob_get_clean();

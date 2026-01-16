@@ -237,8 +237,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'penci_head
 	'settings' => 'penci_header_ctwidth',
 	'type'     => 'radio',
 	'choices'  => array(
-		''          => esc_html__( 'Width: 1170px', 'soledad' ),
-		'1400'      => esc_html__( 'Width: 1400px', 'soledad' ),
+		''          => esc_html__( 'Width: 73.125rem', 'soledad' ),
+		'1400'      => esc_html__( 'Width: 87.5rem', 'soledad' ),
 		'fullwidth' => esc_html__( 'FullWidth', 'soledad' ),
 	)
 ) ) );
@@ -250,7 +250,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'head
 	'label'       => 'Banner Header Right For Header 3',
 	'section'     => 'pencidesign_logo_header_general',
 	'settings'    => 'penci_header_3_banner',
-	'description' => 'You should choose banner with 728px width and 90px - 100px height for the best result',
+	'description' => 'You should choose banner with 45.5rem width and 5.625rem - 6.25rem height for the best result',
 ) ) );
 
 $wp_customize->add_setting( 'penci_header_3_banner_url', array(
@@ -481,7 +481,7 @@ $wp_customize->add_setting( 'penci_mainmenu_height', array(
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new Penci_Range_Slider_Control( $wp_customize, 'penci_mainmenu_height', array(
-	'description' => __( 'Custom Main Bar Height ( Min 30px )', 'soledad' ),
+	'description' => __( 'Custom Main Bar Height ( Min 1.875rem )', 'soledad' ),
 	'section' => 'pencidesign_logo_header_primary_menu',
 	'settings' => array(
 		'desktop' => 'penci_mainmenu_height',
@@ -502,7 +502,7 @@ $wp_customize->add_setting( 'penci_mainmenu_height_sticky', array(
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new Penci_Range_Slider_Control( $wp_customize, 'penci_mainmenu_height_sticky', array(
-	'description' => __( 'Custom Sticky Main Bar Height When Scroll Down ( Min 30px )', 'soledad' ),
+	'description' => __( 'Custom Sticky Main Bar Height When Scroll Down ( Min 1.875rem )', 'soledad' ),
 	'section' => 'pencidesign_logo_header_primary_menu',
 	'settings' => array(
 		'desktop' => 'penci_mainmenu_height_sticky',
@@ -523,7 +523,7 @@ $wp_customize->add_setting( 'penci_mainmenu_height_mobile', array(
 	'sanitize_callback' => 'absint',
 ) );
 $wp_customize->add_control( new Penci_Range_Slider_Control( $wp_customize, 'penci_mainmenu_height_mobile', array(
-	'description' => __( 'Custom Main Bar Height on Mobile ( Min 30px )', 'soledad' ),
+	'description' => __( 'Custom Main Bar Height on Mobile ( Min 1.875rem )', 'soledad' ),
 	'section' => 'pencidesign_logo_header_primary_menu',
 	'settings' => array(
 		'desktop' => 'penci_mainmenu_height_mobile',
@@ -765,7 +765,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'megamenu_b
 	'label'       => 'Custom Border Radius for Images on Category Mega Menu',
 	'section'     => 'pencidesign_logo_header_category_megamenu',
 	'settings'    => 'penci_megamenu_border_radius',
-	'description' => 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>. If you want to disable border radius for it - fill 0',
+	'description' => 'You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>. If you want to disable border radius for it - fill 0',
 ) ) );
 
 $wp_customize->add_setting( 'penci_mega_featured_image_size', array(
@@ -1346,7 +1346,7 @@ $wp_customize->add_setting( 'penci_header_background_image', array(
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_background_image', array(
 	'label'       => 'Header Background Image',
 	'section'     => 'pencidesign_logo_header_colors',
-	'description' => 'You should use image with minimum width 1920px and minimum height 300px',
+	'description' => 'You should use image with minimum width 120rem and minimum height 18.75rem',
 	'settings'    => 'penci_header_background_image',
 ) ) );
 

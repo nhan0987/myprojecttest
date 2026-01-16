@@ -206,7 +206,7 @@ $typo_params    = array(
 	array(
 		'type'        => 'textfield',
 		'heading'     => esc_html__( 'Border Radius', 'soledad' ),
-		'description' => 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>',
+		'description' => 'You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>',
 		'param_name'  => 'img_border_radius',
 		'std'         => '',
 		'group'            => $group_color,

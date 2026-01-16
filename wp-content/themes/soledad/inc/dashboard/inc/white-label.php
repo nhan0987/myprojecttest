@@ -270,9 +270,9 @@ if( ! class_exists( 'Penci_White_Lable' ) ) {
 		        array(
 			        'id' => 'penci_flogin_padding',
 			        'type' => 'text',
-			        'std'    => '26px 24px 46px;',
+			        'std'    => '1.625rem 1.5rem 2.875rem;',
 			        'name' => esc_html__( 'Form padding', 'soledad' ),
-			        'desc' => __( 'This will change the padding property. Example: 26px 24px 46px 30px or none', 'soledad' ),
+			        'desc' => __( 'This will change the padding property. Example: 1.625rem 1.5rem 2.875rem 1.875rem or none', 'soledad' ),
 		        ),
 		        array(
 			        'id' => 'penci_flogin_shadow',
