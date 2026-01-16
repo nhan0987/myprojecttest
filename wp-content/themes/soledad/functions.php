@@ -4456,3 +4456,9 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	}
 	add_action( 'wp_enqueue_scripts', 'inject_footer_custom_js' );
 
+	function custom_image_sizes() {
+    // add_image_size( 'tên-kích-thước', chiều-rộng, chiều-cao, có-cắt-ảnh-không );
+		add_image_size( '351x360', 351, 360, true ); 
+	}
+	add_action( 'after_setup_theme', 'custom_image_sizes' );
+

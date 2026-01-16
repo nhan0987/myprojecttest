@@ -28,8 +28,27 @@ if (!function_exists('lth_slider_output_fe')) :
                                 <?php foreach( $attributes['items'] as $inner ): ?>
                                     <div class="swiper-slide item">
                                         <div class="module_image"> 
-                                            <a href="<?php echo esc_url( $inner['button_url'] ); ?>">
-                                                <img class="no-lazy" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="Slide" fetchpriority="high">  
+
+                                            <?php 
+                                                $original_url = esc_url( $inner['item_image']['url'] );
+                                                $attachment_id = attachment_url_to_postid($original_url);
+
+                                                if ($attachment_id) {
+                                                    // 3. Lấy link ảnh size trung bình (thường là 768px hoặc 1024px tùy settings)
+                                                    // Các size mặc định: 'thumbnail', 'medium', 'medium_large', 'large', 'full'
+                                                    $image_mobile_data = wp_get_attachment_image_src($attachment_id, '351x360');
+                                                    $image_mobile_url = $image_mobile_data[0];
+                                                } else {
+                                                    // Nếu không tìm thấy ID, mình dùng chính link gốc làm fallback
+                                                    $image_mobile_url = $original_url;
+                                                }
+                                            ?>
+                                            <a href="<?php echo esc_url($inner['button_url'] ); ?>">
+                                                
+                                                <picture>
+                                                    <source media="(max-width: 768px)" srcset="<?php echo $image_mobile_url; ?>">
+                                                    <img class="no-lazy" src="<?php echo $original_url; ?>" alt="Slide" fetchpriority="high">
+                                                </picture>
                                             </a>                                  
                                         </div>
                                         <div class="module_content">
