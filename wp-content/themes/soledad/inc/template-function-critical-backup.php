@@ -7,7 +7,7 @@ add_filter('hpp_critical_css', function($css, $file){
 		$css .= '#header .inner-header{height: 155px;}@media only screen and (max-width: 479px){#header .inner-header { height: 207px; }}';
 	}
 	if( 'header-4' == $demo_header || 'header-5' == $demo_header ){
-		$css .= '#navigation.header-4 .main-nav-social, #navigation.header-5 .main-nav-social { float: none; vertical-align: top; margin: 0 0 0 30px; }#navigation.header-4 #top-search, #navigation.header-5 #top-search{margin-left: 15px;}';
+		$css .= '#navigation.header-4 .main-nav-social, #navigation.header-5 .main-nav-social { float: none; vertical-align: top; margin: 0 0 0 1.875rem; }#navigation.header-4 #top-search, #navigation.header-5 #top-search{margin-left: 0.9375rem;}';
 	}
 	if( 'header-6' == $demo_header || 'header-9' == $demo_header ){
 		$css .= '#navigation.header-6 #logo { float: left; display: block; text-align: left; }#navigation.header-6 #logo img{padding: 12px 0; max-height: 80px; width: auto;}#navigation.header-6 .menu { float: none; } @media only screen and (min-width: 961px){ #navigation.header-6 { height: 82px; } #navigation.header-6 .menu > li > a, #navigation.header-6 ul.menu > li > a { line-height: 80px; } #navigation.header-6 .penci-menuhbg-toggle, #navigation.header-6 .show-search { height: 80px; } #navigation.header-6 #top-search > a, #navigation.header-6 .show-search a.close-search { height: 80px; line-height: 80px; }.main-nav-social{ line-height: 80px; margin-left: 30px; } } #navigation.header-6 .penci-menuhbg-toggle,#navigation.header-6 #top-search { margin-left: 15px; }';

@@ -35,8 +35,8 @@ if( 'two-sidebar' == $sidebar_position ): $two_sidebar_class = ' two-sidebar'; e
 		<?php } ?>
 	<?php endif; ?>
 
-	<div class="container<?php echo esc_attr( $class_layout ); if ( penci_get_setting( 'penci_sidebar_archive' ) ) : ?> penci_sidebar <?php echo esc_attr( $sidebar_position ); ?><?php endif; ?>">
-		<div id="main" class="penci-layout-<?php echo esc_attr( $layout_this ); ?><?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> penci-main-sticky-sidebar<?php endif; ?>">
+	<div class="container <?php echo esc_attr( $class_layout ); if ( penci_get_setting( 'penci_sidebar_archive' ) ) : ?> penci_sidebar <?php echo esc_attr( $sidebar_position ); ?><?php endif; ?>">
+		<div id="main" class="penci-layout-<?php echo esc_attr( $layout_this ); ?><?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> penci-main-sticky-sidebar<?php endif; ?> style-01">
 			<div class="theiaStickySidebar">
 				<div class="archive-box">
 					<div class="title-bar">
@@ -84,10 +84,18 @@ if( 'two-sidebar' == $sidebar_position ): $two_sidebar_class = ' two-sidebar'; e
 					$infeed_ads = get_theme_mod( 'penci_infeedads_archi_code' ) ? get_theme_mod( 'penci_infeedads_archi_code' ) : '';
 					$infeed_num = get_theme_mod( 'penci_infeedads_archi_num' ) ? get_theme_mod( 'penci_infeedads_archi_num' ) : 3;
 					$infeed_full = get_theme_mod( 'penci_infeedads_archi_layout' ) ? get_theme_mod( 'penci_infeedads_archi_layout' ) : '';
+					?>
 
-					while ( have_posts() ) : the_post();
-						include( locate_template( 'content-' . $layout_this . '.php' ) );
-					endwhile;
+					<div class="module_blogs">
+						<div class="module_blogs flex flex-wrap xl:gap-10!">
+							<?php
+							while ( have_posts() ) : the_post();
+								include( locate_template( 'content-' . $layout_this . '.php' ) );
+							endwhile;
+							?>
+						</div>
+					</div>
+					<?php
 
 					if( in_array( $layout_this, $class_grid_arr ) ) {
 						echo '</ul>';

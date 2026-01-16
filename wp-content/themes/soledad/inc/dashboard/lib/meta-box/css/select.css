@@ -5,7 +5,7 @@
 	padding: 0;
 }
 .rwmb-select option {
-	padding: 4px 8px;
+	padding: 4px 0.5rem;
 }
 .rwmb-select-all-none {
 	display: block;

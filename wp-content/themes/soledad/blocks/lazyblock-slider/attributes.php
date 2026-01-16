@@ -167,11 +167,11 @@ if ( function_exists( 'lazyblocks' ) ) :
             'placeholder' => '',
             'characters_limit' => '',
          ),
-         'control_text_lth_class' => array(
-            'type' => 'text',
-            'name' => 'class',
-            'default' => '',
-            'label' => 'Class',
+         'control_select_lth_style' => array(
+            'type' => 'select',
+            'name' => 'display_style',
+            'default' => 'style_01',
+            'label' => 'Style',
             'help' => '',
             'child_of' => '',
             'placement' => 'inspector',
@@ -180,10 +180,19 @@ if ( function_exists( 'lazyblocks' ) ) :
             'save_in_meta' => 'false',
             'save_in_meta_name' => '',
             'required' => 'false',
-            'multiline' => 'false',
             'placeholder' => '',
             'characters_limit' => '',
-         ),
+            'choices' => array(
+               array(
+                  'label' => 'Style 01',
+                  'value' => 'style_01',
+               ),
+               array(
+                  'label' => 'Style 02',
+                  'value' => 'style_02',
+               ),
+            ),
+         )
       ),
       'code' => array(
          'output_method' => 'html',

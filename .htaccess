@@ -2,17 +2,17 @@
 #The original can be found in archived file with the name .htaccess__[HASH]
 
 # BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^.*/Products-(\d+)/.*.shtml$ cyr2latq/index\.php?id=$1&%{QUERY_STRING} [L]
-RewriteRule ^(.*)/\d{2}.shtml$ cyr2latq/index\.php?cat=$1&%{QUERY_STRING} [L]
-
-
-
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+
 # END WordPress

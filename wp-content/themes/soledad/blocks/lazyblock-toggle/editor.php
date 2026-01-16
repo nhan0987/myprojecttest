@@ -21,7 +21,7 @@ if (!function_exists('lth__toggle_output')) :
     
     <?php foreach( $attributes['toggle'] as $inner ): ?>
         <?php if (isset($inner['title'])) : ?>
-            <p style="font-size: 12px; padding-top: 10px; padding-left: 35px; margin: 0;"><strong><?php echo esc_html($inner['item_title']); ?></strong></p>
+            <p style="font-size: 0.75rem; padding-top: 0.625rem; padding-left: 2.1875rem; margin: 0;"><strong><?php echo esc_html($inner['item_title']); ?></strong></p>
         <?php endif; ?>
     <?php endforeach; ?>
 

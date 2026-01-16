@@ -6,7 +6,7 @@
 	line-height: 1.8;
 }
 .rwmb-input-list .rwmb-input-list {
-	margin-left: 20px;
+	margin-left: 1.25rem;
 }
 .rwmb-input-list li {
 	list-style: none;
@@ -19,5 +19,5 @@
 	display: inline-block;
 }
 .rwmb-input-list.rwmb-inline li:not(:last-child) {
-	margin-right: 20px;
+	margin-right: 1.25rem;
 }

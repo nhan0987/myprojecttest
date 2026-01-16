@@ -134,7 +134,7 @@ class RWMB_OSM_Field extends RWMB_Field {
 				'latitude'     => $latitude,
 				'longitude'    => $longitude,
 				'width'        => '100%',
-				'height'       => '480px',
+				'height'       => '30rem',
 				'marker'       => true, // Display marker?
 				'marker_title' => '', // Marker title, when hover.
 				'info_window'  => '', // Content of info window (when click on marker). HTML allowed.

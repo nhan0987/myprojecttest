@@ -195,13 +195,13 @@ if( ! class_exists( 'penci_list_bannner_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'img1' ) ); ?>"><?php esc_html_e( '1st Banner URL:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'img1' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'img1' ) ); ?>" value="<?php echo esc_url( $instance['img1'] ); ?>" />
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">You should use image with the width about 400 - 500px.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">You should use image with the width about 400 - 31.25rem.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'url1' ) ); ?>"><?php esc_html_e( 'Banner Link for 1st Banner:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'url1' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'url1' ) ); ?>" value="<?php echo esc_url( $instance['url1'] ); ?>" /><br>
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">It's the link you want to redirect when the readers click to 1st banner</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">It's the link you want to redirect when the readers click to 1st banner</span>
 			</p>
 
 			<p>
@@ -212,13 +212,13 @@ if( ! class_exists( 'penci_list_bannner_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'img2' ) ); ?>"><?php esc_html_e( 'Banner 2nd URL:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'img2' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'img2' ) ); ?>" value="<?php echo esc_url( $instance['img2'] ); ?>" />
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">You should use image with the width about 400 - 500px.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">You should use image with the width about 400 - 31.25rem.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'url2' ) ); ?>"><?php esc_html_e( 'Banner Link for 2nd Banner:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'url2' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'url2' ) ); ?>" value="<?php echo esc_url( $instance['url2'] ); ?>" /><br>
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">It's the link you want to redirect when the readers click to 2nd banner</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">It's the link you want to redirect when the readers click to 2nd banner</span>
 			</p>
 
 			<p>
@@ -229,13 +229,13 @@ if( ! class_exists( 'penci_list_bannner_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'img3' ) ); ?>"><?php esc_html_e( 'Banner 3rd URL:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'img3' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'img3' ) ); ?>" value="<?php echo esc_url( $instance['img3'] ); ?>" />
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">You should use image with the width about 400 - 500px.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">You should use image with the width about 400 - 31.25rem.<br>You can check <a href="https://www.wpbeginner.com/beginners-guide/how-to-get-the-url-of-images-you-upload-in-wordpress/" target="_blank" rel="noreferrer noopener">this guide</a> to know how to get URL of an image you upload.</span>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'url3' ) ); ?>"><?php esc_html_e( 'Banner Link for 3rd Banner:', 'soledad' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'url3' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'url3' ) ); ?>" value="<?php echo esc_url( $instance['url3'] ); ?>" /><br>
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">It's the link you want to redirect when the readers click to 3rd banner</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">It's the link you want to redirect when the readers click to 3rd banner</span>
 			</p>
 
 			<p>
@@ -251,7 +251,7 @@ if( ! class_exists( 'penci_list_bannner_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>"><?php esc_html_e( 'Set Height for Crop Banner Images:', 'soledad' ); ?></label>
 				<input class="widefat" type="number" id="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'height' ) ); ?>" value="<?php echo absint( $instance['height'] ); ?>" />
-				<span class="description" style="padding: 0 0 10px 0; font-size: 12px;">When you check to crop banner images, you can set height here for crop banner image</span>
+				<span class="description" style="padding: 0 0 0.625rem 0; font-size: 0.75rem;">When you check to crop banner images, you can set height here for crop banner image</span>
 			</p>
 
 			<p>

@@ -1,0 +1,100 @@
+[2025-12-12 09:52:22 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 09:52:24 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2025-12-12 09:52:24 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2025-12-12 09:52:24 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2025-12-12 09:52:24 : INFO] - Processing task with ID : 1, and type 'smush' 
+[2025-12-12 09:52:24 : INFO] - Re_Smush_It_Task - Attachment ID : 13730, Started on : December 12, 2025 09:52:24 
+[2025-12-12 09:52:24 : INFO] - File: z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1.jpg, Compression quality: 92 
+[2025-12-12 09:52:26 : INFO] - Backing up the original image - 2025/11/z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1-updraft-pre-smush-original.jpg 
+[2025-12-12 09:52:26 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:52:26 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/11/z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1.jpg.The file was compressed from 263.54 KB to 201.81 KB, saving 23.42 percent, using WP-Optimize 
+[2025-12-12 09:52:26 : INFO] - Completed processing task with ID : 1, and type 'smush' 
+[2025-12-12 09:52:26 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2025-12-12 09:52:26 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2025-12-12 09:52:26 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2025-12-12 09:52:26 : INFO] - Cleaning up tasks of type (smush). A total of 1 tasks will be deleted. 
+[2025-12-12 09:54:15 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 09:54:16 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2025-12-12 09:54:16 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2025-12-12 09:54:16 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2025-12-12 09:54:17 : INFO] - Processing task with ID : 2, and type 'smush' 
+[2025-12-12 09:54:17 : INFO] - Re_Smush_It_Task - Attachment ID : 13688, Started on : December 12, 2025 09:54:16 
+[2025-12-12 09:54:17 : INFO] - File: Icon-dichjvu-chuyen-nghiep.png, Compression quality: 92 
+[2025-12-12 09:54:18 : INFO] - Backing up the original image - 2025/11/Icon-dichjvu-chuyen-nghiep-updraft-pre-smush-original.png 
+[2025-12-12 09:54:18 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:54:18 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/11/Icon-dichjvu-chuyen-nghiep.png.The file was compressed from 10.06 KB to 4.18 KB, saving 58.47 percent, using WP-Optimize 
+[2025-12-12 09:54:18 : INFO] - Completed processing task with ID : 2, and type 'smush' 
+[2025-12-12 09:54:18 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2025-12-12 09:54:18 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2025-12-12 09:54:18 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2025-12-12 09:54:18 : INFO] - Cleaning up tasks of type (smush). A total of 1 tasks will be deleted. 
+[2025-12-12 09:54:36 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 09:54:37 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2025-12-12 09:54:37 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2025-12-12 09:54:37 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2025-12-12 09:54:37 : INFO] - Processing task with ID : 3, and type 'smush' 
+[2025-12-12 09:54:37 : INFO] - Re_Smush_It_Task - Attachment ID : 13736, Started on : December 12, 2025 09:54:37 
+[2025-12-12 09:54:37 : INFO] - File: LOGO-01-1.png, Compression quality: 92 
+[2025-12-12 09:54:38 : INFO] - Backing up the original image - 2025/11/LOGO-01-1-updraft-pre-smush-original.png 
+[2025-12-12 09:54:38 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:54:39 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/11/LOGO-01-1.png.The file was compressed from 6.14 KB to 2.92 KB, saving 52.43 percent, using WP-Optimize 
+[2025-12-12 09:54:39 : INFO] - Completed processing task with ID : 3, and type 'smush' 
+[2025-12-12 09:54:39 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2025-12-12 09:54:39 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2025-12-12 09:54:39 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2025-12-12 09:54:39 : INFO] - Cleaning up tasks of type (smush). A total of 1 tasks will be deleted. 
+[2025-12-12 09:55:03 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 09:55:05 : INFO] - A total of 2 tasks of type smush found and will be processed in this iteration 
+[2025-12-12 09:55:05 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2025-12-12 09:55:05 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2025-12-12 09:55:05 : INFO] - Processing task with ID : 4, and type 'smush' 
+[2025-12-12 09:55:05 : INFO] - Re_Smush_It_Task - Attachment ID : 1532, Started on : December 12, 2025 09:55:05 
+[2025-12-12 09:55:05 : INFO] - File: logo-1.png, Compression quality: 92 
+[2025-12-12 09:55:06 : INFO] - Backing up the original image - 2022/01/logo-1-updraft-pre-smush-original.png 
+[2025-12-12 09:55:08 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:55:08 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2022/01/logo-1.png.The file was compressed from 12.34 KB to 4.73 KB, saving 61.68 percent, using WP-Optimize 
+[2025-12-12 09:55:08 : INFO] - Completed processing task with ID : 4, and type 'smush' 
+[2025-12-12 09:55:08 : INFO] - Processing task with ID : 5, and type 'smush' 
+[2025-12-12 09:55:08 : INFO] - Re_Smush_It_Task - Attachment ID : 13736, Started on : December 12, 2025 09:55:05 
+[2025-12-12 09:55:08 : INFO] - File: LOGO-01-1.png, Compression quality: 92 
+[2025-12-12 09:55:09 : INFO] - Backing up the original image - 2025/11/LOGO-01-1-updraft-pre-smush-original.png 
+[2025-12-12 09:55:09 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:55:09 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/11/LOGO-01-1.png.The file was compressed from 2.92 KB to 2.84 KB, saving 2.88 percent, using WP-Optimize 
+[2025-12-12 09:55:09 : INFO] - Completed processing task with ID : 5, and type 'smush' 
+[2025-12-12 09:55:09 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2025-12-12 09:55:09 : INFO] - Successfully processed the queue (smush). 2 tasks were processed out of 2. 
+[2025-12-12 09:55:09 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2025-12-12 09:55:09 : INFO] - Cleaning up tasks of type (smush). A total of 2 tasks will be deleted. 
+[2025-12-12 09:55:35 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 09:55:37 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2025-12-12 09:55:37 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2025-12-12 09:55:37 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2025-12-12 09:55:37 : INFO] - Processing task with ID : 6, and type 'smush' 
+[2025-12-12 09:55:37 : INFO] - Re_Smush_It_Task - Attachment ID : 1503, Started on : December 12, 2025 09:55:37 
+[2025-12-12 09:55:37 : INFO] - File: logo.png, Compression quality: 92 
+[2025-12-12 09:55:38 : INFO] - Backing up the original image - 2022/01/logo-updraft-pre-smush-original.png 
+[2025-12-12 09:55:38 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 09:55:38 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2022/01/logo.png.The file was compressed from 5.73 KB to 2.81 KB, saving 50.98 percent, using WP-Optimize 
+[2025-12-12 09:55:38 : INFO] - Completed processing task with ID : 6, and type 'smush' 
+[2025-12-12 09:55:38 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2025-12-12 09:55:38 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2025-12-12 09:55:38 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2025-12-12 09:55:38 : INFO] - Cleaning up tasks of type (smush). A total of 1 tasks will be deleted. 
+[2025-12-12 12:28:07 : INFO] - Pruning the smush log file 
+[2025-12-12 16:35:09 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 16:35:11 : INFO] - Processing task with ID : 7, and type 'smush' 
+[2025-12-12 16:35:11 : INFO] - Re_Smush_It_Task - attachment ID : 14686, started on : December 12, 2025 04:35:11 
+[2025-12-12 16:35:11 : INFO] - File: z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1.jpg, Compression quality: 90 
+[2025-12-12 16:35:13 : INFO] - Backing up the original image - 2025/12/z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1-updraft-pre-smush-original.jpg 
+[2025-12-12 16:35:13 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 16:35:13 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/12/z7226736886708_47a4f68f27a7f0b43a6af5c04d7e96a1.jpg.The file was compressed from 136.33 KB to 99.48 KB, saving 27.03 percent, using WP-Optimize 
+[2025-12-12 16:35:13 : INFO] - Completed processing task with ID : 7, and type 'smush' 
+[2025-12-12 16:35:31 : INFO] - Re_Smush_It_Task server status: Online 
+[2025-12-12 16:35:33 : INFO] - Processing task with ID : 8, and type 'smush' 
+[2025-12-12 16:35:33 : INFO] - Re_Smush_It_Task - attachment ID : 14685, started on : December 12, 2025 04:35:33 
+[2025-12-12 16:35:33 : INFO] - File: z7321136791528_5e45f6913ee300dc75d7e0b4e19afd60.jpg, Compression quality: 90 
+[2025-12-12 16:35:36 : INFO] - Backing up the original image - 2025/12/z7321136791528_5e45f6913ee300dc75d7e0b4e19afd60-updraft-pre-smush-original.jpg 
+[2025-12-12 16:35:36 : INFO] - There were no WebP conversion tools found on your server. 
+[2025-12-12 16:35:36 : INFO] - Successfully optimized the image - C:\xampp\htdocs\stnd/wp-content/uploads/2025/12/z7321136791528_5e45f6913ee300dc75d7e0b4e19afd60.jpg.The file was compressed from 185.85 KB to 112.62 KB, saving 39.41 percent, using WP-Optimize 
+[2025-12-12 16:35:36 : INFO] - Completed processing task with ID : 8, and type 'smush' 
+[2025-12-13 06:33:57 : INFO] - Pruning the smush log file 

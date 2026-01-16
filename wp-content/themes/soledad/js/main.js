@@ -1960,6 +1960,184 @@
 				}, 100 );
 			} );
 		}
+	},
+	PENCI.button_expand = function () {
+		var contentDiv = document.getElementById('myContent');
+        var btn = document.getElementById('btnToggle');
+        var btnText = document.getElementById('btnText');
+
+		// Kiểm tra: Nếu thiếu contentDiv HOẶC thiếu btn HOẶC thiếu btnText
+		if (!contentDiv || !btn || !btnText) {
+			// Thì "quay xe" ngay lập tức, không chạy code bên dưới nữa
+			return;
+		}
+
+        btn.addEventListener('click', function() {
+            
+            // Kiểm tra xem đang có class expanded không
+            var isExpanded = contentDiv.classList.contains('expanded');
+
+            if (!isExpanded) {
+                // --- MỞ RA ---
+                
+                // 1. Đo chiều cao thật của nội dung bên trong (scrollHeight)
+                var realHeight = contentDiv.scrollHeight;
+                
+                // 2. Gán chiều cao đó vào style inline -> Kích hoạt transition
+                contentDiv.style.maxHeight = realHeight + "px";
+                
+                // 3. Thêm class để ẩn bóng mờ & xoay mũi tên
+                contentDiv.classList.add('expanded');
+                btn.classList.add('active');
+                btnText.textContent = "Thu gọn";
+
+            } else {
+                // --- ĐÓNG VÀO ---
+                
+                // 1. Gỡ bỏ style inline -> Nó sẽ quay về max-height: 80px trong CSS
+                contentDiv.style.maxHeight = null;
+                
+                // 2. Gỡ class
+                contentDiv.classList.remove('expanded');
+                btn.classList.remove('active');
+                btnText.textContent = "Xem thêm";
+            }
+        });
+	},
+	PENCI.setupExpandToggle = function (config) {
+
+		// 1. Lấy các tham số từ config (có giá trị mặc định cho text)
+		var contentId = config.contentId;
+		var btnId = config.btnId;
+		var textId = config.textId;
+		var textMore = config.textMore || "Xem thêm"; // Mặc định là Xem thêm
+		var textLess = config.textLess || "Thu gọn";  // Mặc định là Thu gọn
+
+		// 2. Lấy element
+		var contentDiv = document.getElementById(contentId);
+		var btn = document.getElementById(btnId);
+		var btnText = document.getElementById(textId);
+
+		// 3. Kiểm tra an toàn: Nếu thiếu 1 trong các thành phần thì dừng
+		if (!contentDiv || !btn) {
+			console.warn('Không tìm thấy content hoặc button cho ID:', contentId, btnId);
+			return;
+		}
+
+		// 4. Gắn sự kiện Click
+		btn.addEventListener('click', function(e) {
+			e.preventDefault(); // Tránh thẻ a bị nhảy trang nếu có
+
+			// Kiểm tra trạng thái hiện tại
+			var isExpanded = contentDiv.classList.contains('expanded');
+
+			if (!isExpanded) {
+				// --- MỞ RA ---
+				var realHeight = contentDiv.scrollHeight;
+				contentDiv.style.maxHeight = realHeight + "px";
+				
+				contentDiv.classList.add('expanded');
+				btn.classList.add('active');
+
+				// btn.style.transform = 'translateY(0px)';
+				
+				// Chỉ đổi chữ nếu có element chứa chữ
+				if (btnText) btnText.textContent = textLess;
+
+			} else {
+				// --- ĐÓNG VÀO ---
+				contentDiv.style.maxHeight = null; // Về lại CSS mặc định (thường là height cố định)
+				
+				contentDiv.classList.remove('expanded');
+				btn.classList.remove('active');
+
+				// btn.style.transform = 'translateY(-36px)';
+				
+				// Chỉ đổi chữ nếu có element chứa chữ
+				if (btnText) btnText.textContent = textMore;
+			}
+		});
+	},
+	PENCI.draw_stroke = function () {
+
+		
+			// 1. Chọn đúng mục tiêu: Thẻ p nằm trong .infor, nằm trong .dash-05
+			const targets = document.querySelectorAll('.dash-05 .infor > p');
+
+			targets.forEach((el, index) => {
+				const text = el.innerText.trim();
+				if (!text) return; // Bỏ qua nếu thẻ rỗng
+
+				// Lấy size chữ hiện tại của thẻ p để SVG tự co giãn theo
+				const style = window.getComputedStyle(el);
+				const fontSize = style.fontSize || '50px';
+				const fontWeight = style.fontWeight || '900';
+				const fontFamily = style.fontFamily || 'sans-serif';
+
+				// Tạo ID duy nhất cho mỗi gradient (Tránh bị trùng lặp)
+				const gradientId = `vipGradient-${index}-${Math.floor(Math.random() * 1000)}`;
+
+				// Template SVG
+				const svgContent = `
+				<svg width="100%" height="auto" viewBox="0 0 350 40" style="overflow: visible; display: block;" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(86)">
+							<stop offset="1.16%" style="stop-color:#FFD45C; stop-opacity:1" />
+							<stop offset="100%" style="stop-color:#9E5625; stop-opacity:1" />
+						</linearGradient>
+					</defs>
+					<text x="50%" y="55%" 
+						text-anchor="middle" 
+						dominant-baseline="middle"
+						font-family="${fontFamily}" 
+						font-weight="${fontWeight}" 
+						font-size="${fontSize}" 
+						fill="transparent" 
+						stroke="url(#${gradientId})" 
+						stroke-width="1.5px">
+						${text}
+					</text>
+				</svg>
+				`;
+
+				// Thay thế nội dung cũ bằng SVG xịn
+				el.innerHTML = svgContent;
+			});
+		
+		
+	},
+	PENCI.section_reveal = function (selector) {
+
+		// 1. Tạo "Người quan sát"
+		const observer = new IntersectionObserver((entries, observer) => {
+
+			entries.forEach(entry => {
+
+				// Nếu phần tử xuất hiện trong khung hình
+				if (entry.isIntersecting) {
+					// Thêm class 'active' để kích hoạt CSS transition
+					entry.target.classList.add('active');
+					
+					// Ngừng quan sát ngay lập tức (để hiệu ứng chỉ chạy 1 lần)
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			root: null,    // Quan sát so với khung nhìn trình duyệt
+			threshold: 0.15, // Phần tử hiện ra 15% thì mới bắt đầu hiệu ứng (tránh bị hiện quá sớm)
+			rootMargin: "0px 0px -50px 0px" // Dời vùng kích hoạt lên trên một chút để hiệu ứng xảy ra đúng tầm mắt
+		});
+
+		// 2. Gán người quan sát dựa trên selector được truyền vào
+            const hiddenElements = document.querySelectorAll(selector);
+            
+            if(hiddenElements.length === 0) {
+                console.warn("Cảnh báo: Không tìm thấy class " + selector + " nào cả!");
+            } else {
+                
+                hiddenElements.forEach((el) => observer.observe(el));
+            }
+        
 	};
 
 
@@ -1987,6 +2165,21 @@
 		PENCI.VideosList.init();
 		PENCI.JumtoRecipe();
 		PENCI.Single_Loadmore();
+		PENCI.button_expand();
+		
+		PENCI.setupExpandToggle({
+			contentId: 'left-content',
+			btnId: 'btn-toggle-left',
+			textId: 'btn-text-left',
+			
+		});
+		PENCI.setupExpandToggle({
+			contentId: 'right-content',
+			btnId: 'btn-toggle-right',
+			textId: 'btn-text-right',
+			
+		});
+		PENCI.section_reveal('.section-reveal'); 
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
 	});
 })(jQuery);	// EOF

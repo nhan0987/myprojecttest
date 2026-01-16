@@ -18,7 +18,7 @@ if (!function_exists('lth__custom_block_output')) :
     function lth__custom_block_output($output, $attributes) {
         ob_start();
 ?>
-    <div style="font-size: 12px; padding-top: 10px; padding-left: 35px; margin: 0;">
+    <div style="font-size: 0.75rem; padding-top: 0.625rem; padding-left: 2.1875rem; margin: 0;">
         <strong>Custom Block</strong>
         <?php
         $page_id = isset($attributes['Page']) ? $attributes['Page'] : '';

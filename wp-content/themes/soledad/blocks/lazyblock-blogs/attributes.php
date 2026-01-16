@@ -300,6 +300,10 @@ if (function_exists('lazyblocks')) :
                   'label' => 'Grid',
                   'value' => 'grid',
                ),
+               array(
+                  'label' => 'Mixed',
+                  'value' => 'mixed',
+               )
             ),
          ),
          'control_select_lth_post_style_2' => array(

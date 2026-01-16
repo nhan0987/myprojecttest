@@ -105,7 +105,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'image_bord
 	'label'       => 'Custom Border Radius for Featured Images',
 	'section'     => 'pencidesign_new_section_general',
 	'settings'    => 'penci_image_border_radius',
-	'description' => 'Fill value for border radius you want here - You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>',
+	'description' => 'Fill value for border radius you want here - You can use pixel or percent. E.g:  <strong>0.625rem</strong>  or  <strong>10%</strong>',
 ) ) );
 
 $wp_customize->add_setting( 'penci_general_views_meta', array(
@@ -810,15 +810,15 @@ foreach ( $list_block_social as $social_id => $social_label ) {
 /* Manage Image Sizes */
 $list_image_sizes = array(
 	'penci_dthumb_1920_auto'   => esc_html__( 'Disable Image Size - 1920 x auto', 'soledad' ),
-	'penci_dthumb_1920_800'   => esc_html__( 'Disable Image Size - 1920 x 800px', 'soledad' ),
+	'penci_dthumb_1920_800'   => esc_html__( 'Disable Image Size - 1920 x 50rem', 'soledad' ),
 	'penci_dthumb_1170_auto'   => esc_html__( 'Disable Image Size - 1170 x auto', 'soledad' ),
-	'penci_dthumb_1170_663'   => esc_html__( 'Disable Image Size - 1170 x 663px', 'soledad' ),
-	'penci_dthumb_780_516'   => esc_html__( 'Disable Image Size - 780 x 516px', 'soledad' ),
-	'penci_dthumb_585_390'   => esc_html__( 'Disable Image Size - 585 x 390px', 'soledad' ),
+	'penci_dthumb_1170_663'   => esc_html__( 'Disable Image Size - 1170 x 41.4375rem', 'soledad' ),
+	'penci_dthumb_780_516'   => esc_html__( 'Disable Image Size - 780 x 32.25rem', 'soledad' ),
+	'penci_dthumb_585_390'   => esc_html__( 'Disable Image Size - 585 x 24.375rem', 'soledad' ),
 	'penci_dthumb_585_auto'   => esc_html__( 'Disable Image Size - 585 x auto', 'soledad' ),
-	'penci_dthumb_585_585' => esc_html__( 'Disable Image Size - 585 x 585px', 'soledad' ),
-	'penci_dthumb_480_650'  => esc_html__( 'Disable Image Size - 480 x 650px', 'soledad' ),
-	'penci_dthumb_263_175'  => esc_html__( 'Disable Image Size - 263 x 175px', 'soledad' )
+	'penci_dthumb_585_585' => esc_html__( 'Disable Image Size - 585 x 36.5625rem', 'soledad' ),
+	'penci_dthumb_480_650'  => esc_html__( 'Disable Image Size - 480 x 40.625rem', 'soledad' ),
+	'penci_dthumb_263_175'  => esc_html__( 'Disable Image Size - 263 x 10.9375rem', 'soledad' )
 );
 foreach ( $list_image_sizes as $id_size => $label_size ) {
 	$wp_customize->add_setting( $id_size, array(

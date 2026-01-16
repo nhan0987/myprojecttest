@@ -5,7 +5,7 @@
 }
 .rwmb-text_list-non-cloneable > .rwmb-input > label,
 .rwmb-text_list-clone > label {
-	margin: 0 10px 10px 0;
+	margin: 0 0.625rem 0.625rem 0;
 }
 .rwmb-text_list-non-cloneable > .rwmb-input > label:last-child,
 .rwmb-text_list-clone > label:last-child {

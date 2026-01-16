@@ -1,5 +1,5 @@
 .rwmb-upload-area {
-	height: 200px;
+	height: 12.5rem;
 	border: 4px dashed #ddd;
 	display: flex;
     align-items: center;
@@ -7,7 +7,7 @@
 	text-align: center;
 }
 .rwmb-upload-inside h3 {
-	font-size: 20px;
+	font-size: 1.25rem;
 	line-height: 1.4;
 	font-weight: 400;
 	margin: 0;

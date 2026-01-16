@@ -13,7 +13,7 @@ if ( ! get_theme_mod( 'penci_vertical_nav_show' ) ) { ?>
 	<nav id="sidebar-nav" class="<?php echo esc_attr( $header_layout ); ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 
 		<?php if ( ! get_theme_mod( 'penci_header_logo_vertical' ) ) : ?>
-			<div id="sidebar-nav-logo">
+			<div id="sidebar-nav-logo" class="flex justify-center">
 				<?php if( ! get_theme_mod('penci_disable_lazyload_layout') ) { ?>
 					<?php if ( get_theme_mod( 'penci_mobile_nav_logo' ) ) { ?>
 						<a href="<?php echo $logo_url_nav; ?>"><img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" data-src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
@@ -35,9 +35,9 @@ if ( ! get_theme_mod( 'penci_vertical_nav_show' ) ) { ?>
 		<?php endif; ?>
 
 		<?php if ( ! get_theme_mod( 'penci_header_social_vertical' ) ) : ?>
-			<div class="header-social sidebar-nav-social<?php if( get_theme_mod('penci_header_social_vertical_brand') ): echo ' penci-social-textcolored'; endif; ?>">
+			<!-- <div class="header-social sidebar-nav-social<?php if( get_theme_mod('penci_header_social_vertical_brand') ): echo ' penci-social-textcolored'; endif; ?>">
 				<?php get_template_part( 'inc/modules/socials' ); ?>
-			</div>
+			</div> -->
 		<?php endif; ?>
 		
 		<?php if( get_theme_mod('penci_vernav_searchform') ): ?>

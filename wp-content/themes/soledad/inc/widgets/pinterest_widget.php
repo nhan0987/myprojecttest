@@ -346,7 +346,7 @@ if( ! class_exists( 'Penci_Pinterest_Widget' ) ) {
 			</p>
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>">Enter the <strong style="color: #ff0000;">username</strong> or <strong style="color: #ff0000;">username/board_name</strong> for load images:</label>
-				<p class="description" style="padding: 0; margin-bottom: 13px;">Example if you want to load a board has url <strong style="color: #ff0000;"><a href="https://www.pinterest.com/thefirstmess/animals-cuteness" target="_blank">https://www.pinterest.com/thefirstmess/animals-cuteness</a></strong> You need to fill <strong style="color: #ff0000;">thefirstmess/animals-cuteness</strong></p>
+				<p class="description" style="padding: 0; margin-bottom: 0.8125rem;">Example if you want to load a board has url <strong style="color: #ff0000;"><a href="https://www.pinterest.com/thefirstmess/animals-cuteness" target="_blank">https://www.pinterest.com/thefirstmess/animals-cuteness</a></strong> You need to fill <strong style="color: #ff0000;">thefirstmess/animals-cuteness</strong></p>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'username' ) ); ?>" type="text" value="<?php echo sanitize_text_field( $instance['username'] ); ?>" />
 			</p>
 			<p>

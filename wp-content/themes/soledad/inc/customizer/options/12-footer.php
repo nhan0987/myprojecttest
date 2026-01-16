@@ -56,8 +56,8 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'penci_foot
 	'settings' => 'penci_footer_width',
 	'type'     => 'select',
 	'choices'  => array(
-		''          => esc_html__( 'Width: 1170px', 'soledad' ),
-		'1400'      => esc_html__( 'Width: 1400px', 'soledad' ),
+		''          => esc_html__( 'Width: 73.125rem', 'soledad' ),
+		'1400'      => esc_html__( 'Width: 87.5rem', 'soledad' ),
 		'fullwidth' => esc_html__( 'Full Width', 'soledad' )
 	)
 ) ) );

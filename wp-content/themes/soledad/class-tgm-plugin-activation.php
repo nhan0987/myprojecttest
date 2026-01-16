@@ -668,7 +668,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				$penci_dismis_notes = get_option( 'penci_dismiss_notices', '' );
 				?>
 				<?php if( 'yes' != $penci_dismis_notes ): ?>
-				<style>.dis-missnote p{ font-size: 16px; }.penci-plugins-notice{ padding: 0 20px 0px; border: 1px solid #cccccc; margin-bottom: 20px; } .penci-notice-head{ display: inline-block; background: #02CA02; padding: 0 5px; color: #fff; font-weight: 500; }</style>
+				<style>.dis-missnote p{ font-size: 1rem; }.penci-plugins-notice{ padding: 0 1.25rem 0px; border: 1px solid #cccccc; margin-bottom: 1.25rem; } .penci-notice-head{ display: inline-block; background: #02CA02; padding: 0 5px; color: #fff; font-weight: 500; }</style>
 				<div class="penci-plugins-notice">
 					<h3><?php esc_html_e( 'Please note that this theme does not require any plugin - you can pick plugins you want to use and activate it. Below is more detail about features of each plugin:', 'tgmpa' ); ?></h3>
 					<p class="penci-dplugins"><span class="penci-notice-head">Penci Shortcodes & Performance:</span> <?php esc_html_e( 'You should activate this plugin. It provide some shortcodes inside the editor & language shortcodes to help you can build multiple languages website. We also hook most optimize options speed functions via this plugin.', 'tgmpa' ); ?></p>

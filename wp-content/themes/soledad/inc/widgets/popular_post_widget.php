@@ -294,7 +294,7 @@ if( ! class_exists( 'penci_popular_news_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title_length' ) ); ?>"><?php esc_html_e('Custom words length for post titles:', 'soledad'); ?></label>
 				<input  type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title_length' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title_length' ) ); ?>" value="<?php echo esc_attr( $instance['title_length'] ); ?>" size="3" />
-				<span class="description" style="display: block; padding: 0;font-size: 12px;">If your post titles is too long - You can use this option for trim it. Fill number value here.</span>
+				<span class="description" style="display: block; padding: 0;font-size: 0.75rem;">If your post titles is too long - You can use this option for trim it. Fill number value here.</span>
 			</p>
 
 			<!-- Display thumbnail right -->
@@ -307,7 +307,7 @@ if( ! class_exists( 'penci_popular_news_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'twocolumn' ) ); ?>"><?php esc_html_e('Display on 2 columns?:','soledad'); ?></label>
 				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'twocolumn' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twocolumn' ) ); ?>" <?php checked( (bool) $instance['twocolumn'], true ); ?> />
-				<span class="description" style="display: block; padding: 0;font-size: 12px;">If you use 2 columns option, it will ignore option display thumbnail on right.</span>
+				<span class="description" style="display: block; padding: 0;font-size: 0.75rem;">If you use 2 columns option, it will ignore option display thumbnail on right.</span>
 			</p>
 
 			<!-- Display latest post featured -->
@@ -326,7 +326,7 @@ if( ! class_exists( 'penci_popular_news_widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'allfeatured' ) ); ?>"><?php esc_html_e('Display all post featured?:','soledad'); ?></label>
 				<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'allfeatured' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'allfeatured' ) ); ?>" <?php checked( (bool) $instance['allfeatured'], true ); ?> />
-				<span class="description" style="display: block; padding: 0;font-size: 12px;">If you use all post featured option, it will ignore option display thumbnail on right & 2 columns.</span>
+				<span class="description" style="display: block; padding: 0;font-size: 0.75rem;">If you use all post featured option, it will ignore option display thumbnail on right & 2 columns.</span>
 			</p>
 
 			<!-- Hide Order Numbers -->

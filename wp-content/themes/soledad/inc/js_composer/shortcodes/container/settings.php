@@ -20,9 +20,9 @@ vc_map( array(
 			'heading'    => esc_html__( 'Choose with container', 'soledad' ),
 			'param_name' => 'el_width',
 			'value'      => array(
-				esc_html__( 'Container ( width: 1080px ) ', 'soledad' )        => 'w1080',
-				esc_html__( 'Container normal ( width: 1170px ) ', 'soledad' ) => 'w1170',
-				esc_html__( 'Container fluid ( width: 1400px ) ', 'soledad' )  => 'w1400',
+				esc_html__( 'Container ( width: 67.5rem ) ', 'soledad' )        => 'w1080',
+				esc_html__( 'Container normal ( width: 73.125rem ) ', 'soledad' ) => 'w1170',
+				esc_html__( 'Container fluid ( width: 87.5rem ) ', 'soledad' )  => 'w1400',
 			),
 			'std'        => 'w1170',
 		),

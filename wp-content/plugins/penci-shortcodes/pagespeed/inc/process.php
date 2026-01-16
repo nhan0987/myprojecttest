@@ -223,39 +223,73 @@ class Process {
 	}
 
 	public function hpp_defer_imgs( $str ) {
+		// 1. Nếu tắt tính năng lazy load trong cài đặt thì return luôn
 		if ( get_theme_mod( 'penci_speed_disable_lazy', false ) ) {
 			return $str;
 		}
+		
 		$str0 = $str;
 		if ( ! isset( $GLOBALS['hpp_tags'] ) ) {
 			$GLOBALS['hpp_tags'] = [];
 		}
 		$tags = &$GLOBALS['hpp_tags'];
+
+		// --- BƯỚC 1: Xử lý thẻ có SRC (img hoặc iframe) ---
 		$str  = preg_replace_callback( '#<(img|iframe)(((?!>).)*)\s+?src=(((?!;base64,).)*?)>#si', function ( $m ) use ( &$tags ) {
-			#$tags[$m[0]] = 1;
+			
+			/* --- NEPTUNE ADDED: KIỂM TRA CLASS NO-LAZY --- */
+			// Dùng Regex để tìm xem trong thẻ có class nào tên là no-lazy không
+			if ( preg_match( '/class=["\'][^"\']*no-lazy[^"\']*["\']/i', $m[0] ) ) {
+				$tags[ $m[0] ] = false; // Đánh dấu thẻ này là "Cấm đụng vào"
+				return $m[0];           // Trả về nguyên gốc
+			}
+			/* --------------------------------------------- */
+
+			// Kiểm tra xem đã có data-src chưa hoặc đã bị đánh dấu cấm chưa
 			if ( strpos( $m[0], ' data-src=' ) !== false || ( isset( $tags[ $m[0] ] ) && ! $tags[ $m[0] ] ) ) {
 				return $m[0];
 			}
-			$tag           = '<' . $m[1] . $m[2] . ' src=' . $m[4] . '>';
-			$tags[ $m[0] ] = ! apply_filters( 'hpp_disallow_lazyload', false, $tag );
-			$w             = $this->hpp_getAttr( $m[4] . ' ' . $m[2], 'width', 3 );
-			$h             = $this->hpp_getAttr( $m[4] . ' ' . $m[2], 'height', 2 );
+			
+			$tag                       = '<' . $m[1] . $m[2] . ' src=' . $m[4] . '>';
+			// Kiểm tra filter hpp_disallow_lazyload xem có plugin nào khác chặn không
+			$tags[ $m[0] ]             = ! apply_filters( 'hpp_disallow_lazyload', false, $tag );
+			
+			$w                         = $this->hpp_getAttr( $m[4] . ' ' . $m[2], 'width', 3 );
+			$h                         = $this->hpp_getAttr( $m[4] . ' ' . $m[2], 'height', 2 );
 
+			// Thay thế src bằng placeholder base64 và đẩy src thật vào data-src
 			return $tags[ $m[0] ] ? '<' . $m[1] . $m[2] . ( $m[1] == 'img' ? ' src="' . $this->hpp_b64holder( '"', $w, $h ) . '"' : ' class="penci-lazy"' ) . ' data-src=' . $m[4] . '>' : $tag;
 		}, $str );
+
 		if ( $str === null ) {
 			return $str0;
 		}
+
 		$class = 'penci-lazy';
+
+		// --- BƯỚC 2: Thêm class 'penci-lazy' vào các thẻ ĐÃ CÓ class ---
 		$str   = preg_replace_callback( '#<(img)(((?!>).)*)\s+?class=(\'|")(((?! ' . $class . ' ).)*?)>#si', function ( $m ) use ( $class, &$tags ) {
+			// Nếu thẻ này đã bị đánh dấu false ở Bước 1 (do có no-lazy), thì bỏ qua luôn
 			if ( isset( $tags[ $m[0] ] ) && ! $tags[ $m[0] ] ) {
 				return $m[0];
 			}
+
+			/* --- NEPTUNE ADDED: CHECK LẠI CHO CHẮC --- */
+			// Phòng trường hợp bước 1 bị sót (ví dụ thẻ img không có src nhưng có class)
+			// $m[5] chính là nội dung bên trong class="..."
+			if ( strpos( $m[5], 'no-lazy' ) !== false ) {
+				$tags[ $m[0] ] = false;
+				return $m[0];
+			}
+			/* --------------------------------------- */
+
 			$tag = '<' . $m[1] . $m[2] . ' class=' . $m[4] . ' ' . $m[5] . '>';
 
 			return 1 || $tags[ $m[0] ] ? '<' . $m[1] . $m[2] . ' class=' . $m[4] . ' ' . $class . ' ' . $m[5] . '>' : $tag;
 		}, $str );
 
+		// --- BƯỚC 3: Thêm class 'penci-lazy' vào các thẻ CHƯA CÓ class ---
+		// (Ở đây không cần check no-lazy vì thẻ không có attribute class thì làm gì có no-lazy ^^)
 		$str = preg_replace_callback( '#<(img)(((?! class=).)*?)>#si', function ( $m ) use ( $class, &$tags ) {
 			if ( isset( $tags[ $m[0] ] ) && ! $tags[ $m[0] ] ) {
 				return $m[0];
@@ -265,18 +299,24 @@ class Process {
 			return 1 || $tags[ $m[0] ] ? '<' . $m[1] . ' class=" ' . $class . ' "' . $m[2] . '>' : $tag;
 		}, $str );
 
-		$str = preg_replace_callback( '#<(img|iframe)(((?!>).)*)\s+?srcset=(((?!;base64,).)*?)>#si', function ( $m ) use ( &$tags ) {
-			if ( isset( $tags[ $m[0] ] ) && ! $tags[ $m[0] ] ) {
-				return $m[0];
-			}
+    // --- BƯỚC 4: Xử lý srcset ---
+    $str = preg_replace_callback( '#<(img|iframe)(((?!>).)*)\s+?srcset=(((?!;base64,).)*?)>#si', function ( $m ) use ( &$tags ) {
+        if ( isset( $tags[ $m[0] ] ) && ! $tags[ $m[0] ] ) {
+            return $m[0];
+        }
 
-			return '<' . $m[1] . $m[2] . ' data-srcset=' . $m[4] . '>';
-		}, $str );
+        /* --- NEPTUNE ADDED: CHECK NO-LAZY TRƯỚC KHI ĐỔI SRCSET --- */
+        if ( preg_match( '/class=["\'][^"\']*no-lazy[^"\']*["\']/i', $m[0] ) ) {
+             return $m[0];
+        }
+        /* ------------------------------------------------------- */
+
+        return '<' . $m[1] . $m[2] . ' data-srcset=' . $m[4] . '>';
+    }, $str );
 
 
-		return $str;
-	}
-
+    return $str;
+}
 	public function hpp_getAttr( $tag, $attr, $val = '' ) {
 		if ( is_array( $attr ) ) {
 			$atts = [];
