@@ -39,7 +39,7 @@ if ( ! empty( $args ) ) {
 		endif;
 		?>
 		<div class="post-related<?php if( get_theme_mod('penci_post_related_grid') ): echo ' penci-posts-related-grid'; endif; ?>">
-		<div class="dash-04">
+		<div class="dash-07">
 			<div class="title-box">
 				<h2 class="title">
 					<p><?php echo penci_get_setting( 'penci_post_related_text' ); ?></p>

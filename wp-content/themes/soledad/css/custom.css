@@ -75,7 +75,12 @@ p:last-child {
 
 .wrapper-boxed .container-default-page {
 	padding: 0;
-	margin-top: 1rem;
+	margin-top: 3rem;
+}
+@media (min-width:1280px) {
+	.wrapper-boxed .container-default-page {
+		margin-top: 1rem;
+	}
 }
 @media (min-width:1536px) {
 	.wrapper-boxed .container-default-page {
@@ -1984,6 +1989,10 @@ p:last-child {
 
 }
 
+.home-page-slider {
+	aspect-ratio: 375 / 360;
+}
+
 .home-page-slider img {
 	width: 114rem;
 	height: 22.5rem;
@@ -2000,6 +2009,9 @@ p:last-child {
 	.sub-page-slider img {
 		width: 114rem;
 		height: 40rem;
+	}
+	.home-page-slider {
+		aspect-ratio: 1824 / 640;
 	}
 }
 
@@ -3185,7 +3197,7 @@ html {
 }
 
 .just-email-form.email-form-style-01 .wpcf7-submit {
-	top: 17% !important;
+	/* top: 17% !important; */
 	right: -2.4375rem !important;
 }
 
@@ -5873,4 +5885,138 @@ form.wpcf7-form>div{
 	color: #888;
     font-size: 0.8125rem;
     margin: 0 0.9375rem 0 1.1875rem;
+}
+
+#sidebar-nav-logo img.penci-lazy {
+    width: auto !important; 
+    height: auto !important;
+
+}
+
+.post-entry h2 {
+	position: relative;
+	margin: 0;
+	padding-bottom: 16px; /* Tăng padding để có không gian cho 2 vạch chéo */
+	display: inline-block;
+}
+
+/* Thanh màu vàng - Nằm phía trên và lệch trái */
+.post-entry h2::before {
+	content: "";
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    height: 3px;
+    width: 55px;
+    background-color: #ffcc66;
+    border-radius: 0px;
+    z-index: 2;
+}
+
+/* Thanh màu xám đậm - Nằm phía dưới và lệch phải (so le) */
+.post-entry h2::after {
+	content: "";
+    position: absolute;
+    left: 40px;
+    bottom: 6px;
+    height: 3px;
+    width: 55px;
+    background-color: #2c3e50;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.date-badge {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center; /* Căn giữa 2 dòng với nhau */
+	
+}
+
+/* Định dạng cho Ngày/Tháng (Dòng trên) */
+.date-badge .day-month {
+	font-size: 27px;
+	font-weight: 700;    /* Chữ siêu đậm */
+	color: #222222;      /* Đen/xám đậm */
+	
+}
+
+/* Định dạng cho Năm (Dòng dưới) */
+.date-badge .year {
+	font-size: 22px;
+	font-weight: 700;
+	color: #ffffff;      /* Chữ màu trắng */
+	background-color: #FEBD55; /* Nền vàng cam chuẩn màu ảnh */
+	padding: 2px 6px;    /* Đệm khoảng trống xung quanh chữ */
+	border-radius: 4px;  /* Bo góc nhẹ cho mềm mại */
+	letter-spacing: 4px; /* Bí quyết đây! Giãn cách các chữ số ra xa nhau */
+	text-align: center;
+}
+
+.post-box-meta-single .penci-cat-name {
+	font-size: 14px !important;         /* text-[14px]! */
+    font-weight: 500 !important;        /* font-medium! */
+    text-transform: uppercase;          /* uppercase */
+    color: #FEBD55 !important;          /* text-[#FEBD55]! */
+    background-color: #232D39 !important; /* bg-[#232D39]! */
+    border-radius: 2rem !important;     
+    padding-left: 1rem !important;      /* px-4! (4 * 0.25rem) */
+    padding-right: 1rem !important;     /* px-4! (4 * 0.25rem) */
+}
+
+.header-standard.header-classic {
+    margin: 0 0 16px 0 !important;
+    padding: 0;
+}
+.post-tags{
+	margin-top: 0rem !important;
+}
+
+.cat > a.penci-cat-name:after {
+    
+    display: none !important;
+    
+}
+
+.post-tags a {
+    text-transform: none;
+    color: #1b1919;
+    padding: 0.5rem 1.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 0.875rem !important;
+    background: none;
+    border: 1px solid #DEDEDE;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    outline: none;
+    font-weight: normal;
+    line-height: 1.2;
+    border-radius: 36px;
+}
+.post-tags a::before {
+    content:"\0023";
+}
+
+.tags-share-box {
+	border-top: 0px solid #DEDEDE !important;
+}
+
+/* Hiệu ứng trượt cho Sidebar mục lục từ bên TRÁI */
+#toc-sidebar {
+	transition: transform 0.3s ease-in-out;
+	transform: translateX(-100%);
+}
+#toc-sidebar.open {
+	transform: translateX(0);
+}
+
+#toc-list>li {
+	list-style: decimal !important;
+}
+/* Làm mượt khi cuộn trang */
+html {
+	scroll-behavior: smooth;
 }

@@ -4322,7 +4322,11 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 		wp_enqueue_style('bootstrap', THEME_URI . '/css/bootstrap.min.css', false, 'all');
 		wp_enqueue_style('fancybox', THEME_URI . '/css/jquery.fancybox.min.css', false, 'all');
 		wp_enqueue_style('swiper', THEME_URI . '/css/swiper-bundle.min.css', false, 'all');
-		wp_enqueue_style('custom', THEME_URI . '/css/custom.css', false, 'all');
+
+		$custom_cssfile_path = get_template_directory() . '/css/custom.css';
+		$version = file_exists($custom_cssfile_path) ? filemtime($custom_cssfile_path) : '1.0';
+
+		wp_enqueue_style('custom', THEME_URI . '/css/custom.css', false, $version);
 		wp_enqueue_style('stnd', THEME_URI . '/css/stnd-icons.css', false, 'all');
 	}
 	add_action('wp_enqueue_scripts', 'lth_theme_styles');

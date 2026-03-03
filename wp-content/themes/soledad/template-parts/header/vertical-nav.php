@@ -14,15 +14,28 @@ if ( ! get_theme_mod( 'penci_vertical_nav_show' ) ) { ?>
 
 		<?php if ( ! get_theme_mod( 'penci_header_logo_vertical' ) ) : ?>
 			<div id="sidebar-nav-logo" class="flex justify-center">
-				<?php if( ! get_theme_mod('penci_disable_lazyload_layout') ) { ?>
+				<?php if( ! get_theme_mod('penci_disable_lazyload_layout') ) {
+					
+					?>
 					<?php if ( get_theme_mod( 'penci_mobile_nav_logo' ) ) { ?>
-						<a href="<?php echo $logo_url_nav; ?>"><img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" data-src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
+						<a href="<?php echo $logo_url_nav; ?>">
+							<img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" 
+							data-src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" 
+							alt="<?php bloginfo( 'name' ); ?>" />
+						</a>
 					<?php } elseif( get_theme_mod( 'penci_logo' ) ) { ?>
 						<a href="<?php echo $logo_url_nav; ?>"><img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" data-src="<?php echo esc_url( get_theme_mod( 'penci_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
 					<?php } else { ?>
 						<a href="<?php echo $logo_url_nav; ?>"><img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" data-src="<?php echo get_template_directory_uri(); ?>/images/mobile-logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
 					<?php } ?>
-				<?php } else { ?>
+				<?php } else {
+					
+
+					echo "<pre>";
+					print_r("2");
+					echo "</pre>";
+					
+					?>
 					<?php if ( get_theme_mod( 'penci_mobile_nav_logo' ) ) { ?>
 						<a href="<?php echo $logo_url_nav; ?>"><img src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
 					<?php } elseif( get_theme_mod( 'penci_logo' ) ) { ?>
