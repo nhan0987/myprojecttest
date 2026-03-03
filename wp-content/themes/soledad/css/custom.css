@@ -5896,7 +5896,7 @@ form.wpcf7-form>div{
 .post-entry h2 {
 	position: relative;
 	margin: 0;
-	padding-bottom: 16px; /* Tăng padding để có không gian cho 2 vạch chéo */
+	padding-bottom: 1rem; /* Tăng padding để có không gian cho 2 vạch chéo */
 	display: inline-block;
 }
 
@@ -5905,9 +5905,9 @@ form.wpcf7-form>div{
 	content: "";
     position: absolute;
     left: 0;
-    bottom: 12px;
+    bottom: 0.75rem;
     height: 3px;
-    width: 55px;
+    width: 3.4375rem;
     background-color: #ffcc66;
     border-radius: 0px;
     z-index: 2;
@@ -5917,10 +5917,10 @@ form.wpcf7-form>div{
 .post-entry h2::after {
 	content: "";
     position: absolute;
-    left: 40px;
-    bottom: 6px;
+    left: 2.5rem;
+    bottom: 0.375rem;
     height: 3px;
-    width: 55px;
+    width: 3.4375rem;
     background-color: #2c3e50;
     border-radius: 2px;
     z-index: 1;
@@ -5935,7 +5935,7 @@ form.wpcf7-form>div{
 
 /* Định dạng cho Ngày/Tháng (Dòng trên) */
 .date-badge .day-month {
-	font-size: 27px;
+	font-size: 1.6875rem;
 	font-weight: 700;    /* Chữ siêu đậm */
 	color: #222222;      /* Đen/xám đậm */
 	
@@ -5943,18 +5943,18 @@ form.wpcf7-form>div{
 
 /* Định dạng cho Năm (Dòng dưới) */
 .date-badge .year {
-	font-size: 22px;
+	font-size: 1.375rem;
 	font-weight: 700;
 	color: #ffffff;      /* Chữ màu trắng */
 	background-color: #FEBD55; /* Nền vàng cam chuẩn màu ảnh */
-	padding: 2px 6px;    /* Đệm khoảng trống xung quanh chữ */
+	padding: 2px 0.375rem;    /* Đệm khoảng trống xung quanh chữ */
 	border-radius: 4px;  /* Bo góc nhẹ cho mềm mại */
 	letter-spacing: 4px; /* Bí quyết đây! Giãn cách các chữ số ra xa nhau */
 	text-align: center;
 }
 
 .post-box-meta-single .penci-cat-name {
-	font-size: 14px !important;         /* text-[14px]! */
+	font-size: 0.875rem !important;         /* text-[0.875rem]! */
     font-weight: 500 !important;        /* font-medium! */
     text-transform: uppercase;          /* uppercase */
     color: #FEBD55 !important;          /* text-[#FEBD55]! */
@@ -5965,7 +5965,7 @@ form.wpcf7-form>div{
 }
 
 .header-standard.header-classic {
-    margin: 0 0 16px 0 !important;
+    margin: 0 0 1rem 0 !important;
     padding: 0;
 }
 .post-tags{

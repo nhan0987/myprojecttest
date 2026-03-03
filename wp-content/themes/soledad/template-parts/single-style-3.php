@@ -88,7 +88,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 						
 							<!-- <span class="material-symbols-outlined">calendar_today</span> -->
 							<!-- <?php penci_soledad_time_link('single'); ?> -->
-						<div class="date-badge flex-none w-[82px]">
+						<div class="date-badge flex-none w-[5.125rem]">
 							<span class="day-month"><?php echo get_the_date('d/m'); ?></span>
 							<span class="year"><?php echo get_the_date('Y'); ?></span>
 
@@ -97,7 +97,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 
 						<div class="flex-1">
 							<!-- title box -->
-							<h1 class="post-title single-post-title entry-title mb-0! font-bold! text-[20px] lg:text-[32px]!"><?php the_title(); ?></h1>
+							<h1 class="post-title single-post-title entry-title mb-0! font-bold! text-[1.25rem] lg:text-[2rem]!"><?php the_title(); ?></h1>
 							<!-- <?php get_template_part( 'template-parts/single', 'post-format' ); ?> -->
 						</div>
 
@@ -108,7 +108,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 
 					<div class="w-full h-0"></div>
 
-					<div class="flex-none w-[82px] hidden lg:flex justify-center">
+					<div class="flex-none w-[5.125rem] hidden lg:flex justify-center">
 						<button id="toc-toggle" class="mt-6! w-12 h-12 bg-white border border-gray-200 rounded-full! hidden lg:flex items-center justify-center hover:bg-gray-50 transition-all ">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
