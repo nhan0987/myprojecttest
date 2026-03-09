@@ -4466,3 +4466,57 @@ if (! function_exists('penci_woocommerce_header_add_to_cart_fragment')) {
 	}
 	add_action( 'after_setup_theme', 'custom_image_sizes' );
 
+	/**
+ * Neptune's Magic: Tìm và render Lazy Block chính xác theo blockId
+ * * @param int    $post_id  ID của Bài viết/Trang chứa block đó
+ * @param string $block_id Mã blockId của Lazy Block (ví dụ: 'DjdtP')
+ * @return string HTML của block hoặc chuỗi rỗng nếu không thấy
+ */
+function get_lazyblock_by_id( $post_id, $block_id ) {
+    // 1. Lấy dữ liệu bài viết
+    $post = get_post( $post_id );
+    if ( ! $post ) {
+        return '';
+    }
+
+	//
+
+		// 3. Thực hiện ghi log
+		// Tham số '3' báo cho PHP biết là: "Hãy ghi nối (append) nội dung này vào một file cụ thể"
+		error_log( "Hi postid :".$post_id);
+
+		error_log( "Hi block_id :".$block_id);
+
+    // 2. Mổ xẻ nội dung thành các mảng block
+    $blocks = parse_blocks( $post->post_content );
+
+    // 3. Khai báo hàm quét sâu (Recursive) để tìm block ẩn bên trong các Group/Column
+    $find_block = function( $blocks_array ) use ( &$find_block, $block_id ) {
+        foreach ( $blocks_array as $block ) {
+            // Kiểm tra xem block này có đúng là lth-categories và có blockId trùng khớp không
+            if ( 
+                ($block['blockName'] === 'lazyblock/lth-categories' || $block['blockName'] === 'lazyblock/lth-blogs') && 
+                isset( $block['attrs']['blockId'] ) && 
+                $block['attrs']['blockId'] === $block_id 
+            ) {
+                return $block; // Tóm được rồi!
+            }
+
+            // Nếu block này có chứa block con (innerBlocks), tiếp tục đào sâu vào trong
+            if ( ! empty( $block['innerBlocks'] ) ) {
+                $found = $find_block( $block['innerBlocks'] );
+                if ( $found ) {
+                    return $found;
+                }
+            }
+        }
+        return null;
+    };
+
+    // 4. Thực thi tìm kiếm
+    $target_block = $find_block( $blocks );
+
+    // 5. Render ra HTML nếu tìm thấy, không thì trả về rỗng
+    return $target_block ? render_block( $target_block ) : '';
+}
+

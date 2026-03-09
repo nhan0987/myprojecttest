@@ -77,7 +77,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 		</div>
 
 		<div class="flex flex-wrap lg:flex-nowrap gap-2 justify-around">
-			<div class="basis-[60rem] " >
+			<div class="basis-[60rem] min-w-0" >
 
 				<!-- entry header -->
 				<?php get_template_part( 'template-parts/single', 'entry-header' ); ?>
@@ -135,7 +135,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 						<div id="toc-overlay" class="fixed inset-0 bg-black/30 z-30 hidden"></div>
 					</div>
 					
-					<div id="main"<?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> class="penci-main-sticky-sidebar "<?php endif; ?> class="flex-1">
+					<div id="main"<?php if ( get_theme_mod( 'penci_sidebar_sticky' ) ): ?> class="penci-main-sticky-sidebar "<?php endif; ?> class="flex-1 min-w-0 penci-single-article">
 						
 						<div class="theiaStickySidebar">
 							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -182,9 +182,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 								<?php get_template_part( 'inc/templates/post_pagination' ); ?>
 							<?php endif; ?>
 
-							<?php if ( $sec == 'related' && ! get_theme_mod( 'penci_post_related' ) ) : ?>
-								<?php get_template_part( 'inc/templates/related_posts' ); ?>
-							<?php endif; ?> 
+							
 							
 							<?php if ( $sec == 'comments' && ! get_theme_mod( 'penci_post_hide_comments' ) ) : ?>
 								<?php comments_template( '', true ); ?>
@@ -195,8 +193,19 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 				</div>
 				<?php get_template_part( 'template-parts/single', 'sidebar' ); ?>
 			</div>
-			<div class="basis-[18.5rem] text-white">test2test2</div>
+			<div class="basis-[18.5rem]">
+				<?php
+					echo get_lazyblock_by_id( 12663, 'DjdtP' );
+				?>
+				<?php
+					echo get_lazyblock_by_id( 12663, 'Z1PVtTs' );
+				?>
+				<p><img class="alignnone size-full wp-image-14549" src="wp-content/uploads/2025/12/Rectangle-34-1.png" alt="" width="296" height="370" /></p>
+			</div>
 		</div>
+		
+		<?php get_template_part( 'inc/templates/related_posts' ); ?>
+		
 		<?php do_action( 'penci_action_after_post_content' ); ?>
 		
 	</div>
