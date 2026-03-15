@@ -198,9 +198,9 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 					echo get_lazyblock_by_id( 12663, 'DjdtP' );
 				?>
 				<?php
-					echo get_lazyblock_by_id( 12663, 'Z1PVtTs' );
+					echo get_lazyblock_by_id( 14849, 'Z1PVtTs' );
 				?>
-				<p><img class="alignnone size-full wp-image-14549" src="wp-content/uploads/2025/12/Rectangle-34-1.png" alt="" width="296" height="370" /></p>
+				<p><img class="alignnone size-full wp-image-14549" src="/wp-content/uploads/2025/12/Rectangle-34-1.png" alt="" width="296" height="370" /></p>
 			</div>
 		</div>
 		

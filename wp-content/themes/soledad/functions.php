@@ -4479,13 +4479,6 @@ function get_lazyblock_by_id( $post_id, $block_id ) {
         return '';
     }
 
-	//
-
-		// 3. Thực hiện ghi log
-		// Tham số '3' báo cho PHP biết là: "Hãy ghi nối (append) nội dung này vào một file cụ thể"
-		error_log( "Hi postid :".$post_id);
-
-		error_log( "Hi block_id :".$block_id);
 
     // 2. Mổ xẻ nội dung thành các mảng block
     $blocks = parse_blocks( $post->post_content );
