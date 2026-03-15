@@ -138,9 +138,9 @@ p:last-child {
 }
 
 .post-related .swiper-arrow {
-	width: 50px;
+	width: 3.125rem;
 	/* Chiều rộng của nút */
-	height: 50px;
+	height: 3.125rem;
 	/* Chiều cao của nút */
 	border-radius: 50%;
 	/* Biến hình vuông thành hình tròn hoàn hảo */
@@ -157,7 +157,7 @@ p:last-child {
 	align-items: center;
 
 	/* Khoảng cách giữa 2 nút cho đẹp mắt */
-	margin: 0 10px;
+	margin: 0 0.625rem;
 
 	/* Thêm hiệu ứng chuyển đổi cho mượt mà */
 	transition: all 0.3s ease;
@@ -167,11 +167,11 @@ p:last-child {
 }
 
 .post-related .swiper {
-	padding-bottom: 80px;
+	padding-bottom: 5rem;
 }
 
 .post-related .swiper-pagination-bullets {
-	bottom: 53px !important;
+	bottom: 3.3125rem !important;
 }
 
 .post-related .swiper-arrow:disabled::after {
@@ -181,14 +181,14 @@ p:last-child {
 .post-related .swiper-arrow::after {
 	content: '';
 	/* Bắt buộc phải có để hiển thị */
-	width: 12px;
-	height: 12px;
+	width: 0.75rem;
+	height: 0.75rem;
 	transition: all 0.3s ease;
 }
 
 @media (min-width: 1280px) {
 	.post-related .swiper {
-		padding-bottom: 12px;
+		padding-bottom: 0.75rem;
 	}
 
 	.post-related .swiper-pagination-bullets {
@@ -210,12 +210,12 @@ p:last-child {
 
 
 .post-related .swiper-next {
-	right: -76px !important;
+	right: -4.75rem !important;
 
 }
 
 .post-related .swiper-prev {
-	left: -76px;
+	left: -4.75rem;
 }
 
 .post-related .swiper-next::after {
@@ -2871,7 +2871,7 @@ li.nav-item::marker {
 }
 
 .dash-07 .title-box .title {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 2.5rem;
 	text-transform: uppercase;
@@ -2884,7 +2884,7 @@ li.nav-item::marker {
 
 
 .dash-07 .title-box .title>p {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 2.5rem;
 	text-transform: uppercase;
@@ -5135,11 +5135,11 @@ html {
 	}
 
 	.cut-the-top-left-corner-25-container {
-		aspect-ratio: 650 / 516;
+		aspect-ratio: 650 / 457;
 		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-25.svg");
 		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-25.svg");
 		width: 40.625rem;
-		height: 32.25rem;
+		height: 28.5625rem;
 		position: relative;
 	}
 
@@ -6358,7 +6358,7 @@ html {
 .penci-single-article .wp-caption,
 .penci-single-article figure {
 	max-width: 100% !important;
-	/* !important để đè inline style width: 1610px */
+	/* !important để đè inline style width: 100.625rem */
 	height: auto !important;
 	box-sizing: border-box;
 }

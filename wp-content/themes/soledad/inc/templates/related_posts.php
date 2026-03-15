@@ -59,7 +59,7 @@ if ( ! empty( $args ) ) {
 					<div class="swiper-wrapper gap-7">
 						<?php } ?>
 						<?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-								<div class="swiper-slide item w-[230px]! xl:w-[230px]!">
+								<div class="swiper-slide item w-[14.375rem]! xl:w-[14.375rem]!">
 									<div class="grid grid-cols-1 pt-2 pb-2 xl:p-2 gap-2 xl:gap-0!">
 										<?php if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) : ?>
 
@@ -91,7 +91,7 @@ if ( ! empty( $args ) ) {
 											</a>
 										<?php endif; ?>
 											<div class="content-box col-span-1">
-												<p class="content-days absolute translate-x-[118px] translate-y-[-41px] xl:translate-x-[0px]! xl:translate-y-[-1.3125rem]! text-base! xl:text-xs! text-gray-400">
+												<p class="content-days absolute translate-x-[7.375rem] translate-y-[-2.5625rem] xl:translate-x-[0px]! xl:translate-y-[-1.3125rem]! text-base! xl:text-xs! text-gray-400">
 													<?php penci_soledad_time_link(); ?>
 												</p>
 												<h3 class="content-name line-clamp-2">
