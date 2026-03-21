@@ -827,3 +827,20 @@
 [2026-03-09 11:22:05 : INFO] - Cache for previous post (with URL: http://mystnd.vn/quan-dong-da-ha-noi-vi-tri-quy-hoach-tiem-nang-dau-tu-bat-dong-san/) adjacent to post with id: 2668 has been purged, triggered by action: save_post 
 [2026-03-09 11:22:05 : INFO] - Cache for next post (with URL: http://mystnd.vn/thi-truong-mat-bang-ban-le-ha-noi-tang-truong-sau-dich/) adjacent to post with id: 2668 has been purged, triggered by action: save_post 
 [2026-03-09 11:22:05 : INFO] - Cache for all archives page associated with post_type: post and Title: "“Đua Nhau” Tăng Giá, Nhiều Căn HỘ Hà Nội Khó Tìm Khách" have been purged, triggered by action: save_post 
+[2026-03-21 15:46:30 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2026-03-21 16:07:07 : INFO] - Cache for URL: http://mystnd.vn/real-estate/ban-khach-san-vi-tri-dep-nhat-cat-ba-nhinh-14-ty/ has been purged, triggered by action: save_post 
+[2026-03-21 16:07:07 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-21 16:07:07 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-21 16:07:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-21 16:07:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-21 16:07:09 : INFO] - Cache for URL: http://mystnd.vn/real-estate/ban-khach-san-vi-tri-dep-nhat-cat-ba-nhinh-14-ty/ has been purged, triggered by action: save_post 
+[2026-03-21 16:07:09 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-21 16:07:09 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-21 16:10:15 : INFO] - Cache for URL: http://mystnd.vn/real-estate/sun-centro-town-dau-tu-don-dau-tiem-nang/ has been purged, triggered by action: save_post 
+[2026-03-21 16:10:15 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-21 16:10:15 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-21 16:10:15 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-21 16:10:15 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-21 16:10:17 : INFO] - Cache for URL: http://mystnd.vn/real-estate/sun-centro-town-dau-tu-don-dau-tiem-nang/ has been purged, triggered by action: save_post 
+[2026-03-21 16:10:17 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-21 16:10:17 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
