@@ -37,3 +37,16 @@ register_activation_hook( __FILE__, function() {
     flush_rewrite_rules();
 } );
 
+// Tách biệt hoàn toàn giao diện Frontend (Single Post) khỏi Theme
+function lth_real_estate_single_template( $template ) {
+    global $post;
+    if ( 'real_estate' === $post->post_type && is_single() ) {
+        $plugin_template = LTH_REAL_ESTATE_DIR . 'templates/single-real-estate.php';
+        if ( file_exists( $plugin_template ) ) {
+            return $plugin_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'single_template', 'lth_real_estate_single_template' );
+
