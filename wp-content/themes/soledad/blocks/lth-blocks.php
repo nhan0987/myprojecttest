@@ -49,7 +49,8 @@ function lth_allowed_block_types( $allowed_blocks ) {
         'lazyblock/lth-button',
         'lazyblock/lth-toggle',
         'lazyblock/lth-video',
-        'lazyblock/lth-custom-block'
+        'lazyblock/lth-custom-block',
+        'lazyblock/lth-real-estate'
 
         ////////////////////////////////////
 

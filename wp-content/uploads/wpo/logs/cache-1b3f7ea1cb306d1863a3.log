@@ -844,3 +844,5 @@
 [2026-03-21 16:10:17 : INFO] - Cache for URL: http://mystnd.vn/real-estate/sun-centro-town-dau-tu-don-dau-tiem-nang/ has been purged, triggered by action: save_post 
 [2026-03-21 16:10:17 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
 [2026-03-21 16:10:17 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-21 17:01:28 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-21 17:01:30 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
