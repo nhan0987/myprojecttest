@@ -202,11 +202,31 @@ if (!function_exists('lth_real_estate_output_fe')) :
                 $term_class_string = implode( ' ', $term_classes );
 
                 $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url( $post_id, 'large' ) : '';
-                // tag hiếm hoặc mới
-                $tag_class = 'pennant-tag-green';
-                $tag_text = 'Mới nhất';
+                
+                // Tính toán để hiển thị tag (dưới 6 giờ là Mới nhất, trên 6 giờ là Đang bán)
+                $post_timestamp = get_post_time( 'U', true, $post_id );
+                $current_timestamp = current_time( 'timestamp', 1 ); // GMT time tương đương
+                
+                if ( ( $current_timestamp - $post_timestamp ) <= 6 * HOUR_IN_SECONDS ) {
+                    $tag_class = 'pennant-tag-green';
+                    $tag_text = 'Mới nhất';
+                } else {
+                    $tag_class = 'pennant-tag-yellow';
+                    $tag_text = 'Đang bán';
+                }
+
+                // Tính toán giá để sort
+                $price_val = floatval( str_replace(',', '.', $price) );
+                $true_price = 0;
+                if ( stripos($currency, 'Tỷ') !== false ) {
+                    $true_price = $price_val * 1000000000;
+                } elseif ( stripos($currency, 'Triệu') !== false ) {
+                    $true_price = $price_val * 1000000;
+                } else {
+                    $true_price = $price_val;
+                }
             ?>
-            <div class="flex flex-col gap-4! lg:flex-row bds-content grow relative px-4! lth-list-item <?php echo esc_attr( $term_class_string ); ?>">
+            <div class="flex flex-col gap-4! lg:flex-row bds-content grow relative px-4! lth-list-item <?php echo esc_attr( $term_class_string ); ?>" data-price="<?php echo esc_attr($true_price); ?>" data-time="<?php echo esc_attr($post_timestamp); ?>">
                 <div class="<?php echo esc_attr($tag_class); ?> text-sm font-medium"><?php echo esc_html($tag_text); ?></div>
                 <div class="w-full h-[13.75rem] xl:w-[16.875rem] xl:h-[11.875rem] cut-the-bottom-right-corner-27-container">
                     
@@ -251,39 +271,84 @@ if (!function_exists('lth_real_estate_output_fe')) :
     </div>
 </div>
 
-<!-- LOGIC JAVASCRIPT CHO TAB FILTER -->
+<!-- LOGIC JAVASCRIPT CHO TAB FILTER VÀ SẮP XẾP -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.lth-tab-btn');
     const items = document.querySelectorAll('.lth-list-item');
     const countDisplay = document.querySelector('.lth-count');
+    const sortSelect = document.querySelector('.lth-sort');
+    const container = document.querySelector('.lth-listings-container');
     
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Update UI Button
-            tabs.forEach(t => {
-                t.classList.remove('btn-dark');
-                t.classList.add('btn-outline-secondary');
-            });
-            this.classList.remove('btn-outline-secondary');
-            this.classList.add('btn-dark');
-            
-            // Logic Filter
-            const term = this.getAttribute('data-term');
-            let count = 0;
-            
-            items.forEach(item => {
-                if(term === 'all' || item.classList.contains(term)) {
-                    item.style.display = 'flex';
-                    count++;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            if(countDisplay) { countDisplay.textContent = count; }
+    const applyFilterAndSort = function() {
+        // Tìm tab đang active
+        const activeTab = document.querySelector('.lth-tab-btn.btn-dark');
+        const term = activeTab ? activeTab.getAttribute('data-term') : 'all';
+        const sortVal = sortSelect ? sortSelect.value : 'moi-nhat';
+        
+        let visibleItems = [];
+        let count = 0;
+        
+        // 1. Lọc mục
+        items.forEach(item => {
+            if(term === 'all' || item.classList.contains(term)) {
+                item.style.setProperty('display', 'flex', 'important');
+                visibleItems.push(item);
+                count++;
+            } else {
+                item.style.setProperty('display', 'none', 'important');
+            }
         });
-    });
+        
+        if(countDisplay) { countDisplay.textContent = count; }
+        
+        // 2. Sắp xếp mục hiển thị
+        if (sortVal && container) {
+            visibleItems.sort((a, b) => {
+                let priceA = parseFloat(a.getAttribute('data-price')) || 0;
+                let priceB = parseFloat(b.getAttribute('data-price')) || 0;
+                let timeA = parseInt(a.getAttribute('data-time')) || 0;
+                let timeB = parseInt(b.getAttribute('data-time')) || 0;
+                
+                if (sortVal === 'moi-nhat') {
+                    return timeB - timeA;
+                } else if (sortVal === 'cu-nhat') {
+                    return timeA - timeB;
+                } else if (sortVal === 'gia-thap') {
+                    return priceA - priceB;
+                } else if (sortVal === 'gia-cao') {
+                    return priceB - priceA;
+                }
+                return 0;
+            });
+            
+            // Re-append elements in sorted order
+            visibleItems.forEach(item => {
+                container.appendChild(item);
+            });
+        }
+    };
+
+    if (tabs.length > 0) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Đổi UI Tab
+                tabs.forEach(t => {
+                    t.classList.remove('btn-dark');
+                    t.classList.add('btn-outline-secondary');
+                });
+                this.classList.remove('btn-outline-secondary');
+                this.classList.add('btn-dark');
+                
+                applyFilterAndSort();
+            });
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', applyFilterAndSort);
+        applyFilterAndSort();
+    }
 });
 </script>
 <?php

@@ -16,27 +16,6 @@ $locations_data = [
         'Quận 1', 'Quận 3', 'Quận 4', 'Quận 5', 'Quận 6', 'Quận 7', 'Quận 8', 'Quận 10', 'Quận 11', 'Quận 12',
         'Quận Tân Bình', 'Quận Bình Tân', 'Quận Bình Thạnh', 'Quận Tân Phú', 'Quận Gò Vấp', 'Quận Phú Nhuận', 
         'Thành phố Thủ Đức', 'Huyện Bình Chánh', 'Huyện Hóc Môn', 'Huyện Củ Chi', 'Huyện Nhà Bè'
-    ],
-    'Đà Nẵng' => [
-        'Quận Hải Châu', 'Quận Thanh Khê', 'Quận Sơn Trà', 'Quận Ngũ Hành Sơn', 'Quận Liên Chiểu', 'Quận Cẩm Lệ', 'Huyện Hòa Vang'
-    ],
-    'Hải Phòng' => [
-        'Quận Hồng Bàng', 'Quận Lê Chân', 'Quận Ngô Quyền', 'Quận Kiến An', 'Quận Hải An', 'Quận Đồ Sơn', 'Quận Dương Kinh'
-    ],
-    'Cần Thơ' => [
-        'Quận Ninh Kiều', 'Quận Bình Thủy', 'Quận Cái Răng', 'Quận Ô Môn', 'Quận Thốt Nốt'
-    ],
-    'Khánh Hòa' => [
-        'Thành phố Nha Trang', 'Thành phố Cam Ranh', 'Thị xã Ninh Hòa'
-    ],
-    'Bình Dương' => [
-        'Thành phố Thủ Dầu Một', 'Thành phố Dĩ An', 'Thành phố Thuận An', 'Thành phố Tân Uyên', 'Thành phố Bến Cát'
-    ],
-    'Đồng Nai' => [
-        'Thành phố Biên Hòa', 'Thành phố Long Khánh', 'Huyện Long Thành', 'Huyện Nhơn Trạch', 'Huyện Trảng Bom'
-    ],
-    'Bà Rịa - Vũng Tàu' => [
-        'Thành phố Vũng Tàu', 'Thành phố Bà Rịa', 'Thị xã Phú Mỹ'
     ]
 ];
 

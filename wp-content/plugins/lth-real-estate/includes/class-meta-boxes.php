@@ -144,7 +144,7 @@ class LTH_Real_Estate_Meta_Boxes {
                     <label>Tình trạng Giấy tờ</label>
                     <select name="legal_paper_status">
                         <option value="">-- Bỏ qua --</option>
-                        <option value="Sổ đỏ/Sổ hồng" <?php selected( $legal_paper_status, 'Sổ đỏ/Sổ hồng' ); ?>>Đã có Sổ đỏ/Sổ hồng</option>
+                        <option value="Sổ đỏ" <?php selected( $legal_paper_status, 'Sổ đỏ' ); ?>>Đã có Sổ đỏ</option>
                         <option value="Giấy phép xây dựng" <?php selected( $legal_paper_status, 'Giấy phép xây dựng' ); ?>>Giấy phép xây dựng</option>
                         <option value="Hợp đồng mua bán" <?php selected( $legal_paper_status, 'Hợp đồng mua bán' ); ?>>Hợp đồng mua bán (Dự án)</option>
                         <option value="Đang chờ sổ" <?php selected( $legal_paper_status, 'Đang chờ sổ' ); ?>>Đang chờ sổ</option>
