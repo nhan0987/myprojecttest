@@ -119,6 +119,20 @@ if (function_exists('lazyblocks')) :
             'width' => '100',
             'choices' => $type_choices,
          ),
+         'control_select_lth_listing_type' => array(
+            'type' => 'select',
+            'name' => 'listing_type_filter',
+            'default' => '',
+            'label' => 'Hình thức bài đăng',
+            'help' => 'Lọc theo Bán hoặc Cho thuê (để trống lấy tất cả).',
+            'placement' => 'inspector',
+            'width' => '100',
+            'choices' => array(
+                array( 'label' => '-- Tất cả --', 'value' => '' ),
+                array( 'label' => 'Bán', 'value' => 'sale' ),
+                array( 'label' => 'Cho thuê', 'value' => 'rent' ),
+            ),
+         ),
          'control_number_lth_post_number' => array(
             'type' => 'number',
             'name' => 'post_number',

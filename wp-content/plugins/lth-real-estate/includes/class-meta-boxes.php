@@ -54,6 +54,7 @@ class LTH_Real_Estate_Meta_Boxes {
         $video_url = get_post_meta( $post->ID, 'video_url', true );
         $expires_at = get_post_meta( $post->ID, 'expires_at', true );
         $google_maps_url = get_post_meta( $post->ID, 'google_maps_url', true );
+        $listing_type = get_post_meta( $post->ID, 'listing_type', true );
 
         $property_gallery = get_post_meta( $post->ID, 'property_gallery', true );
 
@@ -74,22 +75,30 @@ class LTH_Real_Estate_Meta_Boxes {
             <hr>
             <h3>I. Giao dịch & Vị trí</h3>
             <div class="lth-meta-row">
-                <div class="lth-meta-field">
-                    <label>Giá trị</label>
-                    <input type="number" step="0.01" name="price" value="<?php echo esc_attr( $price ); ?>" placeholder="VD: 5.5 (hoặc để trống nếu thoả thuận)" />
-                </div>
-                <div class="lth-meta-field" style="max-width: 150px;">
-                    <label>Tiền tệ</label>
-                    <select name="currency">
-                        <option value="Tỷ" <?php selected( $currency, 'Tỷ' ); ?>>Tỷ</option>
-                        <option value="Triệu" <?php selected( $currency, 'Triệu' ); ?>>Triệu</option>
-                        <option value="Tr/m2" <?php selected( $currency, 'Tr/m2' ); ?>>Triệu/m²</option>
-                        <option value="Thỏa thuận" <?php selected( $currency, 'Thỏa thuận' ); ?>>Thỏa thuận</option>
+                <div class="lth-meta-field" style="flex:0.5;">
+                    <label>Hình thức</label>
+                    <select name="listing_type" id="lth_listing_type">
+                        <option value="sale" <?php selected( $listing_type, 'sale' ); ?>>Bán</option>
+                        <option value="rent" <?php selected( $listing_type, 'rent' ); ?>>Cho thuê</option>
                     </select>
                 </div>
-                <div class="lth-meta-field">
-                    <label>Diện tích vuông (m²)</label>
-                    <input type="number" step="0.1" name="area" value="<?php echo esc_attr( $area ); ?>" placeholder="VD: 80" />
+                <div class="lth-meta-field" style="flex:1;">
+                    <label id="lth_price_label">Giá bán</label>
+                    <input type="number" step="0.1" name="price" value="<?php echo esc_attr( $price ); ?>" />
+                </div>
+                <div class="lth-meta-field" style="flex:0.8;">
+                    <label>Đơn vị</label>
+                    <select name="currency" id="lth_currency_select">
+                        <option value="Tỷ" <?php selected( $currency, 'Tỷ' ); ?>>Tỷ</option>
+                        <option value="Triệu" <?php selected( $currency, 'Triệu' ); ?>>Triệu</option>
+                        <option value="Triệu/m2" <?php selected( $currency, 'Triệu/m2' ); ?>>Triệu/m²</option>
+                        <option value="Triệu/tháng" <?php selected( $currency, 'Triệu/tháng' ); ?>>Triệu/tháng</option>
+                        <option value="Triệu/năm" <?php selected( $currency, 'Triệu/năm' ); ?>>Triệu/năm</option>
+                    </select>
+                </div>
+                <div class="lth-meta-field" style="flex:1;">
+                    <label>Diện tích (m2)</label>
+                    <input type="number" step="0.1" name="area" value="<?php echo esc_attr( $area ); ?>" />
                 </div>
             </div>
             
@@ -249,6 +258,38 @@ class LTH_Real_Estate_Meta_Boxes {
                     });
                     $('#property_gallery_input').val(new_ids.join(','));
                 });
+
+                // Conditional Price/Currency fields
+                function updateListingFields() {
+                    var type = $('#lth_listing_type').val();
+                    var $priceLabel = $('#lth_price_label');
+                    var $currencySelect = $('#lth_currency_select');
+                    
+                    if (type === 'sale') {
+                        $priceLabel.text('Giá bán');
+                        $currencySelect.find('option').each(function(){
+                            var val = $(this).val();
+                            if (val === 'Tỷ' || val === 'Triệu' || val === 'Triệu/m2') {
+                                $(this).show().prop('disabled', false);
+                            } else {
+                                $(this).hide().prop('disabled', true);
+                            }
+                        });
+                    } else if (type === 'rent') {
+                        $priceLabel.text('Giá thuê');
+                        $currencySelect.find('option').each(function(){
+                            var val = $(this).val();
+                            if (val === 'Triệu/tháng' || val === 'Triệu/năm') {
+                                $(this).show().prop('disabled', false);
+                            } else {
+                                $(this).hide().prop('disabled', true);
+                            }
+                        });
+                    }
+                }
+
+                $('#lth_listing_type').on('change', updateListingFields);
+                updateListingFields(); // Init on load
             });
             </script>
         </div>
@@ -273,7 +314,7 @@ class LTH_Real_Estate_Meta_Boxes {
             'num_bedrooms', 'num_bathrooms', 'num_floors',
             'house_direction', 'balcony_direction', 'entrance_width_m', 'frontage_width_m',
             'legal_paper_status', 'furniture_status', 'video_url', 'expires_at',
-            'property_gallery', 'google_maps_url'
+            'property_gallery', 'google_maps_url', 'listing_type'
         ];
 
         foreach ( $fields as $field ) {

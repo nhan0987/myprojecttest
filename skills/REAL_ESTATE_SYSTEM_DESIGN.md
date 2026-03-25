@@ -41,6 +41,7 @@ Nhằm tối ưu hóa hiệu suất cơ sở dữ liệu và giao diện, hệ t
 **B. Thông tin giá & diện tích:**
 - `price` (Number - Decimal): Giá trị (để query/sort).
 - `currency` (Text): Đơn vị tiền tệ (VND, Tỷ).
+- `listing_type` (Select - Enum): Hình thức (Bán / Cho thuê).
 - `area` (Number - Decimal): Diện tích sử dụng (m2).
 - `address_street` (Text): Số nhà, tên ngõ/đường cụ thể.
 
@@ -117,6 +118,7 @@ Nhằm tối ưu hóa hiệu suất cơ sở dữ liệu và giao diện, hệ t
 - `subtitle` (Text): "DANH MỤC BĐS"
 - `title` (Text): Tiêu đề chính "Bất Động Sản Nhà Mặt Phố"
 - `locations` (Select Multiple): Chọn các Vị trí/Quận huyện hiển thị ra thanh Tab (Đống Đa, Long Biên, Hoàn Kiếm...).
+- `listing_type_filter` (Select): Lọc theo hình thức (Tất cả, Bán, Cho thuê).
 - `post_number` (Number): Giới hạn số lượng bài đăng (Mặc định: 10).
 
 ### 9. Cấu trúc Giao diện Frontend (Layout Design)

@@ -20,6 +20,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
         $location_cats = isset( $attributes['location_cats'] ) ? $attributes['location_cats'] : '';
         $tab_locations = isset( $attributes['tab_locations'] ) ? $attributes['tab_locations'] : '';
         $type_cats = isset( $attributes['type_cats'] ) ? $attributes['type_cats'] : '';
+        $listing_type_filter = isset( $attributes['listing_type_filter'] ) ? $attributes['listing_type_filter'] : '';
         $post_number = isset( $attributes['post_number'] ) ? intval( $attributes['post_number'] ) : 10;
         
         $loc_ids = [];
@@ -93,6 +94,16 @@ if (!function_exists('lth_real_estate_output_fe')) :
                 'taxonomy' => 'property-type',
                 'field'    => 'term_id',
                 'terms'    => $type_ids,
+            ];
+        }
+
+        if ( ! empty( $listing_type_filter ) ) {
+            $args['meta_query'] = [
+                [
+                    'key'     => 'listing_type',
+                    'value'   => $listing_type_filter,
+                    'compare' => '=',
+                ],
             ];
         }
         
