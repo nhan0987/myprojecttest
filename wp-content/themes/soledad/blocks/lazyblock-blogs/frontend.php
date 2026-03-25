@@ -125,16 +125,17 @@ if (!function_exists('lth_blogs_output_fe')) :
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title(); ?>" class="zoom-image object-cover w-full! h-full!">
                                         </a>
-                                        <span class="text-[0.8125rem] font-medium text-gray-500 absolute left-0 bottom-[0px] xl:bottom-[3.3125rem] w-[5rem] xl:w-[4.75rem] h-[1.6875rem] bg-white">
+                                        <span class="text-[0.8125rem] font-medium text-gray-500 absolute right-0 bottom-[0px] xl:bottom-[0px] w-[4.625rem] xl:w-[4.5625rem] h-[1.75rem] xl:h-[1.8125rem] leading-[1.6875rem] bg-white">
                                             <?php the_time('d/m/Y'); ?>
                                         </span>
-                                        <div class="pt-2! xl:pt-0! xl:absolute line-clamp-2 bg-white bottom-0 xl:w-[26.5625rem] h-[2.75rem]">
-                                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight">
-                                                    <?php the_title(); ?>
-                                                </h2>
-                                            </a>
-                                        </div>
+                                        
+                                    </div>
+                                    <div class="pt-2! line-clamp-2">
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                            <h2 class="text-base! xl:text-xl! font-bold text-gray-900 leading-tight lowercase first-letter:uppercase">
+                                                <?php the_title(); ?>
+                                            </h2>
+                                        </a>
                                     </div>
                                     
                                     
@@ -162,7 +163,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                                 
                                                 <div class="">
                                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                        <p class="text-sm font-bold text-gray-700">
+                                                        <p class="text-sm font-bold text-gray-700 lowercase first-letter:uppercase">
                                                             <?php the_title(); ?>
                                                         </p>
                                                     </a>

@@ -34,7 +34,7 @@ if (!function_exists('lth_slider_output_fe')) :
                                                 $attachment_id = attachment_url_to_postid($original_url);
 
                                                 if ($attachment_id) {
-                                                    // 3. Lấy link ảnh size trung bình (thường là 768px hoặc 1024px tùy settings)
+                                                    // 3. Lấy link ảnh size trung bình (thường là 48rem hoặc 64rem tùy settings)
                                                     // Các size mặc định: 'thumbnail', 'medium', 'medium_large', 'large', 'full'
                                                     $image_mobile_data = wp_get_attachment_image_src($attachment_id, '351x360');
                                                     $image_mobile_url = $image_mobile_data[0];

@@ -178,7 +178,7 @@ body:not(.penci-fawesome-ver5) .penci-faicon.fa-facebook:before {
     content: "\f09a";
 }
 #main {
-    width: 100%;
+    /* width: 100%; */
 }
 .penci-single-style-10 .penci-single-s10-content,
 .container.penci_sidebar #main {
@@ -2069,6 +2069,7 @@ li.penci-mega-menu > ul.sub-menu {
     z-index: 99997;
     width: 16.875rem;
     overflow-y: auto;
+     overflow-x: hidden;
     padding: 1.875rem 1.25rem 1.25rem;
     background: #232d39;
     left: 0;
