@@ -1,95 +1,240 @@
 <?php
 /**
  * Custom Template for Single Real Estate Property
- * Thiết kế giao diện chi tiết BĐS hoàn toàn tách biệt khỏi Theme blog
+ * Redesign matching the premium layout
  */
-get_header(); // Vẫn load Header của theme Soledad để giữ nguyên Menu và Logo
+get_header(); 
 
 while ( have_posts() ) : the_post();
-    // Retrieve custom meta
     $post_id = get_the_ID();
+    
+    // Meta data
     $price = get_post_meta( $post_id, 'price', true );
     $currency = get_post_meta( $post_id, 'currency', true );
     $area = get_post_meta( $post_id, 'area', true );
     $address_street = get_post_meta( $post_id, 'address_street', true );
+    $num_bedrooms = get_post_meta( $post_id, 'num_bedrooms', true );
+    $num_bathrooms = get_post_meta( $post_id, 'num_bathrooms', true );
+    $num_floors = get_post_meta( $post_id, 'num_floors', true );
+    $frontage = get_post_meta( $post_id, 'frontage_width_m', true );
+    $legal = get_post_meta( $post_id, 'legal_paper_status', true );
+    $gallery = get_post_meta( $post_id, 'property_gallery', true );
+    $furniture = get_post_meta( $post_id, 'furniture_status', true );
     
-    // Fallback labels
+    // Calculate price/m2
+    $price_sqm = '';
+    if ( ! empty($price) && ! empty($area) && intval($area) > 0 ) {
+        $price_float = floatval($price);
+        $total_millions = 0;
+        if ( stripos($currency, 'Tỷ') !== false ) {
+            $total_millions = $price_float * 1000;
+        } elseif ( stripos($currency, 'Triệu') !== false ) {
+            $total_millions = $price_float;
+        }
+        
+        if ($total_millions > 0) {
+            $calc = $total_millions / floatval($area);
+            $price_sqm = round($calc, 1) . ' triệu/m²';
+        }
+    }
+
     $price_label = $price ? $price . ' ' . $currency : 'Liên hệ';
-    $area_label = $area ? $area . ' m²' : '—';
+    
+    // Locations
+    $locations = get_the_terms( $post_id, 'property-location' );
+    $loc_full = '';
+    if ( $locations && ! is_wp_error( $locations ) ) {
+        $child = null;
+        foreach($locations as $l) { if($l->parent != 0) { $child = $l; break; } }
+        if(!$child) $child = $locations[0];
+        
+        if($child->parent != 0) {
+            $parent = get_term($child->parent, 'property-location');
+            $loc_full = $child->name . ', ' . $parent->name;
+        } else {
+            $loc_full = $child->name;
+        }
+    }
+
+    // GALLERY IMAGES
+    $gallery_ids = ! empty( $gallery ) ? explode( ',', $gallery ) : [];
+    // Prepend featured image if any
+    $featured_id = get_post_thumbnail_id();
+    if ( $featured_id ) {
+        array_unshift( $gallery_ids, $featured_id );
+    }
+    $gallery_ids = array_unique( array_filter( $gallery_ids ) );
+    
+    // Taxonomy
+    $types = get_the_terms( $post_id, 'property-type' );
+    $type_name = ( $types && ! is_wp_error( $types ) ) ? $types[0]->name : 'Bất động sản';
 ?>
 
-<div class="lth-property-container" style="max-width: 1100px; margin: 40px auto; padding: 0 15px; font-family: Arial, sans-serif; color: #333;">
-    <!-- BREADCRUMB -->
-    <div style="font-size: 13px; color: #777; margin-bottom: 25px;">
-        <a href="<?php echo home_url(); ?>" style="color: #d63638; text-decoration: none;">Trang chủ</a> &raquo; Bất động sản &raquo; <?php the_title(); ?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="single-bds-container mx-auto px-4 max-w-[1200px] mt-6">
+    <div class="bds-breadcrumb text-xs text-gray-400 mb-6 uppercase tracking-wide">
+        <a href="<?php echo home_url(); ?>">Trang chủ</a> &nbsp;/&nbsp; 
+        <a href="#"><?php echo esc_html($type_name); ?></a> &nbsp;/&nbsp; 
+        <span><?php the_title(); ?></span>
     </div>
 
-    <!-- TÁCH GIAO DIỆN CHÍNH -->
-    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-        
-        <!-- CỘT TRÁI (Ảnh & Nội dung chi tiết) -->
-        <div style="flex: 1 1 65%; min-width: 0;">
-            <!-- Tiêu đề & Địa chỉ -->
-            <h1 style="font-size: 28px; line-height: 1.4; font-weight: bold; margin-bottom: 15px; color: #111;"><?php the_title(); ?></h1>
-            <p style="color: #666; font-size: 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 5px;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                <?php echo $address_street ? esc_html( $address_street ) : 'Đang cập nhật địa chỉ'; ?>
-            </p>
+    <!-- GALLERY SECTION -->
+    <div class="bds-gallery-grid mb-10">
+        <?php 
+        for ($i = 0; $i < 5; $i++) {
+            $current_id = isset($gallery_ids[$i]) ? $gallery_ids[$i] : null;
+            $class = ($i == 0) ? 'bds-gallery-main' : 'bds-gallery-item';
+            if ($current_id) {
+                $url = wp_get_attachment_image_url($current_id, 'large');
+                echo '<div class="'.esc_attr($class).'"><img src="'.esc_url($url).'" alt="Gallery Image"></div>';
+            } else {
+                $placeholder = 'https://picsum.photos/seed/'.($i + $post_id).'/800/600';
+                echo '<div class="'.esc_attr($class).'"><img src="'.esc_url($placeholder).'" alt="Placeholder"></div>';
+            }
+        }
+        ?>
+    </div>
 
-            <!-- Ảnh đại diện -->
-            <div style="margin-bottom: 30px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-               <?php 
-               if ( has_post_thumbnail() ) {
-                   the_post_thumbnail( 'full', ['style' => 'width:100%; height:auto; display:block;'] );
-               } else {
-                   echo '<div style="width:100%; height:400px; background:#eee; display:flex; align-items:center; justify-content:center; color:#999;">Không có hình ảnh</div>';
-               }
-               ?>
-            </div>
+    <!-- MAIN     <!-- MAIN FLEX LAYOUT -->
+    <div class="flex flex-col lg:flex-row gap-8 items-start mb-10">
+        
+        <!-- COLUMN 1: MAIN INFO + PRICE BOX (Basis 60rem) -->
+        <div class="lg:basis-[60rem] flex-grow">
             
-            <!-- Noi dung bài viết -->
-            <h3 style="font-size: 22px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Thông tin chi tiết</h3>
-            <div style="line-height: 1.7; font-size: 16px; color: #444;">
-                <?php the_content(); ?>
+            <!-- HEADER PART: Title & Price Box -->
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-6 border-b border-gray-100 pb-6 mb-8">
+                <div class="flex-grow">
+                    <h1 class="text-3xl font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
+                    
+                    <div class="flex items-center gap-1 text-gray-500 text-sm mb-4">
+                        <span class="material-symbols-outlined text-orange-400" style="font-size: 18px;">location_on</span>
+                        <?php 
+                        $final_loc = $address_street;
+                        if ( ! empty( $final_loc ) && ! empty( $loc_full ) ) {
+                            $final_loc .= ', ' . $loc_full;
+                        } elseif ( empty( $final_loc ) ) {
+                            $final_loc = $loc_full;
+                        }
+                        echo esc_html( $final_loc ?: 'Đang cập nhật địa chỉ' ); 
+                        ?>
+                    </div>
+
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+                        <span>Danh mục: <b class="text-black"><?php echo esc_html($type_name); ?></b></span>
+                        <span>Tình trạng: <b class="text-black"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></b></span>
+                        <span>Năm xây: <b class="text-black">2022</b></span>
+                    </div>
+                </div>
+
+                <!-- PRICE BOX (Inside Column 1) -->
+                <div class="hidden lg:block w-full lg:w-48 flex-shrink-0">
+                    <div class="bds-price-card">
+                        <span class="label">Giá bán:</span>
+                        <span class="main-price"><?php echo esc_html($price_label); ?></span>
+                        <?php if ($price_sqm) : ?>
+                            <span class="sqm-price"><?php echo esc_html($price_sqm); ?></span>
+                        <?php endif; ?>
+                        <a href="tel:0972991551" class="btn-call shadow-sm">
+                            <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
+                            0972 991 551
+                        </a>
+                        <div class="btn-contact mt-2 text-xs opacity-80 cursor-pointer flex justify-center items-center gap-1">
+                            <span class="material-symbols-outlined" style="font-size: 14px;">mail</span> Liên hệ ngay
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BODY PART: Content, Icons, Map -->
+            <div class="bds-body-content">
+                <div class="desc-header mb-4">Tổng quan <span class="text-orange-400">Bất động sản</span></div>
+                <div class="prose max-w-none text-gray-600 leading-relaxed mb-10">
+                    <?php the_content(); ?>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 pt-10 mt-6 pb-10">
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">directions_car</span> Gara ô tô trong nhà</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">cooking</span> Bếp full tủ + thiết bị</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">ac_unit</span> Điều hòa các phòng</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">balcony</span> Ban công trước - sau</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">fire_extinguisher</span> Hệ thống PCCC cơ bản</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">layers</span> Dịch vụ tiện ích</div>
+                </div>
+
+                <!-- MAP SECTION -->
+                <?php 
+                $map_source = get_post_meta( $post_id, 'google_maps_url', true );
+                if ( ! empty( $map_source ) ) :
+                    if ( preg_match( '/src="([^"]+)"/', $map_source, $match ) ) {
+                        $map_url = $match[1];
+                    } else {
+                        $map_url = $map_source;
+                    }
+                ?>
+                    <div class="mt-12">
+                        <div class="desc-header mb-4">Vị trí <span class="text-orange-400">Bất động sản</span></div>
+                        <p class="text-sm text-gray-400 mb-4"><?php echo esc_html($final_loc); ?></p>
+                        <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-inner h-[400px]">
+                            <iframe src="<?php echo esc_url($map_url); ?>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 
-        <!-- CỘT PHẢI (Thông số kỹ thuật Block) -->
-        <div style="flex: 1 1 30%; min-width: 300px;">
-            <div style="background: #fff; border: 1px solid #eaeaea; padding: 25px; border-radius: 8px; position: sticky; top: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
+        <div class="lg:basis-[18.5rem] flex-shrink-0 sticky top-10">
+            <div class="bds-agent-card">
+                <div class="avatar shadow-xl border-4 border-white mb-6">
+                    <img src="https://i.pravatar.cc/150?u=thai" alt="Agent">
+                </div>
+                <h4 class="text-xl font-bold mb-1">Mr. Hoàng Văn Thái</h4>
+                <p class="position italic text-gray-500 text-sm mb-6">Chuyên viên tư vấn</p>
                 
-                <div style="font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Mức giá</div>
-                <div style="font-size: 28px; font-weight: bold; color: #d63638; margin-bottom: 25px;"><?php echo esc_html( $price_label ); ?></div>
-                
-                <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px;">
-                    <li style="padding: 12px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span style="color: #666;">Diện tích</span>
-                        <strong style="color: #111;"><?php echo esc_html( $area_label ); ?></strong>
-                    </li>
-                    <li style="padding: 12px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span style="color: #666;">Phòng ngủ</span>
-                        <strong style="color: #111;"><?php echo esc_html( get_post_meta( $post_id, 'num_bedrooms', true ) ?: '-' ); ?></strong>
-                    </li>
-                    <li style="padding: 12px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span style="color: #666;">Phòng tắm</span>
-                        <strong style="color: #111;"><?php echo esc_html( get_post_meta( $post_id, 'num_bathrooms', true ) ?: '-' ); ?></strong>
-                    </li>
-                    <li style="padding: 12px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span style="color: #666;">Tình trạng pháp lý</span>
-                        <strong style="color: #111;"><?php echo esc_html( get_post_meta( $post_id, 'legal_paper_status', true ) ?: 'Đang chờ' ); ?></strong>
-                    </li>
-                </ul>
+                <div class="text-orange-400 font-bold text-lg mb-8 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
+                    0972 991 551
+                </div>
 
-                <button style="width: 100%; background: #000; color: #fff; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 6px; margin-top: 25px; cursor: pointer; transition: 0.2s;" onmouseover="this.style.background='#d63638'" onmouseout="this.style.background='#000'">
-                    NHẬN TƯ VẤN NGAY
-                </button>
+                <div class="border-t border-gray-100 pt-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-4">Kết nối qua:</p>
+                    <div class="flex justify-center gap-4 text-orange-400">
+                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">forum</span>
+                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">chat</span>
+                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">call</span>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </div>
 
+<!-- FIXED MOBILE BAR -->
+<div class="lg:hidden fixed bottom-1 left-4 right-4 z-[9999] shadow-2xl rounded-2xl overflow-hidden border border-white/20 flex h-[72px]" style="backdrop-filter: blur(10px);">
+    <div class="bg-[#1a2533] flex-1 px-4 py-2 flex flex-col justify-center text-white leading-tight">
+        <span class="text-[10px] opacity-70 uppercase tracking-tighter">Giá bán:</span>
+        <span class="text-xl font-bold font-['Outfit']" style="color: #fff;"><?php echo esc_html($price_label); ?></span>
+    </div>
+    <div class="bg-[#ffbe42] flex-1 px-3 py-2 flex items-center justify-center text-gray-900 font-bold text-xs text-center leading-tight">
+        <?php echo esc_html($price_sqm); ?>
+    </div>
+    <div class="bg-white flex items-center gap-3 px-4">
+        <a href="tel:0972991551" class="w-10 h-10 bg-[#ffbe42] rounded-full flex items-center justify-center text-white shadow-lg">
+            <span class="material-symbols-outlined">call</span>
+        </a>
+        <a href="mailto:contact@stnd.vn" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400">
+            <span class="material-symbols-outlined">mail</span>
+        </a>
+    </div>
+</div>
+
+<div class="h-24"></div>
+
 <?php 
 endwhile;
-get_footer(); // Vẫn load Footer chuẩn của Theme
+get_footer(); 
 ?>
+
+

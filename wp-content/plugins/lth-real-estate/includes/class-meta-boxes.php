@@ -53,6 +53,7 @@ class LTH_Real_Estate_Meta_Boxes {
         $furniture_status = get_post_meta( $post->ID, 'furniture_status', true );
         $video_url = get_post_meta( $post->ID, 'video_url', true );
         $expires_at = get_post_meta( $post->ID, 'expires_at', true );
+        $google_maps_url = get_post_meta( $post->ID, 'google_maps_url', true );
 
         $property_gallery = get_post_meta( $post->ID, 'property_gallery', true );
 
@@ -170,6 +171,10 @@ class LTH_Real_Estate_Meta_Boxes {
                     <label>Video Clip thực tế (URL Youtube)</label>
                     <input type="url" name="video_url" value="<?php echo esc_attr( $video_url ); ?>" placeholder="Dán link HTTPS video Youtube hoặc Tiktok..." />
                 </div>
+                <div class="lth-meta-field" style="flex:1;">
+                    <label>Google Maps Embed (URL hoặc Mã Iframe)</label>
+                    <input type="text" name="google_maps_url" value="<?php echo esc_attr( $google_maps_url ); ?>" placeholder="Dán mã nhúng hoặc link Google Maps..." />
+                </div>
             </div>
 
             <hr>
@@ -268,12 +273,18 @@ class LTH_Real_Estate_Meta_Boxes {
             'num_bedrooms', 'num_bathrooms', 'num_floors',
             'house_direction', 'balcony_direction', 'entrance_width_m', 'frontage_width_m',
             'legal_paper_status', 'furniture_status', 'video_url', 'expires_at',
-            'property_gallery'
+            'property_gallery', 'google_maps_url'
         ];
 
         foreach ( $fields as $field ) {
             if ( isset( $_POST[$field] ) ) {
-                update_post_meta( $post_id, $field, sanitize_text_field( $_POST[$field] ) );
+                $value = $_POST[$field];
+                if ( $field === 'google_maps_url' ) {
+                    // Cho phép dán mã iframe nên không dùng sanitize_text_field cho mục này
+                    update_post_meta( $post_id, $field, wp_unslash( $value ) );
+                } else {
+                    update_post_meta( $post_id, $field, sanitize_text_field( $value ) );
+                }
             }
         }
     }

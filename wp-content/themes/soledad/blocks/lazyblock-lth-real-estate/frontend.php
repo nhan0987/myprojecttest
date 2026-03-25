@@ -156,6 +156,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
                 $price = get_post_meta( $post_id, 'price', true );
                 $currency = get_post_meta( $post_id, 'currency', true );
                 $area = get_post_meta( $post_id, 'area', true );
+                $address_street = get_post_meta( $post_id, 'address_street', true );
                 $frontage = get_post_meta( $post_id, 'frontage_width_m', true );
                 $floors = get_post_meta( $post_id, 'num_floors', true );
                 $legal = get_post_meta( $post_id, 'legal_paper_status', true );
@@ -190,6 +191,13 @@ if (!function_exists('lth_real_estate_output_fe')) :
                     } else {
                         $location_name = $child_term->name;
                     }
+                }
+
+                // Kết hợp Vị trí chi tiết
+                if ( ! empty($address_street) && ! empty($location_name) ) {
+                    $location_name = $address_street . ', ' . $location_name;
+                } elseif ( empty($location_name) ) {
+                    $location_name = $address_street;
                 }
                 
                 // Phân tích class tab lọc
