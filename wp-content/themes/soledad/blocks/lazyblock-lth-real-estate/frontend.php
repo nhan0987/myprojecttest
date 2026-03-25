@@ -18,6 +18,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
         $subtitle = isset( $attributes['subtitle'] ) ? $attributes['subtitle'] : 'DANH MỤC BĐS';
         $title = isset( $attributes['title'] ) ? $attributes['title'] : 'Bất Động Sản Nổi Bật';
         $location_cats = isset( $attributes['location_cats'] ) ? $attributes['location_cats'] : '';
+        $tab_locations = isset( $attributes['tab_locations'] ) ? $attributes['tab_locations'] : '';
         $type_cats = isset( $attributes['type_cats'] ) ? $attributes['type_cats'] : '';
         $post_number = isset( $attributes['post_number'] ) ? intval( $attributes['post_number'] ) : 10;
         
@@ -26,6 +27,12 @@ if (!function_exists('lth_real_estate_output_fe')) :
             $loc_ids = is_array( $location_cats ) ? array_map('intval', $location_cats) : array_map('intval', explode(',', $location_cats));
             $loc_ids = array_filter( $loc_ids );
         }
+
+        $tab_loc_ids = [];
+        if ( ! empty( $tab_locations ) ) {
+            $tab_loc_ids = is_array( $tab_locations ) ? array_map('intval', $tab_locations) : array_map('intval', explode(',', $tab_locations));
+            $tab_loc_ids = array_filter( $tab_loc_ids );
+        }
         
         $type_ids = [];
         if ( ! empty( $type_cats ) ) {
@@ -33,17 +40,16 @@ if (!function_exists('lth_real_estate_output_fe')) :
             $type_ids = array_filter( $type_ids );
         }
 
-        // Lọc các Taxonomy được select
+        // Lọc các Taxonomy để hiển thị trên TABS
         $active_location_terms = [];
         $fetched_terms = [];
-        if ( ! empty( $loc_ids ) ) {
+        if ( ! empty( $tab_loc_ids ) ) {
             $fetched_terms = get_terms( [
                 'taxonomy' => 'property-location',
-                'include'  => $loc_ids,
+                'include'  => $tab_loc_ids,
                 'hide_empty' => false,
             ] );
         } else {
-            // Nếu chưa chọn tĩnh, lấy một vài cái mặc định
             $fetched_terms = get_terms( [
                 'taxonomy' => 'property-location',
                 'hide_empty' => false,
@@ -53,9 +59,13 @@ if (!function_exists('lth_real_estate_output_fe')) :
         if ( ! is_wp_error( $fetched_terms ) && ! empty( $fetched_terms ) ) {
             foreach ( $fetched_terms as $t ) {
                 if ( $t->parent != 0 ) {
+                    // Nếu đang dùng tab ngẫu nhiên nhưng Main query có lọc location_cats, thì ta chỉ nên show ngẫu nhiên các tab nằm trong loc_ids đang lọc!
+                    if ( empty( $tab_loc_ids ) && ! empty( $loc_ids ) && ! in_array( $t->term_id, $loc_ids ) ) {
+                        continue; 
+                    }
                     $active_location_terms[] = $t;
-                    if ( empty( $loc_ids ) && count( $active_location_terms ) >= 4 ) {
-                        break; // Lấy 4 vị trí nếu chưa chọn tĩnh
+                    if ( empty( $tab_loc_ids ) && count( $active_location_terms ) >= 4 ) {
+                        break;
                     }
                 }
             }
