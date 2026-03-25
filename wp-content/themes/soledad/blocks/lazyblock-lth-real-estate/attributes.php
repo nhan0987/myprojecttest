@@ -6,6 +6,43 @@
 
 if (function_exists('lazyblocks')) :
 
+   global $wpdb;
+
+   $location_choices = array(
+       array( 'label' => '-- Tất cả --', 'value' => '' )
+   );
+   
+   // Sử dụng Cache để tránh việc gọi thẳng DB nhiều lần
+   $loc_terms = wp_cache_get('lth_loc_terms', 'lth_blocks');
+   if ( false === $loc_terms ) {
+       $loc_terms = $wpdb->get_results("SELECT t.term_id, t.name, tt.parent FROM {$wpdb->terms} t INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id WHERE tt.taxonomy = 'property-location'");
+       wp_cache_set('lth_loc_terms', $loc_terms, 'lth_blocks', HOUR_IN_SECONDS);
+   }
+
+   if ( ! empty( $loc_terms ) ) {
+       foreach ( $loc_terms as $t ) {
+           if ( $t->parent != 0 ) {
+               $location_choices[] = array( 'label' => $t->name, 'value' => $t->term_id );
+           }
+       }
+   }
+
+   $type_choices = array(
+       array( 'label' => '-- Tất cả --', 'value' => '' )
+   );
+   
+   $type_terms = wp_cache_get('lth_type_terms', 'lth_blocks');
+   if ( false === $type_terms ) {
+       $type_terms = $wpdb->get_results("SELECT t.term_id, t.name, tt.parent FROM {$wpdb->terms} t INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id WHERE tt.taxonomy = 'property-type'");
+       wp_cache_set('lth_type_terms', $type_terms, 'lth_blocks', HOUR_IN_SECONDS);
+   }
+
+   if ( ! empty( $type_terms ) ) {
+       foreach ( $type_terms as $t ) {
+           $type_choices[] = array( 'label' => $t->name, 'value' => $t->term_id );
+       }
+   }
+
    lazyblocks()->add_block(array(
       'id' => 'lth_real_estate',
       'title' => 'LTH: Real Estate',
@@ -35,14 +72,6 @@ if (function_exists('lazyblocks')) :
          ),
       ),
       'controls' => array(
-         'control_text_lth_subtitle' => array(
-           'type' => 'text',
-           'name' => 'subtitle',
-           'default' => 'DANH MỤC BĐS',
-           'label' => 'Subtitle',
-           'placement' => 'inspector',
-           'width' => '100',
-         ),
          'control_text_lth_title' => array(
            'type' => 'text',
            'name' => 'title',
@@ -51,14 +80,33 @@ if (function_exists('lazyblocks')) :
            'placement' => 'inspector',
            'width' => '100',
          ),
-         'control_text_lth_locations' => array(
-            'type' => 'text',
-            'name' => 'locations',
+         'control_text_lth_subtitle' => array(
+           'type' => 'text',
+           'name' => 'subtitle',
+           'default' => 'DANH MỤC BĐS',
+           'label' => 'Subtitle',
+           'placement' => 'inspector',
+           'width' => '100',
+         ),
+         'control_text_lth_location_cats' => array(
+            'type' => 'select',
+            'name' => 'location_cats',
             'default' => '',
-            'label' => 'Locations IDs',
-            'help' => 'Nhập các ID Vị trí (cách nhau bởi dấu phẩy, ví dụ: 12,34). Để trống để lấy ngẫu nhiên 4 vị trí.',
+            'label' => 'Danh mục vị trí',
+            'help' => 'Chọn vị trí cần hiển thị (để trống lấy tất cả).',
             'placement' => 'inspector',
             'width' => '100',
+            'choices' => $location_choices,
+         ),
+         'control_text_lth_type_cats' => array(
+            'type' => 'select',
+            'name' => 'type_cats',
+            'default' => '',
+            'label' => 'Danh mục loại hình',
+            'help' => 'Chọn loại hình cần hiển thị (để trống lấy tất cả).',
+            'placement' => 'inspector',
+            'width' => '100',
+            'choices' => $type_choices,
          ),
          'control_number_lth_post_number' => array(
             'type' => 'number',

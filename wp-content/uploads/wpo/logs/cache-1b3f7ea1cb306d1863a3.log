@@ -846,3 +846,29 @@
 [2026-03-21 16:10:17 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
 [2026-03-21 17:01:28 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
 [2026-03-21 17:01:30 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 13:49:08 : INFO] - Cache for URL: http://mystnd.vn/real-estate/sun-centro-town-dau-tu-don-dau-tiem-nang/ has been purged, triggered by action: save_post 
+[2026-03-25 13:49:08 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-25 13:49:08 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-25 13:49:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-25 13:49:10 : INFO] - Cache for URL: http://mystnd.vn/real-estate/sun-centro-town-dau-tu-don-dau-tiem-nang/ has been purged, triggered by action: save_post 
+[2026-03-25 13:49:10 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-25 13:49:10 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Sun Centro Town &#8211; Đầu tư đón đầu tiềm năng " has been purged, triggered by action: save_post 
+[2026-03-25 13:49:37 : INFO] - Cache for URL: http://mystnd.vn/real-estate/ban-khach-san-vi-tri-dep-nhat-cat-ba-nhinh-14-ty/ has been purged, triggered by action: save_post 
+[2026-03-25 13:49:37 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-25 13:49:37 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-25 13:49:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-03-25 13:49:40 : INFO] - Cache for URL: http://mystnd.vn/real-estate/ban-khach-san-vi-tri-dep-nhat-cat-ba-nhinh-14-ty/ has been purged, triggered by action: save_post 
+[2026-03-25 13:49:40 : INFO] - Cache for archive page associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-25 13:49:40 : INFO] - Cache for author page URL: http://mystnd.vn/author/gco_admin/ associated with post_type: real_estate and Title: "Bán khách sạn vị trí đẹp nhất Cát Bà nhỉnh 14 tỷ" has been purged, triggered by action: save_post 
+[2026-03-25 13:51:04 : INFO] - Cache for term page with URL: http://mystnd.vn/property-location/quan-dong-da/  have been purged, triggered by action: edit_terms 
+[2026-03-25 13:51:04 : INFO] - Cache for associated posts for term with URL: http://mystnd.vn/property-location/quan-dong-da/ have been purged, triggered by action: edit_terms 
+[2026-03-25 13:51:16 : INFO] - Cache for term page with URL: http://mystnd.vn/property-location/quan-hoan-kiem/  have been purged, triggered by action: edit_terms 
+[2026-03-25 13:51:16 : INFO] - Cache for associated posts for term with URL: http://mystnd.vn/property-location/quan-hoan-kiem/ have been purged, triggered by action: edit_terms 
+[2026-03-25 13:51:28 : INFO] - Cache for term page with URL: http://mystnd.vn/property-location/quan-long-bien/  have been purged, triggered by action: edit_terms 
+[2026-03-25 13:51:28 : INFO] - Cache for associated posts for term with URL: http://mystnd.vn/property-location/quan-long-bien/ have been purged, triggered by action: edit_terms 
+[2026-03-25 14:03:59 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 14:04:01 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 14:04:34 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 14:04:36 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 14:28:09 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
+[2026-03-25 14:28:11 : INFO] - Cache for URL: http://mystnd.vn/nha-mat-pho/ has been purged, triggered by action: save_post 
