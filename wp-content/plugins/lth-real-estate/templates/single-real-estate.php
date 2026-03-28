@@ -70,7 +70,8 @@ while ( have_posts() ) : the_post();
     $type_name = ( $types && ! is_wp_error( $types ) ) ? $types[0]->name : 'Bất động sản';
 ?>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
 
 <div class="single-bds-container mx-auto px-4 max-w-[1200px] mt-6">
     <div class="bds-breadcrumb text-xs text-gray-400 mb-6 uppercase tracking-wide">
@@ -99,89 +100,107 @@ while ( have_posts() ) : the_post();
     <!-- MAIN     <!-- MAIN FLEX LAYOUT -->
     <div class="flex flex-col lg:flex-row gap-8 items-start mb-10">
         
-        <!-- COLUMN 1: MAIN INFO + PRICE BOX (Basis 60rem) -->
-        <div class="lg:basis-[60rem] flex-grow">
+        <!-- COLUMN 1: LEFT MAIN -->
+        <div class="lg:basis-[70rem] flex-grow">
             
-            <!-- HEADER PART: Title & Price Box -->
-            <div class="flex flex-col lg:flex-row justify-between items-start gap-6 border-b border-gray-100 pb-6 mb-8">
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                
+                <!-- SUB LEFT (Title + Content) -->
                 <div class="flex-grow">
-                    <h1 class="text-3xl font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
-                    
-                    <div class="flex items-center gap-1 text-gray-500 text-sm mb-4">
-                        <span class="material-symbols-outlined text-orange-400" style="font-size: 18px;">location_on</span>
+                    <!-- HEADER -->
+                    <div class="border-b border-gray-100 pb-6 mb-8">
+                        <h1 class="text-2xl font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
+                        
+                        <div class="flex items-center gap-1 text-gray-500 text-sm mb-4">
+                            <span class="material-symbols-outlined text-lg"  >location_on</span>
+                            <?php 
+                            $final_loc = $address_street;
+                            if ( ! empty( $final_loc ) && ! empty( $loc_full ) ) {
+                                $final_loc .= ', ' . $loc_full;
+                            } elseif ( empty( $final_loc ) ) {
+                                $final_loc = $loc_full;
+                            }
+                            echo esc_html( $final_loc ?: 'Đang cập nhật địa chỉ' ); 
+                            ?>
+                        </div>
+
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+                            <span>Danh mục: <b class="text-black"><?php echo esc_html($type_name); ?></b></span>
+                            <span>Tình trạng: <b class="text-black"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></b></span>
+                            <span>Năm xây: <b class="text-black">2022</b></span>
+                        </div>
+                    </div>
+
+                    <!-- BODY CONTENT -->
+                    <div class="bds-body-content">
+                        <div class="dash-07">
+                            <div class="title-box ">
+                                <h2 class="title text-[20px]! capitalize!">Tổng quan </h2>
+                                <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
+                            </div>
+                        </div>
+                        <div class="prose max-w-none text-gray-600 leading-relaxed mb-10">
+                            <?php the_content(); ?>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 pt-10 mt-6 pb-10">
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">directions_car</span> Gara ô tô trong nhà</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">cooking</span> Bếp full tủ + thiết bị</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">ac_unit</span> Điều hòa các phòng</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">balcony</span> Ban công trước - sau</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">fire_extinguisher</span> Hệ thống PCCC cơ bản</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">layers</span> Dịch vụ tiện ích</div>
+                        </div>
+
+                        <!-- MAP SECTION -->
                         <?php 
-                        $final_loc = $address_street;
-                        if ( ! empty( $final_loc ) && ! empty( $loc_full ) ) {
-                            $final_loc .= ', ' . $loc_full;
-                        } elseif ( empty( $final_loc ) ) {
-                            $final_loc = $loc_full;
-                        }
-                        echo esc_html( $final_loc ?: 'Đang cập nhật địa chỉ' ); 
+                        $map_source = get_post_meta( $post_id, 'google_maps_url', true );
+                        if ( ! empty( $map_source ) ) :
+                            if ( preg_match( '/src="([^"]+)"/', $map_source, $match ) ) {
+                                $map_url = $match[1];
+                            } else {
+                                $map_url = $map_source;
+                            }
                         ?>
-                    </div>
-
-                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
-                        <span>Danh mục: <b class="text-black"><?php echo esc_html($type_name); ?></b></span>
-                        <span>Tình trạng: <b class="text-black"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></b></span>
-                        <span>Năm xây: <b class="text-black">2022</b></span>
-                    </div>
-                </div>
-
-                <!-- PRICE BOX (Inside Column 1) -->
-                <div class="hidden lg:block w-full lg:w-48 flex-shrink-0">
-                    <div class="bds-price-card">
-                        <span class="label">Giá bán:</span>
-                        <span class="main-price"><?php echo esc_html($price_label); ?></span>
-                        <?php if ($price_sqm) : ?>
-                            <span class="sqm-price"><?php echo esc_html($price_sqm); ?></span>
+                            <div class="mt-12">
+                                <div class="desc-header mb-4 font-bold text-lg">Vị trí <span class="text-orange-400">Bất động sản</span></div>
+                                <p class="text-sm text-gray-400 mb-4"><?php echo esc_html($final_loc); ?></p>
+                                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-inner h-[400px]">
+                                    <iframe src="<?php echo esc_url($map_url); ?>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
                         <?php endif; ?>
-                        <a href="tel:0972991551" class="btn-call shadow-sm">
-                            <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
-                            0972 991 551
-                        </a>
-                        <div class="btn-contact mt-2 text-xs opacity-80 cursor-pointer flex justify-center items-center gap-1">
-                            <span class="material-symbols-outlined" style="font-size: 14px;">mail</span> Liên hệ ngay
+                    </div>
+                </div>
+
+                <!-- SUB RIGHT (Price Card - Sticky) -->
+                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky top-10">
+                    <div class="bds-price-card">
+                        <div class="price-header-section">
+                            <span class="label">Giá bán</span>
+                            <div class="price-val"><?php echo esc_html($price_label); ?></div>
+                        </div>
+                        <?php if ($price_sqm) : ?>
+                            <div class="price-sqm-section">
+                                ~ <?php echo esc_html($price_sqm); ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="price-contact-section">
+                            <a href="tel:0972991551" class="btn-call">
+                                <span class="material-symbols-outlined">call</span>
+                                0972 991 551
+                            </a>
+                            <a href="#" class="btn-contact">
+                                <span class="material-symbols-outlined">mail</span>
+                                Liên hệ ngay
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- BODY PART: Content, Icons, Map -->
-            <div class="bds-body-content">
-                <div class="desc-header mb-4">Tổng quan <span class="text-orange-400">Bất động sản</span></div>
-                <div class="prose max-w-none text-gray-600 leading-relaxed mb-10">
-                    <?php the_content(); ?>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 pt-10 mt-6 pb-10">
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">directions_car</span> Gara ô tô trong nhà</div>
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">cooking</span> Bếp full tủ + thiết bị</div>
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">ac_unit</span> Điều hòa các phòng</div>
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">balcony</span> Ban công trước - sau</div>
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">fire_extinguisher</span> Hệ thống PCCC cơ bản</div>
-                    <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">layers</span> Dịch vụ tiện ích</div>
-                </div>
-
-                <!-- MAP SECTION -->
-                <?php 
-                $map_source = get_post_meta( $post_id, 'google_maps_url', true );
-                if ( ! empty( $map_source ) ) :
-                    if ( preg_match( '/src="([^"]+)"/', $map_source, $match ) ) {
-                        $map_url = $match[1];
-                    } else {
-                        $map_url = $map_source;
-                    }
-                ?>
-                    <div class="mt-12">
-                        <div class="desc-header mb-4">Vị trí <span class="text-orange-400">Bất động sản</span></div>
-                        <p class="text-sm text-gray-400 mb-4"><?php echo esc_html($final_loc); ?></p>
-                        <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-inner h-[400px]">
-                            <iframe src="<?php echo esc_url($map_url); ?>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
+
 
         <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
         <div class="lg:basis-[18.5rem] flex-shrink-0 sticky top-10">
