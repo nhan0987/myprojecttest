@@ -172,7 +172,32 @@ if (!function_exists('lth_real_estate_output_fe')) :
                 $floors = get_post_meta( $post_id, 'num_floors', true );
                 $legal = get_post_meta( $post_id, 'legal_paper_status', true );
                 
-                $price_label = $price ? $price . ' ' . $currency : 'Liên hệ';
+                // Labels mapping for display
+                $labels_map = [
+                    'billion' => 'Tỷ',
+                    'million' => 'Triệu',
+                    'million_sqm' => 'Triệu/m²',
+                    'million_month' => 'Triệu/tháng',
+                    'million_year' => 'Triệu/năm',
+                    'land_ownership_certificate' => 'Sổ đỏ',
+                    'building_permit' => 'Giấy phép xây dựng',
+                    'sales_contract' => 'Hợp đồng mua bán',
+                    'pending_certificate' => 'Đang chờ sổ',
+                    'basic_furniture' => 'Cơ bản',
+                    'full_furniture' => 'Đầy đủ',
+                    'premium_furniture' => 'Cao cấp',
+                    'east' => 'Đông',
+                    'west' => 'Tây',
+                    'south' => 'Nam',
+                    'north' => 'Bắc',
+                    'south_east' => 'Đông Nam',
+                    'north_east' => 'Đông Bắc',
+                    'south_west' => 'Tây Nam',
+                    'north_west' => 'Tây Bắc'
+                ];
+                
+                $currency_label = isset($labels_map[$currency]) ? $labels_map[$currency] : $currency;
+                $price_label = $price ? $price . ' ' . $currency_label : 'Liên hệ';
                 
                 // Trích xuất Taxonomy Type & Location
                 $types = get_the_terms( $post_id, 'property-type' );
@@ -237,9 +262,9 @@ if (!function_exists('lth_real_estate_output_fe')) :
                 // Tính toán giá để sort
                 $price_val = floatval( str_replace(',', '.', $price) );
                 $true_price = 0;
-                if ( stripos($currency, 'Tỷ') !== false ) {
+                if ( stripos($currency, 'billion') !== false ) {
                     $true_price = $price_val * 1000000000;
-                } elseif ( stripos($currency, 'Triệu') !== false ) {
+                } elseif ( stripos($currency, 'million') !== false ) {
                     $true_price = $price_val * 1000000;
                 } else {
                     $true_price = $price_val;
@@ -274,7 +299,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
                         <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">rectangle</span><strong><?php echo esc_html( $frontage ?: '-' ); ?>m</strong></span></div>
                         <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined border! border-[#E1E1E1] rounded-sm">open_in_full</span><strong><?php echo esc_html( $area ?: '-' ); ?>m2</strong></span></div>
                         <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">stairs_2</span><strong><?php echo esc_html( $floors ?: '-' ); ?> tầng</strong></span></div>
-                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">balance</span><strong><?php echo esc_html( $legal ?: 'Chờ sổ' ); ?></strong></span></div>
+                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">balance</span><strong><?php echo esc_html( isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Chờ sổ') ); ?></strong></span></div>
                     </div>
                     <div class="col-span-4 flex flex-row justify-between">
                         <div class="col-span-3 flex items-center gap-1!"><span class="text-sm">Giá :</span> <span class="text-red-500 font-bold text-base"><?php echo esc_html( $price_label ); ?></span></div>

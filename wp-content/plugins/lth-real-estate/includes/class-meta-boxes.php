@@ -89,11 +89,11 @@ class LTH_Real_Estate_Meta_Boxes {
                 <div class="lth-meta-field" style="flex:0.8;">
                     <label>Đơn vị</label>
                     <select name="currency" id="lth_currency_select">
-                        <option value="Tỷ" <?php selected( $currency, 'Tỷ' ); ?>>Tỷ</option>
-                        <option value="Triệu" <?php selected( $currency, 'Triệu' ); ?>>Triệu</option>
-                        <option value="Triệu/m2" <?php selected( $currency, 'Triệu/m2' ); ?>>Triệu/m²</option>
-                        <option value="Triệu/tháng" <?php selected( $currency, 'Triệu/tháng' ); ?>>Triệu/tháng</option>
-                        <option value="Triệu/năm" <?php selected( $currency, 'Triệu/năm' ); ?>>Triệu/năm</option>
+                        <option value="billion" <?php selected( $currency, 'billion' ); ?>>Tỷ</option>
+                        <option value="million" <?php selected( $currency, 'million' ); ?>>Triệu</option>
+                        <option value="million_sqm" <?php selected( $currency, 'million_sqm' ); ?>>Triệu/m²</option>
+                        <option value="million_month" <?php selected( $currency, 'million_month' ); ?>>Triệu/tháng</option>
+                        <option value="million_year" <?php selected( $currency, 'million_year' ); ?>>Triệu/năm</option>
                     </select>
                 </div>
                 <div class="lth-meta-field" style="flex:1;">
@@ -140,8 +140,17 @@ class LTH_Real_Estate_Meta_Boxes {
                     <select name="house_direction">
                         <option value="">-- Trống --</option>
                         <?php 
-                        $dirs = ['Đông','Tây','Nam','Bắc','Đông Nam','Đông Bắc','Tây Nam','Tây Bắc'];
-                        foreach($dirs as $d) echo '<option value="'.$d.'" '.selected($house_direction, $d, false).'>'.$d.'</option>'; 
+                        $dirs = [
+                            'east' => 'Đông',
+                            'west' => 'Tây',
+                            'south' => 'Nam',
+                            'north' => 'Bắc',
+                            'south_east' => 'Đông Nam',
+                            'north_east' => 'Đông Bắc',
+                            'south_west' => 'Tây Nam',
+                            'north_west' => 'Tây Bắc'
+                        ];
+                        foreach($dirs as $val => $label) echo '<option value="'.$val.'" '.selected($house_direction, $val, false).'>'.$label.'</option>'; 
                         ?>
                     </select>
                 </div>
@@ -154,19 +163,19 @@ class LTH_Real_Estate_Meta_Boxes {
                     <label>Tình trạng Giấy tờ</label>
                     <select name="legal_paper_status">
                         <option value="">-- Bỏ qua --</option>
-                        <option value="Sổ đỏ" <?php selected( $legal_paper_status, 'Sổ đỏ' ); ?>>Đã có Sổ đỏ</option>
-                        <option value="Giấy phép xây dựng" <?php selected( $legal_paper_status, 'Giấy phép xây dựng' ); ?>>Giấy phép xây dựng</option>
-                        <option value="Hợp đồng mua bán" <?php selected( $legal_paper_status, 'Hợp đồng mua bán' ); ?>>Hợp đồng mua bán (Dự án)</option>
-                        <option value="Đang chờ sổ" <?php selected( $legal_paper_status, 'Đang chờ sổ' ); ?>>Đang chờ sổ</option>
+                        <option value="land_ownership_certificate" <?php selected( $legal_paper_status, 'land_ownership_certificate' ); ?>>Đã có Sổ đỏ</option>
+                        <option value="building_permit" <?php selected( $legal_paper_status, 'building_permit' ); ?>>Giấy phép xây dựng</option>
+                        <option value="sales_contract" <?php selected( $legal_paper_status, 'sales_contract' ); ?>>Hợp đồng mua bán (Dự án)</option>
+                        <option value="pending_certificate" <?php selected( $legal_paper_status, 'pending_certificate' ); ?>>Đang chờ sổ</option>
                     </select>
                 </div>
                 <div class="lth-meta-field">
                     <label>Nội thất bàn giao</label>
                     <select name="furniture_status">
                         <option value="">-- Rỗng --</option>
-                        <option value="Cơ bản" <?php selected( $furniture_status, 'Cơ bản' ); ?>>Nội thất Cơ bản (Bếp, Vệ sinh)</option>
-                        <option value="Đầy đủ" <?php selected( $furniture_status, 'Đầy đủ' ); ?>>Đầy đủ (Dọn vào ở ngay)</option>
-                        <option value="Cao cấp" <?php selected( $furniture_status, 'Cao cấp' ); ?>>Setup chuẩn Cao cấp</option>
+                        <option value="basic_furniture" <?php selected( $furniture_status, 'basic_furniture' ); ?>>Nội thất Cơ bản (Bếp, Vệ sinh)</option>
+                        <option value="full_furniture" <?php selected( $furniture_status, 'full_furniture' ); ?>>Đầy đủ (Dọn vào ở ngay)</option>
+                        <option value="premium_furniture" <?php selected( $furniture_status, 'premium_furniture' ); ?>>Setup chuẩn Cao cấp</option>
                     </select>
                 </div>
                 <div class="lth-meta-field">
@@ -269,7 +278,7 @@ class LTH_Real_Estate_Meta_Boxes {
                         $priceLabel.text('Giá bán');
                         $currencySelect.find('option').each(function(){
                             var val = $(this).val();
-                            if (val === 'Tỷ' || val === 'Triệu' || val === 'Triệu/m2') {
+                            if (val === 'billion' || val === 'million' || val === 'million_sqm') {
                                 $(this).show().prop('disabled', false);
                             } else {
                                 $(this).hide().prop('disabled', true);
@@ -279,7 +288,7 @@ class LTH_Real_Estate_Meta_Boxes {
                         $priceLabel.text('Giá thuê');
                         $currencySelect.find('option').each(function(){
                             var val = $(this).val();
-                            if (val === 'Triệu/tháng' || val === 'Triệu/năm') {
+                            if (val === 'million_month' || val === 'million_year') {
                                 $(this).show().prop('disabled', false);
                             } else {
                                 $(this).hide().prop('disabled', true);

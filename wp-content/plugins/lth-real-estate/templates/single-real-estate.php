@@ -21,14 +21,38 @@ while ( have_posts() ) : the_post();
     $gallery = get_post_meta( $post_id, 'property_gallery', true );
     $furniture = get_post_meta( $post_id, 'furniture_status', true );
     
+    // Labels mapping for display
+    $labels_map = [
+        'billion' => 'Tỷ',
+        'million' => 'Triệu',
+        'million_sqm' => 'Triệu/m²',
+        'million_month' => 'Triệu/tháng',
+        'million_year' => 'Triệu/năm',
+        'land_ownership_certificate' => 'Sổ đỏ',
+        'building_permit' => 'Giấy phép xây dựng',
+        'sales_contract' => 'Hợp đồng mua bán',
+        'pending_certificate' => 'Đang chờ sổ',
+        'basic_furniture' => 'Cơ bản',
+        'full_furniture' => 'Đầy đủ',
+        'premium_furniture' => 'Cao cấp',
+        'east' => 'Đông',
+        'west' => 'Tây',
+        'south' => 'Nam',
+        'north' => 'Bắc',
+        'south_east' => 'Đông Nam',
+        'north_east' => 'Đông Bắc',
+        'south_west' => 'Tây Nam',
+        'north_west' => 'Tây Bắc'
+    ];
+    
     // Calculate price/m2
     $price_sqm = '';
     if ( ! empty($price) && ! empty($area) && intval($area) > 0 ) {
         $price_float = floatval($price);
         $total_millions = 0;
-        if ( stripos($currency, 'Tỷ') !== false ) {
+        if ( stripos($currency, 'billion') !== false ) {
             $total_millions = $price_float * 1000;
-        } elseif ( stripos($currency, 'Triệu') !== false ) {
+        } elseif ( stripos($currency, 'million') !== false ) {
             $total_millions = $price_float;
         }
         
@@ -38,7 +62,8 @@ while ( have_posts() ) : the_post();
         }
     }
 
-    $price_label = $price ? $price . ' ' . $currency : 'Liên hệ';
+    $currency_label = isset($labels_map[$currency]) ? $labels_map[$currency] : $currency;
+    $price_label = $price ? $price . ' ' . $currency_label : 'Liên hệ';
     
     // Locations
     $locations = get_the_terms( $post_id, 'property-location' );
@@ -133,7 +158,7 @@ while ( have_posts() ) : the_post();
                         <div class="flex flex-wrap gap-x-4! gap-y-2 text-sm text-gray-400 mb-3 items-center">
                             <span class="flex items-center gap-1">Danh mục: <span class="text-black font-semibold"><?php echo esc_html($type_name); ?></span></span>
                             <span class="text-gray-300 text-3xl!">·</span>
-                            <span class="flex items-center gap-1">Tình trạng: <span class="text-black font-semibold"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></span></span>
+                            <span class="flex items-center gap-1">Tình trạng: <span class="text-black font-semibold"><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Đang cập nhật')); ?></span></span>
                             <span class="text-gray-300 text-3xl!">·</span>
                             <span class="flex items-center gap-1">Năm xây: <span class="text-black font-semibold">2022</span></span>
                         </div>
@@ -210,7 +235,7 @@ while ( have_posts() ) : the_post();
                             <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
                                 <span class="material-symbols-outlined text-2xl">balance</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html($legal ?: '---'); ?></span>
+                                    <span class="">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: '---')); ?></span>
                                 </div>
                             </div>
                         </div>
