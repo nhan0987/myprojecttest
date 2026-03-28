@@ -187,30 +187,30 @@ while ( have_posts() ) : the_post();
                             
                             <!-- Mặt tiền -->
                             <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-gray-400 text-2xl">rectangle</span>
+                                <span class="material-symbols-outlined text-2xl">rectangle</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Mặt tiền:</span>  <span class="text-black font-semibold"><?php echo esc_html($frontage ?: '---'); ?>m</span>
+                                    <span class="">Mặt tiền:</span>  <span class="text-black font-semibold"><?php echo esc_html($frontage ?: '---'); ?>m</span>
                                 </div>
                             </div>
                             <!-- Diện tích -->
                             <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-gray-400 text-2xl">open_in_full</span>
+                                <span class="material-symbols-outlined text-2xl">open_in_full</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Diện tích:</span> <span class="text-black font-semibold"><?php echo esc_html($area ?: '---'); ?>m²</span>
+                                    <span class="">Diện tích:</span> <span class="text-black font-semibold"><?php echo esc_html($area ?: '---'); ?>m²</span>
                                 </div>
                             </div>
                             <!-- Số tầng -->
                             <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-gray-400 text-2xl">stairs</span>
+                                <span class="material-symbols-outlined text-2xl">stairs</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Số tầng:</span>  <span class="text-black font-semibold"><?php echo esc_html($num_floors ?: '---'); ?> tầng</span>
+                                    <span class="">Số tầng:</span>  <span class="text-black font-semibold"><?php echo esc_html($num_floors ?: '---'); ?> tầng</span>
                                 </div>
                             </div>
                             <!-- Pháp lý -->
                             <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-gray-400 text-2xl">balance</span>
+                                <span class="material-symbols-outlined text-2xl">balance</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html($legal ?: '---'); ?></span>
+                                    <span class="">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html($legal ?: '---'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +259,7 @@ while ( have_posts() ) : the_post();
                 </div>
 
                 <!-- SUB RIGHT (Price Card - Sticky) -->
-                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky  top-10">
+                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky  top-20">
                     <div class="bds-price-card">
                         <div class="price-header-section">
                             <span class="label">Giá bán</span>
