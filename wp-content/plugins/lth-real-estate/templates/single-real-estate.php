@@ -65,18 +65,39 @@ while ( have_posts() ) : the_post();
     }
     $gallery_ids = array_unique( array_filter( $gallery_ids ) );
     
-    // Taxonomy
-    $types = get_the_terms( $post_id, 'property-type' );
-    $type_name = ( $types && ! is_wp_error( $types ) ) ? $types[0]->name : 'Bất động sản';
+    // Taxonomy (Prioritize Category as requested)
+    $categories = get_the_category( $post_id );
+    $type_obj = ( $categories && ! is_wp_error( $categories ) ) ? $categories[0] : null;
+    
+    // If no category found, fall back to property-type taxonomy
+    if ( ! $type_obj ) {
+        $property_types = get_the_terms( $post_id, 'property-type' );
+        $type_obj = ( $property_types && ! is_wp_error( $property_types ) ) ? $property_types[0] : null;
+    }
+
+    $type_name = $type_obj ? $type_obj->name : 'Bất động sản';
+    $type_link = $type_obj ? get_term_link( $type_obj ) : '#';
+    
+    if ( ! is_wp_error( $type_link ) && $type_link !== '#' ) {
+        // Force the link to use 'category' instead of 'property-type' path as requested
+        $type_link = str_replace( '/property-type/', '/category/', $type_link );
+    } else {
+        $type_link = '#';
+    }
 ?>
 
 
 
 
 <div class="single-bds-container mx-auto px-4 max-w-[1200px] mt-6">
-    <div class="bds-breadcrumb text-xs text-gray-400 mb-6 uppercase tracking-wide">
+    <div class="bds-breadcrumb text-sm text-gray-400 mb-10!">
         <a href="<?php echo home_url(); ?>">Trang chủ</a> &nbsp;/&nbsp; 
-        <a href="#"><?php echo esc_html($type_name); ?></a> &nbsp;/&nbsp; 
+        <?php if ( $type_link !== '#' ) : ?>
+            <a href="<?php echo esc_url( $type_link ); ?>"><?php echo esc_html( $type_name ); ?></a>
+        <?php else : ?>
+            <span><?php echo esc_html( $type_name ); ?></span>
+        <?php endif; ?>
+        &nbsp;/&nbsp; 
         <span><?php the_title(); ?></span>
     </div>
 
@@ -97,7 +118,7 @@ while ( have_posts() ) : the_post();
         ?>
     </div>
 
-    <!-- MAIN     <!-- MAIN FLEX LAYOUT -->
+    <!-- MAIN FLEX LAYOUT -->
     <div class="flex flex-col lg:flex-row gap-8 items-start mb-10">
         
         <!-- COLUMN 1: LEFT MAIN -->
@@ -109,13 +130,15 @@ while ( have_posts() ) : the_post();
                 <div class="flex-grow">
                     <!-- HEADER -->
                     <div class="border-b border-gray-100 pb-6 mb-8">
-                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500 mb-3">
-                            <span>Danh mục: <p class="text-black font-semibold"><?php echo esc_html($type_name); ?></p></span>
-                            <span>Tình trạng: <p class="text-black font-semibold"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></p></span>
-                            <span>Năm xây: <p class="text-black font-semibold">2022</p></span>
+                        <div class="flex flex-wrap gap-x-4! gap-y-2 text-sm text-gray-400 mb-3 items-center">
+                            <span class="flex items-center gap-1">Danh mục: <span class="text-black font-semibold"><?php echo esc_html($type_name); ?></span></span>
+                            <span class="text-gray-300 text-3xl!">·</span>
+                            <span class="flex items-center gap-1">Tình trạng: <span class="text-black font-semibold"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></span></span>
+                            <span class="text-gray-300 text-3xl!">·</span>
+                            <span class="flex items-center gap-1">Năm xây: <span class="text-black font-semibold">2022</span></span>
                         </div>
 
-                        <h1 class="text-2xl font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
+                        <h1 class="text-2xl! font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
                         
                         <div class="flex items-center gap-1 text-gray-500 text-sm mb-2">
                             <span class="material-symbols-outlined text-lg">location_on</span>
@@ -158,36 +181,36 @@ while ( have_posts() ) : the_post();
                                 </div>
                             </div>
 
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10!">
+                        <div class="grid grid-cols-2 md:grid-cols-2 gap-3 mb-10!">
 
                             <!-- Basic Information Block -->
                             
                             <!-- Mặt tiền -->
-                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
                                 <span class="material-symbols-outlined text-gray-400 text-2xl">rectangle</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Mặt tiền:</span> <b class="text-black ms-1"><?php echo esc_html($frontage ?: '---'); ?>m</b>
+                                    <span class="text-gray-500">Mặt tiền:</span>  <span class="text-black font-semibold"><?php echo esc_html($frontage ?: '---'); ?>m</span>
                                 </div>
                             </div>
                             <!-- Diện tích -->
-                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
                                 <span class="material-symbols-outlined text-gray-400 text-2xl">open_in_full</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Diện tích:</span> <b class="text-black ms-1"><?php echo esc_html($area ?: '---'); ?>m²</b>
+                                    <span class="text-gray-500">Diện tích:</span> <span class="text-black font-semibold"><?php echo esc_html($area ?: '---'); ?>m²</span>
                                 </div>
                             </div>
                             <!-- Số tầng -->
-                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
                                 <span class="material-symbols-outlined text-gray-400 text-2xl">stairs</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Số tầng:</span> <b class="text-black ms-1"><?php echo esc_html($num_floors ?: '---'); ?> tầng</b>
+                                    <span class="text-gray-500">Số tầng:</span>  <span class="text-black font-semibold"><?php echo esc_html($num_floors ?: '---'); ?> tầng</span>
                                 </div>
                             </div>
                             <!-- Pháp lý -->
-                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
                                 <span class="material-symbols-outlined text-gray-400 text-2xl">balance</span>
                                 <div class="text-sm whitespace-nowrap">
-                                    <span class="text-gray-500">Pháp lý:</span> <b class="text-black ms-1"><?php echo esc_html($legal ?: '---'); ?></b>
+                                    <span class="text-gray-500">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html($legal ?: '---'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +259,7 @@ while ( have_posts() ) : the_post();
                 </div>
 
                 <!-- SUB RIGHT (Price Card - Sticky) -->
-                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky top-10">
+                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0  top-10">
                     <div class="bds-price-card">
                         <div class="price-header-section">
                             <span class="label">Giá bán</span>
