@@ -111,15 +111,14 @@ if (!function_exists('lth_real_estate_output_fe')) :
             $args['tax_query'] = $tax_query;
         }
 
+        $paged = get_query_var('lth_p') ? intval(get_query_var('lth_p')) : 1;
+        $args['paged'] = $paged;
+
         $query = new WP_Query( $args );
         $total_posts = $query->found_posts;
 
         $pagination_type = isset($attributes['pagination_type']) ? $attributes['pagination_type'] : 'none';
         $wrapper_id = 'lth-re-' . substr(md5(serialize($attributes)), 0, 8);
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        if ( is_front_page() ) {
-            $paged = (get_query_var('page')) ? get_query_var('page') : 1;
-        }
 ?>
 
 <!-- Khung Bọc của Block danh sách -->
@@ -322,13 +321,14 @@ if (!function_exists('lth_real_estate_output_fe')) :
     </div>
 
     <?php if ( $pagination_type == 'numeric' && $query->max_num_pages > 1 ) : ?>
-        <div class="lth-numeric-pagination <?php echo $attributes['post_style']; ?>-pagination">
+        <div class="lth-numeric-pagination -pagination">
             <?php
+            $base_url = preg_replace( '#realestatepage/[0-9]+/?#', '', get_pagenum_link( 1 ) );
             echo paginate_links( array(
-                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'base'         => user_trailingslashit( trailingslashit( $base_url ) . 'realestatepage/%#%' ),
                 'total'        => $query->max_num_pages,
                 'current'      => $paged,
-                'format'       => '?paged=%#%',
+                'format'       => '',
                 'show_all'     => false,
                 'type'         => 'plain',
                 'end_size'     => 1,

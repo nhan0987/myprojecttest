@@ -4715,3 +4715,25 @@ function lth_real_estate_load_more() {
 add_action('wp_ajax_lth_real_estate_load_more', 'lth_real_estate_load_more');
 add_action('wp_ajax_nopriv_lth_real_estate_load_more', 'lth_real_estate_load_more');
 
+
+/**
+ * Register Custom Rewrite Rules for Block Pagination
+ */
+add_filter('query_vars', function($vars) {
+    if ( ! in_array( 'lth_p', $vars ) ) {
+        $vars[] = 'lth_p';
+    }
+    return $vars;
+});
+
+add_action('init', function() {
+    // Chuyên mục (Category): /category/xxx/realestatepage/2/
+    add_rewrite_rule('category/(.+)/realestatepage/([0-9]+)/?$', 'index.php?category_name=$matches[1]&lth_p=$matches[2]', 'top');
+    
+    // Tag: /tag/xxx/realestatepage/2/
+    add_rewrite_rule('tag/(.+)/realestatepage/([0-9]+)/?$', 'index.php?tag=$matches[1]&lth_p=$matches[2]', 'top');
+
+    // Trang tĩnh hoặc bài viết: /abc/realestatepage/2/
+    add_rewrite_rule('(.+)/realestatepage/([0-9]+)/?$', 'index.php?pagename=$matches[1]&lth_p=$matches[2]', 'top');
+});
+
