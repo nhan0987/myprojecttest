@@ -288,7 +288,7 @@ while ( have_posts() ) : the_post();
 
 
         <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
-        <div class="lg:basis-[18.5rem] flex-shrink-0 top-10">
+        <div class="w-full lg:basis-[18.5rem] flex-shrink-0 top-10">
             <div class="bds-agent-card">
                 <div class="avatar">
                     <img src="/wp-content/uploads/2026/03/033b60afaa34c7b6114814ec022fe1438ea96af5.jpg" alt="Agent">
@@ -317,19 +317,19 @@ while ( have_posts() ) : the_post();
 </div>
 
 <!-- FIXED MOBILE BAR -->
-<div class="lg:hidden fixed bottom-1 left-4 right-4 z-[9999] shadow-2xl rounded-2xl overflow-hidden border border-white/20 flex h-[72px]" style="backdrop-filter: blur(10px);">
-    <div class="bg-[#1a2533] flex-1 px-4 py-2 flex flex-col justify-center text-white leading-tight">
-        <span class="text-[10px] opacity-70 uppercase tracking-tighter">Giá bán:</span>
-        <span class="text-xl font-bold font-['Outfit']" style="color: #fff;"><?php echo esc_html($price_label); ?></span>
+<div class="bg-[#1a2533] lg:hidden fixed z-[9999] bottom-0 shadow-2xl  overflow-hidden  flex h-[72px] w-full" style="backdrop-filter: blur(10px);">
+    <div class="flex-1 px-4 py-2 flex flex-col justify-center text-white leading-tight">
+        <span class="text-base tracking-tighter">Giá bán:</span>
+        <span class="text-2xl font-bold text-white" ><?php echo esc_html($price_label); ?></span>
     </div>
-    <div class="bg-[#ffbe42] flex-1 px-3 py-2 flex items-center justify-center text-gray-900 font-bold text-xs text-center leading-tight">
+    <div class="bg-[#FEBD55] flex-1 px-3 py-2 flex items-center justify-center text-gray-900 font-semibold text-base text-center leading-tight rounded-bl-2xl">
         <?php echo esc_html($price_sqm); ?>
     </div>
     <div class="bg-white flex items-center gap-3 px-4">
-        <a href="tel:0972991551" class="w-10 h-10 bg-[#ffbe42] rounded-full flex items-center justify-center text-white shadow-lg">
+        <a href="tel:0972991551" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
             <span class="material-symbols-outlined">call</span>
         </a>
-        <a href="mailto:contact@stnd.vn" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400">
+        <a href="mailto:contact@stnd.vn" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400!">
             <span class="material-symbols-outlined">mail</span>
         </a>
     </div>
