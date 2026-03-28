@@ -226,15 +226,14 @@ if (!function_exists('lth_blogs_output_fe')) :
                                 ?>
                             </div>
                         <?php elseif ( $pagination_type == 'load_more' && $wp_query->max_num_pages > 1 ) : ?>
-                            <div class="lth-load-more-wrapper" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+                            <div class="lth-load-more-wrapper">
                                 <button class="lth-load-more-btn btn" 
-                                        style="background: #0071a1; color: #fff; padding: 12px 30px; border-radius: 4px; font-weight: bold; cursor: pointer; border: none; transition: all 0.3s;"
-                                        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"
                                         data-block-id="<?php echo $wrapper_id; ?>" 
                                         data-paged="1" 
                                         data-max="<?php echo $wp_query->max_num_pages; ?>" 
                                         data-attrs='<?php echo json_encode($attributes); ?>'>
                                     Xem thêm bài viết
+                                    <i class="arrow-right-icons rotate-0 inline-block"></i>
                                 </button>
                             </div>
                             
