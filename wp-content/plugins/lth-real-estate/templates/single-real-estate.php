@@ -132,7 +132,7 @@ while ( have_posts() ) : the_post();
     $display_num = min($total_images, 5);
     ?>
     <!-- Desktop Dynamic Grid -->
-    <div class="bds-gallery-grid grid-<?php echo $display_num; ?> mb-10 hidden lg:grid">
+    <div class="bds-gallery-grid grid-<?php echo $display_num; ?> mb-10 hidden xl:grid">
         <?php for ($i = 0; $i < $display_num; $i++) :
             $src = wp_get_attachment_image_url($gallery_ids[$i], "large"); 
         ?>
@@ -148,7 +148,7 @@ while ( have_posts() ) : the_post();
     </div>
 
     <!-- Mobile Responsive Gallery -->
-    <div class="lg:hidden relative mb-8 rounded-2xl overflow-hidden shadow-xl aspect-video">
+    <div class="xl:hidden relative mb-8 rounded-2xl overflow-hidden shadow-xl aspect-video mb-8!">
         <div id="mob-scroll" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide h-full">
             <?php foreach ($gallery_ids as $idx => $id) : 
                 $src = wp_get_attachment_image_url($id, "large");
@@ -217,23 +217,32 @@ while ( have_posts() ) : the_post();
 
 
     <!-- MAIN FLEX LAYOUT -->
-    <div class="flex flex-col lg:flex-row gap-8 items-start mb-10">
+    <div class="flex flex-col xl:flex-row gap-8 items-start mb-10">
         
         <!-- COLUMN 1: LEFT MAIN -->
-        <div class="lg:basis-[70rem] flex-grow">
+        <div class="xl:basis-[70rem] flex-grow">
             
-            <div class="flex flex-col lg:flex-row gap-4 items-start">
+            <div class="flex flex-col xl:flex-row gap-4 items-start">
                 
                 <!-- SUB LEFT (Title + Content) -->
                 <div class="flex-grow">
                     <!-- HEADER -->
                     <div class="border-b border-gray-100 pb-6 mb-8">
-                        <div class="flex flex-wrap gap-x-4! gap-y-2 text-sm text-gray-400 mb-3 items-center">
-                            <span class="flex items-center gap-1">Danh mục: <span class="text-black font-semibold"><?php echo esc_html($type_name); ?></span></span>
-                            <span class="text-gray-300 text-3xl!">·</span>
-                            <span class="flex items-center gap-1">Tình trạng: <span class="text-black font-semibold"><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Đang cập nhật')); ?></span></span>
-                            <span class="text-gray-300 text-3xl!">·</span>
-                            <span class="flex items-center gap-1">Năm xây: <span class="text-black font-semibold">2022</span></span>
+                        <div class="flex items-center justify-between xl:justify-start gap-3! xl:gap-x-10 text-sm mb-2! border-b border-gray-100 pb-6">
+                            <div class="flex flex-col xl:flex-row xl:items-center gap-0 xl:gap-1!">
+                                <span class="text-xs xl:text-sm text-gray-400 normal-case font-medium xl:font-normal">Danh mục:</span>
+                                <span class="text-sm xl:text-sm text-black font-semibold"><?php echo esc_html($type_name); ?></span>
+                            </div>
+                            <span class="text-gray-200 text-3xl! -mt-1">·</span>
+                            <div class="flex flex-col xl:flex-row xl:items-center gap-0 xl:gap-1!">
+                                <span class="text-xs xl:text-sm text-gray-400 normal-case font-medium xl:font-normal">Tình trạng:</span>
+                                <span class="text-sm xl:text-sm text-black font-semibold"><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Đang cập nhật')); ?></span>
+                            </div>
+                            <span class="text-gray-200 text-3xl! -mt-1">·</span>
+                            <div class="flex flex-col xl:flex-row xl:items-center gap-0 xl:gap-1!">
+                                <span class="text-xs xl:text-sm text-gray-400 normal-case font-medium xl:font-normal">Năm xây:</span>
+                                <span class="text-sm xl:text-sm text-black font-semibold">2022</span>
+                            </div>
                         </div>
 
                         <h1 class="text-2xl! font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
@@ -279,7 +288,7 @@ while ( have_posts() ) : the_post();
                                 </div>
                             </div>
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 gap-3 mb-10!">
+                        <div class="grid grid-cols-2 xl:grid-cols-2 gap-3 mb-10!">
 
                             <!-- Basic Information Block -->
                             
@@ -320,7 +329,7 @@ while ( have_posts() ) : the_post();
                                 <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 mb-10!">
+                        <div class="grid grid-cols-1 xl:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 mb-10!">
                             
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">directions_car</span> Gara ô tô trong nhà</div>
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">cooking</span> Bếp full tủ + thiết bị</div>
@@ -357,7 +366,7 @@ while ( have_posts() ) : the_post();
                 </div>
 
                 <!-- SUB RIGHT (Price Card - Sticky) -->
-                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky  top-20">
+                <div class="bds-price-sub-column hidden xl:block w-41 flex-shrink-0 sticky top-20">
                     <div class="bds-price-card">
                         <div class="price-header-section">
                             <span class="label">Giá bán</span>
@@ -386,7 +395,7 @@ while ( have_posts() ) : the_post();
 
 
         <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
-        <div class="w-full lg:basis-[18.5rem] flex-shrink-0 top-10">
+        <div class="w-full xl:basis-[18.5rem] flex-shrink-0 top-10">
             <div class="bds-agent-card">
                 <div class="avatar">
                     <img src="/wp-content/uploads/2026/03/033b60afaa34c7b6114814ec022fe1438ea96af5.jpg" alt="Agent">
@@ -415,7 +424,7 @@ while ( have_posts() ) : the_post();
 </div>
 
 <!-- FIXED MOBILE BAR -->
-<div class="bg-[#1a2533] lg:hidden fixed z-[9999] bottom-0 shadow-2xl  overflow-hidden  flex h-[72px] w-full" style="backdrop-filter: blur(10px);">
+<div class="bg-[#1a2533] xl:hidden fixed z-[9999] bottom-0 shadow-2xl overflow-hidden flex h-[72px] w-full" style="backdrop-filter: blur(10px);">
     <div class="flex-1 px-4 py-2 flex flex-col justify-center text-white leading-tight">
         <span class="text-base tracking-tighter">Giá bán:</span>
         <span class="text-2xl font-bold text-white" ><?php echo esc_html($price_label); ?></span>

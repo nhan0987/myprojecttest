@@ -6383,7 +6383,7 @@ html {
 }
 
 /* Chỉ hiển thị grid trên Desktop (lớn hơn 1024px) */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
 	.bds-gallery-grid {
 		display: grid;
 		gap: 10px;
