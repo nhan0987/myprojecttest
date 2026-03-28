@@ -162,17 +162,32 @@ while ( have_posts() ) : the_post();
     </div>
 
     <!-- LIGHTBOX OVERLAY -->
-    <div id="lth-lightbox" class="fixed inset-0 z-[10001] bg-black/95 items-center justify-center hidden">
-        <div class="absolute top-6 right-8 flex items-center gap-8 text-white z-20">
-            <span id="lb-indicator" class="text-xl font-bold">1 / 1</span>
-            <button onclick="closeLb()" class="hover:opacity-50 transition-opacity"><span class="material-symbols-outlined text-4xl">close</span></button>
+    <div id="lth-lightbox" class="fixed inset-0 z-[10001] bg-black/95 flex flex-col items-center justify-center hidden">
+        <!-- Header: Counter & Close -->
+        <div class="absolute top-4 right-4 left-4 flex items-center justify-between text-white z-20">
+            <span id="lb-indicator" class="text-base font-bold bg-black/50 px-3 py-1 rounded-full">1 / 1</span>
+            <button onclick="closeLb()" class="hover:opacity-50 transition-opacity p-2">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
         </div>
-        <div class="w-full h-full flex items-center justify-between px-6 lg:px-20">
-            <button onclick="changeLb(-1)" class="w-14 h-14 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"><span class="material-symbols-outlined text-5xl">chevron_left</span></button>
-            <img id="lb-view" class="max-w-full max-h-[85vh] object-contain transition-all duration-300">
-            <button onclick="changeLb(1)" class="w-14 h-14 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"><span class="material-symbols-outlined text-5xl">chevron_right</span></button>
+
+        <!-- Main View Area -->
+        <div class="w-full h-full flex items-center justify-center px-2 relative">
+            <!-- Nút Trái -->
+            <button onclick="changeLb(-1)" class="absolute left-2 z-10 w-12 h-12 bg-black/20 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-all">
+                <span class="material-symbols-outlined text-4xl">chevron_left</span>
+            </button>
+            
+            <!-- Ảnh chính -->
+            <img id="lb-view" class="max-w-full max-h-[80vh] object-contain transition-all duration-300">
+            
+            <!-- Nút Phải -->
+            <button onclick="changeLb(1)" class="absolute right-2 z-10 w-12 h-12 bg-black/20 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-all">
+                <span class="material-symbols-outlined text-4xl">chevron_right</span>
+            </button>
         </div>
     </div>
+
 
     <script>
     const galData = <?php echo json_encode(array_map(function($id) { return wp_get_attachment_image_url($id, "full"); }, $gallery_ids)); ?>;
