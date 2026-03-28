@@ -40,7 +40,16 @@ class LTH_Real_Estate_Admin_UI {
                 $currency = get_post_meta( $post_id, 'currency', true );
                 $area = get_post_meta( $post_id, 'area', true );
                 
-                $price_text = $price ? "<strong style='color:#d63638; font-size:14px;'>" . esc_html($price) . " " . esc_html($currency) . "</strong>" : "<strong style='color:#d63638;'>Thỏa thuận</strong>";
+                $labels_map = [
+                    'billion' => 'tỷ',
+                    'million' => 'triệu',
+                    'million_sqm' => 'triệu/m²',
+                    'million_month' => 'triệu/tháng',
+                    'million_year' => 'triệu/năm'
+                ];
+                $currency_label = isset($labels_map[$currency]) ? $labels_map[$currency] : $currency;
+
+                $price_text = $price ? "<strong style='color:#d63638; font-size:14px;'>" . esc_html($price) . " " . esc_html($currency_label) . "</strong>" : "<strong style='color:#d63638;'>Thỏa thuận</strong>";
                 $area_text = $area ? esc_html($area) . "m²" : "—";
                 echo "{$price_text} <br> / <span style='color:#50575e; font-weight:500;'>{$area_text}</span>";
                 break;
