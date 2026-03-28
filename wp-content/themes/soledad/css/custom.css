@@ -6600,3 +6600,48 @@ html {
 	background: #eaab39;
 	display: block;
 }
+
+/* --- LTH Blogs Pagination Styles --- */
+.lth-numeric-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 40px;
+	gap: 8px;
+}
+
+.lth-numeric-pagination .page-numbers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	padding: 0 5px;
+	border: 1px solid #EAEAEA;
+	border-radius: 8px;
+	color: #666 !important;
+	font-weight: 500;
+	font-size: 14px;
+	transition: all 0.3s ease;
+	text-decoration: none !important;
+}
+
+.lth-numeric-pagination .page-numbers.current {
+	background: linear-gradient(180deg, #F9D074 0%, #D09130 100%);
+	color: #FFF !important;
+	/* border-color: transparent; */
+	box-shadow: 0 4px 10px rgba(208, 145, 48, 0.2);
+}
+
+.lth-numeric-pagination a.page-numbers:hover {
+	border-color: #D09130;
+	color: #D09130 !important;
+}
+
+.lth-numeric-pagination .dots {
+	border-color: transparent;
+	background: transparent;
+	color: #AAA !important;
+}
+
+/* --- END LTH Blogs Pagination Styles --- */

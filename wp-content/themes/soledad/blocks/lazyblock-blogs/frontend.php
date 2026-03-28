@@ -208,7 +208,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                         <?php } ?>
 
                         <?php if ( $pagination_type == 'numeric' && $wp_query->max_num_pages > 1 ) : ?>
-                            <div class="penci-pagination <?php echo $attributes['post_style']; ?>-pagination" style="margin-top: 30px; text-align: center;">
+                            <div class="lth-numeric-pagination <?php echo $attributes['post_style']; ?>-pagination">
                                 <?php
                                 echo paginate_links( array(
                                     'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -217,11 +217,11 @@ if (!function_exists('lth_blogs_output_fe')) :
                                     'format'       => '?paged=%#%',
                                     'show_all'     => false,
                                     'type'         => 'plain',
-                                    'end_size'     => 2,
+                                    'end_size'     => 1,
                                     'mid_size'     => 1,
                                     'prev_next'    => true,
-                                    'prev_text'    => '<i class="fa fa-angle-left"></i>',
-                                    'next_text'    => '<i class="fa fa-angle-right"></i>',
+                                    'prev_text'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="15 18 9 12 15 6"></polyline></svg>',
+                                    'next_text'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="9 18 15 12 9 6"></polyline></svg>',
                                 ) );
                                 ?>
                             </div>
