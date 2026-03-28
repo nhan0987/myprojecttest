@@ -6442,7 +6442,7 @@ html {
 .bds-price-card .price-contact-section {
 	padding: 16px;
 	background-color: #fff;
-	border-radius: 0px 0px 16px 16px;
+	border-radius: 0px 0px 14px 14px;
 }
 
 .bds-price-card .btn-call {
@@ -6480,6 +6480,7 @@ html {
 	text-align: center;
 	background: white;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	margin-top: 100px;
 }
 
 .bds-agent-card .avatar {
@@ -6487,8 +6488,9 @@ html {
 	height: 187px;
 	border-radius: 50%;
 	border: 2px solid #FFD45C;
-	margin: 0 auto 15px;
+	margin: -100px auto 15px;
 	overflow: hidden;
+	position: relative;
 }
 
 .bds-agent-card .avatar img {

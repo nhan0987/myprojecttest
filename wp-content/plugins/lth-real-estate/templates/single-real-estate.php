@@ -259,7 +259,7 @@ while ( have_posts() ) : the_post();
                 </div>
 
                 <!-- SUB RIGHT (Price Card - Sticky) -->
-                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0  top-10">
+                <div class="bds-price-sub-column hidden lg:block w-41 flex-shrink-0 sticky  top-10">
                     <div class="bds-price-card">
                         <div class="price-header-section">
                             <span class="label">Giá bán</span>
@@ -288,7 +288,7 @@ while ( have_posts() ) : the_post();
 
 
         <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
-        <div class="lg:basis-[18.5rem] flex-shrink-0 sticky top-10">
+        <div class="lg:basis-[18.5rem] flex-shrink-0 top-10">
             <div class="bds-agent-card">
                 <div class="avatar">
                     <img src="/wp-content/uploads/2026/03/033b60afaa34c7b6114814ec022fe1438ea96af5.jpg" alt="Agent">
@@ -296,9 +296,9 @@ while ( have_posts() ) : the_post();
                 <h4 class="text-sm! font-bold! mb-1">Mr. Hoàng Văn Thái</h4>
                 <p class="position italic text-gray-500 text-sm mb-1!">Chuyên viên tư vấn</p>
                 
-                <div class="text-orange-400 font-bold text-lg mb-8! flex items-center justify-center gap-2">
+                <div class="text-[#D09130] font-semibold text-sm mb-8! flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
-                    0972 991 551
+                    <span class="">0972 991 551</span>
                 </div>
 
                 <div class="border-t border-gray-100 ">
