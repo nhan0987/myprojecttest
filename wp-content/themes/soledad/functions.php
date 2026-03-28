@@ -4513,3 +4513,58 @@ function get_lazyblock_by_id( $post_id, $block_id ) {
     return $target_block ? render_block( $target_block ) : '';
 }
 
+/**
+ * AJAX Load More for LTH Blogs
+ */
+function lth_blogs_load_more() {
+    $attributes_raw = isset($_POST['attributes']) ? wp_unslash($_POST['attributes']) : '';
+    $attributes = json_decode($attributes_raw, true);
+    if (!$attributes) $attributes = [];
+    
+    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 2;
+
+    $cat = [];
+    if (!empty($attributes['items'])) {
+        foreach ($attributes['items'] as $inner) {
+            $cat[] = $inner['item'];
+        }
+    }
+
+    $args = [
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'category__in'   => $cat,
+        'posts_per_page' => isset($attributes['post_number']) ? intval($attributes['post_number']) : 5,
+        'orderby'        => isset($attributes['post_orderby']) ? $attributes['post_orderby'] : 'date',
+        'order'          => isset($attributes['post_order']) ? $attributes['post_order'] : 'DESC',
+        'paged'          => $paged,
+    ];
+
+    $wp_query = new WP_Query($args);
+
+    if ($wp_query->have_posts()) {
+        while ($wp_query->have_posts()) {
+            $wp_query->the_post();
+            if ($attributes['post_style'] == 'list') {
+                if ($attributes['post_style_2'] == 'style_01') {
+                    echo '<div class="item">';
+                    get_template_part('template-parts/post/content', '');
+                    echo '</div>';
+                } else {
+                    echo '<div class="item">';
+                    get_template_part('template-parts/post/content', '2');
+                    echo '</div>';
+                }
+            } else {
+                echo '<div class="item">';
+                get_template_part('template-parts/post/content', '');
+                echo '</div>';
+            }
+        }
+    }
+    wp_reset_postdata();
+    wp_die();
+}
+add_action('wp_ajax_lth_blogs_load_more', 'lth_blogs_load_more');
+add_action('wp_ajax_nopriv_lth_blogs_load_more', 'lth_blogs_load_more');
+

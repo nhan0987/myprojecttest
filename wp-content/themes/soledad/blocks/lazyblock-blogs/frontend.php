@@ -24,23 +24,19 @@ if (!function_exists('lth_blogs_output_fe')) :
             <div class="module module_blogs">
                 <?php if ($attributes['title'] || $attributes['description']) : ?>
                     <div class="module_header title-box">
-                        <?php if (isset($attributes['title'])) : ?>
+                        <?php if (!empty($attributes['title'])) : ?>
                             <h2 class="title">
-                                <?php if ($attributes['url']) : ?>
-                                    <a href="<?php echo esc_url($attributes['url']); ?>" title="">
-                                    <?php else : ?>
-                                        
-                                        <?php endif; ?>
-                                        <?php echo wpautop(esc_html($attributes['title'])); ?>
-                                        <?php if ($attributes['url']) : ?>
+                                <?php if (!empty($attributes['title_url'])) : ?>
+                                    <a href="<?php echo esc_url($attributes['title_url']); ?>" title="">
+                                <?php endif; ?>
+                                <?php echo wpautop(esc_html($attributes['title'])); ?>
+                                <?php if (!empty($attributes['title_url'])) : ?>
                                     </a>
-                                <?php else : ?>
-                                    
                                 <?php endif; ?>
                             </h2>
                         <?php endif; ?>
 
-                        <?php if ($attributes['description']) : ?>
+                        <?php if (!empty($attributes['description'])) : ?>
                             <div class="infor">
                                 <?php echo wpautop(esc_html($attributes['description'])); ?>
                             </div>
@@ -48,7 +44,11 @@ if (!function_exists('lth_blogs_output_fe')) :
                     </div>
                 <?php endif; ?>
 
-                <div class="module_content content_<?php echo $attributes['post_style']; ?> <?php echo $attributes['post_style_2']; ?>">
+                <?php
+                $pagination_type = isset($attributes['pagination_type']) ? $attributes['pagination_type'] : 'none';
+                $wrapper_id = 'lth-blogs-' . substr(md5(serialize($attributes)), 0, 8);
+                ?>
+                <div id="<?php echo $wrapper_id; ?>" class="module_content content_<?php echo $attributes['post_style']; ?> <?php echo $attributes['post_style_2']; ?>">
                     <?php
                     $cat = [];
                     if (!empty($attributes['items'])) {
@@ -57,13 +57,19 @@ if (!function_exists('lth_blogs_output_fe')) :
                         }
                     }
 
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    if ( is_front_page() ) {
+                        $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+                    }
+
                     $args = [
                         'post_type'      => 'post',
                         'post_status'    => 'publish',
                         'category__in'   => $cat,
                         'posts_per_page' => $attributes['post_number'],
-                        'orderby'        => $attributes['orderby'],
-                        'order'          => $attributes['order'],
+                        'orderby'        => isset($attributes['post_orderby']) ? $attributes['post_orderby'] : 'date',
+                        'order'          => isset($attributes['post_order']) ? $attributes['post_order'] : 'DESC',
+                        'paged'          => $paged,
                     ];
                     $wp_query = new WP_Query($args);
 
@@ -200,6 +206,109 @@ if (!function_exists('lth_blogs_output_fe')) :
 
                         </div>
                         <?php } ?>
+
+                        <?php if ( $pagination_type == 'numeric' && $wp_query->max_num_pages > 1 ) : ?>
+                            <div class="penci-pagination <?php echo $attributes['post_style']; ?>-pagination" style="margin-top: 30px; text-align: center;">
+                                <?php
+                                echo paginate_links( array(
+                                    'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                                    'total'        => $wp_query->max_num_pages,
+                                    'current'      => $paged,
+                                    'format'       => '?paged=%#%',
+                                    'show_all'     => false,
+                                    'type'         => 'plain',
+                                    'end_size'     => 2,
+                                    'mid_size'     => 1,
+                                    'prev_next'    => true,
+                                    'prev_text'    => '<i class="fa fa-angle-left"></i>',
+                                    'next_text'    => '<i class="fa fa-angle-right"></i>',
+                                ) );
+                                ?>
+                            </div>
+                        <?php elseif ( $pagination_type == 'load_more' && $wp_query->max_num_pages > 1 ) : ?>
+                            <div class="lth-load-more-wrapper" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+                                <button class="lth-load-more-btn btn" 
+                                        style="background: #0071a1; color: #fff; padding: 12px 30px; border-radius: 4px; font-weight: bold; cursor: pointer; border: none; transition: all 0.3s;"
+                                        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"
+                                        data-block-id="<?php echo $wrapper_id; ?>" 
+                                        data-paged="1" 
+                                        data-max="<?php echo $wp_query->max_num_pages; ?>" 
+                                        data-attrs='<?php echo json_encode($attributes); ?>'>
+                                    Xem thêm bài viết
+                                </button>
+                            </div>
+                            
+                            <script>
+                            if (typeof lthLoadMoreInit === 'undefined') {
+                                var lthLoadMoreInit = true;
+                                document.addEventListener('click', function(e) {
+                                    if (e.target && e.target.classList.contains('lth-load-more-btn')) {
+                                        const btn = e.target;
+                                        const blockId = btn.getAttribute('data-block-id');
+                                        const container = document.getElementById(blockId);
+                                        let paged = parseInt(btn.getAttribute('data-paged'));
+                                        const maxPages = parseInt(btn.getAttribute('data-max'));
+                                        const attributes = JSON.parse(btn.getAttribute('data-attrs'));
+                                        
+                                        if (paged >= maxPages) return;
+                                        
+                                        paged++;
+                                        btn.innerHTML = 'Đang tải...';
+                                        btn.disabled = true;
+                                        
+                                        const formData = new FormData();
+                                        formData.append('action', 'lth_blogs_load_more');
+                                        formData.append('paged', paged);
+                                        formData.append('attributes', JSON.stringify(attributes)); 
+                                        // Gửi attributes dạng JSON string vì WP AJAX xử lý array trong POST đôi khi khó
+                                        
+                                        // Re-build formData with individual properties to match PHP expects
+                                        const params = new URLSearchParams();
+                                        params.append('action', 'lth_blogs_load_more');
+                                        params.append('paged', paged);
+                                        params.append('attributes', btn.getAttribute('data-attrs'));
+
+                                        fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                            body: params.toString()
+                                        })
+                                        .then(res => res.text())
+                                        .then(html => {
+                                            if (html) {
+                                                // Tìm đúng container để append
+                                                let target = container.querySelector('.xl\\:gap-10\\!'); 
+                                                if (!target) target = container.querySelector('.gap-4\\!');
+                                                if (!target) target = container.querySelector('.col-span-1.xl\\:col-span-3'); // mixed
+                                                
+                                                if (target) {
+                                                    target.insertAdjacentHTML('beforeend', html);
+                                                } else {
+                                                    // fallback
+                                                    btn.parentElement.insertAdjacentHTML('beforebegin', html);
+                                                }
+                                                
+                                                btn.innerHTML = 'Xem thêm bài viết';
+                                                btn.disabled = false;
+                                                btn.setAttribute('data-paged', paged);
+                                                
+                                                if (paged >= maxPages) {
+                                                    btn.parentElement.style.display = 'none';
+                                                }
+                                            } else {
+                                                btn.parentElement.style.display = 'none';
+                                            }
+                                        })
+                                        .catch(err => {
+                                            console.error(err);
+                                            btn.innerHTML = 'Lỗi, thử lại';
+                                            btn.disabled = false;
+                                        });
+                                    }
+                                });
+                            }
+                            </script>
+                        <?php endif; ?>
 
                         <?php if ($attributes['button_text']) : ?>
                             <div class="module_button">
