@@ -140,7 +140,7 @@ while ( have_posts() ) : the_post();
                 <img src="<?php echo esc_url($src); ?>" alt="BĐS Gallery">
                 <?php if ($i === 4 && $total_images > 5) : ?>
                     <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-3xl font-bold transition-all hover:bg-black/40">
-                        +<?php echo ($total_images - 4); ?> ảnh
+                        +<?php echo ($total_images - 5); ?> ảnh
                     </div>
                 <?php endif; ?>
             </div>
