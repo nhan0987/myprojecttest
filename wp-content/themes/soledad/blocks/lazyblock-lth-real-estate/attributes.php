@@ -141,6 +141,34 @@ if (function_exists('lazyblocks')) :
             'placement' => 'inspector',
             'width' => '100',
          ),
+         'control_select_lth_pagination_type' => array(
+            'type' => 'select',
+            'name' => 'pagination_type',
+            'default' => 'none',
+            'label' => 'Pagination Type',
+            'help' => 'Chọn kiểu hiển thị phân trang.',
+            'child_of' => '',
+            'placement' => 'inspector',
+            'width' => '100',
+            'hide_if_not_selected' => 'false',
+            'save_in_meta' => 'false',
+            'save_in_meta_name' => '',
+            'required' => 'false',
+            'choices' => array(
+               array(
+                  'label' => 'None',
+                  'value' => 'none',
+               ),
+               array(
+                  'label' => 'Numeric (1, 2, 3)',
+                  'value' => 'numeric',
+               ),
+               array(
+                  'label' => 'Load More Button',
+                  'value' => 'load_more',
+               ),
+            ),
+         ),
       ),
       'code' => array(
          'output_method' => 'php',

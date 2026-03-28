@@ -113,10 +113,17 @@ if (!function_exists('lth_real_estate_output_fe')) :
 
         $query = new WP_Query( $args );
         $total_posts = $query->found_posts;
+
+        $pagination_type = isset($attributes['pagination_type']) ? $attributes['pagination_type'] : 'none';
+        $wrapper_id = 'lth-re-' . substr(md5(serialize($attributes)), 0, 8);
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        if ( is_front_page() ) {
+            $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+        }
 ?>
 
 <!-- Khung Bọc của Block danh sách -->
-<div class="module module_real_estate dash-01 section-reveal">
+<div id="<?php echo $wrapper_id; ?>" class="module module_real_estate dash-01 section-reveal">
     <div class="module_header title-box">
         <h2 class="title"><?php echo esc_html( $title ); ?></h2>
         <div class="infor">
@@ -313,6 +320,94 @@ if (!function_exists('lth_real_estate_output_fe')) :
             <div class="p-10 border border-gray-200 text-center text-gray-500 rounded-xl w-full">Chưa có dữ liệu bất động sản phù hợp.</div>
         <?php endif; ?>
     </div>
+
+    <?php if ( $pagination_type == 'numeric' && $query->max_num_pages > 1 ) : ?>
+        <div class="lth-numeric-pagination <?php echo $attributes['post_style']; ?>-pagination">
+            <?php
+            echo paginate_links( array(
+                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'total'        => $query->max_num_pages,
+                'current'      => $paged,
+                'format'       => '?paged=%#%',
+                'show_all'     => false,
+                'type'         => 'plain',
+                'end_size'     => 1,
+                'mid_size'     => 1,
+                'prev_next'    => true,
+                'prev_text'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="15 18 9 12 15 6"></polyline></svg>',
+                'next_text'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="9 18 15 12 9 6"></polyline></svg>',
+            ) );
+            ?>
+        </div>
+    <?php elseif ( $pagination_type == 'load_more' && $query->max_num_pages > 1 ) : ?>
+        <div class="lth-load-more-wrapper">
+            <button class="lth-load-more-btn btn" 
+                    data-block-id="<?php echo $wrapper_id; ?>" 
+                    data-paged="1" 
+                    data-max="<?php echo $query->max_num_pages; ?>" 
+                    data-attrs='<?php echo json_encode($attributes); ?>'>
+                Xem thêm
+                <i class="arrow-right-icons rotate-0 inline-block"></i>
+            </button>
+        </div>
+        
+        <script>
+        if (typeof lthRELoadMoreInit === 'undefined') {
+            var lthRELoadMoreInit = true;
+            document.addEventListener('click', function(e) {
+                if (e.target && (e.target.classList.contains('lth-load-more-btn') || e.target.closest('.lth-load-more-btn'))) {
+                    const btn = e.target.classList.contains('lth-load-more-btn') ? e.target : e.target.closest('.lth-load-more-btn');
+                    const blockId = btn.getAttribute('data-block-id');
+                    if (!blockId.startsWith('lth-re-')) return;
+
+                    const container = document.getElementById(blockId);
+                    const listContainer = container.querySelector('.lth-listings-container');
+                    let paged = parseInt(btn.getAttribute('data-paged'));
+                    const maxPages = parseInt(btn.getAttribute('data-max'));
+                    const attributes = JSON.parse(btn.getAttribute('data-attrs'));
+                    
+                    if (paged >= maxPages) return;
+                    
+                    paged++;
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = 'Đang tải...';
+                    btn.disabled = true;
+                    
+                    const params = new URLSearchParams();
+                    params.append('action', 'lth_real_estate_load_more');
+                    params.append('paged', paged);
+                    params.append('attributes', btn.getAttribute('data-attrs'));
+
+                    fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: params.toString()
+                    })
+                    .then(res => res.text())
+                    .then(html => {
+                        if (html) {
+                            listContainer.insertAdjacentHTML('beforeend', html);
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                            btn.setAttribute('data-paged', paged);
+                            
+                            if (paged >= maxPages) {
+                                btn.parentElement.style.display = 'none';
+                            }
+                        } else {
+                            btn.parentElement.style.display = 'none';
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        btn.innerHTML = 'Lỗi, thử lại';
+                        btn.disabled = false;
+                    });
+                }
+            });
+        }
+        </script>
+    <?php endif; ?>
 </div>
 
 <!-- LOGIC JAVASCRIPT CHO TAB FILTER VÀ SẮP XẾP -->

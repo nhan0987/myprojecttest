@@ -4568,3 +4568,150 @@ function lth_blogs_load_more() {
 add_action('wp_ajax_lth_blogs_load_more', 'lth_blogs_load_more');
 add_action('wp_ajax_nopriv_lth_blogs_load_more', 'lth_blogs_load_more');
 
+
+/**
+ * AJAX Load More for LTH Real Estate
+ */
+function lth_real_estate_load_more() {
+    $attributes_raw = isset($_POST['attributes']) ? wp_unslash($_POST['attributes']) : '';
+    $attributes = json_decode($attributes_raw, true);
+    if (!$attributes) $attributes = [];
+    
+    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 2;
+    $post_number = isset($attributes['post_number']) ? intval($attributes['post_number']) : 10;
+    
+    $location_cats = isset($attributes['location_cats']) ? $attributes['location_cats'] : '';
+    $type_cats = isset($attributes['type_cats']) ? $attributes['type_cats'] : '';
+    $listing_type_filter = isset($attributes['listing_type_filter']) ? $attributes['listing_type_filter'] : '';
+    
+    $loc_ids = [];
+    if (!empty($location_cats)) {
+        $loc_ids = is_array($location_cats) ? array_map('intval', $location_cats) : array_map('intval', explode(',', $location_cats));
+        $loc_ids = array_filter($loc_ids);
+    }
+    
+    $type_ids = [];
+    if (!empty($type_cats)) {
+        $type_ids = is_array($type_cats) ? array_map('intval', $type_cats) : array_map('intval', explode(',', $type_cats));
+        $type_ids = array_filter($type_ids);
+    }
+
+    $args = [
+        'post_type'      => 'real_estate',
+        'posts_per_page' => $post_number,
+        'post_status'    => 'publish',
+        'paged'          => $paged,
+    ];
+
+    $tax_query = ['relation' => 'AND'];
+    if (!empty($loc_ids)) {
+        $tax_query[] = ['taxonomy' => 'property-location', 'field' => 'term_id', 'terms' => $loc_ids];
+    }
+    if (!empty($type_ids)) {
+        $tax_query[] = ['taxonomy' => 'property-type', 'field' => 'term_id', 'terms' => $type_ids];
+    }
+    if (count($tax_query) > 1) {
+        $args['tax_query'] = $tax_query;
+    }
+
+    if (!empty($listing_type_filter)) {
+        $args['meta_query'] = [['key' => 'listing_type', 'value' => $listing_type_filter, 'compare' => '=']];
+    }
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $labels_map = [
+            'billion' => 'Tỷ', 'million' => 'Triệu', 'million_sqm' => 'Triệu/m²',
+            'million_month' => 'Triệu/tháng', 'million_year' => 'Triệu/năm',
+            'land_ownership_certificate' => 'Sổ đỏ', 'building_permit' => 'Giấy phép xây dựng',
+            'sales_contract' => 'Hợp đồng mua bán', 'pending_certificate' => 'Đang chờ sổ',
+            'basic_furniture' => 'Cơ bản', 'full_furniture' => 'Đầy đủ', 'premium_furniture' => 'Cao cấp',
+            'east' => 'Đông', 'west' => 'Tây', 'south' => 'Nam', 'north' => 'Bắc',
+            'south_east' => 'Đông Nam', 'north_east' => 'Đông Bắc', 'south_west' => 'Tây Nam', 'north_west' => 'Tây Bắc'
+        ];
+
+        while ($query->have_posts()) {
+            $query->the_post();
+            $post_id = get_the_ID();
+            $price = get_post_meta($post_id, 'price', true);
+            $currency = get_post_meta($post_id, 'currency', true);
+            $area = get_post_meta($post_id, 'area', true);
+            $address_street = get_post_meta($post_id, 'address_street', true);
+            $frontage = get_post_meta($post_id, 'frontage_width_m', true);
+            $floors = get_post_meta($post_id, 'num_floors', true);
+            $legal = get_post_meta($post_id, 'legal_paper_status', true);
+            
+            $currency_label = isset($labels_map[$currency]) ? $labels_map[$currency] : $currency;
+            $price_label = $price ? $price . ' ' . $currency_label : 'Liên hệ';
+            
+            $types = get_the_terms($post_id, 'property-type');
+            $type_name = ($types && !is_wp_error($types)) ? $types[0]->name : 'Bất động sản';
+
+            $locations = get_the_terms($post_id, 'property-location');
+            $location_name = '';
+            if ($locations && !is_wp_error($locations)) {
+                $child_term = null;
+                foreach ($locations as $loc) { if ($loc->parent != 0) { $child_term = $loc; break; } }
+                if (!$child_term) $child_term = $locations[0];
+                
+                if ($child_term->parent != 0) {
+                    $parent_term = get_term($child_term->parent, 'property-location');
+                    $location_name = ($parent_term && !is_wp_error($parent_term)) ? $child_term->name . ', ' . $parent_term->name : $child_term->name;
+                } else {
+                    $location_name = $child_term->name;
+                }
+            }
+            if (!empty($address_street)) $location_name = $address_street . ($location_name ? ', ' . $location_name : '');
+            
+            $term_classes = [];
+            if ($locations && !is_wp_error($locations)) {
+                foreach ($locations as $loc) $term_classes[] = 'loc-' . $loc->term_id;
+            }
+            $term_class_string = implode(' ', $term_classes);
+            $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'large') : '';
+            
+            $post_timestamp = get_post_time('U', true, $post_id);
+            $current_timestamp = current_time('timestamp', 1);
+            $tag_class = (($current_timestamp - $post_timestamp) <= 6 * HOUR_IN_SECONDS) ? 'pennant-tag-green' : 'pennant-tag-yellow';
+            $tag_text = (($current_timestamp - $post_timestamp) <= 6 * HOUR_IN_SECONDS) ? 'Mới nhất' : 'Đang bán';
+
+            $price_val = floatval(str_replace(',', '.', $price));
+            $true_price = (stripos($currency, 'billion') !== false) ? $price_val * 1000000000 : ((stripos($currency, 'million') !== false) ? $price_val * 1000000 : $price_val);
+            ?>
+            <div class="flex flex-col gap-4! lg:flex-row bds-content grow relative px-4! lth-list-item <?php echo esc_attr($term_class_string); ?>" data-price="<?php echo esc_attr($true_price); ?>" data-time="<?php echo esc_attr($post_timestamp); ?>">
+                <div class="<?php echo esc_attr($tag_class); ?> text-sm font-medium"><?php echo esc_html($tag_text); ?></div>
+                <div class="w-full h-[13.75rem] xl:w-[16.875rem] xl:h-[11.875rem] cut-the-bottom-right-corner-27-container">
+                    <a href="<?php the_permalink(); ?>"> <img decoding="async" class="zoom-image" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>"> </a>
+                    <div class="job-overlay bg-view-more">
+                        <a class="btn-view-more" href="<?php the_permalink(); ?>"> <span class="text-view-more">Xem chi tiết</span> <i class="arrow-right-icons"></i> </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-3! grow py-4!">
+                    <div class="col-span-4 "><span class="category"><?php echo esc_html($type_name); ?></span></div>
+                    <div class="col-span-4 bds-title"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a></div>
+                    <div class="col-span-4 flex gap-4! text-gray-500">
+                        <?php if ($location_name) : ?><div class="flex items-center gap-1!"><span class="material-symbols-outlined">location_on</span><span><?php echo esc_html($location_name); ?></span></div><?php endif; ?>
+                        <div class="flex items-center gap-1!"><span class="material-symbols-outlined">calendar_today</span><span><?php echo get_the_date('d/m/Y'); ?></span></div>
+                    </div>
+                    <div class="col-span-4 grid grid-cols-2 xl:flex xl:flex-row gap-2 xl:gap-8! xl:justify-items-start">
+                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">rectangle</span><strong><?php echo esc_html($frontage ?: '-'); ?>m</strong></div>
+                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined border! border-[#E1E1E1] rounded-sm">open_in_full</span><strong><?php echo esc_html($area ?: '-'); ?>m2</strong></div>
+                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">stairs_2</span><strong><?php echo esc_html($floors ?: '-'); ?> tầng</strong></div>
+                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">balance</span><strong><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Chờ sổ')); ?></strong></div>
+                    </div>
+                    <div class="col-span-4 flex flex-row justify-between">
+                        <div class="col-span-3 flex items-center gap-1!"><span class="text-sm">Giá :</span> <span class="text-red-500 font-bold text-base"><?php echo esc_html($price_label); ?></span></div>
+                        <div class="col-span-3 flex items-center gap-2! border border-[#E1E1E1] rounded-full py-1! pl-1! pr-3!"><span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> <span class="text_call_now">Gọi ngay</span></div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    wp_reset_postdata();
+    wp_die();
+}
+add_action('wp_ajax_lth_real_estate_load_more', 'lth_real_estate_load_more');
+add_action('wp_ajax_nopriv_lth_real_estate_load_more', 'lth_real_estate_load_more');
+

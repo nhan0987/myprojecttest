@@ -232,7 +232,7 @@ if (!function_exists('lth_blogs_output_fe')) :
                                         data-paged="1" 
                                         data-max="<?php echo $wp_query->max_num_pages; ?>" 
                                         data-attrs='<?php echo json_encode($attributes); ?>'>
-                                    Xem thêm bài viết
+                                    Xem thêm
                                     <i class="arrow-right-icons rotate-0 inline-block"></i>
                                 </button>
                             </div>
