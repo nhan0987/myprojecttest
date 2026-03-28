@@ -103,16 +103,22 @@ while ( have_posts() ) : the_post();
         <!-- COLUMN 1: LEFT MAIN -->
         <div class="lg:basis-[70rem] flex-grow">
             
-            <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div class="flex flex-col lg:flex-row gap-1 items-start">
                 
                 <!-- SUB LEFT (Title + Content) -->
                 <div class="flex-grow">
                     <!-- HEADER -->
                     <div class="border-b border-gray-100 pb-6 mb-8">
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500 mb-3">
+                            <span>Danh mục: <p class="text-black font-semibold"><?php echo esc_html($type_name); ?></p></span>
+                            <span>Tình trạng: <p class="text-black font-semibold"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></p></span>
+                            <span>Năm xây: <p class="text-black font-semibold">2022</p></span>
+                        </div>
+
                         <h1 class="text-2xl font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
                         
-                        <div class="flex items-center gap-1 text-gray-500 text-sm mb-4">
-                            <span class="material-symbols-outlined text-lg"  >location_on</span>
+                        <div class="flex items-center gap-1 text-gray-500 text-sm mb-2">
+                            <span class="material-symbols-outlined text-lg">location_on</span>
                             <?php 
                             $final_loc = $address_street;
                             if ( ! empty( $final_loc ) && ! empty( $loc_full ) ) {
@@ -124,11 +130,13 @@ while ( have_posts() ) : the_post();
                             ?>
                         </div>
 
-                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
-                            <span>Danh mục: <b class="text-black"><?php echo esc_html($type_name); ?></b></span>
-                            <span>Tình trạng: <b class="text-black"><?php echo esc_html($legal ?: 'Đang cập nhật'); ?></b></span>
-                            <span>Năm xây: <b class="text-black">2022</b></span>
+                        <!-- Post Date -->
+                        <div class="flex items-center gap-1 text-gray-400 text-sm mb-6 -mt-3 mb-2">
+                            <span class="material-symbols-outlined text-base">schedule</span>
+                            <?php echo get_the_date('d/m/Y H:i'); ?>
                         </div>
+
+                        
                     </div>
 
                     <!-- BODY CONTENT -->
@@ -139,11 +147,60 @@ while ( have_posts() ) : the_post();
                                 <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
                             </div>
                         </div>
-                        <div class="prose max-w-none text-gray-600 leading-relaxed mb-10">
+                        <div class="prose max-w-none text-gray-600 leading-relaxed mb-10!">
                             <?php the_content(); ?>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 pt-10 mt-6 pb-10">
+                        <div class="dash-07">
+                                <div class="title-box ">
+                                    <h2 class="title text-[20px]! capitalize!">Chi tiết </h2>
+                                    <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
+                                </div>
+                            </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10!">
+
+                            <!-- Basic Information Block -->
+                            
+                            <!-- Mặt tiền -->
+                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                                <span class="material-symbols-outlined text-gray-400 text-2xl">rectangle</span>
+                                <div class="text-sm whitespace-nowrap">
+                                    <span class="text-gray-500">Mặt tiền:</span> <b class="text-black ms-1"><?php echo esc_html($frontage ?: '---'); ?>m</b>
+                                </div>
+                            </div>
+                            <!-- Diện tích -->
+                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                                <span class="material-symbols-outlined text-gray-400 text-2xl">open_in_full</span>
+                                <div class="text-sm whitespace-nowrap">
+                                    <span class="text-gray-500">Diện tích:</span> <b class="text-black ms-1"><?php echo esc_html($area ?: '---'); ?>m²</b>
+                                </div>
+                            </div>
+                            <!-- Số tầng -->
+                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                                <span class="material-symbols-outlined text-gray-400 text-2xl">stairs</span>
+                                <div class="text-sm whitespace-nowrap">
+                                    <span class="text-gray-500">Số tầng:</span> <b class="text-black ms-1"><?php echo esc_html($num_floors ?: '---'); ?> tầng</b>
+                                </div>
+                            </div>
+                            <!-- Pháp lý -->
+                            <div class="bg-[#f8f9fa] px-1! py-3!  rounded-xl flex items-center   gap-1! border border-gray-50">
+                                <span class="material-symbols-outlined text-gray-400 text-2xl">balance</span>
+                                <div class="text-sm whitespace-nowrap">
+                                    <span class="text-gray-500">Pháp lý:</span> <b class="text-black ms-1"><?php echo esc_html($legal ?: '---'); ?></b>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="dash-07">
+                            <div class="title-box ">
+                                <h2 class="title text-[20px]! capitalize!">Tiện ích </h2>
+                                <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 border-t border-gray-50 mb-10!">
+                            
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">directions_car</span> Gara ô tô trong nhà</div>
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">cooking</span> Bếp full tủ + thiết bị</div>
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">ac_unit</span> Điều hòa các phòng</div>
@@ -163,7 +220,12 @@ while ( have_posts() ) : the_post();
                             }
                         ?>
                             <div class="mt-12">
-                                <div class="desc-header mb-4 font-bold text-lg">Vị trí <span class="text-orange-400">Bất động sản</span></div>
+                                <div class="dash-07">
+                                    <div class="title-box ">
+                                        <h2 class="title text-[20px]! capitalize!">Vị trí </h2>
+                                        <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
+                                    </div>
+                                </div>
                                 <p class="text-sm text-gray-400 mb-4"><?php echo esc_html($final_loc); ?></p>
                                 <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-inner h-[400px]">
                                     <iframe src="<?php echo esc_url($map_url); ?>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
