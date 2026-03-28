@@ -126,22 +126,80 @@ while ( have_posts() ) : the_post();
         <span><?php the_title(); ?></span>
     </div>
 
-    <!-- GALLERY SECTION -->
-    <div class="bds-gallery-grid mb-10">
-        <?php 
-        for ($i = 0; $i < 5; $i++) {
-            $current_id = isset($gallery_ids[$i]) ? $gallery_ids[$i] : null;
-            $class = ($i == 0) ? 'bds-gallery-main' : 'bds-gallery-item';
-            if ($current_id) {
-                $url = wp_get_attachment_image_url($current_id, 'large');
-                echo '<div class="'.esc_attr($class).'"><img src="'.esc_url($url).'" alt="Gallery Image"></div>';
-            } else {
-                $placeholder = 'https://picsum.photos/seed/'.($i + $post_id).'/800/600';
-                echo '<div class="'.esc_attr($class).'"><img src="'.esc_url($placeholder).'" alt="Placeholder"></div>';
-            }
-        }
+     <!-- GALLERY SECTION -->
+    <?php 
+    $total_images = count($gallery_ids);
+    $display_num = min($total_images, 5);
+    ?>
+    <!-- Desktop Dynamic Grid -->
+    <div class="bds-gallery-grid grid-<?php echo $display_num; ?> mb-10 hidden lg:grid">
+        <?php for ($i = 0; $i < $display_num; $i++) :
+            $src = wp_get_attachment_image_url($gallery_ids[$i], "large"); 
         ?>
+            <div class="bds-gallery-item img-<?php echo $i; ?>" onclick="openLb(<?php echo $i; ?>)">
+                <img src="<?php echo esc_url($src); ?>" alt="BĐS Gallery">
+                <?php if ($i === 4 && $total_images > 5) : ?>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-3xl font-bold transition-all hover:bg-black/40">
+                        +<?php echo ($total_images - 4); ?> ảnh
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endfor; ?>
     </div>
+
+    <!-- Mobile Responsive Gallery -->
+    <div class="lg:hidden relative mb-8 rounded-2xl overflow-hidden shadow-xl aspect-video">
+        <div id="mob-scroll" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide h-full">
+            <?php foreach ($gallery_ids as $idx => $id) : 
+                $src = wp_get_attachment_image_url($id, "large");
+            ?>
+                <div class="snap-start shrink-0 w-full h-full relative" onclick="openLb(<?php echo $idx; ?>)">
+                    <img src="<?php echo esc_url($src); ?>" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-xs font-bold"><?php echo ($idx+1)."/".$total_images; ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lth-lightbox" class="fixed inset-0 z-[10001] bg-black/95 items-center justify-center hidden">
+        <div class="absolute top-6 right-8 flex items-center gap-8 text-white z-20">
+            <span id="lb-indicator" class="text-xl font-bold">1 / 1</span>
+            <button onclick="closeLb()" class="hover:opacity-50 transition-opacity"><span class="material-symbols-outlined text-4xl">close</span></button>
+        </div>
+        <div class="w-full h-full flex items-center justify-between px-6 lg:px-20">
+            <button onclick="changeLb(-1)" class="w-14 h-14 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"><span class="material-symbols-outlined text-5xl">chevron_left</span></button>
+            <img id="lb-view" class="max-w-full max-h-[85vh] object-contain transition-all duration-300">
+            <button onclick="changeLb(1)" class="w-14 h-14 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all"><span class="material-symbols-outlined text-5xl">chevron_right</span></button>
+        </div>
+    </div>
+
+    <script>
+    const galData = <?php echo json_encode(array_map(function($id) { return wp_get_attachment_image_url($id, "full"); }, $gallery_ids)); ?>;
+    let lbCurrent = 0;
+    function openLb(i) {
+        lbCurrent = i; refreshLb();
+        document.getElementById("lth-lightbox").classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+    function refreshLb() {
+        document.getElementById("lb-view").src = galData[lbCurrent];
+        document.getElementById("lb-indicator").innerText = (lbCurrent + 1) + " / " + galData.length;
+    }
+    function changeLb(d) {
+        lbCurrent = (lbCurrent + d + galData.length) % galData.length; refreshLb();
+    }
+    function closeLb() {
+        document.getElementById("lth-lightbox").classList.remove("active");
+        document.body.style.overflow = "";
+    }
+    window.onkeydown = e => {
+        if(e.key === "Escape") closeLb();
+        if(e.key === "ArrowLeft") changeLb(-1);
+        if(e.key === "ArrowRight") changeLb(1);
+    };
+    </script>
+
 
     <!-- MAIN FLEX LAYOUT -->
     <div class="flex flex-col lg:flex-row gap-8 items-start mb-10">
