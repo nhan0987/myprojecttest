@@ -290,23 +290,24 @@ while ( have_posts() ) : the_post();
         <!-- COLUMN 2: AGENT CARD (Basis 18.5rem) -->
         <div class="lg:basis-[18.5rem] flex-shrink-0 sticky top-10">
             <div class="bds-agent-card">
-                <div class="avatar shadow-xl border-4 border-white mb-6">
-                    <img src="https://i.pravatar.cc/150?u=thai" alt="Agent">
+                <div class="avatar">
+                    <img src="/wp-content/uploads/2026/03/033b60afaa34c7b6114814ec022fe1438ea96af5.jpg" alt="Agent">
                 </div>
-                <h4 class="text-xl font-bold mb-1">Mr. Hoàng Văn Thái</h4>
-                <p class="position italic text-gray-500 text-sm mb-6">Chuyên viên tư vấn</p>
+                <h4 class="text-sm! font-bold! mb-1">Mr. Hoàng Văn Thái</h4>
+                <p class="position italic text-gray-500 text-sm mb-1!">Chuyên viên tư vấn</p>
                 
-                <div class="text-orange-400 font-bold text-lg mb-8 flex items-center justify-center gap-2">
+                <div class="text-orange-400 font-bold text-lg mb-8! flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
                     0972 991 551
                 </div>
 
-                <div class="border-t border-gray-100 pt-6">
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-4">Kết nối qua:</p>
-                    <div class="flex justify-center gap-4 text-orange-400">
-                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">forum</span>
-                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">chat</span>
-                        <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition">call</span>
+                <div class="border-t border-gray-100 ">
+                    
+                    <div class="flex justify-center gap-2 items-center">
+                        <span class="text-sm text-gray-400 tracking-widest">Liên hệ khác:</span>
+                        <i class="stnd-images-icons facebook-icons w-[32px]! h-[32px]!">&nbsp;</i>
+                        <i class="stnd-images-icons messenger-icons w-[32px]! h-[32px]!">&nbsp;</i>
+                        <i class="stnd-images-icons zalo-icons w-[32px]! h-[32px]!">&nbsp;</i>
                     </div>
                 </div>
             </div>
