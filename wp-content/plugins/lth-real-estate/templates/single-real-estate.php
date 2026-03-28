@@ -89,7 +89,7 @@ while ( have_posts() ) : the_post();
 
 
 
-<div class="single-bds-container mx-auto px-4 max-w-[1200px] mt-6">
+<div class="single-bds-container xl:max-w-7xl! max-w-[23.4375rem] mx-auto px-3! 2xl:px-0! mt-6">
     <div class="bds-breadcrumb text-sm text-gray-400 mb-10!">
         <a href="<?php echo home_url(); ?>">Trang chủ</a> &nbsp;/&nbsp; 
         <?php if ( $type_link !== '#' ) : ?>
@@ -124,7 +124,7 @@ while ( have_posts() ) : the_post();
         <!-- COLUMN 1: LEFT MAIN -->
         <div class="lg:basis-[70rem] flex-grow">
             
-            <div class="flex flex-col lg:flex-row gap-1 items-start">
+            <div class="flex flex-col lg:flex-row gap-4 items-start">
                 
                 <!-- SUB LEFT (Title + Content) -->
                 <div class="flex-grow">
