@@ -2873,7 +2873,7 @@ li.nav-item::marker {
 .dash-07 .title-box .title {
 	font-size: 14px;
 	font-weight: 700;
-	line-height: 2.5rem;
+	line-height: 24px;
 	text-transform: uppercase;
 
 	background: linear-gradient(86.24deg, #000000 1.16%, #000000 128.11%);
@@ -2903,7 +2903,7 @@ li.nav-item::marker {
 .dash-07 .title-box .infor>p {
 	font-size: 20px;
 	font-weight: 700;
-	line-height: 2.5rem;
+	line-height: 24px;
 	text-transform: uppercase;
 
 	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
@@ -2924,6 +2924,7 @@ li.nav-item::marker {
 @media (min-width: 1280px) {
 	.dash-07 .title-box .infor>p {
 		font-size: 2rem;
+		line-height: 2.5rem;
 	}
 
 	.dash-07 .title-box .infor:before {
@@ -2941,7 +2942,7 @@ li.nav-item::marker {
 
 	.dash-07 .title-box .title {
 		font-size: 1.5rem;
-
+		line-height: 2.5rem;
 	}
 
 

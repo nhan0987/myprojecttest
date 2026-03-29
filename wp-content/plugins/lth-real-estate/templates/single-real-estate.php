@@ -503,7 +503,7 @@ while ( have_posts() ) : the_post();
             
             <div class="dash-07">
                 <div class="title-box ">
-                    <h2 class="title capitalize!">Bất động sản </h2>
+                    <h2 class="title">Bất động sản </h2>
                     <div class="infor"><p class=" uppercase!">Liên quan</p></div>
                 </div>
             </div>
@@ -535,7 +535,7 @@ while ( have_posts() ) : the_post();
 
         if ($related_query->have_posts()) :
         ?>
-            <div class="grid grid-cols-1 xl:grid-cols-4 gap-10 xl:gap-6">
+            <div class="flex flex-wrap xl:grid xl:grid-cols-4 gap-10 xl:gap-6">
                 <?php while ($related_query->have_posts()) : $related_query->the_post(); 
                     $rel_id = get_the_ID();
                     $rel_price = get_post_meta($rel_id, 'price', true);
@@ -565,13 +565,13 @@ while ( have_posts() ) : the_post();
                         $tag_text = 'Đang bán';
                     }
                 ?>
-                    <div class="bds-related-card bg-white border border-gray-100 rounded-2xl relative shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group px-3">
+                    <div class="bds-related-card bg-white border border-gray-100 rounded-2xl relative shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group px-4! gap-4! ">
                         <!-- Image Container with Specific Structure -->
-                        <div class="relative">
+                        
                             <!-- Conditional Pennant Tag -->
-                            <div class="<?php echo esc_attr($tag_class); ?> text-sm font-medium left-0!"><?php echo esc_html($tag_text); ?></div>
+                            <div class="<?php echo esc_attr($tag_class); ?> text-sm font-medium"><?php echo esc_html($tag_text); ?></div>
                             
-                            <div class="w-full h-[13.75rem] xl:w-[16.875rem] xl:h-[11.875rem] cut-the-bottom-right-corner-27-container h-full!">
+                            <div class="w-full h-[13.75rem] xl:w-[16.875rem] xl:h-[11.875rem] cut-the-bottom-right-corner-27-container">
                                 <a href="<?php the_permalink(); ?>">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium_large', ['class' => 'zoom-image w-full h-full object-cover']); ?>
@@ -590,7 +590,7 @@ while ( have_posts() ) : the_post();
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        
 
                         <!-- Info Content -->
                         <div class="flex-grow flex flex-col">

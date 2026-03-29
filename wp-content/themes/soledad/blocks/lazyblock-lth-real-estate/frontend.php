@@ -145,7 +145,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
         ?>
     </div>
 
-    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between py-3">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mb-6! xl:mb-0! py-3">
         <div class="flex w-full items-center justify-between">
             <div class="text-base text-gray-700">Có <strong class="font-bold text-black lth-count"><?php echo esc_html( $total_posts ); ?></strong> bất động sản</div>
             <div class="flex items-center gap-2">
