@@ -301,16 +301,33 @@ if (!function_exists('lth_real_estate_output_fe')) :
                         </div>
                     </div>
                 
-                    <div class="col-span-4 grid grid-cols-2 xl:flex xl:flex-row gap-2 xl:gap-8! xl:justify-items-start">
-                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">rectangle</span><strong><?php echo esc_html( $frontage ?: '-' ); ?>m</strong></span></div>
-                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined border! border-[#E1E1E1] rounded-sm">open_in_full</span><strong><?php echo esc_html( $area ?: '-' ); ?>m2</strong></span></div>
-                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">stairs_2</span><strong><?php echo esc_html( $floors ?: '-' ); ?> tầng</strong></span></div>
-                        <div class="col-span-1 flex items-center gap-2! xl:gap-1!"><span class="material-symbols-outlined">balance</span><strong><?php echo esc_html( isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Chờ sổ') ); ?></strong></span></div>
-                    </div>
-                    <div class="col-span-4 flex flex-row justify-between">
-                        <div class="col-span-3 flex items-center gap-1!"><span class="text-sm">Giá :</span> <span class="text-red-500 font-bold text-base"><?php echo esc_html( $price_label ); ?></span></div>
-                        <div class="col-span-3 flex items-center gap-2! border border-[#E1E1E1] rounded-full py-1! pl-1! pr-3!"><span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> <span class="text_call_now">Gọi ngay</span></div>
-                    </div>
+                        <div class="col-span-4 flex flex-wrap xl:flex-nowrap items-center gap-x-2 xl:gap-x-6 border-t border-gray-100 pt-4!">
+                            <div class="flex items-center gap-1 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <span class="material-symbols-outlined text-gray-400">home</span>
+                                <span class="text-sm font-bold"><?php echo esc_html( $frontage ?: '-' ); ?>m</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <span class="material-symbols-outlined text-gray-400">aspect_ratio</span>
+                                <span class="text-sm font-bold"><?php echo esc_html( $area ?: '-' ); ?>m2</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-700 xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-black">stairs</span>
+                                <span class="text-sm font-bold"><?php echo esc_html( $floors ?: '-' ); ?> tầng</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-700 last:border-0">
+                                <span class="material-symbols-outlined text-gray-400">balance</span>
+                                <span class="text-sm font-bold"><?php echo esc_html( isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Chờ sổ') ); ?></span>
+                            </div>
+                        </div>
+                        <div class="col-span-4 flex flex-row justify-between">
+                            <div class="col-span-3 flex items-center gap-1!"><span class="text-sm">Giá :</span> <span class="text-red-500 font-bold text-base"><?php echo esc_html( $price_label ); ?></span></div>
+                            <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>">
+                                <div class="col-span-3 flex items-center gap-2! border border-[#FFD45C]! rounded-full py-1! pl-1! pr-3!">
+                                    <span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> 
+                                    <span class="text_call_now">Gọi ngay</span>
+                                </div>
+                            </a>
+                        </div>
                     
                 </div>
             </div>

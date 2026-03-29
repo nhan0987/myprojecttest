@@ -17,6 +17,7 @@ define( 'LTH_REAL_ESTATE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'LTH_REAL_ESTATE_URL', plugin_dir_url( __FILE__ ) );
 
 // Include Core Files
+require_once LTH_REAL_ESTATE_DIR . 'includes/class-config.php';
 require_once LTH_REAL_ESTATE_DIR . 'includes/class-post-types.php';
 require_once LTH_REAL_ESTATE_DIR . 'includes/class-meta-boxes.php';
 require_once LTH_REAL_ESTATE_DIR . 'includes/class-admin-ui.php';

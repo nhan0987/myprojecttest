@@ -433,9 +433,9 @@ while ( have_posts() ) : the_post();
                             </div>
                         <?php endif; ?>
                         <div class="price-contact-section">
-                            <a href="tel:0972991551" class="btn-call">
+                            <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="btn-call">
                                 <span class="material-symbols-outlined">call</span>
-                                0972 991 551
+                                <?php echo esc_html(lth_cfg('phone_number')); ?>
                             </a>
                             <a href="#" class="btn-contact">
                                 <span class="material-symbols-outlined">mail</span>
@@ -460,7 +460,7 @@ while ( have_posts() ) : the_post();
                 
                 <div class="text-[#D09130] font-semibold text-sm mb-8! flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
-                    <span class="">0972 991 551</span>
+                    <span class=""><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                 </div>
 
                 <div class="border-t border-gray-100 ">
@@ -488,10 +488,10 @@ while ( have_posts() ) : the_post();
         <?php echo esc_html($price_sqm); ?>
     </div>
     <div class="bg-white flex items-center gap-3 px-2">
-        <a href="tel:0972991551" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
+        <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
             <span class="material-symbols-outlined">call</span>
         </a>
-        <a href="mailto:contact@stnd.vn" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400!">
+        <a href="mailto:<?php echo esc_attr(lth_cfg('email')); ?>" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400!">
             <span class="material-symbols-outlined">mail</span>
         </a>
     </div>
@@ -499,15 +499,15 @@ while ( have_posts() ) : the_post();
 
     <!-- RELATED REAL ESTATE SECTION -->
     <div class="related-bds-section mt-20 mb-20 xl:max-w-7xl! max-w-[23.4375rem] mx-auto px-3! 2xl:px-0!">
-        <div class="flex items-center justify-between mb-8">
-            <div class="related-title">
-                <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wider mb-0">Bất động sản</h3>
-                <div class="flex items-center gap-2">
-                    <span class="w-8 h-[2px] bg-[#D09130]"></span>
-                    <span class="text-2xl font-bold text-[#D09130] uppercase">Liên quan</span>
+        <div class="flex items-center justify-between my-4!">
+            
+            <div class="dash-07">
+                <div class="title-box ">
+                    <h2 class="title capitalize!">Bất động sản </h2>
+                    <div class="infor"><p class=" uppercase!">Liên quan</p></div>
                 </div>
             </div>
-            <a href="<?php echo esc_url( $type_link ); ?>" class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+            <a href="<?php echo esc_url( $type_link ); ?>" class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600! hover:bg-gray-50 transition-colors">
                 Xem thêm <span class="material-symbols-outlined text-sm">chevron_right</span>
             </a>
         </div>
@@ -535,7 +535,7 @@ while ( have_posts() ) : the_post();
 
         if ($related_query->have_posts()) :
         ?>
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 xl:grid-cols-4 gap-10 xl:gap-6">
                 <?php while ($related_query->have_posts()) : $related_query->the_post(); 
                     $rel_id = get_the_ID();
                     $rel_price = get_post_meta($rel_id, 'price', true);
@@ -552,71 +552,92 @@ while ( have_posts() ) : the_post();
 
                     $rel_currency_label = isset($labels_map[$rel_currency]) ? $labels_map[$rel_currency] : $rel_currency;
                     $rel_price_display = $rel_price ? $rel_price . ' ' . $rel_currency_label : 'Liên hệ';
-                ?>
-                    <div class="bds-related-card bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                        <!-- Image Container -->
-                        <div class="relative aspect-[4/3] overflow-hidden">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110']); ?>
-                            <?php else : ?>
-                                <div class="w-full h-full bg-gray-100 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-gray-300 text-5xl">image</span>
-                                </div>
-                            <?php endif; ?>
-                            
-                            <!-- Badge -->
-                            <div class="absolute top-3 left-3 bg-[#D09130] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
-                                Đang bán
-                            </div>
 
-                            <!-- Overlay Button -->
-                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="<?php the_permalink(); ?>" class="bg-[#1a2533] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    Xem chi tiết <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    // Tag Logic: Mới nhất (<6h) vs Đang bán (>6h)
+                    $rel_post_timestamp = get_post_time( 'U', true, $rel_id );
+                    $current_timestamp = current_time( 'timestamp', 1 ); 
+                    
+                    if ( ( $current_timestamp - $rel_post_timestamp ) <= 6 * HOUR_IN_SECONDS ) {
+                        $tag_class = 'pennant-tag-green';
+                        $tag_text = 'Mới nhất';
+                    } else {
+                        $tag_class = 'pennant-tag-yellow';
+                        $tag_text = 'Đang bán';
+                    }
+                ?>
+                    <div class="bds-related-card bg-white border border-gray-100 rounded-2xl relative shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group px-3">
+                        <!-- Image Container with Specific Structure -->
+                        <div class="relative">
+                            <!-- Conditional Pennant Tag -->
+                            <div class="<?php echo esc_attr($tag_class); ?> text-sm font-medium left-0!"><?php echo esc_html($tag_text); ?></div>
+                            
+                            <div class="w-full h-[13.75rem] xl:w-[16.875rem] xl:h-[11.875rem] cut-the-bottom-right-corner-27-container h-full!">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium_large', ['class' => 'zoom-image w-full h-full object-cover']); ?>
+                                    <?php else : ?>
+                                        <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-gray-300 text-5xl">image</span>
+                                        </div>
+                                    <?php endif; ?>
                                 </a>
+
+                                <!-- View More Overlay -->
+                                <div class="job-overlay bg-view-more">
+                                    <a class="btn-view-more" href="<?php the_permalink(); ?>">
+                                        <span class="text-view-more">Xem chi tiết</span>
+                                        <i class="arrow-right-icons"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Info Content -->
-                        <div class="p-4 flex-grow flex flex-col">
-                            <h4 class="text-[15px] font-bold text-gray-900 line-clamp-2 mb-3 leading-snug group-hover:text-[#D09130] transition-colors" title="<?php the_title_attribute(); ?>">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <div class="flex-grow flex flex-col">
+                            <h4 class=" font-bold line-clamp-2 mb-4! leading-snug group-hover:text-[#D09130] transition-colors" title="<?php the_title_attribute(); ?>">
+                                <a class="text-base! text-black!" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h4>
 
-                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-2">
+                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-2!">
                                 <span class="material-symbols-outlined text-sm">location_on</span>
                                 <span class="truncate"><?php echo esc_html($rel_loc_text); ?></span>
                             </div>
 
-                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-4">
+                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-2!">
                                 <span class="material-symbols-outlined text-sm">schedule</span>
                                 <span><?php echo get_the_date('d/m/Y H:i'); ?></span>
                             </div>
 
-                            <!-- Parameters -->
-                            <div class="grid grid-cols-3 gap-2 border-t border-gray-50 pt-3 mb-4">
-                                <div class="flex items-center gap-1 text-gray-600">
+                            <!-- Parameters with Separators -->
+                            <div class="flex items-center gap-x-2 border-t border-gray-50 py-1 xl:py-3 my-2!">
+                                <div class="flex items-center gap-1 text-gray-600 pr-4! border-r! border-gray-200! last:border-0">
                                     <span class="material-symbols-outlined text-[18px] text-gray-400">home</span>
-                                    <span class="text-[11px] font-bold"><?php echo $rel_frontage ?: '---'; ?>m</span>
+                                    <span class="text-sm font-bold"><?php echo $rel_frontage ?: '---'; ?>m</span>
                                 </div>
-                                <div class="flex items-center gap-1 text-gray-600">
+                                <div class="flex items-center gap-1 text-gray-600 pr-4! border-r! border-gray-200! last:border-0">
                                     <span class="material-symbols-outlined text-[18px] text-gray-400">aspect_ratio</span>
-                                    <span class="text-[11px] font-bold"><?php echo $rel_area ?: '---'; ?>m²</span>
+                                    <span class="text-sm font-bold"><?php echo $rel_area ?: '---'; ?>m²</span>
                                 </div>
-                                <div class="flex items-center gap-1 text-gray-600">
+                                <div class="flex items-center gap-1 text-gray-600 last:border-0">
                                     <span class="material-symbols-outlined text-[18px] text-gray-400">stairs</span>
-                                    <span class="text-[11px] font-bold"><?php echo $rel_floors ?: '---'; ?> tầng</span>
+                                    <span class="text-sm font-bold"><?php echo $rel_floors ?: '---'; ?> tầng</span>
                                 </div>
+                                
                             </div>
 
                             <!-- Footer: Price + Call -->
-                            <div class="mt-auto flex items-center justify-between border-t border-gray-50 pt-3">
-                                <div class="flex flex-col">
-                                    <span class="text-[10px] text-gray-400">Giá:</span>
-                                    <span class="text-sm font-bold text-[#d63638]"><?php echo esc_html($rel_price_display); ?></span>
+                            <div class="flex items-center justify-between border-t border-gray-50 py-2!">
+                                <div class="flex flex-row gap-2 items-center">
+                                    <span class="text-sm text-gray-400">Giá:</span>
+                                    <span class="text-base font-bold text-[#d63638]"><?php echo esc_html($rel_price_display); ?></span>
                                 </div>
-                                <a href="tel:0972991551" class="w-8 h-8 rounded-full border border-[#D09130] flex items-center justify-center text-[#D09130] hover:bg-[#D09130] hover:text-white transition-all shadow-sm">
-                                    <span class="material-symbols-outlined text-lg">call</span>
+      
+                                
+                                <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>">
+                                    <div class="col-span-3 flex items-center gap-2! border border-[#FFD45C]! rounded-full py-1! pl-1! pr-3!">
+                                        <span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> 
+                                        <span class="text_call_now">Gọi ngay</span>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -624,27 +645,13 @@ while ( have_posts() ) : the_post();
                 <?php endwhile; wp_reset_postdata(); ?>
             </div>
         <?php else : ?>
-            <p class="text-gray-400 italic text-center">Không có bất động sản liên quan nào khác.</p>
+            
         <?php endif; ?>
     </div>
 
-    <style>
-        .related-title h3 {
-            color: #1a2533;
-            letter-spacing: 0.05em;
-        }
-        .bds-related-card:hover {
-            transform: translateY(-5px);
-        }
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
 
-<div class="h-10 xl:h-24"></div>
+
+<div class="h-24 xl:h-24"></div>
 
 <?php 
 endwhile;
