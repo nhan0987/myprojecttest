@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     // Media Uploader for Gallery
-    $('#lth_upload_gallery_btn').on('click', function(e) {
+    $('#lth_add_gallery_btn').on('click', function(e) {
         e.preventDefault();
         var frame = wp.media({
             title: 'Chọn hoặc tải ảnh lên',

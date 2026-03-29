@@ -10,6 +10,11 @@ class LTH_Real_Estate_Admin_UI {
         add_filter( 'manage_real_estate_posts_columns', [ $this, 'set_real_estate_columns' ] );
         add_action( 'manage_real_estate_posts_custom_column', [ $this, 'fill_real_estate_columns' ], 10, 2 );
         add_action( 'restrict_manage_posts', [ $this, 'add_real_estate_filters' ] );
+        add_filter( 'allowed_block_types_all', [ $this, 'restrict_real_estate_blocks' ], 10, 2 );
+        add_action( 'admin_head', [ $this, 'hide_media_button_for_real_estate' ] );
+        add_filter( 'mce_buttons', [ $this, 'remove_mce_media_buttons' ] );
+        add_filter( 'mce_buttons_2', [ $this, 'remove_mce_media_buttons' ] );
+        add_filter( 'tiny_mce_before_init', [ $this, 'customize_tinymce_for_real_estate' ] );
     }
 
     public function set_real_estate_columns( $columns ) {
@@ -96,5 +101,117 @@ class LTH_Real_Estate_Admin_UI {
                 ]);
             }
         }
+    }
+
+    public function restrict_real_estate_blocks( $allowed_blocks, $editor_context ) {
+        if ( isset( $editor_context->post ) && $editor_context->post->post_type === 'real_estate' ) {
+            return [ 'core/freeform' ]; // Return only the Classic Block
+        }
+        return $allowed_blocks;
+    }
+
+    public function hide_media_button_for_real_estate() {
+        global $current_screen;
+        if ( isset( $current_screen->post_type ) && $current_screen->post_type === 'real_estate' ) {
+            // Hide the Add Media button above the editor (if any)
+            remove_action( 'media_buttons', 'media_buttons' );
+            
+            // CSS fallback to hide any remaining media buttons in TinyMCE/Gutenberg blocks
+            echo '<style>
+                .wp-media-buttons, 
+                .mce-i-image, 
+                .mce-i-media, 
+                .editor-post-featured-image { 
+                    display: none !important; 
+                }
+                /* Hide the "Add Media" button and menu items in the Classic Block toolbar */
+                div[aria-label^="Thêm Media"],
+                div[aria-label^="Add Media"],
+                button[aria-label^="Thêm Media"], 
+                button[aria-label^="Add Media"],
+                .mce-btn[aria-label^="Thêm Media"],
+                .mce-btn[aria-label^="Add Media"],
+                .mce-menu-item[aria-label^="Thêm Media"],
+                .mce-menu-item[aria-label^="Add Media"],
+                .mce-i-dashicon.dashicons-admin-media,
+                .mce-i-wp-media-library,
+                .mce-i-media,
+                .mce-i-image {
+                    display: none !important;
+                }
+                /* Hide the specific menu item from the "Insert" menu */
+                .mce-menu-item .mce-text:contains("Thêm Media"),
+                .mce-menu-item .mce-text:contains("Add Media"),
+                .mce-menu-item-normal:has(.mce-i-wp-media-library) {
+                    display: none !important;
+                }
+                /* Fallback for IDs seen in screenshot */
+                [id^="mce_"][id$="-text"]:contains("Thêm Media"),
+                [id^="mce_"][id$="-text"]:contains("Add Media") {
+                    display: none !important;
+                }
+                /* Hide container if text matches */
+                .mce-menu-item:has(span:contains("Media")) {
+                   display: none !important;
+                }
+            </style>';
+            
+            // Add script to ensure menu items are removed even if CSS fails
+            echo '<script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const observer = new MutationObserver(function(mutations) {
+                        mutations.forEach(function(mutation) {
+                            if (mutation.addedNodes.length) {
+                                mutation.addedNodes.forEach(function(node) {
+                                    if (node.classList && (node.classList.contains("mce-menu") || node.classList.contains("mce-floatpanel"))) {
+                                        const items = node.querySelectorAll(".mce-menu-item");
+                                        items.forEach(function(item) {
+                                            if (item.innerText.includes("Thêm Media") || item.innerText.includes("Add Media")) {
+                                                item.style.display = "none";
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    });
+                    observer.observe(document.body, { childList: true, subtree: true });
+                });
+            </script>';
+        }
+    }
+
+    public function remove_mce_media_buttons( $buttons ) {
+        global $current_screen;
+        if ( isset( $current_screen->post_type ) && $current_screen->post_type === 'real_estate' ) {
+            $buttons_to_remove = [ 'image', 'wp_add_media', 'media' ]; 
+            return array_diff( $buttons, $buttons_to_remove );
+        }
+        return $buttons;
+    }
+
+    public function customize_tinymce_for_real_estate( $init_array ) {
+        global $current_screen;
+        if ( isset( $current_screen->post_type ) && $current_screen->post_type === 'real_estate' ) {
+            // Remove media related tools from toolbars
+            $init_array['toolbar1'] = str_replace(['image,', ',image', 'image', 'wp_add_media,', 'wp_add_media'], '', $init_array['toolbar1']);
+            $init_array['toolbar2'] = str_replace(['image,', ',image', 'image', 'wp_add_media,', 'wp_add_media'], '', $init_array['toolbar2']);
+            
+            // Explicitly remove menu items
+            $init_array['removed_menuitems'] = 'wp_add_media,media,image';
+            
+            // Aggressive JS-based removal within TinyMCE
+            $init_array['setup'] = 'function(ed) {
+                ed.on("PreInit", function() {
+                    if (ed.settings.menu && ed.settings.menu.insert) {
+                        var items = ed.settings.menu.insert.items;
+                        if (typeof items === "string") {
+                            ed.settings.menu.insert.items = items.replace(/wp_add_media|media|image/g, "").replace(/\|\|/g, "|").replace(/^\||\|$/g, "");
+                        }
+                    }
+                });
+            }';
+        }
+        return $init_array;
     }
 }
