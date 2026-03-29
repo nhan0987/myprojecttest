@@ -21,6 +21,14 @@ while ( have_posts() ) : the_post();
     $gallery = get_post_meta( $post_id, 'property_gallery', true );
     $furniture = get_post_meta( $post_id, 'furniture_status', true );
     
+    // New fields for property types
+    $house_condition = get_post_meta( $post_id, 'house_condition', true );
+    $design = get_post_meta( $post_id, 'design', true );
+    $occupancy_rate = get_post_meta( $post_id, 'occupancy_rate', true );
+    $unit_type = get_post_meta( $post_id, 'unit_type', true );
+    $floor_range = get_post_meta( $post_id, 'floor_range', true );
+    $entrance_width = get_post_meta( $post_id, 'entrance_width_m', true );
+    
     // Labels mapping for display
     $labels_map = [
         'billion' => 'Tỷ',
@@ -281,45 +289,92 @@ while ( have_posts() ) : the_post();
                             <?php the_content(); ?>
                         </div>
 
-                        <div class="dash-07">
-                                <div class="title-box ">
-                                    <h2 class="title text-[20px]! capitalize!">Chi tiết </h2>
-                                    <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
-                                </div>
+                        <div class="dash-07 mb-6!">
+                            <div class="title-box">
+                                <h2 class="title text-[20px]! capitalize!">Chi tiết</h2>
+                                <div class="infor"><p class="text-base! normal-case!">Bất động sản</p></div>
                             </div>
+                        </div>
 
-                        <div class="grid grid-cols-2 xl:grid-cols-2 gap-3 mb-10!">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12!">
+                            <?php
+                            $details = [];
+                            $type_text = mb_strtolower($type_name);
 
-                            <!-- Basic Information Block -->
-                            
-                            <!-- Mặt tiền -->
-                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-2xl">rectangle</span>
-                                <div class="text-sm whitespace-nowrap">
-                                    <span class="">Mặt tiền:</span>  <span class="text-black font-semibold"><?php echo esc_html($frontage ?: '---'); ?>m</span>
+                            if ( mb_stripos($type_text, 'biệt thự') !== false ) {
+                                $details = [
+                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'directions', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
+                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
+                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                ];
+                            } elseif ( mb_stripos($type_text, 'văn phòng') !== false ) {
+                                $details = [
+                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'directions', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
+                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
+                                    ['icon' => 'architecture', 'label' => 'Thiết kế', 'value' => $design ?: '---'],
+                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                ];
+                            } elseif ( mb_stripos($type_text, 'khách sạn') !== false || mb_stripos($type_text, 'ccmn') !== false || mb_stripos($type_text, 'dịch vụ') !== false ) {
+                                $details = [
+                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bed', 'label' => 'Số phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'analytics', 'label' => 'Tỷ lệ lấp đầy', 'value' => $occupancy_rate ?: '---'],
+                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
+                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
+                                ];
+                            } elseif ( mb_stripos($type_text, 'mặt phố') !== false ) {
+                                $details = [
+                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
+                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
+                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                ];
+                            } elseif ( mb_stripos($type_text, 'chung cư') !== false ) {
+                                $details = [
+                                    ['icon' => 'apartment', 'label' => 'Loại căn', 'value' => $unit_type ?: '---'],
+                                    ['icon' => 'layers', 'label' => 'Khoảng tầng', 'value' => $floor_range ?: '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'chair', 'label' => 'Nội thất', 'value' => isset($labels_map[$furniture]) ? $labels_map[$furniture] : '---'],
+                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
+                                    ['icon' => 'bed', 'label' => 'Số phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                ];
+                            } else {
+                                // Default fallback
+                                $details = [
+                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'balance', 'label' => 'Pháp lý', 'value' => isset($labels_map[$legal]) ? $labels_map[$legal] : '---'],
+                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                ];
+                            }
+
+                            foreach ($details as $item) :
+                            ?>
+                                <div class="flex items-center justify-between group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-2xl text-gray-500 group-hover:text-black transition-colors"><?php echo esc_html($item['icon']); ?></span>
+                                        <span class="text-[15px] font-medium text-gray-700"><?php echo esc_html($item['label']); ?></span>
+                                    </div>
+                                    <div class="bg-[#F3F7F8] px-4 py-1.5 rounded-full min-w-[60px] text-center">
+                                        <span class="text-[15px] font-bold text-gray-900"><?php echo esc_html($item['value']); ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Diện tích -->
-                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-2xl">open_in_full</span>
-                                <div class="text-sm whitespace-nowrap">
-                                    <span class="">Diện tích:</span> <span class="text-black font-semibold"><?php echo esc_html($area ?: '---'); ?>m²</span>
-                                </div>
-                            </div>
-                            <!-- Số tầng -->
-                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-2xl">stairs</span>
-                                <div class="text-sm whitespace-nowrap">
-                                    <span class="">Số tầng:</span>  <span class="text-black font-semibold"><?php echo esc_html($num_floors ?: '---'); ?> tầng</span>
-                                </div>
-                            </div>
-                            <!-- Pháp lý -->
-                            <div class="bg-[#F3F7F8] px-3! py-3!  rounded-xl flex items-center   gap-1! ">
-                                <span class="material-symbols-outlined text-2xl">balance</span>
-                                <div class="text-sm whitespace-nowrap">
-                                    <span class="">Pháp lý:</span> <span class="text-black font-semibold"><?php echo esc_html(isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: '---')); ?></span>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
 
                         
