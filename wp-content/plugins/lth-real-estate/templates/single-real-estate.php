@@ -377,7 +377,7 @@ while ( have_posts() ) : the_post();
                             <?php endforeach; ?>
                         </div>
 
-                        
+                        <!--
                         <div class="dash-07">
                             <div class="title-box ">
                                 <h2 class="title text-[20px]! capitalize!">Tiện ích </h2>
@@ -393,7 +393,7 @@ while ( have_posts() ) : the_post();
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">fire_extinguisher</span> Hệ thống PCCC cơ bản</div>
                             <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-gray-400">layers</span> Dịch vụ tiện ích</div>
                         </div>
-
+                            -->
                         <!-- MAP SECTION -->
                         <?php 
                         $map_source = get_post_meta( $post_id, 'google_maps_url', true );
@@ -487,7 +487,7 @@ while ( have_posts() ) : the_post();
     <div class="bg-[#FEBD55] flex-1 px-3 py-2 flex items-center justify-center text-gray-900 font-semibold text-base text-center leading-tight rounded-bl-2xl">
         <?php echo esc_html($price_sqm); ?>
     </div>
-    <div class="bg-white flex items-center gap-3 px-4">
+    <div class="bg-white flex items-center gap-3 px-2">
         <a href="tel:0972991551" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
             <span class="material-symbols-outlined">call</span>
         </a>
