@@ -120,8 +120,7 @@ class LTH_Real_Estate_Admin_UI {
             echo '<style>
                 .wp-media-buttons, 
                 .mce-i-image, 
-                .mce-i-media, 
-                .editor-post-featured-image { 
+                .mce-i-media { 
                     display: none !important; 
                 }
                 /* Hide the "Add Media" button and menu items in the Classic Block toolbar */
@@ -156,10 +155,11 @@ class LTH_Real_Estate_Admin_UI {
                 }
             </style>';
             
-            // Add script to ensure menu items are removed even if CSS fails
+            // Add script to ensure menu items are removed and hide specific sidebar taxonomies
             echo '<script>
                 document.addEventListener("DOMContentLoaded", function() {
                     const observer = new MutationObserver(function(mutations) {
+                        // Handle TinyMCE menus
                         mutations.forEach(function(mutation) {
                             if (mutation.addedNodes.length) {
                                 mutation.addedNodes.forEach(function(node) {

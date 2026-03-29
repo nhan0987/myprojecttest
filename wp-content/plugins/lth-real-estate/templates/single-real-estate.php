@@ -497,7 +497,154 @@ while ( have_posts() ) : the_post();
     </div>
 </div>
 
-<div class="h-24"></div>
+    <!-- RELATED REAL ESTATE SECTION -->
+    <div class="related-bds-section mt-20 mb-20 xl:max-w-7xl! max-w-[23.4375rem] mx-auto px-3! 2xl:px-0!">
+        <div class="flex items-center justify-between mb-8">
+            <div class="related-title">
+                <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wider mb-0">Bất động sản</h3>
+                <div class="flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-[#D09130]"></span>
+                    <span class="text-2xl font-bold text-[#D09130] uppercase">Liên quan</span>
+                </div>
+            </div>
+            <a href="<?php echo esc_url( $type_link ); ?>" class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+                Xem thêm <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+        </div>
+
+        <?php
+        $related_args = array(
+            'post_type'      => 'real_estate',
+            'posts_per_page' => 4,
+            'post__not_in'   => array($post_id),
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        );
+
+        if ($type_obj) {
+            $related_args['tax_query'] = array(
+                array(
+                    'taxonomy' => (isset($type_obj->taxonomy)) ? $type_obj->taxonomy : 'category',
+                    'field'    => 'term_id',
+                    'terms'    => $type_obj->term_id,
+                ),
+            );
+        }
+
+        $related_query = new WP_Query($related_args);
+
+        if ($related_query->have_posts()) :
+        ?>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <?php while ($related_query->have_posts()) : $related_query->the_post(); 
+                    $rel_id = get_the_ID();
+                    $rel_price = get_post_meta($rel_id, 'price', true);
+                    $rel_currency = get_post_meta($rel_id, 'currency', true);
+                    $rel_area = get_post_meta($rel_id, 'area', true);
+                    $rel_frontage = get_post_meta($rel_id, 'frontage_width_m', true);
+                    $rel_floors = get_post_meta($rel_id, 'num_floors', true);
+                    
+                    $rel_locations = get_the_terms($rel_id, 'property-location');
+                    $rel_loc_text = 'Đang cập nhật';
+                    if ($rel_locations && !is_wp_error($rel_locations)) {
+                        $rel_loc_text = $rel_locations[0]->name;
+                    }
+
+                    $rel_currency_label = isset($labels_map[$rel_currency]) ? $labels_map[$rel_currency] : $rel_currency;
+                    $rel_price_display = $rel_price ? $rel_price . ' ' . $rel_currency_label : 'Liên hệ';
+                ?>
+                    <div class="bds-related-card bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <!-- Image Container -->
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110']); ?>
+                            <?php else : ?>
+                                <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-gray-300 text-5xl">image</span>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <!-- Badge -->
+                            <div class="absolute top-3 left-3 bg-[#D09130] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                                Đang bán
+                            </div>
+
+                            <!-- Overlay Button -->
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="<?php the_permalink(); ?>" class="bg-[#1a2533] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    Xem chi tiết <span class="material-symbols-outlined text-xs">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Info Content -->
+                        <div class="p-4 flex-grow flex flex-col">
+                            <h4 class="text-[15px] font-bold text-gray-900 line-clamp-2 mb-3 leading-snug group-hover:text-[#D09130] transition-colors" title="<?php the_title_attribute(); ?>">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h4>
+
+                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-2">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span class="truncate"><?php echo esc_html($rel_loc_text); ?></span>
+                            </div>
+
+                            <div class="flex items-center gap-1 text-gray-400 text-xs mb-4">
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span><?php echo get_the_date('d/m/Y H:i'); ?></span>
+                            </div>
+
+                            <!-- Parameters -->
+                            <div class="grid grid-cols-3 gap-2 border-t border-gray-50 pt-3 mb-4">
+                                <div class="flex items-center gap-1 text-gray-600">
+                                    <span class="material-symbols-outlined text-[18px] text-gray-400">home</span>
+                                    <span class="text-[11px] font-bold"><?php echo $rel_frontage ?: '---'; ?>m</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-gray-600">
+                                    <span class="material-symbols-outlined text-[18px] text-gray-400">aspect_ratio</span>
+                                    <span class="text-[11px] font-bold"><?php echo $rel_area ?: '---'; ?>m²</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-gray-600">
+                                    <span class="material-symbols-outlined text-[18px] text-gray-400">stairs</span>
+                                    <span class="text-[11px] font-bold"><?php echo $rel_floors ?: '---'; ?> tầng</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer: Price + Call -->
+                            <div class="mt-auto flex items-center justify-between border-t border-gray-50 pt-3">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] text-gray-400">Giá:</span>
+                                    <span class="text-sm font-bold text-[#d63638]"><?php echo esc_html($rel_price_display); ?></span>
+                                </div>
+                                <a href="tel:0972991551" class="w-8 h-8 rounded-full border border-[#D09130] flex items-center justify-center text-[#D09130] hover:bg-[#D09130] hover:text-white transition-all shadow-sm">
+                                    <span class="material-symbols-outlined text-lg">call</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+        <?php else : ?>
+            <p class="text-gray-400 italic text-center">Không có bất động sản liên quan nào khác.</p>
+        <?php endif; ?>
+    </div>
+
+    <style>
+        .related-title h3 {
+            color: #1a2533;
+            letter-spacing: 0.05em;
+        }
+        .bds-related-card:hover {
+            transform: translateY(-5px);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+<div class="h-10 xl:h-24"></div>
 
 <?php 
 endwhile;
