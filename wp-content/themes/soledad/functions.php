@@ -261,6 +261,7 @@ if (! function_exists('penci_load_scripts')) {
 		}
 
 		wp_register_style('penci_icon', get_template_directory_uri() . '/css/penci-icon.css', array(), PENCI_SOLEDAD_VERSION);
+		wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css', array(), '1.11.3');
 		wp_enqueue_style('penci_style', get_stylesheet_directory_uri() . '/style.css', array(), PENCI_SOLEDAD_VERSION);
 
 		// Enqueue script

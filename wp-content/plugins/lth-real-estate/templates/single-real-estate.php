@@ -367,7 +367,7 @@ while ( have_posts() ) : the_post();
                             ?>
                                 <div class="flex items-center justify-between group">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-2xl text-gray-500 group-hover:text-black transition-colors"><?php echo esc_html($item['icon']); ?></span>
+                                        <span class="material-symbols-outlined text-[32px]! text-gray-500 group-hover:text-black transition-colors"><?php echo esc_html($item['icon']); ?></span>
                                         <span class="text-[15px] font-medium text-gray-700"><?php echo esc_html($item['label']); ?></span>
                                     </div>
                                     <div class="bg-[#F3F7F8] px-4 py-1.5 rounded-full min-w-[60px] text-center">

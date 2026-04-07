@@ -3139,12 +3139,26 @@ li.nav-item::marker {
 .module_real_estate .bds-title {
 	font-size: 1rem;
 	font-weight: 600;
-
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
 }
 
 .module_real_estate .bds-title a {
 	color: black;
 }
+
+.module_real_estate .bds-title a:hover {
+	background: black !important;
+	display: inline-block !important;
+	-webkit-background-clip: text !important;
+	background-clip: text !important;
+	color: transparent !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
+
 
 
 .module_real_estate .text_call_now {

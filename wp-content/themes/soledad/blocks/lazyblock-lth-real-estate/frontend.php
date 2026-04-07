@@ -149,8 +149,8 @@ if (!function_exists('lth_real_estate_output_fe')) :
         <div class="flex w-full items-center justify-between">
             <div class="text-base text-gray-700">Có <strong class="font-bold text-black lth-count"><?php echo esc_html( $total_posts ); ?></strong> bất động sản</div>
             <div class="flex items-center gap-2">
-                <div class="rounded-lg bg-gray-800 p-2 text-white text-sm cursor-pointer"><i class="self-icons list-menu-icons w-[24px]! h-[20px]!"> </i></div>
-                <div class="rounded-lg border bg-white p-2 text-gray-700 shadow-sm text-sm cursor-pointer"><i class="self-icons grid-menu-icons w-[24px]! h-[20px]!"> </i></div>
+                <div class="rounded-lg bg-gray-800 p-2 text-white text-sm cursor-pointer flex items-center justify-center"><i class="bi bi-list-ul text-xl"></i></div>
+                <div class="rounded-lg border bg-white p-2 text-gray-700 shadow-sm text-sm cursor-pointer flex items-center justify-center"><i class="bi bi-grid-fill text-xl"></i></div>
             </div>
         </div>
         <div class="w-full lg:w-auto">
@@ -286,36 +286,36 @@ if (!function_exists('lth_real_estate_output_fe')) :
                     </div>
                 </div>
                 <div class="grid grid-cols-4 gap-3! grow py-4!">
-                    <div class="col-span-4 ">
+                    <div class="col-span-4 hidden">
                         <span class="category"><?php echo esc_html( $type_name ); ?></span>
                     </div>
-                    <div class="col-span-4 bds-title"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a></div>
+                    <div class="col-span-4 bds-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span><?php the_title(); ?></span></a></div>
                     <div class="col-span-4 flex gap-4! text-gray-500">
                         <?php if ( $location_name ) : ?>
                             <div class="flex items-center gap-1!">
-                                <span class="material-symbols-outlined">location_on</span><span><?php echo esc_html( $location_name ); ?></span>
+                                <i class="bi bi-geo-alt text-sm"></i><span><?php echo esc_html( $location_name ); ?></span>
                             </div>
                         <?php endif; ?>
                         <div class="flex items-center gap-1!">
-                            <span class="material-symbols-outlined">calendar_today</span><span><?php echo get_the_date('d/m/Y'); ?></span>
+                            <i class="bi bi-calendar3 text-sm"></i><span><?php echo get_the_date('d/m/Y'); ?></span>
                         </div>
                     </div>
                 
-                        <div class="col-span-4 flex flex-wrap xl:flex-nowrap items-center gap-x-2 xl:gap-x-6 border-t border-gray-100 pt-4!">
-                            <div class="flex items-center gap-1 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
-                                <span class="material-symbols-outlined text-gray-400">home</span>
+                        <div class="col-span-4 flex flex-wrap xl:flex-nowrap items-center gap-x-2 xl:gap-x-6 border-t border-gray-100">
+                            <div class="flex items-center gap-2 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <i class="stnd-normal-icons icons-house-facade text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
                                 <span class="text-sm font-bold"><?php echo esc_html( $frontage ?: '-' ); ?>m</span>
                             </div>
-                            <div class="flex items-center gap-1 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
-                                <span class="material-symbols-outlined text-gray-400">aspect_ratio</span>
+                            <div class="flex items-center gap-2 text-gray-700  xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <i class="stnd-normal-icons icons-area text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
                                 <span class="text-sm font-bold"><?php echo esc_html( $area ?: '-' ); ?>m2</span>
                             </div>
-                            <div class="flex items-center gap-1 text-gray-700 xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
-                                <span class="material-symbols-outlined text-gray-400 group-hover:text-black">stairs</span>
+                            <div class="flex items-center gap-2 text-gray-700 xl:pr-6! pr-2! border-r! border-gray-200! last:border-0">
+                                <i class="stnd-normal-icons icons-floor text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
                                 <span class="text-sm font-bold"><?php echo esc_html( $floors ?: '-' ); ?> tầng</span>
                             </div>
-                            <div class="flex items-center gap-1 text-gray-700 last:border-0">
-                                <span class="material-symbols-outlined text-gray-400">balance</span>
+                            <div class="flex items-center gap-2 text-gray-700 last:border-0">
+                                <i class="stnd-normal-icons icons-balance  text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
                                 <span class="text-sm font-bold"><?php echo esc_html( isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: 'Chờ sổ') ); ?></span>
                             </div>
                         </div>
@@ -323,7 +323,7 @@ if (!function_exists('lth_real_estate_output_fe')) :
                             <div class="col-span-3 flex items-center gap-1!"><span class="text-sm">Giá :</span> <span class="text-red-500 font-bold text-base"><?php echo esc_html( $price_label ); ?></span></div>
                             <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>">
                                 <div class="col-span-3 flex items-center gap-2! border border-[#FFD45C]! rounded-full py-1! pl-1! pr-3!">
-                                    <span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> 
+                                    <i class="bi bi-telephone-fill gold-call-buton p-2! before:text-[22px]"></i> 
                                     <span class="text_call_now">Gọi ngay</span>
                                 </div>
                             </a>
@@ -358,13 +358,13 @@ if (!function_exists('lth_real_estate_output_fe')) :
         </div>
     <?php elseif ( $pagination_type == 'load_more' && $query->max_num_pages > 1 ) : ?>
         <div class="lth-load-more-wrapper">
-            <button class="lth-load-more-btn btn" 
+            <button class="lth-load-more-btn btn flex items-center gap-2 justify-center mx-auto" 
                     data-block-id="<?php echo $wrapper_id; ?>" 
                     data-paged="1" 
                     data-max="<?php echo $query->max_num_pages; ?>" 
                     data-attrs='<?php echo json_encode($attributes); ?>'>
                 Xem thêm
-                <i class="arrow-right-icons rotate-0 inline-block"></i>
+                <i class="bi bi-chevron-right"></i>
             </button>
         </div>
         
