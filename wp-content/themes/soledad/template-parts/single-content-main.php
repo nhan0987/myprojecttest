@@ -84,7 +84,7 @@ $single_style = penci_get_single_style();
 			<div class="penci-single-link-pages">
 				<?php wp_link_pages(); ?>
 			</div>
-			<?php if ( ! get_theme_mod( 'penci_post_tags' ) && has_tag() ) : ?>
+			<!-- <?php if ( ! get_theme_mod( 'penci_post_tags' ) && has_tag() ) : ?>
 				<?php if ( is_single() ) : ?>
 					<div class="post-tags">
 						
@@ -92,7 +92,7 @@ $single_style = penci_get_single_style();
 					</div>
 					
 				<?php endif; ?>
-			<?php endif; ?>
+			<?php endif; ?> -->
 		</div>
 	</div>
 
@@ -102,15 +102,15 @@ $single_style = penci_get_single_style();
 		</div>
 	<?php endif; ?>
 
-	<?php
+	<!-- <?php
 	if( 'below-content' == $single_poslcscount || 'abovebelow-content' == $single_poslcscount ){
 		get_template_part( 'template-parts/single', 'meta-comment' );
 	}
-	?>
+	?> -->
 
 	<?php if ( get_theme_mod( 'penci_related_post_popup' ) ) : ?><div class="penci-flag-rlt-popup"></div><?php endif; ?>
 	
-	<?php 
+	<!-- <?php 
 	$reorder = get_theme_mod('penci_single_ordersec') ? get_theme_mod('penci_single_ordersec') : 'author-postnav-related-comments';
 	$reorderarray = explode( '-', $reorder );
 	if( !empty( $reorderarray ) ) {
@@ -125,15 +125,15 @@ $single_style = penci_get_single_style();
 		<?php get_template_part( 'inc/templates/post_pagination' ); ?>
 	<?php endif; ?>
 
-	<?php if ( $sec == 'related' && ! get_theme_mod( 'penci_post_related' ) ) : ?>
+	 <?php if ( $sec == 'related' && ! get_theme_mod( 'penci_post_related' ) ) : ?>
 		<?php get_template_part( 'inc/templates/related_posts' ); ?>
-	<?php endif; ?>
+	<?php endif; ?> 
 	
 	<?php if ( $sec == 'comments' && ! get_theme_mod( 'penci_post_hide_comments' ) ) : ?>
 		<?php comments_template( '', true ); ?>
 	<?php endif; ?>
 	
-	<?php } } ?>
+	<?php } } ?> -->
 	
 	<?php if ( get_theme_mod( 'penci_related_post_popup' ) ) : ?><div class="penci-flag-rlt-popup"></div><?php endif; ?>
 

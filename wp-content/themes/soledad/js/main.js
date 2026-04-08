@@ -2138,7 +2138,92 @@
                 hiddenElements.forEach((el) => observer.observe(el));
             }
         
-	};
+	},
+	PENCI.index_click = function (selector) {
+
+		console.log("index click");
+
+		const selectors = {
+			toggleBtn: '#toc-toggle',
+			closeBtn: '#toc-close',
+			sidebar: '#toc-sidebar',
+			overlay: '#toc-overlay',
+			list: '#toc-list',
+			content: '#main'
+		};
+
+		// Hàm tạo danh mục từ các thẻ H2
+		const buildTOC = function() {
+
+			console.log("build TOC")
+
+			const article = document.querySelector(selectors.content);
+			const tocList = document.querySelector(selectors.list);
+			if (!article || !tocList) return;
+
+			const headings = article.querySelectorAll('h2');
+			tocList.innerHTML = ''; // Xóa trắng trước khi render
+
+			headings.forEach((heading, index) => {
+				const id = heading.id || `penci-section-${index + 1}`;
+				heading.id = id;
+
+				const li = document.createElement('li');
+				li.innerHTML = `
+					<a href="#${id}" class="block text-gray-700! hover:text-[#FEBD55]! transition-all py-1">
+						${heading.innerText}
+					</a>
+				`;
+
+				console.log(li)
+				tocList.appendChild(li);
+			});
+		};
+
+		// Hàm xử lý đóng/mở sidebar (Exported as PENCI.button_expand)
+		const handleSidebar = function() {
+			const sidebar = document.querySelector(selectors.sidebar);
+			const overlay = document.querySelector(selectors.overlay);
+			
+			if (sidebar && overlay) {
+
+				console.log("handle Sidebar")
+				sidebar.classList.toggle('open');
+				overlay.classList.toggle('hidden');
+			}
+		};
+
+		// Hàm khởi tạo sự kiện
+		const initEvents = function() {
+
+			console.log("init function")
+			const toggleBtn = document.querySelector(selectors.toggleBtn);
+			const closeBtn = document.querySelector(selectors.closeBtn);
+			const overlay = document.querySelector(selectors.overlay);
+			const tocList = document.querySelector(selectors.list);
+
+			if (toggleBtn) toggleBtn.addEventListener('click', handleSidebar);
+			if (closeBtn) closeBtn.addEventListener('click', handleSidebar);
+			if (overlay) overlay.addEventListener('click', handleSidebar);
+			
+			// Đóng khi click vào link
+			if (tocList) {
+				tocList.addEventListener('click', (e) => {
+					if (e.target.tagName === 'A') handleSidebar();
+				});
+			}
+		};
+
+		return {
+			init: function() {
+				buildTOC();
+				initEvents();
+				
+			}
+		};
+        
+	}
+	;
 
 
 	/* Init functions
@@ -2181,5 +2266,7 @@
 		});
 		PENCI.section_reveal('.section-reveal'); 
 		$(window ).on( 'resize', function(){ PENCI.sticky_sidebar(); } );
+
+		PENCI.index_click().init();
 	});
 })(jQuery);	// EOF

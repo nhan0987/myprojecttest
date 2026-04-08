@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
     var swiper_slidershow = new Swiper('.swiper-slidershow', {
         slidesPerView: 1,
@@ -7,10 +7,6 @@ jQuery(document).ready(function($) {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        // pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable: true,
-        // },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -51,10 +47,27 @@ jQuery(document).ready(function($) {
         }
     });
 
+    var swiper_slidershow = new Swiper('.related-posts-slider', {
+        slidesPerView: 5,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-next',
+            prevEl: '.swiper-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            320: { slidesPerView: 2 },
+            1280: { slidesPerView: 5 } // Hiển thị 5 cột trên màn hình lớn
+        }
+    });
+
 });
 
-jQuery(document).ready(function($) {
-    $('.module_toggle_content .title-box').click(function(){
+jQuery(document).ready(function ($) {
+    $('.module_toggle_content .title-box').click(function () {
         var hs = $(this).parent().hasClass('active');
 
         if (!hs) {
