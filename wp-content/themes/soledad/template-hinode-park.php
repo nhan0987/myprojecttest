@@ -42,12 +42,12 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" id="du-an">
+<section class="hero h-full! xl:h-[977px]!" id="du-an">
   <img class="hero-bg" src="<?php echo get_template_directory_uri(); ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->
-  <div class="hero-header px-5 xl:px-[100px]">
+  <div class="hero-header flex flex-col xl:flex-row justify-between items-center gap-5 py-5! px-[20px]! xl:px-[100px]!">
     <div class="hero-header-left">
       <img class="hero-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="The Flame Vine">
       <div class="hero-sep"></div>
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <nav class="hero-nav">
+    <nav class="hero-nav flex flex-wrap justify-center">
       <div class="hero-nav-item active">Dự án</div>
       <div class="hero-nav-item" onclick="scrollTo('#vi-tri')">Vị trí</div>
       <div class="hero-nav-item" onclick="scrollTo('#chinh-sach')">Chính sách</div>
@@ -74,7 +74,7 @@
   </div>
 
   <!-- Hero body -->
-  <div class="hero-body px-5 xl:px-[100px]">
+  <div class="hero-body px-[12px]! xl:px-[100px]!">
     <div class="hero-tag">
       <div class="hero-tag-dot"></div>
       <div class="hero-tag-text">STND.VN · Phân Phối Chính Thức · Ra Mắt 2026</div>
@@ -84,13 +84,13 @@
       <span class="flame">Flame</span>
       <span class="vine">Vine</span>
     </div>
-    <p class="hero-subtitle">
+    <p class="hero-subtitle text-[11px]! xl:text-base!">
       Tổ hợp 1.380 căn hộ cao cấp · 4 tòa 35 tầng · Hinode Royal Park<br>
       Hoài Đức, Hà Nội · Bàn giao dự kiến Quý 4/2028
     </p>
-    <div class="hero-buttons">
-      <button class="btn-primary" onclick="document.getElementById('form-register').scrollIntoView({behavior:'smooth'})">Đăng ký tư vấn</button>
-      <button class="btn-outline">
+    <div class="hero-buttons justify-between xl:justify-start">
+      <button class="btn-primary w-[170px]! xl:w-[232px]! py-[12px]! px-[4px]! text-xs! xl:text-base! h-auto" onclick="document.getElementById('form-register').scrollIntoView({behavior:'smooth'})">Đăng ký tư vấn</button>
+      <button class="btn-outline w-[170px]! xl:w-[232px]! py-[12px]! px-[4px]! text-xs! xl:text-base! h-auto">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
         Khám phá dự án
       </button>
@@ -100,16 +100,16 @@
   </div>
 
   <!-- Stats bar -->
-    <div class="stats-bar">
+    <div class="stats-bar grid grid-cols-2 xl:flex xl:items-center xl:justify-center gap-6 xl:gap-14 p-8">
       <div class="stat-item"><div class="stat-num">7x</div><div class="stat-label">Triệu/m² từ</div></div>
-      <div class="stat-sep"></div>
+      <div class="stat-sep hidden xl:block"></div>
       <div class="stat-item"><div class="stat-num">35</div><div class="stat-label">Tầng cao</div></div>
-      <div class="stat-sep"></div>
+      <div class="stat-sep hidden xl:block"></div>
       <div class="stat-item"><div class="stat-num">04</div><div class="stat-label">Tòa tháp</div></div>
-      <div class="stat-sep"></div>
+      <div class="stat-sep hidden xl:block"></div>
       <div class="stat-item"><div class="stat-num">146.8ha</div><div class="stat-label">Đại đô thị</div></div>
-      <div class="stat-sep"></div>
-      <div class="stat-item"><div class="stat-num">Q4/28</div><div class="stat-label">Bàn giao</div></div>
+      <div class="stat-sep hidden xl:block"></div>
+      <div class="stat-item col-span-2 xl:col-span-1"><div class="stat-num">Q4/28</div><div class="stat-label">Bàn giao</div></div>
     </div>
 </section>
 
