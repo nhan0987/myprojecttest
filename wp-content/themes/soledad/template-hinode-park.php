@@ -31,7 +31,7 @@ $theme_uri = get_template_directory_uri();
 <!-- TOP BAR -->
 <div class="top-bar px-2! xl:px-[8px]! py-[7px]!">
   <div class="top-bar-inner">
-    <div class="top-bar-brand text-[8px] xl:text-sm!">STNĐ<span>.vn</span></div>
+    <div class="top-bar-brand text-[8px] xl:text-sm!">STND<span>.vn</span></div>
     <div class="top-bar-sep"></div>
     <div class="top-bar-text text-[6px] xl:text-sm!">Khám phá hệ sinh thái bất động sản đầy đủ tại trang chủ của chúng tôi</div>
     <a href="https://stnd.vn" class="top-bar-btn">
@@ -454,32 +454,53 @@ $theme_uri = get_template_directory_uri();
           <svg width="20" height="20" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
         </div>
         <div>
-          <div class="faq-hotline-num"><a href="tel:0972991551">0972 991 551</a></div>
+          <div class="faq-hotline-num"><a href="tel:0972991551" class="text-white!">0972 991 551</a></div>
           <div class="faq-hotline-label">Hotline STND.VN - Hỗ Trợ 24/7</div>
         </div>
       </div>
     </div>
     <div class="faq-right">
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item open" onclick="toggleFaq(this)">
         <div class="faq-item-header">
-          <div class="faq-q">Chủ đầu tư dự án The Flame Vine là ai?</div>
+          <div class="faq-q">Chung cư The Flame Vine có đáng mua không?</div>
           <div class="faq-toggle"></div>
         </div>
-        <div class="faq-a">Dự án được đầu tư và phát triển bởi Tổng công ty Cổ phần Thương mại Xây dựng (WTO) — đơn vị giàu kinh nghiệm với các dự án Hinode City, Hinode Royal Park...</div>
+        <div class="faq-a">Đáng mua. Dự án nằm trong đại đô thị Hinode Royal Park đã đồng bộ, pháp lý an toàn (sổ đỏ lâu dài), CĐT WTO (Vietracimex) uy tín. Hạ tầng Vành đai 3.5 và Metro số 3 là đòn bẩy tăng giá mạnh.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-item-header">
-          <div class="faq-q">Thời gian bàn giao căn hộ dự kiến là khi nào?</div>
+          <div class="faq-q">Giá chung cư The Flame Vine bao nhiêu?</div>
           <div class="faq-toggle"></div>
         </div>
-        <div class="faq-a">The Flame Vine dự kiến bàn giao vào Quý 4/2028 với tiêu chuẩn bàn giao cao cấp.</div>
+        <div class="faq-a">Giá từ 7x triệu/m², tùy theo tầng, hướng và loại căn. Liên hệ STND.VN để nhận bảng giá cập nhật mới nhất và được tư vấn căn phù hợp ngân sách.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-item-header">
-          <div class="faq-q">Phân phối chính thức dự án này là đơn vị nào?</div>
+          <div class="faq-q">Chủ đầu tư WTO (Vietracimex) có uy tín không?</div>
           <div class="faq-toggle"></div>
         </div>
-        <div class="faq-a">Siêu thị nhà đất (STND.VN) là đơn vị phân phối chính thức, cam kết thông tin minh bạch và quỹ căn đẹp nhất từ chủ đầu tư.</div>
+        <div class="faq-a">WTO (Vietracimex) là doanh nghiệp nhà nước với hàng chục năm kinh nghiệm, sở hữu quỹ đất lớn tại Hà Nội và TP.HCM. Đây là chủ đầu tư của Hinode Royal Park — đại đô thị đã có tiến độ xây dựng rõ ràng và được tin tưởng.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Khi nào dự án The Flame Vine bàn giao?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">Dự kiến bàn giao Quý 4/2028. Đây là mốc thời gian theo kế hoạch của chủ đầu tư WTO. Thông tin chính xác sẽ được xác nhận theo Hợp đồng mua bán.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Vay ngân hàng mua The Flame Vine như thế nào?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">Có thể vay lên đến 70% giá trị căn hộ, lãi suất 0% trong 24 tháng đầu từ ngày ký HĐMB. STND.VN hỗ trợ thủ tục vay trọn gói tại các ngân hàng đối tác.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Căn hộ bàn giao kèm những nội thất gì?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">Căn hộ bàn giao hoàn thiện cao cấp: khóa cửa thông minh Panasonic, thiết bị điện Schneider, sàn gỗ, trần thạch cao giật cấp, điều hòa âm trần. Bếp và phòng tắm bàn giao đầu chờ để khách tự do cá nhân hóa.</div>
       </div>
     </div>
   </div>
@@ -583,7 +604,7 @@ $theme_uri = get_template_directory_uri();
           <div class="footer-contact-icon">
             <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
           </div>
-          <div><div class="footer-contact-label">Hotline tư vấn</div><div class="footer-contact-val"><a href="tel:0972991551">0972 991 551</a></div></div>
+          <div><div class="footer-contact-label">Hotline tư vấn</div><div class="footer-contact-val"><a href="tel:0972991551" class="text-gray-950!">0972 991 551</a></div></div>
         </li>
         <li class="footer-contact-item">
           <div class="footer-contact-icon">

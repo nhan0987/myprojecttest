@@ -785,7 +785,7 @@ button {
     position: absolute;
     inset: 0;
     opacity: .12;
-    background-image: url('https://www.figma.com/api/mcp/asset/8e8ccb9a-c69f-43f7-8fe5-521083710a09');
+    background-image: url('../images/hp-policy-bg.jpg');
     background-size: cover
 }
 
@@ -818,7 +818,7 @@ button {
 .policy-main {
     background: var(--rust);
     border-radius: 16px;
-    padding: 32px;
+    padding: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -829,7 +829,7 @@ button {
 
 .policy-big-num {
     font-family: 'Times New Roman', serif;
-    font-size: 88px;
+    font-size: 52px;
     font-weight: 700;
     color: #fff;
     flex-shrink: 0;
@@ -837,7 +837,7 @@ button {
 }
 
 .policy-main-label {
-    font-size: 14px;
+    font-size: 10px;
     color: #fff;
     opacity: .7;
     text-transform: uppercase;
@@ -846,10 +846,25 @@ button {
 }
 
 .policy-main-desc {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     color: #fff;
     line-height: 22px
+}
+
+
+@media only screen and (min-width: 1199px) {
+    .policy-big-num {
+        font-size: 88px;
+    }
+
+    .policy-main-label {
+        font-size: 14px;
+    }
+
+    .policy-main-desc {
+        font-size: 16px;
+    }
 }
 
 .policy-cards {
