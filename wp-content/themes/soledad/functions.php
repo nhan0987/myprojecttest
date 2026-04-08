@@ -327,6 +327,85 @@ if (! function_exists('penci_load_scripts')) {
 }
 
 /**
+ * Dequeue Soledad theme assets for Hinode Park template
+ */
+add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_hinode', 9999);
+function penci_dequeue_soledad_for_hinode() {
+	if (is_page_template('template-hinode-park.php')) {
+		global $wp_styles, $wp_scripts;
+
+		// Dequeue main styles
+		$theme_handles = array(
+			'penci-fonts',
+			'penci-main-style',
+			'penci-buddypress-bbpress',
+			'penci-font-awesomeold',
+			'penci-font-iweather',
+			'penci-font-awesome',
+			'penci_icon',
+			'bootstrap-icons',
+			'penci_style',
+			'stnd-icons',
+			'stnd',
+			'material-icons',
+			'jquery.fancybox.min',
+			'fancybox',
+			'bootstrap.min',
+			'bootstrap',
+			'swiper-bundle.min',
+			'swiper',
+			'custom'
+		);
+
+		foreach ( $theme_handles as $handle ) {
+			wp_dequeue_style( $handle );
+			wp_deregister_style( $handle );
+		}
+
+		// Remove any style enqueued that has "penci" in its handle
+		if ( isset($wp_styles->queue) ) {
+			foreach ( $wp_styles->queue as $handle ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false ) {
+					wp_dequeue_style( $handle );
+				}
+			}
+		}
+
+		// Dequeue scripts
+		$script_handles = array(
+			'penci-libs-js',
+			'main-scripts',
+			'penci-video-background',
+			'penci-smoothscroll',
+			'penci_ajax_like_post',
+			'penci_ajax_more_posts',
+			'penci_ajax_more_scroll',
+			'penci_ajax_archive_more_scroll',
+			'jquery.fancybox.min',
+			'fancybox',
+			'custom',
+			'swiper-bundle.min',
+			'swiper',
+			'bootstrap.min',
+			'bootstrap'
+		);
+
+		foreach ( $script_handles as $handle ) {
+			wp_dequeue_script( $handle );
+			wp_deregister_script( $handle );
+		}
+
+		if ( isset($wp_scripts->queue) ) {
+			foreach ( $wp_scripts->queue as $handle ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false ) {
+					wp_dequeue_script( $handle );
+				}
+			}
+		}
+	}
+}
+
+/**
  * Enqueue styles/scripts
  * Hook to action wp_enqueue_scripts
  *

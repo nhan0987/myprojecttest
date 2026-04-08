@@ -1,0 +1,599 @@
+<?php
+/**
+ * Template Name: Hinode Park
+ * 
+ * A premium landing page template for Hinode Park (Flame Vine).
+ */
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <?php 
+    add_action('wp_enqueue_scripts', function() {
+        // Enqueue Fonts from HTML template
+        wp_enqueue_style('hp-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap', array(), null);
+        
+        // Custom Style & Scripts
+        wp_enqueue_style('hinode-park-style', get_template_directory_uri() . '/css/hinode-park.css', array(), '1.1.0');
+        wp_enqueue_script('hinode-park-script', get_template_directory_uri() . '/js/hinode-park.js', array(), '1.1.0', true);
+    });
+
+    wp_head(); 
+    ?>
+</head>
+
+<body <?php body_class(); ?>>
+
+<!-- TOP BAR -->
+<div class="top-bar px-2! xl:px-[8px]! py-[7px]!">
+  <div class="top-bar-inner">
+    <div class="top-bar-brand text-[8px] xl:text-sm!">STNĐ<span>.vn</span></div>
+    <div class="top-bar-sep"></div>
+    <div class="top-bar-text text-[6px] xl:text-sm!">Khám phá hệ sinh thái bất động sản đầy đủ tại trang chủ của chúng tôi</div>
+    <a href="https://stnd.vn" class="top-bar-btn">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+      <span class="text-[4px] xl:text-xs! uppercase xl:font-medium">Ghé thăm STND.VN</span>
+    </a>
+  </div>
+  <span class="top-bar-close" onclick="this.parentElement.style.display='none'">✕</span>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="du-an">
+  <img class="hero-bg" src="<?php echo get_template_directory_uri(); ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <div class="hero-overlay"></div>
+
+  <!-- Header nav -->
+  <div class="hero-header px-5 xl:px-[100px]">
+    <div class="hero-header-left">
+      <img class="hero-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="The Flame Vine">
+      <div class="hero-sep"></div>
+      <div class="hero-brand">
+        <img class="hero-brand-logo" src="<?php echo get_template_directory_uri(); ?>/images/hp-stnd-logo.png" alt="STND">
+        <div class="hero-brand-text">
+          <div class="sub">Phân phối bởi</div>
+          <div class="name">Siêu thị nhà đất</div>
+        </div>
+      </div>
+    </div>
+    <nav class="hero-nav">
+      <div class="hero-nav-item active">Dự án</div>
+      <div class="hero-nav-item" onclick="scrollTo('#vi-tri')">Vị trí</div>
+      <div class="hero-nav-item" onclick="scrollTo('#chinh-sach')">Chính sách</div>
+      <div class="hero-nav-item" onclick="scrollTo('#mat-bang')">Mặt bằng</div>
+      <div class="hero-nav-item" onclick="scrollTo('#tien-ich')">Tiện ích</div>
+      <div class="hero-nav-item" onclick="scrollTo('#faq')">FAQ</div>
+    </nav>
+    <a href="tel:0972991551" class="hero-cta-call">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+      0972 991 551
+    </a>
+  </div>
+
+  <!-- Hero body -->
+  <div class="hero-body px-5 xl:px-[100px]">
+    <div class="hero-tag">
+      <div class="hero-tag-dot"></div>
+      <div class="hero-tag-text">STND.VN · Phân Phối Chính Thức · Ra Mắt 2026</div>
+    </div>
+    <div class="hero-title">
+      <span class="the">The</span>
+      <span class="flame">Flame</span>
+      <span class="vine">Vine</span>
+    </div>
+    <p class="hero-subtitle">
+      Tổ hợp 1.380 căn hộ cao cấp · 4 tòa 35 tầng · Hinode Royal Park<br>
+      Hoài Đức, Hà Nội · Bàn giao dự kiến Quý 4/2028
+    </p>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="document.getElementById('form-register').scrollIntoView({behavior:'smooth'})">Đăng ký tư vấn</button>
+      <button class="btn-outline">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+        Khám phá dự án
+      </button>
+    </div>
+
+    
+  </div>
+
+  <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-num">7x</div><div class="stat-label">Triệu/m² từ</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-num">35</div><div class="stat-label">Tầng cao</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-num">04</div><div class="stat-label">Tòa tháp</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-num">146.8ha</div><div class="stat-label">Đại đô thị</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-num">Q4/28</div><div class="stat-label">Bàn giao</div></div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview" id="tong-quan">
+  <div class="overview-img">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
+    <div class="overview-img-badge">HH3<br><span style="font-size:12px">Hinode Royal Park</span></div>
+  </div>
+  <div class="overview-content">
+    <div>
+      <div class="sec-label"><span class="sec-label-text">Tổng Quan Dự Án</span><div class="sec-label-line"></div></div>
+      <div class="overview-heading flex flex-col! gap-1!">
+        <span class="">Căn hộ cao cấp</span>
+        <span class="the-flame-vine">The Flame Vine</span>
+      </div>
+    </div>
+    <p class="overview-desc">
+      Nằm trong đại đô thị Hinode Royal Park rộng hơn 146ha tại Hoài Đức, The Flame Vine là tổ hợp căn hộ cao cấp gồm 4 tòa tháp 35 tầng và 3 tầng hầm. Dự án kế thừa toàn bộ không gian sống xanh, hệ tiện ích đặc quyền và hạ tầng giao thông đồng bộ của đại đô thị.
+    </p>
+    <div class="overview-grid">
+      <div class="overview-grid-row">
+        <div class="stat-card"><div class="stat-card-num">25.750m²</div><div class="stat-card-label">Tổng diện tích đất</div></div>
+        <div class="stat-card"><div class="stat-card-num">1.380</div><div class="stat-card-label">Căn hộ</div></div>
+      </div>
+      <div class="overview-grid-row">
+        <div class="stat-card"><div class="stat-card-num">70–118m²</div><div class="stat-card-label">Diện tích căn hộ</div></div>
+        <div class="stat-card"><div class="stat-card-num">2PN–3PN</div><div class="stat-card-label">Loại căn hộ</div></div>
+      </div>
+      <div class="overview-grid-row">
+        <div class="stat-card"><div class="stat-card-num">40.9–53%</div><div class="stat-card-label">Mật độ xây dựng</div></div>
+        <div class="stat-card"><div class="stat-card-num">Q4/2028</div><div class="stat-card-label">Dự kiến bàn giao</div></div>
+      </div>
+    </div>
+    <button class="btn-full" onclick="document.getElementById('form-register').scrollIntoView({behavior:'smooth'})">Nhận Bảng Giá Chi Tiết</button>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location bg-[#F5F0E9] py-16 xl:py-[100px]" id="vi-tri">
+  <div class="location-header px-5 xl:px-[100px] mb-12">
+    <div class="sec-label"><span class="sec-label-text">Vị Trí Chiến Lược</span><div class="sec-label-line"></div></div>
+    <h2 style="font-size:40px;font-weight:700;text-transform:uppercase;color:#1c1917;line-height:1.2">
+      Tọa Độ <span style="font-family:'Playfair Display',serif;color:var(--rust)">Kim Cương</span><br>
+      Phía Tây Hà Nội
+    </h2>
+    <p style="font-size:16px;color:#1e1e1e;opacity:.7;margin-top:16px">
+      Nằm ngay mặt tiền Vành đai 3.5 và tiếp giáp Quốc lộ 32 — cư dân chỉ mất 10–15 phút tới Mỹ Đình, Cầu Giấy.<br>Khu vực đô thị hóa nhanh nhất Hà Nội.
+    </p>
+  </div>
+  <div class="location-body flex flex-col xl:flex-row items-center gap-10">
+    <div class="location-map w-full xl:w-[1070px] h-[300px] xl:h-[657px] xl:rounded-tr-[52px]">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/hp-map.jpg" alt="Bản đồ vị trí The Flame Vine">
+    </div>
+    <div class="location-points px-5 xl:pr-[100px] xl:pl-0">
+      <div class="loc-point">
+        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt="">
+        <div>
+          <div class="loc-point-title">2 Ga Metro Cận Kề</div>
+          <div class="loc-point-desc">Kết nối nhanh tới trung tâm Hà Nội, giảm thiểu thời gian di chuyển đáng kể</div>
+        </div>
+      </div>
+      <div class="loc-point">
+        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-medical.png" alt="">
+        <div>
+          <div class="loc-point-title">Hệ Thống Y Tế – Bệnh Viện Lớn</div>
+          <div class="loc-point-desc">Cụm bệnh viện, phòng khám đẳng cấp ngay trong khu vực lân cận</div>
+        </div>
+      </div>
+      <div class="loc-point">
+        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-edu.png" alt="">
+        <div>
+          <div class="loc-point-title">Trường Đại Học & Giáo Dục</div>
+          <div class="loc-point-desc">Hệ thống đại học, trường quốc tế tập trung tại phía Tây Hà Nội</div>
+        </div>
+      </div>
+      <div class="loc-point">
+        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-road.png" alt="">
+        <div>
+          <div class="loc-point-title">Mặt Đường 3.5 – Vành Đai 4</div>
+          <div class="loc-point-desc">Huyết mạch giao thông kết nối toàn vùng, gia tăng giá trị thương mại</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POLICY -->
+<section class="policy p-5 py-16 xl:p-[100px]" id="chinh-sach">
+  <div class="policy-bg"></div>
+  <div class="policy-title-wrap">
+    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
+    <h2 class="policy-heading">Ưu Đãi <span>Đặc Quyền</span></h2>
+    <p class="policy-desc">Hinode Royal Park – The Flame Vine mang đến những chính sách tài chính linh hoạt, tối ưu đòn bẩy đầu tư cho khách hàng thông thái.</p>
+  </div>
+  <div class="policy-main">
+    <div class="policy-big-num">12%</div>
+    <div class="policy-main-text">
+      <div class="policy-main-label">Chiết Khấu Tối Đa · Kết Hợp Early Bird + Thanh Toán Sớm</div>
+      <div class="policy-main-desc">Cơ hội vàng để tối ưu lợi nhuận ngay từ giai đoạn mở bán đầu tiên. Số lượng căn ưu đãi có hạn.</div>
+    </div>
+  </div>
+  <div class="policy-cards">
+    <div class="policy-card">
+      <div class="policy-card-num">1%</div>
+      <div class="policy-card-label">Booking Sớm</div>
+      <div class="policy-card-desc">Dành cho khách đặt chỗ trước mở bán chính thức</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-num">10.5%</div>
+      <div class="policy-card-label">Thanh toán Sớm</div>
+      <div class="policy-card-desc">Chiết khấu khi thanh toán sớm toàn bộ giá trị căn hộ</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-num">2%</div>
+      <div class="policy-card-label">Tiến Độ CĐT</div>
+      <div class="policy-card-desc">Thanh toán theo tiến độ xây dựng chuẩn chủ đầu tư</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-num">0,5%</div>
+      <div class="policy-card-label">Từ Chối bảo lãnh</div>
+      <div class="policy-card-desc">Khi từ chối cấp bảo lãnh nhà ở hình thành trong tương lai</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-num">0%</div>
+      <div class="policy-card-label">Lãi Suất / 24 tháng</div>
+      <div class="policy-card-desc">Ân hạn gốc & lãi 0% trong 24 tháng kể từ ngày ký Hợp đồng mua bán</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOORPLAN -->
+<section class="floorplan p-5 py-16 xl:p-[100px]" id="mat-bang">
+  <div class="floorplan-inner flex flex-col xl:flex-row gap-10 xl:gap-[100px]">
+    <div class="floorplan-left">
+      <div class="sec-label"><span class="sec-label-text">Mặt Bằng Tháp F1 – HH3</span><div class="sec-label-line"></div></div>
+      <h2 class="floorplan-heading">Thiết Kế<br><em>Tối Ưu Công Năng</em></h2>
+      <p class="floorplan-desc">Chủ đầu tư WTO đặc biệt chú trọng sự tinh tế. Các căn hộ bố trí khoa học để tối ưu hóa diện tích và đón tối đa ánh sáng tự nhiên. Mỗi căn hộ có ít nhất 2 ban công cây xanh.</p>
+      <div class="apt-cards">
+        <div class="apt-card-row">
+          <div class="apt-card">
+            <div class="apt-card-type">2PN</div>
+            <div class="apt-card-size">~74 m²</div>
+            <p class="apt-card-desc">Phù hợp gia đình trẻ, tối ưu diện tích, công năng hoàn hảo</p>
+          </div>
+          <div class="apt-card">
+            <div class="apt-card-type">2PN</div>
+            <div class="apt-card-size">~115 m²</div>
+            <ul style="margin-top:16px;padding-left:20px;list-style:disc;color:var(--text-muted);font-size:14px;line-height:26px">
+              <li>Rộng rãi gia đình đa thế hệ, đảm bảo sự riêng tư</li>
+            </ul>
+          </div>
+        </div>
+        <div class="apt-interior">
+          <div class="apt-interior-title">Nội Thất Bàn Giao Dự Kiến</div>
+          <ul>
+            <li>Khóa cửa thông minh – Panasonic hoặc tương đương</li>
+            <li>Thiết bị điện – Schneider</li>
+            <li>Sàn gỗ cao cấp, trần thạch cao giật cấp</li>
+            <li>Điều hòa âm trần</li>
+            <li>Bếp & phòng tắm – bàn giao đầu chờ, tự do cá nhân hóa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="floorplan-right">
+      <div class="floor-tabs">
+        <div class="floor-tab active" onclick="setTab(this)">Tầng 3</div>
+        <div class="floor-tab" onclick="setTab(this)">Tầng 4–19</div>
+        <div class="floor-tab" onclick="setTab(this)">Tầng 21–35</div>
+        <div class="floor-tab" onclick="setTab(this)">2PN 74m²</div>
+        <div class="floor-tab" onclick="setTab(this)">3PN 115m²</div>
+      </div>
+      <div class="floor-img">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-floorplan.jpg" alt="Mặt bằng tầng 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights p-5 py-16 xl:p-[100px]" id="diem-noi-bat">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Điểm Nổi Bật</span><div class="sec-label-line"></div></div>
+    <h2 class="highlights-heading">Lý Do Chọn <span>The Flame Vine</span></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-row flex flex-col xl:flex-row gap-[5px] xl:h-[460px]">
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-1.jpg" alt="Tọa Độ Kim Cương">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">
+          <div class="gallery-cat">01</div>
+          <div class="gallery-cat" style="font-size:14px">Tọa Độ Kim Cương</div>
+          <div class="gallery-name" style="font-size:14px;font-weight:400;opacity:.7">Mặt đường 3.5, cận kề 2 ga Metro, 10–15 phút tới Mỹ Đình</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-2.jpg" alt="">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-3.jpg" alt="">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+    <div class="gallery-row flex flex-col xl:flex-row gap-[5px] xl:h-[460px]">
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-4.jpg" alt="">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-5.jpg" alt="">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-6.jpg" alt="">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities p-5 py-16 xl:p-[100px]" id="tien-ich">
+  <div class="amenities-header">
+    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Hệ Tiện Ích 5 Sao</span><div class="sec-label-line"></div></div>
+    <h2 class="amenities-heading">Nghệ Thuật <span>Sống Đẳng Cấp</span></h2>
+    <p class="amenities-desc">Kế thừa toàn bộ hệ tiện ích đặc quyền của đại đô thị Hinode Royal Park — trải nghiệm sống xứng tầm thượng lưu.</p>
+  </div>
+  <div class="amenities-grid flex flex-col xl:flex-row gap-3 xl:h-[548px]">
+    <div class="amenity-main w-full xl:w-[854px] h-[300px] xl:h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
+      <div class="amenity-main-overlay"></div>
+      <div class="gallery-label">
+        <div class="gallery-cat">Cảnh Quan</div>
+        <div class="gallery-name">Nghệ Thuật Cảnh Quan Độc Đáo</div>
+      </div>
+    </div>
+    <div class="amenity-side">
+      <div class="amenity-side-row">
+        <div class="amenity-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-1.jpg" alt="Xanh">
+          <div class="amenity-item-overlay"></div>
+          <div class="gallery-label">
+            <div class="gallery-cat" style="font-size:13px">Xanh</div>
+            <div class="gallery-name" style="font-size:16px">Không Gian Sống Xanh</div>
+          </div>
+        </div>
+        <div class="amenity-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
+          <div class="amenity-item-overlay"></div>
+          <div class="gallery-label">
+            <div class="gallery-cat" style="font-size:13px">Vui Chơi</div>
+            <div class="gallery-name" style="font-size:16px">Khu Vui Chơi Tiện Nghi</div>
+          </div>
+        </div>
+      </div>
+      <div class="amenity-side-row">
+        <div class="amenity-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-3.jpg" alt="Gym">
+          <div class="amenity-item-overlay"></div>
+          <div class="gallery-label">
+            <div class="gallery-cat" style="font-size:13px">Thể Thao</div>
+            <div class="gallery-name" style="font-size:16px">Gym & Bể Bơi Đẳng Cấp</div>
+          </div>
+        </div>
+        <div class="amenity-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
+          <div class="amenity-item-overlay"></div>
+          <div class="gallery-label">
+            <div class="gallery-cat" style="font-size:13px">Kiến Trúc</div>
+            <div class="gallery-name" style="font-size:16px">Phong Cách Nhật – Đông Dương</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why p-5 py-16 xl:p-[100px]">
+  <div class="why-header">
+    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">9 Lý Do</span><div class="sec-label-line"></div></div>
+    <h2 class="why-heading">Vì Sao Chọn <span>The Flame Vine</span></h2>
+    <p class="why-desc">Chủ đầu tư WTO đặc biệt chú trọng sự tinh tế. Các căn hộ bố trí khoa học để tối ưu hóa diện tích và đón tối đa ánh sáng tự nhiên.</p>
+  </div>
+  <div class="why-grid grid grid-cols-2 xl:grid-cols-3 gap-2">
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Tọa Độ Kim Cương</div>
+        <div class="why-card-desc">Vị trí thuận tiện kết nối với trung tâm Hà Nội và các khu vực lân cận</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Pháp Lý Minh Bạch</div>
+        <div class="why-card-desc">Sổ đỏ lâu dài, an tâm tuyệt đối, mua trực tiếp từ CĐT WTO</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Trực Thuộc Đại Đô Thị</div>
+        <div class="why-card-desc">Nằm trong KĐT Hinode Royal Park được đầu tư đồng bộ hạ tầng và tiện ích</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Thiên Nhiên Giao Hòa</div>
+        <div class="why-card-desc">Mỗi căn có ít nhất 2 ban công cây xanh, ánh sáng và gió tự nhiên</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Thiết Kế Tối Ưu</div>
+        <div class="why-card-desc">Tính toán tỉ mỉ, tối ưu diện tích sử dụng, kết nối hài hòa các không gian</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Đa Dạng Loại Hình</div>
+        <div class="why-card-desc">2PN (74m²) và 3PN (115m²) đáp ứng nhiều nhu cầu sống khác nhau</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Chiết Khấu Ưu Đãi</div>
+        <div class="why-card-desc">Chiết khấu tối đa 12%, lãi 0% / 24 tháng, vay đến 70% giá trị căn</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Chủ Đầu Tư Uy Tín</div>
+        <div class="why-card-desc">WTO (Vietracimex) thâm niên hàng chục năm, quỹ đất lớn tại Hà Nội & TP.HCM</div>
+      </div>
+      <div class="why-card col-span-2 xl:col-span-1">
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-title">Tiềm Năng Tăng Giá</div>
+        <div class="why-card-desc">Đón đầu hạ tầng Metro & Vành đai 3.5 — thanh khoản cao, gia tăng bền vững</div>
+      </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq p-5 py-16 xl:p-[100px]" id="faq">
+  <div class="faq-inner flex flex-col xl:flex-row gap-10 xl:gap-[40px]">
+    <div class="faq-left">
+      <div class="sec-label"><span class="sec-label-text">Câu Hỏi Thường Gặp</span><div class="sec-label-line"></div></div>
+      <h2 class="faq-heading">Giải Đáp <span>Thắc Mắc</span></h2>
+      <p class="faq-desc">Mọi thông tin chi tiết về dự án The Flame Vine – Hinode Royal Park đều được STND.VN cập nhật chính xác và minh bạch.</p>
+      <div class="faq-hotline">
+        <div class="faq-hotline-icon">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+        </div>
+        <div>
+          <div class="faq-hotline-num">0972 991 551</div>
+          <div class="faq-hotline-label">Hotline tư vấn 24/7</div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-right">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Chủ đầu tư dự án The Flame Vine là ai?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">Dự án được đầu tư và phát triển bởi Tổng công ty Cổ phần Thương mại Xây dựng (WTO) — đơn vị giàu kinh nghiệm với các dự án Hinode City, Hinode Royal Park...</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Thời gian bàn giao căn hộ dự kiến là khi nào?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">The Flame Vine dự kiến bàn giao vào Quý 4/2028 với tiêu chuẩn bàn giao cao cấp.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-item-header">
+          <div class="faq-q">Phân phối chính thức dự án này là đơn vị nào?</div>
+          <div class="faq-toggle"></div>
+        </div>
+        <div class="faq-a">Siêu thị nhà đất (STND.VN) là đơn vị phân phối chính thức, cam kết thông tin minh bạch và quỹ căn đẹp nhất từ chủ đầu tư.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FORM -->
+<section class="cta-form p-5 py-16 xl:p-[100px]" id="form-register">
+  <div class="cta-form-bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/hp-cta-bg.jpg')"></div>
+  <div class="cta-grad"></div>
+  <div class="cta-form-inner flex flex-col xl:flex-row gap-10 items-center">
+    <div class="cta-form-left">
+      <div class="sec-label"><span class="sec-label-text">Đăng Ký Tư Vấn</span><div class="sec-label-line"></div></div>
+      <h2 class="cta-form-heading">Sở Hữu Căn Hộ<br><span>The Flame Vine</span> Ngay</h2>
+      <p class="cta-form-desc">Để lại thông tin để nhận trọn bộ tài liệu dự án, mặt bằng chi tiết và bảng giá đợt 1 trực tiếp từ STND.VN.</p>
+      <div class="cta-checklist">
+        <div class="cta-check"><span>✔</span> Trọn bộ tài liệu & mặt bằng dự án</div>
+        <div class="cta-check"><span>✔</span> Bảng giá đợt 1 & CSBH mới nhất</div>
+        <div class="cta-check"><span>✔</span> Tư vấn phong thủy & lựa chọn căn đẹp</div>
+      </div>
+    </div>
+    <div class="cta-form-right">
+      <div style="text-align:center">
+        <div class="form-title">Tư Vấn Miễn Phí</div>
+        <div class="form-subtitle">Chúng tôi sẽ gọi lại cho bạn trong vòng 30 phút</div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Họ tên khách hàng <span class="req">*</span></label>
+        <input type="text" class="form-input" placeholder="Nhập họ và tên của bạn...">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Số điện thoại liên hệ <span class="req">*</span></label>
+        <input type="tel" class="form-input" placeholder="Nhập số điện thoại...">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Vấn đề quan tâm</label>
+        <select class="form-select">
+          <option>Nhận bảng giá & chính sách</option>
+          <option>Tham quan nhà mẫu</option>
+          <option>Tư vấn vay ngân hàng</option>
+          <option>Khác</option>
+        </select>
+      </div>
+      <button class="btn-submit" onclick="handleSubmit()">Đăng Ký Nhận Thông Tin</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="p-5 pt-12 xl:px-[100px] xl:pt-[50px]">
+  <div class="footer-inner flex flex-col xl:flex-row gap-12 xl:gap-[48px] pb-12">
+    <div class="footer-brand">
+      <div class="footer-logos">
+        <img class="footer-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="">
+        <div class="footer-logo-sep"></div>
+        <div class="footer-brand-combo">
+          <img class="footer-brand-logo" src="<?php echo get_template_directory_uri(); ?>/images/hp-stnd-logo.png" alt="">
+          <div><div class="footer-brand-name">Phân phối bởi</div><div class="footer-brand-fullname">Siêu thị nhà đất</div></div>
+        </div>
+      </div>
+      <p class="footer-brand-desc"><strong>Siêu thị nhà đất (STND.VN)</strong> là hệ sinh thái bất động sản toàn diện, mang đến giải pháp tìm kiếm và giao dịch nhà đất an toàn, minh bạch hàng đầu Việt Nam.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Liên hệ STND.VN</div>
+      <ul class="footer-contact-list">
+        <li class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+          </div>
+          <div><div class="footer-contact-label">Hotline tư vấn</div><div class="footer-contact-val">0972 991 551</div></div>
+        </li>
+        <li class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M1 4l7 5 7-5" stroke="white" stroke-width="1"/></svg>
+          </div>
+          <div><div class="footer-contact-label">Email</div><div class="footer-contact-val">info@stnd.vn</div></div>
+        </li>
+        <li class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.94 5 9 5 9s5-5.06 5-9c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 8 4.25a1.75 1.75 0 0 1 0 3.5z"/></svg>
+          </div>
+          <div><div class="footer-contact-label">Địa chỉ dự án</div><div class="footer-contact-val">KĐT Hinode Royal Park, Hoài Đức</div></div>
+        </li>
+        <li class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div><div class="footer-contact-label">Thời gian</div><div class="footer-contact-val">T2–CN: 8:00–20:00</div></div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-hinode-col">
+      <div class="footer-hinode-title">Hinode Royal Park</div>
+      <div class="footer-hinode-list">
+        <div>146,8ha tổng quy mô</div>
+        <div>7.494 đơn vị nhà ở</div>
+        <div>16,7ha diện tích xanh</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 STND.VN · Phân Phối Chính Thức <span class="brand">The Flame Vine</span> · Hinode Royal Park</span>
+    <span class="disclaimer">Nội dung chỉ mang tính tham khảo.<br>Thông tin chính thức theo HĐMB với CĐT.</span>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 11 8 6 12 11"/></svg>
+</div>
+
+    <?php wp_footer(); ?>
+</body>
+</html>
