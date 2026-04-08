@@ -1298,7 +1298,7 @@ button {
     left: 0;
     right: 0;
     height: 20%;
-    background: linear-gradient(to top, rgba(0, 0, 0, .8) 40%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, transparent 70%);
 
 }
 
@@ -1334,7 +1334,7 @@ button {
     left: 0;
     right: 0;
     height: 35%;
-    background: linear-gradient(to top, rgba(0, 0, 0, .85) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .85) 10%, transparent 70%);
 
 }
 
@@ -1813,7 +1813,7 @@ button {
 
 /* ===== FOOTER ===== */
 footer {
-    background: #fff;
+    background: #fff url('../images/hp-footer-bg.png') no-repeat center bottom / cover;
     padding: 60px 20px;
     position: relative
 }
