@@ -4,6 +4,7 @@
  * 
  * A premium landing page template for Hinode Park (Flame Vine).
  */
+$theme_uri = get_template_directory_uri();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -43,16 +44,16 @@
 
 <!-- HERO -->
 <section class="hero h-full! xl:h-[977px]!" id="du-an">
-  <img class="hero-bg" src="<?php echo get_template_directory_uri(); ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <img class="hero-bg" src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->
   <div class="hero-header flex flex-col xl:flex-row justify-between items-center gap-5 py-5! px-[20px]! xl:px-[100px]!">
     <div class="hero-header-left">
-      <img class="hero-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="The Flame Vine">
+      <img class="hero-logo-main" src="<?php echo $theme_uri; ?>/images/hp-logo-main.png" alt="The Flame Vine">
       <div class="hero-sep"></div>
       <div class="hero-brand">
-        <img class="hero-brand-logo" src="<?php echo get_template_directory_uri(); ?>/images/hp-stnd-logo.png" alt="STND">
+        <img class="hero-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-stnd-logo.png" alt="STND">
         <div class="hero-brand-text">
           <div class="sub">Phân phối bởi</div>
           <div class="name">Siêu thị nhà đất</div>
@@ -116,7 +117,7 @@
 <!-- OVERVIEW -->
 <section class="overview" id="tong-quan">
   <div class="overview-img">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
+    <img src="<?php echo $theme_uri; ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
     <div class="overview-img-badge">HH3<br><span style="font-size:12px">Hinode Royal Park</span></div>
   </div>
   <div class="overview-content">
@@ -162,32 +163,32 @@
   </div>
   <div class="location-body">
     <div class="location-map">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/hp-map.jpg" alt="Bản đồ vị trí The Flame Vine">
+      <img src="<?php echo $theme_uri; ?>/images/hp-map.jpg" alt="Bản đồ vị trí The Flame Vine">
     </div>
     <div class="location-points">
       <div class="loc-point">
-        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt="">
+        <img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt="">
         <div>
           <div class="loc-point-title">2 Ga Metro Cận Kề</div>
           <div class="loc-point-desc">Kết nối nhanh tới trung tâm Hà Nội, giảm thiểu thời gian di chuyển đáng kể</div>
         </div>
       </div>
       <div class="loc-point">
-        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-medical.png" alt="">
+        <img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-medical.png" alt="">
         <div>
           <div class="loc-point-title">Hệ Thống Y Tế – Bệnh Viện Lớn</div>
           <div class="loc-point-desc">Cụm bệnh viện, phòng khám đẳng cấp ngay trong khu vực lân cận</div>
         </div>
       </div>
       <div class="loc-point">
-        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-edu.png" alt="">
+        <img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-edu.png" alt="">
         <div>
           <div class="loc-point-title">Trường Đại Học & Giáo Dục</div>
           <div class="loc-point-desc">Hệ thống đại học, trường quốc tế tập trung tại phía Tây Hà Nội</div>
         </div>
       </div>
       <div class="loc-point">
-        <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-road.png" alt="">
+        <img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-road.png" alt="">
         <div>
           <div class="loc-point-title">Mặt Đường 3.5 – Vành Đai 4</div>
           <div class="loc-point-desc">Huyết mạch giao thông kết nối toàn vùng, gia tăng giá trị thương mại</div>
@@ -284,7 +285,7 @@
         <div class="floor-tab" onclick="setTab(this)">3PN 115m²</div>
       </div>
       <div class="floor-img">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-floorplan.jpg" alt="Mặt bằng tầng 3">
+        <img src="<?php echo $theme_uri; ?>/images/hp-floorplan.jpg" alt="Mặt bằng tầng 3">
       </div>
     </div>
   </div>
@@ -299,30 +300,30 @@
   <div class="gallery-grid">
     <div class="gallery-row">
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-1.jpg" alt="Tọa Độ Kim Cương">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-1.jpg" alt="Tọa Độ Kim Cương">
         <div class="gallery-overlay"></div>
         
       </div>
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-2.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-2.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-3.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-3.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
     </div>
     <div class="gallery-row">
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-4.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-4.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-5.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-5.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-6.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-6.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
     </div>
@@ -338,7 +339,7 @@
   </div>
   <div class="amenities-grid">
     <div class="amenity-main">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
+      <img src="<?php echo $theme_uri; ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
       <div class="amenity-main-overlay"></div>
       <div class="gallery-label">
         <div class="gallery-cat text-[8px] xl:text-[14px] font-semibold">Cảnh Quan</div>
@@ -348,7 +349,7 @@
     <div class="amenity-side">
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-1.jpg" alt="Xanh">
+          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-1.jpg" alt="Xanh">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Xanh</div>
@@ -356,7 +357,7 @@
           </div>
         </div>
         <div class="amenity-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
+          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Vui Chơi</div>
@@ -366,7 +367,7 @@
       </div>
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-3.jpg" alt="Gym">
+          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-3.jpg" alt="Gym">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Thể Thao</div>
@@ -374,7 +375,7 @@
           </div>
         </div>
         <div class="amenity-item">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
+          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Kiến Trúc</div>
@@ -394,47 +395,47 @@
   </div>
   <div class="why-grid">
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Tọa Độ Kim Cương</div>
         <div class="why-card-desc">Vị trí thuận tiện kết nối với trung tâm Hà Nội và các khu vực lân cận</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Pháp Lý Minh Bạch</div>
         <div class="why-card-desc">Sổ đỏ lâu dài, an tâm tuyệt đối, mua trực tiếp từ CĐT WTO</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Trực Thuộc Đại Đô Thị</div>
         <div class="why-card-desc">Nằm trong KĐT Hinode Royal Park được đầu tư đồng bộ hạ tầng và tiện ích</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Thiên Nhiên Giao Hòa</div>
         <div class="why-card-desc">Mỗi căn có ít nhất 2 ban công cây xanh, ánh sáng và gió tự nhiên</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Thiết Kế Tối Ưu</div>
         <div class="why-card-desc">Tính toán tỉ mỉ, tối ưu diện tích sử dụng, kết nối hài hòa các không gian</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Đa Dạng Loại Hình</div>
         <div class="why-card-desc">2PN (74m²) và 3PN (115m²) đáp ứng nhiều nhu cầu sống khác nhau</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Chiết Khấu Ưu Đãi</div>
         <div class="why-card-desc">Chiết khấu tối đa 12%, lãi 0% / 24 tháng, vay đến 70% giá trị căn</div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Chủ Đầu Tư Uy Tín</div>
         <div class="why-card-desc">WTO (Vietracimex) thâm niên hàng chục năm, quỹ đất lớn tại Hà Nội & TP.HCM</div>
       </div>
       <div class="why-card col-span-mobile-2">
-        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
+        <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo $theme_uri; ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Tiềm Năng Tăng Giá</div>
         <div class="why-card-desc">Đón đầu hạ tầng Metro & Vành đai 3.5 — thanh khoản cao, gia tăng bền vững</div>
       </div>
@@ -445,8 +446,8 @@
 <section class="faq" id="faq">
   <div class="faq-inner">
     <div class="faq-left">
-      <div class="sec-label"><span class="sec-label-text">Câu Hỏi Thường Gặp</span><div class="sec-label-line"></div></div>
-      <h2 class="faq-heading">Giải Đáp <span>Thắc Mắc</span></h2>
+      <div class="sec-label"><span class="sec-label-text">Giải Đáp Thắc Mắc</span><div class="sec-label-line"></div></div>
+      <h2 class="faq-heading">Câu Hỏi <br><span>Thường Gặp</span></h2>
       <p class="faq-desc">Mọi thông tin chi tiết về dự án The Flame Vine – Hinode Royal Park đều được STND.VN cập nhật chính xác và minh bạch.</p>
       <div class="faq-hotline">
         <div class="faq-hotline-icon">
@@ -454,7 +455,7 @@
         </div>
         <div>
           <div class="faq-hotline-num">0972 991 551</div>
-          <div class="faq-hotline-label">Hotline tư vấn 24/7</div>
+          <div class="faq-hotline-label">Hotline STND.VN - Hỗ Trợ 24/7</div>
         </div>
       </div>
     </div>
@@ -486,7 +487,7 @@
 
 <!-- CTA FORM -->
 <section class="cta-form" id="form-register">
-  <div class="cta-form-bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/hp-cta-bg.jpg')"></div>
+  <div class="cta-form-bg" style="background-image:url('<?php echo $theme_uri; ?>/images/hp-cta-bg.jpg')"></div>
   <div class="cta-grad"></div>
   <div class="cta-form-inner">
     <div class="cta-form-left">
@@ -531,10 +532,10 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logos">
-        <img class="footer-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="">
+        <img class="footer-logo-main" src="<?php echo $theme_uri; ?>/images/hp-logo-main.png" alt="">
         <div class="footer-logo-sep"></div>
         <div class="footer-brand-combo">
-          <img class="footer-brand-logo" src="<?php echo get_template_directory_uri(); ?>/images/hp-stnd-logo.png" alt="">
+          <img class="footer-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-stnd-logo.png" alt="">
           <div><div class="footer-brand-name">Phân phối bởi</div><div class="footer-brand-fullname">Siêu thị nhà đất</div></div>
         </div>
       </div>
