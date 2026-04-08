@@ -91,10 +91,10 @@ $theme_uri = get_template_directory_uri();
     </p>
     <div class="hero-buttons justify-between xl:justify-start">
       <button class="btn-primary w-[170px]! xl:w-[232px]! py-[12px]! px-[4px]! text-xs! xl:text-base! h-auto" onclick="document.getElementById('form-register').scrollIntoView({behavior:'smooth'})">Đăng ký tư vấn</button>
-      <button class="btn-outline w-[170px]! xl:w-[232px]! py-[12px]! px-[4px]! text-xs! xl:text-base! h-auto">
+      <a href="tel:0972991551" class="btn-outline w-[170px]! xl:w-[232px]! py-[12px]! px-[4px]! text-xs! xl:text-base! h-auto">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
         Khám phá dự án
-      </button>
+      </a>
     </div>
 
     
@@ -454,7 +454,7 @@ $theme_uri = get_template_directory_uri();
           <svg width="20" height="20" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
         </div>
         <div>
-          <div class="faq-hotline-num">0972 991 551</div>
+          <div class="faq-hotline-num"><a href="tel:0972991551">0972 991 551</a></div>
           <div class="faq-hotline-label">Hotline STND.VN - Hỗ Trợ 24/7</div>
         </div>
       </div>
@@ -487,42 +487,64 @@ $theme_uri = get_template_directory_uri();
 
 <!-- CTA FORM -->
 <section class="cta-form" id="form-register">
-  <div class="cta-form-bg" style="background-image:url('<?php echo $theme_uri; ?>/images/hp-cta-bg.jpg')"></div>
+  <div class="cta-form-bg" style="background-image:url('<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg')"></div>
   <div class="cta-grad"></div>
   <div class="cta-form-inner">
     <div class="cta-form-left">
-      <div class="sec-label"><span class="sec-label-text">Đăng Ký Tư Vấn</span><div class="sec-label-line"></div></div>
-      <h2 class="cta-form-heading">Sở Hữu Căn Hộ<br><span>The Flame Vine</span> Ngay</h2>
-      <p class="cta-form-desc">Để lại thông tin để nhận trọn bộ tài liệu dự án, mặt bằng chi tiết và bảng giá đợt 1 trực tiếp từ STND.VN.</p>
+      <div class="sec-label"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
+      <h2 class="cta-form-heading">Nhận Ngay<br><span>Báo Giá Tốt Nhất</span></h2>
+      <p class="cta-form-desc">Những thắc mắc phổ biến nhất từ khách hàng quan tâm The Flame Vine. Liên hệ STND.VN để được tư vấn 1:1 chuyên sâu.</p>
       <div class="cta-checklist">
-        <div class="cta-check"><span>✔</span> Trọn bộ tài liệu & mặt bằng dự án</div>
-        <div class="cta-check"><span>✔</span> Bảng giá đợt 1 & CSBH mới nhất</div>
-        <div class="cta-check"><span>✔</span> Tư vấn phong thủy & lựa chọn căn đẹp</div>
+        <div class="cta-check"><span>✓</span> Chiết khấu tối đa 12% – Early Bird + TT Sớm</div>
+        <div class="cta-check"><span>✓</span> Hỗ trợ vay 70%, lãi suất 0% trong 24 tháng</div>
+        <div class="cta-check"><span>✓</span> Ân hạn gốc & lãi 24 tháng từ ngày ký HĐMB</div>
+        <div class="cta-check"><span>✓</span> Sổ đỏ lâu dài, mua trực tiếp CĐT WTO</div>
+        <div class="cta-check"><span>✓</span> Ưu tiên chọn căn đẹp, tầng cao view thoáng</div>
       </div>
     </div>
     <div class="cta-form-right">
-      <div class="text-center">
-        <div class="form-title">Tư Vấn Miễn Phí</div>
-        <div class="form-subtitle">Chúng tôi sẽ gọi lại cho bạn trong vòng 30 phút</div>
+      <div>
+        <div class="form-title">Đăng Ký Nhận Tư Vấn</div>
+        <div class="form-subtitle">Miễn phí · Bảo mật tuyệt đối · Phản hồi trong 30 phút</div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">Họ và tên <span class="req">*</span></label>
+          <input class="form-input" type="text" placeholder="Nguyễn Văn A">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Số điện thoại <span class="req">*</span></label>
+          <input class="form-input" type="tel" placeholder="Số điện thoại">
+        </div>
       </div>
       <div class="form-field">
-        <label class="form-label">Họ tên khách hàng <span class="req">*</span></label>
-        <input type="text" class="form-input" placeholder="Nhập họ và tên của bạn...">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="Email@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">Loại Căn Hộ</label>
+          <select class="form-select">
+            <option value="">Chọn loại căn</option>
+            <option>2PN – 74m²</option>
+            <option>3PN – 115m²</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Ngân Sách</label>
+          <select class="form-select">
+            <option value="">Chọn ngân sách</option>
+            <option>Dưới 3 tỷ</option>
+            <option>3 – 5 tỷ</option>
+            <option>Trên 5 tỷ</option>
+          </select>
+        </div>
       </div>
       <div class="form-field">
-        <label class="form-label">Số điện thoại liên hệ <span class="req">*</span></label>
-        <input type="tel" class="form-input" placeholder="Nhập số điện thoại...">
+        <label class="form-label">Ghi chú</label>
+        <textarea class="form-textarea" placeholder="Tôi quan tâm đến căn hộ..."></textarea>
       </div>
-      <div class="form-field">
-        <label class="form-label">Vấn đề quan tâm</label>
-        <select class="form-select">
-          <option>Nhận bảng giá & chính sách</option>
-          <option>Tham quan nhà mẫu</option>
-          <option>Tư vấn vay ngân hàng</option>
-          <option>Khác</option>
-        </select>
-      </div>
-      <button class="btn-submit" onclick="handleSubmit()">Đăng Ký Nhận Thông Tin</button>
+      <button class="btn-submit" onclick="handleSubmit()">Gửi Đăng Ký – Nhận Tư Vấn Ngay</button>
     </div>
   </div>
 </section>
@@ -532,23 +554,36 @@ $theme_uri = get_template_directory_uri();
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logos">
-        <img class="footer-logo-main" src="<?php echo $theme_uri; ?>/images/hp-logo-main.png" alt="">
+        <img class="footer-logo-main" src="<?php echo $theme_uri; ?>/images/hp-footer-logo-main.png" alt="The Flame Vine">
         <div class="footer-logo-sep"></div>
         <div class="footer-brand-combo">
-          <img class="footer-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-stnd-logo.png" alt="">
-          <div><div class="footer-brand-name">Phân phối bởi</div><div class="footer-brand-fullname">Siêu thị nhà đất</div></div>
+          <img class="footer-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-footer-stnd-logo.png" alt="STND">
+          <div>
+            <div class="footer-brand-name">Phân phối bởi</div>
+            <div class="footer-brand-fullname">Siêu thị nhà đất</div>
+          </div>
         </div>
       </div>
-      <p class="footer-brand-desc"><strong>Siêu thị nhà đất (STND.VN)</strong> là hệ sinh thái bất động sản toàn diện, mang đến giải pháp tìm kiếm và giao dịch nhà đất an toàn, minh bạch hàng đầu Việt Nam.</p>
+      <p class="footer-brand-desc">Đơn vị phân phối chính thức <strong>The Flame Vine – HH3 Hinode Royal Park.</strong> Tư vấn chuyên sâu, đồng hành đến khi bạn nhận chìa khóa.</p>
     </div>
     <div class="footer-col">
-      <div class="footer-col-title">Liên hệ STND.VN</div>
+      <div class="footer-col-title">Dự án</div>
+      <ol>
+        <li onclick="scrollTo('#tong-quan')" class="cursor-pointer">Tổng quan The Flame Vine</li>
+        <li onclick="scrollTo('#vi-tri')" class="cursor-pointer">Vị trí & kết nối</li>
+        <li onclick="scrollTo('#mat-bang')" class="cursor-pointer">Mặt bằng căn hộ</li>
+        <li onclick="scrollTo('#tien-ich')" class="cursor-pointer">Tiện ích nội khu</li>
+        <li onclick="scrollTo('#chinh-sach')" class="cursor-pointer">Chính sách bán hàng</li>
+      </ol>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Liên hệ</div>
       <ul class="footer-contact-list">
         <li class="footer-contact-item">
           <div class="footer-contact-icon">
             <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
           </div>
-          <div><div class="footer-contact-label">Hotline tư vấn</div><div class="footer-contact-val">0972 991 551</div></div>
+          <div><div class="footer-contact-label">Hotline tư vấn</div><div class="footer-contact-val"><a href="tel:0972991551">0972 991 551</a></div></div>
         </li>
         <li class="footer-contact-item">
           <div class="footer-contact-icon">
@@ -589,6 +624,29 @@ $theme_uri = get_template_directory_uri();
 <div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 11 8 6 12 11"/></svg>
 </div>
+
+<script>
+function setTab(el) {
+  el.parentElement.querySelectorAll('.floor-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+function handleSubmit() {
+  const name = document.querySelector('.cta-form-right input[type="text"]').value;
+  const phone = document.querySelector('.cta-form-right input[type="tel"]').value;
+  if (!name || !phone) { alert('Vui lòng điền đầy đủ họ tên và số điện thoại.'); return; }
+  alert('Cảm ơn '+ name +'! STND.VN sẽ liên hệ với bạn trong vòng 30 phút.');
+}
+// Scroll helper
+function scrollTo(id) {
+  const el = document.querySelector(id);
+  if (el) el.scrollIntoView({behavior:'smooth'});
+}
+</script>
 
     <?php wp_footer(); ?>
 </body>

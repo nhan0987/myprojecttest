@@ -1615,7 +1615,6 @@ button {
 @media only screen and (min-width: 1199px) {
     .cta-form-inner {
         flex-direction: row;
-        gap: 40px;
         align-items: center;
     }
 }
@@ -1625,10 +1624,17 @@ button {
 }
 
 .cta-form-heading {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff
+    color: #fff;
+    line-height: 1.2
+}
+
+@media only screen and (min-width: 1199px) {
+    .cta-form-heading {
+        font-size: 40px;
+    }
 }
 
 .cta-form-heading span {
@@ -1651,9 +1657,16 @@ button {
 }
 
 .cta-check {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
-    line-height: 42px
+    line-height: 32px
+}
+
+@media only screen and (min-width: 1199px) {
+    .cta-check {
+        font-size: 16px;
+        line-height: 42px;
+    }
 }
 
 .cta-check span {
@@ -1665,10 +1678,16 @@ button {
     flex: 1;
     background: #fff;
     border-radius: 16px;
-    padding: 32px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 20px
+}
+
+@media only screen and (min-width: 1199px) {
+    .cta-form-right {
+        padding: 32px;
+    }
 }
 
 .form-title {
@@ -1688,7 +1707,14 @@ button {
 
 .form-row {
     display: flex;
+    flex-direction: column;
     gap: 20px
+}
+
+@media only screen and (min-width: 1199px) {
+    .form-row {
+        flex-direction: row;
+    }
 }
 
 .form-field {
@@ -1779,7 +1805,7 @@ footer {
 
 @media only screen and (min-width: 1199px) {
     footer {
-        padding: 80px 100px 40px;
+        padding: 50px 100px 0;
     }
 }
 
@@ -1867,16 +1893,25 @@ footer {
     line-height: 39px
 }
 
-.footer-col ol,
-.footer-col ul {
+.footer-col ol {
+    list-style: decimal;
     padding-left: 20px;
     font-size: 14px;
     font-weight: 500;
     color: #444
 }
 
+.footer-col ul {
+    padding-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    list-style: none
+}
+
 .footer-col li {
-    line-height: 40px
+    line-height: 40px;
+    cursor: pointer
 }
 
 .footer-contact-list {
@@ -1947,10 +1982,17 @@ footer {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     padding: 16px 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     font-size: 14px;
     color: #444;
+}
+
+@media only screen and (min-width: 1199px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .footer-bottom .brand {
@@ -1961,8 +2003,14 @@ footer {
 .footer-bottom .disclaimer {
     opacity: .5;
     color: #000;
-    text-align: right;
+    text-align: left;
     font-size: 13px
+}
+
+@media only screen and (min-width: 1199px) {
+    .footer-bottom .disclaimer {
+        text-align: right;
+    }
 }
 
 /* Back to top */
