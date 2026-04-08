@@ -44,7 +44,7 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero h-full! xl:h-[977px]!" id="du-an">
-  <img class="  hero-bg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1906 977'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <img class="no-lazy hero-bg" src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->

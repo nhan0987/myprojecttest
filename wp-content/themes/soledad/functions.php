@@ -4807,3 +4807,14 @@ add_action('init', function() {
     add_rewrite_rule('(.+)/realestatepage/([0-9]+)/?$', 'index.php?pagename=$matches[1]&lth_p=$matches[2]', 'top');
 });
 
+/**
+ * Exclude images with 'no-lazy' class from Soledad's automatic lazy loading
+ */
+add_filter( 'hpp_disallow_lazyload', function( $disallow, $tag ) {
+    if ( strpos( $tag, 'no-lazy' ) !== false ) {
+        return true;
+    }
+    return $disallow;
+}, 10, 2 );
+
+
