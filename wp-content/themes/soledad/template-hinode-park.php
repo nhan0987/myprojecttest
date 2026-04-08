@@ -44,7 +44,7 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero h-full! xl:h-[977px]!" id="du-an">
-  <img class="hero-bg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1906 977'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <img class="  hero-bg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1906 977'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->
@@ -202,7 +202,7 @@ $theme_uri = get_template_directory_uri();
 <section class="policy" id="chinh-sach">
   <div class="policy-bg"></div>
   <div class="policy-title-wrap">
-    <div class="sec-label center"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
+    <div class="sec-label justify-center"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
     <h2 class="policy-heading">Ưu Đãi <span>Đặc Quyền</span></h2>
     <p class="policy-desc">Hinode Royal Park – The Flame Vine mang đến những chính sách tài chính linh hoạt, tối ưu đòn bẩy đầu tư cho khách hàng thông thái.</p>
   </div>
@@ -295,7 +295,7 @@ $theme_uri = get_template_directory_uri();
 <section class="highlights" id="diem-noi-bat">
   <div class=" mb-10">
     <div class="sec-label"><span class="sec-label-text">Điểm Nổi Bật</span><div class="sec-label-line"></div></div>
-    <h2 class="highlights-heading">Lý Do Chọn <span>The Flame Vine</span></h2>
+    <h2 class="highlights-heading">Lý Do Chọn <br class="xl:hidden"><span>The Flame Vine</span></h2>
   </div>
   <div class="gallery-grid">
     <div class="gallery-row">
@@ -305,11 +305,11 @@ $theme_uri = get_template_directory_uri();
         
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-2.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-3.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-3.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-2.jpg" alt="">
         <div class="gallery-overlay"></div>
       </div>
     </div>
@@ -389,8 +389,8 @@ $theme_uri = get_template_directory_uri();
 
 <section class="why" id="ly-do">
   <div class="why-header">
-    <div class="sec-label justify-start xl:justify-center "><span class="sec-label-text">9 Lý Do</span><div class="sec-label-line"></div></div>
-    <h2 class="why-heading">Vì Sao Chọn <span>The Flame Vine</span></h2>
+    <div class="sec-label justify-center "><span class="sec-label-text">9 Lý Do</span><div class="sec-label-line"></div></div>
+    <h2 class="why-heading">Vì Sao Chọn <br class="xl:hidden"><span>The Flame Vine</span></h2>
     <p class="why-desc">Chủ đầu tư WTO đặc biệt chú trọng sự tinh tế. Các căn hộ bố trí khoa học để tối ưu hóa diện tích và đón tối đa ánh sáng tự nhiên.</p>
   </div>
   <div class="why-grid">

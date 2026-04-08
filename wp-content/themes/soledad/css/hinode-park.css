@@ -783,10 +783,16 @@ button {
 
 .policy-bg {
     position: absolute;
-    inset: 0;
+    top: -50px;
+    right: -100px;
+    bottom: 0;
+    width: 488px;
     opacity: .12;
     background-image: url('../images/hp-policy-bg.jpg');
-    background-size: cover
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
 .policy-title-wrap {
