@@ -27,7 +27,11 @@ class LTH_Real_Estate_Post_Types {
             'public'             => true,
             'has_archive'        => true,
             'rewrite'            => [ 'slug' => 'real-estate' ],
-            'supports'           => [ 'title', 'editor', 'thumbnail', 'excerpt', 'author' ],
+            'supports'           => [ 'title', 'editor', 'thumbnail', 'excerpt', 'author' ], 
+            'template'           => [
+                [ 'core/freeform', [] ]
+            ],
+            'template_lock'      => 'all', // Prevent adding/moving/deleting blocks
             'menu_icon'          => 'dashicons-building',
             'menu_position'      => 30,
             'show_in_rest'       => true, // Enable Gutenberg Block Editor
@@ -60,7 +64,7 @@ class LTH_Real_Estate_Post_Types {
             ],
             'hierarchical'      => true,
             'show_admin_column' => true,
-            'show_in_rest'      => true, // Enable for Gutenberg
+            'show_in_rest'      => false, // Disables the sidebar box in Gutenberg
             'rewrite'           => [ 'slug' => 'property-type' ],
         ]);
 
