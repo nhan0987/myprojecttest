@@ -19,7 +19,7 @@ $theme_uri = get_template_directory_uri();
         
         // Custom Style & Scripts
         wp_enqueue_style('hinode-park-style', get_template_directory_uri() . '/css/hinode-park.css', array(), '1.1.0');
-        wp_enqueue_script('hinode-park-script', get_template_directory_uri() . '/js/hinode-park.js', array(), '1.1.0', true);
+        wp_enqueue_script('hinode-park-script', get_template_directory_uri() . '/js/hinode-park.js', array('jquery'), '1.1.0', true);
     });
 
     wp_head(); 
@@ -44,7 +44,7 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero h-full! xl:h-[977px]!" id="du-an">
-  <img class="hero-bg" src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <img class="hero-bg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1906 977'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->
@@ -117,7 +117,7 @@ $theme_uri = get_template_directory_uri();
 <!-- OVERVIEW -->
 <section class="overview" id="tong-quan">
   <div class="overview-img">
-    <img src="<?php echo $theme_uri; ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
+    <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
     <div class="overview-img-badge">HH3<br><span style="font-size:12px">Hinode Royal Park</span></div>
   </div>
   <div class="overview-content">
@@ -339,7 +339,7 @@ $theme_uri = get_template_directory_uri();
   </div>
   <div class="amenities-grid">
     <div class="amenity-main">
-      <img src="<?php echo $theme_uri; ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
+      <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 854 548'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
       <div class="amenity-main-overlay"></div>
       <div class="gallery-label">
         <div class="gallery-cat text-[8px] xl:text-[14px] font-semibold">Cảnh Quan</div>
@@ -349,7 +349,7 @@ $theme_uri = get_template_directory_uri();
     <div class="amenity-side">
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-1.jpg" alt="Xanh">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-1.jpg" alt="Xanh">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Xanh</div>
@@ -357,7 +357,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="amenity-item">
-          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Vui Chơi</div>
@@ -367,7 +367,7 @@ $theme_uri = get_template_directory_uri();
       </div>
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-3.jpg" alt="Gym">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-3.jpg" alt="Gym">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Thể Thao</div>
@@ -375,7 +375,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="amenity-item">
-          <img src="<?php echo $theme_uri; ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Kiến Trúc</div>

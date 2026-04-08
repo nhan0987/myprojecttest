@@ -36,3 +36,16 @@ const sections = {
   '#tien-ich': document.getElementById('tien-ich'), 
   '#faq': document.getElementById('faq')
 };
+
+// Initialize Lazy Load
+jQuery(document).ready(function($) {
+  if ($.fn.Lazy) {
+    $('.penci-lazy').Lazy({
+      effect: 'fadeIn',
+      effectTime: 300,
+      scrollDirection: 'both',
+      visibleOnly: true,
+      threshold: 0
+    });
+  }
+});
