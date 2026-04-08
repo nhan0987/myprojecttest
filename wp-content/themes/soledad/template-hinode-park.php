@@ -100,16 +100,16 @@
   </div>
 
   <!-- Stats bar -->
-    <div class="stats-bar grid grid-cols-2 xl:flex xl:items-center xl:justify-center gap-6 xl:gap-14 p-8">
+    <div class="stats-bar">
       <div class="stat-item"><div class="stat-num">7x</div><div class="stat-label">Triệu/m² từ</div></div>
-      <div class="stat-sep hidden xl:block"></div>
+      <div class="stat-sep"></div>
       <div class="stat-item"><div class="stat-num">35</div><div class="stat-label">Tầng cao</div></div>
-      <div class="stat-sep hidden xl:block"></div>
+      <div class="stat-sep"></div>
       <div class="stat-item"><div class="stat-num">04</div><div class="stat-label">Tòa tháp</div></div>
-      <div class="stat-sep hidden xl:block"></div>
+      <div class="stat-sep"></div>
       <div class="stat-item"><div class="stat-num">146.8ha</div><div class="stat-label">Đại đô thị</div></div>
-      <div class="stat-sep hidden xl:block"></div>
-      <div class="stat-item col-span-2 xl:col-span-1"><div class="stat-num">Q4/28</div><div class="stat-label">Bàn giao</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item col-span-mobile-2"><div class="stat-num">Q4/28</div><div class="stat-label">Bàn giao</div></div>
     </div>
 </section>
 
@@ -149,22 +149,22 @@
 </section>
 
 <!-- LOCATION -->
-<section class="location bg-[#F5F0E9] py-16 xl:py-[100px]" id="vi-tri">
-  <div class="location-header px-5 xl:px-[100px] mb-12">
+<section class="location" id="vi-tri">
+  <div class="location-header">
     <div class="sec-label"><span class="sec-label-text">Vị Trí Chiến Lược</span><div class="sec-label-line"></div></div>
-    <h2 style="font-size:40px;font-weight:700;text-transform:uppercase;color:#1c1917;line-height:1.2">
-      Tọa Độ <span style="font-family:'Playfair Display',serif;color:var(--rust)">Kim Cương</span><br>
+    <h2 class="location-heading">
+      Tọa Độ <span>Kim Cương</span><br>
       Phía Tây Hà Nội
     </h2>
-    <p style="font-size:16px;color:#1e1e1e;opacity:.7;margin-top:16px">
+    <p class="location-desc">
       Nằm ngay mặt tiền Vành đai 3.5 và tiếp giáp Quốc lộ 32 — cư dân chỉ mất 10–15 phút tới Mỹ Đình, Cầu Giấy.<br>Khu vực đô thị hóa nhanh nhất Hà Nội.
     </p>
   </div>
-  <div class="location-body flex flex-col xl:flex-row items-center gap-10">
-    <div class="location-map w-full xl:w-[1070px] h-[300px] xl:h-[657px] xl:rounded-tr-[52px]">
+  <div class="location-body">
+    <div class="location-map">
       <img src="<?php echo get_template_directory_uri(); ?>/images/hp-map.jpg" alt="Bản đồ vị trí The Flame Vine">
     </div>
-    <div class="location-points px-5 xl:pr-[100px] xl:pl-0">
+    <div class="location-points">
       <div class="loc-point">
         <img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt="">
         <div>
@@ -198,10 +198,10 @@
 </section>
 
 <!-- POLICY -->
-<section class="policy p-5 py-16 xl:p-[100px]" id="chinh-sach">
+<section class="policy" id="chinh-sach">
   <div class="policy-bg"></div>
   <div class="policy-title-wrap">
-    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
+    <div class="sec-label center"><span class="sec-label-text">Chính Sách Bán Hàng</span><div class="sec-label-line"></div></div>
     <h2 class="policy-heading">Ưu Đãi <span>Đặc Quyền</span></h2>
     <p class="policy-desc">Hinode Royal Park – The Flame Vine mang đến những chính sách tài chính linh hoạt, tối ưu đòn bẩy đầu tư cho khách hàng thông thái.</p>
   </div>
@@ -242,8 +242,8 @@
 </section>
 
 <!-- FLOORPLAN -->
-<section class="floorplan p-5 py-16 xl:p-[100px]" id="mat-bang">
-  <div class="floorplan-inner flex flex-col xl:flex-row gap-10 xl:gap-[100px]">
+<section class="floorplan" id="mat-bang">
+  <div class="floorplan-inner">
     <div class="floorplan-left">
       <div class="sec-label"><span class="sec-label-text">Mặt Bằng Tháp F1 – HH3</span><div class="sec-label-line"></div></div>
       <h2 class="floorplan-heading">Thiết Kế<br><em>Tối Ưu Công Năng</em></h2>
@@ -258,7 +258,7 @@
           <div class="apt-card">
             <div class="apt-card-type">2PN</div>
             <div class="apt-card-size">~115 m²</div>
-            <ul style="margin-top:16px;padding-left:20px;list-style:disc;color:var(--text-muted);font-size:14px;line-height:26px">
+            <ul class="apt-card-list">
               <li>Rộng rãi gia đình đa thế hệ, đảm bảo sự riêng tư</li>
             </ul>
           </div>
@@ -291,21 +291,17 @@
 </section>
 
 <!-- HIGHLIGHTS -->
-<section class="highlights p-5 py-16 xl:p-[100px]" id="diem-noi-bat">
-  <div style="text-align:center;margin-bottom:40px">
-    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Điểm Nổi Bật</span><div class="sec-label-line"></div></div>
+<section class="highlights" id="diem-noi-bat">
+  <div class=" mb-10">
+    <div class="sec-label"><span class="sec-label-text">Điểm Nổi Bật</span><div class="sec-label-line"></div></div>
     <h2 class="highlights-heading">Lý Do Chọn <span>The Flame Vine</span></h2>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-row flex flex-col xl:flex-row gap-[5px] xl:h-[460px]">
+    <div class="gallery-row">
       <div class="gallery-item">
         <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-1.jpg" alt="Tọa Độ Kim Cương">
         <div class="gallery-overlay"></div>
-        <div class="gallery-label">
-          <div class="gallery-cat">01</div>
-          <div class="gallery-cat" style="font-size:14px">Tọa Độ Kim Cương</div>
-          <div class="gallery-name" style="font-size:14px;font-weight:400;opacity:.7">Mặt đường 3.5, cận kề 2 ga Metro, 10–15 phút tới Mỹ Đình</div>
-        </div>
+        
       </div>
       <div class="gallery-item">
         <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-2.jpg" alt="">
@@ -316,7 +312,7 @@
         <div class="gallery-overlay"></div>
       </div>
     </div>
-    <div class="gallery-row flex flex-col xl:flex-row gap-[5px] xl:h-[460px]">
+    <div class="gallery-row">
       <div class="gallery-item">
         <img src="<?php echo get_template_directory_uri(); ?>/images/hp-gallery-4.jpg" alt="">
         <div class="gallery-overlay"></div>
@@ -334,18 +330,18 @@
 </section>
 
 <!-- AMENITIES -->
-<section class="amenities p-5 py-16 xl:p-[100px]" id="tien-ich">
+<section class="amenities" id="tien-ich">
   <div class="amenities-header">
-    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">Hệ Tiện Ích 5 Sao</span><div class="sec-label-line"></div></div>
+    <div class="sec-label justify-center"><span class="sec-label-text">Hệ Tiện Ích 5 Sao</span><div class="sec-label-line"></div></div>
     <h2 class="amenities-heading">Nghệ Thuật <span>Sống Đẳng Cấp</span></h2>
     <p class="amenities-desc">Kế thừa toàn bộ hệ tiện ích đặc quyền của đại đô thị Hinode Royal Park — trải nghiệm sống xứng tầm thượng lưu.</p>
   </div>
-  <div class="amenities-grid flex flex-col xl:flex-row gap-3 xl:h-[548px]">
-    <div class="amenity-main w-full xl:w-[854px] h-[300px] xl:h-full">
+  <div class="amenities-grid">
+    <div class="amenity-main">
       <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
       <div class="amenity-main-overlay"></div>
       <div class="gallery-label">
-        <div class="gallery-cat">Cảnh Quan</div>
+        <div class="gallery-cat text-[8px] xl:text-[14px] font-semibold">Cảnh Quan</div>
         <div class="gallery-name">Nghệ Thuật Cảnh Quan Độc Đáo</div>
       </div>
     </div>
@@ -355,16 +351,16 @@
           <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-1.jpg" alt="Xanh">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
-            <div class="gallery-cat" style="font-size:13px">Xanh</div>
-            <div class="gallery-name" style="font-size:16px">Không Gian Sống Xanh</div>
+            <div class="gallery-cat">Xanh</div>
+            <div class="gallery-name">Không Gian Sống Xanh</div>
           </div>
         </div>
         <div class="amenity-item">
           <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
-            <div class="gallery-cat" style="font-size:13px">Vui Chơi</div>
-            <div class="gallery-name" style="font-size:16px">Khu Vui Chơi Tiện Nghi</div>
+            <div class="gallery-cat">Vui Chơi</div>
+            <div class="gallery-name">Khu Vui Chơi Tiện Nghi</div>
           </div>
         </div>
       </div>
@@ -373,16 +369,16 @@
           <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-3.jpg" alt="Gym">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
-            <div class="gallery-cat" style="font-size:13px">Thể Thao</div>
-            <div class="gallery-name" style="font-size:16px">Gym & Bể Bơi Đẳng Cấp</div>
+            <div class="gallery-cat">Thể Thao</div>
+            <div class="gallery-name">Gym & Bể Bơi Đẳng Cấp</div>
           </div>
         </div>
         <div class="amenity-item">
           <img src="<?php echo get_template_directory_uri(); ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
-            <div class="gallery-cat" style="font-size:13px">Kiến Trúc</div>
-            <div class="gallery-name" style="font-size:16px">Phong Cách Nhật – Đông Dương</div>
+            <div class="gallery-cat">Kiến Trúc</div>
+            <div class="gallery-name">Phong Cách Nhật – Đông Dương</div>
           </div>
         </div>
       </div>
@@ -390,14 +386,13 @@
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why p-5 py-16 xl:p-[100px]">
+<section class="why" id="ly-do">
   <div class="why-header">
-    <div class="sec-label" style="justify-content:center"><span class="sec-label-text">9 Lý Do</span><div class="sec-label-line"></div></div>
+    <div class="sec-label justify-start xl:justify-center "><span class="sec-label-text">9 Lý Do</span><div class="sec-label-line"></div></div>
     <h2 class="why-heading">Vì Sao Chọn <span>The Flame Vine</span></h2>
     <p class="why-desc">Chủ đầu tư WTO đặc biệt chú trọng sự tinh tế. Các căn hộ bố trí khoa học để tối ưu hóa diện tích và đón tối đa ánh sáng tự nhiên.</p>
   </div>
-  <div class="why-grid grid grid-cols-2 xl:grid-cols-3 gap-2">
+  <div class="why-grid">
       <div class="why-card">
         <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Tọa Độ Kim Cương</div>
@@ -438,7 +433,7 @@
         <div class="why-card-title">Chủ Đầu Tư Uy Tín</div>
         <div class="why-card-desc">WTO (Vietracimex) thâm niên hàng chục năm, quỹ đất lớn tại Hà Nội & TP.HCM</div>
       </div>
-      <div class="why-card col-span-2 xl:col-span-1">
+      <div class="why-card col-span-mobile-2">
         <div class="why-card-icon"><img class="loc-point-icon" src="<?php echo get_template_directory_uri(); ?>/images/hp-icon-metro.png" alt=""></div>
         <div class="why-card-title">Tiềm Năng Tăng Giá</div>
         <div class="why-card-desc">Đón đầu hạ tầng Metro & Vành đai 3.5 — thanh khoản cao, gia tăng bền vững</div>
@@ -447,8 +442,8 @@
 </section>
 
 <!-- FAQ -->
-<section class="faq p-5 py-16 xl:p-[100px]" id="faq">
-  <div class="faq-inner flex flex-col xl:flex-row gap-10 xl:gap-[40px]">
+<section class="faq" id="faq">
+  <div class="faq-inner">
     <div class="faq-left">
       <div class="sec-label"><span class="sec-label-text">Câu Hỏi Thường Gặp</span><div class="sec-label-line"></div></div>
       <h2 class="faq-heading">Giải Đáp <span>Thắc Mắc</span></h2>
@@ -490,10 +485,10 @@
 </section>
 
 <!-- CTA FORM -->
-<section class="cta-form p-5 py-16 xl:p-[100px]" id="form-register">
+<section class="cta-form" id="form-register">
   <div class="cta-form-bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/hp-cta-bg.jpg')"></div>
   <div class="cta-grad"></div>
-  <div class="cta-form-inner flex flex-col xl:flex-row gap-10 items-center">
+  <div class="cta-form-inner">
     <div class="cta-form-left">
       <div class="sec-label"><span class="sec-label-text">Đăng Ký Tư Vấn</span><div class="sec-label-line"></div></div>
       <h2 class="cta-form-heading">Sở Hữu Căn Hộ<br><span>The Flame Vine</span> Ngay</h2>
@@ -505,7 +500,7 @@
       </div>
     </div>
     <div class="cta-form-right">
-      <div style="text-align:center">
+      <div class="text-center">
         <div class="form-title">Tư Vấn Miễn Phí</div>
         <div class="form-subtitle">Chúng tôi sẽ gọi lại cho bạn trong vòng 30 phút</div>
       </div>
@@ -532,8 +527,8 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="p-5 pt-12 xl:px-[100px] xl:pt-[50px]">
-  <div class="footer-inner flex flex-col xl:flex-row gap-12 xl:gap-[48px] pb-12">
+<footer>
+  <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logos">
         <img class="footer-logo-main" src="<?php echo get_template_directory_uri(); ?>/images/hp-logo-main.png" alt="">

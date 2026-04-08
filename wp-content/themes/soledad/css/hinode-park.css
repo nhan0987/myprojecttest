@@ -388,13 +388,42 @@ button {
     z-index: 1;
     margin-top: 24px;
     padding: 24px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+@media only screen and (min-width: 1199px) {
+    .stats-bar {
+        padding: 24px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+    }
+}
+
+.stat-sep {
+    display: none;
+}
+
+@media only screen and (min-width: 1199px) {
+    .stat-sep {
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: rgba(92, 26, 26, 0.1);
+        flex-shrink: 0
+    }
 }
 
 .stat-item {
-
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 8px;
-
+    flex: 1;
+    text-align: center
 }
 
 .stat-num {
@@ -426,12 +455,18 @@ button {
     margin-bottom: 10px
 }
 
+.text-center {
+    text-align: center;
+}
+
+
 .sec-label-text {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--rust);
     text-transform: uppercase;
-    letter-spacing: 2.1px
+    letter-spacing: 1.68px;
+    white-space: nowrap
 }
 
 .sec-label-line {
@@ -543,6 +578,8 @@ button {
     border-radius: 8px;
 }
 
+
+
 .stat-card-num {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -583,33 +620,92 @@ button {
 /* ===== LOCATION ===== */
 .location {
     background: var(--warm2);
-    padding: 60px 0 0;
+    padding: 60px 20px;
     position: relative;
     overflow: hidden
 }
 
+@media only screen and (min-width: 1199px) {
+    .location {
+        padding: 100px 0 0;
+    }
+}
+
 .location-header {
-    padding: 0 20px 48px;
+    padding: 0 0 40px;
     position: relative;
     z-index: 1
+}
+
+@media only screen and (min-width: 1199px) {
+    .location-header {
+        padding: 0 100px 48px;
+    }
+}
+
+.location-heading {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1c1917;
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 1199px) {
+    .location-heading {
+        font-size: 40px;
+    }
+}
+
+.location-heading span {
+    font-family: 'Playfair Display', serif;
+    color: var(--rust);
+}
+
+.location-desc {
+    font-size: 14px;
+    color: #1e1e1e;
+    opacity: .7;
+    margin-top: 16px;
+}
+
+@media only screen and (min-width: 1199px) {
+    .location-desc {
+        font-size: 16px;
+    }
 }
 
 .location-body {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     gap: 40px;
-    background: #fff;
+    background: transparent;
     position: relative;
     z-index: 1
 }
 
+@media only screen and (min-width: 1199px) {
+    .location-body {
+        flex-direction: row;
+        align-items: center;
+        background: #fff;
+    }
+}
+
 .location-map {
     width: 100%;
-    height: 400px;
+    height: 350px;
     flex-shrink: 0;
     border-radius: 0;
     overflow: hidden
+}
+
+@media only screen and (min-width: 1199px) {
+    .location-map {
+        width: 1070px;
+        height: 657px;
+        border-radius: 0 52px 0 0;
+    }
 }
 
 .location-map img {
@@ -620,10 +716,16 @@ button {
 
 .location-points {
     flex: 1;
-    padding: 0 20px 40px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 25px
+}
+
+@media only screen and (min-width: 1199px) {
+    .location-points {
+        padding: 0 100px 0 0;
+    }
 }
 
 .loc-point {
@@ -644,11 +746,18 @@ button {
 }
 
 .loc-point-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #1e1e1e;
     line-height: 1.2
 }
+
+@media only screen and (min-width: 1199px) {
+    .location-points {
+        font-size: 16px;
+    }
+}
+
 
 .loc-point-desc {
     font-size: 14px;
@@ -664,6 +773,12 @@ button {
     padding: 60px 20px;
     position: relative;
     overflow: hidden
+}
+
+@media only screen and (min-width: 1199px) {
+    .policy {
+        padding: 100px;
+    }
 }
 
 .policy-bg {
@@ -787,11 +902,25 @@ button {
     padding: 60px 20px
 }
 
+@media only screen and (min-width: 1199px) {
+    .floorplan {
+        padding: 100px
+    }
+}
+
 .floorplan-inner {
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: stretch
+}
+
+@media only screen and (min-width: 1199px) {
+    .floorplan-inner {
+        flex-direction: row;
+        gap: 100px;
+        align-items: flex-start
+    }
 }
 
 .floorplan-left {
@@ -827,7 +956,14 @@ button {
 
 .apt-card-row {
     display: flex;
+    flex-direction: column;
     gap: 24px
+}
+
+@media only screen and (min-width: 1199px) {
+    .apt-card-row {
+        flex-direction: row;
+    }
 }
 
 .apt-card {
@@ -855,6 +991,15 @@ button {
     font-size: 14px;
     color: var(--text-muted);
     margin-top: 16px;
+    line-height: 26px
+}
+
+.apt-card-list {
+    margin-top: 16px;
+    padding-left: 20px;
+    list-style: disc;
+    color: var(--text-muted);
+    font-size: 14px;
     line-height: 26px
 }
 
@@ -886,38 +1031,43 @@ button {
     flex-shrink: 0
 }
 
+@media only screen and (min-width: 1199px) {
+    .floorplan-right {
+        width: 865px;
+    }
+}
+
 .floor-tabs {
     display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 32px
+    overflow-x: auto;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 8px
+}
+
+@media only screen and (min-width: 1199px) {
+    .floor-tabs {
+        flex-wrap: wrap;
+    }
 }
 
 .floor-tab {
-    padding: 12px 24px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
-    cursor: pointer;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
     color: var(--text-muted);
-    transition: all .2s;
+    cursor: pointer;
     white-space: nowrap;
+    transition: all .2s;
 }
 
 .floor-tab.active {
     background: var(--rust);
     color: #fff;
-    border-color: var(--rust);
-    font-weight: 600
-}
-
-.floor-tab:first-child {
-    border-radius: 8px 0 0 8px
-}
-
-.floor-tab:last-child {
-    border-radius: 0 8px 8px 0
+    border-color: var(--rust)
 }
 
 .floor-img {
@@ -940,12 +1090,18 @@ button {
     padding: 60px 20px
 }
 
+@media only screen and (min-width: 1199px) {
+    .highlights {
+        padding: 100px
+    }
+}
+
 .highlights-heading {
     font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--dark);
-    text-align: center;
+
     margin-bottom: 40px
 }
 
@@ -967,6 +1123,13 @@ button {
     height: auto
 }
 
+@media only screen and (min-width: 1199px) {
+    .gallery-row {
+        flex-direction: row;
+        height: 460px;
+    }
+}
+
 .gallery-item {
     flex: 1;
     height: 250px;
@@ -975,6 +1138,12 @@ button {
     position: relative;
     border: 1px solid rgba(92, 26, 26, 0.1);
     cursor: pointer;
+}
+
+@media only screen and (min-width: 1199px) {
+    .gallery-item {
+        height: auto;
+    }
 }
 
 .gallery-item img {
@@ -990,11 +1159,23 @@ button {
     backdrop-filter: blur(1px);
 } */
 
+
+
 .gallery-label {
     position: absolute;
-    bottom: 32px;
-    left: 32px;
-    right: 32px
+
+    right: 32px;
+    bottom: 8px;
+    left: 12px;
+}
+
+@media only screen and (min-width: 1199px) {
+    .gallery-label {
+
+        bottom: 22px;
+        left: 32px;
+        right: 32px
+    }
 }
 
 .gallery-cat {
@@ -1002,19 +1183,39 @@ button {
     font-weight: 600;
     color: var(--peach);
     text-transform: uppercase;
-    margin-bottom: 8px
+
 }
 
 .gallery-name {
-    font-size: 20px;
+    font-size: 8px;
     font-weight: 600;
     color: #fff
+}
+
+@media only screen and (min-width: 1199px) {
+    .gallery-cat {
+        font-size: 14px;
+
+
+    }
+
+    .gallery-name {
+        font-size: 20px;
+
+
+    }
 }
 
 /* ===== AMENITIES ===== */
 .amenities {
     background: var(--warm);
     padding: 60px 20px
+}
+
+@media only screen and (min-width: 1199px) {
+    .amenities {
+        padding: 100px;
+    }
 }
 
 .amenities-header {
@@ -1047,6 +1248,13 @@ button {
     height: auto
 }
 
+@media only screen and (min-width: 1199px) {
+    .amenities-grid {
+        flex-direction: row;
+        height: 548px;
+    }
+}
+
 .amenity-main {
     width: 100%;
     height: 300px;
@@ -1054,6 +1262,13 @@ button {
     border-radius: 12px;
     overflow: hidden;
     position: relative
+}
+
+@media only screen and (min-width: 1199px) {
+    .amenity-main {
+        width: 854px;
+        height: 100%;
+    }
 }
 
 .amenity-main img {
@@ -1068,7 +1283,7 @@ button {
     left: 0;
     right: 0;
     height: 20%;
-    background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .8) 40%, transparent 100%);
 
 }
 
@@ -1114,6 +1329,12 @@ button {
     padding: 60px 20px
 }
 
+@media only screen and (min-width: 1199px) {
+    .why {
+        padding: 100px;
+    }
+}
+
 .why-header {
     text-align: center;
     margin-bottom: 40px
@@ -1138,7 +1359,25 @@ button {
 }
 
 .why-grid {
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+@media only screen and (min-width: 1199px) {
+    .why-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.col-span-mobile-2 {
+    grid-column: span 2 / span 2;
+}
+
+@media only screen and (min-width: 1199px) {
+    .col-span-mobile-2 {
+        grid-column: span 1 / span 1;
+    }
 }
 
 .why-card {
@@ -1182,11 +1421,24 @@ button {
     padding: 60px 20px
 }
 
+@media only screen and (min-width: 1199px) {
+    .faq {
+        padding: 100px;
+    }
+}
+
 .faq-inner {
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: stretch
+}
+
+@media only screen and (min-width: 1199px) {
+    .faq-inner {
+        flex-direction: row;
+        gap: 40px;
+    }
 }
 
 .faq-left {
@@ -1330,6 +1582,12 @@ button {
     overflow: hidden
 }
 
+@media only screen and (min-width: 1199px) {
+    .cta-form {
+        padding: 100px;
+    }
+}
+
 .cta-form-bg {
     position: absolute;
     inset: 0;
@@ -1352,6 +1610,14 @@ button {
     align-items: stretch;
     position: relative;
     z-index: 1
+}
+
+@media only screen and (min-width: 1199px) {
+    .cta-form-inner {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+    }
 }
 
 .cta-form-left {
@@ -1507,15 +1773,28 @@ button {
 /* ===== FOOTER ===== */
 footer {
     background: #fff;
-    padding: 50px 20px 0;
+    padding: 60px 20px;
     position: relative
+}
+
+@media only screen and (min-width: 1199px) {
+    footer {
+        padding: 80px 100px 40px;
+    }
 }
 
 .footer-inner {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 40px;
     padding-bottom: 48px
+}
+
+@media only screen and (min-width: 1199px) {
+    .footer-inner {
+        flex-direction: row;
+        gap: 48px;
+    }
 }
 
 .footer-brand {
