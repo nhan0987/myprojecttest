@@ -61,12 +61,12 @@ $theme_uri = get_template_directory_uri();
       </div>
     </div>
     <nav class="hero-nav flex flex-wrap justify-center">
-      <div class="hero-nav-item active">Dự án</div>
-      <div class="hero-nav-item" onclick="scrollTo('#vi-tri')">Vị trí</div>
-      <div class="hero-nav-item" onclick="scrollTo('#chinh-sach')">Chính sách</div>
-      <div class="hero-nav-item" onclick="scrollTo('#mat-bang')">Mặt bằng</div>
-      <div class="hero-nav-item" onclick="scrollTo('#tien-ich')">Tiện ích</div>
-      <div class="hero-nav-item" onclick="scrollTo('#faq')">FAQ</div>
+      <div class="hero-nav-item active" onclick="hp_scroll_to('#du-an')">Dự án</div>
+      <div class="hero-nav-item" onclick="hp_scroll_to('#vi-tri')">Vị trí</div>
+      <div class="hero-nav-item" onclick="hp_scroll_to('#chinh-sach')">Chính sách</div>
+      <div class="hero-nav-item" onclick="hp_scroll_to('#mat-bang')">Mặt bằng</div>
+      <div class="hero-nav-item" onclick="hp_scroll_to('#tien-ich')">Tiện ích</div>
+      <div class="hero-nav-item" onclick="hp_scroll_to('#faq')">FAQ</div>
     </nav>
     <a href="tel:0972991551" class="hero-cta-call">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
@@ -590,11 +590,11 @@ $theme_uri = get_template_directory_uri();
     <div class="footer-col">
       <div class="footer-col-title">Dự án</div>
       <ol>
-        <li onclick="scrollTo('#tong-quan')" class="cursor-pointer">Tổng quan The Flame Vine</li>
-        <li onclick="scrollTo('#vi-tri')" class="cursor-pointer">Vị trí & kết nối</li>
-        <li onclick="scrollTo('#mat-bang')" class="cursor-pointer">Mặt bằng căn hộ</li>
-        <li onclick="scrollTo('#tien-ich')" class="cursor-pointer">Tiện ích nội khu</li>
-        <li onclick="scrollTo('#chinh-sach')" class="cursor-pointer">Chính sách bán hàng</li>
+        <li onclick="hp_scroll_to('#tong-quan')" class="cursor-pointer">Tổng quan The Flame Vine</li>
+        <li onclick="hp_scroll_to('#vi-tri')" class="cursor-pointer">Vị trí & kết nối</li>
+        <li onclick="hp_scroll_to('#mat-bang')" class="cursor-pointer">Mặt bằng căn hộ</li>
+        <li onclick="hp_scroll_to('#tien-ich')" class="cursor-pointer">Tiện ích nội khu</li>
+        <li onclick="hp_scroll_to('#chinh-sach')" class="cursor-pointer">Chính sách bán hàng</li>
       </ol>
     </div>
     <div class="footer-col">
@@ -663,7 +663,7 @@ function handleSubmit() {
   alert('Cảm ơn '+ name +'! STND.VN sẽ liên hệ với bạn trong vòng 30 phút.');
 }
 // Scroll helper
-function scrollTo(id) {
+function hp_scroll_to(id) {
   const el = document.querySelector(id);
   if (el) el.scrollIntoView({behavior:'smooth'});
 }

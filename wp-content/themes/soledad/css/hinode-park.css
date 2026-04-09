@@ -215,6 +215,7 @@ button {
     font-family: 'Inter', sans-serif;
     border-radius: 6px;
     transition: background .2s;
+    cursor: pointer;
 }
 
 .hero-nav-item.active {
