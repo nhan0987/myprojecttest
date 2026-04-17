@@ -200,9 +200,16 @@ button {
 }
 
 .hero-nav {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 4px
+}
+
+@media only screen and (min-width: 1199px) {
+    .hero-nav {
+        display: flex;
+
+    }
 }
 
 .hero-nav-item {
@@ -215,6 +222,7 @@ button {
     font-family: 'Inter', sans-serif;
     border-radius: 6px;
     transition: background .2s;
+    cursor: pointer;
 }
 
 .hero-nav-item.active {
@@ -235,10 +243,18 @@ button {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    display: flex;
+    display: none;
     align-items: center;
     gap: 8px;
     letter-spacing: .5px;
+}
+
+@media only screen and (min-width: 1199px) {
+    .hero-cta-call {
+
+        display: flex;
+
+    }
 }
 
 .hero-body {
@@ -783,10 +799,16 @@ button {
 
 .policy-bg {
     position: absolute;
-    inset: 0;
+    top: -50px;
+    right: -100px;
+    bottom: 0;
+    width: 488px;
     opacity: .12;
     background-image: url('../images/hp-policy-bg.jpg');
-    background-size: cover
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
 .policy-title-wrap {
@@ -821,6 +843,7 @@ button {
     padding: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-bottom: 12px;
     position: relative;
@@ -2071,4 +2094,149 @@ footer {
     align-items: center;
     display: none;
     /* hidden on desktop */
+}
+
+/* ============================================================
+   HAMBURGER MENU (mobile nav)
+   ============================================================ */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+@media only screen and (min-width: 1199px) {
+    .hamburger {
+        display: none
+    }
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: .3s
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg)
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg)
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 20, 16, 0.97);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 80px 24px 24px;
+}
+
+.mobile-nav.open {
+    display: flex
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+}
+
+.mobile-nav a,
+.mobile-nav .mnav-item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.mobile-nav-cta {
+    margin-top: 16px;
+    background: var(--rust);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+
+/* Sticky mobile bottom CTA */
+.sticky-mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    background: var(--dark);
+    border-top: 2px solid var(--rust);
+    padding: 10px 16px;
+    gap: 8px;
+}
+
+.sticky-mobile-cta .btn-call {
+    flex: 1;
+    background: var(--rust);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.sticky-mobile-cta .btn-reg {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
 }

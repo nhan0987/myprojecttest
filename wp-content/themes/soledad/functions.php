@@ -373,16 +373,6 @@ function penci_dequeue_soledad_for_hinode() {
 
 		// Dequeue scripts
 		$script_handles = array(
-			'penci-libs-js',
-			'main-scripts',
-			'penci-video-background',
-			'penci-smoothscroll',
-			'penci_ajax_like_post',
-			'penci_ajax_more_posts',
-			'penci_ajax_more_scroll',
-			'penci_ajax_archive_more_scroll',
-			'jquery.fancybox.min',
-			'fancybox',
 			'custom',
 			'swiper-bundle.min',
 			'swiper',
@@ -397,7 +387,7 @@ function penci_dequeue_soledad_for_hinode() {
 
 		if ( isset($wp_scripts->queue) ) {
 			foreach ( $wp_scripts->queue as $handle ) {
-				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && $handle !== 'penci-libs-js' ) {
 					wp_dequeue_script( $handle );
 				}
 			}
@@ -4816,4 +4806,15 @@ add_action('init', function() {
     // Trang tĩnh hoặc bài viết: /abc/realestatepage/2/
     add_rewrite_rule('(.+)/realestatepage/([0-9]+)/?$', 'index.php?pagename=$matches[1]&lth_p=$matches[2]', 'top');
 });
+
+/**
+ * Exclude images with 'no-lazy' class from Soledad's automatic lazy loading
+ */
+add_filter( 'hpp_disallow_lazyload', function( $disallow, $tag ) {
+    if ( strpos( $tag, 'no-lazy' ) !== false ) {
+        return true;
+    }
+    return $disallow;
+}, 10, 2 );
+
 
