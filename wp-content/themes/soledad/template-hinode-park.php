@@ -44,16 +44,16 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero h-full! xl:h-[977px]!" id="du-an">
-  <img class="no-lazy hero-bg" src="<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg" alt="The Flame Vine">
+  <img class="no-lazy hero-bg" src="<?php echo $theme_uri; ?>/images/hp-hero-bg.webp" alt="The Flame Vine" fetchpriority="high">
   <div class="hero-overlay"></div>
 
   <!-- Header nav -->
   <div class="hero-header flex flex-col xl:flex-row justify-between items-center gap-5 py-5! px-[20px]! xl:px-[100px]!">
     <div class="hero-header-left">
-      <img class="hero-logo-main" src="<?php echo $theme_uri; ?>/images/hp-logo-main.png" alt="The Flame Vine">
+      <img class="hero-logo-main" src="<?php echo $theme_uri; ?>/images/hp-logo-main.webp" alt="The Flame Vine">
       <div class="hero-sep"></div>
       <div class="hero-brand">
-        <img class="hero-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-stnd-logo.png" alt="STND">
+        <img class="hero-brand-logo" src="<?php echo $theme_uri; ?>/images/hp-stnd-logo.webp" alt="STND">
         <div class="hero-brand-text">
           <div class="sub">Phân phối bởi</div>
           <div class="name">Siêu thị nhà đất</div>
@@ -72,6 +72,9 @@ $theme_uri = get_template_directory_uri();
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
       0972 991 551
     </a>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 
   <!-- Hero body -->
@@ -117,7 +120,7 @@ $theme_uri = get_template_directory_uri();
 <!-- OVERVIEW -->
 <section class="overview" id="tong-quan">
   <div class="overview-img">
-    <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-overview.jpg" alt="HH3 Hinode Royal Park">
+    <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-overview.webp" alt="HH3 Hinode Royal Park">
     <div class="overview-img-badge">HH3<br><span style="font-size:12px">Hinode Royal Park</span></div>
   </div>
   <div class="overview-content">
@@ -163,7 +166,7 @@ $theme_uri = get_template_directory_uri();
   </div>
   <div class="location-body">
     <div class="location-map">
-      <img src="<?php echo $theme_uri; ?>/images/hp-map.jpg" alt="Bản đồ vị trí The Flame Vine">
+      <img src="<?php echo $theme_uri; ?>/images/hp-map.webp" alt="Bản đồ vị trí The Flame Vine">
     </div>
     <div class="location-points">
       <div class="loc-point">
@@ -285,7 +288,7 @@ $theme_uri = get_template_directory_uri();
         <div class="floor-tab" onclick="setTab(this)">3PN 115m²</div>
       </div>
       <div class="floor-img">
-        <img src="<?php echo $theme_uri; ?>/images/hp-floorplan.jpg" alt="Mặt bằng tầng 3">
+        <img src="<?php echo $theme_uri; ?>/images/hp-floorplan.webp" alt="Mặt bằng tầng 3">
       </div>
     </div>
   </div>
@@ -300,30 +303,30 @@ $theme_uri = get_template_directory_uri();
   <div class="gallery-grid">
     <div class="gallery-row">
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-1.jpg" alt="Tọa Độ Kim Cương">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-1.webp" alt="Tọa Độ Kim Cương">
         <div class="gallery-overlay"></div>
         
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-3.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-3.webp" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-2.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-2.webp" alt="">
         <div class="gallery-overlay"></div>
       </div>
     </div>
     <div class="gallery-row">
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-4.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-4.webp" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-5.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-5.webp" alt="">
         <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item">
-        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-6.jpg" alt="">
+        <img src="<?php echo $theme_uri; ?>/images/hp-gallery-6.webp" alt="">
         <div class="gallery-overlay"></div>
       </div>
     </div>
@@ -339,7 +342,7 @@ $theme_uri = get_template_directory_uri();
   </div>
   <div class="amenities-grid">
     <div class="amenity-main">
-      <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 854 548'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-main.jpg" alt="Cảnh Quan">
+      <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 854 548'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-main.webp" alt="Cảnh Quan">
       <div class="amenity-main-overlay"></div>
       <div class="gallery-label">
         <div class="gallery-cat text-[8px] xl:text-[14px] font-semibold">Cảnh Quan</div>
@@ -349,7 +352,7 @@ $theme_uri = get_template_directory_uri();
     <div class="amenity-side">
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-1.jpg" alt="Xanh">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-1.webp" alt="Xanh">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Xanh</div>
@@ -357,7 +360,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="amenity-item">
-          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-2.jpg" alt="Vui Chơi">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-2.webp" alt="Vui Chơi">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Vui Chơi</div>
@@ -367,7 +370,7 @@ $theme_uri = get_template_directory_uri();
       </div>
       <div class="amenity-side-row">
         <div class="amenity-item">
-          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-3.jpg" alt="Gym">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-3.webp" alt="Gym">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Thể Thao</div>
@@ -375,7 +378,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="amenity-item">
-          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-4.jpg" alt="Kiến Trúc">
+          <img class=" " src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 270'%3E%3C/svg%3E" data-src="<?php echo $theme_uri; ?>/images/hp-amenity-4.webp" alt="Kiến Trúc">
           <div class="amenity-item-overlay"></div>
           <div class="gallery-label">
             <div class="gallery-cat">Kiến Trúc</div>
@@ -508,7 +511,7 @@ $theme_uri = get_template_directory_uri();
 
 <!-- CTA FORM -->
 <section class="cta-form" id="form-register">
-  <div class="cta-form-bg" style="background-image:url('<?php echo $theme_uri; ?>/images/hp-hero-bg.jpg')"></div>
+  <div class="cta-form-bg" style="background-image:url('<?php echo $theme_uri; ?>/images/hp-hero-bg.webp')"></div>
   <div class="cta-grad"></div>
   <div class="cta-form-inner">
     <div class="cta-form-left">
