@@ -460,7 +460,7 @@ while ( have_posts() ) : the_post();
                                 <span class="text-sm! font-semibold"><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                             </a>
                             <a href="#" class="btn-contact">
-                                <i class="bi bi-envelope-fill"></i>
+                                <i class="bi bi-envelope"></i>
                                 Liên hệ ngay
                             </a>
                         </div>
