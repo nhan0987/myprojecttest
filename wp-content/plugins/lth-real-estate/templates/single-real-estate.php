@@ -434,8 +434,8 @@ while ( have_posts() ) : the_post();
                         <?php endif; ?>
                         <div class="price-contact-section">
                             <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="btn-call">
-                                <span class="material-symbols-outlined">call</span>
-                                <?php echo esc_html(lth_cfg('phone_number')); ?>
+                                <i class="bi bi-telephone-fill"></i>
+                                <span class="text-sm! font-semibold"><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                             </a>
                             <a href="#" class="btn-contact">
                                 <span class="material-symbols-outlined">mail</span>
@@ -459,7 +459,7 @@ while ( have_posts() ) : the_post();
                 <p class="position italic text-gray-500 text-sm mb-1!">Chuyên viên tư vấn</p>
                 
                 <div class="text-[#D09130] font-semibold text-sm mb-8! flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
+                    <i class="bi bi-telephone-fill" style="font-size: 20px;"></i>
                     <span class=""><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                 </div>
 
@@ -489,7 +489,7 @@ while ( have_posts() ) : the_post();
     </div>
     <div class="bg-white flex items-center gap-3 px-2">
         <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
-            <span class="material-symbols-outlined">call</span>
+            <i class="bi bi-telephone-fill"></i>
         </a>
         <a href="mailto:<?php echo esc_attr(lth_cfg('email')); ?>" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400!">
             <span class="material-symbols-outlined">mail</span>
@@ -635,7 +635,7 @@ while ( have_posts() ) : the_post();
                                 
                                 <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>">
                                     <div class="col-span-3 flex items-center gap-2! border border-[#FFD45C]! rounded-full py-1! pl-1! pr-3!">
-                                        <span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> 
+                                        <i class="bi bi-telephone-fill gold-call-buton flex items-center justify-center"></i> 
                                         <span class="text_call_now">Gọi ngay</span>
                                     </div>
                                 </a>
