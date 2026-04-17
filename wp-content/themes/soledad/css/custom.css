@@ -6756,3 +6756,13 @@ html {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
+.bds-body-content h3::after {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	content: '';
+	display: block;
+	width: 2.5rem;
+	height: 3px;
+	border-radius: 3px;
+	margin-right: 0.625rem;
+}

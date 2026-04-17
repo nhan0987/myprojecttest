@@ -175,7 +175,7 @@ while ( have_posts() ) : the_post();
         <div class="absolute top-4 right-4 left-4 flex items-center justify-between text-white z-20">
             <span id="lb-indicator" class="text-base font-bold bg-black/50 px-3 py-1 rounded-full">1 / 1</span>
             <button onclick="closeLb()" class="hover:opacity-50 transition-opacity p-2">
-                <span class="material-symbols-outlined text-3xl">close</span>
+                <i class="bi bi-x-lg text-3xl"></i>
             </button>
         </div>
 
@@ -183,7 +183,7 @@ while ( have_posts() ) : the_post();
         <div class="w-full h-full flex items-center justify-center px-2 relative">
             <!-- Nút Trái -->
             <button onclick="changeLb(-1)" class="absolute left-2 z-10 w-12 h-12 bg-black/20 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-all">
-                <span class="material-symbols-outlined text-4xl">chevron_left</span>
+                <i class="bi bi-chevron-left text-4xl"></i>
             </button>
             
             <!-- Ảnh chính -->
@@ -191,7 +191,7 @@ while ( have_posts() ) : the_post();
             
             <!-- Nút Phải -->
             <button onclick="changeLb(1)" class="absolute right-2 z-10 w-12 h-12 bg-black/20 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-all">
-                <span class="material-symbols-outlined text-4xl">chevron_right</span>
+                <i class="bi bi-chevron-right text-4xl"></i>
             </button>
         </div>
     </div>
@@ -256,7 +256,7 @@ while ( have_posts() ) : the_post();
                         <h1 class="text-2xl! font-bold text-gray-900 leading-snug mb-2"><?php the_title(); ?></h1>
                         
                         <div class="flex items-center gap-1 text-gray-500 text-sm mb-2">
-                            <span class="material-symbols-outlined text-lg">location_on</span>
+                            <i class="bi bi-geo-alt text-lg"></i>
                             <?php 
                             $final_loc = $address_street;
                             if ( ! empty( $final_loc ) && ! empty( $loc_full ) ) {
@@ -269,9 +269,42 @@ while ( have_posts() ) : the_post();
                         </div>
 
                         <!-- Post Date -->
-                        <div class="flex items-center gap-1 text-gray-400 text-sm mb-6 -mt-3 mb-2">
-                            <span class="material-symbols-outlined text-base">schedule</span>
+                        <div class="flex items-center gap-1 text-gray-400 text-sm mb-6 -mt-3">
+                            <i class="bi bi-clock text-sm"></i>
                             <?php echo get_the_date('d/m/Y H:i'); ?>
+                        </div>
+
+                        <!-- Top Info Boxes -->
+                        <div class="grid grid-cols-2 xl:grid-cols-4 gap-2 mb-5! mt-5!">
+                            <div class="bg-[#F3F7F8] px-3 py-3 rounded-xl flex items-center gap-2 border border-gray-100 hover:border-gray-200 transition-all whitespace-nowrap overflow-hidden">
+                               
+                                <i class="stnd-normal-icons icons-house-facade text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
+                                <div class="flex items-center gap-1 text-[13px]">
+                                    <span class="text-gray-500">Mặt tiền:</span>
+                                    <span class="font-bold text-gray-900"><?php echo $frontage ? $frontage . 'm' : '---'; ?></span>
+                                </div>
+                            </div>
+                            <div class="bg-[#F3F7F8] px-3 py-3 rounded-xl flex items-center gap-2 border border-gray-100 hover:border-gray-200 transition-all whitespace-nowrap overflow-hidden">
+                                <i class="stnd-normal-icons icons-area text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
+                                <div class="flex items-center gap-1 text-[13px]">
+                                    <span class="text-gray-500">Diện tích:</span>
+                                    <span class="font-bold text-gray-900"><?php echo $area ? $area . 'm²' : '---'; ?></span>
+                                </div>
+                            </div>
+                            <div class="bg-[#F3F7F8] px-3 py-3 rounded-xl flex items-center gap-2 border border-gray-100 hover:border-gray-200 transition-all whitespace-nowrap overflow-hidden">
+                                <i class="stnd-normal-icons icons-floor text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
+                                <div class="flex items-center gap-1 text-[13px]">
+                                    <span class="text-gray-500">Số tầng:</span>
+                                    <span class="font-bold text-gray-900"><?php echo $num_floors ? $num_floors . ' tầng' : '---'; ?></span>
+                                </div>
+                            </div>
+                            <div class="bg-[#F3F7F8] px-3 py-3 rounded-xl flex items-center gap-2 border border-gray-100 hover:border-gray-200 transition-all whitespace-nowrap overflow-hidden">
+                                <i class="stnd-normal-icons icons-balance  text-gray-400 text-sm w-[20px]! h-[20px]!"></i>
+                                <div class="flex items-center gap-1 text-[13px] truncate">
+                                    <span class="text-gray-500">Pháp lý:</span>
+                                    <span class="font-bold text-gray-900 truncate" title="<?php echo esc_attr($legal); ?>"><?php echo isset($labels_map[$legal]) ? $labels_map[$legal] : ($legal ?: '---'); ?></span>
+                                </div>
+                            </div>
                         </div>
 
                         
@@ -303,63 +336,52 @@ while ( have_posts() ) : the_post();
 
                             if ( mb_stripos($type_text, 'biệt thự') !== false ) {
                                 $details = [
-                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
-                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
-                                    ['icon' => 'directions', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
-                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
-                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
-                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                    ['icon' => 'bi-fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'bi-house', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bi-signpost-2', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-door-closed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'bi-house-check', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
                                 ];
                             } elseif ( mb_stripos($type_text, 'văn phòng') !== false ) {
                                 $details = [
-                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
-                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'directions', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
-                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
-                                    ['icon' => 'architecture', 'label' => 'Thiết kế', 'value' => $design ?: '---'],
-                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
+                                    ['icon' => 'bi-fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'bi-house', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-signpost-2', 'label' => 'Đường trước nhà', 'value' => $entrance_width ? $entrance_width . 'm' : '---'],
+                                    ['icon' => 'bi-house-check', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
+                                    ['icon' => 'bi-brush', 'label' => 'Thiết kế', 'value' => $design ?: '---'],
                                 ];
-                            } elseif ( mb_stripos($type_text, 'khách sạn') !== false || mb_stripos($type_text, 'ccmn') !== false || mb_stripos($type_text, 'dịch vụ') !== false ) {
+                            } elseif ( mb_stripos($type_text, 'khách sạn') !== false || mb_stripos($type_text, 'ccmn') !== false || mb_stripos($type_text, 'mini') !== false ) {
                                 $details = [
-                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
-                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
-                                    ['icon' => 'bed', 'label' => 'Số phòng ngủ', 'value' => $num_bedrooms ?: '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'analytics', 'label' => 'Tỷ lệ lấp đầy', 'value' => $occupancy_rate ?: '---'],
-                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
-                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
+                                    ['icon' => 'bi-fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'bi-house', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bi-door-closed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-graph-up-arrow', 'label' => 'Tỷ lệ lấp đầy', 'value' => $occupancy_rate ?: '---'],
+                                    ['icon' => 'bi-house-check', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
                                 ];
                             } elseif ( mb_stripos($type_text, 'mặt phố') !== false ) {
                                 $details = [
-                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
-                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'home', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
-                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
-                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
-                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'bi-fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'bi-house', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-house-check', 'label' => 'Hiện trạng nhà', 'value' => $house_condition ?: '---'],
                                 ];
                             } elseif ( mb_stripos($type_text, 'chung cư') !== false ) {
                                 $details = [
-                                    ['icon' => 'apartment', 'label' => 'Loại căn', 'value' => $unit_type ?: '---'],
-                                    ['icon' => 'layers', 'label' => 'Khoảng tầng', 'value' => $floor_range ?: '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'chair', 'label' => 'Nội thất', 'value' => isset($labels_map[$furniture]) ? $labels_map[$furniture] : '---'],
-                                    ['icon' => 'bathtub', 'label' => 'Số phòng tắm', 'value' => $num_bathrooms ?: '---'],
-                                    ['icon' => 'bed', 'label' => 'Số phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'bi-building', 'label' => 'Loại căn', 'value' => $unit_type ?: '---'],
+                                    ['icon' => 'bi-layers', 'label' => 'Khoảng tầng', 'value' => $floor_range ?: '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-lamp', 'label' => 'Nội thất', 'value' => isset($labels_map[$furniture]) ? $labels_map[$furniture] : '---'],
                                 ];
                             } else {
                                 // Default fallback
                                 $details = [
-                                    ['icon' => 'fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
-                                    ['icon' => 'home_work', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
-                                    ['icon' => 'explore', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
-                                    ['icon' => 'balance', 'label' => 'Pháp lý', 'value' => isset($labels_map[$legal]) ? $labels_map[$legal] : '---'],
-                                    ['icon' => 'stairs', 'label' => 'Số tầng', 'value' => $num_floors ?: '---'],
-                                    ['icon' => 'bed', 'label' => 'Phòng ngủ', 'value' => $num_bedrooms ?: '---'],
+                                    ['icon' => 'bi-fullscreen', 'label' => 'Quy mô', 'value' => $area ? $area . 'm²' : '---'],
+                                    ['icon' => 'bi-house', 'label' => 'Mặt tiền', 'value' => $frontage ? $frontage . 'm' : '---'],
+                                    ['icon' => 'bi-compass', 'label' => 'Hướng', 'value' => isset($labels_map[$house_direction]) ? $labels_map[$house_direction] : '---'],
+                                    ['icon' => 'bi-shield-check', 'label' => 'Pháp lý', 'value' => isset($labels_map[$legal]) ? $labels_map[$legal] : '---'],
                                 ];
                             }
 
@@ -367,7 +389,7 @@ while ( have_posts() ) : the_post();
                             ?>
                                 <div class="flex items-center justify-between group">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-[32px]! text-gray-500 group-hover:text-black transition-colors"><?php echo esc_html($item['icon']); ?></span>
+                                        <i class="bi <?php echo esc_attr($item['icon']); ?> text-[20px]! text-gray-400 group-hover:text-black transition-colors"></i>
                                         <span class="text-[15px] font-medium text-gray-700"><?php echo esc_html($item['label']); ?></span>
                                     </div>
                                     <div class="bg-[#F3F7F8] px-4 py-1.5 rounded-full min-w-[60px] text-center">
@@ -434,11 +456,11 @@ while ( have_posts() ) : the_post();
                         <?php endif; ?>
                         <div class="price-contact-section">
                             <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="btn-call">
-                                <span class="material-symbols-outlined">call</span>
-                                <?php echo esc_html(lth_cfg('phone_number')); ?>
+                                <i class="bi bi-telephone-fill"></i>
+                                <span class="text-sm! font-semibold"><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                             </a>
                             <a href="#" class="btn-contact">
-                                <span class="material-symbols-outlined">mail</span>
+                                <i class="bi bi-envelope"></i>
                                 Liên hệ ngay
                             </a>
                         </div>
@@ -459,7 +481,7 @@ while ( have_posts() ) : the_post();
                 <p class="position italic text-gray-500 text-sm mb-1!">Chuyên viên tư vấn</p>
                 
                 <div class="text-[#D09130] font-semibold text-sm mb-8! flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">phone_enabled</span>
+                    <i class="bi bi-telephone-fill" style="font-size: 20px;"></i>
                     <span class=""><?php echo esc_html(lth_cfg('phone_number')); ?></span>
                 </div>
 
@@ -489,10 +511,10 @@ while ( have_posts() ) : the_post();
     </div>
     <div class="bg-white flex items-center gap-3 px-2">
         <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>" class="w-10 h-10 bg-[radial-gradient(59.94%_218.75%_at_50.15%_132.35%,#FFD45C_0%,#9E5625_100%)] rounded-full flex items-center justify-center text-white shadow-lg">
-            <span class="material-symbols-outlined">call</span>
+            <i class="bi bi-telephone-fill"></i>
         </a>
         <a href="mailto:<?php echo esc_attr(lth_cfg('email')); ?>" class="w-10 h-10 border border-gray-100 rounded-full flex items-center justify-center text-gray-400!">
-            <span class="material-symbols-outlined">mail</span>
+            <i class="bi bi-envelope-fill"></i>
         </a>
     </div>
 </div>
@@ -508,7 +530,7 @@ while ( have_posts() ) : the_post();
                 </div>
             </div>
             <a href="<?php echo esc_url( $type_link ); ?>" class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600! hover:bg-gray-50 transition-colors">
-                Xem thêm <span class="material-symbols-outlined text-sm">chevron_right</span>
+                Xem thêm <i class="bi bi-chevron-right text-sm"></i>
             </a>
         </div>
 
@@ -577,7 +599,7 @@ while ( have_posts() ) : the_post();
                                         <?php the_post_thumbnail('medium_large', ['class' => 'zoom-image w-full h-full object-cover']); ?>
                                     <?php else : ?>
                                         <div class="w-full h-full bg-gray-100 flex items-center justify-center">
-                                            <span class="material-symbols-outlined text-gray-300 text-5xl">image</span>
+                                            <i class="bi bi-image text-gray-300 text-5xl"></i>
                                         </div>
                                     <?php endif; ?>
                                 </a>
@@ -599,27 +621,27 @@ while ( have_posts() ) : the_post();
                             </h4>
 
                             <div class="flex items-center gap-1 text-gray-400 text-xs mb-2!">
-                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <i class="bi bi-geo-alt text-sm"></i>
                                 <span class="truncate"><?php echo esc_html($rel_loc_text); ?></span>
                             </div>
 
                             <div class="flex items-center gap-1 text-gray-400 text-xs mb-2!">
-                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <i class="bi bi-clock text-sm"></i>
                                 <span><?php echo get_the_date('d/m/Y H:i'); ?></span>
                             </div>
 
                             <!-- Parameters with Separators -->
                             <div class="flex items-center gap-x-2 border-t border-gray-50 py-1 xl:py-3 my-2!">
                                 <div class="flex items-center gap-1 text-gray-600 pr-4! border-r! border-gray-200! last:border-0">
-                                    <span class="material-symbols-outlined text-[18px] text-gray-400">home</span>
+                                    <i class="bi bi-house text-[14px] text-gray-400"></i>
                                     <span class="text-sm font-bold"><?php echo $rel_frontage ?: '---'; ?>m</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-gray-600 pr-4! border-r! border-gray-200! last:border-0">
-                                    <span class="material-symbols-outlined text-[18px] text-gray-400">aspect_ratio</span>
+                                    <i class="bi bi-aspect-ratio text-[14px] text-gray-400"></i>
                                     <span class="text-sm font-bold"><?php echo $rel_area ?: '---'; ?>m²</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-gray-600 last:border-0">
-                                    <span class="material-symbols-outlined text-[18px] text-gray-400">stairs</span>
+                                    <i class="bi bi-layers text-[14px] text-gray-400"></i>
                                     <span class="text-sm font-bold"><?php echo $rel_floors ?: '---'; ?> tầng</span>
                                 </div>
                                 
@@ -635,7 +657,7 @@ while ( have_posts() ) : the_post();
                                 
                                 <a href="tel:<?php echo esc_attr(lth_cfg('phone_link')); ?>">
                                     <div class="col-span-3 flex items-center gap-2! border border-[#FFD45C]! rounded-full py-1! pl-1! pr-3!">
-                                        <span class="material-symbols-outlined gold-call-buton p-2!">phone_enabled</span> 
+                                        <i class="bi bi-telephone-fill gold-call-buton flex items-center justify-center"></i> 
                                         <span class="text_call_now">Gọi ngay</span>
                                     </div>
                                 </a>
