@@ -327,11 +327,11 @@ if (! function_exists('penci_load_scripts')) {
 }
 
 /**
- * Dequeue Soledad theme assets for Hinode Park template
+ * Dequeue Soledad theme assets for specific landing page templates
  */
-add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_hinode', 9999);
-function penci_dequeue_soledad_for_hinode() {
-	if (is_page_template('template-hinode-park.php')) {
+add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_landing', 9999);
+function penci_dequeue_soledad_for_landing() {
+	if (is_page_template('template-hinode-park.php') || is_page_template('template-noble-palace.php')) {
 		global $wp_styles, $wp_scripts;
 
 		// Dequeue main styles
@@ -365,7 +365,7 @@ function penci_dequeue_soledad_for_hinode() {
 		// Remove any style enqueued that has "penci" in its handle
 		if ( isset($wp_styles->queue) ) {
 			foreach ( $wp_styles->queue as $handle ) {
-				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && strpos( $handle, 'noble' ) === false ) {
 					wp_dequeue_style( $handle );
 				}
 			}
@@ -387,7 +387,7 @@ function penci_dequeue_soledad_for_hinode() {
 
 		if ( isset($wp_scripts->queue) ) {
 			foreach ( $wp_scripts->queue as $handle ) {
-				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && $handle !== 'penci-libs-js' ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && strpos( $handle, 'noble' ) === false && $handle !== 'penci-libs-js' ) {
 					wp_dequeue_script( $handle );
 				}
 			}
