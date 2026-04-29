@@ -347,7 +347,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">Q2/2024</div>
+          <div class="timeline-date">Q3/2024</div>
           <div class="timeline-connector"><div class="timeline-dot"></div></div>
           <div class="timeline-content">
             <div class="timeline-title">Khởi công phân khu Legacy · 450 căn lên tầng 2</div>
@@ -355,7 +355,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">Q3/2024</div>
+          <div class="timeline-date">Q1/2025</div>
           <div class="timeline-connector"><div class="timeline-dot"></div></div>
           <div class="timeline-content">
             <div class="timeline-title">Nhà mẫu hoàn thiện · Mở cửa đón khách 15/01/2025</div>
@@ -363,7 +363,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">Q4/2024</div>
+          <div class="timeline-date">Hiện tại</div>
           <div class="timeline-connector"><div class="timeline-dot active"></div></div>
           <div class="timeline-content">
             <div class="timeline-title">Ốp đá mặt ngoài · Tháo giáo · Sẵn sàng ký HĐMB · Vượt kế hoạch 15 ngày</div>
@@ -379,7 +379,7 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">Q2/2025</div>
+          <div class="timeline-date">12/2027</div>
           <div class="timeline-connector"><div class="timeline-dot future"></div></div>
           <div class="timeline-content">
             <div class="timeline-title">Bàn giao toàn bộ · Cấp sổ đỏ đợt đầu 30/12/2027</div>
@@ -527,7 +527,7 @@ $theme_uri = get_template_directory_uri();
           </div>
           <div class="distance-row">
             <span class="place">2 công viên 190 ha</span>
-            <span class="time">0 <span class="unit">Tiếp giáp trực tiếp</span></span>
+            <span class="time"> <span class="unit">Tiếp giáp trực tiếp</span></span>
           </div>
         </div>
 
