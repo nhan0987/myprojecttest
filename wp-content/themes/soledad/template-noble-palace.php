@@ -621,17 +621,17 @@ $theme_uri = get_template_directory_uri();
 
         <div class="agent-services">
           <div class="service-card">
-            <div class="service-icon">🏠</div>
+            <div class="service-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/moi-gioi.webp" alt="Môi giới" /></div>
             <div class="service-title">Môi giới</div>
             <div class="service-sub">Kết nối mua bán minh bạch</div>
           </div>
           <div class="service-card">
-            <div class="service-icon">🔑</div>
+            <div class="service-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/ky-gui.webp" alt="Ký gửi" /></div>
             <div class="service-title">Ký gửi</div>
             <div class="service-sub">Quản lý &amp; phân phối ký gửi</div>
           </div>
           <div class="service-card">
-            <div class="service-icon">📊</div>
+            <div class="service-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/tu-van-dau-tu.webp" alt="Tư vấn đầu tư" /></div>
             <div class="service-title">Tư vấn đầu tư</div>
             <div class="service-sub">Chiến lược sinh lời dài hạn</div>
           </div>
