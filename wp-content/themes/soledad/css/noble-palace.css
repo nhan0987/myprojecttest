@@ -2225,3 +2225,133 @@ button {
   opacity: 1;
   transform: none;
 }
+
+/* --- CF7 Noble Palace Form Styling (Refined) --- */
+.form-cf7-wrap .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-cf7-wrap .wpcf7-form br {
+  display: none;
+}
+
+.form-cf7-wrap .wpcf7-form p {
+  margin: 0 0 16px 0 !important;
+  display: block;
+}
+
+.form-cf7-wrap label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+
+.form-cf7-wrap .wpcf7-form-control-wrap {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.form-cf7-wrap input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.form-cf7-wrap select,
+.form-cf7-wrap textarea {
+  width: 100% !important;
+  border: 1px solid rgba(92, 26, 26, .15) !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  color: var(--c1) !important;
+  outline: none !important;
+  background: #fdfcf9 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  height: 42px;
+}
+
+.form-cf7-wrap input:focus {
+  border-color: var(--c2b) !important;
+  /* background: #fff !important; */
+}
+
+/* Checkbox group styling */
+.form-cf7-wrap .wpcf7-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.form-cf7-wrap .wpcf7-list-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  margin: 0 !important;
+}
+
+.form-cf7-wrap .wpcf7-list-item-label {
+  font-size: 12px !important;
+  color: var(--c1) !important;
+  text-transform: none !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.form-cf7-wrap input[type="checkbox"] {
+  margin: 0 !important;
+  margin-top: 2px !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+}
+
+.form-cf7-wrap .wpcf7-submit {
+  width: 100% !important;
+  background: var(--c1) !important;
+  color: #fff !important;
+  padding: 14px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all .3s !important;
+  margin-top: 10px !important;
+  border-radius: 0 !important;
+  height: auto !important;
+}
+
+.form-cf7-wrap .wpcf7-submit:hover {
+  background: var(--c2b) !important;
+}
+
+.form-cf7-wrap .wpcf7-spinner {
+  display: none !important;
+}
+
+
+.form-cf7-wrap .wpcf7-not-valid-tip {
+  font-size: 11px;
+  color: #ff201c;
+  margin-top: 4px;
+}
+
+.form-cf7-wrap .wpcf7-response-output {
+  margin: 15px 0 0 !important;
+  padding: 10px !important;
+  font-size: 12px !important;
+  border-radius: 0 !important;
+  border: 1px solid #ddd !important;
+}
+
+@media (max-width: 480px) {
+  .form-cf7-wrap .wpcf7-checkbox {
+    grid-template-columns: 1fr;
+  }
+}

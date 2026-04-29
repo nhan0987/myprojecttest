@@ -89,30 +89,9 @@ $theme_uri = get_template_directory_uri();
       </div>
       <p class="form-title">Nhận Báo Giá Ưu Đãi</p>
       <p class="form-sub">Chuyên viên STND liên hệ trong 15 phút</p>
-      <div class="form-fields">
-        <div class="form-field">
-          <label class="form-label">Họ và tên <span class="req">*</span></label>
-          <input type="text" class="form-input" placeholder="Nguyễn Văn A" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Số điện thoại <span class="req">*</span></label>
-          <input type="tel" class="form-input" placeholder="09XXX XXX XXX" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Quan tâm đến</label>
-          <div class="form-select-wrap">
-            <select class="form-input">
-              <option value="">Chọn loại sản phẩm</option>
-              <option>Shophouse Elegant (Nội khu)</option>
-              <option>Shophouse Grand (Đường 24m)</option>
-              <option>Shophouse Mặt đại lộ 40m</option>
-              <option>Căn mặt bể bơi</option>
-              <option>Căn cạnh Clubhouse</option>
-            </select>
-          </div>
-        </div>
+      <div class="form-cf7-wrap">
+        <?php echo do_shortcode('[contact-form-7 id="3c72e7e" title="Noble Place - Liên hệ"]'); ?>
       </div>
-      <button class="form-submit">Nhận Báo Giá &amp; Tư Vấn Ngay</button>
       <p class="form-note">Bảo mật thông tin tuyệt đối · Miễn phí hoàn toàn · STND tư vấn ngay</p>
     </div>
   </div>
