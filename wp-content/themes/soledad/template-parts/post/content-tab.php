@@ -21,7 +21,7 @@
             }
             ?>
             <div class="content-box col-span-6 xl:col-span-1">
-                <p class="content-days absolute translate-x-[-4.6875rem] translate-y-[5.1875rem] xl:translate-x-[0px]! xl:translate-y-[-1.3125rem]!">
+                <p class="content-days absolute translate-x-[-4.6875rem] translate-y-[5.1875rem] xl:translate-x-[160px]! xl:translate-y-[-36px]!">
                     <?php the_time('d/m/Y '); ?>
                 </p>
                 <h3 class="content-name line-clamp-2">
