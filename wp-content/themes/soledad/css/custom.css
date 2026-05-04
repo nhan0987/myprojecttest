@@ -6788,3 +6788,146 @@ html {
 	border-radius: 3px;
 	margin-right: 0.625rem;
 }
+
+/* --- Search & Hotline Styles --- */
+#top-search {
+	display: flex !important;
+	align-items: center;
+	justify-content: flex-end;
+	float: none !important;
+	width: auto !important;
+	position: relative;
+}
+
+.header-hotline {
+	text-align: right;
+	margin-right: 15px;
+	line-height: 1.2;
+}
+
+.hotline-text {
+	color: #fff;
+	font-size: 11px;
+	text-transform: none;
+	opacity: 0.9;
+	font-family: inherit;
+}
+
+.hotline-number {
+	color: #FFD45C;
+	font-weight: 700;
+	font-size: 16px;
+	white-space: nowrap;
+}
+
+.hotline-separator {
+	width: 1px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.3);
+	margin-right: 15px;
+}
+
+#top-search>a.search-click {
+	color: #fff !important;
+	font-size: 20px !important;
+	height: auto !important;
+	line-height: 1 !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Slide Horizontal Search */
+#top-search .show-search {
+	position: absolute;
+	right: 40px;
+	/* Position it to the left of the search icon */
+	left: auto !important;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 40px;
+	background: #232d39;
+	border-radius: 20px;
+	display: flex !important;
+	align-items: center;
+	padding: 0;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 999;
+	visibility: hidden;
+	opacity: 0;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#top-search .show-search.active {
+	width: 280px;
+	padding: 0 15px;
+	visibility: visible;
+	opacity: 1;
+}
+
+
+#top-search .show-search form.pc-searchform {
+	width: 100%;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#top-search .show-search form.pc-searchform input.search-input {
+	background: transparent !important;
+	color: #fff !important;
+	border: none !important;
+	padding: 0 10px !important;
+	height: 100% !important;
+	font-size: 14px !important;
+	width: calc(100% - 35px) !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+#top-search .show-search a.close-search {
+	position: relative !important;
+	right: 0 !important;
+	top: auto !important;
+	height: auto !important;
+	line-height: 1 !important;
+	color: #fff !important;
+	font-size: 18px !important;
+	margin-left: 5px;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+}
+
+#top-search .show-search a.close-search:hover {
+	transform: rotate(90deg);
+}
+
+
+/* Hide default Soledad search styles that might interfere */
+.penci-top-search .show-search:not(.active) {
+	/* display: none !important;  Keep this to allow fadeToggle to work if needed, but we prefer our 'active' class */
+}
+
+/* Mobile responsive for Search & Hotline */
+@media (max-width: 1199px) {
+
+	.header-hotline,
+	.hotline-separator {
+		display: none !important;
+	}
+
+	#top-search .show-search {
+		right: 35px;
+		/* Adjust for potentially smaller icon area on mobile */
+	}
+
+	#top-search .show-search.active {
+		width: 220px;
+		/* Smaller search box on mobile */
+	}
+}
