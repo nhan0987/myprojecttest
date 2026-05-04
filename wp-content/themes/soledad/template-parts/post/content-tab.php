@@ -24,7 +24,7 @@
                 <p class="content-days absolute translate-x-[-4.6875rem] translate-y-[5.1875rem] xl:translate-x-[160px]! xl:translate-y-[-36px]!">
                     <?php the_time('d/m/Y '); ?>
                 </p>
-                <h3 class="content-name line-clamp-2">
+                <h3 class="content-name line-clamp-3">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                         <p><?php the_title(); ?></p>
                     </a>

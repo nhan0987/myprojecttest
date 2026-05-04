@@ -541,6 +541,10 @@ p:last-child {
 	margin-bottom: 0;
 }
 
+.dash-04 .title-box {
+	margin-bottom: 0;
+}
+
 .dash-04 .title-box .title {
 	padding: 0.375rem 0 0 0px;
 	color: black;
@@ -686,12 +690,12 @@ p:last-child {
 @media (min-width:1280px) {
 	.dash-05 .title-box .title>p {
 		font-weight: 700;
-		font-size: 2rem;
+		font-size: 20px;
 	}
 
 	.dash-05 .title-box .title {
 		font-weight: 700;
-		font-size: 2rem;
+		font-size: 20px;
 	}
 
 	.dash-05 .title-box .infor:before {
@@ -795,7 +799,7 @@ p:last-child {
 	/* background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important; */
 
 	background: #06c !important;
-	display: inline-block !important;
+	/* display: inline-block !important; */
 	-webkit-background-clip: text !important;
 	background-clip: text !important;
 	color: transparent !important;
@@ -1027,6 +1031,37 @@ p:last-child {
 }
 
 #navigation .menu li a {
+	position: relative;
+	/* Đặt làm gốc tọa độ cho phần tử con */
+	text-decoration: none;
+
+}
+
+/* Tạo đường gạch chân bằng ::before */
+#navigation .menu li a::before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	/* Đặt điểm xuất phát ở chính giữa */
+	width: 0%;
+	/* Độ dài ban đầu là 0 */
+	height: 2px;
+	background-color: #FEC769;
+
+	/* Thiết lập chuyển động mượt mà */
+	transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* Hiệu ứng khi hover */
+#navigation .menu li a:hover::before {
+	width: 100%;
+	/* Mở rộng toàn bộ chiều ngang */
+	left: 0%;
+	/* Dịch chuyển sang trái để cân đối từ giữa ra hai bên */
+}
+
+#navigation .menu li a {
 	color: #fff;
 }
 
@@ -1045,11 +1080,12 @@ p:last-child {
 	background-clip: text;
 	color: transparent;
 	-webkit-text-fill-color: transparent;
-	font-weight: 700;
+
 }
 
 #navigation ul.menu>li>a {
 	padding: 1rem 0.375rem 1rem 0.375rem;
+	font-weight: 500;
 }
 
 @media (min-width:1536px) {
@@ -1060,7 +1096,7 @@ p:last-child {
 
 
 #navigation ul.menu>li>a:before {
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 
 #navigation .menu li.icon-home a {
@@ -1086,12 +1122,34 @@ p:last-child {
 	color: #FEC769;
 }
 
+#navigation .sub-menu {
+	background-color: #232D39 !important;
+}
+
+#navigation .menu .sub-menu {
+	box-shadow: 0px 1px 1px rgba(190, 190, 190, 0.6);
+}
+
+@media only screen and (min-width: 961px) {
+
+	#navigation-sticky-wrapper:not(.is-sticky) .menu .sub-menu,
+	#navigation-sticky-wrapper:not(.is-sticky) .menu .children {
+		margin-top: -1px;
+		border-top: 1px solid #FEC769;
+	}
+}
+
 #navigation .menu .sub-menu li a {
-	color: #313131;
+	color: white;
 }
 
 #navigation .menu .sub-menu li a:hover {
 	color: #FEC769;
+	border-bottom: 1px solid #FEC769;
+}
+
+#navigation ul.menu ul a {
+	border-bottom: 1px solid transparent;
 }
 
 #navigation .button-menu-mobile {
@@ -1225,7 +1283,7 @@ p:last-child {
 }
 
 .module_categories .content-name {
-	margin-bottom: 0.75rem;
+	margin-bottom: 0;
 }
 
 .module_categories .content-name p {
@@ -1282,7 +1340,7 @@ p:last-child {
 .module_blogs .content-name p {
 
 	margin-bottom: 0;
-	line-height: 1.6;
+	line-height: 1.4;
 	color: black;
 	font-weight: 600;
 	text-transform: lowercase;
@@ -2051,7 +2109,7 @@ p:last-child {
 }
 
 .module_blogs .tab-content {
-	padding-top: 0.625rem;
+	padding-top: 32px;
 }
 
 .thu-ngo {
@@ -3638,7 +3696,7 @@ html {
 }
 
 .btn-view-more {
-	background-color: black;
+	background-color: #232D39;
 	display: inline-flex;
 	border-radius: 10px;
 	font-weight: 400;
@@ -6792,11 +6850,24 @@ html {
 	transform: translateY(-5px);
 }
 
-.line-clamp-2 {
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+.line-clamp-2,
+.line-clamp-2:hover,
+.line-clamp-2 a:hover,
+.line-clamp-2 p:hover {
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+}
+
+.line-clamp-3,
+.line-clamp-3:hover,
+.line-clamp-3 a:hover,
+.line-clamp-3 p:hover {
+	display: -webkit-box !important;
+	-webkit-line-clamp: 3 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
 }
 
 .bds-body-content h3::after {
