@@ -1001,18 +1001,18 @@ p:last-child {
 
 
 
-#navigation .container {
+#navigation .fullwidth {
 	max-width: 718px;
 }
 
 @media (min-width:1024px) {
-	#navigation .container {
-		max-width: 1824px;
+	#navigation .container-fullwidth {
+		max-width: 1000px;
 	}
 }
 
 
-#navigation .container {
+#navigation .container-fullwidth {
 	background: #232D39;
 	border-radius: 16px;
 	/* height: 4.375rem; */
@@ -2153,6 +2153,28 @@ p:last-child {
 .sub-page-slider img {
 	width: 114rem;
 	height: 22.5rem;
+}
+
+@media (min-width: 1680px) {
+	#navigation .container-fullwidth {
+		max-width: 1600px;
+	}
+}
+
+
+@media (min-width:1920px) {
+	.home-page-slider {
+		max-width: 1824px !important;
+	}
+
+	#navigation .container-fullwidth {
+		max-width: 1824px;
+	}
+}
+
+
+.home-page-slider {
+	aspect-ratio: 100 / 360;
 }
 
 @media (min-width:1280px) {
