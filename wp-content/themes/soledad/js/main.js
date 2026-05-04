@@ -11,12 +11,13 @@
 	PENCI.general = function () {
 		// Top search
 		$(document).on('click', '.penci-top-search .search-click', function (e) {
+
 			e.preventDefault();
 			e.stopPropagation();
 			var $container = $(this).closest('.penci-top-search');
-			console.log("tesst2");
+
 			$container.find('.show-search').toggleClass('active');
-			console.log("tesst1");
+
 			if ($container.find('.show-search').hasClass('active')) {
 				$container.find('input.search-input').trigger('focus');
 			}
