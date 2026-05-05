@@ -4555,6 +4555,26 @@ html {
 
 }
 
+.cut-the-bottom-left-corner-28-container {
+	aspect-ratio: 343 / 276;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28-mobile.svg");
+	width: 343px;
+	height: 276px;
+}
+
+@media (min-width:1280px) {
+	.cut-the-bottom-left-corner-28-container {
+		aspect-ratio: 873 / 573;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28.svg");
+		width: 873px;
+		height: 573px;
+	}
+}
+
+
+
 .cut-the-bottom-left-corner-11-container {
 	aspect-ratio: 350 / 267;
 	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-11-mobile.svg");
@@ -6850,7 +6870,7 @@ html {
 	transform: translateY(-5px);
 }
 
-.line-clamp-2,
+/* .line-clamp-2,
 .line-clamp-2:hover,
 .line-clamp-2 a:hover,
 .line-clamp-2 p:hover {
@@ -6868,7 +6888,7 @@ html {
 	-webkit-line-clamp: 3 !important;
 	-webkit-box-orient: vertical !important;
 	overflow: hidden !important;
-}
+} */
 
 .bds-body-content h3::after {
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
@@ -7036,5 +7056,22 @@ html {
 	#top-search .show-search.active {
 		width: 220px;
 		/* Smaller search box on mobile */
+	}
+}
+
+
+.container.penci-breadcrumb {
+	margin-bottom: 18px;
+}
+
+@media (min-width:1680px) {
+	.penci-page-header-category {
+		max-width: 100rem;
+	}
+}
+
+@media (min-width:1920px) {
+	.penci-page-header-category {
+		max-width: 114rem;
 	}
 }
