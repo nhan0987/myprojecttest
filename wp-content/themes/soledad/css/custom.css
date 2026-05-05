@@ -7075,3 +7075,24 @@ html {
 		max-width: 114rem;
 	}
 }
+
+.cut-the-bottom-right-corner-29-container {
+	aspect-ratio: 372 / 242;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+	width: 372px;
+	height: 242px;
+}
+
+.cut-the-bottom-right-corner-29-container:hover .view-more {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+}
+
+.card-shadow {
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
