@@ -228,7 +228,7 @@ if (!$add_page) {
 	// --- BƯỚC 2: IN RA CỤC HTML (HEADER) ---
 	// (Code này không đổi, nó dùng $header_style lấy từ Vòng 1)
 	?>
-	<div class="penci-page-header penci-page-header-category max-w-[21.9375rem]! xl:max-w-[79rem]! 2xl:max-w-[114rem]! mx-auto justify-center items-center flex flex-col" <?php echo $header_style; ?>>
+	<div class="penci-page-header penci-page-header-category max-w-[21.875rem] xl:max-w-[79rem] 2xl:max-w-[114rem] mx-auto justify-center items-center flex flex-col" <?php echo $header_style; ?>>
 		<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
 		<span class="entry-description"> <?php echo $description; // (Biến $description này phải được lấy từ trước đó) ?></span>
 	</div>
