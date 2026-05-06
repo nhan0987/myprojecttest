@@ -1066,8 +1066,8 @@ p:last-child {
 }
 
 #navigation ul.menu>li.menu-item-has-children>a {
-	cursor: auto;
-	pointer-events: none;
+	/* cursor: auto;
+	pointer-events: none; */
 }
 
 #navigation ul.menu>li:hover>a,
@@ -7077,12 +7077,23 @@ html {
 }
 
 .cut-the-bottom-right-corner-29-container {
-	aspect-ratio: 372 / 242;
-	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
-	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
-	width: 372px;
+	aspect-ratio: 325 / 242;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29-mobile.svg");
+	width: 325px;
 	height: 242px;
 }
+
+@media (min-width: 1280px) {
+	.cut-the-bottom-right-corner-29-container {
+		aspect-ratio: 372 / 242;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+		width: 372px;
+		height: 242px;
+	}
+}
+
 
 .cut-the-bottom-right-corner-29-container:hover .view-more {
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
@@ -7101,6 +7112,47 @@ html {
 	content: '';
 	position: absolute;
 	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, rgba(0, 0, 0, 0.69) 100%);
+	border-radius: 16px;
+}
+
+.penci-projects-page-header {
+	height: 13.25rem;
+	position: relative;
+	z-index: 1;
+	border-radius: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	background-position: center;
+}
+
+@media (min-width: 1280px) {
+	.penci-projects-page-header {
+		height: 40rem;
+	}
+}
+
+@media (min-width:1680px) {
+	.penci-projects-page-header {
+		max-width: 100rem;
+	}
+}
+
+@media (min-width:1920px) {
+	.penci-projects-page-header {
+		max-width: 114rem;
+	}
+}
+
+.penci-projects-page-header::before {
+	content: '';
+	position: absolute;
+	z-index: 2;
 	top: 0;
 	left: 0;
 	right: 0;
