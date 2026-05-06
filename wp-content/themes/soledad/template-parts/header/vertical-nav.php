@@ -19,8 +19,8 @@ if ( ! get_theme_mod( 'penci_vertical_nav_show' ) ) { ?>
 					?>
 					<?php if ( get_theme_mod( 'penci_mobile_nav_logo' ) ) { ?>
 						<a href="<?php echo $logo_url_nav; ?>">
-							<img class="penci-lazy" src="<?php echo get_template_directory_uri() . '/images/penci-holder.png'; ?>" 
-							data-src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" 
+							<img 
+							src="<?php echo esc_url( get_theme_mod( 'penci_mobile_nav_logo' ) ); ?>" 
 							alt="<?php bloginfo( 'name' ); ?>" />
 						</a>
 					<?php } elseif( get_theme_mod( 'penci_logo' ) ) { ?>
