@@ -21,15 +21,15 @@ if (!function_exists('lth_categories_output_fe')) :
 ?>
     <section class="lth-categories">
         <div class="module module_categories">
-            <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
+            <?php if (($attributes['title'] ?? '') || ($attributes['description'] ?? '') || ($attributes['categories'] ?? '')) : ?>
                 <div class="module_header title-box">
                     <?php if (isset($attributes['title'])) : ?>
                         <h2 class="title">
-                            <?php if ($attributes['url']) : ?> 
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 <a href="<?php echo esc_url($attributes['url']); ?>" title="">
                             <?php endif; ?>
-                                <?php echo wpautop(esc_html($attributes['title'])); ?>
-                            <?php if ($attributes['url']) : ?> 
+                                <?php echo wpautop(esc_html($attributes['title'] ?? '')); ?>
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 </a>
                             <?php endif; ?>
                         </h2>
@@ -44,7 +44,7 @@ if (!function_exists('lth_categories_output_fe')) :
             <?php endif; ?>
 
             <div class="module_content">
-                <?php if ($attributes['categories_style'] == 'grid-01') { ?>
+                <?php if (($attributes['categories_style'] ?? '') == 'grid-01') { ?>
                     <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-5! grid-01">
                         <?php foreach( $attributes['items'] as $index => $inner ) {
                             
