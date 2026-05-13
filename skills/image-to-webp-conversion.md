@@ -20,6 +20,10 @@ foreach ($file in $files) {
 }
 ```
 
+# Chạy lệnh đơn trong thư mục chứa ảnh
+Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png)$' } | ForEach-Object { Write-Host "Đang chuyển đổi: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp }
+
+
 ### Bước 2: Cập nhật Tham chiếu trong Mã nguồn
 Sau khi có các tệp `.webp`, bạn cần cập nhật các đường dẫn trong tệp HTML/PHP/CSS để website nhận định dạng mới.
 
