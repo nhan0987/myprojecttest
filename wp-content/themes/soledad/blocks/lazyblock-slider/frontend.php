@@ -133,6 +133,8 @@ if (!function_exists('lth_slider_output_fe')) :
                                     
                                     </div>
                                 </div>
+                            <?php }  elseif($attributes['display_style'] == 'style_03'){ ?>
+                                
                             <?php } ?>
                         </div>
                     </div>

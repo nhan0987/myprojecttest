@@ -191,6 +191,10 @@ if ( function_exists( 'lazyblocks' ) ) :
                   'label' => 'Style 02',
                   'value' => 'style_02',
                ),
+               array(
+                  'label' => 'Style 03',
+                  'value' => 'style_03',
+               ),
             ),
          )
       ),

@@ -2213,6 +2213,10 @@ p:last-child {
 	height: 22.5rem;
 }
 
+.module_slider img {
+	object-fit: fill !important;
+}
+
 @media (min-width: 1680px) {
 	#navigation .container-fullwidth {
 		max-width: 1600px;
@@ -2238,7 +2242,7 @@ p:last-child {
 @media (min-width:1280px) {
 	.home-page-slider img {
 		width: 114rem;
-		height: 40rem;
+		height: auto;
 	}
 
 	.sub-page-slider img {
