@@ -116,7 +116,9 @@ class Penci_Soledad_Dashboard {
 
 	public function replace_text_submenu(){
 		global $submenu;
-		$submenu['soledad_dashboard_welcome'][0][0] = esc_html__( 'Welcome', 'soledad' );
+		if ( isset( $submenu['soledad_dashboard_welcome'][0] ) ) {
+			$submenu['soledad_dashboard_welcome'][0][0] = esc_html__( 'Welcome', 'soledad' );
+		}
 	}
 
 

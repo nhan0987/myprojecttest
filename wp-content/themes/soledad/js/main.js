@@ -2150,8 +2150,6 @@
 		},
 		PENCI.index_click = function (selector) {
 
-			console.log("index click");
-
 			const selectors = {
 				toggleBtn: '#toc-toggle',
 				closeBtn: '#toc-close',
@@ -2164,7 +2162,6 @@
 			// Hàm tạo danh mục từ các thẻ H2
 			const buildTOC = function () {
 
-				console.log("build TOC")
 
 				const article = document.querySelector(selectors.content);
 				const tocList = document.querySelector(selectors.list);
@@ -2184,7 +2181,7 @@
 					</a>
 				`;
 
-					console.log(li)
+
 					tocList.appendChild(li);
 				});
 			};
@@ -2196,7 +2193,7 @@
 
 				if (sidebar && overlay) {
 
-					console.log("handle Sidebar")
+
 					sidebar.classList.toggle('open');
 					overlay.classList.toggle('hidden');
 				}
@@ -2205,7 +2202,7 @@
 			// Hàm khởi tạo sự kiện
 			const initEvents = function () {
 
-				console.log("init function")
+
 				const toggleBtn = document.querySelector(selectors.toggleBtn);
 				const closeBtn = document.querySelector(selectors.closeBtn);
 				const overlay = document.querySelector(selectors.overlay);

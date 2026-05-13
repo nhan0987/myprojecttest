@@ -22,17 +22,17 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
 <section class="lth-blogs">
     <div class="">        
         <div class="module module_blogs">
-            <?php if ($attributes['title'] || $attributes['description']) : ?>
+            <?php if (($attributes['title'] ?? '') || ($attributes['description'] ?? '')) : ?>
                 <div class="module_header title-box">
                     <?php if (isset($attributes['title'])) : ?>
                         <h2 class="title">
-                            <?php if ($attributes['url']) : ?> 
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 <a href="<?php echo esc_url($attributes['url']); ?>" title="">
                             <?php else : ?>
                                 
                             <?php endif; ?>
-                                <?php echo wpautop(esc_html($attributes['title'])); ?>
-                            <?php if ($attributes['url']) : ?> 
+                                <?php echo wpautop(esc_html($attributes['title'] ?? '')); ?>
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 </a>
                             <?php else : ?>
                                 
@@ -40,7 +40,7 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
                         </h2>
                     <?php endif; ?>
 
-                    <?php if ($attributes['description']) : ?>
+                    <?php if ($attributes['description'] ?? '') : ?>
                         <div class="infor">
                             <?php echo wpautop(esc_html($attributes['description'])); ?>
                         </div>
@@ -50,7 +50,7 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
 
             
                 <ul class="nav nav-pills title-tab" id="myTab" role="tablist">
-                    <?php $i; foreach( $attributes['items'] as $inner ): $i++; ?>
+                    <?php $i = 0; foreach( $attributes['items'] as $inner ): $i++; ?>
                     <?php
                     
                         // var_dump($inner);
@@ -71,16 +71,16 @@ if (!function_exists('lth_blogs_tab_output_fe')) :
 
             
                 <div class="tab-content">
-                    <?php $j; foreach( $attributes['items'] as $inner ): $j++; ?>
+                    <?php $j = 0; foreach( $attributes['items'] as $inner ): $j++; ?>
                         <div class="tab-pane fade  <?php if ($j == 1) { ?>active show<?php } ?>" role="tabpanel" id="tab-<?php echo $j; ?>" >
                             <?php
                                 $args = [
                                     'post_type' => 'post',
                                     'post_status' => 'publish',
-                                    'category__in' => $inner['item'],
-                                    'posts_per_page' => $attributes['post_number'],
-                                    'orderby' => $attributes['orderby'],
-                                    'order' => $attributes['order'],
+                                    'category__in' => $inner['item'] ?? [],
+                                    'posts_per_page' => $attributes['post_number'] ?? 5,
+                                    'orderby' => $attributes['orderby'] ?? 'date',
+                                    'order' => $attributes['order'] ?? 'DESC',
                                 ];
                                 
                                 $wp_query = new WP_Query($args);
