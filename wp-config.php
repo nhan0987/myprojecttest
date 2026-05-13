@@ -71,6 +71,14 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+// Custom Meta Tags Configuration
+define( 'STND_META_DESCRIPTION', 'Khám phá danh sách các dự án bất động sản tiềm năng, vị trí đắc địa và tiện ích đẳng cấp từ các chủ đầu tư uy tín nhất Việt Nam.' );
+define( 'STND_META_KEYWORDS', 'bất động sản, dự án căn hộ, vinhomes, mik group, sun group, masterise homes, bất động sản cao cấp' );
+define( 'STND_OG_TITLE', 'Danh Sách Dự Án Bất Động Sản - STND' );
+define( 'STND_OG_DESCRIPTION', 'Tổng hợp thông tin chi tiết về các dự án bất động sản nổi bật. Vị trí huyết mạch, thiết kế tinh tế và cơ hội đầu tư sinh lời bền vững.' );
+define( 'STND_OG_IMAGE', '/wp-content/uploads/2026/05/logo_black.jpg' );
+
+
 
 
 /* That's all, stop editing! Happy publishing. */

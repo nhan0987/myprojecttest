@@ -541,6 +541,10 @@ p:last-child {
 	margin-bottom: 0;
 }
 
+.dash-04 .title-box {
+	margin-bottom: 0;
+}
+
 .dash-04 .title-box .title {
 	padding: 0.375rem 0 0 0px;
 	color: black;
@@ -686,12 +690,12 @@ p:last-child {
 @media (min-width:1280px) {
 	.dash-05 .title-box .title>p {
 		font-weight: 700;
-		font-size: 2rem;
+		font-size: 20px;
 	}
 
 	.dash-05 .title-box .title {
 		font-weight: 700;
-		font-size: 2rem;
+		font-size: 20px;
 	}
 
 	.dash-05 .title-box .infor:before {
@@ -795,7 +799,7 @@ p:last-child {
 	/* background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%)!important; */
 
 	background: #06c !important;
-	display: inline-block !important;
+	/* display: inline-block !important; */
 	-webkit-background-clip: text !important;
 	background-clip: text !important;
 	color: transparent !important;
@@ -1001,18 +1005,18 @@ p:last-child {
 
 
 
-#navigation .container {
+#navigation .fullwidth {
 	max-width: 718px;
 }
 
-@media (min-width:1024px) {
-	#navigation .container {
-		max-width: 1824px;
+@media (min-width:1280px) {
+	#navigation .container-fullwidth {
+		max-width: 1200px;
 	}
 }
 
 
-#navigation .container {
+#navigation .container-fullwidth {
 	background: #232D39;
 	border-radius: 16px;
 	/* height: 4.375rem; */
@@ -1027,12 +1031,43 @@ p:last-child {
 }
 
 #navigation .menu li a {
+	position: relative;
+	/* Đặt làm gốc tọa độ cho phần tử con */
+	text-decoration: none;
+
+}
+
+/* Tạo đường gạch chân bằng ::before */
+#navigation .menu li a::before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	/* Đặt điểm xuất phát ở chính giữa */
+	width: 0%;
+	/* Độ dài ban đầu là 0 */
+	height: 2px;
+	background-color: #FEC769;
+
+	/* Thiết lập chuyển động mượt mà */
+	transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* Hiệu ứng khi hover */
+#navigation .menu li a:hover::before {
+	width: 100%;
+	/* Mở rộng toàn bộ chiều ngang */
+	left: 0%;
+	/* Dịch chuyển sang trái để cân đối từ giữa ra hai bên */
+}
+
+#navigation .menu li a {
 	color: #fff;
 }
 
 #navigation ul.menu>li.menu-item-has-children>a {
-	cursor: auto;
-	pointer-events: none;
+	/* cursor: auto;
+	pointer-events: none; */
 }
 
 #navigation ul.menu>li:hover>a,
@@ -1045,11 +1080,12 @@ p:last-child {
 	background-clip: text;
 	color: transparent;
 	-webkit-text-fill-color: transparent;
-	font-weight: 700;
+
 }
 
 #navigation ul.menu>li>a {
 	padding: 1rem 0.375rem 1rem 0.375rem;
+	font-weight: 500;
 }
 
 @media (min-width:1536px) {
@@ -1060,7 +1096,7 @@ p:last-child {
 
 
 #navigation ul.menu>li>a:before {
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 
 #navigation .menu li.icon-home a {
@@ -1086,12 +1122,34 @@ p:last-child {
 	color: #FEC769;
 }
 
+#navigation .sub-menu {
+	background-color: #232D39 !important;
+}
+
+#navigation .menu .sub-menu {
+	box-shadow: 0px 0px 0px rgba(190, 190, 190, 0.6);
+}
+
+@media only screen and (min-width: 961px) {
+
+	#navigation-sticky-wrapper:not(.is-sticky) .menu .sub-menu,
+	#navigation-sticky-wrapper:not(.is-sticky) .menu .children {
+		margin-top: -1px;
+		border-top: 1px solid #FEC769;
+	}
+}
+
 #navigation .menu .sub-menu li a {
-	color: #313131;
+	color: white;
 }
 
 #navigation .menu .sub-menu li a:hover {
 	color: #FEC769;
+	border-bottom: 1px solid #FEC769;
+}
+
+#navigation ul.menu ul a {
+	border-bottom: 1px solid transparent;
 }
 
 #navigation .button-menu-mobile {
@@ -1225,7 +1283,7 @@ p:last-child {
 }
 
 .module_categories .content-name {
-	margin-bottom: 0.75rem;
+	margin-bottom: 0;
 }
 
 .module_categories .content-name p {
@@ -1282,7 +1340,7 @@ p:last-child {
 .module_blogs .content-name p {
 
 	margin-bottom: 0;
-	line-height: 1.6;
+	line-height: 1.4;
 	color: black;
 	font-weight: 600;
 	text-transform: lowercase;
@@ -2051,7 +2109,7 @@ p:last-child {
 }
 
 .module_blogs .tab-content {
-	padding-top: 0.625rem;
+	padding-top: 32px;
 }
 
 .thu-ngo {
@@ -2155,10 +2213,36 @@ p:last-child {
 	height: 22.5rem;
 }
 
+.module_slider img {
+	object-fit: fill !important;
+}
+
+@media (min-width: 1680px) {
+	#navigation .container-fullwidth {
+		max-width: 1600px;
+	}
+}
+
+
+@media (min-width:1920px) {
+	.home-page-slider {
+		max-width: 1824px !important;
+	}
+
+	#navigation .container-fullwidth {
+		max-width: 1824px;
+	}
+}
+
+
+.home-page-slider {
+	aspect-ratio: 100 / 360;
+}
+
 @media (min-width:1280px) {
 	.home-page-slider img {
 		width: 114rem;
-		height: 40rem;
+		height: auto;
 	}
 
 	.sub-page-slider img {
@@ -3521,6 +3605,20 @@ html {
 
 .cut-the-lower-left-corner .image-zoom-container {
 	aspect-ratio: 123 / 96;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-01-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-01-mobile.svg");
+}
+
+.cut-the-lower-right-corner-01 .image-zoom-container {
+	mask-size: 100% auto;
+	-webkit-mask-size: 100% auto;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+}
+
+
+.cut-the-lower-right-corner-01 .image-zoom-container {
+	aspect-ratio: 123 / 96;
 	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-02-mobile.svg");
 	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-02-mobile.svg");
 }
@@ -3532,6 +3630,12 @@ html {
 		aspect-ratio: 405 / 270;
 		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-01.svg");
 		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-01.svg");
+	}
+
+	.cut-the-lower-right-corner-01 .image-zoom-container {
+		aspect-ratio: 405 / 270;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-02.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-02.svg");
 	}
 
 }
@@ -3596,7 +3700,7 @@ html {
 }
 
 .btn-view-more {
-	background-color: black;
+	background-color: #232D39;
 	display: inline-flex;
 	border-radius: 10px;
 	font-weight: 400;
@@ -4454,6 +4558,26 @@ html {
 	height: 17.25rem;
 
 }
+
+.cut-the-bottom-left-corner-28-container {
+	aspect-ratio: 343 / 276;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28-mobile.svg");
+	width: 343px;
+	height: 276px;
+}
+
+@media (min-width:1280px) {
+	.cut-the-bottom-left-corner-28-container {
+		aspect-ratio: 873 / 573;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-28.svg");
+		width: 873px;
+		height: 573px;
+	}
+}
+
+
 
 .cut-the-bottom-left-corner-11-container {
 	aspect-ratio: 350 / 267;
@@ -6750,12 +6874,25 @@ html {
 	transform: translateY(-5px);
 }
 
-.line-clamp-2 {
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+/* .line-clamp-2,
+.line-clamp-2:hover,
+.line-clamp-2 a:hover,
+.line-clamp-2 p:hover {
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
 }
+
+.line-clamp-3,
+.line-clamp-3:hover,
+.line-clamp-3 a:hover,
+.line-clamp-3 p:hover {
+	display: -webkit-box !important;
+	-webkit-line-clamp: 3 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+} */
 
 .bds-body-content h3::after {
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
@@ -6765,4 +6902,265 @@ html {
 	height: 3px;
 	border-radius: 3px;
 	margin-right: 0.625rem;
+}
+
+/* --- Search & Hotline Styles --- */
+#top-search {
+	display: flex !important;
+	align-items: center;
+	justify-content: flex-end;
+	float: none !important;
+	width: auto !important;
+	position: relative;
+}
+
+.header-hotline {
+	text-align: right;
+	margin-right: 15px;
+	line-height: 1.2;
+}
+
+.hotline-text {
+	color: #fff;
+	font-size: 11px;
+	text-transform: none;
+	opacity: 0.9;
+	font-family: inherit;
+}
+
+.hotline-number {
+	color: #FEBD55;
+	font-weight: 700;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+@media (min-width:1280px) {
+	.hotline-number {
+
+		font-size: 14px;
+	}
+}
+
+@media (min-width:1680px) {
+	.hotline-number {
+
+		font-size: 16px;
+
+	}
+}
+
+
+.hotline-separator {
+	width: 1px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.3);
+	margin-right: 15px;
+}
+
+#top-search>a.search-click {
+	color: #fff !important;
+	font-size: 20px !important;
+	height: auto !important;
+	line-height: 1 !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Slide Horizontal Search */
+#top-search .show-search {
+	position: absolute;
+	right: 40px;
+	/* Position it to the left of the search icon */
+	left: auto !important;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 40px;
+	background: #232d39;
+	border-radius: 20px;
+	display: flex !important;
+	align-items: center;
+	padding: 0;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 999;
+	visibility: hidden;
+	opacity: 0;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#top-search .show-search.active {
+	width: 280px;
+	padding: 0 15px;
+	visibility: visible;
+	opacity: 1;
+}
+
+
+#top-search .show-search form.pc-searchform {
+	width: 100%;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#top-search .show-search form.pc-searchform input.search-input {
+	background: transparent !important;
+	color: #fff !important;
+	border: none !important;
+	padding: 0 10px !important;
+	height: 100% !important;
+	font-size: 14px !important;
+	width: calc(100% - 35px) !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+#top-search .show-search a.close-search {
+	position: relative !important;
+	right: 0 !important;
+	top: auto !important;
+	height: auto !important;
+	line-height: 1 !important;
+	color: #fff !important;
+	font-size: 18px !important;
+	margin-left: 5px;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+}
+
+#top-search .show-search a.close-search:hover {
+	transform: rotate(90deg);
+}
+
+
+/* Hide default Soledad search styles that might interfere */
+.penci-top-search .show-search:not(.active) {
+	/* display: none !important;  Keep this to allow fadeToggle to work if needed, but we prefer our 'active' class */
+}
+
+/* Mobile responsive for Search & Hotline */
+@media (max-width: 1199px) {
+
+	.header-hotline,
+	.hotline-separator {
+		display: none !important;
+	}
+
+	#top-search .show-search {
+		right: 35px;
+		/* Adjust for potentially smaller icon area on mobile */
+	}
+
+	#top-search .show-search.active {
+		width: 220px;
+		/* Smaller search box on mobile */
+	}
+}
+
+
+.container.penci-breadcrumb {
+	margin-bottom: 18px;
+}
+
+@media (min-width:1680px) {
+	.penci-page-header-category {
+		max-width: 100rem;
+	}
+}
+
+@media (min-width:1920px) {
+	.penci-page-header-category {
+		max-width: 114rem;
+	}
+}
+
+.cut-the-bottom-right-corner-29-container {
+	aspect-ratio: 325 / 242;
+	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29-mobile.svg");
+	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29-mobile.svg");
+	width: 325px;
+	height: 242px;
+}
+
+@media (min-width: 1280px) {
+	.cut-the-bottom-right-corner-29-container {
+		aspect-ratio: 372 / 242;
+		-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+		mask-image: url("/wp-content/themes/soledad/shapes/shape-style-29.svg");
+		width: 372px;
+		height: 242px;
+	}
+}
+
+
+.cut-the-bottom-right-corner-29-container:hover .view-more {
+	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+}
+
+.card-shadow {
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.llvt-banner::before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, rgba(0, 0, 0, 0.69) 100%);
+	border-radius: 16px;
+}
+
+.penci-projects-page-header {
+	height: 13.25rem;
+	position: relative;
+	z-index: 1;
+	border-radius: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	background-position: center;
+}
+
+@media (min-width: 1280px) {
+	.penci-projects-page-header {
+		height: 40rem;
+	}
+}
+
+@media (min-width:1680px) {
+	.penci-projects-page-header {
+		max-width: 100rem;
+	}
+}
+
+@media (min-width:1920px) {
+	.penci-projects-page-header {
+		max-width: 114rem;
+	}
+}
+
+.penci-projects-page-header::before {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, rgba(0, 0, 0, 0.69) 100%);
+	border-radius: 16px;
 }

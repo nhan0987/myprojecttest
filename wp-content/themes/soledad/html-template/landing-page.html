@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Dự Án Bất Động Sản</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#B4975A', // Gold accent
+                        'navy': '#1E293B',    // Dark navy for tabs
+                        'secondary': '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-footer {
+            background: rgba(180, 151, 90, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #B4975A;
+            border-radius: 10px;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<div class="penci-projects-page-header max-w-[21.875rem] xl:max-w-[75rem] 2xl:max-w-[114rem] mx-auto justify-center items-center flex flex-col"
+    style="background-image: url('/wp-content/themes/soledad/images/projects/project-banner.webp');">
+    <h1 class="entry-title font-semibold! text-white text-[20px]! xl:text-[40px]! uppercase z-3">Dự án bất động sản</h1>
+</div>
+
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
+
+    <!-- Top Navigation Tabs -->
+    <div class="fade-in">
+        <div class="bg-[#232D39] rounded-xl p-2 flex flex-wrap items-center gap-1">
+            <div class="flex items-center px-4 border-r! border-white/100! mr-2!">
+                <span class="text-white text-sm! font-semibold! uppercase whitespace-nowrap">Chủ đầu
+                    tư</span>
+            </div>
+            <button class="gold-color text-white px-6! py-2! rounded-xl! text-sm! font-bold! transition-all">
+                Tất Cả
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm font-medium transition-all">
+                Vinhomes
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm! font-medium! transition-all">
+                MIK Group
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm! font-medium! transition-all">
+                SUN Group
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm! font-medium! transition-all">
+                Capital Land
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm! font-medium! transition-all">
+                Masterise
+            </button>
+            <button class="text-white px-5! py-2! rounded-xl! text-sm! font-medium! transition-all">
+                Novaland
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-8 px-4 space-y-12 pb-32">
+
+        <!-- Vinhomes Section -->
+        <section id="vinhomes" class="space-y-6 fade-in" style="animation-delay: 0.2s">
+            <div
+                class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between border border-gray-100 card-shadow">
+                <div class="flex items-center gap-6 p-3">
+                    <div class="w-[126px] h-[49px] flex items-center justify-center p-2 rounded-xl">
+                        <img src="/wp-content/themes/soledad/images/projects/re-vinhomes.webp" alt="Vinhomes"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h2 class="text-[22px]! font-bold! mb-0!">Vinhomes</h2>
+                        <p class="text-sm">Thương hiệu bất động sản hàng đầu Việt Nam — Tập đoàn Vingroup
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="flex items-center gap-2 mb-8! mt-8!">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse">&#160;</span>
+                    <span class="text-sm font-bold uppercase tracking-widest shrink-0">Đang triển khai</span>
+                    <span class="h-[1px]  bg-gray-200 animate-pulse grow">&#160;</span>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="#">
+                                <img src="/wp-content/themes/soledad/images/projects/project-vin-haivan.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="#">
+                                <i class="bi bi-box-arrow-up-right">&#160;</i>
+                            </a>
+
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-xl! font-bold! text-gray-900 uppercase tracking-tight">Vinhomes Hải Vân
+                                    Bay</h4>
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> Đà Nẵng
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Tọa lạc tại vị trí "tựa sơn hướng thủy" đắc địa nhất Đà Nẵng, Vinhomes Hải Vân Bay mang
+                                đến không gian sống nghỉ dưỡng thượng lưu với tầm nhìn panorama ôm trọn vịnh biển. Dự án
+                                sở hữu hạ tầng đồng bộ, tiện ích bãi biển riêng biệt và phong cách kiến trúc hiện đại,
+                                kiến tạo một biểu tượng sống mới tại miền Trung.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">1,200 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 2.5 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="#">
+                                <img src="/wp-content/themes/soledad/images/projects/project-vin-smartcity.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image ">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="#">
+                                <i class="bi bi-box-arrow-up-right ">&#160;</i>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-xl! font-bold! text-gray-900 uppercase tracking-tight">Vinhomes Smart
+                                    City
+                                </h4>
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> Hà Nội
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Đại đô thị thông minh chuẩn quốc tế đầu tiên tại Việt Nam, quy mô 280ha với 3 trụ cột
+                                cốt lõi: An ninh - Vận hành - Cộng đồng thông minh. Nổi bật với bộ ba công viên liên
+                                hoàn 16.3ha, hệ thống VinBus hiện đại và kết nối hạ tầng hoàn hảo, mang đến trải nghiệm
+                                sống năng động, tiện nghi.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">271 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 3.2 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Big Banner -->
+        <div class="rounded-2xl! h-[593px]! justify-end items-end flex flex-row bg-shapes bg-center llvt-banner relative"
+            style="background-image: url('/wp-content/themes/soledad/images/projects/project-llvt.webp');">
+            <div class="max-w-[23.4375rem] xl:max-w-7xl! xl:w-7xl mx-auto px-3! 2xl:px-0! space-y-4 mb-20! z-1">
+                <h2
+                    class="text-[20px]! xl:text-[40px]! font-bold! text-white leading-tight uppercase border-b! border-white/50! pb-4! mb-4!">
+                    Nhà ở cho lực
+                    lượng vũ trang<br />
+                    <span class="text-[33px]! xl:text-[66px]!">Công an nhân dân</span>
+                </h2>
+                <p class="text-white text-base">AN KHÁNH, TP. HÀ NỘI</p>
+                <div class="pt-6">
+                    <a class="text-white px-2! py-2! w-50! rounded-lg text-base transition-all flex items-center
+                        gap-3 border bg-[#FFFFFF1F]" href="#"> KHÁM PHÁ NGAY
+                        <i class="bi bi-box-arrow-up-right"> </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIK Section -->
+        <section id="mik" class="space-y-6 fade-in mt-14!" style="animation-delay: 0.2s">
+            <div
+                class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between border border-gray-100 card-shadow">
+                <div class="flex items-center gap-6 p-3">
+                    <div class="w-[126px] h-[49px] flex items-center justify-center p-2 rounded-xl">
+                        <img src="/wp-content/themes/soledad/images/projects/re-mik.webp" alt="MIK"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h2 class="text-[22px]! font-bold! mb-0!">MIK Group</h2>
+                        <p class="text-sm">Thương hiệu bất động sản uy tín — Tập đoàn MIK Group
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="flex items-center gap-2 mb-8! mt-8!">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse">&#160;</span>
+                    <span class="text-sm font-bold uppercase tracking-widest shrink-0">Đang triển khai</span>
+                    <span class="h-[1px]  bg-gray-200 animate-pulse grow">&#160;</span>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="#">
+                                <img src="/wp-content/themes/soledad/images/projects/project-mik-imperia-smart-city.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="#">
+                                <i class="bi bi-box-arrow-up-right">&#160;</i>
+                            </a>
+
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-xl! font-bold! text-gray-900 uppercase tracking-tight">Imperia Smart
+                                    City</h4>
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> Hà Nội
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Nằm tại "trái tim" đại đô thị Smart City, dự án thừa hưởng trọn vẹn hệ sinh thái tiện
+                                ích cao cấp cùng công viên trung tâm 10.2ha. Imperia Smart City ghi điểm với thiết kế
+                                căn hộ thông minh, ban công rộng mở và không gian xanh ngập tràn, là lựa chọn an cư lý
+                                tưởng cho những gia đình trẻ năng động.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">1,200 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 2.5 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sun Group Section -->
+        <section id="sungroup" class="space-y-6 fade-in mt-14!" style="animation-delay: 0.2s">
+            <div
+                class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between border border-gray-100 card-shadow">
+                <div class="flex items-center gap-6 p-3">
+                    <div class="w-[126px] h-[49px] flex items-center justify-center p-2 rounded-xl">
+                        <img src="/wp-content/themes/soledad/images/projects/re-sungroup.webp" alt="SunGroup"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h2 class="text-[22px]! font-bold! mb-0!">Sun Group</h2>
+                        <p class="text-sm">Thương hiệu bất động sản hàng đầu Việt Nam — Tập đoàn Sun Group
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="flex items-center gap-2 mb-8! mt-8!">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse">&#160;</span>
+                    <span class="text-sm font-bold uppercase tracking-widest shrink-0">Đang triển khai</span>
+                    <span class="h-[1px]  bg-gray-200 animate-pulse grow">&#160;</span>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Card 1 -->
+
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="/noble-place">
+                                <img src="/wp-content/themes/soledad/images/projects/project-sungroup-noble-place.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="/noble-place">
+                                <i class="bi bi-box-arrow-up-right">&#160;</i>
+                            </a>
+
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+
+                                <h4 class="text-xl! font-bold!  uppercase tracking-tight">
+                                    <a class="text-gray-900! hover:text-blue-400!" href="/noble-place">Noble Place
+                                        Tây
+                                        Thăng Long </a>
+                                </h4>
+
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> Hà Nội
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Tọa lạc trên trục đường huyết mạch Tây Thăng Long, Noble Place là tâm điểm kết nối
+                                các
+                                khu đô thị vệ tinh phía Tây Hà Nội. Dự án sở hữu kiến trúc tân cổ điển sang trọng,
+                                hệ
+                                thống cảnh quan xanh mát và chuỗi tiện ích đẳng cấp, mang đến không gian sống yên
+                                bình
+                                nhưng không kém phần thời thượng.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">1,200 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 2.5 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Masterise Homes Section -->
+        <section id="masterise-homes" class="space-y-6 fade-in mt-14!" style="animation-delay: 0.2s">
+            <div
+                class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between border border-gray-100 card-shadow">
+                <div class="flex items-center gap-6 p-3">
+                    <div class="w-[126px] h-[49px] flex items-center justify-center p-2 rounded-xl">
+                        <img src="/wp-content/themes/soledad/images/projects/re-masterise.webp" alt="Masterise Homes"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h2 class="text-[22px]! font-bold! mb-0!">Masterise Homes</h2>
+                        <p class="text-sm">Nhà phát triển bất động sản hạng sang — Masterise Homes
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="flex items-center gap-2 mb-8! mt-8!">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse">&#160;</span>
+                    <span class="text-sm font-bold uppercase tracking-widest shrink-0">Đang triển khai</span>
+                    <span class="h-[1px]  bg-gray-200 animate-pulse grow">&#160;</span>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="#">
+                                <img src="/wp-content/themes/soledad/images/projects/project-mas-west-heights.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="#">
+                                <i class="bi bi-box-arrow-up-right">&#160;</i>
+                            </a>
+
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-xl! font-bold! text-gray-900 uppercase tracking-tight">Masteri West
+                                    Heights</h4>
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> Hà Nội
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Dự án căn hộ cao cấp bậc nhất Tây Hà Nội, sở hữu vị trí đối diện hồ điều hòa trung tâm.
+                                Masteri West Heights gây ấn tượng với tiêu chuẩn bàn giao quốc tế, thiết kế tinh tế từ
+                                các đối tác hàng đầu thế giới và chuỗi tiện ích đặc quyền như bể bơi vô cực, lounge dưới
+                                nước.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">1,200 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 2.5 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden card-shadow card-hover transition-all duration-300 flex flex-col md:flex-row justify-between p-[12px]! gap-3 xl:gap-0">
+                        <div class="w-full md:w-1/3 relative bg-shapes cut-the-bottom-right-corner-29-container">
+                            <a href="#">
+                                <img src="/wp-content/themes/soledad/images/projects/project-mas-era-landmark.webp"
+                                    alt="Project" class="w-full! h-full! object-cover zoom-image">
+                            </a>
+                            <a class="bg-[#232D39] absolute bottom-0 right-0 pl-[13px]! pr-[7px]! py-[8px]! text-white view-more"
+                                href="#">
+                                <i class="bi bi-box-arrow-up-right">&#160;</i>
+                            </a>
+
+                        </div>
+                        <div class="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-xl! font-bold! text-gray-900 uppercase tracking-tight">Masteri Era
+                                    Landmark</h4>
+
+                            </div>
+                            <p class="text-sm text-secondary flex items-center gap-1 mb-1">
+                                <i class="bi bi-geo-alt"></i> TP. Hồ Chí Minh
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                                Tọa lạc tại trung tâm đại đô thị Grand Park, Masteri Era Landmark là biểu tượng của sự
+                                sang trọng và hiện đại. Với tầm nhìn vĩnh cửu hướng sông và công viên 36ha, dự án mang
+                                đến phong cách sống thượng lưu với dịch vụ quản lý chuyên nghiệp và tiện ích nghỉ dưỡng
+                                ngay tại thềm nhà.
+                            </p>
+                            <div class="flex gap-8 justify-between xl:justify-start">
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Diện tích</span>
+                                    <span class="text-sm font-bold">1,200 ha</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Giá</span>
+                                    <span class="text-sm font-bold text-red-500">Từ 2.5 tỷ</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-secondary uppercase block mb-0.5">Bàn giao</span>
+                                    <span class="text-sm font-bold">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Footer -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4 z-50 fade-in"
+        style="animation-delay: 0.5s">
+        <div
+            class="glass-footer rounded-2xl py-3 px-6 shadow-2xl flex flex-wrap justify-between items-center gap-6 text-white border border-white/20">
+            <div class="flex items-center gap-3 text-xs font-medium">
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <i class="fa-solid fa-map-marker-alt text-white"></i>
+                </div>
+                <span>123 Beverly Hill, Long Biên, Hà Nội</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-medium">
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <i class="fa-solid fa-envelope text-white"></i>
+                </div>
+                <span>Email: contact@stnd.vn</span>
+            </div>
+            <div
+                class="flex items-center gap-3 text-xs font-bold text-navy bg-white px-5 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform cursor-pointer">
+                <i class="fa-solid fa-phone-volume text-primary animate-bounce"></i>
+                <span>Hotline: 0989 666 888</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

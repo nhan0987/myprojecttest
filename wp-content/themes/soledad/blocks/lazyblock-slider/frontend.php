@@ -43,7 +43,7 @@ if (!function_exists('lth_slider_output_fe')) :
                                                     $image_mobile_url = $original_url;
                                                 }
                                             ?>
-                                            <a href="<?php echo esc_url($inner['button_url'] ); ?>">
+                                            <a href="<?php echo esc_url( $inner['button_url'] ?? '#' ); ?>">
                                                 
                                                 <picture>
                                                     <source media="(max-width: 768px)" srcset="<?php echo $image_mobile_url; ?>">
@@ -55,16 +55,16 @@ if (!function_exists('lth_slider_output_fe')) :
                                             <div class="container">
                                                 <div class="group-box">
                                                     <div class="text-top">
-                                                        <?php echo wpautop(esc_html($inner['text_top'])); ?>
+                                                        <?php echo wpautop(esc_html( $inner['text_top'] ?? '' )); ?>
                                                     </div>
                                                     <div class="text-title">
-                                                        <?php echo wpautop(esc_html($inner['text_title'])); ?>
+                                                        <?php echo wpautop(esc_html( $inner['text_title'] ?? '' )); ?>
                                                     </div>
                                                     <div class="text-bottom">
-                                                        <?php echo wpautop(esc_html($inner['text_bottom'])); ?>
+                                                        <?php echo wpautop(esc_html( $inner['text_bottom'] ?? '' )); ?>
                                                     </div>
-                                                    <a href="<?php echo esc_url( $inner['button_url'] ); ?>" title="">
-                                                        <?php echo esc_html($inner['button_text']); ?>
+                                                    <a href="<?php echo esc_url( $inner['button_url'] ?? '#' ); ?>" title="">
+                                                        <?php echo esc_html( $inner['button_text'] ?? '' ); ?>
                                                     </a>                                                
                                                 </div>
                                             </div>
@@ -133,6 +133,8 @@ if (!function_exists('lth_slider_output_fe')) :
                                     
                                     </div>
                                 </div>
+                            <?php }  elseif($attributes['display_style'] == 'style_03'){ ?>
+                                
                             <?php } ?>
                         </div>
                     </div>

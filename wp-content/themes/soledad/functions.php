@@ -327,11 +327,11 @@ if (! function_exists('penci_load_scripts')) {
 }
 
 /**
- * Dequeue Soledad theme assets for Hinode Park template
+ * Dequeue Soledad theme assets for specific landing page templates
  */
-add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_hinode', 9999);
-function penci_dequeue_soledad_for_hinode() {
-	if (is_page_template('template-hinode-park.php')) {
+add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_landing', 9999);
+function penci_dequeue_soledad_for_landing() {
+	if (is_page_template('template-hinode-park.php') || is_page_template('template-noble-palace.php')) {
 		global $wp_styles, $wp_scripts;
 
 		// Dequeue main styles
@@ -365,7 +365,7 @@ function penci_dequeue_soledad_for_hinode() {
 		// Remove any style enqueued that has "penci" in its handle
 		if ( isset($wp_styles->queue) ) {
 			foreach ( $wp_styles->queue as $handle ) {
-				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && strpos( $handle, 'noble' ) === false ) {
 					wp_dequeue_style( $handle );
 				}
 			}
@@ -387,7 +387,7 @@ function penci_dequeue_soledad_for_hinode() {
 
 		if ( isset($wp_scripts->queue) ) {
 			foreach ( $wp_scripts->queue as $handle ) {
-				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && $handle !== 'penci-libs-js' ) {
+				if ( strpos( $handle, 'penci' ) !== false && strpos( $handle, 'hinode' ) === false && strpos( $handle, 'noble' ) === false && $handle !== 'penci-libs-js' ) {
 					wp_dequeue_script( $handle );
 				}
 			}
@@ -4816,5 +4816,47 @@ add_filter( 'hpp_disallow_lazyload', function( $disallow, $tag ) {
     }
     return $disallow;
 }, 10, 2 );
+
+/**
+ * Override Open Graph Meta Tags
+ */
+function stnd_override_og_meta_tags() {
+    // Get values from constants in wp-config.php or use defaults
+    $desc    = defined( 'STND_META_DESCRIPTION' ) ? STND_META_DESCRIPTION : 'Khám phá danh sách các dự án bất động sản tiềm năng.';
+    $keyw    = defined( 'STND_META_KEYWORDS' ) ? STND_META_KEYWORDS : 'bất động sản, dự án';
+    $title   = defined( 'STND_OG_TITLE' ) ? STND_OG_TITLE : get_bloginfo( 'name' );
+    $og_desc = defined( 'STND_OG_DESCRIPTION' ) ? STND_OG_DESCRIPTION : $desc;
+    $og_img  = defined( 'STND_OG_IMAGE' ) ? STND_OG_IMAGE : '';
+    
+    // Process image path
+    if ( $og_img && ! filter_var( $og_img, FILTER_VALIDATE_URL ) ) {
+        $og_img = home_url( $og_img );
+    }
+
+    $current_url = esc_url( home_url( add_query_arg( array(), $GLOBALS['wp']->request ) ) );
+
+    // Basic SEO
+    echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
+    echo '<meta name="keywords" content="' . esc_attr( $keyw ) . '">' . "\n";
+
+    // Open Graph / Facebook
+    echo '<meta property="og:type" content="website">' . "\n";
+    echo '<meta property="og:url" content="' . $current_url . '">' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr( $title ) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr( $og_desc ) . '">' . "\n";
+    if ( $og_img ) {
+        echo '<meta property="og:image" content="' . esc_url( $og_img ) . '">' . "\n";
+    }
+
+    // Twitter
+    echo '<meta property="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta property="twitter:url" content="' . $current_url . '">' . "\n";
+    echo '<meta property="twitter:title" content="' . esc_attr( $title ) . '">' . "\n";
+    echo '<meta property="twitter:description" content="' . esc_attr( $og_desc ) . '">' . "\n";
+    if ( $og_img ) {
+        echo '<meta property="twitter:image" content="' . esc_url( $og_img ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'stnd_override_og_meta_tags', 1 );
 
 

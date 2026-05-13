@@ -21,7 +21,7 @@ if (!function_exists('lth_features_output_fe')) :
 <section class="lth-features">            
     <div class="module module_features">
 
-        <?php if ($attributes['categories_style'] == 'grid-02') { ?>
+        <?php if (($attributes['categories_style'] ?? '') == 'grid-02') { ?>
              
                 <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-5! justify-between">
                     <?php foreach( $attributes['items'] as $index => $inner ){
@@ -61,17 +61,17 @@ if (!function_exists('lth_features_output_fe')) :
 
         <?php } else {?>
             
-            <?php if ($attributes['title'] || $attributes['description'] || $attributes['categories']) : ?>
+            <?php if (($attributes['title'] ?? '') || ($attributes['description'] ?? '') || ($attributes['categories'] ?? '')) : ?>
                 <div class="module_header title-box">
                     <?php if (isset($attributes['title'])) : ?>
                         <h2 class="title">
-                            <?php if ($attributes['url']) : ?> 
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 <a href="<?php echo esc_url($attributes['url']); ?>" title="">
                             <?php else : ?>
                                 <span>
                             <?php endif; ?>
-                                <?php echo wpautop(esc_html($attributes['title'])); ?>
-                            <?php if ($attributes['url']) : ?> 
+                                <?php echo wpautop(esc_html($attributes['title'] ?? '')); ?>
+                            <?php if ($attributes['url'] ?? '') : ?> 
                                 </a>
                             <?php else : ?>
                                 </span>
@@ -79,7 +79,7 @@ if (!function_exists('lth_features_output_fe')) :
                         </h2>
                     <?php endif; ?>
 
-                    <?php if ($attributes['description']) : ?>
+                    <?php if ($attributes['description'] ?? '') : ?>
                         <div class="infor">
                             <?php echo wpautop(esc_html($attributes['description'])); ?>
                         </div>
