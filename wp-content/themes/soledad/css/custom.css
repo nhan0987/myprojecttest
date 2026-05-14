@@ -4279,7 +4279,7 @@ html {
 		padding: 0.3rem 1.5rem 0px 1.5rem;
 		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 0.9rem;
+
 		text-align: left;
 
 	}
@@ -4303,6 +4303,7 @@ html {
 		display: block;
 		color: white;
 		font-size: 0.875rem;
+		padding-top: 16px;
 	}
 
 	.cut-the-top-left-corner-09-container:is(:hover, :active) .tlc-title,
@@ -4315,7 +4316,7 @@ html {
 		font-size: 1rem !important;
 		font-weight: 600 !important;
 		padding-left: 3rem;
-
+		padding-top: 12px;
 	}
 
 	.cut-the-top-left-corner-09-container:is(:hover, :active) .icons-container,
@@ -7163,4 +7164,12 @@ html {
 	bottom: 0;
 	background: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, rgba(0, 0, 0, 0.69) 100%);
 	border-radius: 16px;
+}
+
+.footer-widget-wrapper a,
+.footer-widget-wrapper .widget ul.side-newsfeed li .side-item .side-item-text h4 a,
+.footer-widget-wrapper .widget a,
+.footer-widget-wrapper .widget-social a i,
+.footer-widget-wrapper .widget-social a span {
+	color: #ffffff;
 }
