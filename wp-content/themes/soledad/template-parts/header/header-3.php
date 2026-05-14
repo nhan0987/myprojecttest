@@ -41,7 +41,7 @@
 		?>
 		<nav id="navigation" class="<?php echo $class_layout_bottom; ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 			
-			<div class="container-fullwidth flex items-center justify-around xl:justify-center mx-auto py-[0.8rem]! lg:py-[0.1rem]! max-w-[22.5rem]!">
+			<div class="container-fullwidth flex items-center justify-around xl:justify-center mx-auto py-[0.8rem]! lg:py-[0.1rem]!">
 				<div class="button-menu-mobile header-3 "><?php penci_fawesome_icon('fas fa-bars'); ?></div>
 				
 				

@@ -10,6 +10,7 @@ get_header();
 
 $term = get_queried_object();
 $add_page = get_field('add_page', $term);
+$two_sidebar_class = '';
 
 if (!$add_page) {
 	/* Sidebar position */
@@ -181,7 +182,7 @@ if (!$add_page) {
 		<div class="container penci-breadcrumb<?php echo $two_sidebar_class; ?>">
 			<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 			<?php
-			$parent_ID = penci_get_category_parent_id( $fea_cat_id );
+			$parent_ID = penci_get_category_parent_id( $term->term_id );
 			if( $parent_ID ):
 			echo penci_get_category_parents( $parent_ID );
 			endif;
