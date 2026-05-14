@@ -5,6 +5,14 @@
  * A premium landing page template for Noble Palace Tây Thăng Long.
  */
 $theme_uri = get_template_directory_uri();
+
+// Ensure the theme's Speed Optimizer (hpp) does not rewrite images we explicitly want to load immediately
+add_filter('hpp_disallow_lazyload', function($ok, $tag){
+    if (strpos($tag, 'penci-disable-lazy') !== false) {
+        return 1;
+    }
+    return $ok;
+}, 99, 2);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -12,6 +20,9 @@ $theme_uri = get_template_directory_uri();
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <?php 
   add_action('wp_enqueue_scripts', function() {
     // Enqueue Google Fonts
@@ -20,7 +31,13 @@ $theme_uri = get_template_directory_uri();
     // Custom Style & Scripts
     wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.0');
     wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.0', true);
-  });
+  }, 100);
+
+  add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('tailwind');
+    wp_dequeue_script('tailwind');
+    wp_dequeue_script('penci-libs-js');
+  }, 999);
 
   wp_head(); 
   ?>
@@ -40,9 +57,9 @@ $theme_uri = get_template_directory_uri();
 <!-- HEADER -->
 <header class="header">
   <div class="header-logo">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/logo.webp" alt="Noble Palace Logo" />
+    <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/logo.webp" alt="Noble Palace Logo" width="39" height="44" />
     <div class="logo-text">
-      <span class="logo-name">Noble pLACE</span>
+      <span class="logo-name">Noble PALACE</span>
       <div class="logo-sub">Tây Thăng Long</div>
     </div>
   </div>
@@ -60,7 +77,17 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg.webp" 
+       srcset="<?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg-mobile.webp 768w, <?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg.webp 1920w"
+       sizes="100vw"
+       alt="Noble Palace Background"
+       class="hero-bg penci-disable-lazy skip-lazy no-lazy"
+       data-skip-lazy="1"
+       data-no-lazy="1"
+       data-rocket-lazyload="ignore"
+       fetchpriority="high"
+       width="1920"
+       height="1080" />
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-content">
@@ -90,7 +117,7 @@ $theme_uri = get_template_directory_uri();
       <p class="form-title">Nhận Báo Giá Ưu Đãi</p>
       <p class="form-sub">Chuyên viên STND liên hệ trong 15 phút</p>
       <div class="form-cf7-wrap">
-        <?php echo do_shortcode('[contact-form-7 id="3c72e7e" title="Noble Place - Liên hệ"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="3c72e7e" title="Noble Palace - Liên hệ"]'); ?>
       </div>
       <p class="form-note">Bảo mật thông tin tuyệt đối · Miễn phí hoàn toàn · STND tư vấn ngay</p>
     </div>
@@ -232,7 +259,7 @@ $theme_uri = get_template_directory_uri();
         </div>
         <div class="card-body">
           <div class="card-tag">Elegant · Nội Khu</div>
-          <div class="card-urgency"><div class="dot"></div> Còn 4 căn · Phân khu Legacy</div>
+          <div class="card-urgency"><div class="dot"></div> Còn 5 căn · Vị trí đỉnh nhất dự án</div>
           <div>
             <div class="card-title">Mặt Đại Lộ 40m</div>
             <div class="card-loc">Trục Hoàng Quốc Việt kéo dài · Góc giao lộ</div>
@@ -245,7 +272,7 @@ $theme_uri = get_template_directory_uri();
           </div>
           <div class="card-price-block">
             <div class="card-price">Từ 30 tỷ</div>
-            <div class="card-finance">Fullgiá 34–36 tỷ · Giảm thẳng 2 tỷ khi ký HĐ</div>
+            <div class="card-finance">Full giá 34–36 tỷ · Giảm thẳng 2 tỷ khi ký HĐ</div>
           </div>
           <div class="card-features">
             <div class="card-feature"><span class="dash">–</span> Vị trí đắc địa nhất — mặt đường 40m</div>
@@ -574,7 +601,7 @@ $theme_uri = get_template_directory_uri();
         <div class="agent-brand-name">SIÊU THỊ NHÀ ĐẤT – <span>STND</span></div>
         <div class="agent-auth">✓ Ủy quyền Noble Group · Sunshine Group</div>
         <div class="agent-divider"></div>
-        <div class="agent-motto">Mang đến những Giá trị &amp; Trải nghiệm</div>
+        <div class="agent-motto">Mang đến những Giá trị &amp; Trải nghiệm tuyệt vời cho khách hàng</div>
         <a class="agent-link" href="https://stnd.vn" target="_blank">stnd.vn →</a>
       </div>
 
