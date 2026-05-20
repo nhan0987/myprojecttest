@@ -2890,7 +2890,11 @@ li.nav-item::marker {
 
 .tab-pane .accordion-item {
 	position: relative;
-	border: 1px solid #eaab39;
+	border: 1px solid transparent;
+}
+
+.tab-pane .accordion-item:hover {
+	border: 2px solid #eaab39;
 }
 
 .tab-pane .shield-box {
@@ -2904,8 +2908,8 @@ li.nav-item::marker {
 	rotate: 45deg;
 	display: flex;
 	z-index: 10;
-	width: 2rem;
-	height: 2rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	background: radial-gradient(92.46% 138.54% at 49.35% 100%, #FFD45C 0%, #9E5625 100%);
 }
 
@@ -3191,12 +3195,18 @@ li.nav-item::marker {
 }
 
 .tab-content-style-01 .accordion-button:not(.collapsed) {
-	box-shadow: none;
+	/* box-shadow: none;
 	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	-webkit-background-clip: text;
 	background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent; */
+	color: #000;
 
+}
+
+.tab-content-style-01 .accordion-body {
+	font-size: 14px;
+	padding: 16px 24px;
 }
 
 .tab-content-style-01 .collapse {
@@ -3208,7 +3218,7 @@ li.nav-item::marker {
 }
 
 .tab-content-style-01 .accordion-item:hover {
-	border: 1px solid #FFD45C;
+	border: 2px solid #FFD45C;
 }
 
 .tab-content-style-01 .accordion-button:focus {
@@ -4583,7 +4593,7 @@ html {
 
 .cut-the-top-left-corner-30-container {
 	aspect-ratio: 320 / 150;
-	background-color: #02253D;
+	background-color: #232D39;
 	-webkit-mask-image: url("/wp-content/themes/soledad/shapes/shape-style-30-mobile.svg");
 	mask-image: url("/wp-content/themes/soledad/shapes/shape-style-30-mobile.svg");
 	mask-size: 100% auto;
@@ -4615,10 +4625,10 @@ html {
 	width: 12.9375rem;
 	height: 15.625rem;
 	background-color: #485563;
-	right: -9.25rem;
-	bottom: -4.25rem;
-	transform: rotate(-53deg);
-	opacity: 0.5;
+	right: -11.25rem;
+	bottom: -7.25rem;
+	transform: rotate(-24deg);
+	opacity: .5;
 	z-index: -1;
 }
 
@@ -4631,14 +4641,17 @@ html {
 
 .cut-the-top-left-corner-30-container .tlc-title {
 	display: block;
-	background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
+	/* background: linear-gradient(86.24deg, #FFD45C 1.16%, #9E5625 128.11%);
 	-webkit-background-clip: text;
 	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-size: 1rem !important;
-	font-weight: 600 !important;
+	-webkit-text-fill-color: transparent; */
+
+	color: white;
+	font-size: 14px !important;
+	font-weight: 500 !important;
 	padding-left: 2.5rem;
 	padding-top: 12px;
+	line-height: 18px;
 }
 
 .cut-the-top-left-corner-30-container .icons-container {
@@ -7338,4 +7351,16 @@ html {
 	.style-30-tab .tab-label {
 		font-size: 1rem;
 	}
+}
+
+.penci-breadcrumb a {
+	background: linear-gradient(86deg, #FFD45C 1.16%, #9E5625 128.11%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.penci-breadcrumb {
+	margin-bottom: 18px;
 }

@@ -2263,138 +2263,369 @@ button {
   transform: none;
 }
 
-/* --- CF7 Noble Palace Form Styling (Refined) --- */
-.form-cf7-wrap .wpcf7-form {
+
+/* SECTION 2: CHÍNH SÁCH BÁN HÀNG */
+.policy-sec {
+  --navy: #1a2d42;
+  --navy-2: #243d58;
+  --gold: #b8963e;
+  --gold-l: #d4aa55;
+}
+
+/* ─── FLOATING CTA (Mobile) ─── */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 12px 16px;
+  background: var(--c1);
+  gap: 8px;
+}
+
+.floating-cta a {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.floating-cta a:first-child {
+  background: var(--c2);
+}
+
+.floating-cta a:last-child {
+  background: var(--c1);
+  border: 1px solid rgba(255, 255, 255, .3);
+}
+
+@media (max-width: 768px) {
+  .floating-cta {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* ─── Scroll animations ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* SECTION 2: CHÍNH SÁCH BÁN HÀNG */
+.policy-sec {
+  --navy: #1a2d42;
+  --navy-2: #243d58;
+  --gold: #b8963e;
+  --gold-l: #d4aa55;
+  --gold-p: #d4aa55;
+  --cream: #faf7f2;
+  --cream-2: #f3ede3;
+  --white: #ffffff;
+  --text: #1a2d42;
+  --text-2: #4a5c70;
+  --text-3: #8a9ab0;
+  --border: rgba(184, 150, 62, 0.22);
+  --border2: rgba(26, 45, 66, 0.12);
+  --danger: #c0392b;
+  --serif: 'Playfair Display', serif;
+  --sans: 'Montserrat', sans-serif;
+  background: #fff;
+}
+
+.policy-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border2);
+  margin-top: 44px;
+}
+
+.policy-overview-item {
+  padding: 24px 32px;
+  border-right: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.policy-overview-item:last-child {
+  border-right: none;
+}
+
+.policy-overview-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.policy-overview-val {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.policy-overview-val.gold {
+  color: var(--gold);
+}
+
+.policy-overview-val.navy {
+  color: var(--navy);
+}
+
+.policy-overview-val span {
+  font-size: 28px;
+}
+
+.policy-overview-val span.gold {
+  color: var(--gold);
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border2);
+  margin-top: 48px
+}
+
+.policy-grid.mt-1 {
+  margin-top: 1px;
+}
+
+.pol-card {
+  padding: 32px 28px;
+  border-right: 1px solid var(--border2);
+  display: flex;
+  flex-direction: column;
+}
+
+.pol-card:last-child {
+  border-right: none
+}
+
+.pol-card.kim-cuong {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  border-right: 1px solid rgba(255, 255, 255, .08);
+}
+
+.pol-card-header {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-l);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pol-card-header .icon {
+  font-size: 14px;
+}
+
+.pol-card-benefits {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.pol-card-benefit-val {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold-l);
+  line-height: 1;
+}
+
+.pol-card-benefit-val span {
+  font-size: 18px;
+}
+
+.pol-card-benefit-lbl {
+  font-size: 11px;
+  color: rgba(255, 255, 255, .5);
+  margin-top: 4px;
+}
+
+.pol-card-or {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .4);
+  font-style: italic;
+}
+
+.pol-num {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--gold-p);
+  line-height: 1;
+  margin-bottom: 16px
+}
+
+.pol-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px
+}
+
+.pol-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.pol-desc strong {
+  color: var(--navy);
+}
+
+.pol-val {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 14px
+}
+
+.policy-extras {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border2);
+  border-top: none
+}
+
+.pe-item {
+  padding: 20px 22px;
+  border-right: 1px solid var(--border2);
+  text-align: center
+}
+
+.pe-item:last-child {
+  border-right: none
+}
+
+.pe-val {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy)
+}
+
+.pe-label {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 4px;
+  line-height: 1.4
+}
+
+.payment-grid-mob {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border2);
+  margin-top: 1px;
+}
+
+.payment-block {
+  background: #fff;
+  padding: 28px;
+}
+
+.payment-block-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.payment-list {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
-.form-cf7-wrap .wpcf7-form br {
-  display: none;
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cream-2);
 }
 
-.form-cf7-wrap .wpcf7-form p {
-  margin: 0 0 16px 0 !important;
-  display: block;
+.payment-row.last {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.form-cf7-wrap label {
-  display: block;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #888;
-  letter-spacing: .5px;
-  margin-bottom: 6px;
+.payment-row-lbl {
+  font-size: 12px;
+  color: var(--text-3);
 }
 
-.form-cf7-wrap .wpcf7-form-control-wrap {
-  display: block;
-  margin-bottom: 2px;
+.payment-row-val {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
 }
 
-.form-cf7-wrap input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
-.form-cf7-wrap select,
-.form-cf7-wrap textarea {
-  width: 100% !important;
-  border: 1px solid rgba(92, 26, 26, .15) !important;
-  padding: 10px 12px !important;
-  font-size: 13px !important;
-  color: var(--c1) !important;
-  outline: none !important;
-  background: #fdfcf9 !important;
-  border-radius: 0 !important;
-  box-sizing: border-box !important;
-  height: 42px;
+.payment-row-val.gold {
+  color: var(--gold);
 }
 
-.form-cf7-wrap input:focus {
-  border-color: var(--c2b) !important;
-  /* background: #fff !important; */
-}
-
-/* Checkbox group styling */
-.form-cf7-wrap .wpcf7-checkbox {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.form-cf7-wrap .wpcf7-list-item {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 8px !important;
-  margin: 0 !important;
-}
-
-.form-cf7-wrap .wpcf7-list-item-label {
-  font-size: 12px !important;
-  color: var(--c1) !important;
-  text-transform: none !important;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
-  margin: 0 !important;
-  line-height: 1.3 !important;
-}
-
-.form-cf7-wrap input[type="checkbox"] {
-  margin: 0 !important;
-  margin-top: 2px !important;
-  width: 16px !important;
-  height: 16px !important;
-  flex-shrink: 0;
-}
-
-.form-cf7-wrap .wpcf7-submit {
-  width: 100% !important;
-  background: var(--c1) !important;
-  color: #fff !important;
-  padding: 14px !important;
-  font-weight: 700 !important;
-  font-size: 12px !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  border: none !important;
-  cursor: pointer !important;
-  transition: all .3s !important;
-  margin-top: 10px !important;
-  border-radius: 0 !important;
-  height: auto !important;
-}
-
-@media (min-width:768px) {
-  .form-cf7-wrap .wpcf7-submit {
-    font-size: 14px !important;
-  }
-}
-
-.form-cf7-wrap .wpcf7-submit:hover {
-  background: var(--c2b) !important;
-}
-
-.form-cf7-wrap .wpcf7-spinner {
-  display: none !important;
-}
-
-
-.form-cf7-wrap .wpcf7-not-valid-tip {
-  font-size: 11px;
-  color: #ff201c;
-  margin-top: 4px;
-}
-
-.form-cf7-wrap .wpcf7-response-output {
-  margin: 15px 0 0 !important;
-  padding: 10px !important;
-  font-size: 12px !important;
-  border-radius: 0 !important;
-  border: 1px solid #ddd !important;
-}
-
-@media (max-width: 480px) {
-  .form-cf7-wrap .wpcf7-checkbox {
+@media(max-width:768px) {
+  .policy-overview {
     grid-template-columns: 1fr;
+  }
+
+  .policy-overview-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border2);
+  }
+
+  .policy-overview-item:last-child {
+    border-bottom: none;
+  }
+
+  .policy-grid {
+    grid-template-columns: 1fr
+  }
+
+  .pol-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border2)
+  }
+
+  .policy-extras {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .payment-grid-mob {
+    grid-template-columns: 1fr !important;
   }
 }

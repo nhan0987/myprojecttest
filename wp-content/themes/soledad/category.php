@@ -179,7 +179,7 @@ if (!$add_page) {
 		if( $yoast_breadcrumb ){
 			echo $yoast_breadcrumb;
 		}else{ ?>
-		<div class="container penci-breadcrumb<?php echo $two_sidebar_class; ?>">
+		<div class="max-w-sm xl:max-w-7xl mx-auto px-3! 2xl:px-0! penci-breadcrumb<?php echo $two_sidebar_class; ?>">
 			<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 			<?php
 			$parent_ID = penci_get_category_parent_id( $term->term_id );

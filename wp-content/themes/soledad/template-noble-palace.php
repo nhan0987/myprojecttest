@@ -36,7 +36,6 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   add_action('wp_enqueue_scripts', function() {
     wp_dequeue_style('tailwind');
     wp_dequeue_script('tailwind');
-    wp_dequeue_script('penci-libs-js');
   }, 999);
 
   wp_head(); 
@@ -293,51 +292,153 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
 </section>
 
 <!-- SECTION 2: CHÍNH SÁCH BÁN HÀNG -->
-<section class="section bg-white" id="policy">
+<section class="policy-sec section bg-white" id="policy">
   <div class="section-inner">
     <div class="section-head">
-      <span class="section-label">Chính Sách Bán Hàng</span>
-      <h2 class="section-title">Ưu Đãi Vượt Trội —<br /><span class="gold">Mua Sớm Lợi Nhiều</span></h2>
+      <span class="section-label" style="text-transform: uppercase;">Chính Sách Bán Hàng · Áp dụng từ 13/05/2026</span>
+      <h2 class="section-title">Ưu Đãi Vượt Trội —<br /><span class="gold">Gần 1,12 Tỷ Đồng</span></h2>
       <div class="section-rule"></div>
     </div>
 
-    <div class="policy-grid">
-      <div class="policy-card">
-        <div class="policy-num">01</div>
-        <div class="policy-title">Chiết Khấu Thanh Toán Sớm</div>
-        <div class="policy-desc">Chiết khấu 10% tổng giá trị sản phẩm khi thanh toán sớm. Suất ngoại giao được cộng thêm 2% đặc biệt.</div>
-        <div class="policy-highlight">10–12% CK</div>
+    <!-- TỔNG QUAN CHÍNH SÁCH -->
+    <div class="policy-overview">
+      <div class="policy-overview-item">
+        <div>
+          <div class="policy-overview-label">Chiết khấu lên đến</div>
+          <div class="policy-overview-val gold">12,7<span>%</span></div>
+        </div>
       </div>
-      <div class="policy-card">
-        <div class="policy-num">02</div>
-        <div class="policy-title">Lãi Suất Ưu Đãi Ngân Hàng</div>
-        <div class="policy-desc">Vay vốn đến 70% giá trị căn. Lãi suất 0% trong 18 tháng đầu. Hỗ trợ hồ sơ vay miễn phí qua MB Bank, VPBank.</div>
-        <div class="policy-highlight">0% / 18 tháng</div>
-      </div>
-      <div class="policy-card">
-        <div class="policy-num">03</div>
-        <div class="policy-title">Lợi Nhuận Vượt Tiến Độ</div>
-        <div class="policy-desc">Nhận 9%/năm cho khoản tiền thanh toán vượt tiến độ. Sinh lời ngay từ khi chưa nhận nhà.</div>
-        <div class="policy-highlight">9%/năm</div>
+      <div class="policy-overview-item">
+        <div>
+          <div class="policy-overview-label">Chính sách ưu đãi lên đến gần</div>
+          <div class="policy-overview-val gold">1,12<span> Tỷ</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="mini-cards" style="margin-top:4px">
-      <div class="mini-card">
-        <div class="val">300tr</div>
-        <div class="lbl">Thẻ Debit tặng kèm từ CĐT</div>
+    <!-- 3 CHÍNH SÁCH CHÍNH -->
+    <div class="policy-grid mt-1">
+      <!-- LỢI NHUẬN KIM CƯƠNG -->
+      <div class="pol-card kim-cuong">
+        <div class="pol-card-header">
+          <span class="icon">💎</span> Lợi Nhuận Kim Cương
+        </div>
+        <div class="pol-card-benefits">
+          <div>
+            <div class="pol-card-benefit-val">720 <span>triệu</span></div>
+            <div class="pol-card-benefit-lbl">Lợi nhuận trong 24 tháng</div>
+          </div>
+          <div class="pol-card-or">hoặc</div>
+          <div>
+            <div class="pol-card-benefit-val">500 <span>triệu</span></div>
+            <div class="pol-card-benefit-lbl">Quà tặng nội thất</div>
+          </div>
+        </div>
       </div>
-      <div class="mini-card">
-        <div class="val">24T</div>
-        <div class="lbl">Miễn phí quản lý WorldHotels</div>
+
+      <!-- LÃI SUẤT + VAY -->
+      <div class="pol-card">
+        <div class="pol-num">02</div>
+        <div class="pol-title">Hỗ Trợ Lãi Suất 70%</div>
+        <div class="pol-desc">Vay vốn đến 70% giá trị căn. <strong>0% lãi suất 24 tháng đầu</strong>, cố định 8% cho 12 tháng tiếp theo. Ân hạn nợ gốc trong suốt thời gian hỗ trợ.</div>
+        <div class="pol-val">36 tháng hỗ trợ</div>
       </div>
-      <div class="mini-card">
-        <div class="val">1%</div>
-        <div class="lbl">CK thêm cho KH ĐKTT Đan Phượng</div>
+
+      <!-- QUÀ TÀI LỘC -->
+      <div class="pol-card">
+        <div class="pol-num">03</div>
+        <div class="pol-title">Quà Tài Lộc</div>
+        <div class="pol-desc">Dành cho các căn từ 75m2 trở lên. Tặng kèm thẻ KLB trị giá <strong>250 triệu</strong> cho tất cả các sản phẩm. Quà tặng an cư thêm 1-1,5%.</div>
+        <div class="pol-val">150 triệu</div>
       </div>
-      <div class="mini-card">
-        <div class="val">2 tỷ</div>
-        <div class="lbl">Hỗ trợ vay qua Noble App</div>
+    </div>
+
+    <!-- 4 ƯU ĐÃI PHỤ -->
+    <div class="policy-extras">
+      <div class="pe-item">
+        <div class="pe-val">10%</div>
+        <div class="pe-label">Chiết khấu TTS thanh toán sớm</div>
+      </div>
+      <div class="pe-item">
+        <div class="pe-val">24T</div>
+        <div class="pe-label">Miễn phí quản lý vận hành 5 sao</div>
+      </div>
+      <div class="pe-item">
+        <div class="pe-val">250tr</div>
+        <div class="pe-label">Thẻ KLB tặng kèm tất cả sản phẩm</div>
+      </div>
+      <div class="pe-item">
+        <div class="pe-val">8%</div>
+        <div class="pe-label">Quà Noble HOME+ trên 15% giá trị BĐS</div>
+      </div>
+    </div>
+
+    <!-- TIẾN ĐỘ THANH TOÁN -->
+    <div class="payment-grid-mob">
+      <!-- VAY NGÂN HÀNG -->
+      <div class="payment-block">
+        <div class="payment-block-title">Thanh Toán Vay Ngân Hàng</div>
+        <div class="payment-list">
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đặt cọc</span>
+            <span class="payment-row-val">500 tr</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Ký TTĐC</span>
+            <span class="payment-row-val">15%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 1 - Ký HĐMB (7 ngày)</span>
+            <span class="payment-row-val">10%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 2 (7 ngày)</span>
+            <span class="payment-row-val gold">70%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 3 - 100% KPBT (30 ngày)</span>
+            <span class="payment-row-val">còn lại</span>
+          </div>
+          <div class="payment-row last">
+            <span class="payment-row-lbl">Đợt 4 - GCN (khấu trừ từ đợt 4)</span>
+            <span class="payment-row-val">5%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIẾN ĐỘ -->
+      <div class="payment-block">
+        <div class="payment-block-title">Thanh Toán Tiến Độ</div>
+        <div class="payment-list">
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đặt cọc</span>
+            <span class="payment-row-val">500 tr</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Ký TTĐC</span>
+            <span class="payment-row-val">15%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 1 - Ký HĐMB (7 ngày)</span>
+            <span class="payment-row-val">10%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 2 (7 ngày)</span>
+            <span class="payment-row-val">20%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 3 (30 ngày)</span>
+            <span class="payment-row-val">25%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 4 - 100% KPBT (60 ngày)</span>
+            <span class="payment-row-val">30%</span>
+          </div>
+          <div class="payment-row last">
+            <span class="payment-row-lbl">Đợt 5 TTBS + Đợt 6 GCN</span>
+            <span class="payment-row-val">5%</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -486,6 +587,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     <div class="amenity-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/amenity-strip-3.webp" alt="Giải pháp tài chính" /></div>
   </div>
 
+
   <!-- Navy legal bar -->
   <div class="legal-bar">
     <div class="legal-item">
@@ -585,6 +687,11 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     </div>
   </div>
 </section>
+
+  <div id="iframe-container">
+      <p style="text-align: center; padding-top: 200px;">Đang cuộn đến vùng bản đồ 360...</p>
+  </div>
+
 
 <!-- SECTION 5: ĐƠN VỊ PHÂN PHỐI -->
 <section class="section bg-gold" id="agent">
