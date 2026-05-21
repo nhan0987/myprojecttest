@@ -1863,6 +1863,10 @@ function add_comments_page( $page_title, $menu_title, $capability, $menu_slug, $
 function remove_menu_page( $menu_slug ) {
 	global $menu;
 
+	if ( ! is_array( $menu ) ) {
+		return false;
+	}
+
 	foreach ( $menu as $i => $item ) {
 		if ( $menu_slug === $item[2] ) {
 			unset( $menu[ $i ] );

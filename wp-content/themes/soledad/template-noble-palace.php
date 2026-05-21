@@ -321,15 +321,15 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
       <!-- LỢI NHUẬN KIM CƯƠNG -->
       <div class="pol-card kim-cuong">
         <div class="pol-card-header">
-          <span class="icon">💎</span> Lợi Nhuận Kim Cương
+          <div class="pol-num">01</div>
+          <div class="pol-title-1">Lợi Nhuận Kim Cương</div>
         </div>
         <div class="pol-card-benefits">
-          <div>
+          <div style="border-right: 1px solid #e5e7eb3b !important;padding-right: 16px;">
             <div class="pol-card-benefit-val">720 <span>triệu</span></div>
             <div class="pol-card-benefit-lbl">Lợi nhuận trong 24 tháng</div>
           </div>
-          <div class="pol-card-or">hoặc</div>
-          <div>
+          <div style="padding-left: 16px;opacity:0.8">
             <div class="pol-card-benefit-val">500 <span>triệu</span></div>
             <div class="pol-card-benefit-lbl">Quà tặng nội thất</div>
           </div>
@@ -432,7 +432,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
           </div>
           <div class="payment-row">
             <span class="payment-row-lbl">Đợt 4 - 100% KPBT (60 ngày)</span>
-            <span class="payment-row-val">30%</span>
+            <span class="payment-row-val gold">30%</span>
           </div>
           <div class="payment-row last">
             <span class="payment-row-lbl">Đợt 5 TTBS + Đợt 6 GCN</span>
@@ -440,6 +440,9 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
           </div>
         </div>
       </div>
+    </div>
+    <div style="margin-top:10px">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/banner_mer_01.webp" alt="Bốc thăm xe Mercedes" />
     </div>
   </div>
 </section>
@@ -688,9 +691,9 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   </div>
 </section>
 
-  <div id="iframe-container">
+  <!-- <div id="iframe-container">
       <p style="text-align: center; padding-top: 200px;">Đang cuộn đến vùng bản đồ 360...</p>
-  </div>
+  </div> -->
 
 
 <!-- SECTION 5: ĐƠN VỊ PHÂN PHỐI -->
@@ -826,6 +829,26 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
 <div class="floating-cta">
   <a href="tel:0972991551">📞 Gọi Ngay</a>
   <a href="#hero-form" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'});return false;">Nhận Báo Giá</a>
+</div>
+
+<!-- HTML giữ class cho CSS Optimizer (Flying Press) không xóa CSS của Popup -->
+<div style="display: none;">
+    <div class="np-popup-overlay active">
+        <div class="np-popup-content">
+            <button class="np-popup-close">&times;</button>
+            <picture class="np-popup-img">
+                <img src="" alt="">
+            </picture>
+        </div>
+        <div class="np-form-content">
+            <button class="np-popup-close">&times;</button>
+            <div class="np-form-inner">
+                <h3 class="np-form-title">Đăng ký</h3>
+                <input type="text" class="np-form-input">
+                <button class="np-form-submit">Gửi</button>
+            </div>
+        </div>
+    </div>
 </div>
 
     <?php wp_footer(); ?>

@@ -2370,11 +2370,10 @@ button {
 }
 
 .policy-overview-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-3);
+  font-size: 16px;
+  color: var(--text);
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .policy-overview-val {
@@ -2431,10 +2430,9 @@ button {
 .pol-card-header {
   font-size: 10px;
   letter-spacing: 2px;
-  text-transform: uppercase;
   color: var(--gold-l);
   margin-bottom: 14px;
-  display: flex;
+  display: grid;
   align-items: center;
   gap: 6px;
 }
@@ -2453,8 +2451,8 @@ button {
 
 .pol-card-benefit-val {
   font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--gold-l);
   line-height: 1;
 }
@@ -2464,7 +2462,7 @@ button {
 }
 
 .pol-card-benefit-lbl {
-  font-size: 11px;
+  font-size: 14px;
   color: rgba(255, 255, 255, .5);
   margin-top: 4px;
 }
@@ -2476,9 +2474,9 @@ button {
 }
 
 .pol-num {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 300;
+  font-family: var(--sans);
+  font-size: 40px;
+  font-weight: 700;
   color: var(--gold-p);
   line-height: 1;
   margin-bottom: 16px
@@ -2490,6 +2488,14 @@ button {
   color: var(--navy);
   margin-bottom: 8px
 }
+
+.pol-title-1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px
+}
+
 
 .pol-desc {
   font-size: 13px;
@@ -2504,8 +2510,8 @@ button {
 
 .pol-val {
   font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--gold);
   margin-top: 14px
 }
@@ -2529,38 +2535,40 @@ button {
 }
 
 .pe-val {
-  font-family: var(--serif);
-  font-size: 26px;
+  font-family: var(--sans);
+  font-size: 24px;
   font-weight: 700;
   color: var(--navy)
 }
 
 .pe-label {
-  font-size: 11px;
-  color: var(--text-3);
+  font-size: 14px;
+  color: var(--c5);
   margin-top: 4px;
-  line-height: 1.4
+  line-height: 1.4;
+  font-weight: 400;
 }
 
 .payment-grid-mob {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: var(--border2);
-  margin-top: 1px;
+  /* background: var(--border2); */
+  margin-top: 10px;
 }
 
 .payment-block {
   background: #fff;
-  padding: 28px;
+  padding: 28px 28px 28px 0px;
 }
 
 .payment-block-title {
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .payment-list {
@@ -2583,14 +2591,15 @@ button {
 }
 
 .payment-row-lbl {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-3);
 }
 
 .payment-row-val {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 700;
+
+  font-size: 16px;
+  font-weight: 600;
   color: var(--navy);
 }
 
@@ -2627,5 +2636,289 @@ button {
 
   .payment-grid-mob {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- CF7 Noble Palace Form Styling (Refined) --- */
+.form-cf7-wrap .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-cf7-wrap .wpcf7-form br {
+  display: none;
+}
+
+.form-cf7-wrap .wpcf7-form p {
+  margin: 0 0 16px 0 !important;
+  display: block;
+}
+
+.form-cf7-wrap label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+
+.form-cf7-wrap .wpcf7-form-control-wrap {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.form-cf7-wrap input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.form-cf7-wrap select,
+.form-cf7-wrap textarea {
+  width: 100% !important;
+  border: 1px solid rgba(92, 26, 26, .15) !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  color: var(--c1) !important;
+  outline: none !important;
+  background: #fdfcf9 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  height: 42px;
+}
+
+.form-cf7-wrap input:focus {
+  border-color: var(--c2b) !important;
+  /* background: #fff !important; */
+}
+
+/* Checkbox group styling */
+.form-cf7-wrap .wpcf7-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.form-cf7-wrap .wpcf7-list-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  margin: 0 !important;
+}
+
+.form-cf7-wrap .wpcf7-list-item-label {
+  font-size: 12px !important;
+  color: var(--c1) !important;
+  text-transform: none !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.form-cf7-wrap input[type="checkbox"] {
+  margin: 0 !important;
+  margin-top: 2px !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+}
+
+.form-cf7-wrap .wpcf7-submit {
+  width: 100% !important;
+  background: var(--c1) !important;
+  color: #fff !important;
+  padding: 14px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all .3s !important;
+  margin-top: 10px !important;
+  border-radius: 0 !important;
+  height: auto !important;
+}
+
+@media (min-width:768px) {
+  .form-cf7-wrap .wpcf7-submit {
+    font-size: 14px !important;
+  }
+}
+
+.form-cf7-wrap .wpcf7-submit:hover {
+  background: var(--c2b) !important;
+}
+
+.form-cf7-wrap .wpcf7-spinner {
+  display: none !important;
+}
+
+
+.form-cf7-wrap .wpcf7-not-valid-tip {
+  font-size: 11px;
+  color: #ff201c;
+  margin-top: 4px;
+}
+
+.form-cf7-wrap .wpcf7-response-output {
+  margin: 15px 0 0 !important;
+  padding: 10px !important;
+  font-size: 12px !important;
+  border-radius: 0 !important;
+  border: 1px solid #ddd !important;
+}
+
+@media (max-width: 480px) {
+  .form-cf7-wrap .wpcf7-checkbox {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── POPUP OVERLAY ─── */
+.np-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.np-popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.np-popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.np-popup-overlay.active .np-popup-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.np-popup-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.np-popup-close:hover {
+  background: rgba(255,255,255,0.4);
+  transform: scale(1.1);
+}
+
+.np-popup-img img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  cursor: pointer;
+  max-height: 85vh;
+  width: auto;
+  display: block;
+}
+
+.np-form-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.np-form-content .np-popup-close {
+  top: 15px;
+  right: 15px;
+  background: #f1f1f1;
+  color: #333;
+  border: none;
+}
+
+.np-form-content .np-popup-close:hover {
+  background: #e1e1e1;
+}
+
+.np-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.np-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--c1);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.np-form-input {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.np-form-input:focus {
+  border-color: var(--c2b);
+}
+
+.np-form-submit {
+  background: var(--c2b);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+}
+
+.np-form-submit:hover {
+  background: var(--c1);
+}
+
+@media (max-width: 768px) {
+  .np-popup-close {
+    top: -35px;
+    right: 0;
   }
 }
