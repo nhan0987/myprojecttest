@@ -84,32 +84,6 @@ function initPopupOverlay() {
 
     setTimeout(function () {
 
-        // Chỉ hiện popup nếu chưa đăng ký/chưa đóng (nếu cần có thể lưu localStorage, hiện tại luôn hiện để test)
-        const popupHTML = `
-            <div id="np-promo-popup" class="np-popup-overlay">
-                <div class="np-popup-content">
-                    <button class="np-popup-close" id="np-promo-close">&times;</button>
-                    <picture class="np-popup-img" id="np-promo-img">
-                        <source media="(max-width: 768px)" srcset="/wp-content/themes/soledad/images/noble-palace/popup_mercedes%20-%20mobile.webp">
-                        <img src="/wp-content/themes/soledad/images/noble-palace/popup_mercedes_2.png" alt="Khuyến mãi Mercedes">
-                    </picture>
-                </div>
-            </div>
-            <div id="np-form-popup" class="np-popup-overlay">
-                <div class="np-popup-content np-form-content">
-                    <button class="np-popup-close" id="np-form-close">&times;</button>
-                    <div class="np-form-inner">
-                        <h3 class="np-form-title">Đăng ký nhận thông tin</h3>
-                        <input type="text" class="np-form-input" placeholder="Họ và tên">
-                        <input type="tel" class="np-form-input" placeholder="Số điện thoại">
-                        <button class="np-form-submit">Gửi Đăng Ký</button>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        document.body.insertAdjacentHTML('beforeend', popupHTML);
-
         const promoPopup = document.getElementById('np-promo-popup');
         const formPopup = document.getElementById('np-form-popup');
         const promoClose = document.getElementById('np-promo-close');
@@ -117,52 +91,89 @@ function initPopupOverlay() {
         const promoImg = document.getElementById('np-promo-img');
 
         // Hiển thị popup
-        requestAnimationFrame(() => {
-            promoPopup.classList.add('active');
-        });
+        if (promoPopup) {
+            requestAnimationFrame(() => {
+                promoPopup.classList.add('active');
+            });
 
-        // Tự động tắt sau 10s nếu người dùng không tương tác/click
-        let autoCloseTimeout = setTimeout(function () {
-            promoPopup.classList.remove('active');
-        }, 1000000);
+            // Tự động tắt sau 10s nếu người dùng không tương tác/click
+            let autoCloseTimeout = setTimeout(function () {
+                promoPopup.classList.remove('active');
+            }, 1000000);
 
-        // Xóa timeout khi người dùng chủ động tương tác
-        function clearAutoClose() {
-            if (autoCloseTimeout) {
-                clearTimeout(autoCloseTimeout);
-                autoCloseTimeout = null;
+            // Xóa timeout khi người dùng chủ động tương tác
+            function clearAutoClose() {
+                if (autoCloseTimeout) {
+                    clearTimeout(autoCloseTimeout);
+                    autoCloseTimeout = null;
+                }
+            }
+
+            // Tắt popup khuyến mãi
+            if (promoClose) {
+                promoClose.addEventListener('click', function () {
+                    clearAutoClose();
+                    promoPopup.classList.remove('active');
+                });
+            }
+
+            // Click ảnh mở form
+            if (promoImg) {
+                promoImg.addEventListener('click', function () {
+                    clearAutoClose();
+                    promoPopup.classList.remove('active');
+                    if (formPopup) formPopup.classList.add('active');
+                });
+            }
+
+            // Click ra ngoài để tắt
+            promoPopup.addEventListener('click', function (e) {
+                if (e.target === promoPopup) {
+                    clearAutoClose();
+                    promoPopup.classList.remove('active');
+                }
+            });
+        }
+
+        if (formPopup) {
+            // Tắt popup form
+            if (formClose) {
+                formClose.addEventListener('click', function () {
+                    formPopup.classList.remove('active');
+                });
+            }
+
+            formPopup.addEventListener('click', function (e) {
+                if (e.target === formPopup) formPopup.classList.remove('active');
+            });
+            
+            // Xử lý nút Trở Về trong màn hình thành công
+            const returnBtn = document.getElementById('np-form-return');
+            if (returnBtn) {
+                returnBtn.addEventListener('click', function() {
+                    formPopup.classList.remove('active');
+                    // Reset lại form trạng thái ban đầu sau khi tắt
+                    setTimeout(() => {
+                        document.getElementById('np-form-cf7-inner').style.display = 'block';
+                        document.getElementById('np-form-cf7-success').style.display = 'none';
+                    }, 300);
+                });
             }
         }
 
-        // Tắt popup khuyến mãi
-        promoClose.addEventListener('click', function () {
-            clearAutoClose();
-            promoPopup.classList.remove('active');
-        });
-
-        // Tắt popup form
-        formClose.addEventListener('click', function () {
-            formPopup.classList.remove('active');
-        });
-
-        // Click ảnh mở form
-        promoImg.addEventListener('click', function () {
-            clearAutoClose();
-            promoPopup.classList.remove('active');
-            formPopup.classList.add('active');
-        });
-
-        // Click ra ngoài để tắt
-        promoPopup.addEventListener('click', function (e) {
-            if (e.target === promoPopup) {
-                clearAutoClose();
-                promoPopup.classList.remove('active');
+        // Lắng nghe sự kiện Contact Form 7 gửi thành công
+        document.addEventListener('wpcf7mailsent', function(event) {
+            // Kiểm tra xem có phải form trong popup không (có thể kiểm tra ID event.detail.contactFormId nếu cần)
+            // Tạm thời áp dụng cho form đang mở trong popup
+            if (formPopup && formPopup.classList.contains('active')) {
+                const inner = document.getElementById('np-form-cf7-inner');
+                const success = document.getElementById('np-form-cf7-success');
+                if (inner && success) {
+                    inner.style.display = 'none';
+                    success.style.display = 'block';
+                }
             }
-        });
-        formPopup.addEventListener('click', function (e) {
-            if (e.target === formPopup) formPopup.classList.remove('active');
-        });
-
+        }, false);
 
     }, 4000); // 4 giây
 }

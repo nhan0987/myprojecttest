@@ -2846,74 +2846,234 @@ button {
   display: block;
 }
 
-.np-form-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 400px;
+.np-popup-cf7 .np-popup-content {
+  background: var(--c1);
+  color: #fff;
+  padding: 40px 32px;
+  border-radius: 12px 48px 12px 48px;
+  border: 3px solid rgba(201, 163, 85, 0.4);
+  border-right: 3px solid var(--c2b);
+  border-bottom: 3px solid var(--c2b);
+  width: 420px;
   max-width: 90%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.np-form-content .np-popup-close {
-  top: 15px;
-  right: 15px;
-  background: #f1f1f1;
-  color: #333;
+.np-popup-cf7 .np-popup-content.is-success {
+  background: #fff;
+  border-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.np-popup-cf7 .np-popup-close {
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
   border: none;
+  font-size: 28px;
+  width: 32px;
+  height: 32px;
+  z-index: 20;
 }
 
-.np-form-content .np-popup-close:hover {
-  background: #e1e1e1;
+.np-popup-cf7 .np-popup-content.is-success .np-popup-close {
+  color: rgba(0, 0, 0, 0.4);
 }
 
-.np-form-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.np-popup-cf7 .np-popup-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.np-popup-cf7 .np-popup-content.is-success .np-popup-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Header */
+.np-form-header {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.stnd-logo-popup {
+  height: 48px;
+  margin: 0 auto 16px;
+  width: auto;
 }
 
 .np-form-title {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
-  color: var(--c1);
+  color: #fff;
   text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
-.np-form-input {
-  border: 1px solid #ddd;
-  padding: 12px 15px;
-  font-size: 14px;
-  border-radius: 6px;
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-  transition: border-color 0.2s;
+.np-form-sub {
+  font-size: 13px;
+  color: var(--c2b);
+  line-height: 1.5;
+}
+
+/* CF7 Output */
+.np-form-body .wpcf7 form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.np-form-body .wpcf7-response-output {
+  margin: 0 !important;
+  padding: 10px !important;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.np-popup-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.np-popup-form-group label {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.np-popup-form-group label span {
+  color: #ff3b30;
+}
+
+.np-popup-form-group .wpcf7-form-control-wrap input,
+.np-popup-form-group .wpcf7-form-control-wrap select {
   width: 100%;
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 12px 14px;
+  /* border-radius: 4px; */
+  font-size: 14px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
-.np-form-input:focus {
+.np-popup-form-group .wpcf7-form-control-wrap input:focus,
+.np-popup-form-group .wpcf7-form-control-wrap select:focus {
   border-color: var(--c2b);
 }
 
-.np-form-submit {
+.np-popup-form-group .wpcf7-form-control-wrap input::placeholder {
+  color: #aaa;
+}
+
+.np-popup-form-submit .wpcf7-submit {
+  width: 100%;
   background: var(--c2b);
   color: #fff;
   border: none;
   padding: 14px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 6px;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 8px;
+}
+
+.np-popup-form-submit .wpcf7-submit:hover {
+  background: #b58d45;
+}
+
+.np-popup-form-submit .wpcf7-spinner {
+  position: absolute;
+  bottom: 24px;
+  right: 10px;
+}
+
+.np-popup-form-submit {
+  padding-top: 14px;
+}
+
+.np-popup-form-group {
+  padding-top: 10px;
+}
+
+.np-form-footer p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Success State */
+.np-form-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.np-form-success .np-form-title {
+  color: var(--c1);
+  margin-top: 16px;
+}
+
+.np-form-success .np-form-sub {
+  color: rgba(26, 45, 66, 0.7);
+}
+
+.success-icon-wrap {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--c2b);
+  margin: 16px 0 24px;
+}
+
+.success-phone svg {
+  fill: var(--c2b);
+}
+
+.success-return-btn {
+  background: var(--c1);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s;
   font-family: 'Montserrat', sans-serif;
-  width: 100%;
 }
 
-.np-form-submit:hover {
-  background: var(--c1);
+.success-return-btn:hover {
+  background: #253e5a;
 }
 
 @media (max-width: 768px) {

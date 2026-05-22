@@ -783,6 +783,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-watermark watermark-left">
@@ -831,22 +832,56 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   <a href="#hero-form" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'});return false;">Nhận Báo Giá</a>
 </div>
 
-<!-- HTML giữ class cho CSS Optimizer (Flying Press) không xóa CSS của Popup -->
-<div style="display: none;">
-    <div class="np-popup-overlay active">
-        <div class="np-popup-content">
-            <button class="np-popup-close">&times;</button>
-            <picture class="np-popup-img">
-                <img src="" alt="">
-            </picture>
-        </div>
-        <div class="np-form-content">
-            <button class="np-popup-close">&times;</button>
-            <div class="np-form-inner">
-                <h3 class="np-form-title">Đăng ký</h3>
-                <input type="text" class="np-form-input">
-                <button class="np-form-submit">Gửi</button>
+
+
+<!-- POPUP KHUYẾN MÃI -->
+<div id="np-promo-popup" class="np-popup-overlay">
+    <div class="np-popup-content">
+        <button class="np-popup-close" id="np-promo-close">&times;</button>
+        <picture class="np-popup-img" id="np-promo-img">
+            <source media="(max-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/images/noble-palace/popup_mercedes%20-%20mobile.webp">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/popup_mercedes.webp" alt="Khuyến mãi Mercedes">
+        </picture>
+    </div>
+</div>
+
+<!-- POPUP FORM ĐĂNG KÝ -->
+<div id="np-form-popup" class="np-popup-overlay np-popup-cf7">
+    <div class="np-popup-content np-form-content">
+        <button class="np-popup-close" id="np-form-close">&times;</button>
+        
+        <!-- Form Content -->
+        <div class="np-form-inner" id="np-form-cf7-inner">
+            <div class="np-form-header">
+                <img  src="<?php echo site_url('/wp-content/uploads/2025/11/LOGO-01-1.png'); ?>" alt="STND Logo" class="stnd-logo-popup penci-mainlogo" />
+                <h3 class="np-form-title">ĐĂNG KÝ ĐẶT CỌC SỚM</h3>
+                <p class="np-form-sub">Chuyên viên STND sẽ liên hệ với bạn trong<br>15 phút làm việc.</p>
             </div>
+            
+            <div class="np-form-body">
+                <?php echo do_shortcode('[contact-form-7  title="Noble Place - Liên hệ 2"]'); ?>
+            </div>
+            
+            <div class="np-form-footer">
+                <p>Không mất bất kỳ phí nào · Hoàn toàn miễn phí</p>
+            </div>
+        </div>
+        
+        <!-- Success Content (Hidden by default) -->
+        <div class="np-form-success" id="np-form-cf7-success" style="display:none;">
+            <div class="success-icon-wrap">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 2L28.8 6.8L35.6 6.8L35.6 13.6L40.4 18.4L37.4 24L40.4 29.6L35.6 34.4L35.6 41.2L28.8 41.2L24 46L19.2 41.2L12.4 41.2L12.4 34.4L7.6 29.6L10.6 24L7.6 18.4L12.4 13.6L12.4 6.8L19.2 6.8L24 2Z" fill="white" stroke="#c9a355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 24L22 30L32 18" stroke="#c9a355" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3 class="np-form-title">ĐĂNG KÝ THÀNH CÔNG!</h3>
+            <p class="np-form-sub">Chuyên viên STND sẽ liên hệ với bạn trong<br>15 phút làm việc.</p>
+            <div class="success-phone">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                0972 991 551
+            </div>
+            <button class="success-return-btn" id="np-form-return">TRỞ VỀ</button>
         </div>
     </div>
 </div>
