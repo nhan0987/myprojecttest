@@ -81,10 +81,9 @@ function initIframeObserver() {
 }
 
 function initPopupOverlay() {
-    console.log("initPopupOverlay");
+
     setTimeout(function () {
 
-        console.log("startPopupOverlay");
         // Chỉ hiện popup nếu chưa đăng ký/chưa đóng (nếu cần có thể lưu localStorage, hiện tại luôn hiện để test)
         const popupHTML = `
             <div id="np-promo-popup" class="np-popup-overlay">
@@ -92,7 +91,7 @@ function initPopupOverlay() {
                     <button class="np-popup-close" id="np-promo-close">&times;</button>
                     <picture class="np-popup-img" id="np-promo-img">
                         <source media="(max-width: 768px)" srcset="/wp-content/themes/soledad/images/noble-palace/popup_mercedes%20-%20mobile.webp">
-                        <img src="/wp-content/themes/soledad/images/noble-palace/popup_mercedes.webp" alt="Khuyến mãi Mercedes">
+                        <img src="/wp-content/themes/soledad/images/noble-palace/popup_mercedes_2.png" alt="Khuyến mãi Mercedes">
                     </picture>
                 </div>
             </div>
@@ -109,9 +108,7 @@ function initPopupOverlay() {
             </div>
         `;
 
-        console.log("middlePopupOverlay");
         document.body.insertAdjacentHTML('beforeend', popupHTML);
-        console.log("middle2PopupOverlay");
 
         const promoPopup = document.getElementById('np-promo-popup');
         const formPopup = document.getElementById('np-form-popup');
@@ -127,7 +124,7 @@ function initPopupOverlay() {
         // Tự động tắt sau 10s nếu người dùng không tương tác/click
         let autoCloseTimeout = setTimeout(function () {
             promoPopup.classList.remove('active');
-        }, 10000);
+        }, 1000000);
 
         // Xóa timeout khi người dùng chủ động tương tác
         function clearAutoClose() {
@@ -166,7 +163,6 @@ function initPopupOverlay() {
             if (e.target === formPopup) formPopup.classList.remove('active');
         });
 
-        console.log("endPopupOverlay");
 
     }, 4000); // 4 giây
 }
