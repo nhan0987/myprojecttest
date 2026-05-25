@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initStickyHeaderAndSidebar();
     // initIframeObserver();
     initPopupOverlay();
+    initCounters();
 });
 
 function initScrollFadeIn() {
@@ -12,8 +13,18 @@ function initScrollFadeIn() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.card, .policy-card, .mini-card, .timeline-item, .trust-item').forEach(el => {
+    document.querySelectorAll('.card, .policy-card, .mini-card, .timeline-item, .trust-item, .payment-block-title, .pol-benefit-left, .pol-benefit-right, .policy-banner, .payment-list, .amenity-img-row, .amenity-strip-item').forEach(el => {
         el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.pol-title-1, .pol-title').forEach(el => {
+        el.classList.add('fade-in-left-scroll');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.amenity-img-top').forEach(el => {
+        el.classList.add('fade-in-simple');
         observer.observe(el);
     });
 }
@@ -82,6 +93,36 @@ function initIframeObserver() {
 
 function initPopupOverlay() {
 
+    // Cấu hình hiển thị Popup Khuyến Mãi
+    const popupConfig = {
+        enableCookie: true, // Bật/tắt tính năng chỉ hiển thị 1 lần theo cookie
+        cookieName: 'np_promo_shown_1', // Tên cookie
+        cookieHours: 24 // Thời gian tồn tại của cookie (tính bằng giờ)
+    };
+
+    // Hàm set Cookie
+    function setCookie(name, value, hours) {
+        let expires = "";
+        if (hours) {
+            let date = new Date();
+            date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Hàm get Cookie
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
     setTimeout(function () {
 
         const promoPopup = document.getElementById('np-promo-popup');
@@ -90,16 +131,9 @@ function initPopupOverlay() {
         const formClose = document.getElementById('np-form-close');
         const promoImg = document.getElementById('np-promo-img');
 
-        // Hiển thị popup
+        // Khởi tạo các sự kiện cho popup khuyến mãi
         if (promoPopup) {
-            requestAnimationFrame(() => {
-                promoPopup.classList.add('active');
-            });
-
-            // Tự động tắt sau 10s nếu người dùng không tương tác/click
-            let autoCloseTimeout = setTimeout(function () {
-                promoPopup.classList.remove('active');
-            }, 1000000);
+            let autoCloseTimeout;
 
             // Xóa timeout khi người dùng chủ động tương tác
             function clearAutoClose() {
@@ -133,6 +167,30 @@ function initPopupOverlay() {
                     promoPopup.classList.remove('active');
                 }
             });
+
+            // Kiểm tra Cookie và Hiển thị popup
+            let shouldShow = true;
+            if (popupConfig.enableCookie) {
+                if (getCookie(popupConfig.cookieName)) {
+                    shouldShow = false;
+                }
+            }
+
+            if (shouldShow) {
+                requestAnimationFrame(() => {
+                    promoPopup.classList.add('active');
+
+                    // Ghi nhận đã xem popup
+                    if (popupConfig.enableCookie) {
+                        setCookie(popupConfig.cookieName, '1', popupConfig.cookieHours);
+                    }
+                });
+
+                // Tự động tắt sau một thời gian dài (nếu người dùng không thao tác)
+                autoCloseTimeout = setTimeout(function () {
+                    promoPopup.classList.remove('active');
+                }, 1000000);
+            }
         }
 
         if (formPopup) {
@@ -146,11 +204,11 @@ function initPopupOverlay() {
             formPopup.addEventListener('click', function (e) {
                 if (e.target === formPopup) formPopup.classList.remove('active');
             });
-            
+
             // Xử lý nút Trở Về trong màn hình thành công
             const returnBtn = document.getElementById('np-form-return');
             if (returnBtn) {
-                returnBtn.addEventListener('click', function() {
+                returnBtn.addEventListener('click', function () {
                     formPopup.classList.remove('active');
                     // Reset lại form trạng thái ban đầu sau khi tắt
                     setTimeout(() => {
@@ -162,7 +220,7 @@ function initPopupOverlay() {
         }
 
         // Lắng nghe sự kiện Contact Form 7 gửi thành công
-        document.addEventListener('wpcf7mailsent', function(event) {
+        document.addEventListener('wpcf7mailsent', function (event) {
             // Kiểm tra xem có phải form trong popup không (có thể kiểm tra ID event.detail.contactFormId nếu cần)
             // Tạm thời áp dụng cho form đang mở trong popup
             if (formPopup && formPopup.classList.contains('active')) {
@@ -177,3 +235,55 @@ function initPopupOverlay() {
 
     }, 4000); // 4 giây
 }
+
+function initCounters() {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.counter').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function animateCounter(el) {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const separator = el.getAttribute('data-separator') || '.';
+    const duration = 1000; // 1.5 seconds
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Premium deceleration effect (easeOutExpo)
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const currentVal = easeProgress * target;
+
+        let formattedVal = currentVal.toFixed(decimals);
+        if (separator !== '.') {
+            formattedVal = formattedVal.replace('.', separator);
+        }
+
+        el.textContent = formattedVal;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            let finalVal = target.toFixed(decimals);
+            if (separator !== '.') {
+                finalVal = finalVal.replace('.', separator);
+            }
+            el.textContent = finalVal;
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+

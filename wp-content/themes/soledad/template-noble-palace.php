@@ -29,8 +29,8 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     wp_enqueue_style('np-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playball&family=Inter:wght@300;400;500&family=Ms+Madi&display=swap', array(), null);
     
     // Custom Style & Scripts
-    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.0');
-    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.3');
+    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.3', true);
   }, 100);
 
   add_action('wp_enqueue_scripts', function() {
@@ -89,7 +89,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
        height="1080" />
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-content">
+    <div class="hero-content fade-in-left">
       <div class="hero-badge">
         <div class="dot"></div>
         <span>Suất Ngoại Giao Độc Quyền · Còn 15 Căn</span>
@@ -108,7 +108,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     </div>
 
     <!-- Form Card -->
-    <div class="hero-form-card" id="hero-form">
+    <div class="hero-form-card fade-in-right" id="hero-form">
       <div class="form-tag">
         <div class="dot"></div>
         <span>Còn 15 suất ngoại giao vị trí đẹp nhất · Cập nhật hôm nay</span>
@@ -305,13 +305,13 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
       <div class="policy-overview-item">
         <div>
           <div class="policy-overview-label">Chiết khấu lên đến</div>
-          <div class="policy-overview-val gold">12,7<span>%</span></div>
+          <div class="policy-overview-val gold"><span class="counter" data-target="12.7" data-decimals="1" data-separator=",">0</span><span>%</span></div>
         </div>
       </div>
       <div class="policy-overview-item">
         <div>
           <div class="policy-overview-label">Chính sách ưu đãi lên đến gần</div>
-          <div class="policy-overview-val gold">1,12<span> Tỷ</span></div>
+          <div class="policy-overview-val gold"><span class="counter" data-target="1.12" data-decimals="2" data-separator=",">0</span><span> Tỷ</span></div>
         </div>
       </div>
     </div>
@@ -325,11 +325,11 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
           <div class="pol-title-1">Lợi Nhuận Kim Cương</div>
         </div>
         <div class="pol-card-benefits">
-          <div style="border-right: 1px solid #e5e7eb3b !important;padding-right: 16px;">
+          <div class="pol-benefit-left">
             <div class="pol-card-benefit-val">720 <span>triệu</span></div>
             <div class="pol-card-benefit-lbl">Lợi nhuận trong 24 tháng</div>
           </div>
-          <div style="padding-left: 16px;opacity:0.8">
+          <div class="pol-benefit-right">
             <div class="pol-card-benefit-val">500 <span>triệu</span></div>
             <div class="pol-card-benefit-lbl">Quà tặng nội thất</div>
           </div>
@@ -339,16 +339,16 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
       <!-- LÃI SUẤT + VAY -->
       <div class="pol-card">
         <div class="pol-num">02</div>
-        <div class="pol-title">Hỗ Trợ Lãi Suất 70%</div>
-        <div class="pol-desc">Vay vốn đến 70% giá trị căn. <strong>0% lãi suất 24 tháng đầu</strong>, cố định 8% cho 12 tháng tiếp theo. Ân hạn nợ gốc trong suốt thời gian hỗ trợ.</div>
-        <div class="pol-val">36 tháng hỗ trợ</div>
+        <div class="pol-title">Hỗ Trợ Vay Tới <span class="counter" data-target="70">0</span>%</div>
+        <div class="pol-desc">Nhận nhà trước, áp lực trả nợ tính sau Tận hưởng lộ trình giãn tiến độ, an tâm tuyệt đối suốt 3 năm đầu</div>
+        <div class="pol-val">36 tháng ưu đãi lãi suất</div>
       </div>
 
       <!-- QUÀ TÀI LỘC -->
       <div class="pol-card">
         <div class="pol-num">03</div>
-        <div class="pol-title">Quà Tài Lộc</div>
-        <div class="pol-desc">Dành cho các căn từ 75m2 trở lên. Tặng kèm thẻ KLB trị giá <strong>250 triệu</strong> cho tất cả các sản phẩm. Quà tặng an cư thêm 1-1,5%.</div>
+        <div class="pol-title">BÙNG NỔ QUÀ TẶNG: NHẬN NGAY COMBO TÀI LỘC</div>
+        <div class="pol-desc">Tặng kèm thẻ KLB trị giá <strong>250 triệu</strong> . Nhân đôi niềm vui với quà tặng an cư thêm 150 TRIỆU.Nhận thêm chiết khấu 1 - 1,5% hỗ trợ hoàn thiện tổ ấm trong mơ.</div>
         <div class="pol-val">150 triệu</div>
       </div>
     </div>
@@ -356,7 +356,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     <!-- 4 ƯU ĐÃI PHỤ -->
     <div class="policy-extras">
       <div class="pe-item">
-        <div class="pe-val">10%</div>
+        <div class="pe-val"><span class="counter" data-target="10">0</span>%</div>
         <div class="pe-label">Chiết khấu TTS thanh toán sớm</div>
       </div>
       <div class="pe-item">
@@ -364,11 +364,11 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
         <div class="pe-label">Miễn phí quản lý vận hành 5 sao</div>
       </div>
       <div class="pe-item">
-        <div class="pe-val">250tr</div>
+        <div class="pe-val"><span class="counter" data-target="250">0</span>tr</div>
         <div class="pe-label">Thẻ KLB tặng kèm tất cả sản phẩm</div>
       </div>
       <div class="pe-item">
-        <div class="pe-val">8%</div>
+        <div class="pe-val"><span class="counter" data-target="8">0</span>%</div>
         <div class="pe-label">Quà Noble HOME+ trên 15% giá trị BĐS</div>
       </div>
     </div>
@@ -441,7 +441,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
         </div>
       </div>
     </div>
-    <div style="margin-top:10px">
+    <div class="policy-banner" style="margin-top:10px">
       <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/banner_mer_01.webp" alt="Bốc thăm xe Mercedes" />
     </div>
   </div>

@@ -2326,6 +2326,89 @@ button {
   transform: none;
 }
 
+/* ─── Hero Entrance Animations ─── */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.25s;
+}
+
+/* ─── Scroll-triggered Entrance Animations ─── */
+.fade-in-left-scroll {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-left-scroll.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-in-simple {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in-simple.visible {
+  opacity: 1;
+}
+
+/* Staggered delay for amenity-strip-item */
+.amenity-strip-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.amenity-strip-item:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.amenity-strip-item:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+/* Custom premium smooth slide-up for amenity-strip-item */
+.amenity-strip-item.fade-in {
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amenity-strip-item.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
 
 /* SECTION 2: CHÍNH SÁCH BÁN HÀNG */
 .policy-sec {
@@ -2447,6 +2530,20 @@ button {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 8px;
+}
+
+.pol-benefit-left {
+  border-right: 1px solid rgba(229, 231, 235, 0.23) !important;
+  padding-right: 16px;
+}
+
+.pol-benefit-right {
+  padding-left: 16px;
+  opacity: 0.8;
+}
+
+.pol-benefit-right.visible {
+  opacity: 0.8 !important;
 }
 
 .pol-card-benefit-val {
