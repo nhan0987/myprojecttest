@@ -1028,7 +1028,7 @@ p:last-child {
 }
 
 #navigation ul.menu .current-menu-item {
-	border-bottom: 2px solid #FEC769;
+	/* border-bottom: 2px solid #FEC769; */
 }
 
 #navigation .menu li a {
