@@ -29,8 +29,8 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     wp_enqueue_style('np-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playball&family=Inter:wght@300;400;500&family=Ms+Madi&display=swap', array(), null);
     
     // Custom Style & Scripts
-    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.3');
-    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.3', true);
+    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.5');
+    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.5', true);
   }, 100);
 
   add_action('wp_enqueue_scripts', function() {
@@ -49,7 +49,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   <div class="divider"></div>
   <p>Hotline: <span class="gold-text">0972 991 551</span></p>
   <div class="divider"></div>
-  <p>Website: <span class="gold-text"><a href="https://stnd.vn" target="_blank" style="color:inherit;text-decoration:underline">stnd.vn</a></span></p>
+  <p>Website: <span class="gold-text"><a href="https://stnd.vn" target="_blank">stnd.vn</a></span></p>
   <button class="close-btn" onclick="document.getElementById('top-bar').style.display='none'">✕</button>
 </div>
 
@@ -295,7 +295,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
 <section class="policy-sec section bg-white" id="policy">
   <div class="section-inner">
     <div class="section-head">
-      <span class="section-label" style="text-transform: uppercase;">Chính Sách Bán Hàng · Áp dụng từ 13/05/2026</span>
+      <span class="section-label">Chính Sách Bán Hàng · Áp dụng từ 13/05/2026</span>
       <h2 class="section-title">Ưu Đãi Vượt Trội —<br /><span class="gold">Gần 1,12 Tỷ Đồng</span></h2>
       <div class="section-rule"></div>
     </div>
@@ -441,7 +441,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
         </div>
       </div>
     </div>
-    <div class="policy-banner" style="margin-top:10px">
+    <div class="policy-banner">
       <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/banner_mer_01.webp" alt="Bốc thăm xe Mercedes" />
     </div>
   </div>
@@ -533,9 +533,9 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   <div class="amenity-top">
     <!-- Left -->
     <div class="amenity-left">
-      <div class="section-head" style="margin-bottom:24px">
+      <div class="section-head mb-24">
         <span class="section-label">Chính Sách Bán Hàng</span>
-        <h2 class="section-title">Thành Phố Không Ngủ<br /><span class="gold" style="font-style:italic">All-in-One 365 Ngày</span></h2>
+        <h2 class="section-title">Thành Phố Không Ngủ<br /><span class="gold italic">All-in-One 365 Ngày</span></h2>
         <div class="section-rule"></div>
       </div>
       <p class="amenity-desc">Hơn 100 tiện ích nội khu chuẩn quốc tế — bệnh viện 5 sao, trường quốc tế, công viên 190 ha, tất cả ngay trước cửa nhà.</p>
@@ -692,7 +692,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
 </section>
 
   <!-- <div id="iframe-container">
-      <p style="text-align: center; padding-top: 200px;">Đang cuộn đến vùng bản đồ 360...</p>
+      <p class="iframe-loading-text">Đang cuộn đến vùng bản đồ 360...</p>
   </div> -->
 
 
@@ -800,7 +800,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     <p class="footer-disclaimer">
       Mọi thông tin trên trang web này do đại lý phân phối chính thức <strong>SIÊU THỊ NHÀ ĐẤT – STND</strong> cung cấp. Địa chỉ: 262 Tây Sơn, Đống Đa, Hà Nội · Hotline: 0972 991 551 · Website: stnd.vn. Giá bán, chính sách và thông tin dự án có thể thay đổi theo từng thời điểm, vui lòng liên hệ trực tiếp để xác nhận. Noble Palace Tây Thăng Long được phát triển bởi Tập đoàn Sunshine Group và Công ty CP Kinh doanh BĐS Noble. Trang web này vận hành bởi đại lý phân phối — không phải website chính thức của chủ đầu tư.
     </p>
-    <p style="font-size:11px;color:rgba(255,255,255,.25);margin-top:4px">© 2026 STND. All rights reserved.</p>
+    <p class="footer-copyright">© 2026 STND. All rights reserved.</p>
   </div>
 </footer>
 
@@ -808,8 +808,8 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
 <div class="float-sidebar" id="float-sidebar">
   <!-- Zalo -->
   <a class="float-sidebar-item" href="https://zalo.me/0972991551" target="_blank" rel="noopener" title="Chat Zalo">
-    <div class="icon-wrap" style="border-radius:10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:48px;height:48px;object-fit:cover;border-radius:10px;" />
+    <div class="icon-wrap">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" />
     </div>
     <span>Chat Zalo</span>
   </a>
@@ -868,7 +868,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
         </div>
         
         <!-- Success Content (Hidden by default) -->
-        <div class="np-form-success" id="np-form-cf7-success" style="display:none;">
+        <div class="np-form-success" id="np-form-cf7-success">
             <div class="success-icon-wrap">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 2L28.8 6.8L35.6 6.8L35.6 13.6L40.4 18.4L37.4 24L40.4 29.6L35.6 34.4L35.6 41.2L28.8 41.2L24 46L19.2 41.2L12.4 41.2L12.4 34.4L7.6 29.6L10.6 24L7.6 18.4L12.4 13.6L12.4 6.8L19.2 6.8L24 2Z" fill="white" stroke="#c9a355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -2116,7 +2116,8 @@ button {
 
 @media (max-width: 768px) {
   .float-sidebar {
-    display: none;
+    right: 12px;
+    bottom: 90px;
   }
 }
 
@@ -3178,4 +3179,37 @@ button {
     top: -35px;
     right: 0;
   }
+}
+
+/* ─── Converted Inline CSS Classes & Utilities ─── */
+.top-bar a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.policy-banner {
+  margin-top: 10px;
+}
+
+.section-head.mb-24 {
+  margin-bottom: 24px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.footer-copyright {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 4px;
+}
+
+#np-form-cf7-success {
+  display: none;
+}
+
+.iframe-loading-text {
+  text-align: center;
+  padding-top: 200px;
 }
