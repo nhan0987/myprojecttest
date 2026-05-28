@@ -29,8 +29,8 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
     wp_enqueue_style('np-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playball&family=Inter:wght@300;400;500&family=Ms+Madi&display=swap', array(), null);
     
     // Custom Style & Scripts
-    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.5');
-    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.5', true);
+    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.6');
+    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.6', true);
   }, 100);
 
   add_action('wp_enqueue_scripts', function() {
