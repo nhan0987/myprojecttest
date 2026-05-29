@@ -942,7 +942,6 @@ h1.hero-title em {
   gap: 5px;
   font-size: 0.72rem;
   color: var(--text-light);
-  margin-top: 11px;
 }
 
 .form-secure svg {
@@ -2824,6 +2823,7 @@ footer {
     left: 10px;
     background: rgba(0, 0, 0, 0.6);
   }
+
   .gal-lb-next {
     right: 10px;
     background: rgba(0, 0, 0, 0.6);
@@ -2836,6 +2836,7 @@ footer {
     gap: 8px;
     align-items: flex-start;
   }
+
   .gal-lb-prev,
   .gal-lb-next {
     width: 40px;
@@ -3267,59 +3268,77 @@ footer {
 
 /* Contact Form 7 Integration Styles */
 .wpcf7-form p {
-  margin-bottom: 14px;
+  margin-bottom: 14px !important;
 }
-.wpcf7-form p br {
-  display: none;
+
+.wpcf7-form p br,
+.wpcf7-form label br {
+  display: none !important;
 }
+
 .wpcf7-form label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--text-mid);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  color: var(--text-mid) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 6px !important;
 }
+
 .wpcf7-form .wpcf7-form-control-wrap {
-  display: block;
+  display: block !important;
+  margin-top: 6px !important;
 }
+
 .wpcf7-form input[type="text"],
 .wpcf7-form input[type="tel"],
-.wpcf7-form input[type="email"] {
-  width: 100%;
-  padding: 13px 15px;
-  border: 1.5px solid #E2DDD5;
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  background: var(--white);
-  transition: border-color 0.22s ease, box-shadow 0.22s ease;
-  outline: none;
-  font-family: var(--font-body);
+.wpcf7-form input[type="email"],
+.wpcf7-form select {
+  width: 100% !important;
+  height: 48px !important;
+  padding: 13px 15px !important;
+  border: 1.5px solid #E2DDD5 !important;
+  border-radius: var(--radius) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important; /* Reset uppercase from label */
+  color: var(--text-dark) !important;
+  background: var(--white) !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-body) !important;
 }
+
 .wpcf7-form input[type="text"]:focus,
 .wpcf7-form input[type="tel"]:focus,
-.wpcf7-form input[type="email"]:focus {
-  border-color: var(--jade);
-  box-shadow: 0 0 0 3px rgba(29, 58, 43, 0.09);
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form select:focus {
+  border-color: var(--jade) !important;
+  box-shadow: 0 0 0 3px rgba(29, 58, 43, 0.09) !important;
 }
+
 .wpcf7-form input[type="submit"] {
-  width: 100%;
-  background: linear-gradient(135deg, var(--jade) 0%, #2A5040 100%);
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 800;
-  padding: 15px 9px;
-  border-radius: var(--radius);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  margin-top: 4px;
+  width: 100% !important;
+  height: 48px !important;
+  background: linear-gradient(135deg, var(--jade) 0%, #2A5040 100%) !important;
+  color: var(--white) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  padding: 0 9px !important;
+  border-radius: var(--radius) !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  margin-top: 4px !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-body) !important;
 }
+
 .wpcf7-form input[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(29, 58, 43, 0.45);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(29, 58, 43, 0.45) !important;
 }

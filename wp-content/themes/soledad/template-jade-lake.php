@@ -125,7 +125,15 @@ $theme_uri = get_template_directory_uri();
           Chỉ còn <strong>&nbsp;7 suất&nbsp;</strong> ưu đãi F1 — Giới hạn đợt này
         </div>
         <?php echo do_shortcode('[contact-form-7 title="Jade Lake - Liên hệ"]'); ?>
+
+        <div class="form-secure">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          Thông tin được bảo mật tuyệt đối
+        </div>
       </div>
+
+      </div>
+
     </div>
   </div>
 </section>
