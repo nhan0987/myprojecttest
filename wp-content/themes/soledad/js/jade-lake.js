@@ -26,8 +26,69 @@
     document.getElementById('mb-lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  /* ============================================
+     THƯ VIỆN ẢNH — Slideshow Lightbox
+  ============================================ */
+  var galSlides = [];
+  var currentGalIndex = 0;
+
+  function initGallery() {
+    var items = document.querySelectorAll('.gallery-grid .gal-item img');
+    galSlides = [];
+    items.forEach(function(img) {
+      galSlides.push({
+        src: img.src,
+        alt: img.alt || ''
+      });
+    });
+  }
+
+  function openGalLightbox(index) {
+    if (galSlides.length === 0) {
+      initGallery();
+    }
+    currentGalIndex = index;
+    updateGalLightbox();
+    document.getElementById('gal-lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function updateGalLightbox() {
+    if (galSlides.length === 0) return;
+    var slide = galSlides[currentGalIndex];
+    document.getElementById('gal-lb-img').src = slide.src;
+    document.getElementById('gal-lb-caption').textContent = slide.alt;
+    document.getElementById('gal-lb-index').textContent = (currentGalIndex + 1) + ' / ' + galSlides.length;
+  }
+
+  function closeGalLightbox() {
+    document.getElementById('gal-lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function nextGalSlide() {
+    if (galSlides.length === 0) return;
+    currentGalIndex = (currentGalIndex + 1) % galSlides.length;
+    updateGalLightbox();
+  }
+
+  function prevGalSlide() {
+    if (galSlides.length === 0) return;
+    currentGalIndex = (currentGalIndex - 1 + galSlides.length) % galSlides.length;
+    updateGalLightbox();
+  }
+
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape') {
+      closeLightbox();
+      closeGalLightbox();
+    }
+    var galLb = document.getElementById('gal-lightbox');
+    if (galLb && galLb.classList.contains('open')) {
+      if (e.key === 'ArrowRight' || e.key === 'Right') nextGalSlide();
+      if (e.key === 'ArrowLeft' || e.key === 'Left') prevGalSlide();
+    }
   });
 
   /* --- Phone Validation --- */
@@ -105,44 +166,7 @@
   }
 
   setupForm('heroForm',  'hName',  'hPhone',  'hSubmit',  'hg-name',  'hg-phone',  'hero_form_a');
-  setupForm('heroBForm', 'hbName', 'hbPhone', 'hbSubmit', 'hbg-name', 'hbg-phone', 'hero_form_b');
   setupForm('regForm',   'rName',  'rPhone',  'rSubmit',  'rg-name',  'rg-phone',  'register_form');
-
-  /* ============================================
-     A/B TEST — Hero A (Lifestyle) vs Hero B (Investment)
-     Assignment: localStorage persistent, 50/50 split
-     GTM/Pixel events fire with variant label
-  ============================================ */
-  (function() {
-    var STORAGE_KEY = 'jade_hero_variant';
-    var variant = localStorage.getItem(STORAGE_KEY);
-
-    if (!variant) {
-      variant = Math.random() < 0.5 ? 'A' : 'B';
-      localStorage.setItem(STORAGE_KEY, variant);
-    }
-
-    var heroA = document.getElementById('hero');
-    var heroB = document.getElementById('hero-b');
-
-    if (variant === 'B') {
-      heroA.style.display = 'none';
-      heroB.classList.add('active');
-    } else {
-      heroB.style.display = 'none';
-    }
-
-    /* Track variant in GTM + FB Pixel */
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'ab_test', ab_variant: 'hero_' + variant });
-    }
-    if (typeof fbq !== 'undefined') {
-      fbq('trackCustom', 'ABTestView', {
-        test_name: 'hero_variant',
-        variant: variant
-      });
-    }
-  })();
 
   /* --- Modal close --- */
   document.getElementById('closeModal').addEventListener('click', function() {
@@ -426,41 +450,7 @@
   setupForm('heroBForm', 'hbName', 'hbPhone', 'hbSubmit', 'hbg-name', 'hbg-phone', 'hero_form_b');
   setupForm('regForm',   'rName',  'rPhone',  'rSubmit',  'rg-name',  'rg-phone',  'register_form');
 
-  /* ============================================
-     A/B TEST — Hero A (Lifestyle) vs Hero B (Investment)
-     Assignment: localStorage persistent, 50/50 split
-     GTM/Pixel events fire with variant label
-  ============================================ */
-  (function() {
-    var STORAGE_KEY = 'jade_hero_variant';
-    var variant = localStorage.getItem(STORAGE_KEY);
 
-    if (!variant) {
-      variant = Math.random() < 0.5 ? 'A' : 'B';
-      localStorage.setItem(STORAGE_KEY, variant);
-    }
-
-    var heroA = document.getElementById('hero');
-    var heroB = document.getElementById('hero-b');
-
-    if (variant === 'B') {
-      heroA.style.display = 'none';
-      heroB.classList.add('active');
-    } else {
-      heroB.style.display = 'none';
-    }
-
-    /* Track variant in GTM + FB Pixel */
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'ab_test', ab_variant: 'hero_' + variant });
-    }
-    if (typeof fbq !== 'undefined') {
-      fbq('trackCustom', 'ABTestView', {
-        test_name: 'hero_variant',
-        variant: variant
-      });
-    }
-  })();
 
   /* --- Modal close --- */
   document.getElementById('closeModal').addEventListener('click', function() {

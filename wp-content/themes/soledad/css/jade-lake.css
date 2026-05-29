@@ -21,7 +21,7 @@
   --radius: 4px;
   --radius-lg: 8px;
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --font-display: Montserrat;
+  --font-display: 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
 }
 
@@ -177,13 +177,22 @@ select {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 24px;
+  justify-content: center;
 }
 
 .pay-track {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(201, 168, 76, 0.2);
-  padding: 32px 28px;
+  padding: 32px 16px;
   transition: background 0.28s ease;
+}
+
+@media (min-width:640px) {
+  .pay-track {
+
+    padding: 32px 78px;
+
+  }
 }
 
 .pay-track:hover {
@@ -655,7 +664,7 @@ h1.hero-b-title {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/jade-lake/z6424902540414_e6c44a4c06ef7c98e6118360d95057ac.jpg');
+  background-image: url('../images/jade-lake/z6424902540414_e6c44a4c06ef7c98e6118360d95057ac.webp');
   background-size: cover;
   background-position: center 40%;
   animation: heroZoom 10s var(--ease) forwards;
@@ -889,9 +898,9 @@ h1.hero-title em {
   width: 100%;
   background: linear-gradient(135deg, var(--jade) 0%, #2A5040 100%);
   color: var(--white);
-  font-size: 0.95rem;
+  font-size: 14px;
   font-weight: 800;
-  padding: 15px 20px;
+  padding: 15px 9px;
   border-radius: var(--radius);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1797,6 +1806,12 @@ footer {
   font-family: sans-serif;
 }
 
+.fl-zalo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 .fl-phone svg {
   width: 22px;
   height: 22px;
@@ -1842,6 +1857,12 @@ footer {
 .m-cta-zalo {
   background: #0068FF;
   color: var(--white);
+}
+
+.m-cta-zalo-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .m-cta-call svg,
@@ -2068,7 +2089,7 @@ footer {
 .hero-b-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/jade-lake/phoi-canh-jade-lake-residence-1.jpg');
+  background-image: url('../images/jade-lake/phoi-canh-jade-lake-residence-1.webp');
   background-size: cover;
   background-position: center 35%;
   animation: heroZoom 10s var(--ease) forwards;
@@ -2237,7 +2258,7 @@ footer {
 
 .tq-img-main img {
   width: 100%;
-  height: 920px;
+  height: 340px;
   object-fit: cover;
 }
 
@@ -2720,6 +2741,108 @@ footer {
   font-weight: 600;
 }
 
+/* Gallery Lightbox Slideshow Styles */
+#gal-lb-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.gal-lb-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--white);
+  padding: 0 4px;
+}
+
+.gal-lb-meta .mb-lb-caption {
+  margin-top: 0;
+  text-align: left;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.gal-lb-index {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 4px 10px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.gal-lb-prev,
+.gal-lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.gal-lb-prev:hover,
+.gal-lb-next:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  scale: 1.08;
+}
+
+.gal-lb-prev svg,
+.gal-lb-next svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+}
+
+.gal-lb-prev {
+  left: -68px;
+}
+
+.gal-lb-next {
+  right: -68px;
+}
+
+/* Mobile responsive for gallery lightbox */
+@media (max-width: 1240px) {
+  .gal-lb-prev {
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .gal-lb-next {
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 600px) {
+  .gal-lb-meta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .gal-lb-prev,
+  .gal-lb-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 /* Mobile responsive for mat-bang */
 @media (max-width: 900px) {
   .mb-panel-layout {
@@ -3140,4 +3263,63 @@ footer {
 [data-style="inline-ea2ace"] {
   cursor: pointer;
   -webkit-appearance: none;
+}
+
+/* Contact Form 7 Integration Styles */
+.wpcf7-form p {
+  margin-bottom: 14px;
+}
+.wpcf7-form p br {
+  display: none;
+}
+.wpcf7-form label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.wpcf7-form .wpcf7-form-control-wrap {
+  display: block;
+}
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form input[type="email"] {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #E2DDD5;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  outline: none;
+  font-family: var(--font-body);
+}
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form input[type="email"]:focus {
+  border-color: var(--jade);
+  box-shadow: 0 0 0 3px rgba(29, 58, 43, 0.09);
+}
+.wpcf7-form input[type="submit"] {
+  width: 100%;
+  background: linear-gradient(135deg, var(--jade) 0%, #2A5040 100%);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 15px 9px;
+  border-radius: var(--radius);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.wpcf7-form input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(29, 58, 43, 0.45);
 }

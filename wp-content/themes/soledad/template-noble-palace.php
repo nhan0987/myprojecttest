@@ -809,7 +809,7 @@ add_filter('hpp_disallow_lazyload', function($ok, $tag){
   <!-- Zalo -->
   <a class="float-sidebar-item" href="https://zalo.me/0972991551" target="_blank" rel="noopener" title="Chat Zalo">
     <div class="icon-wrap">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" />
+      <img src="<?php echo get_template_directory_uri(); ?>/icons/icons-zalo.svg" alt="Zalo" />
     </div>
     <span>Chat Zalo</span>
   </a>

@@ -18,7 +18,7 @@ $theme_uri = get_template_directory_uri();
   <!-- Open Graph -->
   <meta property="og:title" content="Jade Lake Residence – 90 Căn Liền Kề & Biệt Thự Ven Hồ 8ha | Đại lý F1 STND" />
   <meta property="og:description" content="Chỉ 90 căn. Mặt đại lộ Tây Thăng Long 60m. Cạnh hồ điều hòa 8ha. Từ 280tr/m². Đại lý F1 STND.vn" />
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540414_e6c44a4c06ef7c98e6118360d95057ac.jpg" />
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540414_e6c44a4c06ef7c98e6118360d95057ac.webp" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
   <meta property="og:type" content="website" />
@@ -34,7 +34,7 @@ $theme_uri = get_template_directory_uri();
     <?php 
     add_action('wp_enqueue_scripts', function() {
         // Enqueue Google Fonts
-        wp_enqueue_style('jade-lake-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap', array(), null);
+        wp_enqueue_style('jade-lake-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap', array(), null);
         
         // Enqueue Custom CSS & JS
         wp_enqueue_style('jade-lake-style', get_template_directory_uri() . '/css/jade-lake.css', array(), '1.0.0');
@@ -54,9 +54,11 @@ $theme_uri = get_template_directory_uri();
 <header id="site-header">
   <div class="header-inner">
     <div class="header-logos">
-      <img src="https://stnd.vn/wp-content/uploads/2025/11/LOGO-01-1.png" alt="STND – Siêu Thị Nhà Đất" />
+      <a href="<?php echo home_url(); ?>" title="Siêu Thị Nhà Đất – STND">
+        <img src="/wp-content/uploads/2025/11/LOGO-01-1.png" alt="STND – Siêu Thị Nhà Đất" />
+      </a>
       <div class="logo-sep"></div>
-      <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/logo-jade-lake-300x177-1.png" alt="Jade Lake Residence" />
+      <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/logo-jade-lake-300x177-1.webp" alt="Jade Lake Residence" />
     </div>
     <div class="header-right">
       <a href="tel:0972991551" class="header-hotline">
@@ -122,128 +124,12 @@ $theme_uri = get_template_directory_uri();
           <span class="u-dot"></span>
           Chỉ còn <strong>&nbsp;7 suất&nbsp;</strong> ưu đãi F1 — Giới hạn đợt này
         </div>
-        <form id="heroForm" novalidate>
-          <div class="form-group" id="hg-name">
-            <label for="hName">Họ và Tên *</label>
-            <input type="text" id="hName" placeholder="Nguyễn Văn A" autocomplete="name" />
-            <div class="err-msg">Vui lòng nhập họ và tên (ít nhất 2 ký tự)</div>
-          </div>
-          <div class="form-group" id="hg-phone">
-            <label for="hPhone">Số Điện Thoại *</label>
-            <input type="tel" id="hPhone" placeholder="09xx.xxx.xxx" autocomplete="tel" />
-            <div class="err-msg">Vui lòng nhập số điện thoại Việt Nam hợp lệ</div>
-          </div>
-          <button type="submit" class="btn-cta-main" id="hSubmit">
-            🔑 Nhận Ngay Bảng Giá &amp; Chiết Khấu F1
-          </button>
-          <div class="form-secure">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-            Thông tin được bảo mật tuyệt đối
-          </div>
-        </form>
+        <?php echo do_shortcode('[contact-form-7 title="Jade Lake - Liên hệ"]'); ?>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================
-     HERO B — A/B VARIANT (Investment angle)
-     JS randomly assigns visitor to A or B
-============================================ -->
-<section id="hero-b">
-  <div class="hero-b-bg"></div>
-  <div class="hero-b-overlay"></div>
-  <div class="hero-b-inner">
-    <!-- HERO B COPY -->
-    <div class="hero-b-copy">
-      <div class="hero-b-tag">
-        <span class="eyebrow-dot"></span>
-        Shophouse Đầu Tư Sinh Lời · Đại lý F1 STND
-      </div>
-      <h1 class="hero-b-title">
-        Shophouse Mặt <em>Đại Lộ 60m</em><br>
-        — Vừa Ở, Vừa<br>
-        <em>Kinh Doanh & Cho Thuê</em>
-      </h1>
-      <p class="hero-b-lead">
-        <strong>82 liền kề shophouse</strong> 6 tầng + hầm riêng, mặt đại lộ Tây Thăng Long huyết mạch — lượng khách vãng lai lớn nhất khu Tây Hà Nội. Tiềm năng cho thuê <strong>cao, ổn định dài hạn</strong>. Cạnh hồ điều hòa 8ha, giá trị tích lũy không ngừng tăng.
-      </p>
-      <!-- ROI highlight box -->
-      <div class="hero-b-roi">
-        <div class="roi-item">
-          <div class="roi-num">280tr</div>
-          <div class="roi-label">Giá/m² từ</div>
-        </div>
-        <div class="roi-sep"></div>
-        <div class="roi-item">
-          <div class="roi-num">1 tỷ</div>
-          <div class="roi-label">TTĐC từ</div>
-        </div>
-        <div class="roi-sep"></div>
-        <div class="roi-item">
-          <div class="roi-num">6T+H</div>
-          <div class="roi-label">Kết cấu</div>
-        </div>
-        <div class="roi-sep"></div>
-        <div class="roi-item">
-          <div class="roi-num">90</div>
-          <div class="roi-label">Căn giới hạn</div>
-        </div>
-      </div>
-      <ul class="hero-b-checklist">
-        <li>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-          Mặt tiền đại lộ 60m — 10 làn xe — lưu lượng cao nhất khu Tây
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-          6 tầng nổi + 1 hầm — tối ưu cho thuê hoặc kinh doanh đa tầng
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-          Đón đầu tuyến Metro 3 & 4 — giá trị BĐS tăng theo hạ tầng
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-          Sổ đỏ lâu dài — Pháp lý minh bạch — CĐT uy tín
-        </li>
-      </ul>
-    </div>
-
-    <!-- HERO B FORM (reuses same form-card styles) -->
-    <div data-style="inline-9ef5da">
-      <div class="form-card">
-        <div class="fc-title">Tính Toán Lợi Nhuận</div>
-        <div class="fc-sub">Nhận phân tích đầu tư từ chuyên gia STND F1</div>
-        <div class="urgency-bar">
-          <span class="u-dot"></span>
-          <strong>Còn 7 lô&nbsp;</strong> tầng 1 mặt đại lộ — Ưu tiên F1
-        </div>
-        <form id="heroBForm" novalidate>
-          <div class="form-group" id="hbg-name">
-            <label for="hbName">Họ và Tên *</label>
-            <input type="text" id="hbName" placeholder="Nguyễn Văn A" autocomplete="name" />
-            <div class="err-msg">Vui lòng nhập họ và tên</div>
-          </div>
-          <div class="form-group" id="hbg-phone">
-            <label for="hbPhone">Số Điện Thoại *</label>
-            <input type="tel" id="hbPhone" placeholder="09xx.xxx.xxx" autocomplete="tel" />
-            <div class="err-msg">Vui lòng nhập số điện thoại hợp lệ</div>
-          </div>
-          <button type="submit" class="btn-cta-main" id="hbSubmit">
-            📊 Nhận Phân Tích Đầu Tư Miễn Phí
-          </button>
-          <div class="form-secure">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-            Cam kết bảo mật — Không spam
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- A/B variant tracked via GTM/Pixel only — no visible badge -->
 
 <!-- ============================================
      TRUST BAR
@@ -298,11 +184,11 @@ $theme_uri = get_template_directory_uri();
       <!-- Image stack -->
       <div class="tq-img-stack reveal">
         <div class="tq-img-main">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540415_fb7887855c548207c76cff193a0d7c5c.jpg" alt="Phối cảnh tổng thể Jade Lake Residence" loading="lazy" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540415_fb7887855c548207c76cff193a0d7c5c.webp" alt="Phối cảnh tổng thể Jade Lake Residence" loading="lazy" />
           <div class="tq-stamp">Jade Lake Residence · Hà Nội</div>
         </div>
         <div class="tq-img-float">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/cong-vien-jade-lake-residence-2.jpg" alt="Công viên nội khu" loading="lazy" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/cong-vien-jade-lake-residence-2.webp" alt="Công viên nội khu" loading="lazy" />
         </div>
       </div>
 
@@ -474,7 +360,7 @@ $theme_uri = get_template_directory_uri();
       <!-- Liền kề Shophouse -->
       <div class="product-card">
         <div class="prod-img-wrap">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/phoi-canh-jade-lake-residence-1.jpg" alt="Liền kề Shophouse Jade Lake Residence" loading="lazy" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/phoi-canh-jade-lake-residence-1.webp" alt="Liền kề Shophouse Jade Lake Residence" loading="lazy" />
           <div class="prod-badge">82 Căn Liền Kề</div>
         </div>
         <div class="prod-body">
@@ -494,7 +380,7 @@ $theme_uri = get_template_directory_uri();
       <!-- Biệt thự -->
       <div class="product-card">
         <div class="prod-img-wrap">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/biet-thu-jade-lake-residence-view-ho-1.jpg" alt="Biệt thự view hồ Jade Lake Residence" loading="lazy" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/biet-thu-jade-lake-residence-view-ho-1.webp" alt="Biệt thự view hồ Jade Lake Residence" loading="lazy" />
           <div class="prod-badge">8 Căn — Độc Bản</div>
         </div>
         <div class="prod-body">
@@ -642,26 +528,26 @@ $theme_uri = get_template_directory_uri();
     <!-- TAB NAVIGATION -->
     <div class="mb-tabs reveal">
       <button class="mb-tab active" data-tab="tong-the" onclick="switchTab(this,'tong-the')">
-        <span class="mb-tab-icon">🗺️</span>
+        
         <span class="mb-tab-label">Tổng thể &amp; Giá</span>
       </button>
       <button class="mb-tab" data-tab="lien-ke-nho" onclick="switchTab(this,'lien-ke-nho')">
-        <span class="mb-tab-icon">🏠</span>
+        
         <span class="mb-tab-label">Liền kề Nhỏ</span>
         <span class="mb-tab-sub">94–130m²</span>
       </button>
       <button class="mb-tab" data-tab="lien-ke-lon" onclick="switchTab(this,'lien-ke-lon')">
-        <span class="mb-tab-icon">🏢</span>
+        
         <span class="mb-tab-label">Liền kề Lớn</span>
         <span class="mb-tab-sub">130–212m²</span>
       </button>
       <button class="mb-tab" data-tab="biet-thu" onclick="switchTab(this,'biet-thu')">
-        <span class="mb-tab-icon">🏛️</span>
+        
         <span class="mb-tab-label">Biệt thự</span>
         <span class="mb-tab-sub">136–200m²</span>
       </button>
       <button class="mb-tab" data-tab="tang-ham" onclick="switchTab(this,'tang-ham')">
-        <span class="mb-tab-icon">🅿️</span>
+        
         <span class="mb-tab-label">Tầng hầm</span>
         <span class="mb-tab-sub">Để xe riêng</span>
       </button>
@@ -674,9 +560,9 @@ $theme_uri = get_template_directory_uri();
       <div class="mb-panel active" id="tab-tong-the">
         <div class="mb-panel-layout">
           <div class="mb-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/gia-du-kien-jade-lake-residence.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/gia-du-kien-jade-lake-residence.webp"
               alt="Phối cảnh tổng thể và giá Jade Lake Residence"
-              class="mb-main-img" onclick="openLightbox(this.src, this.alt)" loading="lazy" />
+              class="mb-main-img skip-lazy no-lazy" onclick="openLightbox(this.src, this.alt)" loading="eager" />
             <div class="mb-zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               Click để phóng to
@@ -733,9 +619,9 @@ $theme_uri = get_template_directory_uri();
       <div class="mb-panel" id="tab-lien-ke-nho">
         <div class="mb-panel-layout">
           <div class="mb-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-lien-ke-nho-jade-lake-residence.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-lien-ke-nho-jade-lake-residence.webp"
               alt="Layout liền kề nhỏ Jade Lake Residence"
-              class="mb-main-img" onclick="openLightbox(this.src, this.alt)" loading="lazy" />
+              class="mb-main-img skip-lazy no-lazy" onclick="openLightbox(this.src, this.alt)" loading="eager" />
             <div class="mb-zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               Click để phóng to
@@ -787,9 +673,9 @@ $theme_uri = get_template_directory_uri();
       <div class="mb-panel" id="tab-lien-ke-lon">
         <div class="mb-panel-layout">
           <div class="mb-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-lien-ke-lon-jade-lake-residence.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-lien-ke-lon-jade-lake-residence.webp"
               alt="Layout liền kề lớn Jade Lake Residence"
-              class="mb-main-img" onclick="openLightbox(this.src, this.alt)" loading="lazy" />
+              class="mb-main-img skip-lazy no-lazy" onclick="openLightbox(this.src, this.alt)" loading="eager" />
             <div class="mb-zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               Click để phóng to
@@ -841,9 +727,9 @@ $theme_uri = get_template_directory_uri();
       <div class="mb-panel" id="tab-biet-thu">
         <div class="mb-panel-layout">
           <div class="mb-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-biet-thu-jade-lake-residence.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/layout-biet-thu-jade-lake-residence.webp"
               alt="Layout biệt thự Jade Lake Residence"
-              class="mb-main-img" onclick="openLightbox(this.src, this.alt)" loading="lazy" />
+              class="mb-main-img skip-lazy no-lazy" onclick="openLightbox(this.src, this.alt)" loading="eager" />
             <div class="mb-zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               Click để phóng to
@@ -895,9 +781,9 @@ $theme_uri = get_template_directory_uri();
       <div class="mb-panel" id="tab-tang-ham">
         <div class="mb-panel-layout">
           <div class="mb-img-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/mat-bang-lien-ke-jade-lake-residence-tang-ham.jpg"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/mat-bang-lien-ke-jade-lake-residence-tang-ham.webp"
               alt="Mặt bằng tầng hầm liền kề Jade Lake Residence"
-              class="mb-main-img" onclick="openLightbox(this.src, this.alt)" loading="lazy" />
+              class="mb-main-img skip-lazy no-lazy" onclick="openLightbox(this.src, this.alt)" loading="eager" />
             <div class="mb-zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               Click để phóng to
@@ -952,6 +838,26 @@ $theme_uri = get_template_directory_uri();
   </div>
 </div>
 
+<!-- Lightbox for Gallery Slideshow -->
+<div id="gal-lightbox" class="mb-lightbox" onclick="closeGalLightbox()">
+  <div class="mb-lb-inner" onclick="event.stopPropagation()">
+    <button class="mb-lb-close" onclick="closeGalLightbox()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="gal-lb-prev" onclick="prevGalSlide()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="gal-lb-next" onclick="nextGalSlide()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <img id="gal-lb-img" src="" alt="" />
+    <div class="gal-lb-meta">
+      <div id="gal-lb-caption" class="mb-lb-caption"></div>
+      <div id="gal-lb-index" class="gal-lb-index">1 / 5</div>
+    </div>
+  </div>
+</div>
+
 <!-- ============================================
      LOCATION
 ============================================ -->
@@ -959,7 +865,7 @@ $theme_uri = get_template_directory_uri();
   <div class="sec-inner">
     <div class="loc-layout">
       <div class="loc-img-wrap reveal">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/vi-tri-du-an-jade-lake-residence-1.jpg" alt="Vị trí chiến lược Jade Lake Residence" loading="lazy" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/vi-tri-du-an-jade-lake-residence-1.webp" alt="Vị trí chiến lược Jade Lake Residence" loading="lazy" />
         <div class="loc-stamp">Bắc Từ Liêm · Hà Nội</div>
       </div>
       <div class="reveal">
@@ -1046,28 +952,28 @@ $theme_uri = get_template_directory_uri();
       <div class="gold-rule"></div>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gal-item big">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/biet-thu-jade-lake-residence-view-ho-1.jpg" alt="Biệt thự view hồ điều hòa 8ha" loading="lazy" />
+      <div class="gal-item big" onclick="openGalLightbox(0)">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/biet-thu-jade-lake-residence-view-ho-1.webp" alt="Biệt thự view hồ điều hòa 8ha" loading="lazy" />
         <div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gal-caption">Biệt thự view hồ điều hòa 8ha</div>
       </div>
-      <div class="gal-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/cong-vien-jade-lake-residence-2.jpg" alt="Công viên cây xanh nội khu" loading="lazy" />
+      <div class="gal-item" onclick="openGalLightbox(1)">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/cong-vien-jade-lake-residence-2.webp" alt="Công viên cây xanh nội khu" loading="lazy" />
         <div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gal-caption">Công viên cây xanh nội khu</div>
       </div>
-      <div class="gal-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540415_fb7887855c548207c76cff193a0d7c5c.jpg" alt="Phối cảnh dự án" loading="lazy" />
+      <div class="gal-item" onclick="openGalLightbox(2)">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/z6424902540415_fb7887855c548207c76cff193a0d7c5c.webp" alt="Phối cảnh dự án" loading="lazy" />
         <div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gal-caption">Phối cảnh khu đô thị</div>
       </div>
-      <div class="gal-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/ban-cong-jade-lake-residence-view-ho-1.jpg" alt="Ban công view hồ" loading="lazy" />
+      <div class="gal-item" onclick="openGalLightbox(3)">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/ban-cong-jade-lake-residence-view-ho-1.webp" alt="Ban công view hồ" loading="lazy" />
         <div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gal-caption">Ban công view hồ điều hòa</div>
       </div>
-      <div class="gal-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/phoi-canh-jade-lake-residence-1.jpg" alt="Shophouse liền kề" loading="lazy" />
+      <div class="gal-item" onclick="openGalLightbox(4)">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/phoi-canh-jade-lake-residence-1.webp" alt="Shophouse liền kề" loading="lazy" />
         <div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gal-caption">Liền kề shophouse Tân cổ điển</div>
       </div>
@@ -1187,7 +1093,9 @@ $theme_uri = get_template_directory_uri();
      FLOATING BUTTONS
 ============================================ -->
 <div class="floating-wrap">
-  <a href="https://zalo.me/0972991551" class="fl-btn fl-zalo" title="Chat Zalo ngay" target="_blank" rel="noopener">Z</a>
+  <a href="https://zalo.me/0972991551" class="fl-btn fl-zalo" title="Chat Zalo ngay" target="_blank" rel="noopener">
+    <img src="<?php echo get_template_directory_uri(); ?>/icons/icons-zalo.svg" alt="Zalo" class="fl-zalo-img" />
+  </a>
   <a href="tel:0972991551" class="fl-btn fl-phone" title="Gọi ngay">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.32.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.82 21 3 13.18 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.23 1.01L6.6 10.8z"/></svg>
   </a>
@@ -1202,7 +1110,7 @@ $theme_uri = get_template_directory_uri();
     Gọi Tư Vấn Ngay
   </a>
   <a href="https://zalo.me/0972991551" class="m-cta-zalo" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <img src="<?php echo get_template_directory_uri(); ?>/icons/icons-zalo.svg" alt="Zalo" class="m-cta-zalo-img" />
     Chat Zalo
   </a>
 </div>

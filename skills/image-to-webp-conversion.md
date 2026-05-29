@@ -19,9 +19,9 @@ foreach ($file in $files) {
     npx sharp-cli -i $file.FullName -o . --format webp 
 }
 ```
-
 # Chạy lệnh đơn trong thư mục chứa ảnh
 Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png)$' } | ForEach-Object { Write-Host "Đang chuyển đổi: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp }
+
 
 
 ### Bước 2: Cập nhật Tham chiếu trong Mã nguồn
