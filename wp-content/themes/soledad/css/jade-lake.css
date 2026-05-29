@@ -3293,8 +3293,7 @@ footer {
 
 .wpcf7-form input[type="text"],
 .wpcf7-form input[type="tel"],
-.wpcf7-form input[type="email"],
-.wpcf7-form select {
+.wpcf7-form input[type="email"] {
   width: 100% !important;
   height: 48px !important;
   padding: 13px 15px !important;
@@ -3309,6 +3308,31 @@ footer {
   outline: none !important;
   box-sizing: border-box !important;
   font-family: var(--font-body) !important;
+}
+
+.wpcf7-form select {
+  width: 100% !important;
+  height: 48px !important;
+  padding: 13px 32px 13px 15px !important;
+  border: 1.5px solid #E2DDD5 !important;
+  border-radius: var(--radius) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important; /* Reset uppercase from label */
+  color: var(--text-dark) !important;
+  background: var(--white) !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-body) !important;
+  cursor: pointer !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231D3A2B'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 20px !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .wpcf7-form input[type="text"]:focus,

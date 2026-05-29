@@ -1028,34 +1028,12 @@ $theme_uri = get_template_directory_uri();
     <div class="reg-form-card reveal reveal-delay-1">
       <div class="fc-title">Đăng Ký Nhận Thông Tin</div>
       <div class="fc-sub">Tư vấn viên liên hệ trong 15 phút</div>
-      <form id="regForm" novalidate>
-        <div class="form-group" id="rg-name">
-          <label for="rName">Họ và Tên *</label>
-          <input type="text" id="rName" placeholder="Nguyễn Văn A" autocomplete="name" />
-          <div class="err-msg">Vui lòng nhập họ và tên</div>
-        </div>
-        <div class="form-group" id="rg-phone">
-          <label for="rPhone">Số Điện Thoại *</label>
-          <input type="tel" id="rPhone" placeholder="09xx.xxx.xxx" autocomplete="tel" />
-          <div class="err-msg">Vui lòng nhập số điện thoại hợp lệ</div>
-        </div>
-        <div class="form-group">
-          <label for="rInterest">Quan tâm sản phẩm</label>
-          <select id="rInterest" data-style="inline-ea2ace">
-            <option value="">— Chọn loại sản phẩm —</option>
-            <option value="lien-ke">Liền kề Shophouse (từ 280tr/m²)</option>
-            <option value="biet-thu">Biệt thự View Hồ (8 căn độc bản)</option>
-            <option value="ca-hai">Đang cân nhắc cả hai</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-cta-main" id="rSubmit">
-          Đăng Ký Nhận Báo Giá Ngay
-        </button>
+      <?php echo do_shortcode('[contact-form-7 title="Jade Lake - Liên hệ 2"]'); ?>
+      
         <div class="form-secure">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
           Cam kết bảo mật thông tin — Không spam
         </div>
-      </form>
     </div>
   </div>
 </section>
