@@ -1009,7 +1009,7 @@ $theme_uri = get_template_directory_uri();
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-          <strong data-style="inline-cf62eb">Chiết khấu 4.5%</strong>&nbsp;thanh toán vốn tự có — không qua trung gian
+          <strong data-style="inline-cf62eb">Chiết khấu 4.5%</strong>&nbsp;Thanh toán vốn tự có — không qua trung gian
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>

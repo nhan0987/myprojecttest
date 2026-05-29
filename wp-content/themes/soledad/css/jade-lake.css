@@ -832,6 +832,13 @@ h1.hero-title em {
   margin-bottom: 20px;
 }
 
+@media (max-width: 640px) {
+  .urgency-bar {
+    gap: 4px;
+    font-size: 10px;
+  }
+}
+
 .u-dot {
   width: 8px;
   height: 8px;
@@ -1666,6 +1673,15 @@ section {
   gap: 9px;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width:640px) {
+  .reg-perks li {
+
+    font-size: 9px;
+
+  }
+
 }
 
 .reg-perks li svg {
@@ -2667,6 +2683,12 @@ footer {
   cursor: pointer;
 }
 
+@media (max-width:640px) {
+  .btn-mb-cta {
+    font-size: 12px;
+  }
+}
+
 .btn-mb-cta:hover {
   background: var(--jade-mid);
   transform: translateY(-2px);
@@ -2898,124 +2920,225 @@ footer {
 /* Larger tap targets on mobile */
 @media (max-width: 768px) {
 
-  /* Header tighter */
+  /* Prevent horizontal scroll globally on mobile screens */
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix fixed header button clipping */
+  #site-header {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
   .header-inner {
-    padding: 10px 16px;
+    padding: 10px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-logos {
+    gap: 8px !important;
   }
 
   .header-logos img {
-    height: 34px;
+    height: 30px !important;
   }
 
   .btn-header-cta {
-    padding: 8px 14px;
-    font-size: 0.75rem;
+    padding: 8px 12px !important;
+    font-size: 0.72rem !important;
   }
 
-  /* Hero form card full-width */
+  /* Fix Hero section layout clipping */
+  #hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 100px 16px 40px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  h1.hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-lead {
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 24px !important;
+    max-width: 100% !important;
+  }
+
+  /* Fix KPIs layout grid to avoid pushing width */
+  .hero-kpis {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 12px !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+  }
+
+  .hero-kpi {
+    padding-left: 10px !important;
+    border-left: 2px solid var(--gold) !important;
+    margin: 0 !important;
+  }
+
+  .kpi-num {
+    font-size: 1.35rem !important;
+  }
+
+  .kpi-label {
+    font-size: 0.68rem !important;
+    margin-top: 2px !important;
+  }
+
+  /* Hero form card full-width & responsive padding */
   .hero-form-wrap {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .form-card {
-    border-radius: var(--radius);
+    padding: 24px 16px !important;
+    /* Reduced padding from 36px 32px to fit mobile viewports */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius) !important;
+  }
+
+  /* Ensure CF7 forms are responsive inside wrappers */
+  .wpcf7-form,
+  .wpcf7-form-control-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Trust bar 2-col on mobile */
   .trust-inner {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 16px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 0 16px !important;
   }
 
   /* Product cards full width */
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .prod-img-wrap {
-    height: 220px;
+    height: 220px !important;
   }
 
   /* Payment 2-col on tablet */
   .pay-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   /* Register section stack */
   #register .sec-inner {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 
   .reg-form-card {
-    margin: 0 auto;
-    width: 100%;
+    margin: 0 auto !important;
+    width: 100% !important;
+    padding: 24px 16px !important;
+    /* Reduced padding on mobile */
+    box-sizing: border-box !important;
   }
 
   /* Tổng quan stack */
   .tq-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .tq-img-float {
-    display: none;
+    display: none !important;
   }
 
   /* Gallery 2-col */
   .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr !important;
   }
 
   /* Footer */
   .foot-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   /* Floating buttons higher above sticky CTA */
   .floating-wrap {
-    bottom: 70px;
-    right: 14px;
+    bottom: 70px !important;
+    right: 14px !important;
   }
 
   /* Larger form inputs for mobile fat-finger */
   .form-group input,
   .form-group select {
-    padding: 15px 15px;
-    font-size: 1rem;
+    padding: 15px 15px !important;
+    font-size: 1rem !important;
   }
 
   .btn-cta-main {
-    padding: 17px 20px;
-    font-size: 1rem;
+    padding: 17px 20px !important;
+    font-size: 1rem !important;
   }
 
   /* Section spacing tighter */
   section {
-    padding: 60px 16px;
+    padding: 60px 16px !important;
   }
 
   #tong-quan {
-    padding: 60px 16px;
+    padding: 60px 16px !important;
   }
 
   /* Location distance grid */
   .dist-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   /* USP cards full */
   .usp-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   /* Hero B */
   .hero-b-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .hero-b-roi {
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
   }
 }
 
@@ -3301,7 +3424,8 @@ footer {
   border-radius: var(--radius) !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
-  text-transform: none !important; /* Reset uppercase from label */
+  text-transform: none !important;
+  /* Reset uppercase from label */
   color: var(--text-dark) !important;
   background: var(--white) !important;
   transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
@@ -3318,7 +3442,8 @@ footer {
   border-radius: var(--radius) !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
-  text-transform: none !important; /* Reset uppercase from label */
+  text-transform: none !important;
+  /* Reset uppercase from label */
   color: var(--text-dark) !important;
   background: var(--white) !important;
   transition: border-color 0.22s ease, box-shadow 0.22s ease !important;
@@ -3360,6 +3485,13 @@ footer {
   margin-top: 4px !important;
   box-sizing: border-box !important;
   font-family: var(--font-body) !important;
+}
+
+@media (max-width: 640px) {
+  .wpcf7-form input[type="submit"] {
+    font-size: 11px !important;
+    height: 40px !important;
+  }
 }
 
 .wpcf7-form input[type="submit"]:hover {
