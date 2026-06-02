@@ -171,13 +171,18 @@ select {
   }
 }
 
-/* ── Override: pay-grid now 2-track ── */
+/* ── Payment Grid ── */
 .pay-grid {
-  display: Flex;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin-bottom: 24px;
-  justify-content: center;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .pay-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pay-track {
@@ -366,9 +371,6 @@ select {
 }
 
 @media (max-width: 768px) {
-  .pay-grid {
-    grid-template-columns: 1fr;
-  }
 
   .tailoc-banner {
     flex-wrap: wrap;
@@ -1493,12 +1495,7 @@ section {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.pay-grid {
-  display: Flex;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-bottom: 32px;
-}
+
 
 .pay-note {
   background: rgba(201, 168, 76, 0.1);
@@ -2011,9 +2008,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .pay-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
 
   #register .sec-inner {
     grid-template-columns: 1fr;
@@ -2053,9 +2048,7 @@ footer {
     height: 200px;
   }
 
-  .pay-grid {
-    grid-template-columns: 1fr;
-  }
+
 
   .amen-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3056,10 +3049,7 @@ footer {
     height: 220px !important;
   }
 
-  /* Payment 2-col on tablet */
-  .pay-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+
 
   /* Register section stack */
   #register .sec-inner {
@@ -3167,11 +3157,7 @@ footer {
     font-size: 1.2rem;
   }
 
-  .pay-grid {
-    grid-template-columns: 1fr;
-    display: grid;
-    gap: 16px;
-  }
+
 
   .amen-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3182,11 +3168,11 @@ footer {
     grid-template-rows: auto;
   }
 
-  .gal-item.big {
+  /* .gal-item.big {
     grid-column: 1;
     grid-row: 1;
     height: 220px;
-  }
+  } */
 
   .tq-cta-row {
     flex-direction: column;

@@ -122,7 +122,7 @@ $theme_uri = get_template_directory_uri();
         <div class="fc-sub">Tư vấn miễn phí • Phản hồi trong 15 phút</div>
         <div class="urgency-bar">
           <span class="u-dot"></span>
-          Chỉ còn <strong>&nbsp;7 suất&nbsp;</strong> ưu đãi F1 — Giới hạn đợt này
+          Chỉ còn 7 suất ưu đãi F1 — Giới hạn đợt này
         </div>
         <?php echo do_shortcode('[contact-form-7 title="Jade Lake - Liên hệ"]'); ?>
 
