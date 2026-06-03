@@ -12,7 +12,7 @@ export const options = {
 
 export default function () {
     // Máy chủ của Oniichan cần kiểm tra
-    http.get('https://stnd.vn//');
+    http.get('https://qa1.stnd.vn//');
 
     // Nghỉ 1 giây giữa các lần nhấn (giả lập người dùng thật)
     sleep(1);
