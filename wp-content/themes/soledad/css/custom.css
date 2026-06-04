@@ -2584,6 +2584,7 @@ p:last-child {
 	transform: rotate(-12deg);
 	opacity: 0.5;
 	z-index: 0;
+	pointer-events: none;
 }
 
 .after-02 .lth-section::after {
@@ -2597,6 +2598,19 @@ p:last-child {
 	transform: rotate(-16deg);
 	opacity: 0.5;
 	z-index: 0;
+	pointer-events: none;
+}
+
+.after-01 .lth-section,
+.after-02 .lth-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.after-01 .lth-section > *,
+.after-02 .lth-section > * {
+	position: relative;
+	z-index: 1;
 }
 
 .lien-he-voi-chung-toi .infor p {
