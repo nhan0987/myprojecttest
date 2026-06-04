@@ -7418,3 +7418,11 @@ html {
 .wpcf7-response-output {
 	display: none !important;
 }
+
+.wpcf7-spinner::before {
+	background-color: #fbfbfc00;
+	width: 24px !important;
+	height: 24px !important;
+	top: 0px !important;
+	left: 0px !important;
+}

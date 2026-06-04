@@ -3228,7 +3228,7 @@ button {
   visibility: hidden;
   opacity: 0;
   position: absolute !important;
-  top: 50% !important;
+  top: 60% !important;
   left: 50% !important;
   width: 20px !important;
   height: 20px !important;
@@ -3267,4 +3267,12 @@ button {
 
 .wpcf7-response-output {
   display: none !important;
+}
+
+.wpcf7-spinner::before {
+  background-color: #fbfbfc00;
+  width: 24px !important;
+  height: 24px !important;
+  top: 0px !important;
+  left: 0px !important;
 }
