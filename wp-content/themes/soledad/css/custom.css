@@ -1612,7 +1612,6 @@ p:last-child {
 }
 
 #footer-section .go-to-top-parent {
-
 	display: block;
 	position: absolute;
 
@@ -1624,7 +1623,7 @@ p:last-child {
 	width: 3rem;
 	height: 2.75rem;
 
-	padding: 0.375rem 0.5rem;
+	padding: 0;
 	background-color: #1E2931;
 	border: 1px solid #FFD45C;
 	border-radius: 9px;
@@ -1637,15 +1636,24 @@ p:last-child {
 
 #footer-section .go-to-top-parent span:before {
 	content: "";
-	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-90deg);
 	background-image: url(/wp-content/themes/soledad/icons/Polygon-2.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	vertical-align: middle;
-	rotate: -90deg;
 	width: 1.125rem;
 	height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+	#footer-section .go-to-top-parent {
+		left: auto;
+		right: 0.75rem;
+		translate: none; /* remove centering translation */
+	}
 }
 
 @media (min-width:1280px) {
@@ -2607,8 +2615,8 @@ p:last-child {
 	overflow: hidden;
 }
 
-.after-01 .lth-section > *,
-.after-02 .lth-section > * {
+.after-01 .lth-section>*,
+.after-02 .lth-section>* {
 	position: relative;
 	z-index: 1;
 }
@@ -3545,7 +3553,7 @@ html {
 		Đặt đè lên trên thẻ input
 	*/
 	position: absolute !important;
-	top: 23% !important;
+	top: 22px !important;
 	transform: translateY(-50%) !important;
 	right: -1.0625rem !important;
 
@@ -3559,9 +3567,28 @@ html {
 	transition: opacity 0.2s !important;
 }
 
+/* Định vị spinner đi theo đúng nút bấm */
+.just-email-form .wpcf7-spinner {
+	top: 22px !important;
+	left: auto !important;
+	right: -1.0625rem !important;
+	margin: -10px 10px 0 0 !important;
+}
+
 .just-email-form.email-form-style-01 .wpcf7-submit {
-	top: 17% !important;
+	top: 22px !important;
 	right: -2.4375rem !important;
+}
+
+.just-email-form.email-form-style-01 .wpcf7-spinner {
+	right: 0.5625rem !important;
+	border-color: rgba(0, 0, 0, 0.1) !important;
+	border-top-color: #6c757d !important;
+}
+
+/* Ẩn hoàn toàn icon mũi tên khi đang submit để nhường chỗ cho spinner */
+.wpcf7-form.submitting .just-email-form .wpcf7-submit {
+	opacity: 0 !important;
 }
 
 .just-email-form .wpcf7-submit:hover {
