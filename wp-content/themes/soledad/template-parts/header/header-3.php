@@ -41,7 +41,7 @@
 		?>
 		<nav id="navigation" class="<?php echo $class_layout_bottom; ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 			
-			<div class="container-fullwidth flex items-center justify-between xl:justify-center mx-auto py-[5px]! lg:py-[0.1rem]! px-[14px]!">
+			<div class="container-fullwidth flex items-center justify-between xl:justify-center  mx-auto py-[5px]! lg:py-[0.1rem]! px-[14px]!">
 				<div class="button-menu-mobile header-3 "> <i class="bi bi-list">&nbsp;</i></div>
 				
 				
