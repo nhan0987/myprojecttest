@@ -188,14 +188,14 @@ select {
 .pay-track {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(201, 168, 76, 0.2);
-  padding: 32px 16px;
+  /* padding: 32px 16px; */
   transition: background 0.28s ease;
 }
 
 @media (min-width:640px) {
   .pay-track {
 
-    padding: 32px 78px;
+    /* padding: 32px 78px; */
 
   }
 }

@@ -441,70 +441,17 @@ $theme_uri = get_template_directory_uri();
 
       <!-- Track 1: Vốn tự có -->
       <div class="pay-track">
-        <div class="pay-track-label">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg>
-          Phương thức 1 — Vốn Tự Có
-        </div>
-        <div class="pay-track-title">Thanh Toán Nhanh<br>Chiết Khấu 4.5%</div>
-        <div class="pay-track-rows">
-          <div class="pay-row">
-            <div class="pay-row-dot">A</div>
-            <div class="pay-row-body">
-              <div class="pay-row-name">Tiền đặt cọc (TTĐC)</div>
-              <div class="pay-row-val">1.000.000.000 đ</div>
-              <div class="pay-row-sub">Tại thời điểm ký Thỏa thuận đặt cọc</div>
-            </div>
-          </div>
-          <div class="pay-row">
-            <div class="pay-row-dot">B</div>
-            <div class="pay-row-body">
-              <div class="pay-row-name">Đợt 1 — Ký HĐ chuyển nhượng</div>
-              <div class="pay-row-val">100% Giá trị BĐS</div>
-              <div class="pay-row-sub">Trong vòng 10 ngày kể từ ngày ký TTĐC · Đã bao gồm tiền cọc</div>
-            </div>
-          </div>
-        </div>
-        <div class="pay-highlight-badge">
-          ✦ Chiết khấu ngay 4.5% tổng giá trị BĐS (đã VAT)
-        </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/thanhtoannhanh.webp"
+              alt="Thanh toán nhanh Jade Lake Residence"
+              class="" />
+        
       </div>
 
       <!-- Track 2: Vay ngân hàng -->
       <div class="pay-track">
-        <div class="pay-track-label">
-          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/></svg>
-          Phương thức 2 — Vay Ngân Hàng
-        </div>
-        <div class="pay-track-title">Hỗ Trợ Lãi Suất 0%<br>Trong 12 Tháng</div>
-        <div class="pay-track-rows">
-          <div class="pay-row">
-            <div class="pay-row-dot">A</div>
-            <div class="pay-row-body">
-              <div class="pay-row-name">Tiền đặt cọc (TTĐC)</div>
-              <div class="pay-row-val">1.000.000.000 đ</div>
-              <div class="pay-row-sub">Tại thời điểm ký Thỏa thuận đặt cọc</div>
-            </div>
-          </div>
-          <div class="pay-row">
-            <div class="pay-row-dot">B</div>
-            <div class="pay-row-body">
-              <div class="pay-row-name">Đợt 1 — Khách hàng tự trả</div>
-              <div class="pay-row-val">30% Giá trị BĐS</div>
-              <div class="pay-row-sub">Trong 10 ngày từ ký TTĐC · Đã bao gồm tiền cọc</div>
-            </div>
-          </div>
-          <div class="pay-row">
-            <div class="pay-row-dot">C</div>
-            <div class="pay-row-body">
-              <div class="pay-row-name">Ngân hàng giải ngân</div>
-              <div class="pay-row-val">Đến đủ 100%</div>
-              <div class="pay-row-sub">Vay tối đa 70% giá trị BĐS · HTLS 0% khoản vay ≤50% trong 12 tháng</div>
-            </div>
-          </div>
-        </div>
-        <div class="pay-highlight-badge">
-          ✦ HTLS 0% — 12 tháng · Vay tối đa 70% giá trị BĐS
-        </div>
+          <img src="<?php echo get_template_directory_uri(); ?>/images/jade-lake/hotrolaisuat.webp"
+            alt="Hỗ trợ lãi suất Jade Lake Residence"
+            class="" />
       </div>
 
     </div><!-- /.pay-grid -->
