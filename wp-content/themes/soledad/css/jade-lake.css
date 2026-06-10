@@ -190,14 +190,11 @@ select {
   border: 1px solid rgba(201, 168, 76, 0.2);
   /* padding: 32px 16px; */
   transition: background 0.28s ease;
+  border-radius: 4px;
 }
 
-@media (min-width:640px) {
-  .pay-track {
-
-    /* padding: 32px 78px; */
-
-  }
+.pay-track img {
+  border-radius: 4px;
 }
 
 .pay-track:hover {
@@ -2266,8 +2263,9 @@ footer {
 
 .tq-img-main img {
   width: 100%;
-  height: 340px;
+  height: 870px;
   object-fit: cover;
+  object-position: 24% 80%;
 }
 
 .tq-img-float {

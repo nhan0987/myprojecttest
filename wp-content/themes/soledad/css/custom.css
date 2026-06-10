@@ -2245,10 +2245,6 @@ p:last-child {
 }
 
 
-.home-page-slider {
-	aspect-ratio: 100 / 360;
-}
-
 @media (min-width:1280px) {
 	.home-page-slider img {
 		width: 114rem;
