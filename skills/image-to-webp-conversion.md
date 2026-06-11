@@ -23,7 +23,7 @@ foreach ($file in $files) {
 # Chạy lệnh đơn trong thư mục chứa ảnh
 Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png)$' } | ForEach-Object { Write-Host "Đang chuyển đổi: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp -q 60 --effort 6 }
 
-Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png)$' } | ForEach-Object { Write-Host "Đang chuyển đổi: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp -q 90 --effort 6 resize 1824 640 --fit inside }
+
 
 ### Thay đổi kích thước (Resize) ảnh hàng loạt
 Nếu bạn muốn tất cả các ảnh đều được đưa về chung một kích thước (ví dụ: Rộng 800px, Cao 600px) trước hoặc trong lúc chuyển đổi, bạn có thể thêm lệnh `resize` vào cấu trúc của `sharp-cli`. Nếu bạn chỉ truyền chiều rộng (ví dụ 800), chiều cao sẽ tự động thu phóng theo tỷ lệ chuẩn.
@@ -40,7 +40,7 @@ foreach ($file in $files) {
 
 Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png|webp)$' } | ForEach-Object { Write-Host "Đang resize: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp -q 70 resize 360 378 --fit inside }
 
-Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png|webp)$' } | ForEach-Object { Write-Host "Đang resize: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp -q 70 resize 1824 640 --fit inside }
+Get-ChildItem | Where-Object { $_.Extension -match '^\.(jpg|jpeg|png|webp)$' } | ForEach-Object { Write-Host "Đang resize: $($_.Name)..."; npx sharp-cli -i $_.FullName -o . --format webp -q 7 --effort 6 resize 1824 640 --fit inside }
 
 
 ### Bước 2: Cập nhật Tham chiếu trong Mã nguồn
