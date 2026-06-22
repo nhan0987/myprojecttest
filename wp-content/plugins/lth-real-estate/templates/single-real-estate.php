@@ -96,7 +96,7 @@ while ( have_posts() ) : the_post();
     if ( $featured_id ) {
         array_unshift( $gallery_ids, $featured_id );
     }
-    $gallery_ids = array_unique( array_filter( $gallery_ids ) );
+    $gallery_ids = array_values( array_unique( array_filter( $gallery_ids ) ) );
     
     // Taxonomy (Prioritize Category as requested)
     $categories = get_the_category( $post_id );
@@ -475,7 +475,7 @@ while ( have_posts() ) : the_post();
         <div class="w-full xl:basis-[18.5rem] flex-shrink-0 top-10">
             <div class="bds-agent-card">
                 <div class="avatar">
-                    <img src="/wp-content/uploads/2026/03/033b60afaa34c7b6114814ec022fe1438ea96af5.jpg" alt="Agent">
+                    <img src="/wp-content/themes/soledad/images/hoang_van_thai.jpeg" alt="Agent">
                 </div>
                 <h4 class="text-sm! font-bold! mb-1">Mr. Hoàng Văn Thái</h4>
                 <p class="position italic text-gray-500 text-sm mb-1!">Chuyên viên tư vấn</p>
