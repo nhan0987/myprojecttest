@@ -82,7 +82,7 @@ if( get_theme_mod( 'penci_loadnp_posts' ) ){
 				<!-- entry header -->
 				<?php get_template_part( 'template-parts/single', 'entry-header' ); ?>
 
-				<div class="flex flex-wrap w-full gap-6">
+				<div class="flex flex-wrap w-full gap-4! single-page-content-01">
 					<!-- time box -->
 					<?php if (! get_theme_mod('penci_single_meta_date')) : ?>
 						

@@ -1,5 +1,5 @@
-# Translation of WordPress - 6.9.x - Development - Administration - Network Admin in Vietnamese
-# This file is distributed under the same license as the WordPress - 6.9.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 7.0.x - Development - Administration - Network Admin in Vietnamese
+# This file is distributed under the same license as the WordPress - 7.0.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-03-29 08:53:06+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.3\n"
 "Language: vi_VN\n"
-"Project-Id-Version: WordPress - 6.9.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 7.0.x - Development - Administration - Network Admin\n"
 
 #: wp-admin/network/upgrade.php:37
 msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen\">Documentation on Upgrade Network</a>"
@@ -39,7 +39,7 @@ msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multis
 msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/create-network/\">Documentation on Creating a Network</a>"
 msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/create-network/\">Tài liệu về tạo mạng</a>"
 
-#: wp-admin/includes/network.php:680
+#: wp-admin/includes/network.php:683
 msgid "https://developer.wordpress.org/advanced-administration/server/web-server/nginx/"
 msgstr "https://developer.wordpress.org/advanced-administration/server/web-server/nginx/"
 
@@ -51,33 +51,33 @@ msgstr "Thiếu tiêu đề trang web."
 msgid "Table ordered by User Registered Date."
 msgstr "Bảng được sắp xếp theo ngày đăng ký của người dùng."
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:348
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:358
 msgid "Table ordered by Theme Name."
 msgstr "Bảng được sắp xếp theo tên chủ đề."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:404
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:427
 msgid "Table ordered by Site Registered Date."
 msgstr "Bảng được sắp xếp theo ngày đăng ký của trang web."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:403
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:426
 msgid "Table ordered by Last Updated."
 msgstr "Bảng được sắp xếp theo lần cập nhật cuối cùng."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:398
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:421
 msgid "Table ordered by Site Path."
 msgstr "Bảng được sắp xếp theo đường dẫn của trang web."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:395
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:418
 msgid "Table ordered by Site Domain Name."
 msgstr "Bảng được sắp xếp theo tên miền của trang web."
 
-#: wp-admin/includes/network.php:588
+#: wp-admin/includes/network.php:591
 msgid "Network configuration authentication keys"
 msgstr "Các mã khóa xác thực cấu hình mạng"
 
 #. translators: %s: File name (wp-config.php, .htaccess or web.config).
-#: wp-admin/includes/network.php:525 wp-admin/includes/network.php:664
-#: wp-admin/includes/network.php:726
+#: wp-admin/includes/network.php:528 wp-admin/includes/network.php:667
+#: wp-admin/includes/network.php:729
 msgid "Network configuration rules for %s"
 msgstr "Các quy tắc cấu hình mạng trong file %s"
 
@@ -90,23 +90,23 @@ msgid "Cannot create an empty site."
 msgstr "Không thể tạo 1 trang web trống"
 
 #. translators: %s: wp-config.php
-#: wp-admin/includes/network.php:496
+#: wp-admin/includes/network.php:499
 msgid "You should back up your existing %s file."
 msgstr "Bạn phải sao lưu file %s hiện tại"
 
 #. translators: 1: wp-config.php, 2: .htaccess
 #. translators: 1: wp-config.php, 2: web.config
-#: wp-admin/includes/network.php:482 wp-admin/includes/network.php:489
+#: wp-admin/includes/network.php:485 wp-admin/includes/network.php:492
 msgid "You should back up your existing %1$s and %2$s files."
 msgstr "Bạn phải sao lưu các file %1$s và %2$s hiện tại"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:759
 msgid "Visit theme site for %s"
 msgstr "Truy cập trang web của %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:757
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:772
 msgid "Child theme of %s"
 msgstr "Giao diện con của %s"
 
@@ -115,7 +115,7 @@ msgctxt "site"
 msgid "Public"
 msgstr "Công khai "
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:297
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:308
 msgctxt "site"
 msgid "Not spam"
 msgstr "Không phải spam"
@@ -136,61 +136,61 @@ msgstr[0] "Giao diện %s sẽ được tự động cập nhật."
 msgid "Sorry, you are not allowed to change themes automatic update settings."
 msgstr "Xin lỗi, bạn không được phép thay đổi cài đặt việc tự động cập nhật giao diện."
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:322
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:328
 msgid "No themes are currently available."
 msgstr "Không có giao diện nào hiện đang có sẵn."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:503
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:528
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:526
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:551
 #: wp-admin/includes/class-wp-ms-users-list-table.php:346
 msgid "Y/m/d g:i:s a"
 msgstr "d/m/Y g:i:s a"
 
 #. translators: %s: Documentation URL.
-#: wp-admin/includes/network.php:679
+#: wp-admin/includes/network.php:682
 msgid "It seems your network is running with Nginx web server. <a href=\"%s\">Learn more about further configuration</a>."
 msgstr "Có vẻ như trang mạng của bạn đang chạy trên máy chủ Nginx. <a href=\"%s\">Tìm hiểu thêm về các cấu hình khác</a>."
 
 #. translators: %s: Number of sites.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:251
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:258
 msgctxt "sites"
 msgid "Spam <span class=\"count\">(%s)</span>"
 msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] "Spam <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of sites.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:245
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:252
 msgid "Mature <span class=\"count\">(%s)</span>"
 msgid_plural "Mature <span class=\"count\">(%s)</span>"
 msgstr[0] "Đang hoạt động <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of sites.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:239
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:246
 msgid "Archived <span class=\"count\">(%s)</span>"
 msgid_plural "Archived <span class=\"count\">(%s)</span>"
 msgstr[0] "Lưu trữ <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of sites.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:233
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:240
 msgid "Public <span class=\"count\">(%s)</span>"
 msgid_plural "Public <span class=\"count\">(%s)</span>"
 msgstr[0] "Đã công bố <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of sites.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:226
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:233
 msgctxt "sites"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Tất cả <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of themes.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:407
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:420
 msgctxt "themes"
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] "Cần nâng cấp <span class=\"count\">(%s)</span>"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:652
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:675
 msgid "Main"
 msgstr "Chính"
 
@@ -211,7 +211,7 @@ msgstr "Bạn sắp xóa các trang web sau:"
 msgid "User could not be added to this site."
 msgstr "Không thể thêm người dùng vào trang web này."
 
-#: wp-admin/network/site-new.php:287
+#: wp-admin/network/site-new.php:288
 msgid "The username and a link to set the password will be mailed to this email address."
 msgstr "Tên người dùng và liên kết để đặt mật khẩu sẽ được gửi bằng thư đến địa chỉ email này."
 
@@ -220,15 +220,15 @@ msgstr "Tên người dùng và liên kết để đặt mật khẩu sẽ đư�
 msgid "There is a pending change of the network admin email to %s."
 msgstr "Có một yêu cầu thay đổi email quản trị network thành %s đang chờ duyệt."
 
-#: wp-admin/includes/network.php:352
+#: wp-admin/includes/network.php:355
 msgid "Sub-domain Installation"
 msgstr "Cài đặt tên miền con"
 
-#: wp-admin/includes/network.php:321 wp-admin/includes/network.php:339
+#: wp-admin/includes/network.php:324 wp-admin/includes/network.php:342
 msgid "Sub-directory Installation"
 msgstr "Cài đặt thư mục con"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:950
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:965
 msgid "Active Child Theme"
 msgstr "Theme con đang hoạt động"
 
@@ -279,13 +279,13 @@ msgstr "Email bình luận đầu tiên"
 #. is localized. You can check the localized release package or
 #. https://i18n.svn.wordpress.org/<locale code>/branches/<wp
 #. version>/dist/wp-config-sample.php
-#: wp-admin/includes/network.php:517
+#: wp-admin/includes/network.php:520
 msgid "That&#8217;s all, stop editing! Happy publishing."
 msgstr "Hết rồi, sửa đến đây thôi! Viết blog vui vẻ."
 
 #. translators: 1: wp-config.php, 2: Location of wp-config file, 3: Translated
 #. version of "That's all, stop editing! Happy publishing."
-#: wp-admin/includes/network.php:509
+#: wp-admin/includes/network.php:512
 msgid "Add the following to your %1$s file in %2$s <strong>above</strong> the line reading %3$s:"
 msgstr "Chèn đoạn mã dưới vào file %1$s ở %2$s, <strong>bên trên</strong> dòng %3$s:"
 
@@ -295,56 +295,56 @@ msgctxt "theme"
 msgid "%1$s by %2$s"
 msgstr "%1$s của %2$s"
 
-#: wp-admin/network/site-new.php:229
+#: wp-admin/network/site-new.php:230
 msgid "Only lowercase letters (a-z), numbers, and hyphens are allowed."
 msgstr "Chỉ cho phép chữ viết thường (a-z), chữ số và dấu gạch ngang."
 
 #. translators: %s: wp-config.php
-#: wp-admin/includes/network.php:581
+#: wp-admin/includes/network.php:584
 msgid "These unique authentication keys are also missing from your %s file."
 msgstr "Các key xác thực bị thiếu từ file %s của bạn."
 
 #. translators: %s: wp-config.php
-#: wp-admin/includes/network.php:575
+#: wp-admin/includes/network.php:578
 msgid "This unique authentication key is also missing from your %s file."
 msgstr "Key duy nhất dùng để xác thực cũng không được tìm thấy trong file %s của bạn. "
 
 #. translators: 1: localhost, 2: localhost.localdomain
-#: wp-admin/includes/network.php:326
+#: wp-admin/includes/network.php:329
 msgid "Because you are using %1$s, the sites in your WordPress network must use sub-directories. Consider using %2$s if you wish to use sub-domains."
 msgstr "Do bạn đang sử dụng %1$s, các trang trong mạng WordPress của bạn phải sử dụng các thư mục con. Hãy cân nhắc sử dụng %2$s nếu bạn muốn sử dụng tên miền phụ."
 
 #. translators: %s: Host name.
-#: wp-admin/includes/network.php:308 wp-admin/includes/network.php:368
+#: wp-admin/includes/network.php:311 wp-admin/includes/network.php:371
 msgid "The internet address of your network will be %s."
 msgstr "Địa chỉ mạng của bạn sẽ là %s."
 
 #. translators: 1: Site URL, 2: Host name, 3: www.
-#: wp-admin/includes/network.php:294
+#: wp-admin/includes/network.php:297
 msgid "You should consider changing your site domain to %1$s before enabling the network feature. It will still be possible to visit your site using the %3$s prefix with an address like %2$s but any links will not have the %3$s prefix."
 msgstr "Bạn nên cân nhắc việc thay đổi miền trang web của mình thành %1$s trước khi bật tính năng mạng. Bạn vẫn có thể truy cập trang web của mình bằng tiền tố %3$s có địa chỉ như %2$s nhưng mọi liên kết sẽ không có tiền tố %3$s."
 
-#: wp-admin/includes/network.php:242
+#: wp-admin/includes/network.php:245
 msgid "You cannot change this later."
 msgstr "Bạn không thể thay đổi điều này sau đó."
 
-#: wp-admin/includes/network.php:241
+#: wp-admin/includes/network.php:244
 msgid "Please choose whether you would like sites in your WordPress network to use sub-domains or sub-directories."
 msgstr "Hãy lựa chọn nó nếu bạn muốn các trang web trong mạng WordPress của bạn sử dụng các tên miền phụ hoặc thư mục con."
 
 #. translators: 1: mod_rewrite, 2: mod_rewrite documentation URL, 3: Google
 #. search for mod_rewrite.
-#: wp-admin/includes/network.php:222
+#: wp-admin/includes/network.php:225
 msgid "If %1$s is disabled, ask your administrator to enable that module, or look at the <a href=\"%2$s\">Apache documentation</a> or <a href=\"%3$s\">elsewhere</a> for help setting it up."
 msgstr "Nếu %1$s bị vô hiệu hóa, bạn hãy yêu cầu quản trị viên của bạn kích hoạt module đó, hoặc chú ý đoạn sau <a href=\"%2$s\">Tài liệu Apache</a> hoặc là <a href=\"%3$s\"> Nơi khác</a> để giúp cho việc thiết lập nó."
 
 #. translators: %s: mod_rewrite
-#: wp-admin/includes/network.php:214
+#: wp-admin/includes/network.php:217
 msgid "It looks like the Apache %s module is not installed."
 msgstr "Có vẻ như Apache %s module chưa được cài đặt"
 
 #. translators: %s: mod_rewrite
-#: wp-admin/includes/network.php:206
+#: wp-admin/includes/network.php:209
 msgid "Please make sure the Apache %s module is installed as it will be used at the end of this installation."
 msgstr "Xin hãy chắc chắn Apache module %s đã dược cài đặt và sẽ được sử dụng cho đến cuối quá trình cài đặt."
 
@@ -370,113 +370,113 @@ msgctxt "user"
 msgid "Mark as spam"
 msgstr "Đánh dấu là spam"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:750
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:765
 msgid "Visit Theme Site"
 msgstr "Truy cập trang giao diện"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:707
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:722
 msgid "Broken Theme:"
 msgstr "Giao diện bị lỗi:"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:613
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:628
 msgid "Network Disable %s"
 msgstr "Vô hiệu hóa mạng %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:610
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:625
 msgid "Disable %s"
 msgstr "Vô hiệu hóa %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:587
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:602
 msgid "Network Enable %s"
 msgstr "Kích hoạt mạng %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:584
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:599
 msgid "Enable %s"
 msgstr "Bật %s"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:472
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:620
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:487
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:635
 msgid "Network Disable"
 msgstr "Vô hiệu hóa mạng"
 
 #. translators: %s: Number of themes.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:416
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:429
 msgctxt "themes"
 msgid "Broken <span class=\"count\">(%s)</span>"
 msgid_plural "Broken <span class=\"count\">(%s)</span>"
 msgstr[0] "<span class=\"count\">(%s)</span> bị lỗi"
 
 #. translators: %s: Number of themes.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:398
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:411
 msgctxt "themes"
 msgid "Disabled <span class=\"count\">(%s)</span>"
 msgid_plural "Disabled <span class=\"count\">(%s)</span>"
 msgstr[0] "Đã tắt <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of themes.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:389
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:402
 msgctxt "themes"
 msgid "Enabled <span class=\"count\">(%s)</span>"
 msgid_plural "Enabled <span class=\"count\">(%s)</span>"
 msgstr[0] "Đã bật <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of themes.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:380
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:393
 msgctxt "themes"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Tất cả <span class=\"count\">(%s)</span>"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:320
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:326
 msgid "No themes found."
 msgstr "Không tìm thấy giao diện nào."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:796
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:820
 msgctxt "verb; site"
 msgid "Archive"
 msgstr "Lưu trữ"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:785
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:809
 msgid "Unarchive"
 msgstr "Dừng lưu trữ"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:507
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:530
 msgid "Never"
 msgstr "Không bao giờ"
 
 #. translators: 1: Site title, 2: Site tagline.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:479
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:502
 msgid "%1$s &#8211; %2$s"
 msgstr "%1$s &#8211; %2$s"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:369
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:404
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:388
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:427
 #: wp-admin/network/site-info.php:191
 msgctxt "site"
 msgid "Registered"
 msgstr "Đã đăng ký"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:368
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:403
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:387
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:426
 #: wp-admin/network/site-info.php:195
 msgid "Last Updated"
 msgstr "Cập nhật lần cuối:"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:809
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:833
 msgctxt "site"
 msgid "Not Spam"
 msgstr "Không phải Spam"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:296
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:307
 msgctxt "site"
 msgid "Mark as spam"
 msgstr "Đánh dấu người dùng là spam"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:211
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:218
 msgid "No sites found."
 msgstr "Không tìm thấy web nào."
 
@@ -486,7 +486,7 @@ msgid "Mature"
 msgstr "Người lớn"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:39
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:820
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:844
 #: wp-admin/network/site-info.php:204
 msgctxt "site"
 msgid "Spam"
@@ -595,15 +595,15 @@ msgstr "Bạn chuẩn bị phục hồi trang web %s từ kho lưu trữ."
 msgid "The requested site does not exist."
 msgstr "Các trang web bạn yêu cầu không tồn tại."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:397
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:420
 msgid "Path"
 msgstr "Đường dẫn"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:394
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:417
 msgid "Domain"
 msgstr "Tên miền"
 
-#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:242
+#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:270
 msgid "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\">Documentation on Network Users</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\" target=\"_blank\">Tài Liệu về Người Sử Dụng Mạng Lưới</a>"
 
@@ -660,7 +660,7 @@ msgid "Allowed file types. Separate types by spaces."
 msgstr "Kiểu files được cho phép. Cách bằng phím spaces."
 
 #. translators: 1: File name (.htaccess or web.config), 2: File path.
-#: wp-admin/includes/network.php:651 wp-admin/includes/network.php:713
+#: wp-admin/includes/network.php:654 wp-admin/includes/network.php:716
 msgid "Add the following to your %1$s file in %2$s, <strong>replacing</strong> other WordPress rules:"
 msgstr "Thêm phần sau đây vào tệp %1$s của bạn trong %2$s, <strong>replacing</strong> những lệnh khác của WordPress:"
 
@@ -668,7 +668,7 @@ msgstr "Thêm phần sau đây vào tệp %1$s của bạn trong %2$s, <strong>r
 msgid "Confirm your action"
 msgstr "Xác nhận thao tác"
 
-#: wp-admin/network/users.php:232
+#: wp-admin/network/users.php:260
 msgid "Hover over any user on the list to make the edit links appear. The Edit link on the left will take you to their Edit User profile page; the Edit link on the right by any site name goes to an Edit Site screen for that site."
 msgstr "Liên kết chỉnh sửa sẽ hiển thị khi con trỏ chuột được di lên bất kỳ người sử dụng nào trong danh sách. Bấm chuột vào liên kết chỉnh sửa bên tay trái để chỉnh sửa lý lịch người sử dụng; bấm chuột vào liên kết chỉnh sửa bên tay phải để chỉnh sửa trang mạng tương ứng."
 
@@ -733,8 +733,8 @@ msgstr "Chỉ sử dụng màn hình này sau khi bạn đã cập nhật lên p
 msgid "Upgrade Network"
 msgstr "Nâng cấp mạng lưới"
 
-#: wp-admin/includes/network.php:277 wp-admin/includes/network.php:657
-#: wp-admin/includes/network.php:719
+#: wp-admin/includes/network.php:280 wp-admin/includes/network.php:660
+#: wp-admin/includes/network.php:722
 msgid "Subdirectory networks may not be fully compatible with custom wp-content directories."
 msgstr "Mạng lưới sử dụng thư mục con có thể sẽ không tương thích hoàn toàn với các thư mục wp-content tùy biến."
 
@@ -899,93 +899,93 @@ msgstr "Các Chủ Đề Đã Cài Đặt"
 msgid "All Sites"
 msgstr "Tất Cả Trang Mạng"
 
-#: wp-admin/includes/network.php:740
+#: wp-admin/includes/network.php:743
 msgid "Once you complete these steps, your network is enabled and configured. You will have to log in again."
 msgstr "Sau khi hoàn tất những bước này, mạng lưới của bạn sẽ được cài đặt và kích hoạt. Bạn sẽ cần đăng nhập lại."
 
-#: wp-admin/includes/network.php:586
+#: wp-admin/includes/network.php:589
 msgid "To make your installation more secure, you should also add:"
 msgstr "Để cài đặt của bạn an toàn hơn, bạn nên thêm:"
 
-#: wp-admin/includes/network.php:471
+#: wp-admin/includes/network.php:474
 msgid "Complete the following steps to enable the features for creating a network of sites."
 msgstr "Hoàn thành các bước dưới đây để bật các tính năng cho phép tạo ra một mạng lưới các trang mạng."
 
-#: wp-admin/includes/network.php:470
+#: wp-admin/includes/network.php:473
 msgid "Enabling the Network"
 msgstr "Bật Mạng Lưới"
 
-#: wp-admin/includes/network.php:459
+#: wp-admin/includes/network.php:462
 msgid "Please complete the configuration steps. To create a new network, you will need to empty or remove the network database tables."
 msgstr "Hãy hoàn thành các bước cấu hình. Để tạo một mạng lưới mới, bạn sẽ cần làm rỗng hoặc xóa các bảng dữ liệu của mạng lưới."
 
-#: wp-admin/includes/network.php:453
+#: wp-admin/includes/network.php:456
 msgid "An existing WordPress network was detected."
 msgstr "Tìm thấy một mạng lưới WordPress đã tồn tại"
 
-#: wp-admin/includes/network.php:447
+#: wp-admin/includes/network.php:450
 msgid "The original configuration steps are shown here for reference."
 msgstr "Các bước cấu hình gốc được hiển thị ở đây để bạn có thể tham khảo."
 
-#: wp-admin/includes/network.php:389
+#: wp-admin/includes/network.php:392
 msgid "Your email address."
 msgstr "Địa chỉ email của bạn."
 
-#: wp-admin/includes/network.php:380
+#: wp-admin/includes/network.php:383
 msgid "What would you like to call your network?"
 msgstr "Bạn muốn đặt tên mạng lưới của bạn là gì?"
 
-#: wp-admin/includes/network.php:376 wp-admin/network/settings.php:159
+#: wp-admin/includes/network.php:379 wp-admin/network/settings.php:159
 msgid "Network Title"
 msgstr "Tiêu Đề Mạng Lưới"
 
-#: wp-admin/includes/network.php:355
+#: wp-admin/includes/network.php:358
 msgid "Because your installation is not new, the sites in your WordPress network must use sub-domains."
 msgstr "Do cài đặt của bạn đã cũ, các trang web trong mạng WordPress chỉ có thể sử dụng tên miền con."
 
-#: wp-admin/includes/network.php:342
+#: wp-admin/includes/network.php:345
 msgid "Because your installation is in a directory, the sites in your WordPress network must use sub-directories."
 msgstr "Do trang web chính của bạn cài đặt trong thư mục con, các trang web khác trong mạng WordPress của bạn phải sử dụng cấu trúc thư mục con."
 
-#: wp-admin/includes/network.php:332 wp-admin/includes/network.php:345
-#: wp-admin/includes/network.php:356
+#: wp-admin/includes/network.php:335 wp-admin/includes/network.php:348
+#: wp-admin/includes/network.php:359
 msgid "The main site in a sub-directory installation will need to use a modified permalink structure, potentially breaking existing links."
 msgstr "Trang mạng chính được cài đặt trong thư mục con sẽ cần chỉnh sửa cấu trúc đường dẫn tính, có thể làm các liên kết hiện tại không hoạt động."
 
-#: wp-admin/includes/network.php:317
+#: wp-admin/includes/network.php:320
 msgid "Network Details"
 msgstr "Chi tiết mạng"
 
-#: wp-admin/includes/network.php:289 wp-admin/includes/network.php:303
-#: wp-admin/includes/network.php:363
+#: wp-admin/includes/network.php:292 wp-admin/includes/network.php:306
+#: wp-admin/includes/network.php:366
 msgid "Server Address"
 msgstr "Địa chỉ server"
 
 #. translators: 1: Host name.
-#: wp-admin/includes/network.php:264
+#: wp-admin/includes/network.php:267
 msgctxt "subdirectory examples"
 msgid "like <code>%1$s/site1</code> and <code>%1$s/site2</code>"
 msgstr "như <code>%1$s/trang1</code> và <code>%1$s/trang2</code>"
 
-#: wp-admin/includes/network.php:259
+#: wp-admin/includes/network.php:262
 msgid "Sub-directories"
 msgstr "Thư mục con"
 
 #. translators: 1: Host name.
-#: wp-admin/includes/network.php:252
+#: wp-admin/includes/network.php:255
 msgctxt "subdomain examples"
 msgid "like <code>site1.%1$s</code> and <code>site2.%1$s</code>"
 msgstr "như <code>site1.%1$s</code> và <code>site2.%1$s</code>"
 
-#: wp-admin/includes/network.php:247
+#: wp-admin/includes/network.php:250
 msgid "Sub-domains"
 msgstr "Tên miền phụ"
 
-#: wp-admin/includes/network.php:243
+#: wp-admin/includes/network.php:246
 msgid "You will need a wildcard DNS record if you are going to use the virtual host (sub-domain) functionality."
 msgstr "Bạn sẽ cần một định nghĩa sử dụng ký tự đại diện tại máy chủ DNS nếu bạn muốn sử dụng tính năng máy chủ ảo (tên miền phụ)."
 
-#: wp-admin/includes/network.php:240
+#: wp-admin/includes/network.php:243
 msgid "Addresses of Sites in your Network"
 msgstr "Địa chỉ các trang mạng trong Mạng Lưới của bạn"
 
@@ -1043,7 +1043,7 @@ msgid "The Network creation panel is not for WordPress MU networks."
 msgstr "Bảng khởi tạo Mạng Lưới không dành cho các mạng lưới WordPress MU."
 
 #. translators: %s: User login.
-#: wp-admin/network/users.php:87
+#: wp-admin/network/users.php:87 wp-admin/network/users.php:126
 msgid "Warning! User cannot be modified. The user %s is a network administrator."
 msgstr "Cảnh báo! Không thể chỉnh sửa dữ liệu người dùng. %s là quản trị viên mạng lưới."
 
@@ -1059,11 +1059,11 @@ msgstr "Di chuột lên mỗi trang mạng để xem bảy lựa chọn (ba cho 
 msgid "Operational settings has fields for the network&#8217;s name and admin email."
 msgstr "Cài đặt hoạt động có các trường cho tên mạng lưới và địa chỉ thư điện tử quản trị."
 
-#: wp-admin/network/users.php:235
+#: wp-admin/network/users.php:263
 msgid "The bulk action will permanently delete selected users, or mark/unmark those selected as spam. Spam users will have posts removed and will be unable to sign up again with the same email addresses."
 msgstr "Thao tác nhóm sẽ xóa vĩnh viễn những người dùng được chọn, hoặc đánh dấu / bỏ đánh dấu những tài khoản người dùng rác. Người dùng rác sẽ bị xóa bài viết và không thể đăng ký lại với cùng địa chỉ thư điện tử."
 
-#: wp-admin/network/users.php:233
+#: wp-admin/network/users.php:261
 msgid "You can also go to the user&#8217;s profile page by clicking on the individual username."
 msgstr "Bạn cũng có thể tới trang hồ sơ người dùng bằng cách bấm vào tên truy cập của một người dùng."
 
@@ -1071,7 +1071,7 @@ msgstr "Bạn cũng có thể tới trang hồ sơ người dùng bằng cách b
 msgid "Upload settings control the size of the uploaded files and the amount of available upload space for each site. You can change the default value for specific sites when you edit a particular site. Allowed file types are also listed (space separated only)."
 msgstr "Cài đặt tải lên chỉ định kích thước của các tập tin được tải lên và dung lượng lưu trữ khả dụng cho mỗi trang mạng. Bạn có thể thay đổi các giá trị mặc định cho từng trang mạng khi bạn chỉnh sửa một trang nhất định. Các định dạng tập tin cho phép cũng được liệt kê (phân cách bằng khoảng trống)."
 
-#: wp-admin/network/users.php:236
+#: wp-admin/network/users.php:264
 msgid "You can make an existing user an additional super admin by going to the Edit User profile page and checking the box to grant that privilege."
 msgstr "Bạn có thể cho phép một người sử dụng trở thành quản trị viên cao cấp bằng cách mở trang hồ sơ Chỉnh Sửa Người Dùng và đánh dấu hộp kiểm để cấp quyền đó."
 
@@ -1079,11 +1079,11 @@ msgstr "Bạn có thể cho phép một người sử dụng trở thành quản
 msgid "Users who are signed up to the network without a site are added as subscribers to the main or primary dashboard site, giving them profile pages to manage their accounts. These users will only see Dashboard and My Sites in the main navigation until a site is created for them."
 msgstr "Người dùng đã đăng ký vào mạng mà không có trang web sẽ được thêm làm người đăng ký vào trang web bảng điều khiển chính hoặc bảng điều khiển chính, cung cấp cho họ các trang hồ sơ để quản lý tài khoản của họ. Những người dùng này sẽ chỉ thấy Bảng điều khiển và Trang web của tôi trong điều hướng chính cho đến khi một trang web được tạo cho họ."
 
-#: wp-admin/network/users.php:234
+#: wp-admin/network/users.php:262
 msgid "You can sort the table by clicking on any of the table headings and switch between list and excerpt views by using the icons above the users list."
 msgstr "Bạn có thể sắp xếp bảng bằng cách bấm vào bất kỳ tiêu đề cột nào được in đậm và chuyển qua lại giữa kiểu xem danh sách và trích đoạn sử dụng các biểu tượng ở phía trên bên phải."
 
-#: wp-admin/network/users.php:231
+#: wp-admin/network/users.php:259
 msgid "This table shows all users across the network and the sites to which they are assigned."
 msgstr "Bảng này hiển thị tất cả người sử dụng trên mạng lưới và trang mạng họ đã đăng ký."
 
@@ -1140,7 +1140,7 @@ msgstr "Nếu bạn muốn cấm đăng ký trang mạng cho tên miền nào đ
 msgid "If you want to limit site registrations to certain domains. One domain per line."
 msgstr "Nếu bạn muốn giới hạn đăng ký trang mạng cho tên miền nào đó. Mỗi dòng một tên miền."
 
-#: wp-admin/network/users.php:266
+#: wp-admin/network/users.php:294
 msgid "Users removed from spam."
 msgstr "Đã bỏ đánh dấu người dùng rác."
 
@@ -1160,11 +1160,11 @@ msgstr "Đã đánh dấu trang rác"
 msgid "Sites removed from spam."
 msgstr "Đã bỏ đánh dấu trang rác."
 
-#: wp-admin/network/users.php:269
+#: wp-admin/network/users.php:297
 msgid "Users deleted."
 msgstr "Đã xóa người sử dụng."
 
-#: wp-admin/network/users.php:263
+#: wp-admin/network/users.php:291
 msgid "Users marked as spam."
 msgstr "Thành viên đã bị đánh dấu là spam."
 
@@ -1281,20 +1281,20 @@ msgstr "Người dùng không được phép đăng ký những trang mạng nà
 msgid "Send the network admin an email notification every time someone registers a site or user account"
 msgstr "Gửi thư thông báo tới quản trị viên mạng lưới mỗi khi có người đăng ký một trang mạng hoặc tài khoản người dùng mới."
 
-#: wp-admin/includes/network.php:385 wp-admin/network/settings.php:166
+#: wp-admin/includes/network.php:388 wp-admin/network/settings.php:166
 msgid "Network Admin Email"
 msgstr "Địa Chỉ Thư Điện Tử Quản Trị Mạng"
 
-#: wp-admin/network/site-new.php:287
+#: wp-admin/network/site-new.php:288
 msgid "A new user will be created if the above email address is not in the database."
 msgstr "Một thành viên mới sẽ được tạo nếu thư điện tử trên không tồn tại trong cơ sở dữ liệu."
 
-#: wp-admin/network/site-new.php:279
+#: wp-admin/network/site-new.php:280
 msgid "Admin Email"
 msgstr "Email quản trị"
 
 #: wp-admin/network/menu.php:58 wp-admin/network/site-new.php:182
-#: wp-admin/network/site-new.php:192 wp-admin/network/site-new.php:299
+#: wp-admin/network/site-new.php:192 wp-admin/network/site-new.php:300
 #: wp-admin/network/sites.php:405
 msgid "Add Site"
 msgstr "Thêm trang web"

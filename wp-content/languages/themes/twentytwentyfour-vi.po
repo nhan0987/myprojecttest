@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: vi_VN\n"
 "Project-Id-Version: Themes - Twenty Twenty-Four\n"
 
@@ -211,7 +211,7 @@ msgctxt "Pattern title"
 msgid "List of posts without images, 1 column"
 msgstr "Danh sách bài viết không có hình ảnh, 1 cột"
 
-#: functions.php:200
+#: functions.php:188
 msgid "A collection of full page layouts."
 msgstr "Bộ sưu tập bố cục trang đầy đủ."
 
@@ -219,7 +219,7 @@ msgstr "Bộ sưu tập bố cục trang đầy đủ."
 msgid "I’m <em>Leia Acosta</em>, a passionate photographer who finds inspiration in capturing the fleeting beauty of life."
 msgstr "Tôi là <em>Leia Acosta</em>, một nhiếp ảnh gia đam mê, tìm thấy nguồn cảm hứng trong việc nắm bắt vẻ đẹp thoáng qua của cuộc sống."
 
-#: functions.php:199
+#: functions.php:187
 msgctxt "Block pattern category"
 msgid "Pages"
 msgstr "Các trang"
@@ -394,27 +394,27 @@ msgctxt "Style variation name"
 msgid "Rust"
 msgstr "Nâu đỏ"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Five"
 msgstr "Nổi bật / Năm"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Four"
 msgstr "Nổi bật / Bốn"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Three"
 msgstr "Nổi bật / Ba"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Two"
 msgstr "Nổi bật / Hai"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "Nổi bật"
@@ -589,39 +589,39 @@ msgctxt "Style variation name"
 msgid "Ice"
 msgstr "Băng"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Large"
 msgstr "Lớn"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Medium"
 msgstr "Trung bình"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Small"
 msgstr "Nhỏ"
 
-#: styles/fossil.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/maelstrom.json
 msgctxt "Font family name"
 msgid "Cardo"
 msgstr "Cardo"
 
-#: styles/fossil.json styles/ice.json theme.json
+#: theme.json styles/fossil.json styles/ice.json
 msgctxt "Font family name"
 msgid "Inter"
 msgstr "Inter"
 
-#: styles/fossil.json styles/ice.json styles/mint.json styles/onyx.json
-#: theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/mint.json
+#: styles/onyx.json
 msgctxt "Color name"
 msgid "Contrast / Three"
 msgstr "Tương phản / Ba"
 
-#: styles/fossil.json styles/ice.json styles/mint.json styles/onyx.json
-#: theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/mint.json
+#: styles/onyx.json
 msgctxt "Color name"
 msgid "Contrast / Two"
 msgstr "Tương phản / Hai"
@@ -641,14 +641,14 @@ msgctxt "Font family name"
 msgid "Instrument Sans"
 msgstr "Instrument Sans"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json
 msgctxt "Color name"
 msgid "Base / Two"
 msgstr "Nền / Hai"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json styles/rust.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json styles/rust.json
 msgctxt "Color name"
 msgid "Contrast"
 msgstr "Tương phản"
@@ -658,8 +658,8 @@ msgctxt "Color name"
 msgid "Contrast / 2"
 msgstr "Tương phản / 2"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json styles/rust.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json styles/rust.json
 msgctxt "Color name"
 msgid "Base"
 msgstr "Nền"
@@ -1440,23 +1440,23 @@ msgctxt "Heading of the hero section"
 msgid "A commitment to innovation and sustainability"
 msgstr "Cam kết đổi mới và bền vững"
 
-#: functions.php:111
+#: functions.php:107
 msgid "With asterisk"
 msgstr "Có dấu sao"
 
-#: functions.php:93
+#: functions.php:89
 msgid "With arrow"
 msgstr "Có mũi tên"
 
-#: functions.php:74
+#: functions.php:70
 msgid "Checkmark"
 msgstr "Dấu tích"
 
-#: functions.php:51
+#: functions.php:47
 msgid "Pill"
 msgstr "Viên thuốc"
 
-#: functions.php:28
+#: functions.php:24
 msgid "Arrow icon"
 msgstr "Biểu tượng mũi tên"
 
@@ -1471,24 +1471,24 @@ msgstr "https://wordpress.org"
 msgid "&copy;"
 msgstr "&copy;"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Extra Extra Large"
 msgstr "Cực lớn"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Extra Large"
 msgstr "Rất lớn"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json
 msgctxt "Font family name"
 msgid "System Serif"
 msgstr "Phông chữ Serif Hệ thống"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json
 msgctxt "Font family name"
 msgid "System Sans-serif"
 msgstr "Phông chữ Sans-serif Hệ thống"
