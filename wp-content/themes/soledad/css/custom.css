@@ -4975,8 +4975,9 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	color: white;
 }
+
 
 .cut-the-bottom-right-corner-14-container .btn-view-more .arrow-right-icons {
 	transform: rotate(0deg);
@@ -5000,14 +5001,10 @@ html {
 	}
 
 	.cut-the-bottom-right-corner-14-container .bg-view-more {
-		width: 8.4375rem;
-		height: 2.9375rem;
+		width: 136px;
+		height: 48px;
 	}
 
-	.cut-the-bottom-right-corner-14-container .btn-view-more {
-		/* padding: 0.5rem 0.75rem; */
-
-	}
 
 	.grid-04 .content .content-name {
 		text-transform: capitalize !important;
@@ -5182,6 +5179,8 @@ html {
 .cut-the-bottom-right-corner-18-container .btn-view-more .arrow-right-icons {
 	transform: rotate(0deg);
 }
+
+
 
 @media (min-width:1280px) {
 	.cut-the-bottom-right-corner-18-container {
