@@ -10,6 +10,7 @@ get_header();
 
 $term = get_queried_object();
 $add_page = get_field('add_page', $term);
+$two_sidebar_class = '';
 
 if (!$add_page) {
 	/* Sidebar position */
@@ -178,10 +179,10 @@ if (!$add_page) {
 		if( $yoast_breadcrumb ){
 			echo $yoast_breadcrumb;
 		}else{ ?>
-		<div class="container penci-breadcrumb<?php echo $two_sidebar_class; ?>">
+		<div class="max-w-sm xl:max-w-7xl mx-auto px-3! 2xl:px-0! penci-breadcrumb<?php echo $two_sidebar_class; ?>">
 			<span><a class="crumb" href="<?php echo esc_url( home_url('/') ); ?>"><?php echo penci_get_setting( 'penci_trans_home' ); ?></a></span><?php penci_fawesome_icon('fas fa-angle-right'); ?>
 			<?php
-			$parent_ID = penci_get_category_parent_id( $fea_cat_id );
+			$parent_ID = penci_get_category_parent_id( $term->term_id );
 			if( $parent_ID ):
 			echo penci_get_category_parents( $parent_ID );
 			endif;
@@ -228,7 +229,7 @@ if (!$add_page) {
 	// --- BƯỚC 2: IN RA CỤC HTML (HEADER) ---
 	// (Code này không đổi, nó dùng $header_style lấy từ Vòng 1)
 	?>
-	<div class="penci-page-header penci-page-header-category max-w-[21.875rem] xl:max-w-[79rem] 2xl:max-w-[114rem] mx-auto justify-center items-center flex flex-col" <?php echo $header_style; ?>>
+	<div class="penci-page-header penci-page-header-category  mx-auto justify-center items-center flex flex-col" <?php echo $header_style; ?>>
 		<h1 class="entry-title"><?php printf( esc_html__( '%s', 'soledad' ), single_cat_title( '', false ) ); ?></h1>
 		<span class="entry-description"> <?php echo $description; // (Biến $description này phải được lấy từ trước đó) ?></span>
 	</div>

@@ -1,5 +1,5 @@
 <?php $header_class_main = penci_soledad_wpheader_classes(); ?>
-<header id="header" class="<?php echo esc_attr( $header_class_main ); ?>" <?php if( ! get_theme_mod('penci_schema_wphead') ): ?>itemscope="itemscope" itemtype="https://schema.org/WPHeader"<?php endif;?>>
+<header id="header" class="<?php echo esc_attr( $header_class_main ); ?> max-sm:max-w-sm! mx-auto" <?php if( ! get_theme_mod('penci_schema_wphead') ): ?>itemscope="itemscope" itemtype="https://schema.org/WPHeader"<?php endif;?>>
 	<?php if ( ! get_theme_mod( 'penci_vertical_nav_remove_header' ) ): ?>
 		<div class="inner-header penci-header-second">
 			<div class="<?php penci_soledad_get_header_width(); ?> align-left-logo<?php if ( get_theme_mod( 'penci_header_3_banner' ) || get_theme_mod( 'penci_header_3_adsense' ) ): echo ' has-banner'; endif; ?>">
@@ -41,8 +41,8 @@
 		?>
 		<nav id="navigation" class="<?php echo $class_layout_bottom; ?>" role="navigation" <?php if( ! get_theme_mod('penci_schema_sitenav') ): ?>itemscope itemtype="https://schema.org/SiteNavigationElement"<?php endif; ?>>
 			
-			<div class="container-fullwidth flex items-center justify-around xl:justify-center mx-auto py-[0.8rem]! lg:py-[0.1rem]! max-w-[22.5rem]!">
-				<div class="button-menu-mobile header-3 "><?php penci_fawesome_icon('fas fa-bars'); ?></div>
+			<div class="container-fullwidth flex items-center justify-between xl:justify-center  mx-auto py-[5px]! lg:py-[0.1rem]! px-[14px]!">
+				<div class="button-menu-mobile header-3 "> <i class="bi bi-list">&nbsp;</i></div>
 				
 				
 				<?php 

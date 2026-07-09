@@ -12,9 +12,9 @@
 
                 $default_thumbnail_src = get_default_thumbnail_url();
             ?>
-                <div class="content-image  col-span-4 lg:col-span-1 pr-2 md:pr-0 xl:h-[9.375rem]">
+                <div class="content-image image-zoom-container  col-span-4 lg:col-span-1 pr-2 md:pr-0 xl:h-[9.375rem]">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img  src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?>">
+                        <img class="zoom-image"  src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?>">
                     </a>
                 </div>
             <?php

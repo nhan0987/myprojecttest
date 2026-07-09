@@ -331,7 +331,7 @@ if (! function_exists('penci_load_scripts')) {
  */
 add_action('wp_enqueue_scripts', 'penci_dequeue_soledad_for_landing', 9999);
 function penci_dequeue_soledad_for_landing() {
-	if (is_page_template('template-hinode-park.php') || is_page_template('template-noble-palace.php')) {
+	if (is_page_template('template-hinode-park.php') || is_page_template('template-noble-palace.php') || is_page_template('template-jade-lake.php')) {
 		global $wp_styles, $wp_scripts;
 
 		// Dequeue main styles

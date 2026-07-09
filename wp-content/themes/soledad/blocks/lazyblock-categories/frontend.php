@@ -229,8 +229,8 @@ if (!function_exists('lth_categories_output_fe')) :
                                         <div class="content-header flex flex-col-reverse">
                                             <?php if (!empty($inner['item_image']['url'])) {?>
                                             <div class="content-image <?php echo esc_attr( $image_zoom_container_classes ); ?> relative">
-                                                <a href="<?php echo get_category_link($inner['item']); ?>">
-                                                    <img class="zoom-image" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title']); ?>">
+                                                <a href="<?php echo get_category_link($inner['item'] ?? ''); ?>">
+                                                    <img class="zoom-image" src="<?php echo esc_url( $inner['item_image']['url'] ); ?>" alt="<?php echo esc_attr($inner['item_title'] ?? ''); ?>">
                                                 </a>
                                                 <div class="bg-view-more">
                                                     <a class="btn-view-more" href="#">
@@ -240,15 +240,15 @@ if (!function_exists('lth_categories_output_fe')) :
                                             </div>
                                             <?php } ?>
                                             <div class="content-excerpt">
-                                                <?php echo wpautop($inner['item_text']); ?>
+                                                <?php echo wpautop($inner['item_text'] ?? ''); ?>
                                             </div>
                                             <h3 class="content-name line-clamp-1 xl:line-clamp-none">
-                                                <a href="<?php echo get_category_link($inner['item']); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
-                                                    <?php echo wpautop($inner['item_title']); ?>
+                                                <a href="<?php echo get_category_link($inner['item'] ?? ''); ?>" class="<?php echo esc_attr( $title_classes ); ?>">
+                                                    <?php echo wpautop($inner['item_title'] ?? ''); ?>
                                                 </a>
                                                 <?php if($has_mobile_title) {?>
-                                                <a href="<?php echo get_category_link($inner['item']); ?>" class="inline xl:hidden">
-                                                    <?php echo wpautop($inner['item_mobile_title']); ?>
+                                                <a href="<?php echo get_category_link($inner['item'] ?? ''); ?>" class="inline xl:hidden">
+                                                    <?php echo wpautop($inner['item_mobile_title'] ?? ''); ?>
                                                 </a>
                                                 <?php }?>
                                             </h3>

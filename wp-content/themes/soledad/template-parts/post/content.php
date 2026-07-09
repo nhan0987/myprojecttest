@@ -18,6 +18,9 @@
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                         <img class="w-full! h-full! object-cover zoom-image" src="<?php echo $default_thumbnail_src; ?>" width="227" height="146" alt="<?php the_title(); ?>">
                     </a>
+                    <div class="content-days right-0 bottom-0 absolute bg-white">
+                        <?php the_time('d/m/Y '); ?>
+                    </div>
                 </div>
             <?php
             }

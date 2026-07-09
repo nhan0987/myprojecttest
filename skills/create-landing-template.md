@@ -43,6 +43,12 @@ $theme_uri = get_template_directory_uri();
 - Tạo file `css/[project-name].css`.
 - Sử dụng biến CSS (`:root`) để quản lý màu sắc thương hiệu.
 - Đảm bảo tất cả các style là cô lập, tránh dùng các class quá chung chung có thể bị theme ghi đè.
+- **Tách CSS nội tuyến**: Chuyển toàn bộ các khối `<style>...</style>` và các thuộc tính `style="..."` (inline CSS) ra file CSS độc lập bằng cách tạo class/thuộc tính data tương ứng để giữ HTML sạch sẽ.
+
+## 2.5. Quản lý JS riêng biệt
+- Tạo file `js/[project-name].js`.
+- **Tách JS triệt để**: Chuyển toàn bộ mã JavaScript nội tuyến (`<script>...</script>`) từ file HTML gốc sang file JS riêng biệt.
+- **Lưu ý ngoại lệ**: Các mã theo dõi (Tracking scripts) như Google Tag Manager (GTM) hoặc Facebook Pixel vẫn có thể giữ lại trong file HTML/PHP để đảm bảo tương thích và dễ quản lý việc cấu hình biến trực tiếp nếu cần.
 
 ## 3. Gỡ bỏ tài nguyên mặc định của Theme (Quan trọng)
 Để Landing Page hoàn toàn sạch, cần dequeue các asset của theme trong `functions.php`.

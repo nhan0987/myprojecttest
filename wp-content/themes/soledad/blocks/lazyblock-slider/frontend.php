@@ -30,23 +30,27 @@ if (!function_exists('lth_slider_output_fe')) :
                                         <div class="module_image"> 
 
                                             <?php 
-                                                $original_url = esc_url( $inner['item_image']['url'] );
-                                                $attachment_id = attachment_url_to_postid($original_url);
-
-                                                if ($attachment_id) {
-                                                    // 3. Lấy link ảnh size trung bình (thường là 48rem hoặc 64rem tùy settings)
-                                                    // Các size mặc định: 'thumbnail', 'medium', 'medium_large', 'large', 'full'
-                                                    $image_mobile_data = wp_get_attachment_image_src($attachment_id, '351x360');
-                                                    $image_mobile_url = $image_mobile_data[0];
+                                                $original_url = esc_url( $inner['item_image']['url'] ?? '' );
+                                                
+                                                $mobile_img_url = '';
+                                                // Kiểm tra xem có cấu hình ảnh mobile riêng không
+                                                if ( !empty($inner['item_image_mobile']['url']) ) {
+                                                    $mobile_img_url = esc_url($inner['item_image_mobile']['url']);
                                                 } else {
-                                                    // Nếu không tìm thấy ID, mình dùng chính link gốc làm fallback
-                                                    $image_mobile_url = $original_url;
+                                                    // Nếu không có, tự động resize từ ảnh gốc như cũ
+                                                    $attachment_id = attachment_url_to_postid($original_url);
+                                                    if ($attachment_id) {
+                                                        $image_mobile_data = wp_get_attachment_image_src($attachment_id, '351x360');
+                                                        $mobile_img_url = $image_mobile_data[0] ?? $original_url;
+                                                    } else {
+                                                        $mobile_img_url = $original_url;
+                                                    }
                                                 }
                                             ?>
                                             <a href="<?php echo esc_url( $inner['button_url'] ?? '#' ); ?>">
                                                 
                                                 <picture>
-                                                    <source media="(max-width: 768px)" srcset="<?php echo $image_mobile_url; ?>">
+                                                    <source media="(max-width: 768px)" srcset="<?php echo $mobile_img_url; ?>">
                                                     <img class="no-lazy" src="<?php echo $original_url; ?>" alt="Slide" fetchpriority="high">
                                                 </picture>
                                             </a>                                  

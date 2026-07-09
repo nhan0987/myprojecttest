@@ -57,9 +57,13 @@ if (!function_exists('lth_blogs_output_fe')) :
                         }
                     }
 
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    if ( is_front_page() ) {
-                        $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+                    if ( $pagination_type !== 'none' ) {
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        if ( is_front_page() ) {
+                            $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+                        }
+                    } else {
+                        $paged = 1;
                     }
 
                     $args = [

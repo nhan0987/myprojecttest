@@ -361,9 +361,10 @@ button {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/noble-palace/hero-bg.webp');
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-overlay {
@@ -1435,7 +1436,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  height: 324px;
+  /* height: 324px; */
 }
 
 .amenity-strip-item {
@@ -1445,7 +1446,7 @@ button {
 .amenity-strip-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -1522,7 +1523,7 @@ button {
   }
 
   .amenity-strip-item {
-    height: 220px;
+    /* height: 220px; */
   }
 
   .legal-bar {
@@ -2115,7 +2116,8 @@ button {
 
 @media (max-width: 768px) {
   .float-sidebar {
-    display: none;
+    right: 12px;
+    bottom: 90px;
   }
 }
 
@@ -2262,6 +2264,479 @@ button {
   transform: none;
 }
 
+
+/* SECTION 2: CHÍNH SÁCH BÁN HÀNG */
+.policy-sec {
+  --navy: #1a2d42;
+  --navy-2: #243d58;
+  --gold: #b8963e;
+  --gold-l: #d4aa55;
+}
+
+/* ─── FLOATING CTA (Mobile) ─── */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 12px 16px;
+  background: var(--c1);
+  gap: 8px;
+}
+
+.floating-cta a {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.floating-cta a:first-child {
+  background: var(--c2);
+}
+
+.floating-cta a:last-child {
+  background: var(--c1);
+  border: 1px solid rgba(255, 255, 255, .3);
+}
+
+@media (max-width: 768px) {
+  .floating-cta {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* ─── Scroll animations ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Hero Entrance Animations ─── */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.25s;
+}
+
+/* ─── Scroll-triggered Entrance Animations ─── */
+.fade-in-left-scroll {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-left-scroll.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-in-simple {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in-simple.visible {
+  opacity: 1;
+}
+
+/* Staggered delay for amenity-strip-item */
+.amenity-strip-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.amenity-strip-item:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.amenity-strip-item:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+/* Custom premium smooth slide-up for amenity-strip-item */
+.amenity-strip-item.fade-in {
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amenity-strip-item.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+/* SECTION 2: CHÍNH SÁCH BÁN HÀNG */
+.policy-sec {
+  --navy: #1a2d42;
+  --navy-2: #243d58;
+  --gold: #b8963e;
+  --gold-l: #d4aa55;
+  --gold-p: #d4aa55;
+  --cream: #faf7f2;
+  --cream-2: #f3ede3;
+  --white: #ffffff;
+  --text: #1a2d42;
+  --text-2: #4a5c70;
+  --text-3: #8a9ab0;
+  --border: rgba(184, 150, 62, 0.22);
+  --border2: rgba(26, 45, 66, 0.12);
+  --danger: #c0392b;
+  --serif: 'Playfair Display', serif;
+  --sans: 'Montserrat', sans-serif;
+  background: #fff;
+}
+
+.policy-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border2);
+  margin-top: 44px;
+}
+
+.policy-overview-item {
+  padding: 24px 32px;
+  border-right: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.policy-overview-item:last-child {
+  border-right: none;
+}
+
+.policy-overview-label {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.policy-overview-val {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.policy-overview-val.gold {
+  color: var(--gold);
+}
+
+.policy-overview-val.navy {
+  color: var(--navy);
+}
+
+.policy-overview-val span {
+  font-size: 28px;
+}
+
+.policy-overview-val span.gold {
+  color: var(--gold);
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border2);
+  margin-top: 48px
+}
+
+.policy-grid.mt-1 {
+  margin-top: 1px;
+}
+
+.pol-card {
+  padding: 32px 28px;
+  border-right: 1px solid var(--border2);
+  display: flex;
+  flex-direction: column;
+}
+
+.pol-card:last-child {
+  border-right: none
+}
+
+.pol-card.kim-cuong {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  border-right: 1px solid rgba(255, 255, 255, .08);
+}
+
+.pol-card-header {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold-l);
+  margin-bottom: 14px;
+  display: grid;
+  align-items: center;
+  gap: 6px;
+}
+
+.pol-card-header .icon {
+  font-size: 14px;
+}
+
+.pol-card-benefits {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.pol-benefit-left {
+  border-right: 1px solid rgba(229, 231, 235, 0.23) !important;
+  padding-right: 16px;
+}
+
+.pol-benefit-right {
+  padding-left: 16px;
+  opacity: 0.8;
+}
+
+.pol-benefit-right.visible {
+  opacity: 0.8 !important;
+}
+
+.pol-card-benefit-val {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gold-l);
+  line-height: 1;
+}
+
+.pol-card-benefit-val span {
+  font-size: 18px;
+}
+
+.pol-card-benefit-lbl {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .5);
+  margin-top: 4px;
+}
+
+.pol-card-or {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .4);
+  font-style: italic;
+}
+
+.pol-num {
+  font-family: var(--sans);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gold-p);
+  line-height: 1;
+  margin-bottom: 16px
+}
+
+.pol-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px
+}
+
+.pol-title-1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px
+}
+
+
+.pol-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.pol-desc strong {
+  color: var(--navy);
+}
+
+.pol-val {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: 14px
+}
+
+.policy-extras {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border2);
+  border-top: none
+}
+
+.pe-item {
+  padding: 20px 22px;
+  border-right: 1px solid var(--border2);
+  text-align: center
+}
+
+.pe-item:last-child {
+  border-right: none
+}
+
+.pe-val {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy)
+}
+
+.pe-label {
+  font-size: 14px;
+  color: var(--c5);
+  margin-top: 4px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.payment-grid-mob {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  /* background: var(--border2); */
+  margin-top: 10px;
+}
+
+.payment-block {
+  background: #fff;
+  padding: 28px 28px 28px 0px;
+}
+
+.payment-block-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cream-2);
+}
+
+.payment-row.last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.payment-row-lbl {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.payment-row-val {
+
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.payment-row-val.gold {
+  color: var(--gold);
+}
+
+@media(max-width:768px) {
+  .policy-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-overview-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border2);
+  }
+
+  .policy-overview-item:last-child {
+    border-bottom: none;
+  }
+
+  .policy-grid {
+    grid-template-columns: 1fr
+  }
+
+  .pol-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border2)
+  }
+
+  .policy-extras {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .payment-grid-mob {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* --- CF7 Noble Palace Form Styling (Refined) --- */
 .form-cf7-wrap .wpcf7-form {
   display: flex;
@@ -2396,4 +2871,408 @@ button {
   .form-cf7-wrap .wpcf7-checkbox {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── POPUP OVERLAY ─── */
+.np-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.np-popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.np-popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.np-popup-overlay.active .np-popup-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.np-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff66;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 46px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.np-popup-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.np-popup-img img {
+  /* border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  max-height: 85vh;
+  width: auto;
+  display: block;
+}
+
+.np-popup-cf7 .np-popup-content {
+  background: var(--c1);
+  color: #fff;
+  padding: 40px 32px;
+  border-radius: 12px 48px 12px 48px;
+  border: 3px solid rgba(201, 163, 85, 0.4);
+  border-right: 3px solid var(--c2b);
+  border-bottom: 3px solid var(--c2b);
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.np-popup-cf7 .np-popup-content.is-success {
+  background: #fff;
+  border-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.np-popup-cf7 .np-popup-close {
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  font-size: 28px;
+  width: 32px;
+  height: 32px;
+  z-index: 20;
+}
+
+.np-popup-cf7 .np-popup-content.is-success .np-popup-close {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.np-popup-cf7 .np-popup-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.np-popup-cf7 .np-popup-content.is-success .np-popup-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Header */
+.np-form-header {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.stnd-logo-popup {
+  height: 48px;
+  margin: 0 auto 16px;
+  width: auto;
+}
+
+.np-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.np-form-sub {
+  font-size: 13px;
+  color: var(--c2b);
+  line-height: 1.5;
+}
+
+/* CF7 Output */
+.np-form-body .wpcf7 form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.np-form-body .wpcf7-response-output {
+  margin: 0 !important;
+  padding: 10px !important;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.np-popup-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.np-popup-form-group label {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.np-popup-form-group label span {
+  color: #ff3b30;
+}
+
+.np-popup-form-group .wpcf7-form-control-wrap input,
+.np-popup-form-group .wpcf7-form-control-wrap select {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 12px 14px;
+  /* border-radius: 4px; */
+  font-size: 14px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.np-popup-form-group .wpcf7-form-control-wrap input:focus,
+.np-popup-form-group .wpcf7-form-control-wrap select:focus {
+  border-color: var(--c2b);
+}
+
+.np-popup-form-group .wpcf7-form-control-wrap input::placeholder {
+  color: #aaa;
+}
+
+.np-popup-form-submit .wpcf7-submit {
+  width: 100%;
+  background: var(--c2b);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 8px;
+}
+
+.np-popup-form-submit .wpcf7-submit:hover {
+  background: #b58d45;
+}
+
+.np-popup-form-submit .wpcf7-spinner {
+  position: absolute;
+  bottom: 24px;
+  right: 10px;
+}
+
+.np-popup-form-submit {
+  padding-top: 14px;
+}
+
+.np-popup-form-group {
+  padding-top: 10px;
+}
+
+.np-form-footer p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Success State */
+.np-form-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.np-form-success .np-form-title {
+  color: var(--c1);
+  margin-top: 16px;
+}
+
+.np-form-success .np-form-sub {
+  color: rgba(26, 45, 66, 0.7);
+}
+
+.success-icon-wrap {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--c2b);
+  margin: 16px 0 24px;
+}
+
+.success-phone svg {
+  fill: var(--c2b);
+}
+
+.success-return-btn {
+  background: var(--c1);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.success-return-btn:hover {
+  background: #253e5a;
+}
+
+@media (max-width: 768px) {
+  .np-popup-close {
+    top: -35px;
+    right: 0;
+  }
+}
+
+/* ─── Converted Inline CSS Classes & Utilities ─── */
+.top-bar a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.policy-banner {
+  margin-top: 10px;
+}
+
+.section-head.mb-24 {
+  margin-bottom: 24px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.footer-copyright {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 4px;
+}
+
+#np-form-cf7-success {
+  display: none;
+}
+
+.iframe-loading-text {
+  text-align: center;
+  padding-top: 200px;
+}
+
+/* ============================================
+   CF7 CUSTOM LOADING EFFECT
+============================================ */
+/* Đảm bảo khung chứa nút submit là relative để định vị spinner ở giữa */
+.wpcf7-form p {
+  position: relative;
+}
+
+/* Ẩn ảnh spinner mặc định của CF7 và tạo khung hình tròn mới */
+.wpcf7-spinner {
+  background: none !important;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute !important;
+  top: 60% !important;
+  left: 50% !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: -10px 0 0 -10px !important;
+  /* Canh giữa tuyệt đối */
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
+  border-top-color: #fff !important;
+  border-radius: 50% !important;
+  z-index: 99 !important;
+  transition: opacity 0.2s ease;
+  display: block !important;
+  padding: 0 !important;
+}
+
+/* Khi đang submit: làm mờ nút, ẩn chữ, vô hiệu hóa click */
+.wpcf7-form.submitting .wpcf7-submit {
+  color: transparent !important;
+  pointer-events: none !important;
+  opacity: 0.8 !important;
+}
+
+/* Khi đang submit: hiện spinner và xoay */
+.wpcf7-form.submitting .wpcf7-spinner {
+  visibility: visible !important;
+  opacity: 1 !important;
+  animation: wpcf7-modern-spin 0.8s linear infinite;
+  z-index: 999 !important;
+  display: block !important;
+}
+
+@keyframes wpcf7-modern-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wpcf7-response-output {
+  display: none !important;
+}
+
+.wpcf7-spinner::before {
+  background-color: #fbfbfc00;
+  width: 24px !important;
+  height: 24px !important;
+  top: 0px !important;
+  left: 0px !important;
 }

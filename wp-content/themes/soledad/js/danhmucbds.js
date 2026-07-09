@@ -1,5 +1,5 @@
 const NEPTUNE_UI = {
-            
+
     // Cấu hình chung
     config: {
         sliderBreakpoint: 1280,      // Điểm gãy để chuyển chế độ slider/grid
@@ -11,8 +11,9 @@ const NEPTUNE_UI = {
     /**
      * Khởi tạo tất cả các module
      */
-    init: function() {
+    init: function () {
         this.initTabs();
+        this.initStyle30Tabs();
         this.initSlider();
         // this.initAutoHover();
     },
@@ -20,11 +21,10 @@ const NEPTUNE_UI = {
     /**
      * Module: Xử lý Tabs và nội dung chi tiết
      */
-    initTabs: function() {
+    initTabs: function () {
         const tabPanes = document.querySelectorAll('.tab-pane');
 
-        console.log("initTabs -> Running Neptune Logic 🔱");
-            if (tabPanes.length === 0) return;
+        if (tabPanes.length === 0) return;
 
         tabPanes.forEach((pane) => {
             const featuredContainer = pane.querySelector('.cut-the-top-left-corner-09-featured-container');
@@ -64,14 +64,14 @@ const NEPTUNE_UI = {
 
             // --- 2. GẮN SỰ KIỆN (Event Listeners) ---
             items.forEach(item => {
-                
+
                 // --- A. DESKTOP: FAKE HOVER ---
                 item.addEventListener('mouseenter', () => {
                     if (window.innerWidth >= this.config.sliderBreakpoint) {
                         // Xóa is-hover ở thằng cũ
                         const currentHover = pane.querySelector('.item.cut-the-top-left-corner-09-container.is-hover');
                         if (currentHover) currentHover.classList.remove('is-hover');
-                        
+
                         // Thêm is-hover cho thằng mới
                         item.classList.add('is-hover');
                     }
@@ -86,7 +86,7 @@ const NEPTUNE_UI = {
                             title: item.querySelector('.tlc-title'),
                             desc: item.querySelector('.tlc-description')
                         };
-                        
+
                         // Lấy lại elements đích (để đảm bảo scope)
                         const elements = {
                             icon: featuredContainer.querySelector('.icons-container'),
@@ -111,12 +111,64 @@ const NEPTUNE_UI = {
             });
         });
     },
+
+    /**
+     * Module: Style 30 Tabs Logic
+     */
+    initStyle30Tabs: function () {
+        const tabs = document.querySelectorAll('.style-30-tab');
+        if (tabs.length === 0) return;
+
+        tabs.forEach(tab => {
+            const activateTab = () => {
+                // Reset all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Active current tab
+                tab.classList.add('active');
+
+                // Switch Content
+                const targetId = tab.getAttribute('data-target');
+                const wrapper = tab.closest('.style-30-wrapper');
+                if (wrapper) {
+                    const contents = wrapper.querySelectorAll('.style-30-content-group');
+                    contents.forEach(content => content.classList.add('hidden'));
+                    const targetContent = wrapper.querySelector('#' + targetId);
+                    if (targetContent) targetContent.classList.remove('hidden');
+                }
+            };
+
+            // Desktop Hover
+            // tab.addEventListener('mouseenter', () => {
+            //     if (window.innerWidth >= this.config.sliderBreakpoint) activateTab();
+            // });
+
+            // Desktop Mouse Leave
+            // tab.addEventListener('mouseleave', () => {
+            //     if (window.innerWidth >= this.config.sliderBreakpoint) {
+            //         tab.classList.remove('active');
+            //         const targetId = tab.getAttribute('data-target');
+            //         const wrapper = tab.closest('.style-30-wrapper');
+            //         if (wrapper) {
+            //             const targetContent = wrapper.querySelector('#' + targetId);
+            //             if (targetContent) targetContent.classList.add('hidden');
+            //         }
+            //     }
+            // });
+
+            // Mobile Click
+            tab.addEventListener('click', () => {
+                // if (window.innerWidth < this.config.sliderBreakpoint) activateTab();
+                activateTab()
+            });
+        });
+    },
     /**
      * Module: Tự động active/hover
      */
-    initAutoHover: function() {
-        console.log("Neptune: Kích hoạt module Auto Hover/Active...");
-        
+    initAutoHover: function () {
+
+
         const targetClass = '.cut-the-top-left-corner-09-container';
         const hoverClass = 'is-hover'; // Class cho Desktop
         const activeClasses = ['active', 'border-blue-500', 'bg-blue-50']; // Classes cho Mobile
@@ -196,10 +248,10 @@ const NEPTUNE_UI = {
     /**
      * Module: Xử lý Slider (Dots, Autoplay, Drag)
      */
-    initSlider: function() {
+    initSlider: function () {
         const slider = document.getElementById('stnd-slider-wrapper');
         const dotsContainer = document.getElementById('dotsContainer');
-        
+
         if (!slider || !dotsContainer) return;
 
         const items = slider.querySelectorAll('.slider-item');
@@ -246,12 +298,12 @@ const NEPTUNE_UI = {
                 stopAutoplay();
                 return;
             }
-            
+
             const currentScroll = slider.scrollLeft;
             // Tính width item + gap (16px của gap-4)
             // offsetWidth sẽ lấy kích thước thực tế (đã là 50% trên mobile)
             const itemWidth = items[0].offsetWidth + 16;
-            
+
             let nextIndex = Math.round(currentScroll / itemWidth) + 1;
             if (nextIndex >= items.length) nextIndex = 0;
 
@@ -278,7 +330,7 @@ const NEPTUNE_UI = {
                 // Thêm class Tailwind cho transition
                 dot.className = 'dot transition-transform duration-400 ease-out';
                 dot.dataset.index = index;
-                
+
                 dot.addEventListener('click', () => {
                     const itemWidth = items[0].offsetWidth + 16;
                     slider.scrollTo({
@@ -287,7 +339,7 @@ const NEPTUNE_UI = {
                     });
                     pauseAndResume();
                 });
-                
+
                 dotsContainer.appendChild(dot);
             });
 

@@ -5,6 +5,14 @@
  * A premium landing page template for Noble Palace Tây Thăng Long.
  */
 $theme_uri = get_template_directory_uri();
+
+// Ensure the theme's Speed Optimizer (hpp) does not rewrite images we explicitly want to load immediately
+add_filter('hpp_disallow_lazyload', function($ok, $tag){
+    if (strpos($tag, 'penci-disable-lazy') !== false) {
+        return 1;
+    }
+    return $ok;
+}, 99, 2);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -12,15 +20,23 @@ $theme_uri = get_template_directory_uri();
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <?php 
   add_action('wp_enqueue_scripts', function() {
     // Enqueue Google Fonts
     wp_enqueue_style('np-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playball&family=Inter:wght@300;400;500&family=Ms+Madi&display=swap', array(), null);
     
     // Custom Style & Scripts
-    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.0');
-    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.0', true);
-  });
+    wp_enqueue_style('noble-palace-style', get_template_directory_uri() . '/css/noble-palace.css', array(), '1.0.6');
+    wp_enqueue_script('noble-palace-script', get_template_directory_uri() . '/js/noble-palace.js', array('jquery'), '1.0.6', true);
+  }, 100);
+
+  add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('tailwind');
+    wp_dequeue_script('tailwind');
+  }, 999);
 
   wp_head(); 
   ?>
@@ -33,16 +49,16 @@ $theme_uri = get_template_directory_uri();
   <div class="divider"></div>
   <p>Hotline: <span class="gold-text">0972 991 551</span></p>
   <div class="divider"></div>
-  <p>Website: <span class="gold-text"><a href="https://stnd.vn" target="_blank" style="color:inherit;text-decoration:underline">stnd.vn</a></span></p>
+  <p>Website: <span class="gold-text"><a href="https://stnd.vn" target="_blank">stnd.vn</a></span></p>
   <button class="close-btn" onclick="document.getElementById('top-bar').style.display='none'">✕</button>
 </div>
 
 <!-- HEADER -->
 <header class="header">
   <div class="header-logo">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/logo.webp" alt="Noble Palace Logo" />
+    <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/logo.webp" alt="Noble Palace Logo" width="39" height="44" />
     <div class="logo-text">
-      <span class="logo-name">Noble pLACE</span>
+      <span class="logo-name">Noble PALACE</span>
       <div class="logo-sub">Tây Thăng Long</div>
     </div>
   </div>
@@ -60,10 +76,20 @@ $theme_uri = get_template_directory_uri();
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg.webp" 
+       srcset="<?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg-mobile.webp 768w, <?php echo get_template_directory_uri(); ?>/images/noble-palace/hero-bg.webp 1920w"
+       sizes="100vw"
+       alt="Noble Palace Background"
+       class="hero-bg penci-disable-lazy skip-lazy no-lazy"
+       data-skip-lazy="1"
+       data-no-lazy="1"
+       data-rocket-lazyload="ignore"
+       fetchpriority="high"
+       width="1920"
+       height="1080" />
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-content">
+    <div class="hero-content fade-in-left">
       <div class="hero-badge">
         <div class="dot"></div>
         <span>Suất Ngoại Giao Độc Quyền · Còn 15 Căn</span>
@@ -82,7 +108,7 @@ $theme_uri = get_template_directory_uri();
     </div>
 
     <!-- Form Card -->
-    <div class="hero-form-card" id="hero-form">
+    <div class="hero-form-card fade-in-right" id="hero-form">
       <div class="form-tag">
         <div class="dot"></div>
         <span>Còn 15 suất ngoại giao vị trí đẹp nhất · Cập nhật hôm nay</span>
@@ -90,7 +116,7 @@ $theme_uri = get_template_directory_uri();
       <p class="form-title">Nhận Báo Giá Ưu Đãi</p>
       <p class="form-sub">Chuyên viên STND liên hệ trong 15 phút</p>
       <div class="form-cf7-wrap">
-        <?php echo do_shortcode('[contact-form-7 id="3c72e7e" title="Noble Place - Liên hệ"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="3c72e7e" title="Noble Palace - Liên hệ"]'); ?>
       </div>
       <p class="form-note">Bảo mật thông tin tuyệt đối · Miễn phí hoàn toàn · STND tư vấn ngay</p>
     </div>
@@ -232,7 +258,7 @@ $theme_uri = get_template_directory_uri();
         </div>
         <div class="card-body">
           <div class="card-tag">Elegant · Nội Khu</div>
-          <div class="card-urgency"><div class="dot"></div> Còn 4 căn · Phân khu Legacy</div>
+          <div class="card-urgency"><div class="dot"></div> Còn 5 căn · Vị trí đỉnh nhất dự án</div>
           <div>
             <div class="card-title">Mặt Đại Lộ 40m</div>
             <div class="card-loc">Trục Hoàng Quốc Việt kéo dài · Góc giao lộ</div>
@@ -245,7 +271,7 @@ $theme_uri = get_template_directory_uri();
           </div>
           <div class="card-price-block">
             <div class="card-price">Từ 30 tỷ</div>
-            <div class="card-finance">Fullgiá 34–36 tỷ · Giảm thẳng 2 tỷ khi ký HĐ</div>
+            <div class="card-finance">Full giá 34–36 tỷ · Giảm thẳng 2 tỷ khi ký HĐ</div>
           </div>
           <div class="card-features">
             <div class="card-feature"><span class="dash">–</span> Vị trí đắc địa nhất — mặt đường 40m</div>
@@ -266,52 +292,157 @@ $theme_uri = get_template_directory_uri();
 </section>
 
 <!-- SECTION 2: CHÍNH SÁCH BÁN HÀNG -->
-<section class="section bg-white" id="policy">
+<section class="policy-sec section bg-white" id="policy">
   <div class="section-inner">
     <div class="section-head">
-      <span class="section-label">Chính Sách Bán Hàng</span>
-      <h2 class="section-title">Ưu Đãi Vượt Trội —<br /><span class="gold">Mua Sớm Lợi Nhiều</span></h2>
+      <span class="section-label">Chính Sách Bán Hàng · Áp dụng từ 13/05/2026</span>
+      <h2 class="section-title">Ưu Đãi Vượt Trội —<br /><span class="gold">Gần 1,12 Tỷ Đồng</span></h2>
       <div class="section-rule"></div>
     </div>
 
-    <div class="policy-grid">
-      <div class="policy-card">
-        <div class="policy-num">01</div>
-        <div class="policy-title">Chiết Khấu Thanh Toán Sớm</div>
-        <div class="policy-desc">Chiết khấu 10% tổng giá trị sản phẩm khi thanh toán sớm. Suất ngoại giao được cộng thêm 2% đặc biệt.</div>
-        <div class="policy-highlight">10–12% CK</div>
+    <!-- TỔNG QUAN CHÍNH SÁCH -->
+    <div class="policy-overview">
+      <div class="policy-overview-item">
+        <div>
+          <div class="policy-overview-label">Chiết khấu lên đến</div>
+          <div class="policy-overview-val gold"><span class="counter" data-target="12.7" data-decimals="1" data-separator=",">0</span><span>%</span></div>
+        </div>
       </div>
-      <div class="policy-card">
-        <div class="policy-num">02</div>
-        <div class="policy-title">Lãi Suất Ưu Đãi Ngân Hàng</div>
-        <div class="policy-desc">Vay vốn đến 70% giá trị căn. Lãi suất 0% trong 18 tháng đầu. Hỗ trợ hồ sơ vay miễn phí qua MB Bank, VPBank.</div>
-        <div class="policy-highlight">0% / 18 tháng</div>
-      </div>
-      <div class="policy-card">
-        <div class="policy-num">03</div>
-        <div class="policy-title">Lợi Nhuận Vượt Tiến Độ</div>
-        <div class="policy-desc">Nhận 9%/năm cho khoản tiền thanh toán vượt tiến độ. Sinh lời ngay từ khi chưa nhận nhà.</div>
-        <div class="policy-highlight">9%/năm</div>
+      <div class="policy-overview-item">
+        <div>
+          <div class="policy-overview-label">Chính sách ưu đãi lên đến gần</div>
+          <div class="policy-overview-val gold"><span class="counter" data-target="1.12" data-decimals="2" data-separator=",">0</span><span> Tỷ</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="mini-cards" style="margin-top:4px">
-      <div class="mini-card">
-        <div class="val">300tr</div>
-        <div class="lbl">Thẻ Debit tặng kèm từ CĐT</div>
+    <!-- 3 CHÍNH SÁCH CHÍNH -->
+    <div class="policy-grid mt-1">
+      <!-- LỢI NHUẬN KIM CƯƠNG -->
+      <div class="pol-card kim-cuong">
+        <div class="pol-card-header">
+          <div class="pol-num">01</div>
+          <div class="pol-title-1">Lợi Nhuận Kim Cương</div>
+        </div>
+        <div class="pol-card-benefits">
+          <div class="pol-benefit-left">
+            <div class="pol-card-benefit-val">720 <span>triệu</span></div>
+            <div class="pol-card-benefit-lbl">Lợi nhuận trong 24 tháng</div>
+          </div>
+          <div class="pol-benefit-right">
+            <div class="pol-card-benefit-val">500 <span>triệu</span></div>
+            <div class="pol-card-benefit-lbl">Quà tặng nội thất</div>
+          </div>
+        </div>
       </div>
-      <div class="mini-card">
-        <div class="val">24T</div>
-        <div class="lbl">Miễn phí quản lý WorldHotels</div>
+
+      <!-- LÃI SUẤT + VAY -->
+      <div class="pol-card">
+        <div class="pol-num">02</div>
+        <div class="pol-title">Hỗ Trợ Vay Tới <span class="counter" data-target="70">0</span>%</div>
+        <div class="pol-desc">Nhận nhà trước, áp lực trả nợ tính sau Tận hưởng lộ trình giãn tiến độ, an tâm tuyệt đối suốt 3 năm đầu</div>
+        <div class="pol-val">36 tháng ưu đãi lãi suất</div>
       </div>
-      <div class="mini-card">
-        <div class="val">1%</div>
-        <div class="lbl">CK thêm cho KH ĐKTT Đan Phượng</div>
+
+      <!-- QUÀ TÀI LỘC -->
+      <div class="pol-card">
+        <div class="pol-num">03</div>
+        <div class="pol-title">BÙNG NỔ QUÀ TẶNG: NHẬN NGAY COMBO TÀI LỘC</div>
+        <div class="pol-desc">Tặng kèm thẻ KLB trị giá <strong>250 triệu</strong> . Nhân đôi niềm vui với quà tặng an cư thêm 150 TRIỆU.Nhận thêm chiết khấu 1 - 1,5% hỗ trợ hoàn thiện tổ ấm trong mơ.</div>
+        <div class="pol-val">150 triệu</div>
       </div>
-      <div class="mini-card">
-        <div class="val">2 tỷ</div>
-        <div class="lbl">Hỗ trợ vay qua Noble App</div>
+    </div>
+
+    <!-- 4 ƯU ĐÃI PHỤ -->
+    <div class="policy-extras">
+      <div class="pe-item">
+        <div class="pe-val"><span class="counter" data-target="10">0</span>%</div>
+        <div class="pe-label">Chiết khấu TTS thanh toán sớm</div>
       </div>
+      <div class="pe-item">
+        <div class="pe-val">24T</div>
+        <div class="pe-label">Miễn phí quản lý vận hành 5 sao</div>
+      </div>
+      <div class="pe-item">
+        <div class="pe-val"><span class="counter" data-target="250">0</span>tr</div>
+        <div class="pe-label">Thẻ KLB tặng kèm tất cả sản phẩm</div>
+      </div>
+      <div class="pe-item">
+        <div class="pe-val"><span class="counter" data-target="8">0</span>%</div>
+        <div class="pe-label">Quà Noble HOME+ trên 15% giá trị BĐS</div>
+      </div>
+    </div>
+
+    <!-- TIẾN ĐỘ THANH TOÁN -->
+    <div class="payment-grid-mob">
+      <!-- VAY NGÂN HÀNG -->
+      <div class="payment-block">
+        <div class="payment-block-title">Thanh Toán Vay Ngân Hàng</div>
+        <div class="payment-list">
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đặt cọc</span>
+            <span class="payment-row-val">500 tr</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Ký TTĐC</span>
+            <span class="payment-row-val">15%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 1 - Ký HĐMB (7 ngày)</span>
+            <span class="payment-row-val">10%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 2 (7 ngày)</span>
+            <span class="payment-row-val gold">70%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 3 - 100% KPBT (30 ngày)</span>
+            <span class="payment-row-val">còn lại</span>
+          </div>
+          <div class="payment-row last">
+            <span class="payment-row-lbl">Đợt 4 - GCN (khấu trừ từ đợt 4)</span>
+            <span class="payment-row-val">5%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIẾN ĐỘ -->
+      <div class="payment-block">
+        <div class="payment-block-title">Thanh Toán Tiến Độ</div>
+        <div class="payment-list">
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đặt cọc</span>
+            <span class="payment-row-val">500 tr</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Ký TTĐC</span>
+            <span class="payment-row-val">15%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 1 - Ký HĐMB (7 ngày)</span>
+            <span class="payment-row-val">10%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 2 (7 ngày)</span>
+            <span class="payment-row-val">20%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 3 (30 ngày)</span>
+            <span class="payment-row-val">25%</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-row-lbl">Đợt 4 - 100% KPBT (60 ngày)</span>
+            <span class="payment-row-val gold">30%</span>
+          </div>
+          <div class="payment-row last">
+            <span class="payment-row-lbl">Đợt 5 TTBS + Đợt 6 GCN</span>
+            <span class="payment-row-val">5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="policy-banner">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/banner_mer_01.webp" alt="Bốc thăm xe Mercedes" />
     </div>
   </div>
 </section>
@@ -402,9 +533,9 @@ $theme_uri = get_template_directory_uri();
   <div class="amenity-top">
     <!-- Left -->
     <div class="amenity-left">
-      <div class="section-head" style="margin-bottom:24px">
+      <div class="section-head mb-24">
         <span class="section-label">Chính Sách Bán Hàng</span>
-        <h2 class="section-title">Thành Phố Không Ngủ<br /><span class="gold" style="font-style:italic">All-in-One 365 Ngày</span></h2>
+        <h2 class="section-title">Thành Phố Không Ngủ<br /><span class="gold italic">All-in-One 365 Ngày</span></h2>
         <div class="section-rule"></div>
       </div>
       <p class="amenity-desc">Hơn 100 tiện ích nội khu chuẩn quốc tế — bệnh viện 5 sao, trường quốc tế, công viên 190 ha, tất cả ngay trước cửa nhà.</p>
@@ -458,6 +589,7 @@ $theme_uri = get_template_directory_uri();
     <div class="amenity-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/amenity-strip-2.webp" alt="Ngôi nhà thông minh" /></div>
     <div class="amenity-strip-item"><img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/amenity-strip-3.webp" alt="Giải pháp tài chính" /></div>
   </div>
+
 
   <!-- Navy legal bar -->
   <div class="legal-bar">
@@ -559,6 +691,11 @@ $theme_uri = get_template_directory_uri();
   </div>
 </section>
 
+  <!-- <div id="iframe-container">
+      <p class="iframe-loading-text">Đang cuộn đến vùng bản đồ 360...</p>
+  </div> -->
+
+
 <!-- SECTION 5: ĐƠN VỊ PHÂN PHỐI -->
 <section class="section bg-gold" id="agent">
   <div class="section-inner">
@@ -574,7 +711,7 @@ $theme_uri = get_template_directory_uri();
         <div class="agent-brand-name">SIÊU THỊ NHÀ ĐẤT – <span>STND</span></div>
         <div class="agent-auth">✓ Ủy quyền Noble Group · Sunshine Group</div>
         <div class="agent-divider"></div>
-        <div class="agent-motto">Mang đến những Giá trị &amp; Trải nghiệm</div>
+        <div class="agent-motto">Mang đến những Giá trị &amp; Trải nghiệm tuyệt vời cho khách hàng</div>
         <a class="agent-link" href="https://stnd.vn" target="_blank">stnd.vn →</a>
       </div>
 
@@ -646,6 +783,7 @@ $theme_uri = get_template_directory_uri();
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-watermark watermark-left">
@@ -662,7 +800,7 @@ $theme_uri = get_template_directory_uri();
     <p class="footer-disclaimer">
       Mọi thông tin trên trang web này do đại lý phân phối chính thức <strong>SIÊU THỊ NHÀ ĐẤT – STND</strong> cung cấp. Địa chỉ: 262 Tây Sơn, Đống Đa, Hà Nội · Hotline: 0972 991 551 · Website: stnd.vn. Giá bán, chính sách và thông tin dự án có thể thay đổi theo từng thời điểm, vui lòng liên hệ trực tiếp để xác nhận. Noble Palace Tây Thăng Long được phát triển bởi Tập đoàn Sunshine Group và Công ty CP Kinh doanh BĐS Noble. Trang web này vận hành bởi đại lý phân phối — không phải website chính thức của chủ đầu tư.
     </p>
-    <p style="font-size:11px;color:rgba(255,255,255,.25);margin-top:4px">© 2026 STND. All rights reserved.</p>
+    <p class="footer-copyright">© 2026 STND. All rights reserved.</p>
   </div>
 </footer>
 
@@ -670,8 +808,8 @@ $theme_uri = get_template_directory_uri();
 <div class="float-sidebar" id="float-sidebar">
   <!-- Zalo -->
   <a class="float-sidebar-item" href="https://zalo.me/0972991551" target="_blank" rel="noopener" title="Chat Zalo">
-    <div class="icon-wrap" style="border-radius:10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:48px;height:48px;object-fit:cover;border-radius:10px;" />
+    <div class="icon-wrap">
+      <img src="<?php echo get_template_directory_uri(); ?>/icons/icons-zalo.svg" alt="Zalo" />
     </div>
     <span>Chat Zalo</span>
   </a>
@@ -692,6 +830,60 @@ $theme_uri = get_template_directory_uri();
 <div class="floating-cta">
   <a href="tel:0972991551">📞 Gọi Ngay</a>
   <a href="#hero-form" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'});return false;">Nhận Báo Giá</a>
+</div>
+
+
+
+<!-- POPUP KHUYẾN MÃI -->
+<div id="np-promo-popup" class="np-popup-overlay">
+    <div class="np-popup-content">
+        <button class="np-popup-close" id="np-promo-close">&times;</button>
+        <picture class="np-popup-img" id="np-promo-img">
+            <source media="(max-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/images/noble-palace/popup_mercedes%20-%20mobile.webp">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/noble-palace/popup_mercedes.webp" alt="Khuyến mãi Mercedes">
+        </picture>
+    </div>
+</div>
+
+<!-- POPUP FORM ĐĂNG KÝ -->
+<div id="np-form-popup" class="np-popup-overlay np-popup-cf7">
+    <div class="np-popup-content np-form-content">
+        <button class="np-popup-close" id="np-form-close">&times;</button>
+        
+        <!-- Form Content -->
+        <div class="np-form-inner" id="np-form-cf7-inner">
+            <div class="np-form-header">
+                <img  src="<?php echo site_url('/wp-content/uploads/2025/11/LOGO-01-1.png'); ?>" alt="STND Logo" class="stnd-logo-popup penci-mainlogo" />
+                <h3 class="np-form-title">ĐĂNG KÝ ĐẶT CỌC SỚM</h3>
+                <p class="np-form-sub">Chuyên viên STND sẽ liên hệ với bạn trong<br>15 phút làm việc.</p>
+            </div>
+            
+            <div class="np-form-body">
+                <?php echo do_shortcode('[contact-form-7  title="Noble Place - Liên hệ 2"]'); ?>
+            </div>
+            
+            <div class="np-form-footer">
+                <p>Không mất bất kỳ phí nào · Hoàn toàn miễn phí</p>
+            </div>
+        </div>
+        
+        <!-- Success Content (Hidden by default) -->
+        <div class="np-form-success" id="np-form-cf7-success">
+            <div class="success-icon-wrap">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 2L28.8 6.8L35.6 6.8L35.6 13.6L40.4 18.4L37.4 24L40.4 29.6L35.6 34.4L35.6 41.2L28.8 41.2L24 46L19.2 41.2L12.4 41.2L12.4 34.4L7.6 29.6L10.6 24L7.6 18.4L12.4 13.6L12.4 6.8L19.2 6.8L24 2Z" fill="white" stroke="#c9a355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 24L22 30L32 18" stroke="#c9a355" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3 class="np-form-title">ĐĂNG KÝ THÀNH CÔNG!</h3>
+            <p class="np-form-sub">Chuyên viên STND sẽ liên hệ với bạn trong<br>15 phút làm việc.</p>
+            <div class="success-phone">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                0972 991 551
+            </div>
+            <button class="success-return-btn" id="np-form-return">TRỞ VỀ</button>
+        </div>
+    </div>
 </div>
 
     <?php wp_footer(); ?>
