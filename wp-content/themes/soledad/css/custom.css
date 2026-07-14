@@ -7512,3 +7512,20 @@ html {
 
 	line-height: 1.2;
 }
+
+.penci-single-article .post-entry h3 {
+	font-size: 18px;
+	border-left: 4px solid red;
+	margin-bottom: 10px;
+	margin-top: 30px;
+
+	padding-left: 12px;
+	border-left: 5px solid #ffcc66;
+	background-color: #ffcc6621;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.penci-single-article .post-entry h2 {
+	font-size: 24px;
+}
