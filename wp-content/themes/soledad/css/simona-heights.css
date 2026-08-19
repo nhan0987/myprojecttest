@@ -284,6 +284,7 @@ h3,
   .site-header .wrap {
     padding-top: 10px;
     padding-bottom: 10px;
+    gap: 4px;
   }
 
   .brand-logo {
@@ -305,8 +306,8 @@ h3,
   }
 
   .header-cta .btn {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 12px;
+    font-size: 10px;
   }
 }
 
@@ -435,6 +436,7 @@ h3,
     flex-wrap: nowrap;
     gap: 8px;
   }
+
   .hero-cta-row .btn {
     padding: 12px 10px;
     font-size: 11px;
@@ -799,6 +801,7 @@ table.compare td strong {
   letter-spacing: .06em;
   text-transform: uppercase;
   border-radius: 20px;
+  margin: 3px 0;
 }
 
 .tag.invest {
@@ -1275,7 +1278,7 @@ table.compare td strong {
 }
 
 .footer-legal {
-  font-size: 14px;
+  font-size: 8px;
   color: var(--ivory-text);
   opacity: .65;
   max-width: 900px;
@@ -2094,6 +2097,7 @@ table.compare td strong {
 }
 
 .calc2-static-val {
+  display: inline-block;
   padding: 12px 0;
   font-family: 'Be Vietnam Pro';
   font-weight: 700;
@@ -2117,8 +2121,29 @@ table.compare td strong {
 }
 
 @media(max-width:520px) {
+  .calc2-loan-inputs {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .calc2-loan-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .calc2-stat {
+    padding: 12px 6px;
+  }
+
+  .calc2-stat span {
+    font-size: 11.5px;
+    margin-bottom: 6px;
+    min-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .calc2-stat b {
+    font-size: 13.5px;
+    word-break: break-word;
   }
 }
 

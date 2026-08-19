@@ -422,9 +422,9 @@ function c2RenderSummaryAndSchedule(){
 function c2RenderLoan(){
   var plan = c2CurrentPlan();
   var price = c2ParseNum(document.getElementById('c2Price').value); // giá gốc, KHÔNG áp chiết khấu cho phần vay
-  var rate = c2ParseDecimal(document.getElementById('c2Rate').value) / 100;
-  var termYears = c2ParseNum(document.getElementById('c2Term').value);
-  var supportMonths = c2ParseNum(document.getElementById('c2SupportMonths').value);
+  var rate = plan.rate / 100;
+  var termYears = 20;
+  var supportMonths = plan.supportMonths;
   var loanPct = 70; // tối đa 70% giá trị HĐMB theo CSBH cả 2 tòa
 
   document.getElementById('c2BankName').textContent = c2State().tower === 'harbour' ? 'MB Bank CN Thái Thịnh' : 'Có thể là MB Bank (chưa xác nhận riêng The Sea)';
@@ -464,8 +464,8 @@ function c2RenderLoan(){
 
 function c2SyncLoanDefaults(){
   var plan = c2CurrentPlan();
-  document.getElementById('c2Rate').value = plan.rate;
-  document.getElementById('c2SupportMonths').value = plan.supportMonths;
+  document.getElementById('c2Rate').textContent = plan.rate;
+  document.getElementById('c2SupportMonths').textContent = plan.supportMonths;
 }
 
 function initCalculator(){
@@ -505,9 +505,7 @@ function initCalculator(){
     priceInput.value = raw ? c2FmtInput(raw) : '';
     c2RenderSummaryAndSchedule();
   });
-  [rateInput, termInput, supportInput].forEach(function(el){
-    el.addEventListener('input', c2RenderLoan);
-  });
+  // Removed event listeners for rateInput, termInput, supportInput as they are now static divs
 
   c2RenderPlans();
   c2SyncLoanDefaults();

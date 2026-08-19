@@ -376,10 +376,10 @@ $theme_uri = get_template_directory_uri();
       <p class="calc2-loan-note">Phần này tính độc lập theo giá sản phẩm đã nhập ở trên, không áp dụng chiết khấu của phương thức thanh toán.</p>
 
       <div class="calc2-loan-inputs">
-        <div><span class="calc2-label">Lãi suất tham khảo (%/năm)</span><input type="text" class="calc2-select" id="c2Rate"></div>
-        <div><span class="calc2-label">Thời hạn vay (năm)</span><input type="text" class="calc2-select" id="c2Term" value="20"></div>
+        <div><span class="calc2-label">Lãi suất tham khảo (%/năm)</span><div class="calc2-static-val" id="c2Rate"></div></div>
+        <div><span class="calc2-label">Thời hạn vay (năm)</span><div class="calc2-static-val" id="c2Term">20</div></div>
         <div><span class="calc2-label">Tỷ lệ vay tối đa</span><div class="calc2-static-val" id="c2LoanPct"></div></div>
-        <div><span class="calc2-label">Thời gian hỗ trợ gốc/lãi (tháng)</span><input type="text" class="calc2-select" id="c2SupportMonths"></div>
+        <div><span class="calc2-label">Thời gian hỗ trợ gốc/lãi</span><div class="calc2-static-val" id="c2SupportMonths"></div> (tháng)</div>
       </div>
 
       <div class="calc2-loan-stats">
