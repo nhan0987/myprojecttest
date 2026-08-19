@@ -24,7 +24,13 @@ $theme_uri = get_template_directory_uri();
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- GTM Placeholder: Thay GTM-XXXXXXX bằng ID thật trước khi chạy ads -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TP6CJSKL');</script>
+<!-- End Google Tag Manager -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +45,11 @@ $theme_uri = get_template_directory_uri();
 <?php wp_head(); ?>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TP6CJSKL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
 <header class="site-header">
   <div class="wrap">
     <div class="brand">
@@ -671,7 +682,7 @@ $theme_uri = get_template_directory_uri();
 <footer class="site-footer">
   <div class="wrap">
     <p class="footer-legal">
-      Thông tin dự án Simona Heights tại trang này thuộc quyền sở hữu của Công ty TNHH Đầu tư Xây dựng Phú Mỹ Quy Nhơn (MST 4101427606). Chính sách bán hàng The Harbour và The Sea căn cứ theo văn bản CSBH chính thức do chủ đầu tư phát hành, có thể thay đổi theo từng đợt mở bán và số lượng căn còn lại. Hình ảnh, sơ đồ kỹ thuật, bố trí nội ngoại thất chỉ nhằm mục đích minh họa, không phải cam kết pháp lý. Thông tin chính thức căn cứ theo hợp đồng mua bán và tài liệu ký kết chính thức với khách hàng. STND là đơn vị phân phối chính thức (F1), không phải chủ đầu tư.
+      Thông tin dự án Simona Heights được cung cấp bởi Công ty TNHH Đầu tư Xây dựng Phú Mỹ Quy Nhơn (MST 4101427606). Chính sách bán hàng The Harbour và The Sea căn cứ theo văn bản CSBH chính thức do chủ đầu tư phát hành, có thể thay đổi theo từng đợt mở bán và số lượng căn còn lại. Hình ảnh, sơ đồ kỹ thuật, bố trí nội ngoại thất chỉ nhằm mục đích minh họa, không phải cam kết pháp lý. Thông tin chính thức căn cứ theo hợp đồng mua bán và tài liệu ký kết chính thức với khách hàng. STND là đơn vị phân phối chính thức (F1), không phải chủ đầu tư.
     </p>
     <div class="footer-bottom">
       <span>© 2026 STND — Đại lý phân phối chính thức Simona Heights</span>
@@ -692,16 +703,7 @@ $theme_uri = get_template_directory_uri();
     <img src="<?php echo get_template_directory_uri(); ?>/icons/icons-zalo.svg" alt="Zalo" class="fl-zalo-img">
   </a>
 </div>
-<!-- Facebook Pixel Placeholder: Thay YOUR_PIXEL_ID bằng Pixel thật trước khi chạy ads -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
+
 
 <?php wp_footer(); ?>
 </body>
