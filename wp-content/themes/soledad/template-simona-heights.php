@@ -633,31 +633,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="form-card">
         <h3>Đăng ký nhận thông tin</h3>
         <p>STND phản hồi trong vòng 15 phút trong giờ làm việc.</p>
-        <form id="leadForm" onsubmit="return handleLeadSubmit(event)">
-          <input type="hidden" name="utm_source" id="utm_source">
-          <input type="hidden" name="utm_medium" id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign">
-          <input type="hidden" name="utm_content" id="utm_content">
-          <input type="hidden" name="utm_term" id="utm_term">
-          <input type="hidden" name="fbclid" id="fbclid">
-          <input type="hidden" name="gclid" id="gclid">
-          <input type="hidden" name="landing_page_url" id="landing_page_url">
-          <input type="hidden" name="first_visit_at" id="first_visit_at">
-          <div class="form-row"><label for="fname">Họ và tên *</label><input id="fname" name="name" required></div>
-          <div class="form-row"><label for="fphone">Số điện thoại *</label><input id="fphone" name="phone" type="tel" required></div>
-          <div class="form-row">
-            <label for="finterest">Quan tâm loại hình</label>
-            <select id="finterest" name="interest">
-              <option>The Harbour — 2PN/3PN/Duplex/Dual-key/Pent Heights</option>
-              <option>Chính sách bán hàng &amp; ưu đãi The Harbour</option>
-              <option>The Sea — 1PN+/2PN/3PN</option>
-              <option>Chính sách bán hàng &amp; ưu đãi The Sea</option>
-              <option>Đầu tư cho thuê</option>
-              <option>Second home nghỉ dưỡng</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Gửi yêu cầu tư vấn</button>
-        </form>
+        
+        <?php echo do_shortcode('[contact-form-7 id="8fad9a2" title="Simona Heights - Liên hệ"]'); ?>
       </div>
       <div class="contact-box">
         <div class="eyebrow">Đại lý phân phối F1</div>
